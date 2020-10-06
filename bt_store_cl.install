@@ -1,0 +1,93 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the wca installation profile.
+ */
+
+use Drupal\user\Entity\User;
+use Drupal\user\RoleInterface;
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for this profile.
+ *
+ * @see system_install()
+ */
+function bt_store_cl_install() {
+  // Set default theme.
+  Drupal::configFactory()->getEditable('system.theme')->set('default', 'thunder_admin')->save(TRUE);
+
+  // Alias URL.
+  Drupal::service('path.alias_storage')->save('/contact', '/contacto', 'es');
+  Drupal::service('path.alias_storage')->save('/block/add/bt_images_gallery', '/app/sitioweb/bloques/agregar/galeria-imagenes', 'es');
+  Drupal::service('path.alias_storage')->save('/block/add/bt_image', '/app/sitioweb/bloques/agregar/imagen', 'es');
+  Drupal::service('path.alias_storage')->save('/block/add/bt_pagina_basica', '/app/sitioweb/bloques/agregar/pagina-basica', 'es');
+  Drupal::service('path.alias_storage')->save('/block/add/bt_pagina_portafolio', '/app/sitioweb/bloques/agregar/pagina-portafolio', 'es');
+  Drupal::service('path.alias_storage')->save('/block/add/bt_blog_publication', '/app/sitioweb/bloques/agregar/publicacion-blog', 'es');
+  Drupal::service('path.alias_storage')->save('/block/add/bt_video', '/app/sitioweb/bloques/agregar/video', 'es');
+
+  // Allow visitor account creation with administrative approval.
+  $user_settings = \Drupal::configFactory()->getEditable('user.settings');
+  $user_settings->set('register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL)->save(TRUE);
+
+  $anonymous = [
+    'access content',
+    'access comments',
+    'access site-wide contact form',
+    'search content',
+    'hide format tips',
+    'hide more format tips link',
+    'hide format selection for comment',
+    'edit own comments',
+    'post comments',
+    'use text format bt_minimal_redaction',
+    'view media',
+    'never autoplay videos',
+    'cancel own vote',
+    'access polls',
+  ];
+
+  $authenticate = [
+    'access content',
+    'access comments',
+    'access site-wide contact form',
+    'access shortcuts',
+    'search content',
+    'hide format tips',
+    'hide more format tips link',
+    'hide format selection for comment',
+    'edit own comments',
+    'post comments',
+    'use text format bt_minimal_redaction',
+    'view media',
+    'access toolbar',
+    'never autoplay videos',
+    'access tour',
+    'view the administration theme',
+    'cancel own vote',
+    'access polls',
+    'change own password',
+    'view my_account in toolbar',
+    'cancel account',
+  ];
+
+  // Enable default permissions for system roles.
+  user_role_grant_permissions(RoleInterface::ANONYMOUS_ID, $anonymous);
+  user_role_grant_permissions(RoleInterface::AUTHENTICATED_ID, $authenticate);
+
+  // Assign user 1 the "administrador" role.
+  $user = User::load(1);
+  $user->roles[] = 'bt_admin_application';
+  $user->save();
+
+  // We install some menu links, so we have to rebuild the router, to ensure the
+  // menu links are valid.
+  Drupal::service('router.builder')->rebuildIfNeeded();
+
+  // Enable the admin theme in edit content.
+  Drupal::configFactory()->getEditable('node.settings')->set('use_admin_theme', TRUE)->save(TRUE);
+
+  Drupal::configFactory()->getEditable('system.date')->set('first_day', 1)->save(TRUE);
+}

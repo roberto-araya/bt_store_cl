@@ -1,0 +1,5 @@
+.idea
+.directory
+*/.directory
+composer.lock
+build

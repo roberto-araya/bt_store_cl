@@ -1,0 +1,32 @@
+{
+    "name": "roberto-araya/bt_store_cl",
+    "type": "drupal-profile",
+    "description": "Chile Store",
+    "keywords": ["Drupal"],
+    "homepage": "https://github.com/roberto-araya/bt_store_cl",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Roberto Araya",
+            "email": "roberto.araya@btester.cl",
+            "homepage": "https://github.com/roberto-araya/bt_store_cl",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "drupal/bt_article": "dev-1.x",
+        "drupal/bt_basic_page": "dev-1.x",
+        "drupal/bt_blog": "dev-1.x",
+        "drupal/bt_cbc": "dev-1.x",
+        "drupal/bt_cms": "dev-1.x",
+        "drupal/bt_commerce": "dev-1.x",
+        "drupal/bt_core": "dev-1.x",
+        "drupal/bt_image": "dev-1.x",
+        "drupal/bt_image_gallery": "dev-1.x",
+        "drupal/bt_media": "dev-1.x",
+        "drupal/commerce_webpay": "dev-2.x",
+        "drupal/components": "dev-2.x",
+        "drupal/button_link": "dev-1.x",
+        "drupal/twig_tweak": "^2.7"
+    }
+}

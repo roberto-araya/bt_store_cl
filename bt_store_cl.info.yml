@@ -1,0 +1,31 @@
+name: Chile Tienda
+type: profile
+description: Install profile for Chile Store.
+core: 8.x
+core_version_requirement: ^8
+exclusive: TRUE
+distribution:
+  name: Chile Store
+  install:
+    theme: bt_install_theme
+    #finish_url: '?tour=1'
+  langcode: es
+interface translation project: bt_store_cl
+interface translation server pattern: profiles/contrib/bt_store_cl/translations/es.po
+dependencies:
+  - bt_core:bt_core
+  - bt_article:bt_article
+  - bt_basic_page:bt_basic_page
+  - bt_blog:bt_blog
+  - bt_image:bt_image
+  - bt_image_gallery:bt_image_gallery
+  - bt_toolbar:bt_toolbar
+  - bt_cbc:bt_cbc
+  - bt_commerce:bt_commerce
+  - commerce_webpay:commerce_webpay
+  - components:components
+  - button_link:button_link
+  - twig_tweak:twig_tweak
+themes:
+  - bt_install_theme
+  - thunder_admin

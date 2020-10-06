@@ -1,0 +1,4 @@
+comunas:
+    version: VERSION
+    js:
+      js/comunas.js: {}
