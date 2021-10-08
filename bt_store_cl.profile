@@ -185,9 +185,9 @@ function _bt_store_cl_post_install_tasks(array &$install_state) {
   /*\Drupal::configFactory()->getEditable('views.view.media')->delete();*/
   \Drupal::configFactory()->getEditable('views.view.poll_admin')->delete();
 
-  // Disable wca_install_theme.
-  $theme_handler = Drupal::service('theme_handler');
-  $theme_handler->uninstall(array('bt_install_theme'));
+  // Disable bt_install_theme.
+  $theme_installer = Drupal::service('theme_installer');
+  $theme_installer->uninstall(['bt_install_theme']);
 
   // Log with new user.
   $log_user = User::load('1');
