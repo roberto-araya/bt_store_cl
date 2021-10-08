@@ -7,6 +7,7 @@
 
 use Drupal\user\Entity\User;
 use Drupal\user\RoleInterface;
+use Drupal\path_alias\Entity\PathAlias;
 
 /**
  * Implements hook_install().
@@ -18,15 +19,26 @@ use Drupal\user\RoleInterface;
 function bt_store_cl_install() {
   // Set default theme.
   Drupal::configFactory()->getEditable('system.theme')->set('default', 'thunder_admin')->save(TRUE);
-
+  
   // Alias URL.
-  Drupal::service('path.alias_storage')->save('/contact', '/contacto', 'es');
-  Drupal::service('path.alias_storage')->save('/block/add/bt_images_gallery', '/app/sitioweb/bloques/agregar/galeria-imagenes', 'es');
-  Drupal::service('path.alias_storage')->save('/block/add/bt_image', '/app/sitioweb/bloques/agregar/imagen', 'es');
-  Drupal::service('path.alias_storage')->save('/block/add/bt_pagina_basica', '/app/sitioweb/bloques/agregar/pagina-basica', 'es');
-  Drupal::service('path.alias_storage')->save('/block/add/bt_pagina_portafolio', '/app/sitioweb/bloques/agregar/pagina-portafolio', 'es');
-  Drupal::service('path.alias_storage')->save('/block/add/bt_blog_publication', '/app/sitioweb/bloques/agregar/publicacion-blog', 'es');
-  Drupal::service('path.alias_storage')->save('/block/add/bt_video', '/app/sitioweb/bloques/agregar/video', 'es');
+  $paths = [
+    '/contact' => '/contacto',
+    '/block/add/bt_images_gallery' => '/app/sitioweb/bloques/agregar/galeria-imagenes',
+    '/block/add/bt_image' => '/app/sitioweb/bloques/agregar/imagen',
+    '/block/add/bt_pagina_basica' => '/app/sitioweb/bloques/agregar/pagina-basica',
+    '/block/add/bt_pagina_portafolio' => '/app/sitioweb/bloques/agregar/pagina-portafolio',
+    '/block/add/bt_blog_publication' => '/app/sitioweb/bloques/agregar/publicacion-blog',
+    '/block/add/bt_video' => '/app/sitioweb/bloques/agregar/video',
+  ];
+
+  foreach ($paths as $path => $alias) {
+    $path_alias = PathAlias::create([
+      'path' => $path,
+      'alias' => $alias,
+      'langcode' => 'es'
+    ]);
+    $path_alias->save();
+  }
 
   // Allow visitor account creation with administrative approval.
   $user_settings = \Drupal::configFactory()->getEditable('user.settings');
