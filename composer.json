@@ -14,11 +14,17 @@
         }
     ],
     "require": {
-        "drupal/bt_article": "^2.0.0-alpha2",
-        "drupal/bt_basic_page": "^2.0.0-alpha1",
-        "drupal/bt_blog": "^2.0.0-alpha1",
-        "drupal/bt_image_gallery": "^2.0.0-alpha1",
-        "drupal/bt_commerce": "^2.0.0-alpha1",
+        "drupal/bt_personas": "2.x",
+        "drupal/bt_core": "2.x",
+        "drupal/bt_cms": "2.x",
+        "drupal/bt_media": "2.x",
+        "drupal/bt_image": "2.x",
+        "drupal/bt_cbc": "2.x",
+        "drupal/bt_article": "2.x",
+        "drupal/bt_basic_page": "2.x",
+        "drupal/bt_blog": "2.x",
+        "drupal/bt_image_gallery": "2.x",
+        "drupal/bt_commerce": "2.x",
         "drupal/commerce_webpay": "^2.0-beta2",
         "drupal/components": "^3.0.0-beta2"
     }
