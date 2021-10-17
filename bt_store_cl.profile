@@ -181,8 +181,10 @@ function _bt_store_cl_post_install_tasks(array &$install_state) {
   // Flush all cache.
   drupal_flush_all_caches();
 
-  // Delete views unused.
-  /*\Drupal::configFactory()->getEditable('views.view.media')->delete();*/
+  // Delete unused views.
+  \Drupal::configFactory()->getEditable('views.view.content')->delete();
+  \Drupal::configFactory()->getEditable('views.view.files')->delete();
+  \Drupal::configFactory()->getEditable('views.view.block_content')->delete();
   \Drupal::configFactory()->getEditable('views.view.poll_admin')->delete();
 
   // Disable bt_install_theme.
