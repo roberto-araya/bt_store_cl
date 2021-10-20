@@ -186,6 +186,7 @@ function _bt_store_cl_post_install_tasks(array &$install_state) {
   \Drupal::configFactory()->getEditable('views.view.files')->delete();
   \Drupal::configFactory()->getEditable('views.view.block_content')->delete();
   \Drupal::configFactory()->getEditable('views.view.poll_admin')->delete();
+  \Drupal::configFactory()->getEditable('views.view.media')->delete();
 
   // Disable bt_install_theme.
   $theme_installer = Drupal::service('theme_installer');
