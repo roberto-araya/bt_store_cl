@@ -91,10 +91,23 @@ function bt_store_cl_install() {
   user_role_grant_permissions(RoleInterface::AUTHENTICATED_ID, $authenticate);
 
   // Assign user 1 the "administrador" role.
+  $admin_roles = [
+    'bt_admin_application',
+    'bt_admin_blocks',
+    'bt_create_content',
+    'bt_add_forum_discussion',
+    'bt_delete_own_content',
+    'bt_use_full_redaction_format',
+    'bt_use_simple_redaction_format',
+    'bt_edit_publish_content',
+    'bt_moderate_comments'
+  ];
   $user = User::load(1);
-  $user->roles[] = 'bt_admin_application';
-  $user->save();
-
+  foreach ($admin_roles as $role) {
+    $user->addRole($role);
+    $user->save();
+  }
+  
   // We install some menu links, so we have to rebuild the router, to ensure the
   // menu links are valid.
   Drupal::service('router.builder')->rebuildIfNeeded();
