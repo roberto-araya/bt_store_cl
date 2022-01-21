@@ -21,6 +21,7 @@ dependencies:
   - bt_toolbar:bt_toolbar
   - bt_cbc:bt_cbc
   - bt_commerce:bt_commerce
+  - bt_layouts:bt_layouts
   - commerce_webpay:commerce_webpay
   - components:components
   - button_link:button_link

@@ -25,6 +25,7 @@
         "drupal/bt_blog": "2.x",
         "drupal/bt_image_gallery": "2.x",
         "drupal/bt_commerce": "2.x",
+        "drupal/bt_layouts": "1.x",
         "drupal/commerce_webpay": "^2.0-beta2",
         "drupal/components": "^3.0.0-beta2"
     }
