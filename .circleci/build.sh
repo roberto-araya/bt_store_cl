@@ -113,7 +113,7 @@ mkdir -p "${BUILD_DIR}/web/profiles/${MODULE}"
 ln -s "$(pwd)"/* "${BUILD_DIR}/web/profiles/${MODULE}" && rm "${BUILD_DIR}/web/profiles/${MODULE}/${BUILD_DIR}"
 
 echo "==> Install Drupal into SQLite database ${DB_FILE}."
-"${BUILD_DIR}/vendor/bin/drush" -r "${BUILD_DIR}/web" si "${DRUPAL_PROFILE}" -y --db-url "sqlite://${DB_FILE}" --account-name=admin install_configure_form.enable_update_status_module=NULL install_configure_form.enable_update_status_emails=NULL
+php -d memory_limit=-1 "$(command -v ${BUILD_DIR}/vendor/bin/drush)" -r "${BUILD_DIR}/web" si "${DRUPAL_PROFILE}" -y --db-url "sqlite://${DB_FILE}" --account-name=admin install_configure_form.enable_update_status_module=NULL install_configure_form.enable_update_status_emails=NULL install_configure_form.store_name="Tienda Prueba" install_configure_form.store_mail="prueba@prueba.cl" install_configure_form.address="Somewhere 000"
 "${BUILD_DIR}/vendor/bin/drush" -r "$(pwd)/${BUILD_DIR}/web" status
 
 echo "==> Cache Rebuild."
