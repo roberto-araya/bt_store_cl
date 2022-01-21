@@ -92,6 +92,7 @@ function bt_store_cl_install() {
 
   // Assign user 1 the "administrador" role.
   $admin_roles = [
+    'administrator',
     'bt_admin_application',
     'bt_admin_blocks',
     'bt_create_content',
@@ -102,11 +103,14 @@ function bt_store_cl_install() {
     'bt_edit_publish_content',
     'bt_moderate_comments'
   ];
+
   $user = User::load(1);
-  foreach ($admin_roles as $role) {
-    $user->addRole($role);
-    $user->save();
-  }
+  $user->roles = $admin_roles;
+  $user->save();
+
+  $personas = ['bt_web_admin', 'bt_content_creator', 'bt_content_editor_publisher'];
+  $user->set('personas', $personas);
+  $user->save();
   
   // We install some menu links, so we have to rebuild the router, to ensure the
   // menu links are valid.
