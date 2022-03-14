@@ -24,7 +24,6 @@ dependencies:
   - bt_layouts:bt_layouts
   - commerce_webpay:commerce_webpay
   - components:components
-  - button_link:button_link
   - twig_tweak:twig_tweak
   - twig_tools:twig_tools
   - layout_builder_modal:layout_builder_modal
