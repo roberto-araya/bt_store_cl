@@ -22,6 +22,12 @@ dependencies:
   - bt_cbc:bt_cbc
   - bt_commerce:bt_commerce
   - bt_layouts:bt_layouts
+  - bt_crm:bt_crm
+  - bt_crm:bt_crm_client
+  - bt_crm:bt_crm_company
+  - bt_crm:bt_crm_contact
+  - bt_crm:bt_crm_potential_client
+  - bt_crm:bt_crm_supplier
   - commerce_webpay:commerce_webpay
   - components:components
   - twig_tweak:twig_tweak
