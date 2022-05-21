@@ -1,0 +1,37 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.bt_cb_contact_info
+    - field.field.block_content.bt_cb_contact_info.field_bt_address
+    - field.field.block_content.bt_cb_contact_info.field_bt_blq_desc
+    - field.field.block_content.bt_cb_contact_info.field_bt_blq_title
+    - field.field.block_content.bt_cb_contact_info.field_bt_enable_icons
+    - field.field.block_content.bt_cb_contact_info.field_bt_phones
+  module:
+    - address
+id: block_content.bt_cb_contact_info.default
+targetEntityType: block_content
+bundle: bt_cb_contact_info
+mode: default
+content:
+  field_bt_address:
+    type: address_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_bt_phones:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_bt_blq_desc: true
+  field_bt_blq_title: true
+  field_bt_enable_icons: true
+  langcode: true
