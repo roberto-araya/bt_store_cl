@@ -34,6 +34,12 @@ dependencies:
   - twig_tools:twig_tools
   - layout_builder_modal:layout_builder_modal
   - cssvars:cssvars
+  - custom_markup_block:custom_markup_block
+  - layout_builder_restrictions:layout_builder_restrictions
+  - media_library_form_element:media_library_form_element
+  - media_parent_entity_link:media_parent_entity_link
+  - responsive_background_image:responsive_background_image
+  - filter_perms:filter_perms
 themes:
   - bt_install_theme
   - thunder_admin
