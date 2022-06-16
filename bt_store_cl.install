@@ -9,6 +9,7 @@ use Drupal\user\Entity\User;
 use Drupal\user\RoleInterface;
 use Drupal\path_alias\Entity\PathAlias;
 use Drupal\user\UserInterface;
+use Drupal\node\Entity\Node;
 
 /**
  * Implements hook_install().
@@ -120,4 +121,35 @@ function bt_store_cl_install() {
   Drupal::configFactory()->getEditable('node.settings')->set('use_admin_theme', TRUE)->save(TRUE);
 
   Drupal::configFactory()->getEditable('system.date')->set('first_day', 1)->save(TRUE);
+
+  // Create pages.
+  $pages = [
+    '403' => [
+      'name' => 'page.403',
+      'route' => '/node/1'
+    ],
+    '404' => [
+      'name' => 'page.404',
+      'route' => '/node/2'
+    ],
+    'Inicio' => [
+      'name' => 'page.front',
+      'route' => '/node/3'
+    ]
+  ];
+
+  foreach ($pages as $title => $conf) {
+    $node = Node::create([
+      'type' => 'bt_basic_page',
+      'title' => $title,
+      'uid' => 1,
+    ]);
+    $node->save();
+
+    // Add page to site config.
+    \Drupal::configFactory()
+    ->getEditable('system.site')
+    ->set($conf['name'], $conf['route'])
+    ->save();
+  }
 }
