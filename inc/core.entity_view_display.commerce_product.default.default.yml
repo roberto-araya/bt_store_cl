@@ -1,0 +1,132 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.default
+    - field.field.commerce_product.default.body
+    - field.field.commerce_product.default.field_bt_category
+    - field.field.commerce_product.default.field_bt_image
+    - field.field.commerce_product.default.layout_builder__layout
+    - system.menu.bt-product-categories
+  module:
+    - bt_layouts
+    - commerce_product
+    - ctools
+    - layout_builder
+    - layout_builder_restrictions
+    - layout_library
+    - system
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: bt_two_columns
+        layout_settings:
+          label: Producto
+          context_mapping: {  }
+          container_type: box
+          background_color: default
+          padding_top: pt-normal
+          padding_bottom: pb-normal
+          class: ''
+          gap: gap-normal
+          hide_label: 1
+          label_color: default
+          label_custom_color: '#000000'
+          background_custom_color: '#000000'
+          columns_size: 30-70
+        components:
+          ebe48730-7a27-416f-9ceb-c96188423207:
+            uuid: ebe48730-7a27-416f-9ceb-c96188423207
+            region: twoColumns__right
+            configuration:
+              id: 'entity_view:commerce_product'
+              label: 'Entity view (Product)'
+              label_display: '0'
+              provider: ctools
+              view_mode: bt_full
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+            third_party_settings: {  }
+          e070b89c-ad29-4794-bb3e-3258d8d20407:
+            uuid: e070b89c-ad29-4794-bb3e-3258d8d20407
+            region: twoColumns__left
+            configuration:
+              id: 'system_menu_block:bt-product-categories'
+              label: Categorías
+              label_display: visible
+              provider: system
+              context_mapping: {  }
+              level: 1
+              depth: 5
+              expand_all_items: true
+            weight: 0
+            additional: {  }
+            third_party_settings: {  }
+        third_party_settings: {  }
+  layout_library:
+    enable: false
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      allowed_layouts: {  }
+      blacklisted_blocks: {  }
+      whitelisted_blocks: {  }
+      restricted_categories: {  }
+id: commerce_product.default.default
+targetEntityType: commerce_product
+bundle: default
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_bt_category:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_bt_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: bt_mid_square
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  variations:
+    type: commerce_add_to_cart
+    label: hidden
+    settings:
+      combine: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  created: true
+  langcode: true
+  layout_builder__layout: true
+  search_api_excerpt: true
+  stores: true
+  uid: true

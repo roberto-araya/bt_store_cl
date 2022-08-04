@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Product Brand'
+vid: bt_product_brand
+description: 'Product Brand Category'
+weight: 0

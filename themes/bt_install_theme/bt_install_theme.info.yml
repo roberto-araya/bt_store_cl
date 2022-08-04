@@ -1,8 +1,8 @@
 name: Chile Store Install Theme
 type: theme
-# core: 8.x
-core_version_requirement: ^8
+core_version_requirement: ^9
 base theme: seven
+hidden: true
 
 libraries-override:
   seven/install-page:
@@ -26,5 +26,3 @@ regions:
   sidebar_first: 'First sidebar'
 regions_hidden:
   - sidebar_first
-# Information added by Drupal.org packaging script on 2016-08-23
-core: '8.x'

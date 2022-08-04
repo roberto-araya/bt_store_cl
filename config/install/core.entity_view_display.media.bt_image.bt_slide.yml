@@ -1,0 +1,58 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.bt_slide
+    - field.field.media.bt_image.field_bt_image
+    - image.style.bt_mid_landscape_md
+    - media.type.bt_image
+    - responsive_image.styles.bt_mid_landscape
+  module:
+    - blazy
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: media.bt_image.bt_slide
+targetEntityType: media
+bundle: bt_image
+mode: bt_slide
+content:
+  field_bt_image:
+    type: blazy
+    label: hidden
+    settings:
+      caption:
+        title: '0'
+        alt: '0'
+      layout: ''
+      view_mode: ''
+      cache: 0
+      skin: ''
+      lazy: ''
+      style: ''
+      background: false
+      box_caption: ''
+      box_caption_custom: ''
+      box_media_style: ''
+      loading: ''
+      preload: true
+      responsive_image_style: bt_mid_landscape
+      box_style: ''
+      image_style: bt_mid_landscape_md
+      media_switch: ''
+      ratio: '8:5'
+      thumbnail_style: ''
+      grid: ''
+      grid_medium: ''
+      grid_small: ''
+    third_party_settings: { }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

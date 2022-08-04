@@ -1,0 +1,50 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.bt_cb_section_title
+    - core.entity_view_mode.block_content.bt_left_offset
+    - field.field.block_content.bt_cb_section_title.field_bt_blq_desc
+    - field.field.block_content.bt_cb_section_title.field_bt_blq_title
+    - field.field.block_content.bt_cb_section_title.field_bt_content_title
+    - field.field.block_content.bt_cb_section_title.field_bt_epigrafe
+    - field.field.block_content.bt_cb_section_title.field_bt_paragraph
+  module:
+    - layout_builder
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: block_content.bt_cb_section_title.bt_left_offset
+targetEntityType: block_content
+bundle: bt_cb_section_title
+mode: bt_left_offset
+content:
+  field_bt_content_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_bt_epigrafe:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_bt_paragraph:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_bt_blq_desc: true
+  field_bt_blq_title: true
+  langcode: true

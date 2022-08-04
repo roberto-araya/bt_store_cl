@@ -1,7 +1,7 @@
 name: Chile Tienda
 type: profile
 description: Install profile for Chile Store.
-core_version_requirement: ^9.2
+core_version_requirement: ^9.4
 exclusive: TRUE
 distribution:
   name: Chile Store
@@ -40,6 +40,7 @@ dependencies:
   - media_parent_entity_link:media_parent_entity_link
   - responsive_background_image:responsive_background_image
   - filter_perms:filter_perms
+  - views_css_grid:views_css_grid
 themes:
   - bt_install_theme
   - thunder_admin

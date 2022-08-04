@@ -14,6 +14,7 @@
         }
     ],
     "require": {
+        "drupal/ctools": "~3.9.0",
         "drupal/bt_personas": "^2.x-dev",
         "drupal/bt_core": "^2.x-dev",
         "drupal/bt_cms": "^2.x-dev",
@@ -37,6 +38,14 @@
         "drupal/media_library_form_element": "^2.0",
         "drupal/media_parent_entity_link": "^1.x-dev",
         "drupal/responsive_background_image": "^2.0@beta",
-        "drupal/filter_perms": "^1.0@alpha"
+        "drupal/filter_perms": "^1.0@alpha",
+        "drupal/views_css_grid": "^1.0.x-dev"
+    },
+    "extra": {
+      "patches": {
+        "drupal/core": {
+          "Support third party settings for components within a section": "https://www.drupal.org/files/issues/2022-04-27/3015152-147.patch"
+        }
+      } 
     }
 }

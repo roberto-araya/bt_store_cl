@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: bt_categoria_productos
+label: 'Categoria Productos'
+type: 'canonical_entities:taxonomy_term'
+pattern: '/productos/[term:parent]/[term:name]'
+selection_criteria:
+  0983f3a4-bac1-4dbd-a45e-569aece78f79:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 0983f3a4-bac1-4dbd-a45e-569aece78f79
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      bt_product_categories: bt_product_categories
+selection_logic: and
+weight: -5
+relationships: {  }

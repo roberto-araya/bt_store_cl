@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.bt_cb_map
+    - field.field.block_content.bt_cb_map.field_bt_blq_desc
+    - field.field.block_content.bt_cb_map.field_bt_blq_map
+    - field.field.block_content.bt_cb_map.field_bt_blq_title
+  module:
+    - google_map_field
+id: block_content.bt_cb_map.default
+targetEntityType: block_content
+bundle: bt_cb_map
+mode: default
+content:
+  field_bt_blq_map:
+    type: google_map_field_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_bt_blq_desc: true
+  field_bt_blq_title: true
+  langcode: true

@@ -10,6 +10,7 @@ use Drupal\user\RoleInterface;
 use Drupal\path_alias\Entity\PathAlias;
 use Drupal\user\UserInterface;
 use Drupal\node\Entity\Node;
+use Drupal\Core\Config\FileStorage;
 
 /**
  * Implements hook_install().
@@ -109,7 +110,13 @@ function bt_store_cl_install() {
   $user->roles = $admin_roles;
   $user->save();
 
-  $personas = ['bt_web_admin', 'bt_content_creator', 'bt_content_editor_publisher'];
+  $personas = [
+    'bt_web_admin',
+    'bt_content_creator',
+    'bt_content_editor_publisher',
+    'bt_commercial_executive',
+    'bt_contacts_activities_manager',
+  ];
   $user->set('personas', $personas);
   $user->save();
   
@@ -152,4 +159,27 @@ function bt_store_cl_install() {
     ->set($conf['name'], $conf['route'])
     ->save();
   }
+
+    // Replace default user's form display.
+    $config_factory = \Drupal::configFactory();
+
+    $config_factory->getEditable('core.entity_form_display.commerce_product.default.default')->delete();
+    bt_store_cl_import_single_config('core.entity_form_display.commerce_product.default.default');
+
+    $config_factory->getEditable('core.entity_view_display.commerce_product.default.default')->delete();
+    bt_store_cl_import_single_config('core.entity_view_display.commerce_product.default.default');
+
+}
+
+/**
+ * Helper function to import single config file.
+ *
+ * @param string $config_name
+ *   The name of the config item to import from the config sync folder.
+ */
+function bt_store_cl_import_single_config($config_name) {
+  $config_path = drupal_get_path('module', 'bt_store_cl') . '/inc';
+  $source = new FileStorage($config_path);
+  $config_storage = \Drupal::service('config.storage');
+  $config_storage->write($config_name, $source->read($config_name));
 }

@@ -1,0 +1,145 @@
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.base_field_override.node.bt_basic_page.title
+    - core.entity_view_mode.node.full
+    - field.field.node.bt_basic_page.field_bt_css
+    - field.field.node.bt_basic_page.layout_builder__layout
+    - field.field.node.bt_basic_page.layout_selection
+    - node.type.bt_basic_page
+  module:
+    - layout_builder
+    - layout_builder_restrictions
+    - layout_discovery
+    - layout_library
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          341c2ad6-6731-4e95-99d2-196e7a3d18c3:
+            uuid: 341c2ad6-6731-4e95-99d2-196e7a3d18c3
+            region: content
+            configuration:
+              id: 'extra_field_block:node:bt_basic_page:content_moderation_control'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+            third_party_settings: {  }
+          25488d72-f51a-4086-8954-af52df18ab9c:
+            uuid: 25488d72-f51a-4086-8954-af52df18ab9c
+            region: content
+            configuration:
+              id: 'field_block:node:bt_basic_page:title'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+            third_party_settings: {  }
+          3833cfa1-af42-4108-b577-5a11cee6f0ef:
+            uuid: 3833cfa1-af42-4108-b577-5a11cee6f0ef
+            region: content
+            configuration:
+              id: 'extra_field_block:node:bt_basic_page:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 2
+            additional: {  }
+            third_party_settings: {  }
+        third_party_settings: {  }
+  layout_library:
+    enable: true
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      allowed_layouts:
+        - bt_one_column
+        - bt_two_columns
+        - bt_two_columns_header
+        - bt_three_columns
+        - bt_three_columns_header
+        - bt_four_columns
+        - bt_four_columns_header
+        - bt_five_columns
+        - bt_five_columns_header
+      blacklisted_blocks:
+        Menus:
+          - 'system_menu_block:admin'
+          - 'system_menu_block:bt-menu-app'
+          - 'system_menu_block:tools'
+          - 'system_menu_block:main'
+          - 'system_menu_block:footer'
+      whitelisted_blocks:
+        'Chaos Tools':
+          - 'entity_view:node'
+          - 'entity_view:user'
+        Commerce:
+          - commerce_cart
+        'Content fields':
+          - 'field_block:node:bt_basic_page:field_bt_css'
+          - 'field_block:node:bt_basic_page:title'
+        'Custom Blocks':
+          - custom_markup
+        Forms: {  }
+        Help: {  }
+        'Lists (Views)':
+          - 'views_block:content_recent-block_1'
+        System:
+          - 'language_block:language_interface'
+          - system_breadcrumb_block
+          - system_powered_by_block
+          - system_branding_block
+          - system_messages_block
+        Webform:
+          - webform_block
+        core:
+          - page_title_block
+      restricted_categories:
+        - 'Admin UI'
+        - Block
+        - 'RedHen Contact'
+id: node.bt_basic_page.full
+targetEntityType: node
+bundle: bt_basic_page
+mode: full
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -5
+    region: content
+hidden:
+  field_bt_css: true
+  langcode: true
+  layout_builder__layout: true
+  layout_selection: true

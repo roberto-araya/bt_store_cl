@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies: {  }
+id: bt_home_001
+label: 'Home 001'
+targetEntityType: node
+targetBundle: bt_basic_page
+layout:
+  -
+    layout_id: bt_one_column
+    layout_settings:
+      label: Hero
+      context_mapping: {  }
+      container_type: full
+      background_color: default
+      padding_top: pt-none
+      padding_bottom: pb-none
+      class: ''
+      hide_label: 1
+      label_color: default
+      label_custom_color: '#000000'
+      background_custom_color: '#000000'
+    components: {  }
+    third_party_settings: {  }

@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.bt_cb_highlighted_text
+    - field.field.block_content.bt_cb_highlighted_text.field_bt_blq_desc
+    - field.field.block_content.bt_cb_highlighted_text.field_bt_blq_title
+    - field.field.block_content.bt_cb_highlighted_text.field_bt_highlighted_text
+  module:
+    - text
+id: block_content.bt_cb_highlighted_text.default
+targetEntityType: block_content
+bundle: bt_cb_highlighted_text
+mode: default
+content:
+  field_bt_highlighted_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_bt_blq_desc: true
+  field_bt_blq_title: true
+  langcode: true

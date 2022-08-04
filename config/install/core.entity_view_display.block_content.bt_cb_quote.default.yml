@@ -1,0 +1,49 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.bt_cb_quote
+    - field.field.block_content.bt_cb_quote.field_bt_blq_desc
+    - field.field.block_content.bt_cb_quote.field_bt_blq_title
+    - field.field.block_content.bt_cb_quote.field_bt_link_single
+    - field.field.block_content.bt_cb_quote.field_bt_paragraph
+    - field.field.block_content.bt_cb_quote.field_bt_source
+  module:
+    - link
+    - text
+id: block_content.bt_cb_quote.default
+targetEntityType: block_content
+bundle: bt_cb_quote
+mode: default
+content:
+  field_bt_link_single:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_bt_paragraph:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_bt_source:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_bt_blq_desc: true
+  field_bt_blq_title: true
+  langcode: true

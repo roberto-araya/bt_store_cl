@@ -1,0 +1,108 @@
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.bt_product_categories.layout_builder__layout
+    - system.menu.bt-product-categories
+    - taxonomy.vocabulary.bt_product_categories
+    - views.view.bt_products
+  module:
+    - bt_layouts
+    - layout_builder
+    - layout_discovery
+    - layout_library
+    - system
+    - text
+    - views
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          603a0ea7-f33c-454e-8b54-0ea3a3e25a32:
+            uuid: 603a0ea7-f33c-454e-8b54-0ea3a3e25a32
+            region: content
+            configuration:
+              id: 'field_block:taxonomy_term:bt_product_categories:description'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+            third_party_settings: {  }
+        third_party_settings: {  }
+      -
+        layout_id: bt_two_columns
+        layout_settings:
+          label: Products
+          context_mapping: {  }
+          container_type: box
+          background_color: default
+          padding_top: pt-none
+          padding_bottom: pb-none
+          class: ''
+          gap: gap-none
+          hide_label: 1
+          label_color: default
+          label_custom_color: '#000000'
+          background_custom_color: '#000000'
+          columns_size: 25-75
+        components:
+          07e9e3c1-e551-4a99-9640-3eea7b7bf246:
+            uuid: 07e9e3c1-e551-4a99-9640-3eea7b7bf246
+            region: twoColumns__right
+            configuration:
+              id: 'views_block:bt_products-default_product_block'
+              label: ''
+              label_display: '0'
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 0
+            additional: {  }
+            third_party_settings: {  }
+          44ddc6b0-df67-4825-9b3d-b6f5d6575415:
+            uuid: 44ddc6b0-df67-4825-9b3d-b6f5d6575415
+            region: twoColumns__left
+            configuration:
+              id: 'system_menu_block:bt-product-categories'
+              label: Categorías
+              label_display: visible
+              provider: system
+              context_mapping: {  }
+              level: 1
+              depth: 0
+              expand_all_items: false
+            weight: 0
+            additional: {  }
+            third_party_settings: {  }
+        third_party_settings: {  }
+  layout_library:
+    enable: false
+id: taxonomy_term.bt_product_categories.default
+targetEntityType: taxonomy_term
+bundle: bt_product_categories
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  layout_builder__layout: true
+  search_api_excerpt: true
