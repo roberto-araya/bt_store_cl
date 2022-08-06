@@ -42,6 +42,7 @@ dependencies:
   - filter_perms:filter_perms
   - views_css_grid:views_css_grid
   - commerce_pos:commerce_pos
+  - commerce_stock:commerce_stock
 themes:
   - bt_install_theme
   - thunder_admin

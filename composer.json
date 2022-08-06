@@ -30,6 +30,7 @@
         "drupal/bt_crm": "^2.x-dev",
         "drupal/commerce_webpay": "^2.0-beta2",
         "drupal/commerce_pos": "^2.6",
+        "drupal/commerce_stock": "^1.0",
         "drupal/components": "^3.0.0-beta2",
         "drupal/layout_builder_modal": "1.x",
         "drupal/twig_tools": "1.x",
