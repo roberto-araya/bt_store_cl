@@ -28,7 +28,6 @@ dependencies:
   - bt_crm:bt_crm_contact
   - bt_crm:bt_crm_potential_client
   - bt_crm:bt_crm_supplier
-  - commerce_webpay:commerce_webpay
   - components:components
   - twig_tweak:twig_tweak
   - twig_tools:twig_tools
