@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.bt_image_link
+    - field.field.block_content.bt_image_link.field_bt_image
+    - field.field.block_content.bt_image_link.field_bt_link_single
+    - image.style.bt_small_portrait_xl
+  module:
+    - image_link_formatter
+id: block_content.bt_image_link.default
+targetEntityType: block_content
+bundle: bt_image_link
+mode: default
+content:
+  field_bt_image:
+    type: image_link_formatter
+    label: hidden
+    settings:
+      image_style: bt_small_portrait_xl
+      image_link: field_bt_link_single
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_bt_link_single: true
+  langcode: true

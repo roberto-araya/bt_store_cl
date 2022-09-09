@@ -1,0 +1,40 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.bt_images_slide
+    - field.field.block_content.bt_images_slide.field_bt_blq_desc
+    - field.field.block_content.bt_images_slide.field_bt_blq_title
+    - field.field.block_content.bt_images_slide.field_bt_images
+id: block_content.bt_images_slide.default
+targetEntityType: block_content
+bundle: bt_images_slide
+mode: default
+content:
+  field_bt_blq_desc:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_bt_blq_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_bt_images:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: bt_slide
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true

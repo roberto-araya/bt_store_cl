@@ -1,4 +1,4 @@
-langcode: es
+langcode: en
 status: true
 dependencies:
   config:
@@ -56,25 +56,11 @@ third_party_settings:
           label_color: default
           label_custom_color: '#000000'
           background_custom_color: '#000000'
-          columns_size: 25-75
+          columns_size: 75-25
         components:
-          07e9e3c1-e551-4a99-9640-3eea7b7bf246:
-            uuid: 07e9e3c1-e551-4a99-9640-3eea7b7bf246
-            region: twoColumns__right
-            configuration:
-              id: 'views_block:bt_products-default_product_block'
-              label: ''
-              label_display: '0'
-              provider: views
-              context_mapping: {  }
-              views_label: ''
-              items_per_page: none
-            weight: 0
-            additional: {  }
-            third_party_settings: {  }
           44ddc6b0-df67-4825-9b3d-b6f5d6575415:
             uuid: 44ddc6b0-df67-4825-9b3d-b6f5d6575415
-            region: twoColumns__left
+            region: twoColumns__right
             configuration:
               id: 'system_menu_block:bt-product-categories'
               label: Categorías
@@ -84,6 +70,20 @@ third_party_settings:
               level: 1
               depth: 0
               expand_all_items: false
+            weight: 1
+            additional: {  }
+            third_party_settings: {  }
+          07e9e3c1-e551-4a99-9640-3eea7b7bf246:
+            uuid: 07e9e3c1-e551-4a99-9640-3eea7b7bf246
+            region: twoColumns__left
+            configuration:
+              id: 'views_block:bt_products-default_product_block'
+              label: ''
+              label_display: '0'
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
             weight: 0
             additional: {  }
             third_party_settings: {  }

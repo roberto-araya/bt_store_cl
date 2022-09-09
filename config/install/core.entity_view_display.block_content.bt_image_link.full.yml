@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.bt_image_link
+    - core.entity_view_mode.block_content.full
+    - field.field.block_content.bt_image_link.field_bt_image
+    - field.field.block_content.bt_image_link.field_bt_link_single
+    - image.style.bt_small_portrait_2xl
+  module:
+    - image_link_formatter
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: block_content.bt_image_link.full
+targetEntityType: block_content
+bundle: bt_image_link
+mode: full
+content:
+  field_bt_image:
+    type: image_link_formatter
+    label: hidden
+    settings:
+      image_style: bt_small_portrait_2xl
+      image_link: field_bt_link_single
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_bt_link_single: true
+  langcode: true
