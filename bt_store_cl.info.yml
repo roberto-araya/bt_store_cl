@@ -42,6 +42,7 @@ dependencies:
   - views_css_grid:views_css_grid
   - commerce_stock:commerce_stock
   - easy_breadcrumb:easy_breadcrumb
+  - views_bootstrap:views_bootstrap
 themes:
   - bt_install_theme
   - thunder_admin
