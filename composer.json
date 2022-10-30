@@ -28,7 +28,6 @@
         "drupal/bt_commerce": "^2.x-dev",
         "drupal/bt_layouts": "^1.x-dev",
         "drupal/bt_crm": "^2.x-dev",
-        "drupal/commerce_webpay": "^2.0-beta2",
         "drupal/commerce_pos": "^2.6",
         "drupal/commerce_stock": "^1.0",
         "drupal/components": "^3.0.0-beta2",
@@ -46,7 +45,11 @@
         "drupal/menu_block": "^1.8",
         "drupal/menu_item_extras": "^2.17",
         "drupal/product_taxonomy_filter": "^3.x-dev@dev",
-        "drupal/views_bootstrap": "^5.5@alpha"
+        "drupal/views_bootstrap": "^5.5@alpha",
+        "drupal/metatag": "1.x-dev",
+        "drupal/schema_metatag": "^2.3",
+        "drupal/symfony_mailer": "1.x-dev",
+        "drupal/transbank": "^2.0@beta"
     },
     "extra": {
       "patches": {

@@ -43,6 +43,11 @@ dependencies:
   - commerce_stock:commerce_stock
   - easy_breadcrumb:easy_breadcrumb
   - views_bootstrap:views_bootstrap
+  - metatag:metatag
+  - schema_metatag:schema_metatag
+  - symfony_mailer:symfony_mailer
+  - transbank:transbank
+  - transbank:transbank_webpay_plus
 themes:
   - bt_install_theme
   - thunder_admin
