@@ -1,4 +1,4 @@
-langcode: en
+langcode: es
 status: true
 dependencies:
   config:
@@ -9,6 +9,7 @@ dependencies:
   module:
     - bt_layouts
     - layout_builder
+    - layout_builder_restrictions
     - layout_discovery
     - layout_library
     - system
@@ -44,19 +45,67 @@ third_party_settings:
       -
         layout_id: bt_two_columns
         layout_settings:
-          label: Products
+          label: Productos
           context_mapping: {  }
-          container_type: box
           background_color: default
-          padding_top: pt-none
-          padding_bottom: pb-none
           class: ''
-          gap: gap-none
+          container_select: full
+          full_select: '0'
+          box_select: 100%
+          padding_top: pt-1
+          padding_bottom: pb-1
+          sm_container_select: full
+          sm_full_select: '0'
+          sm_sm_box_select: 100%
+          sm_sm_padding_top: none
+          sm_sm_padding_bottom: none
+          md_container_select: full
+          md_full_select: '0'
+          md_sm_box_select: 100%
+          md_sm_padding_top: none
+          md_sm_padding_bottom: none
+          lg_container_select: full
+          lg_full_select: '0'
+          lg_sm_box_select: 100%
+          lg_sm_padding_top: none
+          lg_sm_padding_bottom: none
+          xl_container_select: full
+          xl_full_select: 10%
+          xl_sm_box_select: 100%
+          xl_sm_padding_top: none
+          xl_sm_padding_bottom: none
+          xxl_container_select: full
+          xxl_full_select: 10%
+          xxl_sm_box_select: 100%
+          xxl_sm_padding_top: none
+          xxl_sm_padding_bottom: none
+          gap: gap-1
+          sm_gap: gap-sm-1
+          md_gap: gap-md-1
+          lg_gap: gap-lg-1
+          xl_gap: gap-xl-3
+          xxl_gap: gap-xxl-3
+          container_type: box
           hide_label: 1
           label_color: default
           label_custom_color: '#000000'
           background_custom_color: '#000000'
           columns_size: 75-25
+          sm_box_select: 100%
+          sm_padding_top: pt-sm-1
+          sm_padding_bottom: pb-sm-1
+          md_box_select: 100%
+          md_padding_top: pt-md-1
+          md_padding_bottom: pb-md-1
+          lg_box_select: 100%
+          lg_padding_top: pt-lg-1
+          lg_padding_bottom: pb-lg-1
+          xl_box_select: 100%
+          xl_padding_top: pt-xl-3
+          xl_padding_bottom: pb-xl-3
+          xxl_box_select: 100%
+          xxl_padding_top: pt-xxl-3
+          xxl_padding_bottom: pb-xxl-3
         components:
           44ddc6b0-df67-4825-9b3d-b6f5d6575415:
             uuid: 44ddc6b0-df67-4825-9b3d-b6f5d6575415
@@ -90,6 +139,15 @@ third_party_settings:
         third_party_settings: {  }
   layout_library:
     enable: false
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      allowed_layouts: {  }
+      denylisted_blocks: {  }
+      allowlisted_blocks: {  }
+      restricted_categories: {  }
+_core:
+  default_config_hash: '-HMqHG6hISvEYA7cW34ECU5ET-OUJACtdfAekadFVoY'
 id: taxonomy_term.bt_product_categories.default
 targetEntityType: taxonomy_term
 bundle: bt_product_categories
