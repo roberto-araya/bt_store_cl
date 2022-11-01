@@ -4,6 +4,7 @@ dependencies:
   config:
     - commerce_product.commerce_product_type.default
     - field.field.commerce_product.default.body
+    - field.field.commerce_product.default.field_bt_brand
     - field.field.commerce_product.default.field_bt_category
     - field.field.commerce_product.default.field_bt_image
     - field.field.commerce_product.default.layout_builder__layout
@@ -27,21 +28,69 @@ third_party_settings:
         layout_settings:
           label: Producto
           context_mapping: {  }
-          container_type: box
           background_color: default
-          padding_top: pt-normal
-          padding_bottom: pb-normal
           class: ''
-          gap: gap-normal
+          container_select: full
+          full_select: '0'
+          box_select: 100%
+          padding_top: pt-1
+          padding_bottom: pb-1
+          sm_container_select: full
+          sm_full_select: '0'
+          sm_sm_box_select: 100%
+          sm_sm_padding_top: none
+          sm_sm_padding_bottom: none
+          md_container_select: full
+          md_full_select: '0'
+          md_sm_box_select: 100%
+          md_sm_padding_top: none
+          md_sm_padding_bottom: none
+          lg_container_select: full
+          lg_full_select: 5%
+          lg_sm_box_select: 100%
+          lg_sm_padding_top: none
+          lg_sm_padding_bottom: none
+          xl_container_select: full
+          xl_full_select: 10%
+          xl_sm_box_select: 100%
+          xl_sm_padding_top: none
+          xl_sm_padding_bottom: none
+          xxl_container_select: full
+          xxl_full_select: 10%
+          xxl_sm_box_select: 100%
+          xxl_sm_padding_top: none
+          xxl_sm_padding_bottom: none
+          gap: gap-3
+          sm_gap: gap-sm-1
+          md_gap: gap-md-1
+          lg_gap: gap-lg-2
+          xl_gap: gap-xl-3
+          xxl_gap: gap-xxl-3
+          container_type: box
           hide_label: 1
           label_color: default
           label_custom_color: '#000000'
           background_custom_color: '#000000'
-          columns_size: 30-70
+          columns_size: 70-30
+          sm_box_select: 100%
+          sm_padding_top: pt-sm-1
+          sm_padding_bottom: pb-sm-1
+          md_box_select: 100%
+          md_padding_top: pt-md-1
+          md_padding_bottom: pb-md-1
+          lg_box_select: 100%
+          lg_padding_top: pt-lg-2
+          lg_padding_bottom: pb-lg-2
+          xl_box_select: 100%
+          xl_padding_top: pt-xl-3
+          xl_padding_bottom: pb-xl-3
+          xxl_box_select: 100%
+          xxl_padding_top: pt-xxl-3
+          xxl_padding_bottom: pb-xxl-3
         components:
           ebe48730-7a27-416f-9ceb-c96188423207:
             uuid: ebe48730-7a27-416f-9ceb-c96188423207
-            region: twoColumns__right
+            region: twoColumns__left
             configuration:
               id: 'entity_view:commerce_product'
               label: 'Entity view (Product)'
@@ -50,12 +99,12 @@ third_party_settings:
               view_mode: bt_full
               context_mapping:
                 entity: layout_builder.entity
-            weight: 0
+            weight: 1
             additional: {  }
             third_party_settings: {  }
           e070b89c-ad29-4794-bb3e-3258d8d20407:
             uuid: e070b89c-ad29-4794-bb3e-3258d8d20407
-            region: twoColumns__left
+            region: twoColumns__right
             configuration:
               id: 'system_menu_block:bt-product-categories'
               label: Categorías
@@ -75,9 +124,9 @@ third_party_settings:
     allowed_block_categories: {  }
     entity_view_mode_restriction:
       allowed_layouts: {  }
+      restricted_categories: {  }
       blacklisted_blocks: {  }
       whitelisted_blocks: {  }
-      restricted_categories: {  }
 id: commerce_product.default.default
 targetEntityType: commerce_product
 bundle: default
@@ -125,6 +174,7 @@ content:
     region: content
 hidden:
   created: true
+  field_bt_brand: true
   langcode: true
   layout_builder__layout: true
   search_api_excerpt: true
