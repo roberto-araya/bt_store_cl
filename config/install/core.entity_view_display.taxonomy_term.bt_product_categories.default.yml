@@ -146,8 +146,6 @@ third_party_settings:
       denylisted_blocks: {  }
       allowlisted_blocks: {  }
       restricted_categories: {  }
-_core:
-  default_config_hash: '-HMqHG6hISvEYA7cW34ECU5ET-OUJACtdfAekadFVoY'
 id: taxonomy_term.bt_product_categories.default
 targetEntityType: taxonomy_term
 bundle: bt_product_categories
