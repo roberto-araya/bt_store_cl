@@ -197,10 +197,10 @@ display:
         type: css_grid
         options:
           mode: auto-fill
-          gap: 1rem
+          gap: 12px
           grid_auto_flow: ''
           minmax:
-            min: 300px
+            min: 192px
             max: 1fr
           align_justify:
             justify_items: ''
