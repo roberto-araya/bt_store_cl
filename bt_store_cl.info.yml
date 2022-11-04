@@ -48,6 +48,7 @@ dependencies:
   - symfony_mailer:symfony_mailer
   - transbank:transbank
   - transbank:transbank_webpay_plus
+  - product_taxonomy_filter:product_taxonomy_filter
 themes:
   - bt_install_theme
   - thunder_admin

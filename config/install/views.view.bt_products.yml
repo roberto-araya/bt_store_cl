@@ -7,9 +7,10 @@ dependencies:
   module:
     - commerce
     - commerce_product
+    - product_taxonomy_filter
     - views_css_grid
 id: bt_products
-label: Products
+label: Productos
 module: views
 description: 'List of all default products.'
 tag: ''
@@ -18,11 +19,11 @@ base_field: product_id
 display:
   default:
     id: default
-    display_title: Default
+    display_title: Predeterminado
     display_plugin: default
     position: 0
     display_options:
-      title: Products
+      title: Productos
       fields:
         title:
           id: title
@@ -112,9 +113,9 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
+          submit_button: Aplicar
           reset_button: false
-          reset_button_label: Reset
+          reset_button_label: Resetear
           exposed_sorts_label: 'Order by'
           expose_sort_order: true
           sort_asc_label: Asc
@@ -128,14 +129,15 @@ display:
       empty: {  }
       sorts: {  }
       arguments:
-        field_bt_category_target_id:
-          id: field_bt_category_target_id
-          table: commerce_product__field_bt_category
-          field: field_bt_category_target_id
+        term_product_tid_depth:
+          id: term_product_tid_depth
+          table: commerce_product_field_data
+          field: term_product_tid_depth
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: numeric
+          entity_type: commerce_product
+          plugin_id: taxonomy_index_tid_product_depth
           default_action: default
           exception:
             value: all
@@ -166,7 +168,9 @@ display:
             fail: 'not found'
           validate_options: {  }
           break_phrase: false
-          not: false
+          depth: '3'
+          use_taxonomy_term_path: false
+          reference_field: field_bt_category
       filters:
         status:
           id: status
@@ -241,7 +245,7 @@ display:
     display_options:
       display_extenders: {  }
       block_description: 'Default Product'
-      block_category: Commerce
+      block_category: Comercio
     cache_metadata:
       max-age: -1
       contexts:
