@@ -160,14 +160,21 @@ function bt_store_cl_install() {
     ->save();
   }
 
-    // Replace default user's form display.
-    $config_factory = \Drupal::configFactory();
+  $node = Node::create([
+    'type' => 'bt_basic_page',
+    'title' => 'Tienda',
+    'uid' => 1,
+  ]);
+  $node->save();
 
-    $config_factory->getEditable('core.entity_form_display.commerce_product.default.default')->delete();
-    bt_store_cl_import_single_config('core.entity_form_display.commerce_product.default.default');
+  // Replace default user's form display.
+  $config_factory = \Drupal::configFactory();
 
-    $config_factory->getEditable('core.entity_view_display.commerce_product.default.default')->delete();
-    bt_store_cl_import_single_config('core.entity_view_display.commerce_product.default.default');
+  $config_factory->getEditable('core.entity_form_display.commerce_product.default.default')->delete();
+  bt_store_cl_import_single_config('core.entity_form_display.commerce_product.default.default');
+
+  $config_factory->getEditable('core.entity_view_display.commerce_product.default.default')->delete();
+  bt_store_cl_import_single_config('core.entity_view_display.commerce_product.default.default');
 
 }
 
