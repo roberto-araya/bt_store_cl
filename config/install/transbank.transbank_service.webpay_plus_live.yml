@@ -1,0 +1,11 @@
+langcode: es
+status: true
+dependencies: {  }
+id: webpay_plus_live
+label: 'Webpay Plus Live'
+description: 'The production (live) service for Webpay Plus Store'
+type: webpay_plus
+service_settings:
+  commerce_code: ''
+  api_key: 
+  environment: LIVE
