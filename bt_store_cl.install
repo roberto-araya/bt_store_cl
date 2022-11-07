@@ -176,6 +176,8 @@ function bt_store_cl_install() {
   $config_factory->getEditable('core.entity_view_display.commerce_product.default.default')->delete();
   bt_store_cl_import_single_config('core.entity_view_display.commerce_product.default.default');
 
+  $config_factory->getEditable('core.entity_view_display.node.blog_post.default')->delete();
+  bt_store_cl_import_single_config('core.entity_view_display.node.blog_post.default');
 }
 
 /**
