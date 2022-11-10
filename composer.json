@@ -46,9 +46,9 @@
         "drupal/menu_item_extras": "^2.17",
         "drupal/product_taxonomy_filter": "^3.x-dev@dev",
         "drupal/views_bootstrap": "^5.5@alpha",
-        "drupal/metatag": "1.x-dev",
+        "drupal/metatag": "^1.22",
         "drupal/schema_metatag": "^2.3",
-        "drupal/symfony_mailer": "1.x-dev",
+        "drupal/symfony_mailer": "^1.1@beta",
         "drupal/transbank": "^2.0@beta"
     },
     "extra": {
