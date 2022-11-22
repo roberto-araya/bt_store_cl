@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.bt_blog_author
+label: 'Blog Author'
+targetEntityType: user
+cache: true
