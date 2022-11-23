@@ -167,6 +167,13 @@ function bt_store_cl_install() {
   ]);
   $node->save();
 
+  $node = Node::create([
+    'type' => 'bt_basic_page',
+    'title' => 'Artículos',
+    'uid' => 1,
+  ]);
+  $node->save();
+
   // Replace default user's form display.
   $config_factory = \Drupal::configFactory();
 
