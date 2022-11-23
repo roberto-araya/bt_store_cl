@@ -188,21 +188,20 @@ third_party_settings:
           xxl_padding_top: none
           xxl_padding_bottom: none
         components:
-          5f964832-1116-4bd3-82da-f47848ded059:
-            uuid: 5f964832-1116-4bd3-82da-f47848ded059
+          1c315b6c-28ae-4b10-9107-30da6b4011c9:
+            uuid: 1c315b6c-28ae-4b10-9107-30da6b4011c9
             region: oneColumn__main
             configuration:
-              id: 'field_block:node:bt_article:title'
+              id: 'field_block:node:bt_article:field_bt_intro'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
               formatter:
-                type: string
+                type: text_default
                 label: hidden
-                settings:
-                  link_to_entity: false
+                settings: {  }
                 third_party_settings: {  }
-            weight: 2
+            weight: 5
             additional: {  }
             third_party_settings: {  }
           f42d8c63-2aec-4987-b0ff-ba1d7f67b025:
@@ -222,20 +221,21 @@ third_party_settings:
             weight: 3
             additional: {  }
             third_party_settings: {  }
-          1c315b6c-28ae-4b10-9107-30da6b4011c9:
-            uuid: 1c315b6c-28ae-4b10-9107-30da6b4011c9
+          5f964832-1116-4bd3-82da-f47848ded059:
+            uuid: 5f964832-1116-4bd3-82da-f47848ded059
             region: oneColumn__main
             configuration:
-              id: 'field_block:node:bt_article:field_bt_intro'
+              id: 'field_block:node:bt_article:title'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
               formatter:
-                type: text_default
+                type: string
                 label: hidden
-                settings: {  }
+                settings:
+                  link_to_entity: false
                 third_party_settings: {  }
-            weight: 4
+            weight: 2
             additional: {  }
             third_party_settings: {  }
           1c79c6e8-24c8-4040-ab9e-72e7903d82c5:
