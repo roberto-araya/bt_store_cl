@@ -1,8 +1,7 @@
-langcode: es
+langcode: en
 status: true
 dependencies:
   config:
-    - core.base_field_override.node.bt_basic_page.title
     - core.entity_view_mode.node.full
     - field.field.node.bt_basic_page.field_bt_css
     - field.field.node.bt_basic_page.layout_builder__layout
@@ -35,23 +34,6 @@ third_party_settings:
             weight: 0
             additional: {  }
             third_party_settings: {  }
-          25488d72-f51a-4086-8954-af52df18ab9c:
-            uuid: 25488d72-f51a-4086-8954-af52df18ab9c
-            region: content
-            configuration:
-              id: 'field_block:node:bt_basic_page:title'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: string
-                label: hidden
-                settings:
-                  link_to_entity: false
-                third_party_settings: {  }
-            weight: 1
-            additional: {  }
-            third_party_settings: {  }
           3833cfa1-af42-4108-b577-5a11cee6f0ef:
             uuid: 3833cfa1-af42-4108-b577-5a11cee6f0ef
             region: content
@@ -79,6 +61,10 @@ third_party_settings:
         - bt_four_columns_header
         - bt_five_columns
         - bt_five_columns_header
+      restricted_categories:
+        - 'Admin UI'
+        - Block
+        - 'RedHen Contact'
       blacklisted_blocks:
         Menus:
           - 'system_menu_block:admin'
@@ -111,10 +97,6 @@ third_party_settings:
           - webform_block
         core:
           - page_title_block
-      restricted_categories:
-        - 'Admin UI'
-        - Block
-        - 'RedHen Contact'
 id: node.bt_basic_page.full
 targetEntityType: node
 bundle: bt_basic_page
