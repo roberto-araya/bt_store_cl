@@ -1,0 +1,53 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Palanquin:wght@300&display=swap");
+.blockQuote--full {
+  position: relative;
+  min-height: 5rem;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+.blockQuote--full__text {
+  margin-top: 0;
+  padding-bottom: 4rem;
+  position: relative;
+  top: 4rem;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-style: italic;
+}
+.blockQuote--full__text::before {
+  display: block;
+  position: relative;
+  left: -5rem;
+  content: "“";
+  font-family: "Palanquin", sans-serif;
+  font-size: 25rem;
+}
+.blockQuote--full__text p {
+  margin-top: -5rem;
+  position: relative;
+  z-index: 4;
+}
+.blockQuote--full__source {
+  margin-top: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-top: 1.25rem;
+  margin-right: 1rem;
+  text-align: right;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  z-index: 1;
+}
+.blockQuote--full__source::before {
+  content: "— ";
+}
+.blockQuote--full__link-single {
+  position: relative;
+  margin-bottom: 1rem;
+  margin-right: 0.5rem;
+  float: right;
+  font-size: 0.75rem;
+}

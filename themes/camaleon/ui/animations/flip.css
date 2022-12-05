@@ -1,0 +1,71 @@
+@-webkit-keyframes flip {
+  0% {
+    transform: perspective(400px) rotateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  40% {
+    transform: perspective(400px) translateZ(150px) rotateY(170deg);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  50% {
+    transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  80% {
+    transform: perspective(400px) rotateY(360deg) scale(0.95);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  100% {
+    transform: perspective(400px) scale(1);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+}
+@keyframes flip {
+  0% {
+    transform: perspective(400px) rotateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  40% {
+    transform: perspective(400px) translateZ(150px) rotateY(170deg);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  50% {
+    transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  80% {
+    transform: perspective(400px) rotateY(360deg) scale(0.95);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  100% {
+    transform: perspective(400px) scale(1);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+}
+.flip {
+  transform-style: preserve-3d;
+  -webkit-animation-name: flip;
+  animation-name: flip;
+  -webkit-animation-iteration-count: var(--animationCount, 1s);
+  animation-iteration-count: var(--animationCount, 1s);
+  -webkit-animation-duration: var(--animationDuration, 1s);
+  animation-duration: var(--animationDuration, 1s);
+  -webkit-animation-delay: var(--animationDelay, 0s);
+  animation-delay: var(--animationDelay, 0s);
+  -webkit-animation-timing-function: var(--animationFunction, ease);
+  animation-timing-function: var(--animationFunction, ease);
+  -webkit-animation-fill-mode: var(--animationFill, both);
+  animation-fill-mode: var(--animationFill, both);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}

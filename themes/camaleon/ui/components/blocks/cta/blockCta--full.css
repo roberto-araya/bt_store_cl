@@ -1,0 +1,11 @@
+.blockCta--full {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.blockCta--full__content-title {
+  margin-top: 1rem;
+}
+.blockCta--full__buttons {
+  margin-bottom: 1rem;
+}

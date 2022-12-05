@@ -1,0 +1,499 @@
+<?php
+
+include 'includes/preprocess/block_content_preprocess.inc';
+include 'includes/preprocess/block_contrib_preprocess.inc';
+include 'includes/preprocess/block_core_preprocess.inc';
+include 'includes/preprocess/field_preprocess.inc';
+include 'includes/preprocess/layout_preprocess.inc';
+include 'includes/preprocess/nav_preprocess.inc';
+include 'includes/theme_suggestions.inc';
+
+
+use Drupal\Core\Template\Attribute;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Element;
+use Drupal\Component\Utility\Html;
+use Drupal\Component\Render\MarkupInterface;
+
+#### Alter Functions ####
+
+/**
+ * implements hook_form_alter().
+ */
+function camaleon_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'commerce_checkout_flow_multistep_default' &&
+  isset($form['sidebar']) &&
+  array_key_exists('sidebar', $form) &&
+  $form['sidebar']['coupon_redemption']['form']['#id'] == 'edit-sidebar-coupon-redemption-form') {
+    $form['sidebar']['coupon_redemption']['form']['apply']['#attributes'] = ['class' => ['mt-3 button button--accent']];
+  }
+
+  if (str_contains($form_id, 'views_form_commerce_cart_form_default_')) {
+    $form['actions']['submit']['#attributes'] = ['class' => ['button--primary']];
+    $form['actions']['checkout']['#attributes'] = ['class' => ['button--accent']];
+
+    $count = count($form['remove_button']);
+    for ($i = 0; $i < $count; $i++) {
+      $form['remove_button'][$i]['#attributes'] = ['class' => ['button--danger']];
+    }
+  }
+
+  if ($form_id == 'content_moderation_entity_moderation_form') {
+    $form['submit']['#attributes'] = ['class' => ['button--primary']];
+  }
+
+  if ($form_id != 'content_moderation_entity_moderation_form') {
+    if (is_array($form['actions']) && array_key_exists('discard_changes', $form['actions'])) {
+      $form['actions']['discard_changes']['#attributes'] = ['class' => ['button--action']];
+      $form['actions']['discard_changes']['#button_type'] = 'warning';
+    }
+  
+    if (is_array($form['actions']) && array_key_exists('revert', $form['actions'])) {
+      $form['actions']['revert']['#attributes'] = ['class' => ['button--secondary']];
+      $form['actions']['revert']['#button_type'] = 'secondary';
+    }
+    
+    if (is_array($form['actions']) && array_key_exists('delete', $form['actions'])) {
+      $form['actions']['delete']['#attributes'] = ['class' => ['button--danger']];
+      $form['actions']['delete']['#button_type'] = 'danger';
+    }
+  }
+
+  if ($form_id == "node_bt_basic_page_layout_builder_form") {
+    $form['moderation_state']['#attached']['library'][] = 'camaleon/form_moderation_state';
+    $form['moderation_state']['#attributes']['class'][] = 'formModerationState';
+    $form['moderation_state']['widget'][0]['current']['#wrapper_attributes']['class'][] = 'formModerationState__current';
+    $form['moderation_state']['widget'][0]['state']['#wrapper_attributes']['class'][] = 'formModerationState__state';
+
+    //$form['actions']['#attached']['library'][] = 'camaleon/form_layout_builder_actions';
+    //$form['actions']['#attributes']['class'][] = 'formLayoutBuilderActions';
+  }
+
+  if ($form_id == "layout_builder_discard_changes" || $form_id == "layout_builder_revert_overrides") {
+    $form['actions']['cancel']['#attributes']['class'][] = 'button--secondary';
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function camaleon_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $content_type = $node->bundle();
+    if($content_type == 'bt_basic_page') {
+      $suggestions[] = 'page__node_basic';
+    }
+  }
+}
+
+#### Preprocess Functions ####
+
+/**
+ * Implements hook_preprocess_HOOK() for blocks.
+ */
+function camaleon_preprocess_block(&$variables) {
+  _block_core_preprocess($variables);
+  _block_content_preprocess($variables);
+  _block_contrib_preprocess($variables);
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for fields.
+ */
+function camaleon_preprocess_field(&$variables) {
+  _field_preprocess($variables);
+  $rich_field_types = ['text_with_summary', 'text', 'text_long'];
+
+  if (in_array($variables['field_type'], $rich_field_types, TRUE)) {
+    $variables['attributes']['class'][] = 'text-content';
+  }
+
+  if ($variables['field_type'] == 'image' && $variables['element']['#view_mode'] == 'full' && !$variables["element"]["#is_multiple"] && $variables['field_name'] !== 'user_picture') {
+    $variables['attributes']['class'][] = 'wide-image';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for breadcrumbs.
+ */
+function camaleon_preprocess_breadcrumb(&$variables) {
+  _breadcrumb_preprocess($variables);
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for menu-local-tasks templates.
+ */
+function camaleon_preprocess_menu_local_tasks(&$variables) {
+  foreach (Element::children($variables['primary']) as $key) {
+    $variables['primary'][$key]['#level'] = 'primary';
+  }
+  foreach (Element::children($variables['secondary']) as $key) {
+    $variables['secondary'][$key]['#level'] = 'secondary';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for menu-local-task templates.
+ */
+function camaleon_preprocess_menu_local_task(&$variables) {
+  // Ensure is-active class is set when the tab is active. The generic active
+  // link handler applies stricter comparison rules than what is necessary for
+  // tabs.
+  if (isset($variables['is_active']) && $variables['is_active'] === TRUE) {
+    $variables['link']['#options']['attributes']['class'][] = 'nav-link active is-active';
+  }
+  else {
+    $variables['link']['#options']['attributes']['class'][] = 'nav-link';
+  }
+
+  if (isset($variables['element']['#level'])) {
+    $variables['level'] = $variables['element']['#level'];
+  }
+}
+
+function camaleon_preprocess_paragraph(&$variables) {
+  $variables['id'] = $variables['elements']['#paragraph']->id();
+  $variables['bundle'] = $variables['elements']['#paragraph']->bundle();
+  $variables['bundle'] = strpos($variables['bundle'], 'bt_prg_') === 0 ? $variables['bundle'] = substr($variables['bundle'], 7) : $variables['bundle'];
+  if (array_key_exists('field_bt_paragraph', $variables['elements'])) {
+    $variables['view_mode'] = $variables['elements']['field_bt_paragraph']['#view_mode'];
+  } 
+}
+
+function camaleon_preprocess_region(&$variables) {
+  try {
+    $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+  }
+  catch (Exception $e) {
+    $variables['is_front'] = FALSE;
+  }
+
+  try {
+    if (isset($variables['region']) && $variables['region'] == 'content') {       
+      $node = \Drupal::routeMatch()->getParameter('node');
+      $taxonomy = \Drupal::routeMatch()->getParameter('taxonomy_term');
+      if ($node instanceof \Drupal\node\NodeInterface ) {
+        $node_type = $node->bundle();
+        
+        if ($node_type == 'bt_basic_page' || $node_type == 'bt_article' || $node_type == 'blog_post') {
+          $variables['is_layout_builder_page'] = TRUE;  
+        }
+      }
+      if ($taxonomy instanceof \Drupal\taxonomy\TermInterface ) {
+        $term_type = $taxonomy->bundle();
+        
+        if ($term_type == 'bt_product_categories' || $term_type == 'bt_product_brand') {
+          $variables['is_layout_builder_page'] = TRUE;  
+        }
+      }
+
+    }
+  }
+  catch (Exception $e) {
+    $variables['is_basic_page'] = FALSE;
+  }
+
+  $regions = [
+    'top',
+    'pre_header',
+    'navbar',
+    'header',
+    'primary_menu',
+    'secondary_menu',
+    'breadcrumb',
+    'highlighted',
+    'help',
+    'sidebar_first',
+    'content',
+    'sidebar_second',
+    'footer',
+    'bottom',
+  ];
+
+  foreach ($regions as $region) {
+    if (isset($variables['region']) && $variables['region'] == $region) {       
+      $variables['theme_settings']['background_color'] = theme_get_setting('regions.region_' . $region . '.background_color');
+      $variables['theme_settings']['background_color_custom'] = theme_get_setting('regions.region_' . $region . 'background_color_custom');
+      $variables['theme_settings']['background_color_opacity'] = theme_get_setting('regions.region_' . $region . '.background_color_opacity');
+      $variables['theme_settings']['background_color_custom_opacity'] = theme_get_setting('regions.region_' . $region . '.background_color_custom_opacity');
+      $variables['theme_settings']['background_color_hover'] = theme_get_setting('regions.region_' . $region . '.background_color_hover');
+      $variables['theme_settings']['background_color_custom_hover'] = theme_get_setting('regions.region_' . $region . 'background_color_custom_hover');
+      $variables['theme_settings']['background_color_opacity_hover'] = theme_get_setting('regions.region_' . $region . '.background_color_opacity_hover');
+      $variables['theme_settings']['background_color_custom_opacity_hover'] = theme_get_setting('regions.region_' . $region . '.background_color_custom_opacity_hover');
+    
+      if (!in_array($region, ['sidebar_first', 'content', 'sidebar_second'])) {
+        $variables['theme_settings']['justify_content'] = theme_get_setting('regions.region_' . $region . '.justify_content');
+        $variables['theme_settings']['align_items'] = theme_get_setting('regions.region_' . $region . '.align_items');
+        $variables['theme_settings']['height'] = theme_get_setting('regions.region_' . $region . '.height');
+        $variables['theme_settings']['container_select'] = theme_get_setting('regions.region_' . $region . '.width.container_select');
+        $variables['theme_settings']['full_select'] = theme_get_setting('regions.region_' . $region . '.width.full_select');
+        $variables['theme_settings']['box_select'] = theme_get_setting('regions.region_' . $region . '.width.box_select');
+
+        $borders = ['border_top', 'border_right', 'border_bottom', 'border_left'];
+
+        foreach ($borders as $border) {
+          $variables['theme_settings'][$border . '_select'] = theme_get_setting('regions.region_' . $region . '.' . $border . '.' . $border . '_select');
+          $variables['theme_settings'][$border . '_style'] = theme_get_setting('regions.region_' . $region . '.' . $border . '.' . $border . '_style');
+          $variables['theme_settings'][$border . '_size'] = theme_get_setting('regions.region_' . $region . '.' . $border . '.' . $border . '_size');
+          $variables['theme_settings'][$border . '_color'] = theme_get_setting('regions.region_' . $region . '.' . $border . '.' . $border . '_color');
+          $variables['theme_settings'][$border . '_color_custom'] = theme_get_setting('regions.region_' . $region . '.' . $border . '.' . $border . '_color_custom');
+          $variables['theme_settings'][$border . '_color_opacity'] = theme_get_setting('regions.region_' . $region . '.' . $border . '.' . $border . '_color_opacity');
+          $variables['theme_settings'][$border . '_color_custom_opacity'] = theme_get_setting('regions.region_' . $region . '.' . $border . '.' . $border . '_color_custom_opacity');
+          $variables['theme_settings'][$border . '_color_hover'] = theme_get_setting('regions.region_' . $region . '.' . $border . '.' . $border . '_color_hover');
+          $variables['theme_settings'][$border . '_color_custom_hover'] = theme_get_setting('regions.region_' . $region . '.' . $border . '.' . $border . '_color_custom_hover');
+          $variables['theme_settings'][$border . '_color_opacity_hover'] = theme_get_setting('regions.region_' . $region . '.' . $border . '.' . $border . '_color_opacity_hover');
+          $variables['theme_settings'][$border . '_color_custom_opacity_hover'] = theme_get_setting('regions.region_' . $region . '.' . $border . '.' . $border . '_color_custom_opacity_hover');
+
+        }
+      } 
+    }
+  }
+
+  if (isset($variables['region']) && $variables['region'] == 'navbar') {
+    $variables['theme_settings']['toggler_color'] = theme_get_setting('regions.region_navbar.toggler_color.toggler_color');
+    $variables['theme_settings']['toggler_color_custom'] = theme_get_setting('regions.region_navbar.toggler_color.toggler_color_custom');
+    $variables['theme_settings']['toggler_color_opacity'] = theme_get_setting('regions.region_navbar.toggler_color.toggler_color_opacity');
+    $variables['theme_settings']['toggler_color_custom_opacity'] = theme_get_setting('regions.region_navbar.toggler_color.toggler_color_custom_opacity');
+    $variables['theme_settings']['toggler_color_hover'] = theme_get_setting('regions.region_navbar.toggler_color.toggler_color_hover');
+    $variables['theme_settings']['toggler_color_custom_hover'] = theme_get_setting('regions.region_navbar.toggler_color.toggler_color_custom_hover');
+    $variables['theme_settings']['toggler_color_opacity_hover'] = theme_get_setting('regions.region_navbar.toggler_color.toggler_color_opacity_hover');
+    $variables['theme_settings']['toggler_color_custom_opacity_hover'] = theme_get_setting('regions.region_navbar.toggler_color.toggler_color_custom_opacity_hover');
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for menu-local-action templates.
+ */
+function camaleon_preprocess_menu_local_action(array &$variables) {
+  $classes = ['btn', 'btn-success'];
+  $variables['link']['#options']['attributes']['class'] = $classes;
+}
+
+/**
+ * Implements hook_preprocess_html() for form elements.
+ */
+function camaleon_preprocess_html(&$variables) {
+  $variables['theme_settings']['font'] = theme_get_setting('font');
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for form elements.
+ */
+function camaleon_preprocess_form_element(&$variables) {
+  if (isset($variables['label']['#title'])) {
+    if (is_object($variables['label']['#title']) && !$variables['label']['#title'] instanceof MarkupInterface) {
+      $variables['input_title'] = NULL;
+    }
+    elseif (is_object($variables['label']['#title'])) {
+      $variables['input_title'] = $variables['label']['#title'];
+    }
+    else {
+      $variables['input_title'] = $variables['label']['#title'];
+    }
+  }
+  if (isset($variables['element']['#attributes'])) {
+    $variables['input_attributes'] = new Attribute($variables['element']['#attributes']);
+  }
+}
+
+/**
+ * Implements template_preprocess_username().
+ */
+function camaleon_preprocess_username(&$variables) {
+  $real_name = $variables['account']->get('field_bt_user_name')->getString();
+  if (isset($real_name) && !empty($real_name)) {
+    $variables['name'] = $real_name;
+  }
+}
+
+/**
+ * Implements template_preprocess_HOOK() for fieldset.
+ */
+function camaleon_preprocess_fieldset(&$variables) {
+  $element = $variables['element'];
+  $composite_types = ['checkboxes', 'radios'];
+
+  if (!empty($element['#type']) && in_array($element['#type'], $composite_types) && !empty($variables['element']['#children_errors'])) {
+    $variables['legend_span']['attributes']->addClass('has-error');
+  }
+
+  if (!empty($element['#disabled'])) {
+    $variables['legend_span']['attributes']->addClass('is-disabled');
+
+    if (!empty($variables['description']) && !empty($variables['description']['attributes'])) {
+      $variables['description']['attributes']->addClass('is-disabled');
+    }
+  }
+
+  // Remove 'container-inline' class from the main attributes and add a flag
+  // instead.
+  // @todo remove this after https://www.drupal.org/node/3059593 has been
+  //   resolved.
+  if (!empty($variables['attributes']['class'])) {
+    $container_inline_key = array_search('container-inline', $variables['attributes']['class']);
+
+    if ($container_inline_key !== FALSE) {
+      unset($variables['attributes']['class'][$container_inline_key]);
+      $variables['inline_items'] = TRUE;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function camaleon_preprocess_select(&$variables) {
+  $variables['attributes']['class'][] = $variables['element']['#multiple'] ?
+    'form-select-multiple' :
+    'form-select';
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function camaleon_preprocess_form_element_label(&$variables) {
+  $variables['attributes']['class'][] = 'form-label';
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function camaleon_preprocess_input(&$variables) {
+  if (
+    !empty($variables['element']['#title_display']) &&
+    $variables['element']['#title_display'] === 'attribute' &&
+    !empty((string) $variables['element']['#title'])
+  ) {
+    $variables['attributes']['title'] = (string) $variables['element']['#title'];
+  }
+
+  $type_api = $variables['element']['#type'];
+  $type_html = $variables['attributes']['type'];
+  $text_types_html = [
+    'text',
+    'email',
+    'tel',
+    'number',
+    'search',
+    'password',
+    'date',
+    'time',
+    'file',
+    'color',
+    'datetime-local',
+    'url',
+    'month',
+    'week',
+  ];
+
+  if (in_array($type_html, $text_types_html, TRUE)) {
+    $variables['attributes']['class'][] = 'form-control';
+    $variables['attributes']['class'][] = Html::getClass('form-element--type-' . $type_html);
+    $variables['attributes']['class'][] = Html::getClass('form-element--api-' . $type_api);
+
+    // This logic is functioning as expected, but there is nothing in the theme that renders the result.
+    // As a result it can't currently be covered by a functional test.
+    if (!empty($variables['element']['#autocomplete_route_name'])) {
+      $variables['autocomplete_message'] = t('Loading…');
+    }
+  }
+
+  if (in_array($type_html, ['checkbox', 'radio'], TRUE)) {
+    $variables['attributes']['class'][] = 'form-check-input';
+    $variables['attributes']['class'][] = Html::getClass('form-boolean--type-' . $type_html);
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function camaleon_preprocess_textarea(&$variables) {
+  $variables['attributes']['class'][] = 'form-control';
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function camaleon_preprocess_checkboxes(&$variables) {
+  $variables['attributes']['class'][] = 'form-boolean-group';
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function camaleon_preprocess_radios(&$variables) {
+  $variables['attributes']['class'][] = 'form-boolean-group';
+}
+
+
+#### Suggestions Functions ####
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for selects.
+ */
+function camaleon_theme_suggestions_select_alter(array &$suggestions, array $variables) {
+  _select_suggestions($suggestions, $variables);
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for blocks.
+ */
+function camaleon_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  _block_suggestions($suggestions, $variables);
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for fields.
+ */
+function camaleon_theme_suggestions_field_alter(array &$suggestions, array $variables) {
+  _field_suggestions($suggestions, $variables);
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for image.
+ */
+function camaleon_theme_suggestions_image_alter(array &$suggestions, array $variables) {
+  _image_suggestions($suggestions, $variables);
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for node.
+ */
+function camaleon_theme_suggestions_node_alter(array &$suggestions, array $variables) {
+  _node_suggestions($suggestions, $variables);
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for form.
+ */
+function camaleon_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+  _form_suggestions($suggestions, $variables);
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for paragraph.
+ */
+function camaleon_theme_suggestions_paragraph_alter(array &$suggestions, array $variables) {
+  _paragraph_suggestions($suggestions, $variables);
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for media.
+ */
+function camaleon_theme_suggestions_media_alter(array &$suggestions, array $variables) {
+  _media_suggestions($suggestions, $variables);
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for field_collections.
+ */
+function camaleon_theme_suggestions_field_collection_item_alter(array &$suggestions, array $variables) {
+  _field_collection_suggestions($suggestions, $variables);
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for user entity.
+ */
+function camaleon_theme_suggestions_user_alter(array &$suggestions, array $variables) {
+  $suggestions[] = 'user__' . $variables['elements']['#view_mode'];
+}

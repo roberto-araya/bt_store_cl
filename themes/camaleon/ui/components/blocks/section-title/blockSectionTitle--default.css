@@ -1,0 +1,32 @@
+.blockSectionTitle--default {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.blockSectionTitle--default__content-title {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  align-self: center;
+  margin-top: 1rem;
+  font-size: calc(1.625rem + 4.5vw);
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+}
+@media (min-width: 1200px) {
+  .blockSectionTitle--default__content-title {
+    font-size: 5rem;
+  }
+}
+.blockSectionTitle--default__caption {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+@media screen and (min-width: 640px) {
+  .blockSectionTitle--default {
+    max-width: 50vw;
+    justify-self: center;
+  }
+}

@@ -1,0 +1,20 @@
+.commerceCart {
+  font-size: 1rem;
+}
+.commerceCart .cart-block--summary__count {
+  margin-right: 0.5rem;
+  color: white;
+  text-transform: capitalize;
+}
+.commerceCart .cart-block--summary__icon {
+  margin-right: 0.5rem;
+}
+.commerceCart .cart-block--contents {
+  width: 100vw;
+}
+
+@media screen and (min-width: 768px) {
+  .commerceCart .cart-block--contents {
+    width: 768px;
+  }
+}

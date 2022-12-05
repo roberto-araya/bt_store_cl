@@ -1,0 +1,160 @@
+{% extends "@Components/blocks/block.twig" %}
+{#
+/**
+ * @file
+ * Default theme implementation for a branding block.
+ *
+ * Each branding element variable (logo, name, slogan) is only available if
+ * enabled in the block configuration.
+ *
+ * Available variables:
+ * - site_logo: Logo for site as defined in Appearance or theme settings.
+ * - site_name: Name for site as defined in Site information settings.
+ * - site_slogan: Slogan for site as defined in Site information settings.
+ *
+ * @ingroup themeable
+ */
+#}
+{% set style_vars = [] %}
+{# background color #}
+{% if theme_settings.branding_bg_color != 'default' and theme_settings.branding_bg_color != 'customColor' %}
+  {% if theme_settings.branding_bg_color_opacity == '1.0' %}
+    {% set style_vars = style_vars|merge(['--backgroundColor: var(--' ~ theme_settings.branding_bg_color ~ ')']) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--backgroundColor: rgb(var(--' ~ theme_settings.branding_bg_color ~ '-rgb), ' ~ theme_settings.branding_bg_color_opacity ~ ')']) %}
+  {% endif %}  
+{% endif %}
+
+{% if theme_settings.branding_bg_color == 'customColor' %}
+  {% if theme_settings.branding_bg_color_custom_opacity == 'FF' %}
+    {% set style_vars = style_vars|merge(['--backgroundColor: ' ~ theme_settings.branding_bg_color_custom]) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--backgroundColor: ' ~ theme_settings.branding_bg_color_custom ~ theme_settings.branding_bg_color_custom_opacity ]) %}
+  {% endif %}  
+{% endif %}
+
+{% if theme_settings.branding_bg_color_hover != 'default' and theme_settings.branding_bg_color_hover != 'customColor' %}
+  {% if theme_settings.branding_bg_color_opacity_hover == '1.0' %}
+    {% set style_vars = style_vars|merge(['--backgroundColorHover: var(--' ~ theme_settings.branding_bg_color_hover ~ ')']) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--backgroundColorHover: rgb(var(--' ~ theme_settings.branding_bg_color_hover ~ '-rgb), ' ~ theme_settings.branding_bg_color_opacity_hover ~ ')']) %}
+  {% endif %}  
+{% endif %}
+
+{% if theme_settings.branding_bg_color_hover == 'customColor' %}
+  {% if theme_settings.branding_bg_color_custom_opacity_hover == 'FF' %}
+    {% set style_vars = style_vars|merge(['--backgroundColorHover: ' ~ theme_settings.branding_bg_color_custom_hover]) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--backgroundColorHover: ' ~ theme_settings.branding_bg_color_custom_hover ~ theme_settings.branding_bg_color_custom_opacity_hover ]) %}
+  {% endif %}  
+{% endif %}
+{# site name color #}
+{% if theme_settings.branding_name_color != 'default' and theme_settings.branding_name_color != 'customColor' %}
+  {% if theme_settings.branding_name_color_opacity == '1.0' %}
+    {% set style_vars = style_vars|merge(['--nameColor: var(--' ~ theme_settings.branding_name_color ~ ')']) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--nameColor: rgb(var(--' ~ theme_settings.branding_name_color ~ '-rgb), ' ~ theme_settings.branding_name_color_opacity ~ ')']) %}
+  {% endif %}  
+{% endif %}
+
+{% if theme_settings.branding_name_color == 'customColor' %}
+  {% if theme_settings.branding_name_color_custom_opacity == 'FF' %}
+    {% set style_vars = style_vars|merge(['--nameColor: ' ~ theme_settings.branding_name_color_custom]) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--nameColor: ' ~ theme_settings.branding_name_color_custom ~ theme_settings.branding_name_color_custom_opacity ]) %}
+  {% endif %}  
+{% endif %}
+
+{% if theme_settings.branding_name_color_hover != 'default' and theme_settings.branding_name_color_hover != 'customColor' %}
+  {% if theme_settings.branding_name_color_opacity_hover == '1.0' %}
+    {% set style_vars = style_vars|merge(['--nameColorHover: var(--' ~ theme_settings.branding_name_color_hover ~ ')']) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--nameColorHover: rgb(var(--' ~ theme_settings.branding_name_color_hover ~ '-rgb), ' ~ theme_settings.branding_name_color_opacity_hover ~ ')']) %}
+  {% endif %}  
+{% endif %}
+
+{% if theme_settings.branding_name_color_hover == 'customColor' %}
+  {% if theme_settings.branding_name_color_custom_opacity_hover == 'FF' %}
+    {% set style_vars = style_vars|merge(['--nameColorHover: ' ~ theme_settings.branding_name_color_custom_hover]) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--nameColorHover: ' ~ theme_settings.branding_name_color_custom_hover ~ theme_settings.branding_name_color_custom_opacity_hover ]) %}
+  {% endif %}  
+{% endif %}
+{# site slogan color #}
+{% if theme_settings.branding_slogan_color != 'default' and theme_settings.branding_slogan_color != 'customColor' %}
+  {% if theme_settings.branding_slogan_color_opacity == '1.0' %}
+    {% set style_vars = style_vars|merge(['--sloganColor: var(--' ~ theme_settings.branding_slogan_color ~ ')']) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--sloganColor: rgb(var(--' ~ theme_settings.branding_slogan_color ~ '-rgb), ' ~ theme_settings.branding_slogan_color_opacity ~ ')']) %}
+  {% endif %}  
+{% endif %}
+
+{% if theme_settings.branding_slogan_color == 'customColor' %}
+  {% if theme_settings.branding_slogan_color_custom_opacity == 'FF' %}
+    {% set style_vars = style_vars|merge(['--sloganColor: ' ~ theme_settings.branding_slogan_color_custom]) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--sloganColor: ' ~ theme_settings.branding_slogan_color_custom ~ theme_settings.branding_slogan_color_custom_opacity ]) %}
+  {% endif %}  
+{% endif %}
+
+{% if theme_settings.branding_slogan_color_hover != 'default' and theme_settings.branding_slogan_color_hover != 'customColor' %}
+  {% if theme_settings.branding_slogan_color_opacity_hover == '1.0' %}
+    {% set style_vars = style_vars|merge(['--sloganColorHover: var(--' ~ theme_settings.branding_slogan_color_hover ~ ')']) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--sloganColorHover: rgb(var(--' ~ theme_settings.branding_slogan_color_hover ~ '-rgb), ' ~ theme_settings.branding_slogan_color_opacity_hover ~ ')']) %}
+  {% endif %}  
+{% endif %}
+
+{% if theme_settings.branding_slogan_color_hover == 'customColor' %}
+  {% if theme_settings.branding_slogan_color_custom_opacity_hover == 'FF' %}
+    {% set style_vars = style_vars|merge(['--sloganColorHover: ' ~ theme_settings.branding_slogan_color_custom_hover]) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--sloganColorHover: ' ~ theme_settings.branding_slogan_color_custom_hover ~ theme_settings.branding_slogan_color_custom_opacity_hover ]) %}
+  {% endif %}  
+{% endif %}
+
+{%
+  set style_vars = style_vars|merge([
+    theme_settings.branding_bg_color == 'default' ? '--backgroundColor: var(--defaultBackgroundColor)',
+    theme_settings.branding_bg_color_hover == 'default' ? '--backgroundColorHover: var(--backgroundColor)',
+    
+    theme_settings.branding_name_color == 'default' ? '--nameColor: var(--defaultNameColor)',
+    theme_settings.branding_name_color_hover == 'default' ? '--nameColorHover: var(--nameColor)',
+
+    theme_settings.branding_slogan_color == 'default' ? '--sloganColor: var(--defaultSloganColor)',
+    theme_settings.branding_slogan_color_hover == 'default' ? '--sloganColorHover: var(--sloganColor)',
+    
+    theme_settings.branding_logo_size != '' ? '--logoSize: ' ~ theme_settings.branding_logo_size,
+    theme_settings.branding_name_font_size != '' ? '--nameFontSize: ' ~ theme_settings.branding_name_font_size,
+    theme_settings.branding_slogan_font_size != '' ? '--sloganFontSize: ' ~ theme_settings.branding_slogan_font_size,
+  ]|remove_empty)
+%}
+
+{% 
+  set block_classes = [
+    'block',
+    'siteBranding',
+    'siteBranding--' ~ theme_settings.branding_type,
+  ]|remove_empty
+%}
+
+{% block content %}
+  <div{{ attributes.addClass(block_classes).setAttribute('style', style_vars|join('; ')) }}>
+    {% if site_logo %}
+      <div class="siteBranding__logo">
+        <a href="{{ path('<front>') }}" rel="home">
+          <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" />
+        </a>
+      </div>  
+    {% endif %}
+    {% if site_name %}
+      <div class="siteBranding__name">
+        <a href="{{ path('<front>') }}" rel="home">{{ site_name }}</a>
+      </div>  
+    {% endif %}
+
+    {% if site_slogan %}
+      <div class="siteBranding__slogan">{{ site_slogan }}</div>
+    {% endif %}  
+  </div>
+{% endblock %}

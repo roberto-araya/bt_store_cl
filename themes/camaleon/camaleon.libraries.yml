@@ -1,0 +1,1622 @@
+base:
+  version: VERSION
+  css:
+    component:
+      ui/base/global.css: {}
+  js:
+    ui/base/wow.min.js: {}
+    ui/base/bootstrap.min.js: {}
+    ui/base/global.js: {}
+  dependencies:
+    - core/drupal
+    #- core/jquery
+    - core/drupal.ajax
+
+### Fonts
+jolly-lodger: 
+  version: VERSION
+  css:
+    component:
+      ui/fonts/JollyLodger.css: {}
+
+oswald:
+  version: VERSION
+  css:
+    component:
+      ui/fonts/Oswald.css: {}
+
+roboto: 
+  version: VERSION
+  css:
+    component:
+      ui/fonts/Roboto.css: {}
+
+zen-antique: 
+  version: VERSION
+  css:
+    component:
+      ui/fonts/ZenAntique.css: {}
+
+amatic-sc: 
+  version: VERSION
+  css:
+    component:
+      ui/fonts/AmaticSC.css: {}
+
+kalam: 
+  version: VERSION
+  css:
+    component:
+      ui/fonts/Kalam.css: {}
+
+russo-one: 
+  version: VERSION
+  css:
+    component:
+      ui/fonts/RussoOne.css: {}
+
+archivo-black: 
+  version: VERSION
+  css:
+    component:
+      ui/fonts/ArchivoBlack.css: {}
+
+el-messiri: 
+  version: VERSION
+  css:
+    component:
+      ui/fonts/ElMessiri.css: {}
+
+akaya-telivigala: 
+  version: VERSION
+  css:
+    component:
+      ui/fonts/AkayaTelivigala.css: {}
+
+baloo-2: 
+  version: VERSION
+  css:
+    component:
+      ui/fonts/Baloo2.css: {}
+
+noticia-text: 
+  version: VERSION
+  css:
+    component:
+      ui/fonts/NoticiaText.css: {}
+
+kaushan-script: 
+  version: VERSION
+  css:
+    component:
+      ui/fonts/KaushanScript.css: {}
+
+titan-one:
+  version: VERSION
+  css:
+    component:
+      ui/fonts/TitanOne.css: {}
+
+montserrat:
+  version: VERSION
+  css:
+    component:
+      ui/fonts/Montserrat.css: {}
+
+ubuntu:
+  version: VERSION
+  css:
+    component:
+      ui/fonts/Ubuntu.css: {}
+
+merriweather:
+  version: VERSION
+  css:
+    component:
+      ui/fonts/Merriweather.css: {}
+
+playfair-display:
+  version: VERSION
+  css:
+    component:
+      ui/fonts/PlayfairDisplay.css: {}
+
+kanit:
+  version: VERSION
+  css:
+    component:
+      ui/fonts/Kanit.css: {}
+
+lora:
+  version: VERSION
+  css:
+    component:
+      ui/fonts/Lora.css: {}
+
+fira-sans:
+  version: VERSION
+  css:
+    component:
+      ui/fonts/FiraSans.css: {}
+
+quicksand:
+  version: VERSION
+  css:
+    component:
+      ui/fonts/Quicksand.css: {}
+
+barlow:
+  version: VERSION
+  css:
+    component:
+      ui/fonts/Barlow.css: {}
+
+titillium-web:
+  version: VERSION
+  css:
+    component:
+      ui/fonts/TitilliumWeb.css: {}
+
+trispace:
+  version: VERSION
+  css:
+    component:
+      ui/fonts/Trispace.css: {}
+
+josefin-sans:
+  version: VERSION
+  css:
+    component:
+      ui/fonts/JosefinSans.css: {}
+
+shalimar:
+  version: VERSION
+  css:
+    component:
+      ui/fonts/Shalimar.css: {}
+
+anton:
+  version: VERSION
+  css:
+    component:
+      ui/fonts/Anton.css: {}
+
+dancing-script:
+  version: VERSION
+  css:
+    component:
+      ui/fonts/DancingScript.css: {}
+
+secular-one:
+  version: VERSION
+  css:
+    component:
+      ui/fonts/SecularOne.css: {}
+
+lobster:
+  version: VERSION
+  css:
+    component:
+      ui/fonts/Lobster.css: {}
+
+fjalla-one:
+  version: VERSION
+  css:
+    component:
+      ui/fonts/FjallaOne.css: {}
+
+exo-2:
+  version: VERSION
+  css:
+    component:
+      ui/fonts/Exo2.css: {}
+
+caveat:
+  version: VERSION
+  css:
+    component:
+      ui/fonts/Caveat.css: {}
+
+### Animations
+bounce: 
+  version: VERSION
+  css:
+    component:
+      ui/animations/bounce.css: {}
+
+bounceIn: 
+  version: VERSION
+  css:
+    component:
+      ui/animations/bounceIn.css: {}
+
+bounceInDown: 
+  version: VERSION
+  css:
+    component:
+      ui/animations/bounceInDown.css: {}
+
+bounceInLeft:
+  version: VERSION
+  css:
+    component:
+      ui/animations/bounceInLeft.css: {}
+
+bounceInRight: 
+  version: VERSION
+  css:
+    component:
+      ui/animations/bounceInRight.css: {}
+
+bounceInUp: 
+  version: VERSION
+  css:
+    component:
+      ui/animations/bounceInUP.css: {}
+
+bounceOut: 
+  version: VERSION
+  css:
+    component:
+      ui/animations/bounceOut.css: {}
+
+bounceOutDown: 
+  version: VERSION
+  css:
+    component:
+      ui/animations/bounceOutDown.css: {}
+
+bounceOutLeft: 
+  version: VERSION
+  css:
+    component:
+      ui/animations/bounceOutLeft.css: {}
+
+bounceOutRight: 
+  version: VERSION
+  css:
+    component:
+      ui/animations/bounceOutRight.css: {}
+
+bounceOutUp: 
+  version: VERSION
+  css:
+    component:
+      ui/animations/bounceOutUp.css: {}
+
+fadeIn:
+  version: VERSION
+  css:
+    component:
+      ui/animations/fadeIn.css: {}
+
+fadeInDown: 
+  version: VERSION
+  css:
+    component:
+      ui/animations/fadeInDown.css: {}
+
+fadeInDownBig: 
+  version: VERSION
+  css:
+    component:
+      ui/animations/fadeInDownBig.css: {}
+
+fadeInLeft: 
+  version: VERSION
+  css:
+    component:
+      ui/animations/fadeInLeft.css: {}
+
+fadeInLeftBig: 
+  version: VERSION
+  css:
+    component:
+      ui/animations/fadeInLeftBig.css: {}
+
+fadeInRight: 
+  version: VERSION
+  css:
+    component:
+      ui/animations/fadeInRight.css: {}
+
+fadeInRightBig: 
+  version: VERSION
+  css:
+    component:
+      ui/animations/fadeInRightBig.css: {}
+
+fadeInUp: 
+  version: VERSION
+  css:
+    component:
+      ui/animations/fadeInUp.css: {}
+
+fadeInUpBig: 
+  version: VERSION
+  css:
+    component:
+      ui/animations/fadeInUpBig.css: {}
+
+fadeOut:
+  version: VERSION
+  css:
+    component:
+      ui/animations/fadeOut.css: {}
+
+fadeOutDown: 
+  version: VERSION
+  css:
+    component:
+      ui/animations/fadeOutDown.css: {}
+
+fadeOutDownBig: 
+  version: VERSION
+  css:
+    component:
+      ui/animations/fadeOutDownBig.css: {}
+
+fadeOutLeft: 
+  version: VERSION
+  css:
+    component:
+      ui/animations/fadeOutLeft.css: {}
+
+fadeOutLeftBig: 
+  version: VERSION
+  css:
+    component:
+      ui/animations/fadeOutLeftBig.css: {}
+
+fadeOutRight: 
+  version: VERSION
+  css:
+    component:
+      ui/animations/fadeOutRight.css: {}
+
+fadeOutRightBig: 
+  version: VERSION
+  css:
+    component:
+      ui/animations/fadeOutRightBig.css: {}
+
+fadeOutUp: 
+  version: VERSION
+  css:
+    component:
+      ui/animations/fadeOutUp.css: {}
+
+fadeOutUpBig: 
+  version: VERSION
+  css:
+    component:
+      ui/animations/fadeOutUpBig.css: {}
+
+flash: 
+  version: VERSION
+  css:
+    component:
+      ui/animations/flash.css: {}
+
+flip: 
+  version: VERSION
+  css:
+    component:
+      ui/animations/flip.css: {}
+
+flipInX:
+  version: VERSION
+  css:
+    component:
+      ui/animations/flipInX.css: {}
+
+flipInY:
+  version: VERSION
+  css:
+    component:
+      ui/animations/flipInY.css: {}
+
+flipOutX:
+  version: VERSION
+  css:
+    component:
+      ui/animations/flipOutX.css: {}
+
+flipOutY:
+  version: VERSION
+  css:
+    component:
+      ui/animations/flipOutY.css: {}
+
+hinge:
+  version: VERSION
+  css:
+    component:
+      ui/animations/hinge.css: {}
+
+jello:
+  version: VERSION
+  css:
+    component:
+      ui/animations/jellow.css: {}
+
+lightSpeedIn:
+  version: VERSION
+  css:
+    component:
+      ui/animations/lightSpeedIn.css: {}
+
+lightSpeedOut:
+  version: VERSION
+  css:
+    component:
+      ui/animations/lightSpeedOut.css: {}
+
+pulse:
+  version: VERSION
+  css:
+    component:
+      ui/animations/pulse.css: {}
+
+rollIn:
+  version: VERSION
+  css:
+    component:
+      ui/animations/rollIn.css: {}
+
+rollOut:
+  version: VERSION
+  css:
+    component:
+      ui/animations/rollOut.css: {}
+
+rotateIn:
+  version: VERSION
+  css:
+    component:
+      ui/animations/rotateIn.css: {}
+
+rotateInDownLeft:
+  version: VERSION
+  css:
+    component:
+      ui/animations/rotateInDownLeft.css: {}
+
+rotateInDownRight:
+  version: VERSION
+  css:
+    component:
+      ui/animations/rotateInDownRight.css: {}
+
+rotateInUpLeft:
+  version: VERSION
+  css:
+    component:
+      ui/animations/rotateInUpLeft.css: {}
+
+rotateInUpRight:
+  version: VERSION
+  css:
+    component:
+      ui/animations/rotateInUpRight.css: {}
+
+rotateOut:
+  version: VERSION
+  css:
+    component:
+      ui/animations/rotateOut.css: {}
+
+rotateOutDownLeft:
+  version: VERSION
+  css:
+    component:
+      ui/animations/rotateOutDownLeft.css: {}
+
+rotateOutDownRight:
+  version: VERSION
+  css:
+    component:
+      ui/animations/rotateOutDownRight.css: {}
+
+rotateOutUpLeft:
+  version: VERSION
+  css:
+    component:
+      ui/animations/rotateOutUpLeft.css: {}
+
+rotateOutUpRight:
+  version: VERSION
+  css:
+    component:
+      ui/animations/rotateOutUpRight.css: {}
+
+rubberBand:
+  version: VERSION
+  css:
+    component:
+      ui/animations/rubberBand.css: {}
+
+shake:
+  version: VERSION
+  css:
+    component:
+      ui/animations/shake.css: {}
+
+slideInDown:
+  version: VERSION
+  css:
+    component:
+      ui/animations/slideInDown.css: {}
+
+slideInLeft:
+  version: VERSION
+  css:
+    component:
+      ui/animations/slideInLeft.css: {}
+
+slideInRight:
+  version: VERSION
+  css:
+    component:
+      ui/animations/slideInRight.css: {}
+
+slideInUp:
+  version: VERSION
+  css:
+    component:
+      ui/animations/slideInUp.css: {}
+
+slideOutDown:
+  version: VERSION
+  css:
+    component:
+      ui/animations/slideOutDown.css: {}
+
+slideOutLeft:
+  version: VERSION
+  css:
+    component:
+      ui/animations/slideOutLeft.css: {}
+
+slideOutRight:
+  version: VERSION
+  css:
+    component:
+      ui/animations/slideOutRight.css: {}
+
+slideOutUp:
+  version: VERSION
+  css:
+    component:
+      ui/animations/slideOutUp.css: {}
+
+swing:
+  version: VERSION
+  css:
+    component:
+      ui/animations/swing.css: {}
+
+tada:
+  version: VERSION
+  css:
+    component:
+      ui/animations/tada.css: {}
+
+wobble:
+  version: VERSION
+  css:
+    component:
+      ui/animations/wobble.css: {}
+
+zoomIn:
+  version: VERSION
+  css:
+    component:
+      ui/animations/zoomIn.css: {}
+
+zoomInDown:
+  version: VERSION
+  css:
+    component:
+      ui/animations/zoomInDown.css: {}
+
+zoomInLeft:
+  version: VERSION
+  css:
+    component:
+      ui/animations/zoomInLeft.css: {}
+
+zoomInRight:
+  version: VERSION
+  css:
+    component:
+      ui/animations/zoomInRight.css: {}
+
+zoomInUp:
+  version: VERSION
+  css:
+    component:
+      ui/animations/zoomInUp.css: {}
+
+zoomOut:
+  version: VERSION
+  css:
+    component:
+      ui/animations/zoomOut.css: {}
+
+zoomOutDown:
+  version: VERSION
+  css:
+    component:
+      ui/animations/zoomOutDown.css: {}
+
+zoomOutLeft:
+  version: VERSION
+  css:
+    component:
+      ui/animations/zoomOutLeft.css: {}
+
+zoomOutRight:
+  version: VERSION
+  css:
+    component:
+      ui/animations/zoomOutRight.css: {}
+
+zoomOutUp:
+  version: VERSION
+  css:
+    component:
+      ui/animations/zoomOutUp.css: {}
+
+### LAYOUTS
+layouts:
+  version: VERSION
+  css:
+    component:
+      ui/components/layouts/layouts.css: {}
+
+#field:
+#  version: VERSION
+#  css:
+#    component:
+#      ui/components/field.css: {}
+
+table:
+  version: VERSION
+  css:
+    component:
+      ui/components/tables/table.css: {}
+
+pager:
+  version: VERSION
+  css:
+    component:
+      ui/components/paginations/pager.css: {}
+
+### FORMS
+form:
+  version: VERSION
+  css:
+    component:
+      ui/components/forms/forms.css: {}
+
+form_commerce_checkout:
+  version: VERSION
+  css:
+    component:
+      ui/components/forms/formCommerceCheckout.css: {}
+
+form_commerce_cart:
+  version: VERSION
+  css:
+    component:
+      ui/components/forms/formCommerceCart.css: {}
+
+# Fielset.
+fieldset:
+  version: VERSION
+  css:
+    component:
+      ui/components/forms/fieldset.css: {}
+
+# Details.
+details:
+  version: VERSION
+  css:
+    component:
+      ui/components/forms/details.css: {}
+
+# Dropbutton
+dropbutton:
+  version: VERSION
+  css:
+    component:
+      ui/components/dropbutton/dropbutton.component.css: {}
+      ui/components/dropbutton/dropbutton.css: { weight: -10 }
+
+# Selects.
+select:
+  version: VERSION
+  css:
+    component:
+      ui/components/forms/select.css: {}
+
+### VIEWS
+views:
+  version: VERSION
+  css:
+    component:
+      ui/components/views/views.css: {}
+
+### PAGES
+page:
+  version: VERSION
+  css:
+    component:
+      ui/components/pages/page.css: {}
+
+node_article_full:
+  version: VERSION
+  css:
+    component:
+      ui/components/pages/article/nodeArticle--full.css: {}
+
+node_article_teaser_image:
+  version: VERSION
+  css:
+    component:
+      ui/components/pages/article/nodeArticle--teaser-image.css: {}
+
+node_blog_post:
+  version: VERSION
+  css:
+    component:
+      ui/components/pages/blog/nodeBlog.css: {}
+
+node_blog_post_full:
+  version: VERSION
+  css:
+    component:
+      ui/components/pages/blog/nodeBlog--full.css: {}
+  dependencies:
+    - camaleon/node_blog_post
+
+node_blog_post_teaser:
+  version: VERSION
+  css:
+    component:
+      ui/components/pages/blog/nodeBlog--teaser.css: {}
+  dependencies:
+    - camaleon/node_blog_post
+
+### USERS
+user_blog_author:
+  version: VERSION
+  css:
+    component:
+      ui/components/user/user--blog_author.css: {}
+
+### COMMENTS
+comments:
+  version: VERSION
+  css:
+    component:
+      ui/components/comments/comments.css: {}
+
+### SYSTEM BLOCKS
+## Menus
+# Default
+menu:
+  version: VERSION
+  css:
+    component:
+      ui/components/menus/menu.css: {}
+
+# Main
+main_menu:
+  version: VERSION
+  css:
+    component:
+      ui/components/menus/main/menuMain.css: {}
+
+# footer
+menu_footer:
+  version: VERSION
+  css:
+    component:
+      ui/components/menus/footer/menuFooter.css: {}
+
+# footer default
+menu_footer_default:
+  version: VERSION
+  css:
+    component:
+      ui/components/menus/footer/menuFooter--default.css: {}
+  dependencies:
+    - camaleon/menu
+    - camaleon/menu_footer
+
+# Breadcrumbs
+breadcrumbs:
+  version: VERSION
+  css:
+    component:
+      ui/components/breadcrumbs/breadcrumbs.css: {}
+
+# Local Actions
+local_actions:
+  version: VERSION
+  css:
+    component:
+      ui/components/navs/local-actions/localActions.css: {}
+
+# Local Tasks
+localTasks:
+  version: VERSION
+  css:
+    component:
+      ui/components/navs/local-tasks/localTasks.css: {}
+  js:
+    ui/components/navs/local-tasks/localTasks__tabs.es6.js: {}
+  dependencies:
+    - core/matchmedia
+    - core/jquery
+    - core/drupal
+    - core/once
+    - core/drupal.debounce
+    - core/collapse
+
+# Status Messages
+status_messages:
+  version: VERSION
+  css:
+    component:
+      ui/components/messages/statusMessages.css: {}
+  dependencies:
+    - camaleon/bs-alert
+    - camaleon/bs-close-button
+
+# Moderation State
+form_moderation_state:
+  version: VERSION
+  css:
+    component:
+      ui/components/forms/formModerationState.css: {}
+
+# Layout Builder Actions Form      
+form_layout_builder_actions:
+  version: VERSION
+  css:
+    component:
+      ui/components/forms/formLayoutBuilderActions.css: {}
+
+# Contact Form      
+form_contact:
+  version: VERSION
+  css:
+    component:
+      ui/components/forms/formContact.css: {}
+
+### PARAGRAPHS
+# quote
+paragraph_quote:
+  version: VERSION
+  css:
+    component:
+      ui/components/paragraphs/quote/paragraphQuote--default.css: {}
+
+# text
+paragraph_text:
+  version: VERSION
+  css:
+    component:
+      ui/components/paragraphs/text/paragraphText--default.css: {}
+
+# lede
+paragraph_lede:
+  version: VERSION
+  css:
+    component:
+      ui/components/paragraphs/lede/paragraphLede--default.css: {}
+
+# image_text
+paragraph_image_text:
+  version: VERSION
+  css:
+    component:
+      ui/components/paragraphs/image-text/paragraphImageText--default.css: {}
+
+# text_image
+paragraph_text_image:
+  version: VERSION
+  css:
+    component:
+      ui/components/paragraphs/text-image/paragraphTextImage--default.css: {}
+
+# table
+paragraph_table:
+  version: VERSION
+  css:
+    component:
+      ui/components/paragraphs/table/paragraphTable--table.css: {}
+
+### CONTENT BLOCKS
+# block content
+block_content:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/block-content.css: {}
+
+# article
+block_article_default:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/article/blockArticle--default.css: {}
+
+block_article_teaser_image:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/article/blockArticle--teaser-image.css: {}
+
+# basic
+block_basic:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/basic/blockBasic.css: {}
+
+block_basic_default:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/basic/blockBasic--default.css: {}
+  dependencies:
+    - camaleon/block_basic
+
+# blog
+block_blog_default:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/blog/blockBlog--default.css: {}
+
+block_blog_teaser_image:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/blog/blockBlog--teaser-image.css: {}
+
+# contact-info
+block_contact_info:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/contact_info/blockContacInfo.css: {}
+  dependencies:
+    - camaleon/block_content
+
+block_contact_info_default:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/contact_info/blockContacInfo--default.css: {}
+  dependencies:
+    - camaleon/block_contact_info
+
+block_contact_info_full:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/contact_info/blockContacInfo--full.css: {}
+  dependencies:
+    - camaleon/block_contact_info
+
+# cta
+block_cta:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/cta/blockCta.css: {}
+  dependencies:
+    - camaleon/block_content
+
+block_cta_default:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/cta/blockCta--default.css: {}
+  dependencies:
+    - camaleon/block_cta
+
+block_cta_full:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/cta/blockCta--full.css: {}
+  dependencies:
+    - camaleon/block_cta
+
+block_cta_left_offset:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/cta/blockCta--left_offset.css: {}
+  dependencies:
+    - camaleon/block_cta
+
+block_cta_right_offset:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/cta/blockCta--right_offset.css: {}
+  dependencies:
+    - camaleon/block_cta
+
+# hero
+block_hero:
+  version: VERSION
+  css:
+    theme:
+      ui/components/blocks/hero/blockHero.css: {}
+  dependencies:
+    - camaleon/block_content
+
+block_hero_default:
+  version: VERSION
+  css:
+    theme:
+      ui/components/blocks/hero/blockHero--default.css: {}
+  js:
+    ui/components/blocks/hero/blockHero--default.js: {}
+  dependencies:
+    - camaleon/block_hero
+
+block_hero_full:
+  version: VERSION
+  css:
+    theme:
+      ui/components/blocks/hero/blockHero--full.css: {}
+  js:
+    ui/components/blocks/hero/blockHero--full.js: {}
+  dependencies:
+    - camaleon/block_hero
+
+# highlighted_text
+block_highlighted_text:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/highlighted-text/blockHighlightedText.css: {}
+  dependencies:
+    - camaleon/block_content
+
+block_highlighted_text_default:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/highlighted-text/blockHighlightedText--default.css: {}
+  dependencies:
+    - camaleon/block_highlighted_text
+
+block_highlighted_text_full:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/highlighted-text/blockHighlightedText--full.css: {}
+  dependencies:
+    - camaleon/block_highlighted_text
+
+# highlighted_text_image
+block_highlighted_text_image:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/highlighted-text-image/blockHighlightedTextImage.css: {}
+  dependencies:
+    - camaleon/block_content
+
+block_highlighted_text_image_default:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/highlighted-text-image/blockHighlightedTextImage--default.css: {}
+  dependencies:
+    - camaleon/block_highlighted_text_image
+
+block_highlighted_text_image_full:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/highlighted-text-image/blockHighlightedTextImage--full.css: {}
+  dependencies:
+    - camaleon/block_highlighted_text_image
+
+# image
+block_image:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/image/blockImage.css: {}
+
+block_image_default:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/image/blockImage--default.css: {}
+  dependencies:
+    - camaleon/block_image    
+
+block_image_full:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/image/blockImage--full.css: {}
+  dependencies:
+    - camaleon/block_image         
+
+block_image_original:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/image/blockImage--original.css: {}
+  dependencies:
+    - camaleon/block_image
+
+block_image_small:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/image/blockImage--small.css: {}
+  dependencies:
+    - camaleon/block_image
+
+block_image_circle:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/image/blockImage--circle.css: {}
+  dependencies:
+    - camaleon/block_image
+
+block_image_big_circle:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/image/blockImage--big-circle.css: {}
+  dependencies:
+    - camaleon/block_image
+
+block_image_small_circle:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/image/blockImage--small-circle.css: {}
+  dependencies:
+    - camaleon/block_image
+
+# image_link
+block_image_link:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/image_link/blockImageLink.css: {}
+
+block_image_link_default:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/image_link/blockImageLink--default.css: {}
+  dependencies:
+    - camaleon/block_image_link
+
+block_image_link_full:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/image_link/blockImageLink--full.css: {}
+  dependencies:
+    - camaleon/block_image_link
+
+block_image_link_small:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/image_link/blockImageLink--small.css: {}
+  dependencies:
+    - camaleon/block_image_link
+
+# images_gallery
+block_images_gallery:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/images-gallery/blockImagesGallery.css: {}
+
+block_images_gallery_default:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/images-gallery/blockImagesGallery--default.css: {}
+  dependencies:
+    - camaleon/block_images_gallery
+
+block_images_gallery_full:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/images-gallery/blockImagesGallery--full.css: {}
+  dependencies:
+    - camaleon/block_images_gallery
+
+# images_slide
+block_images_slide:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/images-slide/blockImagesSlide.css: {}
+
+block_images_slide_default:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/images-slide/blockImagesSlide--default.css: {}
+  dependencies:
+    - camaleon/block_images_slide
+    - camaleon/bs-carousel
+
+block_images_slide_full:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/images-slide/blockImagesSlide--full.css: {}
+  dependencies:
+    - camaleon/block_images_slide
+    - camaleon/bs-carousel
+
+# map
+block_map:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/map/blockMap.css: {}
+
+block_map_default:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/map/blockMap--default.css: {}
+  dependencies:
+    - camaleon/block_map
+
+block_map_full:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/map/blockMap--full.css: {}
+  dependencies:
+    - camaleon/block_map
+
+# quote
+block_quote:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/quote/blockQuote.css: {}
+
+block_quote_default:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/quote/blockQuote--default.css: {}
+  dependencies:
+    - camaleon/block_quote
+
+block_quote_full:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/quote/blockQuote--full.css: {}
+  dependencies:
+    - camaleon/block_quote
+
+# section_title
+block_section_title:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/section-title/blockSectionTitle.css: {}
+
+block_section_title_default:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/section-title/blockSectionTitle--default.css: {}
+  dependencies:
+    - camaleon/block_section_title
+
+block_section_title_full:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/section-title/blockSectionTitle--full.css: {}
+  dependencies:
+    - camaleon/block_section_title
+
+block_section_title_left_offset:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/section-title/blockSectionTitle--left_offset.css: {}
+  dependencies:
+    - camaleon/block_section_title
+
+block_section_title_right_offset:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/section-title/blockSectionTitle--right_offset.css: {}
+  dependencies:
+    - camaleon/block_section_title
+
+# social_profiles
+block_social_profiles:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/social-profiles/blockSocialProfiles.css: {}
+
+block_social_profiles_default:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/social-profiles/blockSocialProfiles--default.css: {}
+  dependencies:
+    - camaleon/block_social_profiles
+
+block_social_profiles_full:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/social-profiles/blockSocialProfiles--full.css: {}
+  dependencies:
+    - camaleon/block_social_profiles
+
+# text
+block_text:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/text/blockText.css: {}
+  dependencies:
+    - camaleon/block_content
+
+block_text_default:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/text/blockText--default.css: {}
+  dependencies:
+    - camaleon/block_text
+
+block_text_full:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/text/blockText--full.css: {}
+  dependencies:
+    - camaleon/block_text
+
+# text_icon
+block_text_icon:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/text-icon/blockTextIcon.css: {}
+  dependencies:
+    - camaleon/block_content
+
+block_text_icon_default:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/text-icon/blockTextIcon--default.css: {}
+  dependencies:
+    - camaleon/block_text_icon
+
+block_text_icon_full:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/text-icon/blockTextIcon--full.css: {}
+  dependencies:
+    - camaleon/block_text_icon
+
+block_text_icon_text_inline:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/text-icon/blockTextIcon--text-inline.css: {}
+  dependencies:
+    - camaleon/block_text_icon
+
+# text_image
+block_text_image:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/text-image/blockTextImage.css: {}
+  dependencies:
+    - camaleon/block_content
+
+block_text_image_default:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/text-image/blockTextImage--default.css: {}
+  dependencies:
+    - camaleon/block_text_image
+
+block_text_image_full:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/text-image/blockTextImage--full.css: {}
+  dependencies:
+    - camaleon/block_text_image
+
+# text_media
+block_text_media:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/text-media/blockTextMedia.css: {}
+  dependencies:
+    - camaleon/block_content
+
+block_text_media_default:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/text-media/blockTextMedia--default.css: {}
+  dependencies:
+    - camaleon/block_text_media
+
+block_text_media_full:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/text-media/blockTextMedia--full.css: {}
+  dependencies:
+    - camaleon/block_text_media
+
+# title_icon
+block_title_icon:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/title-icon/blockTitleIcon.css: {}
+  dependencies:
+    - camaleon/block_content
+
+block_title_icon_default:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/title-icon/blockTitleIcon--default.css: {}
+  dependencies:
+    - camaleon/block_title_icon
+
+block_title_icon_full:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/title-icon/blockTitleIcon--full.css: {}
+  dependencies:
+    - camaleon/block_title_icon
+
+# title_image
+block_title_image:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/title-image/blockTitleImage.css: {}
+  dependencies:
+    - camaleon/block_content
+
+block_title_image_default:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/title-image/blockTitleImage--default.css: {}
+  dependencies:
+    - camaleon/block_title_image
+
+block_title_image_full:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/title-image/blockTitleImage--full.css: {}
+  dependencies:
+    - camaleon/block_title_image
+
+### NAVBAR
+navbar:
+  version: VERSION
+  css:
+    component:
+      ui/components/navbar/navbar.css: {}
+
+navbar_home:
+  version: VERSION
+  css:
+    component:
+      ui/components/navbar/navbar--home.css: {}
+  js:
+    ui/components/navbar/navbar-home.js: {}
+
+### Branding
+branding:
+  version: VERSION
+  css:
+    component:
+      ui/components/branding/siteBranding.css: {}
+
+branding_horizontal:
+  version: VERSION
+  css:
+    component:
+      ui/components/branding/siteBranding--horizontal.css: {}
+
+branding_horizontal_inverted:
+  version: VERSION
+  css:
+    component:
+      ui/components/branding/siteBranding--horizontal_inverted.css: {}
+
+branding_vertical:
+  version: VERSION
+  css:
+    component:
+      ui/components/branding/siteBranding--vertical.css: {}
+
+branding_vertical_inverted:
+  version: VERSION
+  css:
+    component:
+      ui/components/branding/siteBranding--vertical_inverted.css: {}
+
+
+#### COMMERCE ####
+### PRODUCTS
+product_default_full:
+  version: VERSION
+  css:
+    component:
+      ui/components/products/default/productDefault--full.css: {}
+
+product_default_teaser:
+  version: VERSION
+  css:
+    component:
+      ui/components/products/default/productDefault--teaser.css: {}
+
+product_default_highlighted_list:
+  version: VERSION
+  css:
+    component:
+      ui/components/products/default/productDefault--highlighted-list.css: {}
+
+product_default_list:
+  version: VERSION
+  css:
+    component:
+      ui/components/products/default/productDefault--list.css: {}
+
+commerce_cart:
+  version: VERSION
+  css:
+    component:
+      ui/components/commerce_cart/commerce_cart.css: {}

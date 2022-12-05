@@ -1,0 +1,29 @@
+.blockTextImage--full__content-title {
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+.blockTextImage--full__caption {
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.blockTextImage--full__text {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.blockTextImage--full__image {
+  width: auto;
+  margin: 0 -0.5rem;
+}
+.blockTextImage--full__image img {
+  width: 100%;
+}
+.blockTextImage--full .mediaImage--mid_square__image {
+  width: auto;
+}
+
+@media (max-width: 575.98px) {
+  .blockTextImage--full__image img {
+    width: 100%;
+  }
+}

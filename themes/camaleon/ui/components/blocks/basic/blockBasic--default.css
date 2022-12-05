@@ -1,0 +1,11 @@
+.blockBasic--default {
+  display: grid;
+  max-width: 50vw;
+}
+
+.blockBasic--default__block-title {
+  font-weight: bold;
+  align-self: end;
+  padding-left: 0px;
+  padding-bottom: 1rem;
+}

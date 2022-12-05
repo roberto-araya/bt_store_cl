@@ -1,0 +1,29 @@
+.blockTitleIcon--default {
+  display: grid;
+}
+.blockTitleIcon--default__content-title {
+  font-size: 2rem;
+  letter-spacing: 0.25rem;
+}
+.blockTitleIcon--default__icon {
+  margin: 1rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  justify-self: center;
+}
+.blockTitleIcon--default__icon .svg-icon {
+  width: 50px;
+  height: 50px;
+}
+.blockTitleIcon--default__icon svg {
+  width: 50px;
+  height: 50px;
+}
+
+@media screen and (min-width: 640px) {
+  .blockTitleIcon--default {
+    max-width: 50vw;
+    justify-self: center;
+  }
+}

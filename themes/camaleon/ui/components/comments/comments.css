@@ -1,0 +1,38 @@
+/**
+ * Indent threaded comments.
+ */
+.indented {
+  margin-left: 25px;
+  /* LTR */
+}
+
+[dir=rtl] .indented {
+  margin-right: 25px;
+  margin-left: 0;
+}
+
+.comment {
+  border-top: solid 1px var(--bs-primary);
+}
+.comment .comment__meta a {
+  font-size: 0.8rem;
+}
+.comment .comment__submitted {
+  margin-bottom: 0;
+  font-size: 0.8rem;
+}
+.comment .links {
+  list-style: none;
+  font-size: 0.8rem;
+  display: flex;
+  gap: 0.8rem;
+  justify-content: flex-end;
+}
+
+#comment-form #edit-actions.form-actions {
+  margin-top: 1rem;
+}
+
+#edit-comment-body-0-format-help-about {
+  font-size: 0.8rem;
+}

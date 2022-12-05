@@ -1,0 +1,63 @@
+.blockHighlightedTextImage--default {
+  background: 100%;
+  background-size: cover;
+}
+.blockHighlightedTextImage--default .block__container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-auto-rows: 1fr auto 3fr;
+}
+.blockHighlightedTextImage--default__content-title {
+  grid-column: 1;
+  grid-row: 1;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  align-self: end;
+}
+.blockHighlightedTextImage--default__caption {
+  grid-column: 1;
+  grid-row: 2;
+}
+.blockHighlightedTextImage--default__add-image {
+  grid-column: 1;
+  grid-row: 3;
+  z-index: 0;
+  justify-self: center;
+  align-self: end;
+}
+.blockHighlightedTextImage--default__add-image article {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.blockHighlightedTextImage--default__add-image img {
+  width: 100%;
+}
+.blockHighlightedTextImage--default__highlighted-text {
+  grid-column: 1;
+  grid-row: 3;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  max-width: 300px;
+  align-self: center;
+  justify-self: center;
+  z-index: 1;
+  font-size: 2rem;
+  letter-spacing: 0.3rem;
+  font-style: italic;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.mediaImage--content__image {
+  height: 100%;
+}
+
+@media screen and (min-width: 640px) {
+  .blockHighlightedTextImage--default {
+    max-width: 50vw;
+    justify-self: center;
+  }
+}

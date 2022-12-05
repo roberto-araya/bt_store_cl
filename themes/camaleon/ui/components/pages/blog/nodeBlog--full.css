@@ -1,0 +1,10 @@
+.nodeBlogPost--full__image img {
+  width: 100%;
+}
+.nodeBlogPost--full .field--name-field-blog-tags {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin: 0 1rem;
+  font-size: 0.8rem;
+}

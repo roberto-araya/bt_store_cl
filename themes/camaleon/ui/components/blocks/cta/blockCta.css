@@ -1,0 +1,99 @@
+.blockCta {
+  --defaultPadding: 0.5rem;
+  --defaultBgColor: var(--bs-block-bg-color);
+  --defaultTitleColor: var(--defaultPageTitleColor);
+  --defaultCaptionColor: var(--defaultCaptionTextColor);
+  --defaultTextColor: var(--bs-block-text-color);
+  --defaultButtonColor: var(--bs-accent);
+  --defaultButtonLinkColor: var(--bs-button-link-color);
+  --defaultButtonSecondaryColor: var(--bs-secondary);
+  padding-left: calc(var(--smPaddingLeft, var(--defaultPadding)) * var(--defaultPaddingFactor));
+  padding-top: calc(var(--smPaddingTop, var(--defaultPadding)) * var(--defaultPaddingFactor));
+  padding-right: calc(var(--smPaddingRight, var(--defaultPadding)) * var(--defaultPaddingFactor));
+  padding-bottom: calc(var(--smPaddingBottom, var(--defaultPadding)) * var(--defaultPaddingFactor));
+  align-self: var(--smAlignSelf, stretch);
+  background-color: var(--backgroundColor, var(--defaultBgColor));
+}
+.blockCta__content-title {
+  text-align: var(--textAlign, center);
+  color: var(--titleColor, var(--defaultTitleColor));
+}
+.blockCta__caption {
+  color: var(--captionColor, var(--defaultCaptionColor));
+  text-align: var(--textAlign, center);
+}
+.blockCta__text {
+  text-align: var(--textAlign, center);
+  color: var(--textColor, var(--defaultTextColor));
+}
+.blockCta__button {
+  --bs-btn-bg: var(--buttonColor, var(--defaultButtonColor));
+  --bs-btn-color: var(--buttonLinkColor, var(--defaultButtonLinkColor));
+  --bs-btn-border-color: var(--buttonLinkColor, var(--defaultButtonLinkColor));
+  --bs-btn-hover-bg: var(--buttonColor, var(--defaultButtonColor));
+  --bs-btn-hover-color: var(--buttonLinkColor, var(--defaultButtonLinkColor));
+  --bs-btn-hover-border-color: var(--buttonLinkColor, var(--defaultButtonLinkColor));
+}
+.blockCta__button a {
+  color: var(--buttonLinkColor, var(--defaultButtonLinkColor));
+  padding-left: var(--buttonIcon, 0rem);
+}
+.blockCta__button-icon svg {
+  color: var(--buttonLinkColor, var(--defaultButtonLinkColor));
+}
+.blockCta__button-secondary {
+  --bs-btn-bg: var(--buttonSecondaryColor, var(--defaultButtonSecondaryColor));
+  --bs-btn-color: var(--buttonSecondaryLinkColor, var(--defaultButtonLinkColor));
+  --bs-btn-border-color: var(--buttonSecondaryLinkColor, var(--defaultButtonLinkColor));
+  --bs-btn-hover-bg: var(--buttonSecondaryColor, var(--defaultButtonSecondaryColor));
+  --bs-btn-hover-color: var(--buttonSecondaryLinkColor, var(--defaultButtonLinkColor));
+  --bs-btn-hover-border-color: var(--buttonSecondaryLinkColor, var(--defaultButtonLinkColor));
+}
+.blockCta__button-secondary a {
+  color: var(--buttonSecondaryLinkColor, var(--defaultButtonLinkColor));
+  padding-left: var(--buttonSecondaryIcon, 0rem);
+}
+.blockCta__button-secondary-icon svg {
+  fill: var(--buttonSecondaryLinkColor, var(--defaultButtonLinkColor));
+}
+
+@media screen and (min-width: 768px) {
+  .blockCta {
+    --defaultPadding: 1rem;
+    padding-left: calc(var(--mdPaddingLeft, var(--defaultPadding)) * var(--defaultPaddingFactor));
+    padding-top: calc(var(--mdPaddingTop, var(--defaultPadding)) * var(--defaultPaddingFactor));
+    padding-right: calc(var(--mdPaddingRight, var(--defaultPadding)) * var(--defaultPaddingFactor));
+    padding-bottom: calc(var(--mdPaddingBottom, var(--defaultPadding)) * var(--defaultPaddingFactor));
+    align-self: var(--mdAlignSelf, stretch);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .blockCta {
+    --defaultPadding: 2rem;
+    padding-left: calc(var(--lgPaddingLeft, var(--defaultPadding)) * var(--defaultPaddingFactor));
+    padding-top: calc(var(--lgPaddingTop, var(--defaultPadding)) * var(--defaultPaddingFactor));
+    padding-right: calc(var(--lgPaddingRight, var(--defaultPadding)) * var(--defaultPaddingFactor));
+    padding-bottom: calc(var(--lgPaddingBottom, var(--defaultPadding)) * var(--defaultPaddingFactor));
+    align-self: var(--lgAlignSelf, stretch);
+  }
+}
+@media screen and (min-width: 1280px) {
+  .blockCta {
+    --defaultPadding: 3rem;
+    padding-left: calc(var(--xlPaddingLeft, var(--defaultPadding)) * var(--defaultPaddingFactor));
+    padding-top: calc(var(--xlPaddingTop, var(--defaultPadding)) * var(--defaultPaddingFactor));
+    padding-right: calc(var(--xlPaddingRight, var(--defaultPadding)) * var(--defaultPaddingFactor));
+    padding-bottom: calc(var(--xlPaddingBottom, var(--defaultPadding)) * var(--defaultPaddingFactor));
+    align-self: var(--xlAlignSelf, stretch);
+  }
+}
+@media screen and (min-width: 1536px) {
+  .blockCta {
+    --defaultPadding: 3rem;
+    padding-left: calc(var(--xxlPaddingLeft, var(--defaultPadding)) * var(--defaultPaddingFactor));
+    padding-top: calc(var(--xxlPaddingTop, var(--defaultPadding)) * var(--defaultPaddingFactor));
+    padding-right: calc(var(--xxlPaddingRight, var(--defaultPadding)) * var(--defaultPaddingFactor));
+    padding-bottom: calc(var(--xxlPaddingBottom, var(--defaultPadding)) * var(--defaultPaddingFactor));
+    align-self: var(--xxlAlignSelf, stretch);
+  }
+}

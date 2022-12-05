@@ -1,0 +1,7 @@
+.nodeBlogPost--teaser {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem;
+  border: solid 1px var(--bs-secondary);
+  align-items: center;
+}

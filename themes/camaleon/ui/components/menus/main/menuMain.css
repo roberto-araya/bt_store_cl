@@ -1,0 +1,44 @@
+.menuMain {
+  padding: 1rem;
+  background-color: var(--backgroundColor);
+  letter-spacing: 0.2rem;
+  font-family: "Jolly Lodger", sans-serif;
+  width: 100%;
+  text-align: center;
+  font-size: calc(1.375rem + 1.5vw);
+}
+@media (min-width: 1200px) {
+  .menuMain {
+    font-size: 2.5rem;
+  }
+}
+.menuMain:hover {
+  background-color: var(--backgroundColorHover);
+}
+.menuMain .dropdown-menu {
+  background-color: var(--backgroundColor);
+}
+.menuMain .nav-item > .nav-link, .menuMain .dropdown > .nav-link, .menuMain .dropdown-item > .nav-link {
+  color: var(--itemColor);
+}
+.menuMain .nav-item > .nav-link:hover, .menuMain .dropdown > .nav-link:hover, .menuMain .dropdown-item > .nav-link:hover {
+  color: var(--itemColorHover);
+}
+.menuMain .nav-item, .menuMain .dropdown-item {
+  background-color: var(--itemBackgroundColor);
+  margin: 0 0.5rem;
+}
+.menuMain .nav-item:hover, .menuMain .dropdown-item:hover {
+  background-color: var(--itemBackgroundColorHover);
+}
+.menuMain .nav-item {
+  padding: var(--itemPadding);
+}
+
+@media (min-width: 992px) {
+  .menuMain {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+  }
+}

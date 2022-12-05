@@ -1,0 +1,9 @@
+.formCommerceCart {
+  margin: 0 0.5rem 2rem;
+}
+
+@media screen and (min-width: 1200px) {
+  .formCommerceCart {
+    margin: 0 15% 3rem;
+  }
+}

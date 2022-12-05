@@ -1,0 +1,278 @@
+{#
+/**
+ * @file
+ * Theme override to display a region.
+ *
+ * Available variables:
+ * - content: The content for this region, typically blocks.
+ * - attributes: HTML attributes for the region <div>.
+ * - region: The name of the region variable as defined in the theme's
+ *   .info.yml file.
+ *
+ * @see template_preprocess_region()
+ */
+#}
+{% 
+  set navbar_classes = [
+    'navbar',
+    home == TRUE ? 'navbar--home' : '',
+  ]|remove_empty
+%}
+
+{% 
+  set region_classes = [
+    'region',
+    'regionNavbar',
+    home == TRUE ? 'regionNavbar--home' : '',
+  ]|remove_empty
+%}
+
+{% set style_vars = [] %}
+{# background color #}
+{% if theme_settings.background_color != 'default' and theme_settings.background_color != 'customColor' %}
+  {% if theme_settings.background_color_opacity == '1.0' %}
+    {% set style_vars = style_vars|merge(['--backgroundColor: var(--' ~ theme_settings.background_color ~ ')']) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--backgroundColor: rgb(var(--' ~ theme_settings.background_color ~ '-rgb), ' ~ theme_settings.background_color_opacity ~ ')']) %}
+  {% endif %}  
+{% endif %}
+
+{% if theme_settings.background_color == 'customColor' %}
+  {% if theme_settings.background_color_custom_opacity == 'FF' %}
+    {% set style_vars = style_vars|merge(['--backgroundColor: ' ~ theme_settings.background_color_custom]) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--backgroundColor: ' ~ theme_settings.background_color_custom ~ theme_settings.background_color_custom_opacity ]) %}
+  {% endif %}  
+{% endif %}
+
+{% if theme_settings.background_color_hover != 'default' and theme_settings.background_color_hover != 'customColor' %}
+  {% if theme_settings.background_color_opacity_hover == '1.0' %}
+    {% set style_vars = style_vars|merge(['--backgroundColorHover: var(--' ~ theme_settings.background_color_hover ~ ')']) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--backgroundColorHover: rgb(var(--' ~ theme_settings.background_color_hover ~ '-rgb), ' ~ theme_settings.background_color_opacity_hover ~ ')']) %}
+  {% endif %}  
+{% endif %}
+
+{% if theme_settings.background_color_hover == 'customColor' %}
+  {% if theme_settings.background_color_custom_opacity_hover == 'FF' %}
+    {% set style_vars = style_vars|merge(['--backgroundColorHover: ' ~ theme_settings.background_color_custom_hover]) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--backgroundColorHover: ' ~ theme_settings.background_color_custom_hover ~ theme_settings.background_color_custom_opacity_hover ]) %}
+  {% endif %}  
+{% endif %}
+
+{# toggle color #}
+{% if theme_settings.toggler_color != 'default' and theme_settings.toggler_color != 'customColor' %}
+  {% if theme_settings.toggler_color_opacity == '1.0' %}
+    {% set style_vars = style_vars|merge(['--togglerColor: var(--' ~ theme_settings.toggler_color ~ ')']) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--togglerColor: rgb(var(--' ~ theme_settings.toggler_color ~ '-rgb), ' ~ theme_settings.toggler_color_opacity ~ ')']) %}
+  {% endif %}  
+{% endif %}
+
+{% if theme_settings.toggler_color == 'customColor' %}
+  {% if theme_settings.toggler_color_custom_opacity == 'FF' %}
+    {% set style_vars = style_vars|merge(['--togglerColor: ' ~ theme_settings.toggler_color_custom]) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--togglerColor: ' ~ theme_settings.toggler_color_custom ~ theme_settings.toggler_color_custom_opacity ]) %}
+  {% endif %}  
+{% endif %}
+
+{% if theme_settings.toggler_color_hover != 'default' and theme_settings.toggler_color_hover != 'customColor' %}
+  {% if theme_settings.toggler_color_opacity_hover == '1.0' %}
+    {% set style_vars = style_vars|merge(['--togglerColorHover: var(--' ~ theme_settings.toggler_color_hover ~ ')']) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--togglerColorHover: rgb(var(--' ~ theme_settings.toggler_color_hover ~ '-rgb), ' ~ theme_settings.toggler_color_opacity_hover ~ ')']) %}
+  {% endif %}  
+{% endif %}
+
+{% if theme_settings.toggler_color_hover == 'customColor' %}
+  {% if theme_settings.toggler_color_custom_opacity_hover == 'FF' %}
+    {% set style_vars = style_vars|merge(['--togglerColorHover: ' ~ theme_settings.toggler_color_custom_hover]) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--togglerColorHover: ' ~ theme_settings.toggler_color_custom_hover ~ theme_settings.toggler_color_custom_opacity_hover ]) %}
+  {% endif %}  
+{% endif %}
+{# border top color #}
+{% if theme_settings.border_top_select == 'custom' and theme_settings.border_top_color != 'default' and theme_settings.border_top_color != 'customColor' %}
+  {% if theme_settings.border_top_color_opacity == '1.0' %}
+    {% set style_vars = style_vars|merge(['--borderTopColor: var(--' ~ theme_settings.border_top_color ~ ')']) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--borderTopColor: rgb(var(--' ~ theme_settings.border_top_color ~ '-rgb), ' ~ theme_settings.border_top_color_opacity ~ ')']) %}
+  {% endif %}  
+{% endif %}
+
+{% if theme_settings.border_top_select == 'custom' and theme_settings.border_top_color == 'customColor' %}
+  {% if theme_settings.border_top_color_custom_opacity == 'FF' %}
+    {% set style_vars = style_vars|merge(['--borderTopColor: ' ~ theme_settings.border_top_color_custom]) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--BorderTopColor: ' ~ theme_settings.border_top_color_custom ~ theme_settings.border_top_color_custom_opacity ]) %}
+  {% endif %}  
+{% endif %}
+
+{% if theme_settings.border_top_select == 'custom' and theme_settings.border_top_color_hover != 'default' and theme_settings.border_top_color_hover != 'customColor' %}
+  {% if theme_settings.border_top_color_opacity_hover == '1.0' %}
+    {% set style_vars = style_vars|merge(['--borderTopColorHover: var(--' ~ theme_settings.border_top_color_hover ~ ')']) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--borderTopColorHover: rgb(var(--' ~ theme_settings.border_top_color_hover ~ '-rgb), ' ~ theme_settings.border_top_color_opacity_hover ~ ')']) %}
+  {% endif %}  
+{% endif %}
+
+{% if theme_settings.border_top_select == 'custom' and theme_settings.border_top_color_hover == 'customColor' %}
+  {% if theme_settings.border_top_color_custom_opacity_hover == 'FF' %}
+    {% set style_vars = style_vars|merge(['--borderTopColorHover: ' ~ theme_settings.border_top_color_custom_hover]) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--borderTopColorHover: ' ~ theme_settings.border_top_color_custom_hover ~ theme_settings.border_top_color_custom_opacity_hover ]) %}
+  {% endif %}  
+{% endif %}
+{# border right color #}
+{% if theme_settings.border_right_select == 'custom' and theme_settings.border_right_color != 'default' and theme_settings.border_right_color != 'customColor' %}
+  {% if theme_settings.border_right_color_opacity == '1.0' %}
+    {% set style_vars = style_vars|merge(['--borderRightColor: var(--' ~ theme_settings.border_right_color ~ ')']) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--borderRightColor: rgb(var(--' ~ theme_settings.border_right_color ~ '-rgb), ' ~ theme_settings.border_right_color_opacity ~ ')']) %}
+  {% endif %}  
+{% endif %}
+
+{% if theme_settings.border_right_select == 'custom' and theme_settings.border_right_color == 'customColor' %}
+  {% if theme_settings.border_right_color_custom_opacity == 'FF' %}
+    {% set style_vars = style_vars|merge(['--borderRightColor: ' ~ theme_settings.border_right_color_custom]) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--borderRightColor: ' ~ theme_settings.border_right_color_custom ~ theme_settings.border_right_color_custom_opacity ]) %}
+  {% endif %}  
+{% endif %}
+
+{% if theme_settings.border_right_select == 'custom' and theme_settings.border_right_color_hover != 'default' and theme_settings.border_right_color_hover != 'customColor' %}
+  {% if theme_settings.border_right_color_opacity_hover == '1.0' %}
+    {% set style_vars = style_vars|merge(['--borderRightColorHover: var(--' ~ theme_settings.border_right_color_hover ~ ')']) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--borderRightColorHover: rgb(var(--' ~ theme_settings.border_right_color_hover ~ '-rgb), ' ~ theme_settings.border_right_color_opacity_hover ~ ')']) %}
+  {% endif %}  
+{% endif %}
+
+{% if theme_settings.border_right_select == 'custom' and theme_settings.border_right_color_hover == 'customColor' %}
+  {% if theme_settings.border_right_color_custom_opacity_hover == 'FF' %}
+    {% set style_vars = style_vars|merge(['--borderRightColorHover: ' ~ theme_settings.border_right_color_custom_hover]) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--borderRightColorHover: ' ~ theme_settings.border_right_color_custom_hover ~ theme_settings.border_right_color_custom_opacity_hover ]) %}
+  {% endif %}  
+{% endif %}
+{# border bottom color #}
+{% if theme_settings.border_bottom_select == 'custom' and theme_settings.border_bottom_color != 'default' and theme_settings.border_bottom_color != 'customColor' %}
+  {% if theme_settings.border_bottom_color_opacity == '1.0' %}
+    {% set style_vars = style_vars|merge(['--borderBottomColor: var(--' ~ theme_settings.border_bottom_color ~ ')']) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--borderBottomColor: rgb(var(--' ~ theme_settings.border_bottom_color ~ '-rgb), ' ~ theme_settings.border_bottom_color_opacity ~ ')']) %}
+  {% endif %}  
+{% endif %}
+
+{% if theme_settings.border_bottom_select == 'custom' and theme_settings.border_bottom_color == 'customColor' %}
+  {% if theme_settings.border_bottom_color_custom_opacity == 'FF' %}
+    {% set style_vars = style_vars|merge(['--borderBottomColor: ' ~ theme_settings.border_bottom_color_custom]) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--borderBottomColor: ' ~ theme_settings.border_bottom_color_custom ~ theme_settings.border_bottom_color_custom_opacity ]) %}
+  {% endif %}  
+{% endif %}
+
+{% if theme_settings.border_bottom_select == 'custom' and theme_settings.border_bottom_color_hover != 'default' and theme_settings.border_bottom_color_hover != 'customColor' %}
+  {% if theme_settings.border_bottom_color_opacity_hover == '1.0' %}
+    {% set style_vars = style_vars|merge(['--borderBottomColorHover: var(--' ~ theme_settings.border_bottom_color_hover ~ ')']) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--borderBottomColorHover: rgb(var(--' ~ theme_settings.border_bottom_color_hover ~ '-rgb), ' ~ theme_settings.border_bottom_color_opacity_hover ~ ')']) %}
+  {% endif %}  
+{% endif %}
+
+{% if theme_settings.border_bottom_select == 'custom' and theme_settings.border_bottom_color_hover == 'customColor' %}
+  {% if theme_settings.border_bottom_color_custom_opacity_hover == 'FF' %}
+    {% set style_vars = style_vars|merge(['--borderBottomColorHover: ' ~ theme_settings.border_bottom_color_custom_hover]) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--borderBottomColorHover: ' ~ theme_settings.border_bottom_color_custom_hover ~ theme_settings.border_bottom_color_custom_opacity_hover ]) %}
+  {% endif %}  
+{% endif %}
+{# border left color #}
+{% if theme_settings.border_left_select == 'custom' and theme_settings.border_left_color != 'default' and theme_settings.border_left_color != 'customColor' %}
+  {% if theme_settings.border_left_color_opacity == '1.0' %}
+    {% set style_vars = style_vars|merge(['--borderLeftColor: var(--' ~ theme_settings.border_left_color ~ ')']) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--borderLeftColor: rgb(var(--' ~ theme_settings.border_left_color ~ '-rgb), ' ~ theme_settings.border_left_color_opacity ~ ')']) %}
+  {% endif %}  
+{% endif %}
+
+{% if theme_settings.border_left_select == 'custom' and theme_settings.border_left_color == 'customColor' %}
+  {% if theme_settings.border_left_color_custom_opacity == 'FF' %}
+    {% set style_vars = style_vars|merge(['--borderLeftColor: ' ~ theme_settings.border_left_color_custom]) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--borderLeftColor: ' ~ theme_settings.border_left_color_custom ~ theme_settings.border_left_color_custom_opacity ]) %}
+  {% endif %}  
+{% endif %}
+
+{% if theme_settings.border_left_select == 'custom' and theme_settings.border_left_color_hover != 'default' and theme_settings.border_left_color_hover != 'customColor' %}
+  {% if theme_settings.border_left_color_opacity_hover == '1.0' %}
+    {% set style_vars = style_vars|merge(['--borderLeftColorHover: var(--' ~ theme_settings.border_left_color_hover ~ ')']) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--borderLeftColorHover: rgb(var(--' ~ theme_settings.border_left_color_hover ~ '-rgb), ' ~ theme_settings.border_left_color_opacity_hover ~ ')']) %}
+  {% endif %}  
+{% endif %}
+
+{% if theme_settings.border_left_select == 'custom' and theme_settings.border_left_color_hover == 'customColor' %}
+  {% if theme_settings.border_left_color_custom_opacity_hover == 'FF' %}
+    {% set style_vars = style_vars|merge(['--borderLeftColorHover: ' ~ theme_settings.border_left_color_custom_hover]) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--borderLeftColorHover: ' ~ theme_settings.border_left_color_custom_hover ~ theme_settings.border_left_color_custom_opacity_hover ]) %}
+  {% endif %}  
+{% endif %}
+
+{%
+  set style_vars = style_vars|merge([
+    theme_settings.background_color == 'default' ? '--backgroundColor: transparent',
+    theme_settings.background_color_hover == 'default' ? '--backgroundColorHover: var(--backgroundColor)',
+    
+    theme_settings.toggler_color == 'default' ? '--togglerColor: transparent',
+    theme_settings.toggler_color_hover == 'default' ? '--togglerColorHover: var(--togglerColor)' ~ theme_settings.toggler_color_custom,
+
+    theme_settings.justify_content != 'center' ? '--justifyContent: ' ~ theme_settings.justify_content : '',
+    theme_settings.align_items != 'center' ? '--alignItems: ' ~ theme_settings.align_items : '',
+    theme_settings.height != '' ? '--height: ' ~ theme_settings.height : '',
+    theme_settings.container_select == 'full' ? '--paddingX: ' ~ theme_settings.full_select : '',
+    theme_settings.container_select == 'box' ? '--width: ' ~ theme_settings.box_select : '',
+
+    theme_settings.border_top_select == 'custom' ? '--borderTopSize: ' ~ theme_settings.border_top_size : '',
+    theme_settings.border_top_select == 'custom' ? '--borderTopStyle: ' ~ theme_settings.border_top_style : '',
+    theme_settings.border_top_color == 'default' ? '--borderTopColor: transparent',
+    theme_settings.border_top_color_hover == 'default' ? '--borderTopColorHover: var(--borderTopColor)' ,
+
+    theme_settings.border_right_select == 'custom' ? '--borderRightSize: ' ~ theme_settings.border_right_size : '',
+    theme_settings.border_right_select == 'custom' ? '--borderRightStyle: ' ~ theme_settings.border_right_style : '',
+    theme_settings.border_right_color == 'default' ? '--borderRightColor: transparent',
+    theme_settings.border_right_color_hover == 'default' ? '--borderRightColorHover: var(--borderRightColor)',
+
+    theme_settings.border_bottom_select == 'custom' ? '--borderBottomSize: ' ~ theme_settings.border_bottom_size : '',
+    theme_settings.border_bottom_select == 'custom' ? '--borderBottomStyle: ' ~ theme_settings.border_bottom_style : '',
+    theme_settings.border_bottom_color == 'default' ? '--borderBottomColor: transparent',
+    theme_settings.border_bottom_color_hover == 'default' ? '--borderBottomColorHover: var(--borderBottomColor)',
+
+    theme_settings.border_left_select == 'custom' ? '--borderLeftSize: ' ~ theme_settings.border_left_size : '',
+    theme_settings.border_left_select == 'custom' ? '--borderLeftStyle: ' ~ theme_settings.border_left_style : '',
+    theme_settings.border_left_color == 'default' ? '--borderLeftColor: transparent',
+    theme_settings.border_left_color_hover == 'default' ? '--borderLeftColorHover: var(--borderLeftColor)',
+  ]|remove_empty)
+%}
+
+{% if content %}
+  <div{{ attributes.addClass(region_classes).setAttribute('style', style_vars|join('; ')) }}>
+    <div id='navbar' {{ navbar_attributes.addClass(navbar_classes) }}>
+      {{ content }}
+      <div class="mainMenuButton">
+        <svg xmlns="http://www.w3.org/2000/svg" class="mainMenuButton__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </div>
+      {% if logged_in %}
+        <div class="mainMenuPanel mainMenuPanel--logged">
+      {% else %}
+        <div class="mainMenuPanel">
+      {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}

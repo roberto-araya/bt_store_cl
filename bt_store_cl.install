@@ -20,8 +20,17 @@ use Drupal\Core\Config\FileStorage;
  * @see system_install()
  */
 function bt_store_cl_install() {
+  // Install Camaleon theme.
+  Drupal::service('theme_installer')->install(['camaleon']);
+  
+  $theme_config = Drupal::configFactory()->getEditable('system.theme');
+  // Set admin theme.
+  $theme_config->set('admin', 'thunder_admin');
   // Set default theme.
-  Drupal::configFactory()->getEditable('system.theme')->set('default', 'thunder_admin')->save(TRUE);
+  $theme_config->set('default', 'camaleon');
+  $theme_config->save(TRUE);
+  
+  
   
   // Alias URL.
   $paths = [

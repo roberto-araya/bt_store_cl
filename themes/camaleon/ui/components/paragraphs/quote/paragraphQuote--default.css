@@ -1,0 +1,49 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Palanquin:wght@300&display=swap");
+.paragraphQuote--default {
+  margin: 1rem;
+}
+
+.paragraphQuote--default__quote-symbol {
+  margin-bottom: -11rem;
+  font-style: italic;
+  --tw-text-opacity: 1;
+  color: var(--bs-accent);
+  font-size: 12rem;
+  font-family: "Palanquin", sans-serif;
+}
+
+.paragraphQuote--default__text {
+  padding-left: 2.25rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-style: italic;
+  color: var(--bs-body-color);
+}
+
+.paragraphQuote--default__source {
+  margin-top: 1.25rem;
+  margin-right: 3.5rem;
+  text-align: right;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: var(--bs-body-color);
+}
+.paragraphQuote--default__source::before {
+  content: "— ";
+}
+
+@media (min-width: 640px) {
+  .paragraphQuote--default {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 80%;
+  }
+}
+@media (min-width: 768px) {
+  .paragraphQuote--default {
+    width: 60%;
+  }
+}

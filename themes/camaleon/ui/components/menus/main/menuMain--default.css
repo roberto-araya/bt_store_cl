@@ -1,0 +1,6 @@
+.menuMain--default {
+  padding: 0 1rem;
+}
+.menuMain--default .navbar-nav {
+  gap: 0.5rem;
+}

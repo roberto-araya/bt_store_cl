@@ -1,0 +1,30 @@
+.blockMenu {
+  margin: 1rem auto;
+  margin-bottom: 0;
+  padding: 1rem;
+  min-width: 260px;
+  max-width: 300px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  background-color: var(--bs-primary-800);
+  color: var(--bs-primary-050);
+}
+
+.menu {
+  list-style-type: square;
+  padding-left: 1rem;
+}
+.menu .nav-link {
+  padding: 0.25rem;
+  color: var(--bs-primary-050);
+}
+.menu .nav-link:hover {
+  color: var(--bs-primary);
+}
+
+@media screen and (min-width: 576px) {
+  .blockMenu {
+    max-width: 100%;
+  }
+}

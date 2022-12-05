@@ -1,0 +1,85 @@
+.regionTop,
+.regionPreHeader,
+.regionNavbar,
+.regionHeader,
+.regionPrimaryMenu,
+.regionSecondaryMenu,
+.regionBreadcrumbs,
+.regionHighlighted,
+.regionHelp,
+.regionFooter,
+.regionBottom {
+  display: flex;
+  background-color: var(--backgroundColor);
+  justify-content: var(--justifyContent, center);
+  align-items: var(--alignItems, center);
+  height: minmax(var(--height, -webkit-max-content), -webkit-min-content);
+  height: minmax(var(--height, -moz-max-content), -moz-min-content);
+  height: minmax(var(--height, max-content), min-content);
+  width: 100%;
+  border-top: var(--borderTopSize, 1px) var(--borderTopStyle, none) var(--borderTopColor);
+  border-right: var(--borderRightSize, 1px) var(--borderRightStyle, none) var(--borderRightColor);
+  border-bottom: var(--borderBottomSize, 1px) var(--borderBottomStyle, none) var(--borderBottomColor);
+  border-left: var(--borderLeftSize, 1px) var(--borderLeftStyle, none) var(--borderLeftColor);
+  transition: background-color 250ms;
+}
+.regionTop:hover,
+.regionPreHeader:hover,
+.regionNavbar:hover,
+.regionHeader:hover,
+.regionPrimaryMenu:hover,
+.regionSecondaryMenu:hover,
+.regionBreadcrumbs:hover,
+.regionHighlighted:hover,
+.regionHelp:hover,
+.regionFooter:hover,
+.regionBottom:hover {
+  background-color: var(--backgroundColorHover);
+  border-top: var(--borderTopSize, 1px) var(--borderTopStyle, none) var(--borderTopColorHover);
+  border-right: var(--borderRightSize, 1px) var(--borderRightStyle, none) var(--borderRightColorHover);
+  border-bottom: var(--borderBottomSize, 1px) var(--borderBottomStyle, none) var(--borderBottomColorHover);
+  border-left: var(--borderLeftSize, 1px) var(--borderLeftStyle, none) var(--borderLeftColorHover);
+}
+
+.regionSidebarFirst,
+.regionSidebarSecond,
+.regionContent {
+  background-color: var(--backgroundColor, var(--bs-body-bg));
+}
+
+.regionContent {
+  margin: 0 1rem;
+}
+
+.regionContent.regionContent--layout {
+  margin: 0 0;
+}
+
+@media screen and (max-width: 768px) {
+  .regionFooter {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1.5rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .regionTop,
+.regionPreHeader,
+.regionNavbar,
+.regionHeader,
+.regionPrimaryMenu,
+.regionSecondaryMenu,
+.regionBreadcrumbs,
+.regionHighlighted,
+.regionHelp,
+.regionFooter,
+.regionBottom {
+    width: var(--width, 100%);
+    margin: 0 auto;
+    padding: 0 var(--paddingX, 0);
+  }
+
+  .regionContent {
+    margin: 0 10%;
+  }
+}

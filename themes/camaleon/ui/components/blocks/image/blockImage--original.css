@@ -1,0 +1,22 @@
+.blockImage--original {
+  justify-self: center;
+}
+.blockImage--original__add-image img {
+  width: 100%;
+}
+
+@media screen and (min-width: 640px) {
+  .blockImage--original {
+    justify-self: center;
+  }
+}
+@media screen and (min-width: 768px) {
+  .blockImage--original__add-image img {
+    width: auto;
+  }
+}
+@media screen and (orientation: landscape) and (min-width: 800px) and (max-height: 500px) {
+  .blockImage--original__add-image img {
+    width: auto;
+  }
+}

@@ -1,0 +1,29 @@
+.paragraphImageText--default {
+  width: calc(100% - 2rem);
+  margin: 1rem;
+}
+.paragraphImageText--default__text p {
+  margin-left: 2rem;
+  margin-right: 10px;
+}
+.paragraphImageText--default__image {
+  width: 125px;
+  float: left;
+  margin-right: 0.8rem;
+}
+.paragraphImageText--default__image img {
+  width: 125px;
+  height: 125px;
+}
+
+@media screen and (min-width: 400px) {
+  .paragraphImageText--default__image {
+    width: 200px;
+    float: left;
+    margin-right: 0.8rem;
+  }
+  .paragraphImageText--default__image img {
+    width: 200px;
+    height: 200px;
+  }
+}

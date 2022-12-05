@@ -1,0 +1,84 @@
+.blockTextImage {
+  --defaultPadding: 0.5rem;
+  --defaultBgColor: var(--bs-block-bg-color);
+  --defaultTitleColor: var(--defaultPageTitleColor);
+  --defaultCaptionColor: var(--defaultCaptionTextColor);
+  --defaultTextColor: var(--bs-block-text-color);
+  --defaultButtonColor: var(--bs-accent);
+  --defaultButtonLinkColor: var(--bs-button-link-color);
+  padding-left: calc(var(--smPaddingLeft, var(--defaultPadding)) * var(--defaultPaddingFactor));
+  padding-top: calc(var(--smPaddingTop, var(--defaultPadding)) * var(--defaultPaddingFactor));
+  padding-right: calc(var(--smPaddingRight, var(--defaultPadding)) * var(--defaultPaddingFactor));
+  padding-bottom: calc(var(--smPaddingBottom, var(--defaultPadding)) * var(--defaultPaddingFactor));
+  align-self: var(--smAlignSelf, stretch);
+  background-color: var(--backgroundColor, var(--defaultBgColor));
+  width: 100%;
+}
+.blockTextImage__content-title {
+  color: var(--titleColor, var(--defaultTitleColor));
+  text-align: var(--textAlign, center);
+}
+.blockTextImage__caption {
+  color: var(--captionColor, var(--defaultCaptionColor));
+  text-align: var(--textAlign, center);
+}
+.blockTextImage__text {
+  color: var(--textColor, var(--defaultTextColor));
+  text-align: var(--textAlign, center);
+}
+.blockTextImage__button {
+  --bs-btn-bg: var(--buttonColor, var(--defaultButtonColor));
+  --bs-btn-color: var(--buttonLinkColor, var(--defaultButtonLinkColor));
+  --bs-btn-border-color: var(--buttonLinkColor, var(--defaultButtonLinkColor));
+  --bs-btn-hover-bg: var(--buttonColor, var(--defaultButtonColor));
+  --bs-btn-hover-color: var(--buttonLinkColor, var(--defaultButtonLinkColor));
+  --bs-btn-hover-border-color: var(--buttonLinkColor, var(--defaultButtonLinkColor));
+}
+.blockTextImage__button-image svg {
+  fill: var(--buttonLinkColor, var(--defaultButtonLinkColor));
+}
+.blockTextImage__link a {
+  color: var(--buttonLinkColor, var(--defaultButtonLinkColor));
+  padding-left: var(--buttonIcon, 0);
+}
+
+@media screen and (min-width: 768px) {
+  .blockTextImage {
+    --defaultPadding: 1rem;
+    padding-left: calc(var(--mdPaddingLeft, var(--defaultPadding)) * var(--defaultPaddingFactor));
+    padding-top: calc(var(--mdPaddingTop, var(--defaultPadding)) * var(--defaultPaddingFactor));
+    padding-right: calc(var(--mdPaddingRight, var(--defaultPadding)) * var(--defaultPaddingFactor));
+    padding-bottom: calc(var(--mdPaddingBottom, var(--defaultPadding)) * var(--defaultPaddingFactor));
+    align-self: var(--mdAlignSelf, stretch);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .blockTextImage {
+    --defaultPadding: 2rem;
+    padding-left: calc(var(--lgPaddingLeft, var(--defaultPadding)) * var(--defaultPaddingFactor));
+    padding-top: calc(var(--lgPaddingTop, var(--defaultPadding)) * var(--defaultPaddingFactor));
+    padding-right: calc(var(--lgPaddingRight, var(--defaultPadding)) * var(--defaultPaddingFactor));
+    padding-bottom: calc(var(--lgPaddingBottom, var(--defaultPadding)) * var(--defaultPaddingFactor));
+    align-self: var(--lgAlignSelf, stretch);
+  }
+}
+@media screen and (min-width: 1280px) {
+  .blockTextImage {
+    --defaultPadding: 3rem;
+    padding-left: calc(var(--xlPaddingLeft, var(--defaultPadding)) * var(--defaultPaddingFactor));
+    padding-top: calc(var(--xlPaddingTop, var(--defaultPadding)) * var(--defaultPaddingFactor));
+    padding-right: calc(var(--xlPaddingRight, var(--defaultPadding)) * var(--defaultPaddingFactor));
+    padding-bottom: calc(var(--xlPaddingBottom, var(--defaultPadding)) * var(--defaultPaddingFactor));
+    align-self: var(--xlAlignSelf, stretch);
+  }
+}
+@media screen and (min-width: 1536px) {
+  .blockTextImage {
+    --defaultPadding: 3rem;
+    padding-left: calc(var(--xxlPaddingLeft, var(--defaultPadding)) * var(--defaultPaddingFactor));
+    padding-top: calc(var(--xxlPaddingTop, var(--defaultPadding)) * var(--defaultPaddingFactor));
+    padding-right: calc(var(--xxlPaddingRight, var(--defaultPadding)) * var(--defaultPaddingFactor));
+    padding-bottom: calc(var(--xxlPaddingBottom, var(--defaultPadding)) * var(--defaultPaddingFactor));
+    align-self: var(--xxlAlignSelf, stretch);
+  }
+}

@@ -1,0 +1,34 @@
+@-webkit-keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-2000px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-2000px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.slideInLeft {
+  -webkit-animation-name: slideInLeft;
+  animation-name: slideInLeft;
+  -webkit-animation-iteration-count: var(--animationCount, 1s);
+  animation-iteration-count: var(--animationCount, 1s);
+  -webkit-animation-duration: var(--animationDuration, 1s);
+  animation-duration: var(--animationDuration, 1s);
+  -webkit-animation-delay: var(--animationDelay, 0s);
+  animation-delay: var(--animationDelay, 0s);
+  -webkit-animation-timing-function: var(--animationFunction, ease);
+  animation-timing-function: var(--animationFunction, ease);
+  -webkit-animation-fill-mode: var(--animationFill, both);
+  animation-fill-mode: var(--animationFill, both);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}

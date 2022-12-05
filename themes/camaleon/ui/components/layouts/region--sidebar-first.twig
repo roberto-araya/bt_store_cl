@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * Theme override to display a region.
+ *
+ * Available variables:
+ * - content: The content for this region, typically blocks.
+ * - attributes: HTML attributes for the region <div>.
+ * - region: The name of the region variable as defined in the theme's
+ *   .info.yml file.
+ *
+ * @see template_preprocess_region()
+ */
+#}
+{% 
+  set region_classes = [
+    'region',
+    'regionSidebarFirst',
+  ]
+%}
+
+{%
+  set style_vars = [
+    theme_settings.background_color_select != 'default' and theme_settings.background_color_select != 'customColor' ? '--backgroundColor: var(--' ~ theme_settings.background_color_select ~ ')',
+    theme_settings.background_color_select == 'customColor' ? '--backgroundColor: ' ~ theme_settings.background_color_custom,
+  ]|remove_empty
+%}
+
+{% if content %}
+  <div{{ attributes.addClass(region_classes).setAttribute('style', style_vars|join('; ')) }}>
+    {{ content }}
+  </div>
+{% endif %}

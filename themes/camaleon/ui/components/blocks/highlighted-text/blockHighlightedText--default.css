@@ -1,0 +1,15 @@
+.blockHighlightedText--default__highlighted-text {
+  font-size: 2rem;
+  letter-spacing: 0.3rem;
+  font-style: italic;
+  margin: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 640px) {
+  .blockHighlightedText--default {
+    max-width: 50vw;
+    justify-self: center;
+  }
+}

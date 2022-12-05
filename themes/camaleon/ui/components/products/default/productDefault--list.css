@@ -1,0 +1,20 @@
+.productDefault--list .views-exposed-form {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+}
+.productDefault--list .views-exposed-form .form-label {
+  margin-top: 0;
+}
+.productDefault--list .views-exposed-form .form-item {
+  margin-right: 1rem;
+}
+.productDefault--list .views-exposed-form .form-submit {
+  margin-top: 5px;
+  color: var(--bs-white);
+  background-color: var(--bs-primary);
+}
+.productDefault--list .views-exposed-form .form-submit:hover {
+  filter: brightness(110%) saturate(100%);
+  color: var(--bs-white);
+}

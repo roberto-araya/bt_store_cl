@@ -1,0 +1,25 @@
+.blockMenu.blockMenuFooter--default {
+  padding: 0 1rem;
+}
+.blockMenu.blockMenuFooter--default .menuFooter {
+  list-style: none;
+  padding-left: 0;
+}
+.blockMenu.blockMenuFooter--default .menuFooter .nav-item {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.blockMenu.blockMenuFooter--default .menuFooter .nav-link {
+  color: var(--footerLinkColor);
+  transition: color 600ms;
+  font-size: 1.4rem;
+}
+.blockMenu.blockMenuFooter--default .menuFooter .nav-link:hover {
+  color: var(--footerLinkHoverColor);
+}
+.blockMenu.blockMenuFooter--default .navbar-nav {
+  gap: 0.5rem;
+}

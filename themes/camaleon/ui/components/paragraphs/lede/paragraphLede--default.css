@@ -1,0 +1,13 @@
+.paragraphLede--default {
+  margin: 1rem;
+}
+.paragraphLede--default__text {
+  font-size: 1.5rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.paragraphLede--default__text mark {
+  background-color: var(--bs-accent);
+  color: var(--bs-body-color);
+}

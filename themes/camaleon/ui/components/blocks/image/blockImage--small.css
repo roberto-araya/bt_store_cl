@@ -1,0 +1,14 @@
+.blockImage--small {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+}
+
+@media screen and (min-width: 992px) {
+  .blockImage--small {
+    margin-top: 0.5rem;
+  }
+}

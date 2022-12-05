@@ -1,0 +1,24 @@
+.nodeArticle--teaser-image__title {
+  margin-bottom: 0;
+  letter-spacing: 0.2rem;
+  text-align: center;
+}
+.nodeArticle--teaser-image__intro {
+  font-size: 1.2rem;
+  color: var(--bs-accent-200);
+  margin-top: 1.2rem;
+}
+.nodeArticle--teaser-image__intro p {
+  margin: 0 1rem;
+}
+.nodeArticle--teaser-image__caption {
+  text-align: center;
+  color: var(--bs-accent);
+  font-size: 0.8rem;
+}
+.nodeArticle--teaser-image__image {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}

@@ -1,0 +1,10 @@
+.blockMenu.blockMenuFooter {
+  background: transparent;
+  padding: 0;
+  padding-left: 0;
+  margin: 0;
+  margin-right: 0.5rem;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+}

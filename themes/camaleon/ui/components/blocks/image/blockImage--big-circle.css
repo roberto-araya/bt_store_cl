@@ -1,0 +1,9 @@
+.blockImage--big_circle {
+  width: 100%;
+  max-width: 300px;
+}
+.blockImage--big_circle img {
+  width: 300px;
+  height: 300px;
+  border-radius: 100%;
+}

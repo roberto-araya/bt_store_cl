@@ -1,0 +1,7 @@
+.paragraphText--default {
+  width: calc(100% - 2rem);
+  margin: 1rem;
+}
+.paragraphText--default__text p {
+  margin-left: 2rem;
+}

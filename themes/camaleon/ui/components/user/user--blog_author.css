@@ -1,0 +1,8 @@
+.user--blog_author {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.user--blog_author .form-item {
+  font-size: 0.8rem;
+}

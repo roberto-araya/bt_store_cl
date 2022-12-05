@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a branding block.
+ *
+ * Each branding element variable (logo, name, slogan) is only available if
+ * enabled in the block configuration.
+ *
+ * Available variables:
+ * - site_logo: Logo for site as defined in Appearance or theme settings.
+ * - site_name: Name for site as defined in Site information settings.
+ * - site_slogan: Slogan for site as defined in Site information settings.
+ *
+ * @ingroup themeable
+ */
+#}
+{{ attach_library('camaleon/branding') }}
+
+{% if theme_settings.branding_type == 'horizontal' %}
+  {{ attach_library('camaleon/branding_horizontal') }}
+{% endif %}
+
+{% if theme_settings.branding_type == 'horizontal_inverted' %}
+  {{ attach_library('camaleon/branding_horizontal_inverted') }}
+{% endif %}
+
+{% if theme_settings.branding_type == 'vertical' %}
+  {{ attach_library('camaleon/branding_vertical') }}
+{% endif %}
+
+{% if theme_settings.branding_type == 'vertical_inverted' %}
+  {{ attach_library('camaleon/branding_vertical_inverted') }}
+{% endif %}
+
+{% include "@Components/navbar/branding.twig" with {
+  'site_logo': site_logo,
+  'site_name': site_name,
+  'site_slogan': site_slogan,
+  'theme_settings': theme_settings
+  }
+%}

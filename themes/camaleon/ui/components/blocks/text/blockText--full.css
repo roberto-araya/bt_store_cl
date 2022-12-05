@@ -1,0 +1,8 @@
+.blockText--full__link {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+.blockText--full__button {
+  margin-bottom: 1rem;
+}

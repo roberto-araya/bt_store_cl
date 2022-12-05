@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a breadcrumb trail.
+ *
+ * Available variables:
+ * - breadcrumb: Breadcrumb trail items.
+ *
+ * @ingroup themeable
+ */
+#}
+{% if breadcrumb %}
+  {{ attach_library('camaleon/breadcrumbs') }}
+  {% include "@Components/breadcrumbs/breadcrumbs.twig" with breadcrumb %}
+{% endif %}

@@ -1,0 +1,29 @@
+.formCommerceCheckout {
+  margin: 0 1rem 2rem;
+  color: var(--bs-body-color);
+}
+.formCommerceCheckout .checkout-complete {
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--bs-body-color);
+}
+.formCommerceCheckout .checkout-pane {
+  min-width: 280px;
+  margin: 0 auto;
+}
+.formCommerceCheckout .checkout-pane-review fieldset.form-item,
+.formCommerceCheckout .checkout-pane-login fieldset.form-item {
+  --bs-card-border-color: var(--bs-link-color);
+  background-color: var(--bs-body-bg);
+}
+.formCommerceCheckout .checkout-pane-payment-information {
+  --bs-card-border-color: var(--bs-link-color);
+  background-color: var(--bs-body-bg);
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 1200px) {
+  .formCommerceCheckout {
+    margin: 0 20% 3rem;
+  }
+}

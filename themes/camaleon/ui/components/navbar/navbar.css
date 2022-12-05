@@ -1,0 +1,31 @@
+.navbar {
+  width: 100%;
+}
+.navbar .container-fluid {
+  width: 100%;
+  height: 100%;
+  justify-content: var(--justifyContent, center);
+  align-items: var(--alignItems, center);
+}
+.navbar .navbar-toggler-icon {
+  width: 50px;
+  height: 50px;
+}
+.navbar .navbarToggler {
+  order: 2;
+}
+.navbar #block-camaleon-site-branding {
+  order: 1;
+}
+.navbar .menuMain {
+  order: 3;
+}
+
+.navbarToggler.navbar-toggler:focus {
+  box-shadow: var(--togglerColor) 0 0 0 0.25rem;
+}
+
+.navbarToggler.navbar-toggler {
+  border-color: var(--togglerColor);
+  margin: 1rem;
+}

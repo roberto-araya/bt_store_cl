@@ -1,0 +1,22 @@
+.blockImageLink {
+  display: grid;
+  border: solid 1px var(--bs-gray-500);
+  width: 100%;
+  background-color: var(--backgroundColor);
+  transition: box-shadow 250ms;
+}
+.blockImageLink:hover {
+  box-shadow: 3px 5px 3px var(--bs-gray-500);
+}
+.blockImageLink__content-title {
+  color: var(--bs-white);
+  text-shadow: 2px 2px var(--bs-primary);
+}
+.blockImageLink__image {
+  grid-column: 1;
+  grid-row: 1;
+}
+.blockImageLink img {
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,40 @@
+.blockBasic {
+  width: 100%;
+  padding-left: var(--smPaddingLeft, 0);
+  padding-top: var(--smPaddingTop, 0);
+  padding-right: var(--smPaddingRight, 0);
+  padding-bottom: var(--smPaddingBottom, 0);
+}
+
+@media screen and (min-width: 768px) {
+  .blockBasic {
+    padding-left: var(--mdPaddingLeft, 0);
+    padding-top: var(--mdPaddingTop, 0);
+    padding-right: var(--mdPaddingRight, 0);
+    padding-bottom: var(--mdPaddingBottom, 0);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .blockBasic {
+    padding-left: var(--lgPaddingLeft, 0);
+    padding-top: var(--lgPaddingTop, 0);
+    padding-right: var(--lgPaddingRight, 0);
+    padding-bottom: var(--lgPaddingBottom, 0);
+  }
+}
+@media screen and (min-width: 1280px) {
+  .blockBasic {
+    padding-left: var(--xlPaddingLeft, 0);
+    padding-top: var(--xlPaddingTop, 0);
+    padding-right: var(--xlPaddingRight, 0);
+    padding-bottom: var(--xlPaddingBottom, 0);
+  }
+}
+@media screen and (min-width: 1536px) {
+  .blockBasic {
+    padding-left: var(--xxlPaddingLeft, 0);
+    padding-top: var(--xxlPaddingTop, 0);
+    padding-right: var(--xxlPaddingRight, 0);
+    padding-bottom: var(--xxlPaddingBottom, 0);
+  }
+}

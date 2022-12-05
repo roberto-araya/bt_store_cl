@@ -1,0 +1,39 @@
+.nodeArticle--full__title {
+  font-size: calc(1.725rem + 5.7vw);
+  text-align: center;
+  font-weight: bold;
+  color: var(--defaultArticleTitleColor);
+  text-shadow: 2px 2px var(--defaultArticleShadowTitleColor);
+  text-transform: uppercase;
+}
+@media (min-width: 1200px) {
+  .nodeArticle--full__title {
+    font-size: 6rem;
+  }
+}
+.nodeArticle--full__intro {
+  font-size: 1.2rem;
+  color: var(--defaultCaptionTextColor);
+  margin-top: 1.2rem;
+}
+.nodeArticle--full__intro p {
+  margin: 0 1rem;
+}
+.nodeArticle--full__caption {
+  text-align: center;
+  color: var(--defaultIntroTextColor);
+  font-size: 0.8rem;
+}
+.nodeArticle--full__image {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 1536px) {
+  .nodeArticle--full__title {
+    font-size: 8rem;
+    text-shadow: 5px 5px var(--defaultArticleShadowTitleColor);
+  }
+}

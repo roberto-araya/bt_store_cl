@@ -1,0 +1,18 @@
+.blockTextIcon--full {
+  display: grid;
+}
+.blockTextIcon--full__icon {
+  margin: 1rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  justify-self: center;
+}
+.blockTextIcon--full__icon .svg-icon {
+  width: 100px;
+  height: 100px;
+}
+.blockTextIcon--full__icon svg {
+  width: 100px;
+  height: 100px;
+}

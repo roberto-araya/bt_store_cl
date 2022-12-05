@@ -1,0 +1,30 @@
+.siteBranding {
+  --defaultBackgroundColor: transparent;
+  --defaultNameColor: var(--bs-primary);
+  --defaultSloganColor: var(--bs-primary);
+  background-color: var(--backgroundColor);
+  min-width: var(--logoSize, 100px);
+}
+.siteBranding:hover {
+  background-color: var(--backgroundColorHover);
+}
+.siteBranding .siteBranding__logo {
+  width: var(--logoSize, 100px);
+}
+.siteBranding .siteBranding__logo img {
+  width: 100%;
+}
+.siteBranding .siteBranding__name a {
+  color: var(--nameColor);
+  font-size: var(--nameFontSize, 1.2rem);
+}
+.siteBranding .siteBranding__name a:hover {
+  color: var(--nameColorHover);
+}
+.siteBranding .siteBranding__slogan {
+  color: var(--sloganColor);
+  font-size: var(--sloganFontSize, 0.8rem);
+}
+.siteBranding .siteBranding__slogan:hover {
+  color: var(--sloganColorHover);
+}
