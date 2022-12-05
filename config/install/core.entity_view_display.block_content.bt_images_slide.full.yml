@@ -19,10 +19,11 @@ bundle: bt_images_slide
 mode: full
 content:
   field_bt_images:
-    type: entity_reference_label
-    label: above
+    type: entity_reference_entity_view
+    label: hidden
     settings:
-      link: true
+      view_mode: bt_slide
+      link: false
     third_party_settings: {  }
     weight: 0
     region: content
