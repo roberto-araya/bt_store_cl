@@ -58,9 +58,6 @@
         },
         "drupal/commerce_pos": {
           "Call to deprecated function file_prepare_directory()": "https://www.drupal.org/files/issues/2022-01-24/commerce_pos-replace_deprecated_function_call-3260249-2.patch"
-        },
-        "drupal/field_css": {
-          "Warning on rendering Media-Entity with field_css as thumbail": "https://www.drupal.org/files/issues/2021-05-06/field_css-media-thumbnail-fix.patch"
         }
       } 
     }
