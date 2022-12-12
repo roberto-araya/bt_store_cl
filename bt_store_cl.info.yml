@@ -49,6 +49,7 @@ dependencies:
   - transbank:transbank
   - transbank:transbank_webpay_plus
   - product_taxonomy_filter:product_taxonomy_filter
+  - antibot:antibot
   - simple_sitemap:simple_sitemap
   - simple_sitemap:simple_sitemap_engines
   - simple_sitemap:simple_sitemap_views
