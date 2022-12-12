@@ -49,6 +49,9 @@ dependencies:
   - transbank:transbank
   - transbank:transbank_webpay_plus
   - product_taxonomy_filter:product_taxonomy_filter
+  - simple_sitemap:simple_sitemap
+  - simple_sitemap:simple_sitemap_engines
+  - simple_sitemap:simple_sitemap_views
 themes:
   - bt_install_theme
   - thunder_admin
