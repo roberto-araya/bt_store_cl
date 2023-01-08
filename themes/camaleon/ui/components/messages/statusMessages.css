@@ -4,3 +4,6 @@
   width: max-content;
   margin: 0.5rem;
 }
+.statusMessages.alert.alert-error.alert-danger {
+  display: none;
+}
