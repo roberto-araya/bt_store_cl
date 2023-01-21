@@ -3,7 +3,70 @@
 use Drupal\Core\Form\FormStateInterface;
 
 function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
-  $color_options = _get_color_options();
+  $color_options = [
+    'default' => t('Default'),
+    'bs-primary' => t('Primary'),
+    'bs-primary-050' => t('Primary 50'),
+    'bs-primary-100' => t('Primary 100'),
+    'bs-primary-200' => t('Primary 200'),
+    'bs-primary-300' => t('Primary 300'),
+    'bs-primary-400' => t('Primary 400'),
+    'bs-primary-500' => t('Primary 500'),
+    'bs-primary-600' => t('Primary 600'),
+    'bs-primary-700' => t('Primary 700'),
+    'bs-primary-800' => t('Primary 800'),
+    'bs-primary-900' => t('Primary 900'),
+    'bs-secondary' => t('Secondary'),
+    'bs-secondary-050' => t('Secondary 50'),
+    'bs-secondary-100' => t('Secondary 100'),
+    'bs-secondary-200' => t('Secondary 200'),
+    'bs-secondary-300' => t('Secondary 300'),
+    'bs-secondary-400' => t('Secondary 400'),
+    'bs-secondary-500' => t('Secondary 500'),
+    'bs-secondary-600' => t('Secondary 600'),
+    'bs-secondary-700' => t('Secondary 700'),
+    'bs-secondary-800' => t('Secondary 800'),
+    'bs-secondary-900' => t('Secondary 900'),
+    'bs-accent' => t('Accent'),
+    'bs-accent-050' => t('Accent 50'),
+    'bs-accent-100' => t('Accent 100'),
+    'bs-accent-200' => t('Accent 200'),
+    'bs-accent-300' => t('Accent 300'),
+    'bs-accent-400' => t('Accent 400'),
+    'bs-accent-500' => t('Accent 500'),
+    'bs-accent-600' => t('Accent 600'),
+    'bs-accent-700' => t('Accent 700'),
+    'bs-accent-800' => t('Accent 800'),
+    'bs-accent-900' => t('Accent 900'),
+    'bs-success' => t('Success'),
+    'bs-info' => t('Info'),
+    'bs-warning' => t('Warning'),
+    'bs-danger' => t('Danger'),
+    'bs-light' => t('Light'),
+    'bs-dark' => t('Dark'),
+    'bs-blue' => t('Blue'),
+    'bs-indigo' => t('Indigo'),
+    'bs-purple' => t('Purple'),
+    'bs-pink' => t('Pink'),
+    'bs-red' => t('Red'),
+    'bs-orange' => t('Orange'),
+    'bs-yellow' => t('Yellow'),
+    'bs-green' => t('Green'),
+    'bs-teal' => t('Teal'),
+    'bs-cyan' => t('Cyan'),
+    'bs-white' => t('White'),
+    'bs-gray-dark' => t('Gray Dark'),
+    'bs-gray-100' => t('Gray 100'),
+    'bs-gray-200' => t('Gray 200'),
+    'bs-gray-300' => t('Gray 300'),
+    'bs-gray-400' => t('Gray 400'),
+    'bs-gray-500' => t('Gray 500'),
+    'bs-gray-600' => t('Gray 600'),
+    'bs-gray-700' => t('Gray 700'),
+    'bs-gray-800' => t('Gray 800'),
+    'bs-gray-900' => t('Gray 900'),
+    'customColor' => t('Custom Color'),
+  ];
 
   #### FONT ####  
   $form['font'] = [
@@ -114,6 +177,20 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
     '#tree' => TRUE,
   ];
 
+  $other_regions = [
+    'sidebar_first' => 'Sidebar Firts',
+    'content' => 'Content',
+    'sidebar_second' => 'Sidebar Second'
+  ];
+
+  foreach ($other_regions as $region_id => $region_name) {
+    $form['regions']['region_' . $region_id] = [
+      '#type' => 'details',
+      '#title' => t($region_name . ' region'),
+      '#tree' => TRUE,
+    ];
+  }
+
   $regions = [
     'top' => 'Page top',
     'pre_header' => 'Pre header',
@@ -124,9 +201,6 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
     'breadcrumb' => 'Breadcrumb',
     'highlighted' => 'Highlighted',
     'help' => 'Help',
-    'sidebar_first' => 'Left sidebar',
-    'content' => 'Content',
-    'sidebar_second' => 'Right sidebar',
     'footer' => 'Footer',
     'bottom' => 'Page bottom',
   ];
@@ -138,136 +212,125 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
       '#tree' => TRUE,
     ];
     
-    /*$default_value_prefix = 'regions.region_' . $region_id . '.background';
-    $state_input_prefix = 'regions[region_' . $region_id . '][background';
-    $style = 'background';
+    $form['regions']['region_' . $region_id]['justify_content'] = [
+      '#type' => 'select',
+      '#options' => [
+        'center' => t('Center'),
+        'end' => t('End'),
+        'flex-end' => t('Flex End'),
+        'flex-start' => t('Flex Start'),
+        'inherit' => t('Inherit'),
+        'initial' => t('Initial'),
+        'left' => t('Left'),
+        'normal' => t('Normal'),
+        'revert' => t('Revert'),
+        'revert-layer' => t('Revert Layer'),
+        'right' => t('Right'),
+        'safe' => t('Safe'),
+        'space-around' => t('Space Around'),
+        'space-between' => t('Space Between'),
+        'space-evenly' => t('Space Evenly'), 
+        'start' => t('Start'),
+        'stretch' => t('Stretch'),
+        'unsafe' => t('Unsafe'),
+      ],
+      '#title' => t('Justify Content'),
+      '#description' => t("Flex CSS property."),
+      '#default_value' => theme_get_setting('regions.region_' . $region_id . '.justify_content'),
+    ];
 
-    $regions_colors = _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options);
-    foreach ($regions_colors as $item => $data) {
-      $form['regions']['region_' . $region_id][$item] = $data;
-    }*/
+    $form['regions']['region_' . $region_id]['align_items'] = [
+      '#type' => 'select',
+      '#options' => [
+        'baseline' => t('Baseline'),
+        'center' => t('Center'),
+        'end' => t('End'),
+        'first-baseline' => t('First Baseline'),
+        'flex-end' => t('Flex End'),
+        'flex-start' => t('Flex Start'),
+        'inherit' => t('Inherit'),
+        'initial' => t('Initial'),
+        'last-baseline' => t('Last Baseline'),
+        'normal' => t('Normal'),
+        'revert' => t('Revert'),
+        'revert-layer' => t('Revert Layer'),
+        'safe' => t('Safe'),
+        'self-end' => t('Self End'),
+        'self-start' => t('Self Start'),
+        'start' => t('Start'),
+        'stretch' => t('Stretch'),
+        'unsafe' => t('Unsafe'),
+        'unset' => t('Unset'),
+      ],
+      '#title' => t('Align Items'),
+      '#description' => t("Flex CSS property."),
+      '#default_value' => theme_get_setting('regions.region_' . $region_id . '.align_items'),
+    ];
 
-    if (!in_array($region_id, ['sidebar_first', 'content', 'sidebar_second'])) {
-      $form['regions']['region_' . $region_id]['justify_content'] = [
-        '#type' => 'select',
-        '#options' => [
-          'center' => t('Center'),
-          'end' => t('End'),
-          'flex-end' => t('Flex End'),
-          'flex-start' => t('Flex Start'),
-          'inherit' => t('Inherit'),
-          'initial' => t('Initial'),
-          'left' => t('Left'),
-          'normal' => t('Normal'),
-          'revert' => t('Revert'),
-          'revert-layer' => t('Revert Layer'),
-          'right' => t('Right'),
-          'safe' => t('Safe'),
-          'space-around' => t('Space Around'),
-          'space-between' => t('Space Between'),
-          'space-evenly' => t('Space Evenly'), 
-          'start' => t('Start'),
-          'stretch' => t('Stretch'),
-          'unsafe' => t('Unsafe'),
-        ],
-        '#title' => t('Justify Content'),
-        '#description' => t("Flex CSS property."),
-        '#default_value' => theme_get_setting('regions.region_' . $region_id . '.justify_content'),
-      ];
-  
-      $form['regions']['region_' . $region_id]['align_items'] = [
-        '#type' => 'select',
-        '#options' => [
-          'baseline' => t('Baseline'),
-          'center' => t('Center'),
-          'end' => t('End'),
-          'first-baseline' => t('First Baseline'),
-          'flex-end' => t('Flex End'),
-          'flex-start' => t('Flex Start'),
-          'inherit' => t('Inherit'),
-          'initial' => t('Initial'),
-          'last-baseline' => t('Last Baseline'),
-          'normal' => t('Normal'),
-          'revert' => t('Revert'),
-          'revert-layer' => t('Revert Layer'),
-          'safe' => t('Safe'),
-          'self-end' => t('Self End'),
-          'self-start' => t('Self Start'),
-          'start' => t('Start'),
-          'stretch' => t('Stretch'),
-          'unsafe' => t('Unsafe'),
-          'unset' => t('Unset'),
-        ],
-        '#title' => t('Align Items'),
-        '#description' => t("Flex CSS property."),
-        '#default_value' => theme_get_setting('regions.region_' . $region_id . '.align_items'),
-      ];
+    $form['regions']['region_' . $region_id]['height'] = [
+      '#type' => 'textfield',
+      '#title' => t('Height'),
+      '#description' => t("CSS Property. Examples: 100px; 10vh; 30%;"),
+      '#default_value' => theme_get_setting('regions.region_' . $region_id . '.height'),
+    ];
 
-      $form['regions']['region_' . $region_id]['height'] = [
-        '#type' => 'textfield',
-        '#title' => t('Height'),
-        '#description' => t("CSS Property. Examples: 100px; 10vh; 30%;"),
-        '#default_value' => theme_get_setting('regions.region_' . $region_id . '.height'),
-      ];
+    $form['regions']['region_' . $region_id]['width'] = [
+      '#type' => 'details',
+      '#title' => t('Region Width'),
+    ];
 
-      $form['regions']['region_' . $region_id]['width'] = [
-        '#type' => 'details',
-        '#title' => t('Region Width'),
-      ];
+    $form['regions']['region_' . $region_id]['width']['container_select'] = [
+      '#type' => 'select',
+      '#options' => [
+        'full' => 'Full',
+        'box' => 'Box'
+      ],
+      '#title' => t('Container Type'),
+      '#description' => t("Select a container type for the width."),
+      '#default_value' => theme_get_setting('regions.region_' . $region_id . '.width.container_select'),
+    ];
 
-      $form['regions']['region_' . $region_id]['width']['container_select'] = [
-        '#type' => 'select',
-        '#options' => [
-          'full' => 'Full',
-          'box' => 'Box'
+    $form['regions']['region_' . $region_id]['width']['full_select'] = [
+      '#type' => 'select',
+      '#options' => [
+        '0' => '100%',
+        '5%' => '90%',
+        '10%' => '80%',
+        '15%' => '70%',
+        '20%' => '60%',
+      ],
+      '#title' => t('Full Container Width'),
+      '#description' => t("Select a width."),
+      '#default_value' => theme_get_setting('regions.region_' . $region_id . '.width.full_select'),
+      '#states' => [
+        'visible' => [
+          ':input[name="regions[region_' . $region_id . '][width][container_select]"]' => ['value' => 'full'],
         ],
-        '#title' => t('Container Type'),
-        '#description' => t("Select a container type for the width."),
-        '#default_value' => theme_get_setting('regions.region_' . $region_id . '.width.container_select'),
-      ];
-    
-      $form['regions']['region_' . $region_id]['width']['full_select'] = [
-        '#type' => 'select',
-        '#options' => [
-          '0' => '100%',
-          '5%' => '90%',
-          '10%' => '80%',
-          '15%' => '70%',
-          '20%' => '60%',
-        ],
-        '#title' => t('Full Container Width'),
-        '#description' => t("Select a width."),
-        '#default_value' => theme_get_setting('regions.region_' . $region_id . '.width.full_select'),
-        '#states' => [
-          'visible' => [
-            ':input[name="regions[region_' . $region_id . '][width][container_select]"]' => ['value' => 'full'],
-          ],
-        ],
-      ];
+      ],
+    ];
 
-      $form['regions']['region_' . $region_id]['width']['box_select'] = [
-        '#type' => 'select',
-        '#options' => [
-          '100%' => '100%',
-          '90%' => '90%',
-          '80%' => '80%',
-          '70%' => '70%',
-          '60%' => '60%',
+    $form['regions']['region_' . $region_id]['width']['box_select'] = [
+      '#type' => 'select',
+      '#options' => [
+        '100%' => '100%',
+        '90%' => '90%',
+        '80%' => '80%',
+        '70%' => '70%',
+        '60%' => '60%',
+      ],
+      '#title' => t('Box Container Width'),
+      '#description' => t("Select a width."),
+      '#default_value' => theme_get_setting('regions.region_' . $region_id . '.width.box_select'),
+      '#states' => [
+        'visible' => [
+          ':input[name="regions[region_' . $region_id . '][width][container_select]"]' => ['value' => 'box'],
         ],
-        '#title' => t('Box Container Width'),
-        '#description' => t("Select a width."),
-        '#default_value' => theme_get_setting('regions.region_' . $region_id . '.width.box_select'),
-        '#states' => [
-          'visible' => [
-            ':input[name="regions[region_' . $region_id . '][width][container_select]"]' => ['value' => 'box'],
-          ],
-        ],
-      ];
+      ],
+    ];
 
-      $borders = _get_border_form_items('regions', 'region_' . $region_id, 'regions.region_' . $region_id, 'regions[region_' . $region_id, $color_options);
-      foreach ($borders as $item => $data) {
-        $form['regions']['region_' . $region_id][$item] = $data; 
-      }
+    $borders = _get_border_form_items('regions', 'region_' . $region_id, 'regions.region_' . $region_id, 'regions[region_' . $region_id, $color_options);
+    foreach ($borders as $item => $data) {
+      $form['regions']['region_' . $region_id][$item] = $data; 
     }
   }
 
@@ -283,11 +346,14 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
     '_color_custom_opacity_hover',
   ];
 
+  # Blocks
+  // Main menu
   $mainmenu_background_colors = _get_color_form_select('menus.menu_main.background', 'menus[menu_main][background', 'background', $color_options);
   $mainmenu_items_colors = _get_color_form_select('menus.menu_main.item.item', 'menus[menu_main][item][item', 'item', $color_options);
   $mainmenu_item_bg_colors = _get_color_form_select('menus.menu_main.item.item_background', 'menus[menu_main][item][item_background', 'item_background', $color_options);
   $mainmenu_items_border_colors = _get_color_form_select('menus.menu_main.item.border.border', 'menus[menu_main][item][border][border', 'border', $color_options);
 
+  // Branding
   $branding_colors = _get_color_form_select('blocks.branding.background', 'blocks[branding][background', 'background', $color_options);
   $branding_name_colors = _get_color_form_select('blocks.branding.name', 'blocks[branding][name', 'name', $color_options);
   $branding_slogan_colors = _get_color_form_select('blocks.branding.slogan', 'blocks[branding][slogan', 'slogan', $color_options);
@@ -441,76 +507,6 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
     $form['regions']['region_bottom']['background' . $item] = $bottom_region_colors['background' . $item];
     $weight++;
   }
-}
-
-/**
- * Return an array of theme's color name.
- */
-function _get_color_options() :array {
-  return [
-    'default' => t('Default'),
-    'bs-primary' => t('Primary'),
-    'bs-primary-050' => t('Primary 50'),
-    'bs-primary-100' => t('Primary 100'),
-    'bs-primary-200' => t('Primary 200'),
-    'bs-primary-300' => t('Primary 300'),
-    'bs-primary-400' => t('Primary 400'),
-    'bs-primary-500' => t('Primary 500'),
-    'bs-primary-600' => t('Primary 600'),
-    'bs-primary-700' => t('Primary 700'),
-    'bs-primary-800' => t('Primary 800'),
-    'bs-primary-900' => t('Primary 900'),
-    'bs-secondary' => t('Secondary'),
-    'bs-secondary-050' => t('Secondary 50'),
-    'bs-secondary-100' => t('Secondary 100'),
-    'bs-secondary-200' => t('Secondary 200'),
-    'bs-secondary-300' => t('Secondary 300'),
-    'bs-secondary-400' => t('Secondary 400'),
-    'bs-secondary-500' => t('Secondary 500'),
-    'bs-secondary-600' => t('Secondary 600'),
-    'bs-secondary-700' => t('Secondary 700'),
-    'bs-secondary-800' => t('Secondary 800'),
-    'bs-secondary-900' => t('Secondary 900'),
-    'bs-accent' => t('Accent'),
-    'bs-accent-050' => t('Accent 50'),
-    'bs-accent-100' => t('Accent 100'),
-    'bs-accent-200' => t('Accent 200'),
-    'bs-accent-300' => t('Accent 300'),
-    'bs-accent-400' => t('Accent 400'),
-    'bs-accent-500' => t('Accent 500'),
-    'bs-accent-600' => t('Accent 600'),
-    'bs-accent-700' => t('Accent 700'),
-    'bs-accent-800' => t('Accent 800'),
-    'bs-accent-900' => t('Accent 900'),
-    'bs-success' => t('Success'),
-    'bs-info' => t('Info'),
-    'bs-warning' => t('Warning'),
-    'bs-danger' => t('Danger'),
-    'bs-light' => t('Light'),
-    'bs-dark' => t('Dark'),
-    'bs-blue' => t('Blue'),
-    'bs-indigo' => t('Indigo'),
-    'bs-purple' => t('Purple'),
-    'bs-pink' => t('Pink'),
-    'bs-red' => t('Red'),
-    'bs-orange' => t('Orange'),
-    'bs-yellow' => t('Yellow'),
-    'bs-green' => t('Green'),
-    'bs-teal' => t('Teal'),
-    'bs-cyan' => t('Cyan'),
-    'bs-white' => t('White'),
-    'bs-gray-dark' => t('Gray Dark'),
-    'bs-gray-100' => t('Gray 100'),
-    'bs-gray-200' => t('Gray 200'),
-    'bs-gray-300' => t('Gray 300'),
-    'bs-gray-400' => t('Gray 400'),
-    'bs-gray-500' => t('Gray 500'),
-    'bs-gray-600' => t('Gray 600'),
-    'bs-gray-700' => t('Gray 700'),
-    'bs-gray-800' => t('Gray 800'),
-    'bs-gray-900' => t('Gray 900'),
-    'customColor' => t('Custom Color'),
-  ];
 }
 
 function _get_opacity_options($type) {
