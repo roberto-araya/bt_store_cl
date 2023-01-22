@@ -250,6 +250,7 @@ function camaleon_preprocess_region(&$variables) {
   }
 
   if (isset($variables['region']) && $variables['region'] == 'navbar') {
+    $variables['theme_settings']['position'] = theme_get_setting('regions.region_navbar.position_select');
     $variables['theme_settings']['toggler_color'] = theme_get_setting('regions.region_navbar.toggler_color.toggler_color');
     $variables['theme_settings']['toggler_color_custom'] = theme_get_setting('regions.region_navbar.toggler_color.toggler_color_custom');
     $variables['theme_settings']['toggler_color_opacity'] = theme_get_setting('regions.region_navbar.toggler_color.toggler_color_opacity');

@@ -328,6 +328,26 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
       ],
     ];
 
+    // Navbar positions
+    $form['regions']['region_navbar']['position_select'] = [
+      '#type' => 'select',
+      '#options' => [
+        'inherit' => t('Inherit'),
+        'initial' => t('Initial'),
+        'revert' => t('Revert'),
+        'revert-layer' => t('Revert Layer'),
+        'static' => t('Static'),
+        'relative' => t('Relative'),
+        'absolute' => t('Absolute'),
+        'fixed' => t('Fixed'),
+        'sticky' => t('Sticky'),
+      ],
+      '#title' => t('Position'),
+      '#description' => t("Select css position."),
+      '#default_value' => theme_get_setting('regions.navbar.position'),
+    ];
+
+
     $borders = _get_border_form_items('regions', 'region_' . $region_id, 'regions.region_' . $region_id, 'regions[region_' . $region_id, $color_options);
     foreach ($borders as $item => $data) {
       $form['regions']['region_' . $region_id][$item] = $data; 
