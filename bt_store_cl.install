@@ -30,8 +30,6 @@ function bt_store_cl_install() {
   $theme_config->set('default', 'camaleon');
   $theme_config->save(TRUE);
   
-  
-  
   // Alias URL.
   $paths = [
     '/contact' => '/contacto',
@@ -96,6 +94,21 @@ function bt_store_cl_install() {
     'view my_account in toolbar',
     'cancel account',
   ];
+
+  // Add permissions to the role bt_edit_publish_content.
+  $role = 'user.role.bt_edit_publish_content';
+  $new_permissions = [
+    'use editorial transition archive',
+    'use editorial transition archived_draft',
+    'use editorial transition archived_published',
+    'use editorial transition create_new_draft',
+    'use editorial transition publish',
+  ];
+
+  $permissions = Drupal::configFactory()->get($role)->get('permissions');
+  $config = Drupal::configFactory()->getEditable($role);
+  $config->set('permissions', array_merge($permissions, $new_permissions));
+  $config->save();
 
   // Enable default permissions for system roles.
   user_role_grant_permissions(RoleInterface::ANONYMOUS_ID, $anonymous);
