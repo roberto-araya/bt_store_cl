@@ -813,11 +813,35 @@ menu:
       ui/components/menus/menu.css: {}
 
 # Main
-main_menu:
+menu_main:
   version: VERSION
   css:
     component:
       ui/components/menus/main/menuMain.css: {}
+
+menu_main_default:
+  version: VERSION
+  css:
+    component:
+      ui/components/menus/main/menuMain--default.css: {}
+  dependencies:
+    - camaleon/menu_main
+
+menu_main_one:
+  version: VERSION
+  css:
+    component:
+      ui/components/menus/main/menuMain--one.css: {}
+  dependencies:
+    - camaleon/menu_main
+
+menu_main_two:
+  version: VERSION
+  css:
+    component:
+      ui/components/menus/main/menuMain--two.css: {}
+  dependencies:
+    - camaleon/menu_main
 
 # footer
 menu_footer:
@@ -826,14 +850,28 @@ menu_footer:
     component:
       ui/components/menus/footer/menuFooter.css: {}
 
-# footer default
 menu_footer_default:
   version: VERSION
   css:
     component:
       ui/components/menus/footer/menuFooter--default.css: {}
   dependencies:
-    - camaleon/menu
+    - camaleon/menu_footer
+
+menu_footer_one:
+  version: VERSION
+  css:
+    component:
+      ui/components/menus/footer/menuFooter--one.css: {}
+  dependencies:
+    - camaleon/menu_footer
+
+menu_footer_two:
+  version: VERSION
+  css:
+    component:
+      ui/components/menus/footer/menuFooter--two.css: {}
+  dependencies:
     - camaleon/menu_footer
 
 # Breadcrumbs

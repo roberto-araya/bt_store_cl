@@ -1,10 +1,19 @@
-.blockMenu.blockMenuFooter {
-  background: transparent;
-  padding: 0;
-  padding-left: 0;
-  margin: 0;
-  margin-right: 0.5rem;
-  min-width: -webkit-max-content;
-  min-width: -moz-max-content;
-  min-width: max-content;
+.menuFooter {
+  background-color: var(--backgroundColor);
+}
+.menuFooter:hover {
+  background-color: var(--backgroundColorHover);
+}
+.menuFooter .nav-item > .nav-link, .menuFooter .dropdown > .nav-link, .menuFooter .dropdown-item > .nav-link {
+  color: var(--itemColor, var(--footerLinkColor));
+}
+.menuFooter .nav-item > .nav-link:hover, .menuFooter .dropdown > .nav-link:hover, .menuFooter .dropdown-item > .nav-link:hover {
+  color: var(--itemColorHover, var(--footerLinkHoverColor));
+}
+.menuFooter .nav-item {
+  background-color: var(--itemBackgroundColor);
+  padding: var(--itemPadding);
+}
+.menuFooter .nav-item:hover {
+  background-color: var(--itemBackgroundColorHover);
 }

@@ -157,10 +157,6 @@
     {% set style_vars = style_vars|merge(['--borderRightColorHover: ' ~ theme_settings.border_right_color_custom_hover ~ theme_settings.border_right_color_custom_opacity_hover ]) %}
   {% endif %}  
 {% endif %}
-
-{# position #}
-{% set style_vars = style_vars|merge(['--position: ' ~ theme_settings.position]) %}
-
 {# border bottom color #}
 {% if theme_settings.border_bottom_select == 'custom' and theme_settings.border_bottom_color != 'default' and theme_settings.border_bottom_color != 'customColor' %}
   {% if theme_settings.border_bottom_color_opacity == '1.0' %}

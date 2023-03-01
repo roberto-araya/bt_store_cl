@@ -13,10 +13,12 @@
 .blockTitleImage__content-title {
   text-align: var(--textAlign, center);
   color: var(--titleColor, var(--defaultTitleColor));
+  font-family: var(--titleFont);
 }
 .blockTitleImage__caption {
   text-align: var(--textAlign, center);
   color: var(--captionColor, var(--defaultCaptionColor));
+  font-family: var(--captionFont);
 }
 
 @media screen and (min-width: 768px) {

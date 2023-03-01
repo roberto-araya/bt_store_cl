@@ -2,21 +2,23 @@
   padding: 0;
 }
 
-.menuFooter--default {
+.menuFooter--two {
   min-width: -webkit-max-content;
   min-width: -moz-max-content;
   min-width: max-content;
   list-style: none;
+  padding-left: 0;
 }
-.menuFooter--default .nav {
+.menuFooter--two .nav {
   gap: 0.8rem;
 }
-.menuFooter--default .nav-item {
+.menuFooter--two .nav-item {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
 }
-.menuFooter--default .nav-link {
+.menuFooter--two .nav-link {
   font-size: 0.8rem;
   transition: color 600ms;
+  padding: 0;
 }

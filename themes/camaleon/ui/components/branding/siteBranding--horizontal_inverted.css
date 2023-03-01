@@ -21,6 +21,7 @@
   grid-row: 1;
   align-self: flex-end;
   text-align: right;
+  font-weight: bold;
 }
 .siteBranding--horizontal_inverted .siteBranding__slogan {
   grid-column: 1;

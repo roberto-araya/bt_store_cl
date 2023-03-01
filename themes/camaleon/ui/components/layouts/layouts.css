@@ -1,6 +1,5 @@
 .regionTop,
 .regionPreHeader,
-.regionNavbar,
 .regionHeader,
 .regionPrimaryMenu,
 .regionSecondaryMenu,
@@ -13,19 +12,14 @@
   background-color: var(--backgroundColor);
   justify-content: var(--justifyContent, center);
   align-items: var(--alignItems, center);
-  height: minmax(var(--height, -webkit-max-content), -webkit-min-content);
-  height: minmax(var(--height, -moz-max-content), -moz-min-content);
-  height: minmax(var(--height, max-content), min-content);
+  height: var(--height, -webkit-min-content);
+  height: var(--height, -moz-min-content);
+  height: var(--height, min-content);
   width: 100%;
-  border-top: var(--borderTopSize, 1px) var(--borderTopStyle, none) var(--borderTopColor);
-  border-right: var(--borderRightSize, 1px) var(--borderRightStyle, none) var(--borderRightColor);
-  border-bottom: var(--borderBottomSize, 1px) var(--borderBottomStyle, none) var(--borderBottomColor);
-  border-left: var(--borderLeftSize, 1px) var(--borderLeftStyle, none) var(--borderLeftColor);
   transition: background-color 250ms;
 }
 .regionTop:hover,
 .regionPreHeader:hover,
-.regionNavbar:hover,
 .regionHeader:hover,
 .regionPrimaryMenu:hover,
 .regionSecondaryMenu:hover,
@@ -35,10 +29,24 @@
 .regionFooter:hover,
 .regionBottom:hover {
   background-color: var(--backgroundColorHover);
-  border-top: var(--borderTopSize, 1px) var(--borderTopStyle, none) var(--borderTopColorHover);
-  border-right: var(--borderRightSize, 1px) var(--borderRightStyle, none) var(--borderRightColorHover);
-  border-bottom: var(--borderBottomSize, 1px) var(--borderBottomStyle, none) var(--borderBottomColorHover);
-  border-left: var(--borderLeftSize, 1px) var(--borderLeftStyle, none) var(--borderLeftColorHover);
+}
+
+.regionNavbar {
+  display: flex;
+  background-color: var(--backgroundColor);
+  justify-content: var(--justifyContent, center);
+  align-items: var(--alignItems, center);
+  min-height: var(--height, -webkit-min-content);
+  min-height: var(--height, -moz-min-content);
+  min-height: var(--height, min-content);
+  width: 100%;
+  transition: background-color 250ms;
+}
+.regionNavbar:hover {
+  background-color: var(--backgroundColorHover);
+}
+.regionNavbar .navbarTogglerIcon__svg {
+  background-color: var(--backgroundColor);
 }
 
 .regionSidebarFirst,

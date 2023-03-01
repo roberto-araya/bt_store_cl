@@ -17,14 +17,17 @@
 .blockCta__content-title {
   text-align: var(--textAlign, center);
   color: var(--titleColor, var(--defaultTitleColor));
+  font-family: var(--titleFont);
 }
 .blockCta__caption {
   color: var(--captionColor, var(--defaultCaptionColor));
   text-align: var(--textAlign, center);
+  font-family: var(--captionFont);
 }
 .blockCta__text {
   text-align: var(--textAlign, center);
   color: var(--textColor, var(--defaultTextColor));
+  font-family: var(--textFont);
 }
 .blockCta__button {
   --bs-btn-bg: var(--buttonColor, var(--defaultButtonColor));

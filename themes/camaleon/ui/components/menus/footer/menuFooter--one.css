@@ -1,0 +1,22 @@
+.blockMenuFooter {
+  padding: 0 1rem;
+}
+
+.menuFooter--one {
+  list-style: none;
+  padding-left: 0;
+}
+.menuFooter--one .nav {
+  flex-direction: column;
+}
+.menuFooter--one .nav-item {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin-bottom: 5px;
+}
+.menuFooter--one .nav-link {
+  font-size: 0.8rem;
+  transition: color 600ms;
+  padding: 0;
+}

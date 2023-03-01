@@ -20,15 +20,18 @@
 .blockHero__content-title {
   text-align: var(--textAlign, center);
   color: var(--titleColor, var(--defaultTitleColor));
+  font-family: var(--titleFont);
 }
 .blockHero__caption {
   color: var(--captionColor, var(--defaultCaptionColor));
   text-align: var(--textAlign, center);
+  font-family: var(--captionFont);
 }
 .blockHero__text {
   background-color: var(--textBgColor, var(--defaultTextBgColor));
   color: var(--textColor, var(--defaultTextColor));
   text-align: var(--textAlign, center);
+  font-family: var(--captionFont);
 }
 .blockHero__button {
   --bs-btn-bg: var(--buttonColor, var(--defaultButtonColor));

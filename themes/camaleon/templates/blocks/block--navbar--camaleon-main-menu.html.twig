@@ -32,7 +32,7 @@
  * http://www.w3.org/TR/WCAG-TECHS/H42.html for more information.
  */
 #}
-{{ attach_library('camaleon/main_menu') }}
+{{ attach_library('camaleon/menu_main_' ~ theme_settings.menu_type  ) }}
 {% include "@Components/menus/main/blockMenuMain.twig" with {
   'plugin_id': plugin_id,
   'label': label,

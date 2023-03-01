@@ -1,6 +1,33 @@
-.menuMain--default {
-  padding: 0 1rem;
+.regionNavbar .container-fluid {
+  --justifyContent: center;
+  --alignItems: center;
 }
-.menuMain--default .navbar-nav {
-  gap: 0.5rem;
+
+.menuMain--default {
+  letter-spacing: 0.2rem;
+  font-family: var(--bt--font-family, sans-serif);
+  width: 90vw;
+  text-align: center;
+  font-size: 1.125rem;
+}
+.menuMain--default .nav-item > .nav-link, .menuMain--default .dropdown > .nav-link, .menuMain--default .dropdown-item > .nav-link {
+  text-align: center;
+}
+.menuMain--default .nav-item, .menuMain--default .dropdown-item {
+  margin: 0.5rem;
+  width: auto;
+  align-self: center;
+}
+
+@media (min-width: 992px) {
+  .regionNavbar .container-fluid {
+    --justifyContent: unset;
+    --alignItems: unset;
+  }
+
+  .menuMain--default {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+  }
 }

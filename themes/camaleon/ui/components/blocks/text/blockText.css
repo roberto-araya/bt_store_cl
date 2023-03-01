@@ -16,14 +16,17 @@
 .blockText__content-title {
   text-align: var(--textAlign, center);
   color: var(--titleColor, var(--defaultTitleColor));
+  font-family: var(--titleFont);
 }
 .blockText__caption {
   text-align: var(--textAlign, center);
   color: var(--captionColor, var(--defaultCaptionColor));
+  font-family: var(--captionFont);
 }
 .blockText__text {
   text-align: var(--textAlign, left);
   color: var(--textColor, var(--defaultTextColor));
+  font-family: var(--textFont);
 }
 .blockText__button {
   --bs-btn-bg: var(--buttonColor, var(--defaultButtonColor));

@@ -31,7 +31,8 @@
  * http://www.w3.org/TR/WCAG-TECHS/H42.html for more information.
  */
 #}
-{% include "@Components/menus/main/blockMenuMain.twig" with {
+{{ attach_library('camaleon/menu_footer_' ~ theme_settings.menu_type  ) }}
+{% include "@Components/menus/footer/blockMenuFooter.twig" with {
   'plugin_id': plugin_id,
   'label': label,
   'configuration': configuration,
@@ -40,5 +41,6 @@
   'title_attributes': title_attributes,
   'title_prefix': title_prefix,
   'title_suffix': title_suffix,
+  'theme_settings': theme_settings,
   }
 %}

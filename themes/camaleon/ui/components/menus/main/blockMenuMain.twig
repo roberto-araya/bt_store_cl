@@ -140,17 +140,11 @@
     theme_settings.menu_main_item_bg_color == 'default' ? '--itemBackgroundColor: transparent',
     theme_settings.menu_main_item_bg_color_hover == 'default' ? '--itemBackgroundColorHover: var(--itemBackgroundColor)',
     theme_settings.menu_main_item_padding != '' ? '--itemPadding: ' ~ theme_settings.menu_main_item_padding,
-    theme_settings.menu_main_item_border_color != 'default' and theme_settings.menu_main_item_border_color != 'customColor' ? '--itemBorderColor: var(--' ~ theme_settings.menu_main_item_border_color ~ ')',
-    theme_settings.menu_main_item_border_color == 'customColor' ? '--itemBorderColor: ' ~ theme_settings.menu_main_item_border_color_custom,
-    theme_settings.menu_main_item_border_color_hover != 'default' and theme_settings.menu_main_item_border_color_hover != 'customColor' ? '--itemBorderColorHover: var(--' ~ theme_settings.menu_main_item_border_color_hover ~ ')',
-    theme_settings.menu_main_item_border_color_hover == 'customColor' ? '--itemBorderColorHover: ' ~ theme_settings.menu_main_item_border_color_custom_hover,
-    theme_settings.menu_main_item_border_width != '' ? '--itemBorderWidth: ' ~ theme_settings.menu_main_item_border_width,
-    theme_settings.menu_main_item_border_radius != '' ? '--itemBorderRadius: ' ~ theme_settings.menu_main_item_border_radius,
   ]|remove_empty)
 %}
 
 {% set heading_id = attributes.id|clean_id ~ '-label' %}
-<div {{ attributes.addClass(['block', 'menuMain', 'menuMain--default'])|without('role', 'aria-labelledby').setAttribute('style', style_vars|join('; ')) }}>
+<div {{ attributes.addClass(['block', 'menuMain', 'menuMain--' ~ theme_settings.menu_type])|without('role', 'aria-labelledby').setAttribute('style', style_vars|join('; ')) }}>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     {# Label. If not displayed, we still provide it for screen readers. #}
     {% if not configuration.label_display %}

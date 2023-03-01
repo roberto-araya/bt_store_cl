@@ -32,6 +32,18 @@
   {{ attach_library('camaleon/' ~ configuration.block_style.animation_type) }}
 {% endif %}
 
+{% if configuration.block_style.title_font_select != 'default' %}
+  {{ attach_library('camaleon/' ~ configuration.block_style.title_font_select) }}
+{% endif %}
+
+{% if configuration.block_style.text_font_select != 'default' %}
+  {{ attach_library('camaleon/' ~ configuration.block_style.text_font_select) }}
+{% endif %}
+
+{% if configuration.block_style.caption_font_select != 'default' %}
+  {{ attach_library('camaleon/' ~ configuration.block_style.caption_font_select) }}
+{% endif %}
+
 {% include "@Components/blocks/text-image/blockTextImageDefault.twig" with {
   'id': id,
   'bundle': bundle,
