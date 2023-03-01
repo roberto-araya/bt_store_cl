@@ -213,7 +213,7 @@ function camaleon_preprocess_region(&$variables) {
   foreach ($regions as $region) {
     if (isset($variables['region']) && $variables['region'] == $region) {       
       $variables['theme_settings']['background_color'] = theme_get_setting('regions.region_' . $region . '.background_color');
-      $variables['theme_settings']['background_color_custom'] = theme_get_setting('regions.region_' . $region . 'background_color_custom');
+      $variables['theme_settings']['background_color_custom'] = theme_get_setting('regions.region_' . $region . '.background_color_custom');
       $variables['theme_settings']['background_color_opacity'] = theme_get_setting('regions.region_' . $region . '.background_color_opacity');
       $variables['theme_settings']['background_color_custom_opacity'] = theme_get_setting('regions.region_' . $region . '.background_color_custom_opacity');
       $variables['theme_settings']['background_color_hover'] = theme_get_setting('regions.region_' . $region . '.background_color_hover');
@@ -228,37 +228,20 @@ function camaleon_preprocess_region(&$variables) {
         $variables['theme_settings']['container_select'] = theme_get_setting('regions.region_' . $region . '.width.container_select');
         $variables['theme_settings']['full_select'] = theme_get_setting('regions.region_' . $region . '.width.full_select');
         $variables['theme_settings']['box_select'] = theme_get_setting('regions.region_' . $region . '.width.box_select');
-
-        $borders = ['border_top', 'border_right', 'border_bottom', 'border_left'];
-
-        foreach ($borders as $border) {
-          $variables['theme_settings'][$border . '_select'] = theme_get_setting('regions.region_' . $region . '.' . $border . '.' . $border . '_select');
-          $variables['theme_settings'][$border . '_style'] = theme_get_setting('regions.region_' . $region . '.' . $border . '.' . $border . '_style');
-          $variables['theme_settings'][$border . '_size'] = theme_get_setting('regions.region_' . $region . '.' . $border . '.' . $border . '_size');
-          $variables['theme_settings'][$border . '_color'] = theme_get_setting('regions.region_' . $region . '.' . $border . '.' . $border . '_color');
-          $variables['theme_settings'][$border . '_color_custom'] = theme_get_setting('regions.region_' . $region . '.' . $border . '.' . $border . '_color_custom');
-          $variables['theme_settings'][$border . '_color_opacity'] = theme_get_setting('regions.region_' . $region . '.' . $border . '.' . $border . '_color_opacity');
-          $variables['theme_settings'][$border . '_color_custom_opacity'] = theme_get_setting('regions.region_' . $region . '.' . $border . '.' . $border . '_color_custom_opacity');
-          $variables['theme_settings'][$border . '_color_hover'] = theme_get_setting('regions.region_' . $region . '.' . $border . '.' . $border . '_color_hover');
-          $variables['theme_settings'][$border . '_color_custom_hover'] = theme_get_setting('regions.region_' . $region . '.' . $border . '.' . $border . '_color_custom_hover');
-          $variables['theme_settings'][$border . '_color_opacity_hover'] = theme_get_setting('regions.region_' . $region . '.' . $border . '.' . $border . '_color_opacity_hover');
-          $variables['theme_settings'][$border . '_color_custom_opacity_hover'] = theme_get_setting('regions.region_' . $region . '.' . $border . '.' . $border . '_color_custom_opacity_hover');
-
-        }
       } 
     }
   }
 
   if (isset($variables['region']) && $variables['region'] == 'navbar') {
     $variables['theme_settings']['position'] = theme_get_setting('regions.region_navbar.position_select');
-    $variables['theme_settings']['toggler_color'] = theme_get_setting('regions.region_navbar.toggler_color.toggler_color');
-    $variables['theme_settings']['toggler_color_custom'] = theme_get_setting('regions.region_navbar.toggler_color.toggler_color_custom');
-    $variables['theme_settings']['toggler_color_opacity'] = theme_get_setting('regions.region_navbar.toggler_color.toggler_color_opacity');
-    $variables['theme_settings']['toggler_color_custom_opacity'] = theme_get_setting('regions.region_navbar.toggler_color.toggler_color_custom_opacity');
-    $variables['theme_settings']['toggler_color_hover'] = theme_get_setting('regions.region_navbar.toggler_color.toggler_color_hover');
-    $variables['theme_settings']['toggler_color_custom_hover'] = theme_get_setting('regions.region_navbar.toggler_color.toggler_color_custom_hover');
-    $variables['theme_settings']['toggler_color_opacity_hover'] = theme_get_setting('regions.region_navbar.toggler_color.toggler_color_opacity_hover');
-    $variables['theme_settings']['toggler_color_custom_opacity_hover'] = theme_get_setting('regions.region_navbar.toggler_color.toggler_color_custom_opacity_hover');
+    $variables['theme_settings']['toggler_color'] = theme_get_setting('regions.region_navbar.toggler_color');
+    $variables['theme_settings']['toggler_color_custom'] = theme_get_setting('regions.region_navbar.toggler_color_custom');
+    $variables['theme_settings']['toggler_color_opacity'] = theme_get_setting('regions.region_navbar.toggler_color_opacity');
+    $variables['theme_settings']['toggler_color_custom_opacity'] = theme_get_setting('regions.region_navbar.toggler_color_custom_opacity');
+    $variables['theme_settings']['toggler_color_hover'] = theme_get_setting('regions.region_navbar.toggler_color_hover');
+    $variables['theme_settings']['toggler_color_custom_hover'] = theme_get_setting('regions.region_navbar.toggler_color_custom_hover');
+    $variables['theme_settings']['toggler_color_opacity_hover'] = theme_get_setting('regions.region_navbar.toggler_color_opacity_hover');
+    $variables['theme_settings']['toggler_color_custom_opacity_hover'] = theme_get_setting('regions.region_navbar.toggler_color_custom_opacity_hover');
   }
 }
 

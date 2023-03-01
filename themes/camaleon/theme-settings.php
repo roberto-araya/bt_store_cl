@@ -84,43 +84,44 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
     '#tree' => TRUE,
   ];
 
-  ## Main ##
-  $form['menus']['menu_main'] = [
-    '#type' => 'details',
-    '#title' => t('Main Menu'),
-    '#tree' => TRUE,
+  $menu_type_select = [
+    'default' => 'Default',
+    'one' => 'Variant 1',
+    'two' => 'Variant 2'
   ];
-  # Item
-  $form['menus']['menu_main']['item'] = [
-    '#type' => 'details',
-    '#title' => t('Item'),
-    '#weight' => 100,
-    '#tree' => TRUE,
-  ];
-  // padding
-  $form['menus']['menu_main']['item']['padding'] = [
-    '#type' => 'textfield',
-    '#title' => 'Item Padding',
-    '#description' => t("CSS Property. Example: 1rem;"),
-    '#default_value' => theme_get_setting('menus.menu_main.item.padding'),
-    '#weight' => 60,
-  ];
-  // border_width
-  $form['menus']['menu_main']['item']['border']['border_width'] = [
-    '#type' => 'textfield',
-    '#title' => 'Item Border Width',
-    '#description' => t("CSS Property. Example: 1px;"),
-    '#default_value' => theme_get_setting('menus.menu_main.item.border.border_width'),
-    '#weight' => 48,
-  ];
-  // border_radius
-  $form['menus']['menu_main']['item']['border']['border_radius'] = [
-    '#type' => 'textfield',
-    '#title' => 'Item Border Radius',
-    '#description' => t("CSS Property. Example: 1px;"),
-    '#default_value' => theme_get_setting('menus.menu_main.item.border.border_radius'),
-    '#weight' => 49,
-  ];
+
+  foreach (['main', 'footer'] as $menu_type) {
+    ## Menu ##
+    $form['menus']['menu_' . $menu_type] = [
+      '#type' => 'details',
+      '#title' => t(ucfirst($menu_type) . ' Menu'),
+      '#tree' => TRUE,
+    ];
+    // Menu type
+    $form['menus']['menu_' . $menu_type]['type'] = [
+      '#type' => 'select',
+      '#options' => $menu_type_select,
+      '#title' => t('Menu Type'),
+      '#description' => t("Select a type of presentation."),
+      '#default_value' => theme_get_setting('menus.menu_' . $menu_type . '.type'),
+    ];
+
+    // Item
+    $form['menus']['menu_' . $menu_type]['item'] = [
+      '#type' => 'details',
+      '#title' => t('Item'),
+      '#weight' => 100,
+      '#tree' => TRUE,
+    ];
+    // padding
+    $form['menus']['menu_' . $menu_type]['item']['padding'] = [
+      '#type' => 'textfield',
+      '#title' => 'Item Padding',
+      '#description' => t("CSS Property. Example: 1rem;"),
+      '#default_value' => theme_get_setting('menus.menu_' . $menu_type . '.item.padding'),
+      '#weight' => 60,
+    ];
+  }
 
   #### BLOCKS ####
   $form['blocks'] = [
@@ -346,12 +347,6 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
       '#description' => t("Select css position."),
       '#default_value' => theme_get_setting('regions.navbar.position'),
     ];
-
-
-    $borders = _get_border_form_items('regions', 'region_' . $region_id, 'regions.region_' . $region_id, 'regions[region_' . $region_id, $color_options);
-    foreach ($borders as $item => $data) {
-      $form['regions']['region_' . $region_id][$item] = $data; 
-    }
   }
 
   #### COLORS ELEMENTS ####
@@ -371,7 +366,11 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
   $mainmenu_background_colors = _get_color_form_select('menus.menu_main.background', 'menus[menu_main][background', 'background', $color_options);
   $mainmenu_items_colors = _get_color_form_select('menus.menu_main.item.item', 'menus[menu_main][item][item', 'item', $color_options);
   $mainmenu_item_bg_colors = _get_color_form_select('menus.menu_main.item.item_background', 'menus[menu_main][item][item_background', 'item_background', $color_options);
-  $mainmenu_items_border_colors = _get_color_form_select('menus.menu_main.item.border.border', 'menus[menu_main][item][border][border', 'border', $color_options);
+
+  // Footer menu
+  $footermenu_background_colors = _get_color_form_select('menus.menu_footer.background', 'menus[menu_footer][background', 'background', $color_options);
+  $footermenu_items_colors = _get_color_form_select('menus.menu_footer.item.item', 'menus[menu_footer][item][item', 'item', $color_options);
+  $footermenu_item_bg_colors = _get_color_form_select('menus.menu_footer.item.item_background', 'menus[menu_footer][item][item_background', 'item_background', $color_options);
 
   // Branding
   $branding_colors = _get_color_form_select('blocks.branding.background', 'blocks[branding][background', 'background', $color_options);
@@ -393,12 +392,19 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
 
   $pre_header_region_colors = _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options);
 
-  // Navbar
+  // Navbar Background
   $default_value_prefix = 'regions.region_navbar.background';
   $state_input_prefix = 'regions[region_navbar][background';
   $style = 'background';
 
   $navbar_region_colors = _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options);
+
+  // Navbar Toggler
+  $default_value_prefix = 'regions.region_navbar.toggler';
+  $state_input_prefix = 'regions[region_navbar][toggler';
+  $style = 'toggler';
+
+  $navbar_toggler_colors = _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options);
 
   // Header
   $default_value_prefix = 'regions.region_header.background';
@@ -473,6 +479,7 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
   $weight = 0;
   foreach ($color_items as $item) {
     #### MENUS ####
+    # Main
     // background_color
     $form['menus']['menu_main']['background' . $item] = $mainmenu_background_colors['background' . $item];
     $form['menus']['menu_main']['background' . $item]['#weight'] = 10 + $weight;
@@ -482,9 +489,16 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
     // item_background_color
     $form['menus']['menu_main']['item']['item_background' . $item] = $mainmenu_item_bg_colors['item_background' . $item];
     $form['menus']['menu_main']['item']['item_background' . $item]['#weight'] = 30 + $weight;
-    // item_border_color
-    $form['menus']['menu_main']['item']['border']['border' . $item] = $mainmenu_items_border_colors['border' . $item];
-    $form['menus']['menu_main']['item']['border']['border' . $item]['#weight'] = 40 + $weight;
+    # Footer
+    // background_color
+    $form['menus']['menu_footer']['background' . $item] = $footermenu_background_colors['background' . $item];
+    $form['menus']['menu_footer']['background' . $item]['#weight'] = 10 + $weight;
+    // item_color
+    $form['menus']['menu_footer']['item']['item' . $item] = $footermenu_items_colors['item' . $item];
+    $form['menus']['menu_footer']['item']['item' . $item]['#weight'] = 20 + $weight;
+    // item_background_color
+    $form['menus']['menu_footer']['item']['item_background' . $item] = $footermenu_item_bg_colors['item_background' . $item];
+    $form['menus']['menu_fotoer']['item']['item_background' . $item]['#weight'] = 30 + $weight;
 
     #### BLOCKS ####
     //// branding ////
@@ -505,6 +519,7 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
     $form['regions']['region_pre_header']['background' . $item] = $pre_header_region_colors['background' . $item];
     // Navbar
     $form['regions']['region_navbar']['background' . $item] = $navbar_region_colors['background' . $item];
+    $form['regions']['region_navbar']['toggler' . $item] = $navbar_toggler_colors['toggler' . $item];
     // Header
     $form['regions']['region_header']['background' . $item] = $header_region_colors['background' . $item];
     // Primary Menu
