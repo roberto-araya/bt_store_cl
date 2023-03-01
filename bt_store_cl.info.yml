@@ -55,4 +55,4 @@ dependencies:
   - simple_sitemap:simple_sitemap_views
 themes:
   - bt_install_theme
-  - thunder_admin
+  - claro

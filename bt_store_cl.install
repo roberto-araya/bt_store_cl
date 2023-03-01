@@ -25,7 +25,7 @@ function bt_store_cl_install() {
   
   $theme_config = Drupal::configFactory()->getEditable('system.theme');
   // Set admin theme.
-  $theme_config->set('admin', 'thunder_admin');
+  $theme_config->set('admin', 'claro');
   // Set default theme.
   $theme_config->set('default', 'camaleon');
   $theme_config->save(TRUE);
