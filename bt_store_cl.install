@@ -32,7 +32,6 @@ function bt_store_cl_install() {
   
   // Alias URL.
   $paths = [
-    '/contact' => '/contacto',
     '/block/add/bt_images_gallery' => '/app/sitioweb/bloques/agregar/galeria-imagenes',
     '/block/add/bt_image' => '/app/sitioweb/bloques/agregar/imagen',
     '/block/add/bt_pagina_basica' => '/app/sitioweb/bloques/agregar/pagina-basica',
@@ -182,19 +181,15 @@ function bt_store_cl_install() {
     ->save();
   }
 
-  $node = Node::create([
-    'type' => 'bt_basic_page',
-    'title' => 'Tienda',
-    'uid' => 1,
-  ]);
-  $node->save();
-
-  $node = Node::create([
-    'type' => 'bt_basic_page',
-    'title' => 'Artículos',
-    'uid' => 1,
-  ]);
-  $node->save();
+  $pages = ['Tienda', 'Artículos', 'Contacto'];
+  foreach ($pages as $title) {
+    $node = Node::create([
+      'type' => 'bt_basic_page',
+      'title' => $title,
+      'uid' => 1,
+    ]);
+    $node->save();
+  }
 
   // Replace default user's form display.
   $config_factory = \Drupal::configFactory();
