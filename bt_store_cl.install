@@ -194,20 +194,20 @@ function bt_store_cl_install() {
   // Replace default user's form display.
   $config_factory = \Drupal::configFactory();
 
-  $config_factory->getEditable('core.entity_form_display.commerce_product.default.default')->delete();
-  bt_store_cl_import_single_config('core.entity_form_display.commerce_product.default.default');
+  $confs = [
+    'core.date_format.medium',
+    'core.date_format.short',
+    'core.entity_form_display.commerce_product.default.default',
+    'core.entity_form_display.node.blog_post.default',
+    'core.entity_view_display.commerce_product.default.default',
+    'core.entity_view_display.node.blog_post.default',
+    'core.entity_view_display.node.blog_post.teaser',
+  ];
 
-  $config_factory->getEditable('core.entity_view_display.commerce_product.default.default')->delete();
-  bt_store_cl_import_single_config('core.entity_view_display.commerce_product.default.default');
-
-  $config_factory->getEditable('core.entity_form_display.node.blog_post.default')->delete();
-  bt_store_cl_import_single_config('core.entity_form_display.node.blog_post.default');
-
-  $config_factory->getEditable('core.entity_view_display.node.blog_post.default')->delete();
-  bt_store_cl_import_single_config('core.entity_view_display.node.blog_post.default');
-
-  $config_factory->getEditable('core.entity_view_display.node.blog_post.teaser')->delete();
-  bt_store_cl_import_single_config('core.entity_view_display.node.blog_post.teaser');
+  foreach ($confs as $conf) {
+    $config_factory->getEditable($conf)->delete();
+    bt_store_cl_import_single_config($conf);
+  }
 }
 
 /**
