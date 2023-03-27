@@ -137,6 +137,8 @@ function bt_store_cl_install() {
     'bt_content_editor_publisher',
     'bt_commercial_executive',
     'bt_contacts_activities_manager',
+    'bt_commerce_administrator',
+    'bt_store_manager',
   ];
   $user->set('personas', $personas);
   $user->save();
