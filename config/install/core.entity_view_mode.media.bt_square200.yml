@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.bt_square200
+label: Square200
+targetEntityType: media
+cache: true

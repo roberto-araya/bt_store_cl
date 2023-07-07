@@ -1,0 +1,40 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.bt_square200
+    - field.field.media.bt_image.field_bt_image
+    - image.style.bt_square_200x200
+    - media.type.bt_image
+  module:
+    - image
+    - layout_builder
+    - media_parent_entity_link
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: media.bt_image.bt_square200
+targetEntityType: media
+bundle: bt_image
+mode: bt_square200
+content:
+  field_bt_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: bt_square_200x200
+      image_loading:
+        attribute: lazy
+    third_party_settings:
+      media_parent_entity_link:
+        link_to_parent: '0'
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true
