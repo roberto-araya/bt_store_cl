@@ -1,87 +1,35 @@
 .blockTextImage {
-  --defaultPadding: 0.5rem;
-  --defaultBgColor: var(--bs-block-bg-color);
-  --defaultTitleColor: var(--defaultPageTitleColor);
-  --defaultCaptionColor: var(--defaultCaptionTextColor);
-  --defaultTextColor: var(--bs-block-text-color);
-  --defaultButtonColor: var(--bs-accent);
-  --defaultButtonLinkColor: var(--bs-button-link-color);
-  padding-left: calc(var(--smPaddingLeft, var(--defaultPadding)) * var(--defaultPaddingFactor));
-  padding-top: calc(var(--smPaddingTop, var(--defaultPadding)) * var(--defaultPaddingFactor));
-  padding-right: calc(var(--smPaddingRight, var(--defaultPadding)) * var(--defaultPaddingFactor));
-  padding-bottom: calc(var(--smPaddingBottom, var(--defaultPadding)) * var(--defaultPaddingFactor));
-  align-self: var(--smAlignSelf, stretch);
-  background-color: var(--backgroundColor, var(--defaultBgColor));
-  width: 100%;
+  --xsTitleFontSize: 1.8rem;
+  --xsCaptionFontSize: 1.2rem;
+  --xsTextFontSize: 1.2rem;
 }
 .blockTextImage__content-title {
-  color: var(--titleColor, var(--defaultTitleColor));
-  text-align: var(--textAlign, center);
-  font-family: var(--titleFont);
+  color: var(--titleColor, var(--defaultPageTitleColor));
+  font-family: var(--titleFontFamily, var(--defaultFontFamily));
+  font-size: var(--xsTitleFontSize);
 }
 .blockTextImage__caption {
-  color: var(--captionColor, var(--defaultCaptionColor));
-  text-align: var(--textAlign, center);
-  font-family: var(--captionFont);
+  color: var(--captionColor, var(--defaultCaptionTextColor));
+  font-family: var(--captionFontFamily, var(--defaultFontFamily));
+  font-size: var(--xsCaptionFontSize);
 }
 .blockTextImage__text {
-  color: var(--textColor, var(--defaultTextColor));
-  text-align: var(--textAlign, center);
-  font-family: var(--textFont);
+  color: var(--textColor, var(--bs-block-text-color));
+  font-family: var(--textFontFamily, var(--defaultFontFamily));
+  font-size: var(--xsTextFontSize);
 }
 .blockTextImage__button {
-  --bs-btn-bg: var(--buttonColor, var(--defaultButtonColor));
-  --bs-btn-color: var(--buttonLinkColor, var(--defaultButtonLinkColor));
-  --bs-btn-border-color: var(--buttonLinkColor, var(--defaultButtonLinkColor));
-  --bs-btn-hover-bg: var(--buttonColor, var(--defaultButtonColor));
-  --bs-btn-hover-color: var(--buttonLinkColor, var(--defaultButtonLinkColor));
-  --bs-btn-hover-border-color: var(--buttonLinkColor, var(--defaultButtonLinkColor));
+  --bs-btn-bg: var(--buttonColor, var(--bs-accent));
+  --bs-btn-color: var(--buttonLinkColor, var(--bs-button-link-color));
+  --bs-btn-border-color: var(--buttonLinkColor, var(--bs-button-link-color));
+  --bs-btn-hover-bg: var(--buttonColor, var(--bs-accent));
+  --bs-btn-hover-color: var(--buttonLinkColor, var(--bs-button-link-color));
+  --bs-btn-hover-border-color: var(--buttonLinkColor, var(--bs-button-link-color));
 }
-.blockTextImage__button-image svg {
-  fill: var(--buttonLinkColor, var(--defaultButtonLinkColor));
+.blockTextImage__button a {
+  color: var(--buttonLinkColor, var(--bs-accent));
+  padding-left: var(--buttonIcon, 0rem);
 }
-.blockTextImage__link a {
-  color: var(--buttonLinkColor, var(--defaultButtonLinkColor));
-  padding-left: var(--buttonIcon, 0);
-}
-
-@media screen and (min-width: 768px) {
-  .blockTextImage {
-    --defaultPadding: 1rem;
-    padding-left: calc(var(--mdPaddingLeft, var(--defaultPadding)) * var(--defaultPaddingFactor));
-    padding-top: calc(var(--mdPaddingTop, var(--defaultPadding)) * var(--defaultPaddingFactor));
-    padding-right: calc(var(--mdPaddingRight, var(--defaultPadding)) * var(--defaultPaddingFactor));
-    padding-bottom: calc(var(--mdPaddingBottom, var(--defaultPadding)) * var(--defaultPaddingFactor));
-    align-self: var(--mdAlignSelf, stretch);
-  }
-}
-@media screen and (min-width: 1024px) {
-  .blockTextImage {
-    --defaultPadding: 2rem;
-    padding-left: calc(var(--lgPaddingLeft, var(--defaultPadding)) * var(--defaultPaddingFactor));
-    padding-top: calc(var(--lgPaddingTop, var(--defaultPadding)) * var(--defaultPaddingFactor));
-    padding-right: calc(var(--lgPaddingRight, var(--defaultPadding)) * var(--defaultPaddingFactor));
-    padding-bottom: calc(var(--lgPaddingBottom, var(--defaultPadding)) * var(--defaultPaddingFactor));
-    align-self: var(--lgAlignSelf, stretch);
-  }
-}
-@media screen and (min-width: 1280px) {
-  .blockTextImage {
-    --defaultPadding: 3rem;
-    padding-left: calc(var(--xlPaddingLeft, var(--defaultPadding)) * var(--defaultPaddingFactor));
-    padding-top: calc(var(--xlPaddingTop, var(--defaultPadding)) * var(--defaultPaddingFactor));
-    padding-right: calc(var(--xlPaddingRight, var(--defaultPadding)) * var(--defaultPaddingFactor));
-    padding-bottom: calc(var(--xlPaddingBottom, var(--defaultPadding)) * var(--defaultPaddingFactor));
-    align-self: var(--xlAlignSelf, stretch);
-  }
-}
-@media screen and (min-width: 1536px) {
-  .blockTextImage {
-    --defaultPadding: 3rem;
-    padding-left: calc(var(--xxlPaddingLeft, var(--defaultPadding)) * var(--defaultPaddingFactor));
-    padding-top: calc(var(--xxlPaddingTop, var(--defaultPadding)) * var(--defaultPaddingFactor));
-    padding-right: calc(var(--xxlPaddingRight, var(--defaultPadding)) * var(--defaultPaddingFactor));
-    padding-bottom: calc(var(--xxlPaddingBottom, var(--defaultPadding)) * var(--defaultPaddingFactor));
-    align-self: var(--xxlAlignSelf, stretch);
-  }
+.blockTextImage__button-icon svg {
+  color: var(--buttonLinkColor, var(--bs-button-link-color));
 }

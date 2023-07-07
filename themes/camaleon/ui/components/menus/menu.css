@@ -4,7 +4,6 @@
   padding: 1rem;
   min-width: 260px;
   max-width: 300px;
-  height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
   background-color: var(--bs-primary-800);

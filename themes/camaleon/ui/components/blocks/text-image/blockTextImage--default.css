@@ -1,7 +1,7 @@
 .blockTextImage--default {
+  max-width: var(--xsMaxWidth);
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: -webkit-min-content -webkit-min-content -webkit-min-content auto;
   grid-template-rows: min-content min-content min-content auto;
   justify-self: center;
 }
@@ -14,7 +14,6 @@
 .blockTextImage--default__caption {
   grid-column: 1;
   grid-row: 3;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
@@ -42,18 +41,13 @@
 
 @media screen and (min-width: 640px) {
   .blockTextImage--default {
-    max-width: 50vw;
     grid-template-columns: 100%;
-  }
-  .blockTextImage--default__text {
-    max-width: 50vw;
   }
   .blockTextImage--default__text p {
     margin-right: 1rem;
     margin-left: 1rem;
   }
   .blockTextImage--default__image {
-    width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
   }

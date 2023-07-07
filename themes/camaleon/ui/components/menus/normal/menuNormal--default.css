@@ -1,0 +1,12 @@
+.menuNormal--default {
+  min-width: -moz-max-content;
+  min-width: max-content;
+  list-style: none;
+}
+.menuNormal--default .menuNormal__item {
+  width: -moz-max-content;
+  width: max-content;
+}
+.menuNormal--default .menuNormal__link {
+  transition: color 600ms;
+}

@@ -1,9 +1,13 @@
+.block.blockImage--big_circle {
+  --xsMaxWidth: 300px;
+}
+
 .blockImage--big_circle {
-  width: 100%;
-  max-width: 300px;
+  max-width: -moz-max-content;
+  max-width: max-content;
 }
 .blockImage--big_circle img {
-  width: 300px;
-  height: 300px;
+  width: var(--xsMaxWidth);
+  height: var(--xsMaxWidth);
   border-radius: 100%;
 }

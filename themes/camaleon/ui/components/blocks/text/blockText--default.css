@@ -1,3 +1,6 @@
+.blockText--default {
+  max-width: var(--xsMaxWidth);
+}
 .blockText--default__link {
   display: flex;
   gap: 2rem;

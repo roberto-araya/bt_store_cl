@@ -1,3 +1,7 @@
 .blockMap--full {
   width: 100%;
 }
+.blockMap--full .boxed {
+  max-width: var(--xsMaxWidth);
+  align-self: center;
+}

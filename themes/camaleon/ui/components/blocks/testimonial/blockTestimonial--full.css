@@ -1,0 +1,24 @@
+.blockTestimonial--full {
+  display: flex;
+  flex-direction: column;
+}
+.blockTestimonial--full .boxed {
+  max-width: var(--xsMaxWidth);
+  align-self: center;
+}
+.blockTestimonial--full .blockTestimonial--full__name {
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+.blockTestimonial--full .blockTestimonial--full__organization {
+  font-weight: bold;
+}
+.blockTestimonial--full .blockTestimonial--full__text {
+  font-style: italic;
+  margin-top: 1rem;
+}
+.blockTestimonial--full img {
+  width: 180px;
+  height: 180px;
+  border-radius: 100%;
+}

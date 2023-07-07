@@ -3,39 +3,31 @@
   flex-direction: column;
   justify-content: center;
 }
-.blockCta--left_offset__content-title {
-  height: -webkit-fit-content;
+.blockCta--left_offset .blockCta--left_offset__content-title {
   height: -moz-fit-content;
   height: fit-content;
-  align-self: center;
   margin-top: 1rem;
-  font-size: 2rem;
-  text-transform: uppercase;
   font-weight: bold;
-  letter-spacing: 0.2rem;
 }
-.blockCta--left_offset__caption {
+.blockCta--left_offset .blockCta--left_offset__caption {
   margin-bottom: 1rem;
-  font-size: 1.2rem;
 }
 
-@media screen and (min-width: 640px) {
+@media (min-width: 576px) {
   .blockCta--left_offset {
     max-width: 50vw;
-    justify-self: center;
   }
 }
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) {
   .blockCta--left_offset {
     position: relative;
     left: -3rem;
     box-shadow: gray 10px 10px 20px;
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
     align-self: center;
   }
-  .blockCta--left_offset__content-title {
+  .blockCta--left_offset .blockCta--left_offset__content-title {
     font-size: 2rem;
   }
 }
@@ -44,12 +36,11 @@
     position: relative;
     left: -3rem;
     box-shadow: gray 10px 10px 20px;
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
     align-self: center;
   }
-  .blockCta--left_offset__content-title {
+  .blockCta--left_offset .blockCta--left_offset__content-title {
     font-size: 2rem;
   }
 }
@@ -60,11 +51,11 @@
     box-shadow: gray 10px 10px 20px;
     align-self: center;
   }
-  .blockCta--left_offset__content-title {
+  .blockCta--left_offset .blockCta--left_offset__content-title {
     font-size: 2rem;
   }
 }
-@media screen and (min-width: 1024px) {
+@media (min-width: 992px) {
   .blockCta--left_offset {
     max-width: 50vw;
     justify-self: center;
@@ -72,7 +63,7 @@
     left: -10rem;
     box-shadow: gray 10px 10px 20px;
   }
-  .blockCta--left_offset__content-title {
+  .blockCta--left_offset .blockCta--left_offset__content-title {
     font-size: 5rem;
   }
 }

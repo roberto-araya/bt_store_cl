@@ -1,21 +1,14 @@
-.blockSectionTitle--full .blockSectionTitle--full__content-title {
+.blockSectionTitle--full .boxed {
+  max-width: var(--xsMaxWidth);
+}
+.blockSectionTitle--full__content-title {
   align-self: center;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   margin: 1rem;
-  font-size: calc(1.625rem + 4.5vw);
   text-transform: uppercase;
   font-weight: bold;
-  letter-spacing: 0.2rem;
 }
-@media (min-width: 1200px) {
-  .blockSectionTitle--full .blockSectionTitle--full__content-title {
-    font-size: 5rem;
-  }
-}
-
-.blockSectionTitle--full .blockSectionTitle--full__caption {
+.blockSectionTitle--full__caption {
   margin: 1rem;
-  font-size: 1.2rem;
 }

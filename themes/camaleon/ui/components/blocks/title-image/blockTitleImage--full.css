@@ -1,3 +1,7 @@
 .blockTitleImage--full {
   display: grid;
 }
+.blockTitleImage--full .boxed {
+  max-width: var(--xsMaxWidth);
+  align-self: center;
+}

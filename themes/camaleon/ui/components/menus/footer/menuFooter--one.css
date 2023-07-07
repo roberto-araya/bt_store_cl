@@ -10,7 +10,6 @@
   flex-direction: column;
 }
 .menuFooter--one .nav-item {
-  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   margin-bottom: 5px;

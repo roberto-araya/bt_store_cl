@@ -4,7 +4,6 @@
 }
 
 .menuMain--one {
-  padding: 0 1rem;
   width: 90vw;
 }
 .menuMain--one .navbar-nav {
@@ -28,7 +27,6 @@
   }
 
   .menuMain--one {
-    width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
   }

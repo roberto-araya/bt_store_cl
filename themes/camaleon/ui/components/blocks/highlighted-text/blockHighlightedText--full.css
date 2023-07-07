@@ -1,8 +1,10 @@
-.blockHighlightedText--full__highlighted-text {
-  font-size: 2rem;
-  letter-spacing: 0.3rem;
+.blockHighlightedText--full .boxed {
+  max-width: var(--xsMaxWidth);
+  align-self: center;
+}
+.blockHighlightedText--full .blockHighlightedText--full__highlighted-text {
+  letter-spacing: 0.125rem;
   font-style: italic;
   margin: 1rem;
-  text-transform: uppercase;
   font-weight: bold;
 }

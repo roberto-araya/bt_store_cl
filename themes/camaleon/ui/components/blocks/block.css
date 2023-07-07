@@ -1,0 +1,26 @@
+.block {
+  --xsAlignSelf: stretch;
+  --xsJustifySelf: center;
+  --xsTextAlign: center;
+  --xsMaxWidth: 300px;
+  --xsMarginLeft: 0px;
+  --xsMarginTop: 0px;
+  --xsMarginRight: 0px;
+  --xsMarginBottom: 0px;
+  --xsPaddingLeft: 1rem;
+  --xsPaddingTop: 1rem;
+  --xsPaddingRight: 1rem;
+  --xsPaddingBottom: 1rem;
+  margin-left: var(--xsMarginLeft);
+  margin-top: var(--xsMarginTop);
+  margin-right: var(--xsMarginRight);
+  margin-bottom: var(--xsMarginBottom);
+  padding-left: var(--xsPaddingLeft);
+  padding-top: var(--xsPaddingTop);
+  padding-right: var(--xsPaddingRight);
+  padding-bottom: var(--xsPaddingBottom);
+  align-self: var(--xsAlignSelf);
+  justify-self: var(--xsJustifySelf);
+  text-align: var(--xsTextAlign);
+  background-color: var(--backgroundColor, var(--bs-block-bg-color));
+}

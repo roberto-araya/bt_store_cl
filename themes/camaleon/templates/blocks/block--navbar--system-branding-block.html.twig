@@ -14,28 +14,39 @@
  * @ingroup themeable
  */
 #}
-{{ attach_library('camaleon/branding') }}
-
-{% if theme_settings.branding_type == 'horizontal' %}
+{% if configuration.block_style.type == 'horizontal' %}
   {{ attach_library('camaleon/branding_horizontal') }}
 {% endif %}
 
-{% if theme_settings.branding_type == 'horizontal_inverted' %}
+{% if configuration.block_style.type == 'horizontal_inverted' %}
   {{ attach_library('camaleon/branding_horizontal_inverted') }}
 {% endif %}
 
-{% if theme_settings.branding_type == 'vertical' %}
+{% if configuration.block_style.type == 'vertical' %}
   {{ attach_library('camaleon/branding_vertical') }}
 {% endif %}
 
-{% if theme_settings.branding_type == 'vertical_inverted' %}
+{% if configuration.block_style.type == 'vertical_inverted' %}
   {{ attach_library('camaleon/branding_vertical_inverted') }}
 {% endif %}
 
-{% include "@Components/navbar/branding.twig" with {
+{% if configuration.block_style.name_font_family != 'default' %}
+  {{ attach_library('camaleon/' ~ configuration.block_style.name_font_family) }}
+{% endif %}
+
+{% if configuration.block_style.slogan_font_family != 'default' %}
+  {{ attach_library('camaleon/' ~ configuration.block_style.slogan_font_family) }}
+{% endif %}
+
+{% if configuration.block_style.animation_option == TRUE %}
+  {{ attach_library('camaleon/' ~ configuration.block_style.animation_type) }}
+{% endif %}
+
+{% include "@Components/branding/siteBranding.twig" with {
   'site_logo': site_logo,
   'site_name': site_name,
   'site_slogan': site_slogan,
-  'theme_settings': theme_settings
+  'theme_settings': theme_settings,
+  'configuration': configuration,
   }
 %}

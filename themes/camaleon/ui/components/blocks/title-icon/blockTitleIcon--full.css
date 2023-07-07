@@ -1,9 +1,11 @@
 .blockTitleIcon--full {
   display: grid;
 }
+.blockTitleIcon--full .boxed {
+  max-width: var(--xsMaxWidth);
+}
 .blockTitleIcon--full__icon {
   margin: 1rem;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   justify-self: center;

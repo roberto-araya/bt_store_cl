@@ -1,30 +1,28 @@
+.block.siteBranding {
+  --xsNameFontSize: 1.5rem;
+  --xsSloganFontSize: 0.8rem;
+  --xsMaxWidth: max-content;
+}
+
 .siteBranding {
-  --defaultBackgroundColor: transparent;
-  --defaultNameColor: var(--bs-primary);
-  --defaultSloganColor: var(--bs-primary);
-  background-color: var(--backgroundColor);
-  min-width: var(--logoSize, 100px);
+  min-width: var(--logoSize, 72px);
+  max-width: var(--xsMaxWidth);
 }
-.siteBranding:hover {
-  background-color: var(--backgroundColorHover);
+.siteBranding__logo {
+  width: var(--logoSize, 72px);
 }
-.siteBranding .siteBranding__logo {
-  width: var(--logoSize, 100px);
-}
-.siteBranding .siteBranding__logo img {
+.siteBranding__logo img {
   width: 100%;
 }
-.siteBranding .siteBranding__name a {
-  color: var(--nameColor);
-  font-size: var(--nameFontSize, 1.2rem);
+.siteBranding__name {
+  font-size: var(--xsNameFontSize);
+  font-family: var(--nameFontFamily, var(--defaultFontFamily));
 }
-.siteBranding .siteBranding__name a:hover {
-  color: var(--nameColorHover);
+.siteBranding__name a {
+  color: var(--nameColor, var(--defaultPageTitleColor));
 }
-.siteBranding .siteBranding__slogan {
-  color: var(--sloganColor);
-  font-size: var(--sloganFontSize, 0.8rem);
-}
-.siteBranding .siteBranding__slogan:hover {
-  color: var(--sloganColorHover);
+.siteBranding__slogan {
+  color: var(--sloganColor, var(--bs-accent));
+  font-size: var(--xsSloganFontSize);
+  font-family: var(--sloganFontFamily, var(--defaultFontFamily));
 }

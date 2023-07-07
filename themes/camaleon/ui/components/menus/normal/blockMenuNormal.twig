@@ -1,0 +1,206 @@
+{#
+/**
+ * @file
+ * Theme override for a menu block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: HTML attributes for the containing element.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: HTML attributes for the title element.
+ * - content_attributes: HTML attributes for the content element.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * Headings should be used on navigation menus that consistently appear on
+ * multiple pages. When this menu block's label is configured to not be
+ * displayed, it is automatically made invisible using the 'visually-hidden' CSS
+ * class, which still keeps it visible for screen-readers and assistive
+ * technology. Headings allow screen-reader and keyboard only users to navigate
+ * to or skip the links.
+ * See http://juicystudio.com/article/screen-readers-display-none.php and
+ * http://www.w3.org/TR/WCAG-TECHS/H42.html for more information.
+ */
+#}
+{% set styles = configuration.block_style %}
+{% set style_vars = [] %}
+
+{% if styles.background_color_select != 'default' and styles.background_color_select != 'customColor' %}
+  {% if styles.background_color_opacity == '1.0' %}
+    {% set style_vars = style_vars|merge(['--backgroundColor: var(--' ~ styles.background_color_select ~ ')']) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--backgroundColor: rgb(var(--' ~ styles.background_color_select ~ '-rgb), ' ~ styles.background_color_opacity ~ ')']) %}
+  {% endif %}  
+{% endif %}
+
+{% if styles.background_color_select == 'customColor' %}
+  {% if styles.background_color_custom_opacity == 'FF' %}
+    {% set style_vars = style_vars|merge(['--backgroundColor: ' ~ styles.background_color_custom]) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--backgroundColor: ' ~ styles.background_color_custom ~ styles.background_color_custom_opacity ]) %}
+  {% endif %}  
+{% endif %}
+
+{% 
+  set styles_vars = style_vars|merge([
+    styles.gap ? '--gap: ' ~ styles.gap : '',
+
+    styles.titlecolor_select != 'default' and styles.title_color_select != 'customColor' ? '--titleColor: var(--' ~ styles.title_color_select ~ ')',
+    styles.title_color_select == 'customColor' ? '--titleColor: ' ~ styles.title_color_custom,
+    styles.title_font_family != 'default' ? '--titleFontFamily: ' ~ styles.title_font_family|replace({'-': " "}) : '',
+    styles.title_sm_font_size != '' ? '--smTitleFontSize: ' ~ styles.title_sm_font_size : '',
+    styles.title_md_font_size != '' ? '--mdTitleFontSize: ' ~ styles.title_md_font_size : '',
+    styles.title_lg_font_size != '' ? '--lgTitleFontSize: ' ~ styles.title_lg_font_size : '',
+    styles.title_xl_font_size != '' ? '--xlTitleFontSize: ' ~ styles.title_xl_font_size : '',
+    styles.title_xxl_font_size != '' ? '--xxlTitleFontSize: ' ~ styles.title_xxl_font_size : '',
+
+    styles.item_font_family != 'default' ? '--itemFontFamily: ' ~ styles.item_font_family|replace({'-': " "}) : '',
+    styles.item_sm_font_size != '' ? '--smItemFontSize: ' ~ styles.item_sm_font_size : '',
+    styles.item_md_font_size != '' ? '--mdItemFontSize: ' ~ styles.item_md_font_size : '',
+    styles.item_lg_font_size != '' ? '--lgItemFontSize: ' ~ styles.item_lg_font_size : '',
+    styles.item_xl_font_size != '' ? '--xlItemFontSize: ' ~ styles.item_xl_font_size : '',
+    styles.item_xxl_font_size != '' ? '--xxlItemFontSize: ' ~ styles.item_xxl_font_size : '',
+    styles.item_color_select == 'default' ? '--itemColor: var(--bs-navbar-link-color)',
+    styles.item_color_select != 'default' and styles.item_color_select != 'customColor' ? '--itemColor: var(--' ~ styles.item_color_select ~ ')',
+    styles.item_color_select == 'customColor' ? '--itemColor: ' ~ styles.item_color_custom,
+    styles.item_hover_color_select == 'default' and styles.item_color_select == 'default' ? '--itemColorHover: var(--bs-navbar-link-hover-color)',
+    styles.item_hover_color_select == 'default' and styles.item_color_select == 'customColor' ? '--itemColorHover: ' ~ styles.item_color_custom,
+    styles.item_hover_color_select == 'default' and styles.item_color_select != 'default' and styles.item_color_select != 'customColor' ? '--itemColorHover: var(--' ~ styles.item_color_select ~ ')',
+    styles.item_hover_color_select != 'default' and styles.item_hover_color_select != 'customColor' ? '--itemColorHover: var(--' ~ styles.item_hover_color_select ~ ')',
+    styles.item_hover_color_select == 'customColor' ? '--itemColorHover: ' ~ styles.item_hover_color_custom,
+    styles.item_sm_padding_left != '' ? '--smItemPaddingLeft: ' ~ styles.item_sm_padding_left : '',
+    styles.item_sm_padding_top != '' ? '--smItemPaddingTop: ' ~ styles.item_sm_padding_top : '',
+    styles.item_sm_padding_right != '' ? '--smItemPaddingRight: ' ~ styles.item_sm_padding_right : '',
+    styles.item_sm_padding_bottom != '' ? '--smItemPaddingBottom: ' ~ styles.item_sm_padding_bottom : '',
+    styles.item_md_padding_left != '' ? '--mdItemPaddingLeft: ' ~ styles.item_md_padding_left : '',
+    styles.item_md_padding_top != '' ? '--mdItemPaddingTop: ' ~ styles.item_md_padding_top : '',
+    styles.item_md_padding_right != '' ? '--mdItemPaddingRight: ' ~ styles.item_md_padding_right : '',
+    styles.item_md_padding_bottom != '' ? '--mdItemPaddingBottom: ' ~ styles.item_md_padding_bottom : '',
+    styles.item_lg_padding_left != '' ? '--lgItemPaddingLeft: ' ~ styles.item_lg_padding_left : '',
+    styles.item_lg_padding_top != '' ? '--lgItemPaddingTop: ' ~ styles.item_lg_padding_top : '',
+    styles.item_lg_padding_right != '' ? '--lgItemPaddingRight: ' ~ styles.item_lg_padding_right : '',
+    styles.item_lg_padding_bottom != '' ? '--lgItemPaddingBottom: ' ~ styles.item_lg_padding_bottom : '',
+    styles.item_xl_padding_left != '' ? '--xlItemPaddingLeft: ' ~ styles.item_xl_padding_left : '',
+    styles.item_xl_padding_top != '' ? '--xlItemPaddingTop: ' ~ styles.item_xl_padding_top : '',
+    styles.item_xl_padding_right != '' ? '--xlItemPaddingRight: ' ~ styles.item_xl_padding_right : '',
+    styles.item_xl_padding_bottom != '' ? '--xlItemPaddingBottom: ' ~ styles.item_xl_padding_bottom : '',
+    styles.item_xxl_padding_left != '' ? '--xxlItemPaddingLeft: ' ~ styles.item_xxl_padding_left : '',
+    styles.item_xxl_padding_top != '' ? '--xxlItemPaddingTop: ' ~ styles.item_xxl_padding_top : '',
+    styles.item_xxl_padding_right != '' ? '--xxlItemPaddingRight: ' ~ styles.item_xxl_padding_right : '',
+    styles.item_xxl_padding_bottom != '' ? '--xxlItemPaddingBottom: ' ~ styles.item_xxl_padding_bottom : '',
+    styles.item_background_color_select != 'default' and styles.item_background_color_select != 'customColor' ? '--itemBackgroundColor: var(--' ~ styles.item_background_color_select ~ ')',
+    styles.item_background_color_select == 'customColor' ? '--itemBackgroundColor: ' ~ styles.item_background_color_custom,
+    styles.item_background_hover_color_select == 'default' and styles.item_background_color_select == 'default' ? '--itemBackgroundColorHover: transparent',
+    styles.item_background_hover_color_select == 'default' and styles.item_background_color_select == 'customColor' ? '--itemBackgroundColorHover: ' ~ styles.item_background_color_custom,
+    styles.item_background_hover_color_select == 'default' and styles.item_background_color_select != 'default' and styles.item_color_select != 'customColor' ? '--itemColorHover: var(--' ~ styles.item_background_color_select ~ ')',
+    styles.item_background_hover_color_select != 'default' and styles.item_background_hover_color_select != 'customColor' ? '--itemBackgroundColorHover: var(--' ~ styles.item_background_hover_color_select ~ ')',
+    styles.item_background_hover_color_select == 'customColor' ? '--itemBackgroundColorHover: ' ~ styles.item_background_hover_color_custom,
+
+    styles.animation_option == TRUE  and styles.animation_duration ? '--animationDuration: ' ~ styles.animation_duration : '',
+    styles.animation_option == TRUE  and styles.animation_delay ? '--animationDelay: ' ~ styles.animation_delay : '',
+    styles.animation_option == TRUE  and styles.animation_count ? '--animationCount: ' ~ styles.animation_count : '',
+    styles.animation_option == TRUE  and styles.animation_function and styles.animation_function != 'default' ? '--animationFunction: ' ~ styles.animation_function : '',
+    styles.animation_option == TRUE  and styles.animation_fill and styles.animation_fill != 'default' ? '--animationFill: ' ~ styles.animation_fill : '',
+
+    styles.sm_max_width != '' ? '--smMaxWidth: ' ~ styles.sm_max_width : '',
+    styles.md_max_width != '' ? '--mdMaxWidth: ' ~ styles.md_max_width : '',
+    styles.lg_max_width != '' ? '--lgMaxWidth: ' ~ styles.lg_max_width : '',
+    styles.xl_max_width != '' ? '--xlMaxWidth: ' ~ styles.xl_max_width : '',
+    styles.xxl_max_width != '' ? '--xxlMaxWidth: ' ~ styles.xxl_max_width : '',
+
+    styles.sm_margin_left != '' ? '--smMarginLeft: ' ~ styles.sm_margin_left : '',
+    styles.sm_margin_top != '' ? '--smMarginTop: ' ~ styles.sm_margin_top : '',
+    styles.sm_margin_right != '' ? '--smMarginRight: ' ~ styles.sm_margin_right : '',
+    styles.sm_margin_bottom != '' ? '--smMarginBottom: ' ~ styles.sm_margin_bottom : '',
+    styles.md_margin_left != '' ? '--mdMarginLeft: ' ~ styles.md_margin_left : '',
+    styles.md_margin_top != '' ? '--mdMarginTop: ' ~ styles.md_margin_top : '',
+    styles.md_margin_right != '' ? '--mdMarginRight: ' ~ styles.md_margin_right : '',
+    styles.md_margin_bottom != '' ? '--mdMarginBottom: ' ~ styles.md_margin_bottom : '', 
+    styles.lg_margin_left != '' ? '--lgMarginLeft: ' ~ styles.lg_margin_left : '',
+    styles.lg_margin_top != '' ? '--lgMarginTop: ' ~ styles.lg_margin_top : '',
+    styles.lg_margin_right != '' ? '--lgMarginRight: ' ~ styles.lg_margin_right : '',
+    styles.lg_margin_bottom != '' ? '--lgMarginBottom: ' ~ styles.lg_margin_bottom : '',
+    styles.xl_margin_left != '' ? '--xlMarginLeft: ' ~ styles.xl_margin_left : '',
+    styles.xl_margin_top != '' ? '--xlMarginTop: ' ~ styles.xl_margin_top : '',
+    styles.xl_margin_right != '' ? '--xlMarginRight: ' ~ styles.xl_margin_right : '',
+    styles.xl_margin_bottom != '' ? '--xlMarginBottom: ' ~ styles.xl_margin_bottom : '',
+    styles.xxl_margin_left != '' ? '--xxlMarginLeft: ' ~ styles.xxl_margin_left : '',
+    styles.xxl_margin_top != '' ? '--xxlMarginTop: ' ~ styles.xxl_margin_top : '',
+    styles.xxl_margin_right != '' ? '--xxlMarginRight: ' ~ styles.xxl_margin_right : '',
+    styles.xxl_margin_bottom != '' ? '--xxlMarginBottom: ' ~ styles.xxl_margin_bottom : '',
+
+    styles.sm_padding_left != '' ? '--smPaddingLeft: ' ~ styles.sm_padding_left : '',
+    styles.sm_padding_top != '' ? '--smPaddingTop: ' ~ styles.sm_padding_top : '',
+    styles.sm_padding_right != '' ? '--smPaddingRight: ' ~ styles.sm_padding_right : '',
+    styles.sm_padding_bottom != '' ? '--smPaddingBottom: ' ~ styles.sm_padding_bottom : '',
+    styles.md_padding_left != '' ? '--mdPaddingLeft: ' ~ styles.md_padding_left : '',
+    styles.md_padding_top != '' ? '--mdPaddingTop: ' ~ styles.md_padding_top : '',
+    styles.md_padding_right != '' ? '--mdPaddingRight: ' ~ styles.md_padding_right : '',
+    styles.md_padding_bottom != '' ? '--mdPaddingBottom: ' ~ styles.md_padding_bottom : '', 
+    styles.lg_padding_left != '' ? '--lgPaddingLeft: ' ~ styles.lg_padding_left : '',
+    styles.lg_padding_top != '' ? '--lgPaddingTop: ' ~ styles.lg_padding_top : '',
+    styles.lg_padding_right != '' ? '--lgPaddingRight: ' ~ styles.lg_padding_right : '',
+    styles.lg_padding_bottom != '' ? '--lgPaddingBottom: ' ~ styles.lg_padding_bottom : '',
+    styles.xl_padding_left != '' ? '--xlPaddingLeft: ' ~ styles.xl_padding_left : '',
+    styles.xl_padding_top != '' ? '--xlPaddingTop: ' ~ styles.xl_padding_top : '',
+    styles.xl_padding_right != '' ? '--xlPaddingRight: ' ~ styles.xl_padding_right : '',
+    styles.xl_padding_bottom != '' ? '--xlPaddingBottom: ' ~ styles.xl_padding_bottom : '',
+    styles.xxl_padding_left != '' ? '--xxlPaddingLeft: ' ~ styles.xxl_padding_left : '',
+    styles.xxl_padding_top != '' ? '--xxlPaddingTop: ' ~ styles.xxl_padding_top : '',
+    styles.xxl_padding_right != '' ? '--xxlPaddingRight: ' ~ styles.xxl_padding_right : '',
+    styles.xxl_padding_bottom != '' ? '--xxlPaddingBottom: ' ~ styles.xxl_padding_bottom : '',
+
+    styles.sm_align != 'default' ? '--smAlignSelf: ' ~ styles.sm_align : '',
+    styles.md_align != 'default' ? '--mdAlignSelf: ' ~ styles.md_align : '',
+    styles.lg_align != 'default' ? '--lgAlignSelf: ' ~ styles.lg_align : '',
+    styles.xl_align != 'default' ? '--xlAlignSelf: ' ~ styles.xl_align : '',
+    styles.xxl_align != 'default' ? '--xxlAlignSelf: ' ~ styles.xxl_align : '',
+
+    styles.sm_justify != 'default' ? '--smJustifySelf: ' ~ styles.sm_justify : '',
+    styles.md_justify != 'default' ? '--mdJustifySelf: ' ~ styles.md_justify : '',
+    styles.lg_justify != 'default' ? '--lgJustifySelf: ' ~ styles.lg_justify : '',
+    styles.xl_justify != 'default' ? '--xlJustifySelf: ' ~ styles.xl_justify : '',
+    styles.xxl_justify != 'default' ? '--xxlJustifySelf: ' ~ styles.xxl_justify : '',
+
+    styles.sm_text_align != 'default' ? '--smTextAlign: ' ~ styles.sm_text_align : '',
+    styles.md_text_align != 'default' ? '--mdTextAlign: ' ~ styles.md_text_align : '',
+    styles.lg_text_align != 'default' ? '--lgTextAlign: ' ~ styles.lg_text_align : '',
+    styles.xl_text_align != 'default' ? '--xlTextAlign: ' ~ styles.xl_text_align : '',
+    styles.xxl_text_align != 'default' ? '--xxlTextAlign: ' ~ styles.xxl_text_align : '',
+  ])|remove_empty
+%}
+
+{% 
+  set block_classes = [
+    'block',
+    'menuNormal',
+    'menuNormal--' ~ styles.type,
+    styles.animation_option == TRUE and styles.animation_trigger == 'on_scroll' ? 'wow' : '',
+    styles.animation_option == TRUE ? styles.animation_type : '',
+  ]|remove_empty
+%}
+
+{% set heading_id = attributes.id|clean_id ~ '-label' %}
+<div {{ attributes.addClass(block_classes)|without('role', 'aria-labelledby').setAttribute('style', styles_vars|join('; ')) }}>
+  {# Label. If not displayed, we still provide it for screen readers. #}
+  {% if not configuration.label_display %}
+    {% set title_attributes = title_attributes.addClass('visually-hidden') %}
+  {% endif %}
+  {{ title_prefix }}
+  <h2{{ title_attributes.setAttribute('id', heading_id).addClass(['menuNormal__menu-title']) }}>{{ configuration.label }}</h2>
+  {{ title_suffix }}
+
+  {# Menu. #}
+  {% block content %}
+    {{ content }}
+  {% endblock %}
+</div>

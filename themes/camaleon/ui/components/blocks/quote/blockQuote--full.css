@@ -3,9 +3,13 @@
 .blockQuote--full {
   position: relative;
   min-height: 5rem;
-  height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
+  overflow: hidden;
+}
+.blockQuote--full .boxed {
+  max-width: var(--xsMaxWidth);
+  align-self: center;
 }
 .blockQuote--full__text {
   margin-top: 0;
@@ -19,10 +23,12 @@
 .blockQuote--full__text::before {
   display: block;
   position: relative;
-  left: -5rem;
+  top: 2rem;
+  left: -3rem;
   content: "“";
   font-family: "Palanquin", sans-serif;
   font-size: 25rem;
+  text-align: left;
 }
 .blockQuote--full__text p {
   margin-top: -5rem;

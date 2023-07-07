@@ -31,7 +31,20 @@
  * http://www.w3.org/TR/WCAG-TECHS/H42.html for more information.
  */
 #}
-{{ attach_library('camaleon/menu_footer_' ~ theme_settings.menu_type  ) }}
+{{ attach_library('camaleon/menu_footer_' ~ configuration.block_style.type  ) }}
+
+{% if configuration.block_style.title_font_family != 'default' %}
+  {{ attach_library('camaleon/' ~ configuration.block_style.title_font_family) }}
+{% endif %}
+
+{% if configuration.block_style.item_font_family != 'default' %}
+  {{ attach_library('camaleon/' ~ configuration.block_style.item_font_family) }}
+{% endif %}
+
+{% if configuration.block_style.animation_option == TRUE %}
+  {{ attach_library('camaleon/' ~ configuration.block_style.animation_type) }}
+{% endif %}
+
 {% include "@Components/menus/footer/blockMenuFooter.twig" with {
   'plugin_id': plugin_id,
   'label': label,

@@ -18,6 +18,7 @@
  *   - in_active_trail: TRUE if the link is in the active trail.
  */
 #}
+{% set styles = configuration.block_style %}
 {% import _self as menus %}
 
 {#
@@ -30,7 +31,7 @@ We call a macro which calls itself to render the full tree.
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-    <ul{{ attributes.addClass(['navbar-nav']) }}>
+    <ul{{ attributes.addClass(['navbar-nav', 'menuMain__nav']) }}>
     {% else %}
     <ul class="dropdown-menu">
     {% endif %}
@@ -46,13 +47,14 @@ We call a macro which calls itself to render the full tree.
   {%
     set list_item_classes = [
     'nav-item',
+    'menuMain__item',
     item.is_expanded ? 'dropdown',
     menu_level > 0 ? 'dropdown-item',
   ]
   %}
   {%
     set link_class = [
-      'nav-link',
+      'menuMain__link',
       item.in_active_trail ? 'active',
       menu_level == 0 and (item.is_expanded or item.is_collapsed) ? 'dropdown-toggle',
     ]

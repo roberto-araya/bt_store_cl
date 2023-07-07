@@ -1,9 +1,12 @@
 .blockTextIcon--default {
-  display: grid;
+  max-width: var(--xsMaxWidth);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .blockTextIcon--default__icon {
   margin: 1rem;
-  width: -webkit-fit-content;
+  margin-bottom: 1rem;
   width: -moz-fit-content;
   width: fit-content;
   justify-self: center;
@@ -15,11 +18,4 @@
 .blockTextIcon--default__icon svg {
   width: 100px;
   height: 100px;
-}
-
-@media screen and (min-width: 640px) {
-  .blockTextIcon--default {
-    max-width: 50vw;
-    justify-self: center;
-  }
 }

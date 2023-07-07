@@ -7,9 +7,9 @@ base:
     ui/base/wow.min.js: {}
     ui/base/bootstrap.min.js: {}
     ui/base/global.js: {}
+    ui/base/camaleon.js: {}
   dependencies:
     - core/drupal
-    #- core/jquery
     - core/drupal.ajax
 
 ### Fonts
@@ -818,6 +818,10 @@ menu_main:
   css:
     component:
       ui/components/menus/main/menuMain.css: {}
+  js:
+    ui/components/menus/main/menuMain.js: {}
+  dependencies:
+    - camaleon/block
 
 menu_main_default:
   version: VERSION
@@ -849,6 +853,10 @@ menu_footer:
   css:
     component:
       ui/components/menus/footer/menuFooter.css: {}
+  js:
+    ui/components/menus/footer/menuFooter.js: {}
+  dependencies:
+    - camaleon/block
 
 menu_footer_default:
   version: VERSION
@@ -873,6 +881,41 @@ menu_footer_two:
       ui/components/menus/footer/menuFooter--two.css: {}
   dependencies:
     - camaleon/menu_footer
+
+# normal
+menu_normal:
+  version: VERSION
+  css:
+    component:
+      ui/components/menus/normal/menuNormal.css: {}
+  js:
+    ui/components/menus/normal/menuNormal.js: {}
+  dependencies:
+    - camaleon/block
+
+menu_normal_default:
+  version: VERSION
+  css:
+    component:
+      ui/components/menus/normal/menuNormal--default.css: {}
+  dependencies:
+    - camaleon/menu_normal
+
+menu_normal_one:
+  version: VERSION
+  css:
+    component:
+      ui/components/menus/normal/menuNormal--one.css: {}
+  dependencies:
+    - camaleon/menu_normal
+
+menu_normal_two:
+  version: VERSION
+  css:
+    component:
+      ui/components/menus/normal/menuNormal--two.css: {}
+  dependencies:
+    - camaleon/menu_normal
 
 # Breadcrumbs
 breadcrumbs:
@@ -979,12 +1022,12 @@ paragraph_table:
       ui/components/paragraphs/table/paragraphTable--table.css: {}
 
 ### CONTENT BLOCKS
-# block content
-block_content:
+# block
+block:
   version: VERSION
   css:
     component:
-      ui/components/blocks/block-content.css: {}
+      ui/components/blocks/block.css: {}
 
 # article
 block_article_default:
@@ -1032,15 +1075,17 @@ block_contact_info:
   version: VERSION
   css:
     component:
-      ui/components/blocks/contact_info/blockContacInfo.css: {}
+      ui/components/blocks/contact-info/blockContactInfo.css: {}
+  js:
+    ui/components/blocks/contact-info/blockContactInfo.js: {}
   dependencies:
-    - camaleon/block_content
+    - camaleon/block
 
 block_contact_info_default:
   version: VERSION
   css:
     component:
-      ui/components/blocks/contact_info/blockContacInfo--default.css: {}
+      ui/components/blocks/contact-info/blockContactInfo--default.css: {}
   dependencies:
     - camaleon/block_contact_info
 
@@ -1048,7 +1093,7 @@ block_contact_info_full:
   version: VERSION
   css:
     component:
-      ui/components/blocks/contact_info/blockContacInfo--full.css: {}
+      ui/components/blocks/contact-info/blockContactInfo--full.css: {}
   dependencies:
     - camaleon/block_contact_info
 
@@ -1058,8 +1103,10 @@ block_cta:
   css:
     component:
       ui/components/blocks/cta/blockCta.css: {}
+  js:
+    ui/components/blocks/cta/blockCta.js: {}
   dependencies:
-    - camaleon/block_content
+    - camaleon/block
 
 block_cta_default:
   version: VERSION
@@ -1099,16 +1146,18 @@ block_hero:
   css:
     theme:
       ui/components/blocks/hero/blockHero.css: {}
+  js:
+    ui/components/blocks/hero/blockHero.js: {}
   dependencies:
-    - camaleon/block_content
+    - camaleon/block
 
 block_hero_default:
   version: VERSION
   css:
     theme:
       ui/components/blocks/hero/blockHero--default.css: {}
-  js:
-    ui/components/blocks/hero/blockHero--default.js: {}
+  #js:
+  #  ui/components/blocks/hero/blockHero--default.js: {}
   dependencies:
     - camaleon/block_hero
 
@@ -1117,8 +1166,8 @@ block_hero_full:
   css:
     theme:
       ui/components/blocks/hero/blockHero--full.css: {}
-  js:
-    ui/components/blocks/hero/blockHero--full.js: {}
+  #js:
+  #  ui/components/blocks/hero/blockHero--full.js: {}
   dependencies:
     - camaleon/block_hero
 
@@ -1128,8 +1177,10 @@ block_highlighted_text:
   css:
     component:
       ui/components/blocks/highlighted-text/blockHighlightedText.css: {}
+  js:
+    ui/components/blocks/highlighted-text/blockHighlightedText.js: {}
   dependencies:
-    - camaleon/block_content
+    - camaleon/block
 
 block_highlighted_text_default:
   version: VERSION
@@ -1154,7 +1205,7 @@ block_highlighted_text_image:
     component:
       ui/components/blocks/highlighted-text-image/blockHighlightedTextImage.css: {}
   dependencies:
-    - camaleon/block_content
+    - camaleon/block
 
 block_highlighted_text_image_default:
   version: VERSION
@@ -1178,6 +1229,10 @@ block_image:
   css:
     component:
       ui/components/blocks/image/blockImage.css: {}
+  js:
+    ui/components/blocks/image/blockImage.js: {}
+  dependencies:
+    - camaleon/block
 
 block_image_default:
   version: VERSION
@@ -1241,6 +1296,10 @@ block_image_link:
   css:
     component:
       ui/components/blocks/image_link/blockImageLink.css: {}
+  js:
+    ui/components/blocks/image_link/blockImageLink.js: {}
+  dependencies:
+    - camaleon/block
 
 block_image_link_default:
   version: VERSION
@@ -1272,6 +1331,10 @@ block_images_gallery:
   css:
     component:
       ui/components/blocks/images-gallery/blockImagesGallery.css: {}
+  js:
+    ui/components/blocks/images-gallery/blockImagesGallery.js: {}
+  dependencies:
+    - camaleon/block
 
 block_images_gallery_default:
   version: VERSION
@@ -1295,6 +1358,11 @@ block_images_slide:
   css:
     component:
       ui/components/blocks/images-slide/blockImagesSlide.css: {}
+  js:
+    ui/components/blocks/images-slide/blockImagesSlide.js: {}
+  dependencies:
+    - camaleon/block
+    - camaleon/bs-carousel
 
 block_images_slide_default:
   version: VERSION
@@ -1303,7 +1371,6 @@ block_images_slide_default:
       ui/components/blocks/images-slide/blockImagesSlide--default.css: {}
   dependencies:
     - camaleon/block_images_slide
-    - camaleon/bs-carousel
 
 block_images_slide_full:
   version: VERSION
@@ -1312,7 +1379,6 @@ block_images_slide_full:
       ui/components/blocks/images-slide/blockImagesSlide--full.css: {}
   dependencies:
     - camaleon/block_images_slide
-    - camaleon/bs-carousel
 
 # map
 block_map:
@@ -1320,6 +1386,8 @@ block_map:
   css:
     component:
       ui/components/blocks/map/blockMap.css: {}
+  dependencies:
+    - camaleon/block
 
 block_map_default:
   version: VERSION
@@ -1343,6 +1411,10 @@ block_quote:
   css:
     component:
       ui/components/blocks/quote/blockQuote.css: {}
+  js:
+    ui/components/blocks/quote/blockQuote.js: {}
+  dependencies:
+    - camaleon/block
 
 block_quote_default:
   version: VERSION
@@ -1366,6 +1438,10 @@ block_section_title:
   css:
     component:
       ui/components/blocks/section-title/blockSectionTitle.css: {}
+  js:
+    ui/components/blocks/section-title/blockSectionTitle.js: {}
+  dependencies:
+    - camaleon/block
 
 block_section_title_default:
   version: VERSION
@@ -1405,6 +1481,10 @@ block_social_profiles:
   css:
     component:
       ui/components/blocks/social-profiles/blockSocialProfiles.css: {}
+  js:
+    ui/components/blocks/social_profiles/blockSocialProfiles.js: {}
+  dependencies:
+    - camaleon/block
 
 block_social_profiles_default:
   version: VERSION
@@ -1422,14 +1502,43 @@ block_social_profiles_full:
   dependencies:
     - camaleon/block_social_profiles
 
+# testimonial
+block_testimonial:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/testimonial/blockTestimonial.css: {}
+  js:
+    ui/components/blocks/testimonial/blockTestimonial.js: {}
+  dependencies:
+    - camaleon/block
+
+block_testimonial_default:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/testimonial/blockTestimonial--default.css: {}
+  dependencies:
+    - camaleon/block_testimonial
+
+block_testimonial_full:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/testimonial/blockTestimonial--full.css: {}
+  dependencies:
+    - camaleon/block_testimonial
+
 # text
 block_text:
   version: VERSION
   css:
     component:
       ui/components/blocks/text/blockText.css: {}
+  js:
+    ui/components/blocks/text/blockText.js: {}
   dependencies:
-    - camaleon/block_content
+    - camaleon/block
 
 block_text_default:
   version: VERSION
@@ -1453,8 +1562,10 @@ block_text_icon:
   css:
     component:
       ui/components/blocks/text-icon/blockTextIcon.css: {}
+  js:
+    ui/components/blocks/text-icon/blockTextIcon.js: {}
   dependencies:
-    - camaleon/block_content
+    - camaleon/block 
 
 block_text_icon_default:
   version: VERSION
@@ -1486,8 +1597,10 @@ block_text_image:
   css:
     component:
       ui/components/blocks/text-image/blockTextImage.css: {}
+  js:
+    ui/components/blocks/text-image/blockTextImage.js: {}
   dependencies:
-    - camaleon/block_content
+    - camaleon/block
 
 block_text_image_default:
   version: VERSION
@@ -1511,8 +1624,10 @@ block_text_media:
   css:
     component:
       ui/components/blocks/text-media/blockTextMedia.css: {}
+  js:
+    ui/components/blocks/text-media/blockTextMedia.js: {}
   dependencies:
-    - camaleon/block_content
+    - camaleon/block
 
 block_text_media_default:
   version: VERSION
@@ -1536,8 +1651,10 @@ block_title_icon:
   css:
     component:
       ui/components/blocks/title-icon/blockTitleIcon.css: {}
+  js:
+    ui/components/blocks/title-icon/blockTitleIcon.js: {}
   dependencies:
-    - camaleon/block_content
+    - camaleon/block
 
 block_title_icon_default:
   version: VERSION
@@ -1561,8 +1678,10 @@ block_title_image:
   css:
     component:
       ui/components/blocks/title-image/blockTitleImage.css: {}
+  js:
+    ui/components/blocks/title-image/blockTitleImage.js: {}
   dependencies:
-    - camaleon/block_content
+    - camaleon/block
 
 block_title_image_default:
   version: VERSION
@@ -1601,31 +1720,40 @@ branding:
   css:
     component:
       ui/components/branding/siteBranding.css: {}
+  js:
+    ui/components/branding/siteBranding.js: {}
 
 branding_horizontal:
   version: VERSION
   css:
     component:
       ui/components/branding/siteBranding--horizontal.css: {}
+  dependencies:
+    - camaleon/branding
 
 branding_horizontal_inverted:
   version: VERSION
   css:
     component:
       ui/components/branding/siteBranding--horizontal_inverted.css: {}
+  dependencies:
+    - camaleon/branding
 
 branding_vertical:
   version: VERSION
   css:
     component:
       ui/components/branding/siteBranding--vertical.css: {}
+  dependencies:
+    - camaleon/branding
 
 branding_vertical_inverted:
   version: VERSION
   css:
     component:
       ui/components/branding/siteBranding--vertical_inverted.css: {}
-
+  dependencies:
+    - camaleon/branding
 
 #### COMMERCE ####
 ### PRODUCTS

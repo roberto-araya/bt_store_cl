@@ -1,3 +1,10 @@
-.blockContactInfo--full {
-  width: 100%;
+.blockContactInfo--full .boxed {
+  max-width: var(--xsMaxWidth);
+  margin: 0 auto;
+}
+.blockContactInfo--full .field--name-contact-info-phone-type {
+  font-weight: bold;
+}
+.blockContactInfo--full .blockContactInfo--full__address {
+  margin-top: 1rem;
 }

@@ -1,25 +1,63 @@
-.menuMain {
-  background-color: var(--backgroundColor);
-  font-family: var(--bt--font-family, sans-serif);
+.block.menuMain {
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  padding-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
 }
-.menuMain:hover {
-  background-color: var(--backgroundColorHover);
+
+.menuMain {
+  --xsTitleFontSize: 1.2rem;
+  --xsItemFontSize: 1.125rem;
+  --xsAlignSelf: center;
+  --xsMaxWidth: 90vw;
+  --xsPaddingRight: 0px;
+  --xsPaddingLeft: 0px;
+  --xsItemPaddingLeft: .125rem;
+  --xsItemPaddingTop: 1rem;
+  --xsItemPaddingRight: .125rem;
+  --xsItemPaddingBottom: 1rem;
+}
+.menuMain__menu-title {
+  font-family: var(--titleFontFamily, var(--defaultFontFamily));
+  font-size: var(--xsTitleFontSize);
+  color: var(--titleColor, var(--defaultPageTitleColor));
+}
+.menuMain__nav {
+  gap: var(--gap, 0px);
+  margin-left: var(--xsMarginLeft);
+  margin-top: var(--xsMarginTop);
+  margin-right: var(--xsMarginRight);
+  margin-bottom: var(--xsMarginBottom);
+  padding-left: var(--xsPaddingLeft);
+  padding-top: var(--xsPaddingTop);
+  padding-right: var(--xsPaddingRight);
+  padding-bottom: var(--xsPaddingBottom);
 }
 .menuMain .dropdown-menu {
   background-color: var(--backgroundColor);
 }
-.menuMain .nav-item > .nav-link, .menuMain .dropdown > .nav-link, .menuMain .dropdown-item > .nav-link {
-  color: var(--itemColor);
+.menuMain__link {
+  display: block;
+  padding-left: var(--xsItemPaddingLeft);
+  padding-top: var(--xsItemPaddingTop);
+  padding-right: var(--xsItemPaddingRight);
+  padding-bottom: var(--xsItemPaddingBottom);
+  font-family: var(--itemFontFamily, var(--defaultFontFamily));
+  font-size: var(--xsItemFontSize);
+  color: var(--itemColor, #BC8927);
 }
-.menuMain .nav-item > .nav-link:hover, .menuMain .dropdown > .nav-link:hover, .menuMain .dropdown-item > .nav-link:hover {
-  color: var(--itemColorHover);
+.menuMain__link:hover, .menuMain__link.is-active {
+  color: var(--itemColorHover, #b38225);
 }
-.menuMain .nav-item, .menuMain .dropdown-item {
-  background-color: var(--itemBackgroundColor);
+.menuMain__item {
+  background-color: var(--itemBackgroundColor, transparent);
+  align-self: var(--xsAlignSelf);
+  justify-self: var(--xsJustifySelf);
 }
-.menuMain .nav-item:hover, .menuMain .dropdown-item:hover {
-  background-color: var(--itemBackgroundColorHover);
-}
-.menuMain .nav-item {
-  padding: var(--itemPadding);
+.menuMain__item:hover {
+  background-color: var(--itemBackgroundColorHover, transparent);
 }

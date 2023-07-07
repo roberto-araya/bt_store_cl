@@ -1,5 +1,10 @@
-.blockImagesGallery--full .photoswipe-gallery {
-  margin: 1rem;
+.blockImagesGallery--full {
+  --xsMaxWidth: 95vw;
+  --xsAlignSelf: center;
+}
+.blockImagesGallery--full .boxed {
+  max-width: var(--xsMaxWidth);
+  align-self: center;
 }
 .blockImagesGallery--full .photoswipe-gallery > div:nth-child(1) {
   display: flex;
@@ -14,15 +19,4 @@
 .blockImagesGallery--full__images img {
   width: 130px;
   height: 130px;
-}
-
-@media screen and (min-width: 768px) {
-  .blockImagesGallery--default__images {
-    max-width: 150px;
-    max-height: 150px;
-  }
-  .blockImagesGallery--default__images img {
-    width: 150px;
-    height: 150px;
-  }
 }

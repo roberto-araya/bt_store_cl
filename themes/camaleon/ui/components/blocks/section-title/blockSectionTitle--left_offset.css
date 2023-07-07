@@ -4,39 +4,25 @@
   justify-content: center;
 }
 .blockSectionTitle--left_offset__content-title {
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   align-self: center;
   margin: 1rem;
-  font-size: 2rem;
   text-transform: uppercase;
   font-weight: bold;
-  letter-spacing: 0.2rem;
 }
 .blockSectionTitle--left_offset__caption {
   margin: 1rem;
-  font-size: 1.2rem;
 }
 
-@media screen and (min-width: 640px) {
-  .blockSectionTitle--left_offset {
-    max-width: 50vw;
-    justify-self: center;
-  }
-}
 @media screen and (min-width: 768px) {
   .blockSectionTitle--left_offset {
     position: relative;
     left: -3rem;
     box-shadow: gray 10px 10px 20px;
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
     align-self: center;
-  }
-  .blockSectionTitle--left_offset__content-title {
-    font-size: 2rem;
   }
 }
 @media screen and (orientation: landscape) and (min-width: 800px) and (max-height: 500px) {
@@ -44,13 +30,9 @@
     position: relative;
     left: -3rem;
     box-shadow: gray 10px 10px 20px;
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
     align-self: center;
-  }
-  .blockSectionTitle--left_offset__content-title {
-    font-size: 2rem;
   }
 }
 @media screen and (orientation: landscape) and (min-width: 660px) and (max-width: 750px) {
@@ -59,9 +41,6 @@
     top: -6rem;
     box-shadow: gray 10px 10px 20px;
     align-self: center;
-  }
-  .blockSectionTitle--left_offset__content-title {
-    font-size: 2rem;
   }
 }
 @media screen and (min-width: 1024px) {

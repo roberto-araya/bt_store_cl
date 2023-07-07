@@ -1,10 +1,7 @@
 .blockImagesGallery--default {
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-}
-.blockImagesGallery--default .photoswipe-gallery {
-  margin: 1rem;
+  --xsMaxWidth: 95vw;
+  --xsAlignSelf: center;
+  max-width: var(--xsMaxWidth);
 }
 .blockImagesGallery--default .photoswipe-gallery > div:nth-child(1) {
   display: flex;
@@ -19,22 +16,4 @@
 .blockImagesGallery--default__images img {
   width: 130px;
   height: 130px;
-}
-
-@media screen and (min-width: 768px) {
-  .blockImagesGallery--default {
-    width: -webkit-max-content;
-    width: -moz-max-content;
-    width: max-content;
-    max-width: 50vw;
-    justify-self: center;
-  }
-  .blockImagesGallery--default__images {
-    max-width: 150px;
-    max-height: 150px;
-  }
-  .blockImagesGallery--default__images img {
-    width: 150px;
-    height: 150px;
-  }
 }

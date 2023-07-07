@@ -1,32 +1,23 @@
-.regionNavbar .container-fluid {
-  --justifyContent: center;
-  --alignItems: center;
-}
-
 .menuMain--default {
-  letter-spacing: 0.2rem;
-  font-family: var(--bt--font-family, sans-serif);
+  min-width: 300px;
   width: 90vw;
-  text-align: center;
-  font-size: 1.125rem;
+  max-width: var(--xsMaxWidth);
 }
-.menuMain--default .nav-item > .nav-link, .menuMain--default .dropdown > .nav-link, .menuMain--default .dropdown-item > .nav-link {
-  text-align: center;
+.menuMain--default .navbar-collapse {
+  width: 100%;
 }
-.menuMain--default .nav-item, .menuMain--default .dropdown-item {
-  margin: 0.5rem;
+.menuMain--default .menuMain__item {
+  min-width: 105px;
+  max-width: 300px;
   width: auto;
-  align-self: center;
 }
 
 @media (min-width: 992px) {
-  .regionNavbar .container-fluid {
-    --justifyContent: unset;
-    --alignItems: unset;
-  }
-
   .menuMain--default {
-    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+  }
+  .menuMain--default .navbar-collapse {
     width: -moz-max-content;
     width: max-content;
   }

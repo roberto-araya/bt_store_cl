@@ -11,131 +11,66 @@
  * - site_logo: Logo for site as defined in Appearance or theme settings.
  * - site_name: Name for site as defined in Site information settings.
  * - site_slogan: Slogan for site as defined in Site information settings.
+ * - configuration: Block configurations.
  *
  * @ingroup themeable
  */
 #}
-{% set style_vars = [] %}
-{# background color #}
-{% if theme_settings.branding_bg_color != 'default' and theme_settings.branding_bg_color != 'customColor' %}
-  {% if theme_settings.branding_bg_color_opacity == '1.0' %}
-    {% set style_vars = style_vars|merge(['--backgroundColor: var(--' ~ theme_settings.branding_bg_color ~ ')']) %}
-  {% else %}
-    {% set style_vars = style_vars|merge(['--backgroundColor: rgb(var(--' ~ theme_settings.branding_bg_color ~ '-rgb), ' ~ theme_settings.branding_bg_color_opacity ~ ')']) %}
-  {% endif %}  
-{% endif %}
-
-{% if theme_settings.branding_bg_color == 'customColor' %}
-  {% if theme_settings.branding_bg_color_custom_opacity == 'FF' %}
-    {% set style_vars = style_vars|merge(['--backgroundColor: ' ~ theme_settings.branding_bg_color_custom]) %}
-  {% else %}
-    {% set style_vars = style_vars|merge(['--backgroundColor: ' ~ theme_settings.branding_bg_color_custom ~ theme_settings.branding_bg_color_custom_opacity ]) %}
-  {% endif %}  
-{% endif %}
-
-{% if theme_settings.branding_bg_color_hover != 'default' and theme_settings.branding_bg_color_hover != 'customColor' %}
-  {% if theme_settings.branding_bg_color_opacity_hover == '1.0' %}
-    {% set style_vars = style_vars|merge(['--backgroundColorHover: var(--' ~ theme_settings.branding_bg_color_hover ~ ')']) %}
-  {% else %}
-    {% set style_vars = style_vars|merge(['--backgroundColorHover: rgb(var(--' ~ theme_settings.branding_bg_color_hover ~ '-rgb), ' ~ theme_settings.branding_bg_color_opacity_hover ~ ')']) %}
-  {% endif %}  
-{% endif %}
-
-{% if theme_settings.branding_bg_color_hover == 'customColor' %}
-  {% if theme_settings.branding_bg_color_custom_opacity_hover == 'FF' %}
-    {% set style_vars = style_vars|merge(['--backgroundColorHover: ' ~ theme_settings.branding_bg_color_custom_hover]) %}
-  {% else %}
-    {% set style_vars = style_vars|merge(['--backgroundColorHover: ' ~ theme_settings.branding_bg_color_custom_hover ~ theme_settings.branding_bg_color_custom_opacity_hover ]) %}
-  {% endif %}  
-{% endif %}
-{# site name color #}
-{% if theme_settings.branding_name_color != 'default' and theme_settings.branding_name_color != 'customColor' %}
-  {% if theme_settings.branding_name_color_opacity == '1.0' %}
-    {% set style_vars = style_vars|merge(['--nameColor: var(--' ~ theme_settings.branding_name_color ~ ')']) %}
-  {% else %}
-    {% set style_vars = style_vars|merge(['--nameColor: rgb(var(--' ~ theme_settings.branding_name_color ~ '-rgb), ' ~ theme_settings.branding_name_color_opacity ~ ')']) %}
-  {% endif %}  
-{% endif %}
-
-{% if theme_settings.branding_name_color == 'customColor' %}
-  {% if theme_settings.branding_name_color_custom_opacity == 'FF' %}
-    {% set style_vars = style_vars|merge(['--nameColor: ' ~ theme_settings.branding_name_color_custom]) %}
-  {% else %}
-    {% set style_vars = style_vars|merge(['--nameColor: ' ~ theme_settings.branding_name_color_custom ~ theme_settings.branding_name_color_custom_opacity ]) %}
-  {% endif %}  
-{% endif %}
-
-{% if theme_settings.branding_name_color_hover != 'default' and theme_settings.branding_name_color_hover != 'customColor' %}
-  {% if theme_settings.branding_name_color_opacity_hover == '1.0' %}
-    {% set style_vars = style_vars|merge(['--nameColorHover: var(--' ~ theme_settings.branding_name_color_hover ~ ')']) %}
-  {% else %}
-    {% set style_vars = style_vars|merge(['--nameColorHover: rgb(var(--' ~ theme_settings.branding_name_color_hover ~ '-rgb), ' ~ theme_settings.branding_name_color_opacity_hover ~ ')']) %}
-  {% endif %}  
-{% endif %}
-
-{% if theme_settings.branding_name_color_hover == 'customColor' %}
-  {% if theme_settings.branding_name_color_custom_opacity_hover == 'FF' %}
-    {% set style_vars = style_vars|merge(['--nameColorHover: ' ~ theme_settings.branding_name_color_custom_hover]) %}
-  {% else %}
-    {% set style_vars = style_vars|merge(['--nameColorHover: ' ~ theme_settings.branding_name_color_custom_hover ~ theme_settings.branding_name_color_custom_opacity_hover ]) %}
-  {% endif %}  
-{% endif %}
-{# site slogan color #}
-{% if theme_settings.branding_slogan_color != 'default' and theme_settings.branding_slogan_color != 'customColor' %}
-  {% if theme_settings.branding_slogan_color_opacity == '1.0' %}
-    {% set style_vars = style_vars|merge(['--sloganColor: var(--' ~ theme_settings.branding_slogan_color ~ ')']) %}
-  {% else %}
-    {% set style_vars = style_vars|merge(['--sloganColor: rgb(var(--' ~ theme_settings.branding_slogan_color ~ '-rgb), ' ~ theme_settings.branding_slogan_color_opacity ~ ')']) %}
-  {% endif %}  
-{% endif %}
-
-{% if theme_settings.branding_slogan_color == 'customColor' %}
-  {% if theme_settings.branding_slogan_color_custom_opacity == 'FF' %}
-    {% set style_vars = style_vars|merge(['--sloganColor: ' ~ theme_settings.branding_slogan_color_custom]) %}
-  {% else %}
-    {% set style_vars = style_vars|merge(['--sloganColor: ' ~ theme_settings.branding_slogan_color_custom ~ theme_settings.branding_slogan_color_custom_opacity ]) %}
-  {% endif %}  
-{% endif %}
-
-{% if theme_settings.branding_slogan_color_hover != 'default' and theme_settings.branding_slogan_color_hover != 'customColor' %}
-  {% if theme_settings.branding_slogan_color_opacity_hover == '1.0' %}
-    {% set style_vars = style_vars|merge(['--sloganColorHover: var(--' ~ theme_settings.branding_slogan_color_hover ~ ')']) %}
-  {% else %}
-    {% set style_vars = style_vars|merge(['--sloganColorHover: rgb(var(--' ~ theme_settings.branding_slogan_color_hover ~ '-rgb), ' ~ theme_settings.branding_slogan_color_opacity_hover ~ ')']) %}
-  {% endif %}  
-{% endif %}
-
-{% if theme_settings.branding_slogan_color_hover == 'customColor' %}
-  {% if theme_settings.branding_slogan_color_custom_opacity_hover == 'FF' %}
-    {% set style_vars = style_vars|merge(['--sloganColorHover: ' ~ theme_settings.branding_slogan_color_custom_hover]) %}
-  {% else %}
-    {% set style_vars = style_vars|merge(['--sloganColorHover: ' ~ theme_settings.branding_slogan_color_custom_hover ~ theme_settings.branding_slogan_color_custom_opacity_hover ]) %}
-  {% endif %}  
-{% endif %}
-
-{%
-  set style_vars = style_vars|merge([
-    theme_settings.branding_bg_color == 'default' ? '--backgroundColor: var(--defaultBackgroundColor)',
-    theme_settings.branding_bg_color_hover == 'default' ? '--backgroundColorHover: var(--backgroundColor)',
-    
-    theme_settings.branding_name_color == 'default' ? '--nameColor: var(--defaultNameColor)',
-    theme_settings.branding_name_color_hover == 'default' ? '--nameColorHover: var(--nameColor)',
-
-    theme_settings.branding_slogan_color == 'default' ? '--sloganColor: var(--defaultSloganColor)',
-    theme_settings.branding_slogan_color_hover == 'default' ? '--sloganColorHover: var(--sloganColor)',
-    
-    theme_settings.branding_logo_size != '' ? '--logoSize: ' ~ theme_settings.branding_logo_size,
-    theme_settings.branding_name_font_size != '' ? '--nameFontSize: ' ~ theme_settings.branding_name_font_size,
-    theme_settings.branding_slogan_font_size != '' ? '--sloganFontSize: ' ~ theme_settings.branding_slogan_font_size,
-  ]|remove_empty)
+{% set styles = configuration.block_style %}
+{% 
+  set style_vars = [
+    styles.background_color_select != 'default' and styles.background_color_select != 'customColor' ? '--backgroundColor: var(--' ~ styles.background_color_select ~ ')',
+    styles.background_color_select == 'customColor' ? '--backgroundColor: ' ~ styles.background_color_custom,
+    styles.animation_option == TRUE  and styles.animation_duration ? '--animationDuration: ' ~ styles.animation_duration : '',
+    styles.animation_option == TRUE  and styles.animation_delay ? '--animationDelay: ' ~ styles.animation_delay : '',
+    styles.animation_option == TRUE  and styles.animation_count ? '--animationCount: ' ~ styles.animation_count : '',
+    styles.animation_option == TRUE  and styles.animation_function and styles.animation_function != 'default' ? '--animationFunction: ' ~ styles.animation_function : '',
+    styles.animation_option == TRUE  and styles.animation_fill and styles.animation_fill != 'default' ? '--animationFill: ' ~ styles.animation_fill : '',
+    styles.sm_padding_left != 'default' ? '--smPaddingLeft: ' ~ styles.sm_padding_left : '',
+    styles.sm_padding_top != 'default' ? '--smPaddingTop: ' ~ styles.sm_padding_top : '',
+    styles.sm_padding_right != 'default' ? '--smPaddingRight: ' ~ styles.sm_padding_right : '',
+    styles.sm_padding_bottom != 'default' ? '--smPaddingBottom: ' ~ styles.sm_padding_bottom : '',
+    styles.md_padding_left != 'default' ? '--mdPaddingLeft: ' ~ styles.md_padding_left : '',
+    styles.md_padding_top != 'default' ? '--mdPaddingTop: ' ~ styles.md_padding_top : '',
+    styles.md_padding_right != 'default' ? '--mdPaddingRight: ' ~ styles.md_padding_right : '',
+    styles.md_padding_bottom != 'default' ? '--mdPaddingBottom: ' ~ styles.md_padding_bottom : '',
+    styles.lg_padding_left != 'default' ? '--lgPaddingLeft: ' ~ styles.lg_padding_left : '',
+    styles.lg_padding_top != 'default' ? '--lgPaddingTop: ' ~ styles.lg_padding_top : '',
+    styles.lg_padding_right != 'default' ? '--lgPaddingRight: ' ~ styles.lg_padding_right : '',
+    styles.lg_padding_bottom != 'default' ? '--lgPaddingBottom: ' ~ styles.lg_padding_bottom : '',
+    styles.xl_padding_left != 'default' ? '--xlPaddingLeft: ' ~ styles.xl_padding_left : '',
+    styles.xl_padding_top != 'default' ? '--xlPaddingTop: ' ~ styles.xl_padding_top : '',
+    styles.xl_padding_right != 'default' ? '--xlPaddingRight: ' ~ styles.xl_padding_right : '',
+    styles.xl_padding_bottom != 'default' ? '--xlPaddingBottom: ' ~ styles.xl_padding_bottom : '',
+    styles.xxl_padding_left != 'default' ? '--xxlPaddingLeft: ' ~ styles.xxl_padding_left : '',
+    styles.xxl_padding_top != 'default' ? '--xxlPaddingTop: ' ~ styles.xxl_padding_top : '',
+    styles.xxl_padding_right != 'default' ? '--xxlPaddingRight: ' ~ styles.xxl_padding_right : '',
+    styles.xxl_padding_bottom != 'default' ? '--xxlPaddingBottom: ' ~ styles.xxl_padding_bottom : '',
+    styles.sm_block_align != 'default' ? '--smAlignSelf: ' ~ styles.sm_block_align : '',
+    styles.md_block_align != 'default' ? '--mdAlignSelf: ' ~ styles.md_block_align : '',
+    styles.lg_block_align != 'default' ? '--lgAlignSelf: ' ~ styles.lg_block_align : '',
+    styles.xl_block_align != 'default' ? '--xlAlignSelf: ' ~ styles.xl_block_align : '',
+    styles.xxl_block_align != 'default' ? '--xxlAlignSelf: ' ~ styles.xxl_block_align : '',
+    styles.sm_text_align != 'default' ? '--smAlignSelf: ' ~ styles.sm_text_align : '',
+    styles.md_text_align != 'default' ? '--mdAlignSelf: ' ~ styles.md_text_align : '',
+    styles.lg_text_align != 'default' ? '--lgAlignSelf: ' ~ styles.lg_text_align : '',
+    styles.xl_text_align != 'default' ? '--xlAlignSelf: ' ~ styles.xl_text_align : '',
+    styles.xxl_text_align != 'default' ? '--xxlAlignSelf: ' ~ styles.xxl_text_align : '',
+    styles.type is empty ? '--type: horizontal' : '--type: ' ~ styles.type,
+    styles.logo_size is empty ? '--logoSize: 24px' : '--logoSize: ' ~ styles.logo_size,
+    styles.name_font_size is empty ? '--nameFontSize: 18px' : '--nameFontSize: ' ~ styles.name_font_size,
+    styles.slogan_font_size is empty ? '--sloganFontSize: 18px' : '--sloganFontSize: ' ~ styles.slogan_font_size,
+  ]|remove_empty
 %}
 
 {% 
   set block_classes = [
     'block',
     'siteBranding',
-    'siteBranding--' ~ theme_settings.branding_type,
+    'siteBranding--' ~ styles.type,
     'navbar-brand',
+    styles.animation_option == TRUE and styles.animation_trigger == 'on_scroll' ? 'wow' : '',
+    styles.animation_option == TRUE ? styles.animation_type : '',
   ]|remove_empty
 %}
 

@@ -1,13 +1,14 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Palanquin:wght@300&display=swap");
-.blockQuote--default {
+.blockQuote.blockQuote--default {
+  max-width: var(--xsMaxWidth);
   position: relative;
   min-height: 5rem;
-  height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
+  overflow: hidden;
 }
-.blockQuote--default__text {
+.blockQuote.blockQuote--default__text {
   margin-top: 0;
   padding-bottom: 4rem;
   position: relative;
@@ -17,20 +18,22 @@
   font-style: italic;
   z-index: 4;
 }
-.blockQuote--default__text::before {
+.blockQuote.blockQuote--default__text::before {
   display: block;
   content: "“";
   position: relative;
-  left: -5rem;
+  top: 2rem;
+  left: -3rem;
   font-family: "Palanquin", sans-serif;
   font-size: 25rem;
+  text-align: left;
 }
-.blockQuote--default__text p {
+.blockQuote.blockQuote--default__text p {
   margin-top: -5rem;
   position: relative;
   z-index: 4;
 }
-.blockQuote--default__source {
+.blockQuote.blockQuote--default__source {
   margin-top: 0;
   position: absolute;
   bottom: 0;
@@ -42,10 +45,10 @@
   line-height: 1rem;
   z-index: 0;
 }
-.blockQuote--default__source::before {
+.blockQuote.blockQuote--default__source::before {
   content: "— ";
 }
-.blockQuote--default__link-single {
+.blockQuote.blockQuote--default__link-single {
   position: relative;
   margin-bottom: 1rem;
   margin-right: 0.5rem;

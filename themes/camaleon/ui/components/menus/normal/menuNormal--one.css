@@ -1,0 +1,23 @@
+.menuNormal--one {
+  width: 90vw;
+}
+.menuNormal--one .navbar-nav {
+  gap: 1rem;
+}
+.menuNormal--one .nav-item, .menuNormal--one .dropdown-item {
+  border: solid 1px;
+  border-color: var(--itemColor);
+}
+.menuNormal--one .nav-item:hover, .menuNormal--one .dropdown-item:hover {
+  border-color: var(--itemColorHover);
+}
+.menuNormal--one .nav-link {
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .menuNormal--one {
+    width: -moz-max-content;
+    width: max-content;
+  }
+}

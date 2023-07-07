@@ -1,3 +1,7 @@
+.blockTextImage--full .boxed {
+  max-width: var(--xsMaxWidth);
+  align-self: center;
+}
 .blockTextImage--full__content-title {
   font-size: 2rem;
   letter-spacing: 2px;
@@ -20,10 +24,4 @@
 }
 .blockTextImage--full .mediaImage--mid_square__image {
   width: auto;
-}
-
-@media (max-width: 575.98px) {
-  .blockTextImage--full__image img {
-    width: 100%;
-  }
 }

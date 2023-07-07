@@ -1,3 +1,4 @@
-.blockTextMedia--full {
-  width: 100%;
+.blockTextMedia--full .boxed {
+  max-width: var(--xsMaxWidth);
+  align-self: center;
 }

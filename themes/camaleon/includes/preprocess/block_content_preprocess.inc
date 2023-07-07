@@ -30,7 +30,7 @@ function _block_content_preprocess(&$variables) {
 
     if ($block_type == 'hero' && 
     !empty($block->get('field_bt_img')->getValue()[0]['target_id'])){
-      $css_selector = '#blockHero-' . $block_id;
+      $css_selector = '#blockHero--' . $block_id;
       $style_tag = ResponsiveBackgroundImage::generateMediaQueries($css_selector, $block, 'field_bt_img', 'bt_full_viewport', 'field_bt_image');
       if ($style_tag) {
         $variables['#attached']['html_head'][] = $style_tag;
@@ -39,7 +39,7 @@ function _block_content_preprocess(&$variables) {
       
     if ($block_type == 'highlighted_text_image' &&
     !empty($block->get('field_bt_add_image')->getValue()[0]['target_id'])) {
-      $css_selector = '#blockHighlightedTextImage-' . $block_id;
+      $css_selector = '#blockHighlightedTextImage--' . $block_id;
       $style_tag = ResponsiveBackgroundImage::generateMediaQueries($css_selector, $block, 'field_bt_add_image', 'bt_full_viewport', 'field_bt_image');  
       if ($style_tag) {
         $variables['#attached']['html_head'][] = $style_tag;

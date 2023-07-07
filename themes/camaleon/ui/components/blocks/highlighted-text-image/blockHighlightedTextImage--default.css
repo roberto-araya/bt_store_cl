@@ -1,4 +1,5 @@
 .blockHighlightedTextImage--default {
+  max-width: var(--xsMaxWidth);
   background: 100%;
   background-size: cover;
 }
@@ -10,7 +11,6 @@
 .blockHighlightedTextImage--default__content-title {
   grid-column: 1;
   grid-row: 1;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   align-self: end;
@@ -27,7 +27,6 @@
   align-self: end;
 }
 .blockHighlightedTextImage--default__add-image article {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
@@ -37,7 +36,6 @@
 .blockHighlightedTextImage--default__highlighted-text {
   grid-column: 1;
   grid-row: 3;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   max-width: 300px;
@@ -53,11 +51,4 @@
 
 .mediaImage--content__image {
   height: 100%;
-}
-
-@media screen and (min-width: 640px) {
-  .blockHighlightedTextImage--default {
-    max-width: 50vw;
-    justify-self: center;
-  }
 }

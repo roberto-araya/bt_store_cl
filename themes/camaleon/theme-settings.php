@@ -76,101 +76,6 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
     '#description' => t("Select a default font. See https://fonts.google.com/."),
     '#default_value' => theme_get_setting('font'),
   ];
-
-  #### MENUS ####   
-  $form['menus'] = [
-    '#type' => 'details',
-    '#title' => t('Menus'),
-    '#tree' => TRUE,
-  ];
-
-  $menu_type_select = [
-    'default' => 'Default',
-    'one' => 'Variant 1',
-    'two' => 'Variant 2'
-  ];
-
-  foreach (['main', 'footer'] as $menu_type) {
-    ## Menu ##
-    $form['menus']['menu_' . $menu_type] = [
-      '#type' => 'details',
-      '#title' => t(ucfirst($menu_type) . ' Menu'),
-      '#tree' => TRUE,
-    ];
-    // Menu type
-    $form['menus']['menu_' . $menu_type]['type'] = [
-      '#type' => 'select',
-      '#options' => $menu_type_select,
-      '#title' => t('Menu Type'),
-      '#description' => t("Select a type of presentation."),
-      '#default_value' => theme_get_setting('menus.menu_' . $menu_type . '.type'),
-    ];
-
-    // Item
-    $form['menus']['menu_' . $menu_type]['item'] = [
-      '#type' => 'details',
-      '#title' => t('Item'),
-      '#weight' => 100,
-      '#tree' => TRUE,
-    ];
-    // padding
-    $form['menus']['menu_' . $menu_type]['item']['padding'] = [
-      '#type' => 'textfield',
-      '#title' => 'Item Padding',
-      '#description' => t("CSS Property. Example: 1rem;"),
-      '#default_value' => theme_get_setting('menus.menu_' . $menu_type . '.item.padding'),
-      '#weight' => 60,
-    ];
-  }
-
-  #### BLOCKS ####
-  $form['blocks'] = [
-    '#type' => 'details',
-    '#title' => t('Blocks'),
-    '#tree' => TRUE,
-  ];
-
-  ## Branding ##
-  $form['blocks']['branding'] = [
-    '#type' => 'details',
-    '#title' => t('Branding'),
-    '#tree' => TRUE,
-  ];
-  // branding_type
-  $form['blocks']['branding']['branding_type'] = [
-    '#type' => 'select',
-    '#options' => [
-      'horizontal' => t('Horizontal'),
-      'vertical' => t('Vertical'),
-      'horizontal_inverted' => t('Horizontal Inverted'),
-      'vertical_inverted' => t('Vertical Inverted'),
-    ],
-    '#title' => t('Branding Presentation'),
-    '#description' => t("Select a type of presentation."),
-    '#default_value' => theme_get_setting('blocks.branding.branding_type'),
-  ];
-  // logo_size
-  $form['blocks']['branding']['logo_size'] = [
-    '#type' => 'textfield',
-    '#title' => t('Logo Size'),
-    '#description' => t("CSS Property. Examples: 100px; 10vh; 30%;"),
-    '#default_value' => theme_get_setting('blocks.branding.logo_size'),
-  ];
-  // name_font_size
-  $form['blocks']['branding']['name_font_size'] = [
-    '#type' => 'textfield',
-    '#title' => t('Name Font Size'),
-    '#description' => t("CSS Property. Examples: 2rem; 32px;"),
-    '#default_value' => theme_get_setting('blocks.branding.name_font_size'),
-  ];
-  // slogan_font_size
-  $form['blocks']['branding']['slogan_font_size'] = [
-    '#type' => 'textfield',
-    '#title' => t('Slogan Font Size'),
-    '#description' => t("CSS Property. Examples: 2rem; 32px;"),
-    '#default_value' => theme_get_setting('blocks.branding.slogan_font_size'),
-  ];
-
   #### REGIONS ####
   $form['regions'] = [
     '#type' => 'details',
@@ -361,22 +266,6 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
     '_color_custom_opacity_hover',
   ];
 
-  # Blocks
-  // Main menu
-  $mainmenu_background_colors = _get_color_form_select('menus.menu_main.background', 'menus[menu_main][background', 'background', $color_options);
-  $mainmenu_items_colors = _get_color_form_select('menus.menu_main.item.item', 'menus[menu_main][item][item', 'item', $color_options);
-  $mainmenu_item_bg_colors = _get_color_form_select('menus.menu_main.item.item_background', 'menus[menu_main][item][item_background', 'item_background', $color_options);
-
-  // Footer menu
-  $footermenu_background_colors = _get_color_form_select('menus.menu_footer.background', 'menus[menu_footer][background', 'background', $color_options);
-  $footermenu_items_colors = _get_color_form_select('menus.menu_footer.item.item', 'menus[menu_footer][item][item', 'item', $color_options);
-  $footermenu_item_bg_colors = _get_color_form_select('menus.menu_footer.item.item_background', 'menus[menu_footer][item][item_background', 'item_background', $color_options);
-
-  // Branding
-  $branding_colors = _get_color_form_select('blocks.branding.background', 'blocks[branding][background', 'background', $color_options);
-  $branding_name_colors = _get_color_form_select('blocks.branding.name', 'blocks[branding][name', 'name', $color_options);
-  $branding_slogan_colors = _get_color_form_select('blocks.branding.slogan', 'blocks[branding][slogan', 'slogan', $color_options);
-
   # Regions
   // Top
   $default_value_prefix = 'regions.region_top.background';
@@ -478,40 +367,6 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
 
   $weight = 0;
   foreach ($color_items as $item) {
-    #### MENUS ####
-    # Main
-    // background_color
-    $form['menus']['menu_main']['background' . $item] = $mainmenu_background_colors['background' . $item];
-    $form['menus']['menu_main']['background' . $item]['#weight'] = 10 + $weight;
-    // item_color
-    $form['menus']['menu_main']['item']['item' . $item] = $mainmenu_items_colors['item' . $item];
-    $form['menus']['menu_main']['item']['item' . $item]['#weight'] = 20 + $weight;
-    // item_background_color
-    $form['menus']['menu_main']['item']['item_background' . $item] = $mainmenu_item_bg_colors['item_background' . $item];
-    $form['menus']['menu_main']['item']['item_background' . $item]['#weight'] = 30 + $weight;
-    # Footer
-    // background_color
-    $form['menus']['menu_footer']['background' . $item] = $footermenu_background_colors['background' . $item];
-    $form['menus']['menu_footer']['background' . $item]['#weight'] = 10 + $weight;
-    // item_color
-    $form['menus']['menu_footer']['item']['item' . $item] = $footermenu_items_colors['item' . $item];
-    $form['menus']['menu_footer']['item']['item' . $item]['#weight'] = 20 + $weight;
-    // item_background_color
-    $form['menus']['menu_footer']['item']['item_background' . $item] = $footermenu_item_bg_colors['item_background' . $item];
-    $form['menus']['menu_fotoer']['item']['item_background' . $item]['#weight'] = 30 + $weight;
-
-    #### BLOCKS ####
-    //// branding ////
-    // background_color
-    $form['blocks']['branding']['background' . $item] = $branding_colors['background' . $item];
-    $form['blocks']['branding']['background' . $item]['#weight'] = 10 + $weight;
-    // name_color
-    $form['blocks']['branding']['name' . $item] = $branding_name_colors['name' . $item];
-    $form['blocks']['branding']['name' . $item]['#weight'] = 20 + $weight;
-    // slogan_color
-    $form['blocks']['branding']['slogan'. $item] = $branding_slogan_colors['slogan'. $item];
-    $form['blocks']['branding']['slogan'. $item]['#weight'] = 30 + $weight;
-
     #### REGIONS #####
     // Top
     $form['regions']['region_top']['background' . $item] = $top_region_colors['background' . $item];
@@ -544,7 +399,7 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
   }
 }
 
-function _get_opacity_options($type) {
+/*function _get_opacity_options($type) {
   if ($type == 'hexadecimal') {
     return [
       'FF' => "100%",
@@ -594,8 +449,7 @@ function _get_opacity_options($type) {
       '0.00' => "0%",
     ];
   }
-  
-}
+}*/
 
 function _get_color_form_select($default_value_prefix, $state_input_prefix, $style, &$color_options) {
   return [

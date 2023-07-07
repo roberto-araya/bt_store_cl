@@ -32,16 +32,16 @@
   {{ attach_library('camaleon/' ~ configuration.block_style.animation_type) }}
 {% endif %}
 
-{% if configuration.block_style.title_font_select != 'default' %}
-  {{ attach_library('camaleon/' ~ configuration.block_style.title_font_select) }}
+{% if configuration.block_style.title_font_family != 'default' %}
+  {{ attach_library('camaleon/' ~ configuration.block_style.title_font_family) }}
 {% endif %}
 
-{% if configuration.block_style.text_font_select != 'default' %}
-  {{ attach_library('camaleon/' ~ configuration.block_style.text_font_select) }}
+{% if configuration.block_style.text_font_family != 'default' %}
+  {{ attach_library('camaleon/' ~ configuration.block_style.text_font_family) }}
 {% endif %}
 
-{% if configuration.block_style.caption_font_select != 'default' %}
-  {{ attach_library('camaleon/' ~ configuration.block_style.caption_font_select) }}
+{% if configuration.block_style.caption_font_family != 'default' %}
+  {{ attach_library('camaleon/' ~ configuration.block_style.caption_font_family) }}
 {% endif %}
 
 {% include "@Components/blocks/cta/blockCtaLeftOffset.twig" with {

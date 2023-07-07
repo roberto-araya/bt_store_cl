@@ -68,36 +68,5 @@ function _block_core_preprocess(&$variables) {
   $base = $variables['elements']['#base_plugin_id'];
   $derivative = $variables['elements']['#derivative_plugin_id'];
 
-  if ($base == "system_menu_block" && ($derivative == 'main' || $derivative == 'footer')) {
-    $variables['theme_settings']['menu_type'] = theme_get_setting('menus.menu_' . $derivative . '.type');
-    $variables['theme_settings']['menu_' . $derivative . '_bg_color'] = theme_get_setting('menus.menu_' . $derivative . '.background_color');
-    $variables['theme_settings']['menu_' . $derivative . '_bg_color_custom'] = theme_get_setting('menus.menu_' . $derivative . '.background_color_custom');
-    $variables['theme_settings']['menu_' . $derivative . '_bg_color_opacity'] = theme_get_setting('menus.menu_' . $derivative . '.background_color_opacity');
-    $variables['theme_settings']['menu_' . $derivative . '_bg_color_custom_opacity'] = theme_get_setting('menus.menu_' . $derivative . '.background_color_custom_opacity');
-    $variables['theme_settings']['menu_' . $derivative . '_bg_color_hover'] = theme_get_setting('menus.menu_' . $derivative . '.background_color_hover');
-    $variables['theme_settings']['menu_' . $derivative . '_bg_color_custom_hover'] = theme_get_setting('menus.menu_' . $derivative . '.background_color_custom_hover');
-    $variables['theme_settings']['menu_' . $derivative . '_bg_color_opacity_hover'] = theme_get_setting('menus.menu_' . $derivative . '.background_color_opacity_hover');
-    $variables['theme_settings']['menu_' . $derivative . '_bg_color_custom_opacity_hover'] = theme_get_setting('menus.menu_' . $derivative . '.background_color_custom_opacity_hover');
-
-    $variables['theme_settings']['menu_' . $derivative . '_item_color'] = theme_get_setting('menus.menu_' . $derivative . '.item.item_color');
-    $variables['theme_settings']['menu_' . $derivative . '_item_color_custom'] = theme_get_setting('menus.menu_' . $derivative . '.item.item_color_custom');
-    $variables['theme_settings']['menu_' . $derivative . '_item_color_opacity'] = theme_get_setting('menus.menu_' . $derivative . '.item.item_color_opacity');
-    $variables['theme_settings']['menu_' . $derivative . '_item_color_custom_opacity'] = theme_get_setting('menus.menu_' . $derivative . '.item.item_color_custom_opacity');
-    $variables['theme_settings']['menu_' . $derivative . '_item_color_hover'] = theme_get_setting('menus.menu_' . $derivative . '.item.item_color_hover');
-    $variables['theme_settings']['menu_' . $derivative . '_item_color_custom_hover'] = theme_get_setting('menus.menu_' . $derivative . '.item.item_color_custom_hover');
-    $variables['theme_settings']['menu_' . $derivative . '_item_color_opacity_hover'] = theme_get_setting('menus.menu_' . $derivative . '.item.item_color_opacity_hover');
-    $variables['theme_settings']['menu_' . $derivative . '_item_color_custom_opacity_hover'] = theme_get_setting('menus.menu_' . $derivative . '.item.item_color_custom_opacity_hover');
-
-    $variables['theme_settings']['menu_' . $derivative . '_item_bg_color'] = theme_get_setting('menus.menu_' . $derivative . '.item.item_background_color');
-    $variables['theme_settings']['menu_' . $derivative . '_item_bg_color_custom'] = theme_get_setting('menus.menu_' . $derivative . '.item.item_background_color_custom');
-    $variables['theme_settings']['menu_' . $derivative . '_item_bg_color_opacity'] = theme_get_setting('menus.menu_' . $derivative . '.item.item_background_color_opacity');
-    $variables['theme_settings']['menu_' . $derivative . '_item_bg_color_custom_opacity'] = theme_get_setting('menus.menu_' . $derivative . '.item.item_background_color_custom_opacity');
-    $variables['theme_settings']['menu_' . $derivative . '_item_bg_color_hover'] = theme_get_setting('menus.menu_' . $derivative . '.item.item_background_color_hover');
-    $variables['theme_settings']['menu_' . $derivative . '_item_bg_color_custom_hover'] = theme_get_setting('menus.menu_' . $derivative . '.item.item_background_color_custom_hover');
-    $variables['theme_settings']['menu_' . $derivative . '_item_bg_color_opacity_hover'] = theme_get_setting('menus.menu_' . $derivative . '.item.item_background_color_opacity_hover');
-    $variables['theme_settings']['menu_' . $derivative . '_item_bg_color_custom_opacity_hover'] = theme_get_setting('menus.menu_' . $derivative . '.item.item_background_color_custom_opacity_hover');
-
-    $variables['theme_settings']['menu_' . $derivative . '_item_padding'] = theme_get_setting('menus.menu_' . $derivative . '.item.padding');
-  }
   return $variables;
 }

@@ -27,12 +27,12 @@
  * @see template_preprocess_block()
  */
 #}
-{{ attach_library('camaleon/block_image') }}
+{{ attach_library('camaleon/block_image_small') }}
 {% if configuration.block_style.animation_option == TRUE %}
   {{ attach_library('camaleon/' ~ configuration.block_style.animation_type) }}
 {% endif %}
 
-{% include "@Components/blocks/block--block-content.twig" with {
+{% include "@Components/blocks/image/blockImageSmall.twig" with {
   'id': id,
   'bundle': bundle,
   'view_mode': view_mode,

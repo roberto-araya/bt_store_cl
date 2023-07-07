@@ -1,61 +1,11 @@
 .blockHighlightedText {
-  --defaultPadding: 0.5rem;
-  --defaultBgColor: var(--bs-block-bg-color);
-  --defaultMarkBgColor: var(--bs-accent);
-  --defaultTextColor: var(--bs-gray-200);
-  width: 100%;
-  padding-left: calc(var(--smPaddingLeft, var(--defaultPadding)) * var(--defaultPaddingFactor));
-  padding-top: calc(var(--smPaddingTop, var(--defaultPadding)) * var(--defaultPaddingFactor));
-  padding-right: calc(var(--smPaddingRight, var(--defaultPadding)) * var(--defaultPaddingFactor));
-  padding-bottom: calc(var(--smPaddingBottom, var(--defaultPadding)) * var(--defaultPaddingFactor));
-  align-self: var(--smAlignSelf, stretch);
-  background-color: var(--backgroundColor, var(--defaultBgColor));
+  --xsTextFontSize: 1.2rem;
 }
 .blockHighlightedText__highlighted-text {
-  text-align: var(--textAlign, center);
+  font-family: var(--textFontFamily, var(--defaultFontFamily));
+  font-size: var(--xsTextFontSize);
 }
 .blockHighlightedText__highlighted-text > mark {
-  background-color: var(--highlightedColor, var(--defaultMarkBgColor));
-  color: var(--textColor, var(--defaultTextColor));
-}
-
-@media screen and (min-width: 768px) {
-  .blockHighlightedText {
-    --defaultPadding: 1rem;
-    padding-left: calc(var(--mdPaddingLeft, var(--defaultPadding)) * var(--defaultPaddingFactor));
-    padding-top: calc(var(--mdPaddingTop, var(--defaultPadding)) * var(--defaultPaddingFactor));
-    padding-right: calc(var(--mdPaddingRight, var(--defaultPadding)) * var(--defaultPaddingFactor));
-    padding-bottom: calc(var(--mdPaddingBottom, var(--defaultPadding)) * var(--defaultPaddingFactor));
-    align-self: var(--mdAlignSelf, stretch);
-  }
-}
-@media screen and (min-width: 1024px) {
-  .blockHighlightedText {
-    --defaultPadding: 2rem;
-    padding-left: calc(var(--lgPaddingLeft, var(--defaultPadding)) * var(--defaultPaddingFactor));
-    padding-top: calc(var(--lgPaddingTop, var(--defaultPadding)) * var(--defaultPaddingFactor));
-    padding-right: calc(var(--lgPaddingRight, var(--defaultPadding)) * var(--defaultPaddingFactor));
-    padding-bottom: calc(var(--lgPaddingBottom, var(--defaultPadding)) * var(--defaultPaddingFactor));
-    align-self: var(--lgAlignSelf, stretch);
-  }
-}
-@media screen and (min-width: 1280px) {
-  .blockHighlightedText {
-    --defaultPadding: 3rem;
-    padding-left: calc(var(--xlPaddingLeft, var(--defaultPadding)) * var(--defaultPaddingFactor));
-    padding-top: calc(var(--xlPaddingTop, var(--defaultPadding)) * var(--defaultPaddingFactor));
-    padding-right: calc(var(--xlPaddingRight, var(--defaultPadding)) * var(--defaultPaddingFactor));
-    padding-bottom: calc(var(--xlPaddingBottom, var(--defaultPadding)) * var(--defaultPaddingFactor));
-    align-self: var(--xlAlignSelf, stretch);
-  }
-}
-@media screen and (min-width: 1536px) {
-  .blockHighlightedText {
-    --defaultPadding: 3rem;
-    padding-left: calc(var(--xxlPaddingLeft, var(--defaultPadding)) * var(--defaultPaddingFactor));
-    padding-top: calc(var(--xxlPaddingTop, var(--defaultPadding)) * var(--defaultPaddingFactor));
-    padding-right: calc(var(--xxlPaddingRight, var(--defaultPadding)) * var(--defaultPaddingFactor));
-    padding-bottom: calc(var(--xxlPaddingBottom, var(--defaultPadding)) * var(--defaultPaddingFactor));
-    align-self: var(--xxlAlignSelf, stretch);
-  }
+  background-color: var(--highlightedColor, var(--bs-accent));
+  color: var(--textColor, var(--bs-block-text-color));
 }

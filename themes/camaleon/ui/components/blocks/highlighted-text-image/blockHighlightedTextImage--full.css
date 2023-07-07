@@ -2,6 +2,10 @@
   background: 100%;
   background-size: cover;
 }
+.blockHighlightedTextImage--full .boxed {
+  max-width: var(--xsMaxWidth);
+  align-self: center;
+}
 .blockHighlightedTextImage--full .block__container {
   display: grid;
   grid-template-columns: 100%;
@@ -10,7 +14,6 @@
 .blockHighlightedTextImage--full__content-title {
   grid-column: 1;
   grid-row: 1;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   align-self: end;
@@ -32,7 +35,6 @@
 .blockHighlightedTextImage--full__highlighted-text {
   grid-column: 1;
   grid-row: 3;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   max-width: 300px;

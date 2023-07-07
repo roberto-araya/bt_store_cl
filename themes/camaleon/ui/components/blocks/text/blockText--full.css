@@ -1,3 +1,6 @@
+.blockText--full .boxed {
+  max-width: var(--xsMaxWidth);
+}
 .blockText--full__link {
   display: flex;
   gap: 2rem;

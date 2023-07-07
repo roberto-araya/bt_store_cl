@@ -1,0 +1,16 @@
+.menuNormal--two {
+  width: 90vw;
+}
+.menuNormal--two .navbar-nav {
+  gap: 1rem;
+}
+.menuNormal--two .nav-link {
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .menuNormal--two {
+    width: -moz-max-content;
+    width: max-content;
+  }
+}
