@@ -31,7 +31,6 @@ dependencies:
   - components:components
   - twig_tweak:twig_tweak
   - twig_tools:twig_tools
-  - layout_builder_modal:layout_builder_modal
   - cssvars:cssvars
   - custom_markup_block:custom_markup_block
   - layout_builder_restrictions:layout_builder_restrictions
@@ -53,6 +52,7 @@ dependencies:
   - simple_sitemap:simple_sitemap
   - simple_sitemap:simple_sitemap_engines
   - simple_sitemap:simple_sitemap_views
+  - lb_claro:lb_claro
 themes:
   - bt_install_theme
   - claro

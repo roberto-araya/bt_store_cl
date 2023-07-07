@@ -31,7 +31,7 @@
         "drupal/commerce_pos": "^2.6",
         "drupal/commerce_stock": "^1.0",
         "drupal/components": "^3.0.0-beta2",
-        "drupal/layout_builder_modal": "1.x",
+        "drupal/lb_claro": "^1.0@beta",
         "drupal/twig_tools": "1.x",
         "drupal/cssvars": "1.x",
         "drupal/custom_markup_block": "^1.1",
