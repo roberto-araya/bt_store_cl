@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - block_content.type.bt_cb_social_profiles
+    - core.entity_view_mode.block_content.full
     - field.field.block_content.bt_cb_social_profiles.field_bt_blq_desc
     - field.field.block_content.bt_cb_social_profiles.field_bt_blq_title
     - field.field.block_content.bt_cb_social_profiles.field_bt_facebook_icon
@@ -15,12 +16,17 @@ dependencies:
     - field.field.block_content.bt_cb_social_profiles.field_bt_linkedin_icon
     - field.field.block_content.bt_cb_social_profiles.field_bt_twitter_icon
   module:
+    - layout_builder
     - link
     - svg_icon
-id: block_content.bt_cb_social_profiles.default
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: block_content.bt_cb_social_profiles.full
 targetEntityType: block_content
 bundle: bt_cb_social_profiles
-mode: default
+mode: full
 content:
   field_bt_facebook_icon:
     type: svg_icon_formatter

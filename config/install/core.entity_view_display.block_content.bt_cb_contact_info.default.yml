@@ -23,10 +23,11 @@ content:
     weight: 1
     region: content
   field_bt_phones:
-    type: entity_reference_label
-    label: above
+    type: entity_reference_entity_view
+    label: hidden
     settings:
-      link: true
+      view_mode: default
+      link: false
     third_party_settings: {  }
     weight: 0
     region: content

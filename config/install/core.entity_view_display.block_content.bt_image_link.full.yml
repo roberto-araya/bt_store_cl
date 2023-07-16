@@ -10,7 +10,7 @@ dependencies:
     - field.field.block_content.bt_image_link.field_bt_epigrafe
     - field.field.block_content.bt_image_link.field_bt_image
     - field.field.block_content.bt_image_link.field_bt_link_single
-    - image.style.bt_small_portrait_2xl
+    - image.style.bt_small_portrait_md
   module:
     - image_link_formatter
     - layout_builder
@@ -23,19 +23,11 @@ targetEntityType: block_content
 bundle: bt_image_link
 mode: full
 content:
-  field_bt_content_title:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_bt_image:
     type: image_link_formatter
     label: hidden
     settings:
-      image_style: bt_small_portrait_2xl
+      image_style: bt_small_portrait_md
       image_link: field_bt_link_single
       image_loading:
         attribute: lazy
@@ -45,6 +37,7 @@ content:
 hidden:
   field_bt_blq_desc: true
   field_bt_blq_title: true
+  field_bt_content_title: true
   field_bt_epigrafe: true
   field_bt_link_single: true
   langcode: true

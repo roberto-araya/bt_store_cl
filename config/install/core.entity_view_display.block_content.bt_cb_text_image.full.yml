@@ -30,7 +30,7 @@ content:
     type: svg_icon_formatter
     label: hidden
     settings:
-      use_canvas: true
+      use_canvas: '1'
     third_party_settings: {  }
     weight: 5
     region: content
