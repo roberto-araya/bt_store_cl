@@ -77,582 +77,6 @@ blocks:
     slogan_color_opacity_hover: '1.00'
     slogan_color_custom_opacity_hover: FF
 regions:
-  region_top:
-    background_color: bs-primary-800
-    background_color_custom: '#000000'
-    background_color_opacity: '1.00'
-    background_color_custom_opacity: FF
-    background_color_hover: default
-    background_color_custom_hover: '#000000'
-    background_color_opacity_hover: '1.00'
-    background_color_custom_opacity_hover: FF
-    justify_content: flex-end
-    align_items: baseline
-    height: ''
-    width:
-      container_select: full
-      full_select: 10%
-      box_select: 100%
-    border_top:
-      border_top_select: none
-      border_top_style: dotted
-      border_top_size: ''
-      border_top_color: default
-      border_top_color_custom: '#000000'
-      border_top_color_opacity: '1.00'
-      border_top_color_custom_opacity: FF
-      border_top_color_hover: default
-      border_top_color_custom_hover: '#000000'
-      border_top_color_opacity_hover: '1.00'
-      border_top_color_custom_opacity_hover: FF
-    border_right:
-      border_right_select: none
-      border_right_style: dotted
-      border_right_size: ''
-      border_right_color: default
-      border_right_color_custom: '#000000'
-      border_right_color_opacity: '1.00'
-      border_right_color_custom_opacity: FF
-      border_right_color_hover: default
-      border_right_color_custom_hover: '#000000'
-      border_right_color_opacity_hover: '1.00'
-      border_right_color_custom_opacity_hover: FF
-    border_bottom:
-      border_bottom_select: none
-      border_bottom_style: dotted
-      border_bottom_size: ''
-      border_bottom_color: default
-      border_bottom_color_custom: '#000000'
-      border_bottom_color_opacity: '1.00'
-      border_bottom_color_custom_opacity: FF
-      border_bottom_color_hover: default
-      border_bottom_color_custom_hover: '#000000'
-      border_bottom_color_opacity_hover: '1.00'
-      border_bottom_color_custom_opacity_hover: FF
-    border_left:
-      border_left_select: none
-      border_left_style: dotted
-      border_left_size: ''
-      border_left_color: default
-      border_left_color_custom: '#000000'
-      border_left_color_opacity: '1.00'
-      border_left_color_custom_opacity: FF
-      border_left_color_hover: default
-      border_left_color_custom_hover: '#000000'
-      border_left_color_opacity_hover: '1.00'
-      border_left_color_custom_opacity_hover: FF
-  region_pre_header:
-    background_color: default
-    background_color_custom: '#000000'
-    background_color_opacity: '1.00'
-    background_color_custom_opacity: FF
-    background_color_hover: default
-    background_color_custom_hover: '#000000'
-    background_color_opacity_hover: '1.00'
-    background_color_custom_opacity_hover: FF
-    justify_content: center
-    align_items: baseline
-    height: ''
-    width:
-      container_select: full
-      full_select: '0'
-      box_select: 100%
-    border_top:
-      border_top_select: none
-      border_top_style: dotted
-      border_top_size: ''
-      border_top_color: default
-      border_top_color_custom: '#000000'
-      border_top_color_opacity: '1.00'
-      border_top_color_custom_opacity: FF
-      border_top_color_hover: default
-      border_top_color_custom_hover: '#000000'
-      border_top_color_opacity_hover: '1.00'
-      border_top_color_custom_opacity_hover: FF
-    border_right:
-      border_right_select: none
-      border_right_style: dotted
-      border_right_size: ''
-      border_right_color: default
-      border_right_color_custom: '#000000'
-      border_right_color_opacity: '1.00'
-      border_right_color_custom_opacity: FF
-      border_right_color_hover: default
-      border_right_color_custom_hover: '#000000'
-      border_right_color_opacity_hover: '1.00'
-      border_right_color_custom_opacity_hover: FF
-    border_bottom:
-      border_bottom_select: none
-      border_bottom_style: dotted
-      border_bottom_size: ''
-      border_bottom_color: default
-      border_bottom_color_custom: '#000000'
-      border_bottom_color_opacity: '1.00'
-      border_bottom_color_custom_opacity: FF
-      border_bottom_color_hover: default
-      border_bottom_color_custom_hover: '#000000'
-      border_bottom_color_opacity_hover: '1.00'
-      border_bottom_color_custom_opacity_hover: FF
-    border_left:
-      border_left_select: none
-      border_left_style: dotted
-      border_left_size: ''
-      border_left_color: default
-      border_left_color_custom: '#000000'
-      border_left_color_opacity: '1.00'
-      border_left_color_custom_opacity: FF
-      border_left_color_hover: default
-      border_left_color_custom_hover: '#000000'
-      border_left_color_opacity_hover: '1.00'
-      border_left_color_custom_opacity_hover: FF
-  region_navbar:
-    background_color: bs-primary-800
-    background_color_custom: '#000000'
-    background_color_opacity: '1.00'
-    background_color_custom_opacity: FF
-    background_color_hover: default
-    background_color_custom_hover: '#000000'
-    background_color_opacity_hover: '1.00'
-    background_color_custom_opacity_hover: FF
-    justify_content: center
-    align_items: baseline
-    height: ''
-    width:
-      container_select: full
-      full_select: 10%
-      box_select: 100%
-    border_top:
-      border_top_select: none
-      border_top_style: dotted
-      border_top_size: ''
-      border_top_color: default
-      border_top_color_custom: '#000000'
-      border_top_color_opacity: '1.00'
-      border_top_color_custom_opacity: FF
-      border_top_color_hover: default
-      border_top_color_custom_hover: '#000000'
-      border_top_color_opacity_hover: '1.00'
-      border_top_color_custom_opacity_hover: FF
-    border_right:
-      border_right_select: none
-      border_right_style: dotted
-      border_right_size: ''
-      border_right_color: default
-      border_right_color_custom: '#000000'
-      border_right_color_opacity: '1.00'
-      border_right_color_custom_opacity: FF
-      border_right_color_hover: default
-      border_right_color_custom_hover: '#000000'
-      border_right_color_opacity_hover: '1.00'
-      border_right_color_custom_opacity_hover: FF
-    border_bottom:
-      border_bottom_select: none
-      border_bottom_style: dotted
-      border_bottom_size: ''
-      border_bottom_color: default
-      border_bottom_color_custom: '#000000'
-      border_bottom_color_opacity: '1.00'
-      border_bottom_color_custom_opacity: FF
-      border_bottom_color_hover: default
-      border_bottom_color_custom_hover: '#000000'
-      border_bottom_color_opacity_hover: '1.00'
-      border_bottom_color_custom_opacity_hover: FF
-    border_left:
-      border_left_select: none
-      border_left_style: dotted
-      border_left_size: ''
-      border_left_color: default
-      border_left_color_custom: '#000000'
-      border_left_color_opacity: '1.00'
-      border_left_color_custom_opacity: FF
-      border_left_color_hover: default
-      border_left_color_custom_hover: '#000000'
-      border_left_color_opacity_hover: '1.00'
-      border_left_color_custom_opacity_hover: FF
-  region_header:
-    background_color: default
-    background_color_custom: '#000000'
-    background_color_opacity: '1.00'
-    background_color_custom_opacity: FF
-    background_color_hover: default
-    background_color_custom_hover: '#000000'
-    background_color_opacity_hover: '1.00'
-    background_color_custom_opacity_hover: FF
-    justify_content: center
-    align_items: baseline
-    height: ''
-    width:
-      container_select: full
-      full_select: '0'
-      box_select: 100%
-    border_top:
-      border_top_select: none
-      border_top_style: dotted
-      border_top_size: ''
-      border_top_color: default
-      border_top_color_custom: '#000000'
-      border_top_color_opacity: '1.00'
-      border_top_color_custom_opacity: FF
-      border_top_color_hover: default
-      border_top_color_custom_hover: '#000000'
-      border_top_color_opacity_hover: '1.00'
-      border_top_color_custom_opacity_hover: FF
-    border_right:
-      border_right_select: none
-      border_right_style: dotted
-      border_right_size: ''
-      border_right_color: default
-      border_right_color_custom: '#000000'
-      border_right_color_opacity: '1.00'
-      border_right_color_custom_opacity: FF
-      border_right_color_hover: default
-      border_right_color_custom_hover: '#000000'
-      border_right_color_opacity_hover: '1.00'
-      border_right_color_custom_opacity_hover: FF
-    border_bottom:
-      border_bottom_select: none
-      border_bottom_style: dotted
-      border_bottom_size: ''
-      border_bottom_color: default
-      border_bottom_color_custom: '#000000'
-      border_bottom_color_opacity: '1.00'
-      border_bottom_color_custom_opacity: FF
-      border_bottom_color_hover: default
-      border_bottom_color_custom_hover: '#000000'
-      border_bottom_color_opacity_hover: '1.00'
-      border_bottom_color_custom_opacity_hover: FF
-    border_left:
-      border_left_select: none
-      border_left_style: dotted
-      border_left_size: ''
-      border_left_color: default
-      border_left_color_custom: '#000000'
-      border_left_color_opacity: '1.00'
-      border_left_color_custom_opacity: FF
-      border_left_color_hover: default
-      border_left_color_custom_hover: '#000000'
-      border_left_color_opacity_hover: '1.00'
-      border_left_color_custom_opacity_hover: FF
-  region_primary_menu:
-    background_color: default
-    background_color_custom: '#000000'
-    background_color_opacity: '1.00'
-    background_color_custom_opacity: FF
-    background_color_hover: default
-    background_color_custom_hover: '#000000'
-    background_color_opacity_hover: '1.00'
-    background_color_custom_opacity_hover: FF
-    justify_content: center
-    align_items: baseline
-    height: ''
-    width:
-      container_select: full
-      full_select: '0'
-      box_select: 100%
-    border_top:
-      border_top_select: none
-      border_top_style: dotted
-      border_top_size: ''
-      border_top_color: default
-      border_top_color_custom: '#000000'
-      border_top_color_opacity: '1.00'
-      border_top_color_custom_opacity: FF
-      border_top_color_hover: default
-      border_top_color_custom_hover: '#000000'
-      border_top_color_opacity_hover: '1.00'
-      border_top_color_custom_opacity_hover: FF
-    border_right:
-      border_right_select: none
-      border_right_style: dotted
-      border_right_size: ''
-      border_right_color: default
-      border_right_color_custom: '#000000'
-      border_right_color_opacity: '1.00'
-      border_right_color_custom_opacity: FF
-      border_right_color_hover: default
-      border_right_color_custom_hover: '#000000'
-      border_right_color_opacity_hover: '1.00'
-      border_right_color_custom_opacity_hover: FF
-    border_bottom:
-      border_bottom_select: none
-      border_bottom_style: dotted
-      border_bottom_size: ''
-      border_bottom_color: default
-      border_bottom_color_custom: '#000000'
-      border_bottom_color_opacity: '1.00'
-      border_bottom_color_custom_opacity: FF
-      border_bottom_color_hover: default
-      border_bottom_color_custom_hover: '#000000'
-      border_bottom_color_opacity_hover: '1.00'
-      border_bottom_color_custom_opacity_hover: FF
-    border_left:
-      border_left_select: none
-      border_left_style: dotted
-      border_left_size: ''
-      border_left_color: default
-      border_left_color_custom: '#000000'
-      border_left_color_opacity: '1.00'
-      border_left_color_custom_opacity: FF
-      border_left_color_hover: default
-      border_left_color_custom_hover: '#000000'
-      border_left_color_opacity_hover: '1.00'
-      border_left_color_custom_opacity_hover: FF
-  region_secondary_menu:
-    background_color: default
-    background_color_custom: '#000000'
-    background_color_opacity: '1.00'
-    background_color_custom_opacity: FF
-    background_color_hover: default
-    background_color_custom_hover: '#000000'
-    background_color_opacity_hover: '1.00'
-    background_color_custom_opacity_hover: FF
-    justify_content: center
-    align_items: baseline
-    height: ''
-    width:
-      container_select: full
-      full_select: '0'
-      box_select: 100%
-    border_top:
-      border_top_select: none
-      border_top_style: dotted
-      border_top_size: ''
-      border_top_color: default
-      border_top_color_custom: '#000000'
-      border_top_color_opacity: '1.00'
-      border_top_color_custom_opacity: FF
-      border_top_color_hover: default
-      border_top_color_custom_hover: '#000000'
-      border_top_color_opacity_hover: '1.00'
-      border_top_color_custom_opacity_hover: FF
-    border_right:
-      border_right_select: none
-      border_right_style: dotted
-      border_right_size: ''
-      border_right_color: default
-      border_right_color_custom: '#000000'
-      border_right_color_opacity: '1.00'
-      border_right_color_custom_opacity: FF
-      border_right_color_hover: default
-      border_right_color_custom_hover: '#000000'
-      border_right_color_opacity_hover: '1.00'
-      border_right_color_custom_opacity_hover: FF
-    border_bottom:
-      border_bottom_select: none
-      border_bottom_style: dotted
-      border_bottom_size: ''
-      border_bottom_color: default
-      border_bottom_color_custom: '#000000'
-      border_bottom_color_opacity: '1.00'
-      border_bottom_color_custom_opacity: FF
-      border_bottom_color_hover: default
-      border_bottom_color_custom_hover: '#000000'
-      border_bottom_color_opacity_hover: '1.00'
-      border_bottom_color_custom_opacity_hover: FF
-    border_left:
-      border_left_select: none
-      border_left_style: dotted
-      border_left_size: ''
-      border_left_color: default
-      border_left_color_custom: '#000000'
-      border_left_color_opacity: '1.00'
-      border_left_color_custom_opacity: FF
-      border_left_color_hover: default
-      border_left_color_custom_hover: '#000000'
-      border_left_color_opacity_hover: '1.00'
-      border_left_color_custom_opacity_hover: FF
-  region_breadcrumb:
-    background_color: default
-    background_color_custom: '#000000'
-    background_color_opacity: '1.00'
-    background_color_custom_opacity: FF
-    background_color_hover: default
-    background_color_custom_hover: '#000000'
-    background_color_opacity_hover: '1.00'
-    background_color_custom_opacity_hover: FF
-    justify_content: flex-start
-    align_items: baseline
-    height: ''
-    width:
-      container_select: full
-      full_select: 10%
-      box_select: 100%
-    border_top:
-      border_top_select: none
-      border_top_style: dotted
-      border_top_size: ''
-      border_top_color: default
-      border_top_color_custom: '#000000'
-      border_top_color_opacity: '1.00'
-      border_top_color_custom_opacity: FF
-      border_top_color_hover: default
-      border_top_color_custom_hover: '#000000'
-      border_top_color_opacity_hover: '1.00'
-      border_top_color_custom_opacity_hover: FF
-    border_right:
-      border_right_select: none
-      border_right_style: dotted
-      border_right_size: ''
-      border_right_color: default
-      border_right_color_custom: '#000000'
-      border_right_color_opacity: '1.00'
-      border_right_color_custom_opacity: FF
-      border_right_color_hover: default
-      border_right_color_custom_hover: '#000000'
-      border_right_color_opacity_hover: '1.00'
-      border_right_color_custom_opacity_hover: FF
-    border_bottom:
-      border_bottom_select: none
-      border_bottom_style: dotted
-      border_bottom_size: ''
-      border_bottom_color: default
-      border_bottom_color_custom: '#000000'
-      border_bottom_color_opacity: '1.00'
-      border_bottom_color_custom_opacity: FF
-      border_bottom_color_hover: default
-      border_bottom_color_custom_hover: '#000000'
-      border_bottom_color_opacity_hover: '1.00'
-      border_bottom_color_custom_opacity_hover: FF
-    border_left:
-      border_left_select: none
-      border_left_style: dotted
-      border_left_size: ''
-      border_left_color: default
-      border_left_color_custom: '#000000'
-      border_left_color_opacity: '1.00'
-      border_left_color_custom_opacity: FF
-      border_left_color_hover: default
-      border_left_color_custom_hover: '#000000'
-      border_left_color_opacity_hover: '1.00'
-      border_left_color_custom_opacity_hover: FF
-  region_highlighted:
-    background_color: default
-    background_color_custom: '#000000'
-    background_color_opacity: '1.00'
-    background_color_custom_opacity: FF
-    background_color_hover: default
-    background_color_custom_hover: '#000000'
-    background_color_opacity_hover: '1.00'
-    background_color_custom_opacity_hover: FF
-    justify_content: center
-    align_items: baseline
-    height: ''
-    width:
-      container_select: full
-      full_select: '0'
-      box_select: 100%
-    border_top:
-      border_top_select: none
-      border_top_style: dotted
-      border_top_size: ''
-      border_top_color: default
-      border_top_color_custom: '#000000'
-      border_top_color_opacity: '1.00'
-      border_top_color_custom_opacity: FF
-      border_top_color_hover: default
-      border_top_color_custom_hover: '#000000'
-      border_top_color_opacity_hover: '1.00'
-      border_top_color_custom_opacity_hover: FF
-    border_right:
-      border_right_select: none
-      border_right_style: dotted
-      border_right_size: ''
-      border_right_color: default
-      border_right_color_custom: '#000000'
-      border_right_color_opacity: '1.00'
-      border_right_color_custom_opacity: FF
-      border_right_color_hover: default
-      border_right_color_custom_hover: '#000000'
-      border_right_color_opacity_hover: '1.00'
-      border_right_color_custom_opacity_hover: FF
-    border_bottom:
-      border_bottom_select: none
-      border_bottom_style: dotted
-      border_bottom_size: ''
-      border_bottom_color: default
-      border_bottom_color_custom: '#000000'
-      border_bottom_color_opacity: '1.00'
-      border_bottom_color_custom_opacity: FF
-      border_bottom_color_hover: default
-      border_bottom_color_custom_hover: '#000000'
-      border_bottom_color_opacity_hover: '1.00'
-      border_bottom_color_custom_opacity_hover: FF
-    border_left:
-      border_left_select: none
-      border_left_style: dotted
-      border_left_size: ''
-      border_left_color: default
-      border_left_color_custom: '#000000'
-      border_left_color_opacity: '1.00'
-      border_left_color_custom_opacity: FF
-      border_left_color_hover: default
-      border_left_color_custom_hover: '#000000'
-      border_left_color_opacity_hover: '1.00'
-      border_left_color_custom_opacity_hover: FF
-  region_help:
-    background_color: default
-    background_color_custom: '#000000'
-    background_color_opacity: '1.00'
-    background_color_custom_opacity: FF
-    background_color_hover: default
-    background_color_custom_hover: '#000000'
-    background_color_opacity_hover: '1.00'
-    background_color_custom_opacity_hover: FF
-    justify_content: center
-    align_items: baseline
-    height: ''
-    width:
-      container_select: full
-      full_select: '0'
-      box_select: 100%
-    border_top:
-      border_top_select: none
-      border_top_style: dotted
-      border_top_size: ''
-      border_top_color: default
-      border_top_color_custom: '#000000'
-      border_top_color_opacity: '1.00'
-      border_top_color_custom_opacity: FF
-      border_top_color_hover: default
-      border_top_color_custom_hover: '#000000'
-      border_top_color_opacity_hover: '1.00'
-      border_top_color_custom_opacity_hover: FF
-    border_right:
-      border_right_select: none
-      border_right_style: dotted
-      border_right_size: ''
-      border_right_color: default
-      border_right_color_custom: '#000000'
-      border_right_color_opacity: '1.00'
-      border_right_color_custom_opacity: FF
-      border_right_color_hover: default
-      border_right_color_custom_hover: '#000000'
-      border_right_color_opacity_hover: '1.00'
-      border_right_color_custom_opacity_hover: FF
-    border_bottom:
-      border_bottom_select: none
-      border_bottom_style: dotted
-      border_bottom_size: ''
-      border_bottom_color: default
-      border_bottom_color_custom: '#000000'
-      border_bottom_color_opacity: '1.00'
-      border_bottom_color_custom_opacity: FF
-      border_bottom_color_hover: default
-      border_bottom_color_custom_hover: '#000000'
-      border_bottom_color_opacity_hover: '1.00'
-      border_bottom_color_custom_opacity_hover: FF
-    border_left:
-      border_left_select: none
-      border_left_style: dotted
-      border_left_size: ''
-      border_left_color: default
-      border_left_color_custom: '#000000'
-      border_left_color_opacity: '1.00'
-      border_left_color_custom_opacity: FF
-      border_left_color_hover: default
-      border_left_color_custom_hover: '#000000'
-      border_left_color_opacity_hover: '1.00'
-      border_left_color_custom_opacity_hover: FF
   region_sidebar_first:
     background_color: default
     background_color_custom: '#000000'
@@ -680,7 +104,14 @@ regions:
     background_color_custom_hover: '#000000'
     background_color_opacity_hover: '1.00'
     background_color_custom_opacity_hover: FF
-  region_footer:
+  region_top:
+    justify_content: flex-end
+    align_items: baseline
+    height: ''
+    width:
+      container_select: full
+      full_select: 10%
+      box_select: 100%
     background_color: bs-primary-800
     background_color_custom: '#000000'
     background_color_opacity: '1.00'
@@ -689,62 +120,39 @@ regions:
     background_color_custom_hover: '#000000'
     background_color_opacity_hover: '1.00'
     background_color_custom_opacity_hover: FF
-    justify_content: flex-start
+  region_navbar:
+    justify_content: space-around
     align_items: baseline
     height: ''
     width:
       container_select: full
-      full_select: 5%
+      full_select: 10%
       box_select: 100%
-    border_top:
-      border_top_select: none
-      border_top_style: dotted
-      border_top_size: ''
-      border_top_color: default
-      border_top_color_custom: '#000000'
-      border_top_color_opacity: '1.00'
-      border_top_color_custom_opacity: FF
-      border_top_color_hover: default
-      border_top_color_custom_hover: '#000000'
-      border_top_color_opacity_hover: '1.00'
-      border_top_color_custom_opacity_hover: FF
-    border_right:
-      border_right_select: none
-      border_right_style: dotted
-      border_right_size: ''
-      border_right_color: default
-      border_right_color_custom: '#000000'
-      border_right_color_opacity: '1.00'
-      border_right_color_custom_opacity: FF
-      border_right_color_hover: default
-      border_right_color_custom_hover: '#000000'
-      border_right_color_opacity_hover: '1.00'
-      border_right_color_custom_opacity_hover: FF
-    border_bottom:
-      border_bottom_select: none
-      border_bottom_style: dotted
-      border_bottom_size: ''
-      border_bottom_color: default
-      border_bottom_color_custom: '#000000'
-      border_bottom_color_opacity: '1.00'
-      border_bottom_color_custom_opacity: FF
-      border_bottom_color_hover: default
-      border_bottom_color_custom_hover: '#000000'
-      border_bottom_color_opacity_hover: '1.00'
-      border_bottom_color_custom_opacity_hover: FF
-    border_left:
-      border_left_select: none
-      border_left_style: dotted
-      border_left_size: ''
-      border_left_color: default
-      border_left_color_custom: '#000000'
-      border_left_color_opacity: '1.00'
-      border_left_color_custom_opacity: FF
-      border_left_color_hover: default
-      border_left_color_custom_hover: '#000000'
-      border_left_color_opacity_hover: '1.00'
-      border_left_color_custom_opacity_hover: FF
-  region_bottom:
+    position_select: inherit
+    background_color: bs-primary-800
+    toggler_color: default
+    background_color_custom: '#000000'
+    toggler_color_custom: '#000000'
+    background_color_opacity: '1.00'
+    toggler_color_opacity: '1.00'
+    background_color_custom_opacity: FF
+    toggler_color_custom_opacity: FF
+    background_color_hover: default
+    toggler_color_hover: default
+    background_color_custom_hover: '#000000'
+    toggler_color_custom_hover: '#000000'
+    background_color_opacity_hover: '1.00'
+    toggler_color_opacity_hover: '1.00'
+    background_color_custom_opacity_hover: FF
+    toggler_color_custom_opacity_hover: FF
+  region_pre_header:
+    justify_content: center
+    align_items: baseline
+    height: ''
+    width:
+      container_select: full
+      full_select: '0'
+      box_select: 100%
     background_color: default
     background_color_custom: '#000000'
     background_color_opacity: '1.00'
@@ -753,6 +161,7 @@ regions:
     background_color_custom_hover: '#000000'
     background_color_opacity_hover: '1.00'
     background_color_custom_opacity_hover: FF
+  region_header:
     justify_content: center
     align_items: baseline
     height: ''
@@ -760,52 +169,117 @@ regions:
       container_select: full
       full_select: '0'
       box_select: 100%
-    border_top:
-      border_top_select: none
-      border_top_style: dotted
-      border_top_size: ''
-      border_top_color: default
-      border_top_color_custom: '#000000'
-      border_top_color_opacity: '1.00'
-      border_top_color_custom_opacity: FF
-      border_top_color_hover: default
-      border_top_color_custom_hover: '#000000'
-      border_top_color_opacity_hover: '1.00'
-      border_top_color_custom_opacity_hover: FF
-    border_right:
-      border_right_select: none
-      border_right_style: dotted
-      border_right_size: ''
-      border_right_color: default
-      border_right_color_custom: '#000000'
-      border_right_color_opacity: '1.00'
-      border_right_color_custom_opacity: FF
-      border_right_color_hover: default
-      border_right_color_custom_hover: '#000000'
-      border_right_color_opacity_hover: '1.00'
-      border_right_color_custom_opacity_hover: FF
-    border_bottom:
-      border_bottom_select: none
-      border_bottom_style: dotted
-      border_bottom_size: ''
-      border_bottom_color: default
-      border_bottom_color_custom: '#000000'
-      border_bottom_color_opacity: '1.00'
-      border_bottom_color_custom_opacity: FF
-      border_bottom_color_hover: default
-      border_bottom_color_custom_hover: '#000000'
-      border_bottom_color_opacity_hover: '1.00'
-      border_bottom_color_custom_opacity_hover: FF
-    border_left:
-      border_left_select: none
-      border_left_style: dotted
-      border_left_size: ''
-      border_left_color: default
-      border_left_color_custom: '#000000'
-      border_left_color_opacity: '1.00'
-      border_left_color_custom_opacity: FF
-      border_left_color_hover: default
-      border_left_color_custom_hover: '#000000'
-      border_left_color_opacity_hover: '1.00'
-      border_left_color_custom_opacity_hover: FF
+    background_color: default
+    background_color_custom: '#000000'
+    background_color_opacity: '1.00'
+    background_color_custom_opacity: FF
+    background_color_hover: default
+    background_color_custom_hover: '#000000'
+    background_color_opacity_hover: '1.00'
+    background_color_custom_opacity_hover: FF
+  region_primary_menu:
+    justify_content: center
+    align_items: baseline
+    height: ''
+    width:
+      container_select: full
+      full_select: '0'
+      box_select: 100%
+    background_color: default
+    background_color_custom: '#000000'
+    background_color_opacity: '1.00'
+    background_color_custom_opacity: FF
+    background_color_hover: default
+    background_color_custom_hover: '#000000'
+    background_color_opacity_hover: '1.00'
+    background_color_custom_opacity_hover: FF
+  region_secondary_menu:
+    justify_content: center
+    align_items: baseline
+    height: ''
+    width:
+      container_select: full
+      full_select: '0'
+      box_select: 100%
+    background_color: default
+    background_color_custom: '#000000'
+    background_color_opacity: '1.00'
+    background_color_custom_opacity: FF
+    background_color_hover: default
+    background_color_custom_hover: '#000000'
+    background_color_opacity_hover: '1.00'
+    background_color_custom_opacity_hover: FF
+  region_breadcrumb:
+    justify_content: flex-start
+    align_items: baseline
+    height: ''
+    width:
+      container_select: full
+      full_select: 10%
+      box_select: 100%
+    background_color: default
+    background_color_custom: '#000000'
+    background_color_opacity: '1.00'
+    background_color_custom_opacity: FF
+    background_color_hover: default
+    background_color_custom_hover: '#000000'
+    background_color_opacity_hover: '1.00'
+    background_color_custom_opacity_hover: FF
+  region_highlighted:
+    justify_content: center
+    align_items: baseline
+    height: ''
+    width:
+      container_select: full
+      full_select: '0'
+      box_select: 100%
+    background_color: default
+    background_color_custom: '#000000'
+    background_color_opacity: '1.00'
+    background_color_custom_opacity: FF
+    background_color_hover: default
+    background_color_custom_hover: '#000000'
+    background_color_opacity_hover: '1.00'
+    background_color_custom_opacity_hover: FF
+  region_help:
+    justify_content: center
+    align_items: baseline
+    height: ''
+    width:
+      container_select: full
+      full_select: '0'
+      box_select: 100%
+  region_footer:
+    justify_content: flex-start
+    align_items: baseline
+    height: ''
+    width:
+      container_select: full
+      full_select: 5%
+      box_select: 100%
+    background_color: bs-primary-800
+    background_color_custom: '#000000'
+    background_color_opacity: '1.00'
+    background_color_custom_opacity: FF
+    background_color_hover: default
+    background_color_custom_hover: '#000000'
+    background_color_opacity_hover: '1.00'
+    background_color_custom_opacity_hover: FF
+  region_bottom:
+    justify_content: center
+    align_items: baseline
+    height: ''
+    width:
+      container_select: full
+      full_select: '0'
+      box_select: 100%
+    background_color: default
+    background_color_custom: '#000000'
+    background_color_opacity: '1.00'
+    background_color_custom_opacity: FF
+    background_color_hover: default
+    background_color_custom_hover: '#000000'
+    background_color_opacity_hover: '1.00'
+    background_color_custom_opacity_hover: FF
 langcode: en
+font: default
