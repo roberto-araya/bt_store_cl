@@ -4,12 +4,19 @@
   justify-content: center;
 }
 .blockCta--full .boxed {
-  max-width: var(--xsMaxWidth);
+  max-width: var(--maxWidth);
   align-self: center;
 }
-.blockCta--full .blockCta--full__content-title {
-  margin-top: 1rem;
+.blockCta--full__content-title {
+  margin-top: var(--captionFontSize);
+  margin-bottom: 0;
 }
-.blockCta--full .blockCta--full__buttons {
-  margin-bottom: 1rem;
+.blockCta--full__caption {
+  padding-bottom: var(--captionFontSize);
+}
+.blockCta--full__text {
+  margin-bottom: var(--captionFontSize);
+}
+.blockCta--full__buttons {
+  margin-bottom: var(--captionFontSize);
 }

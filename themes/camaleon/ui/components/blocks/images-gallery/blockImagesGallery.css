@@ -1,3 +1,9 @@
+.block.blockImagesGallery {
+  --xsMaxWidth: 95vw;
+  --xsAlignSelf: center;
+}
+
 .blockImagesGallery {
-  width: 100%;
+  --maxWidth: var(--xsMaxWidth);
+  width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));
 }

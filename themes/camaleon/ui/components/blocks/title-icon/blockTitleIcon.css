@@ -1,18 +1,21 @@
 .blockTitleIcon {
   --xsTitleFontSize: 1.8rem;
   --xsCaptionFontSize: 1.2rem;
+  --titleFontSize: var(--xsTitleFontSize);
+  --captionFontSize: var(--xsCaptionFontSize);
+  --maxWidth: var(--xsMaxWidth);
+  width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));
 }
 .blockTitleIcon__icon svg {
-  max-width: 280px;
   color: var(--iconColor, var(--bs-accent));
 }
 .blockTitleIcon__content-title {
   color: var(--titleColor, var(--defaultPageTitleColor));
   font-family: var(--titleFontFamily, var(--defaultFontFamily));
-  font-size: var(--xsTitleFontSize);
+  font-size: var(--titleFontSize);
 }
 .blockTitleIcon__caption {
   color: var(--captionColor, var(--defaultCaptionTextColor));
   font-family: var(--captionFontFamily, var(--defaultFontFamily));
-  font-size: var(--xsCaptionFontSize);
+  font-size: var(--captionFontSize);
 }

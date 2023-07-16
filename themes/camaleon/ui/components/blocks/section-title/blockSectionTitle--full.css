@@ -1,14 +1,17 @@
 .blockSectionTitle--full .boxed {
-  max-width: var(--xsMaxWidth);
+  max-width: var(--maxWidth);
 }
 .blockSectionTitle--full__content-title {
-  align-self: center;
-  height: -moz-fit-content;
-  height: fit-content;
-  margin: 1rem;
-  text-transform: uppercase;
+  margin-top: var(--captionFontSize);
+  margin-bottom: 0;
   font-weight: bold;
 }
 .blockSectionTitle--full__caption {
-  margin: 1rem;
+  margin-bottom: var(--captionFontSize);
+}
+.blockSectionTitle--full__text {
+  margin-bottom: var(--captionFontSize);
+}
+.blockSectionTitle--full__buttons {
+  margin-bottom: var(--captionFontSize);
 }

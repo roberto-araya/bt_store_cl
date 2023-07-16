@@ -1057,6 +1057,14 @@ block_basic_default:
   dependencies:
     - camaleon/block_basic
 
+block_basic_full:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/basic/blockBasic--full.css: {}
+  dependencies:
+    - camaleon/block_basic
+
 # blog
 block_blog_default:
   version: VERSION
@@ -1204,6 +1212,8 @@ block_highlighted_text_image:
   css:
     component:
       ui/components/blocks/highlighted-text-image/blockHighlightedTextImage.css: {}
+  js:
+    ui/components/blocks/highlighted-text-image/blockHighlightedTextImage.js: {}
   dependencies:
     - camaleon/block
 

@@ -1,26 +1,20 @@
+.block.blockSocialProfiles--full {
+  --xsAlignSelf: center;
+}
+
 .blockSocialProfiles--full {
   display: flex;
-  gap: 0.5rem;
-  width: 100%;
-  height: 80px;
   justify-content: center;
-  align-items: center;
-}
-.blockSocialProfiles--full div {
-  width: 40px;
-  height: 40px;
 }
 .blockSocialProfiles--full .boxed {
-  max-width: var(--xsMaxWidth);
-  align-self: center;
+  max-width: var(--maxWidth);
+  display: flex;
+  gap: calc(var(--textFontSize) * 0.65);
 }
-.blockSocialProfiles--full__profile {
-  width: 40px;
-  height: 40px;
+.blockSocialProfiles--full__social-network {
+  width: 30px;
+  height: 30px;
 }
-.blockSocialProfiles--full__profile svg {
-  width: 40px;
-  height: 40px;
-  color: var(--bs-white);
-  transition: color 600ms;
+.blockSocialProfiles--full__social-network .svg-icon svg {
+  height: unset;
 }

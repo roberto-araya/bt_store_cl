@@ -9,7 +9,7 @@
   background-size: cover;
 }
 .blockHero--full .boxed {
-  max-width: var(--xsMaxWidth);
+  max-width: var(--maxWidth);
   padding: 1rem;
   background-color: var(--backgroundColor, transparent);
 }

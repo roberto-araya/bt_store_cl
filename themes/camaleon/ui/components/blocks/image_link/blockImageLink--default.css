@@ -1,3 +1,14 @@
+.block.blockImageLink--default {
+  --xsMaxWidth: 320px;
+}
+
 .blockImageLink--default {
-  display: grid;
+  max-width: var(--maxWidth);
+}
+.blockImageLink--default__image {
+  overflow: clip;
+}
+.blockImageLink--default img {
+  width: calc(var(--maxWidth) - (var(--paddingLeft) + var(--paddingRight)));
+  height: 100%;
 }

@@ -1,8 +1,24 @@
 .blockTextIcon--text_inline {
-  max-width: var(--xsMaxWidth);
+  --xsIconSize: 20px;
+  --iconSize: var(--xsIconSize);
+  max-width: var(--maxWidth);
   display: flex;
   align-items: center;
   margin-bottom: 0.3rem;
+}
+.blockTextIcon--text_inline__content-title {
+  margin-top: var(--captionFontSize);
+  margin-bottom: 0;
+}
+.blockTextIcon--text_inline__caption {
+  padding-bottom: var(--captionFontSize);
+}
+.blockTextIcon--text_inline__text {
+  margin-bottom: var(--captionFontSize);
+}
+.blockTextIcon--text_inline__buttons {
+  margin-bottom: var(--captionFontSize);
+  border: 0px;
 }
 .blockTextIcon--text_inline__text {
   margin-top: 0;
@@ -17,10 +33,10 @@
   justify-self: center;
 }
 .blockTextIcon--text_inline__icon .svg-icon {
-  width: 20px;
-  height: 20px;
+  width: var(--iconSize);
+  height: var(--iconSize);
 }
 .blockTextIcon--text_inline__icon svg {
-  width: 20px;
-  height: 20px;
+  width: var(--iconSize);
+  height: var(--iconSize);
 }

@@ -1,7 +1,9 @@
 .blockSocialProfiles {
   --xsTextFontSize: 1.2rem;
-  width: 100%;
-  font-size: var(--xsTextFontSize);
+  --textFontSize: var(--xsTextFontSize);
+  --maxWidth: var(--xsMaxWidth);
+  width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));
+  font-size: var(--textFontSize);
   font-family: var(--textFontFamily), var(--defaultFontFamily);
   color: var(--textColor, var(--bs-block-text-color));
 }

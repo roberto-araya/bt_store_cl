@@ -14,7 +14,7 @@
 {%
   set title_classes = [
     configuration.label_display == FALSE ? 'visually-hidden',
-    'block' ~ bundle ~ '--' ~ view_mode ~ '__block-title',
+    'blockSocialProfiles--' ~ view_mode ~ '__block-title',
   ]
 %}
 
@@ -122,17 +122,33 @@
   ])|remove_empty
 %}
 
-<section {{ attributes.setAttribute('style', styles_vars|join('; ')).setAttribute('id', 'block' ~ bundle ~ '--' ~ id ).addClass(classes) }}>
+<section {{ attributes.setAttribute('style', style_vars|join('; ')).setAttribute('id', 'blockSocialProfiles--' ~ id ).addClass(classes) }}>
   {{title_prefix }}
   <h3{{ title_attributes.addClass(title_classes) }}>{{ label }}</h3>
   {{ title_suffix }}
-  <div class="boxed">
-    {% if content.field_bt_instagram_icon %}
-      <div class='blockSocialProfiles__profile blockSocialProfiles--full__profile'>
-        <a href={{ content.field_bt_link_instagram[0]['#url_title']}}>
-          {{ content.field_bt_instagram_icon }}
-        </a>
-      </div>
+  <div class='boxed'>
+    {% if content.field_bt_link_facebook[0]['#url'] is not empty %}
+      <a class='blockSocialProfiles--full__social-network blockSocialProfiles--full__facebook' href={{ content.field_bt_link_facebook[0]['#url'] }}>
+        {{ content.field_bt_facebook_icon }}
+      </a>
+    {% endif %}
+
+    {% if content.field_bt_link_instagram[0]['#url'] is not empty %}
+      <a class='blockSocialProfiles--full__social-network blockSocialProfiles--full__instagram' href={{ content.field_bt_link_instagram[0]['#url'] }}>
+        {{ content.field_bt_instagram_icon }}
+      </a>
+    {% endif %}
+
+    {% if content.field_bt_link_twitter[0]['#url'] is not empty and content.field_bt_twitter_icon is not empty %}
+      <a class='blockSocialProfiles--full__social-network blockSocialProfiles--full__twitter' href={{ content.field_bt_link_twitter[0]['#url'] }}>
+        {{ content.field_bt_twitter_icon }}
+      </a>
+    {% endif %}
+
+    {% if content.field_bt_link_linkedin[0]['#url'] is not empty and content.field_bt_linkedin_icon is not empty %}
+      <a class='blockSocialProfiles--full__social-network blockSocialProfiles--full__linkedin' href={{ content.field_bt_link_linkedin[0]['#url'] }}>
+        {{ content.field_bt_linkedin_icon }}
+      </a>
     {% endif %}
   </div>
 </section>

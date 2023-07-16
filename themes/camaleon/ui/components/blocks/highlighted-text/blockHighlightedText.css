@@ -1,9 +1,12 @@
 .blockHighlightedText {
   --xsTextFontSize: 1.2rem;
+  --textFontSize: var(--xsTextFontSize);
+  --maxWidth: var(--xsMaxWidth);
+  width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));
 }
 .blockHighlightedText__highlighted-text {
   font-family: var(--textFontFamily, var(--defaultFontFamily));
-  font-size: var(--xsTextFontSize);
+  font-size: var(--textFontSize);
 }
 .blockHighlightedText__highlighted-text > mark {
   background-color: var(--highlightedColor, var(--bs-accent));

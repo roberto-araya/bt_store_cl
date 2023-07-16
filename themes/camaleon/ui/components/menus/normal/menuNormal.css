@@ -1,4 +1,6 @@
 .block.menuNormal {
+  --xsAlignSelf: center;
+  --xsMaxWidth: 310px;
   padding-left: 0px;
   padding-top: 0px;
   padding-right: 0px;
@@ -13,36 +15,42 @@ h2.menuNormal__menu-title {
 .menuNormal {
   --xsTitleFontSize: 1.25rem;
   --xsItemFontSize: 1rem;
-  --xsAlignSelf: center;
-  --xsMaxWidth: 310px;
   --xsItemPaddingLeft: 1rem;
   --xsItemPaddingTop: 1rem;
   --xsItemPaddingRight: 1rem;
   --xsItemPaddingBottom: 1rem;
+  --titleFontSize: var(--xsTitleFontSize);
+  --itemFontSize: var(--xsItemFontSize);
+  --itemPaddingLeft: var(--xsItemPaddingLeft);
+  --itemPaddingTop: var(--xsItemPaddingTop);
+  --itemPaddingRight: var(--xsItemPaddingRight);
+  --itemPaddingBottom: var(--xsItemPaddingBottom);
+  --maxWidth: var(--xsMaxWidth);
+  width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));
 }
 .menuNormal__menu-title {
   font-family: var(--titleFontFamily, var(--defaultFontFamily));
-  font-size: var(--xsTitleFontSize);
+  font-size: var(--titleFontSize);
   color: var(--titleColor, var(--defaultPageTitleColor));
 }
 .menuNormal__nav {
   --xsPaddingTop: 0px;
   gap: var(--gap, 0px);
-  padding-left: var(--xsPaddingLeft);
-  padding-top: var(--xsPaddingTop);
-  padding-right: var(--xsPaddingRight);
-  padding-bottom: var(--xsPaddingBottom);
-  max-width: var(--xsMaxWidth);
-  justify-content: var(--xsJustifySelf);
+  padding-left: var(--paddingLeft);
+  padding-top: var(--paddingTop);
+  padding-right: var(--paddingRight);
+  padding-bottom: var(--paddingBottom);
+  max-width: var(--maxWidth);
+  justify-content: var(--justifySelf);
 }
 .menuNormal__link {
   display: block;
-  padding-left: var(--xsItemPaddingLeft);
-  padding-top: var(--xsItemPaddingTop);
-  padding-right: var(--xsItemPaddingRight);
-  padding-bottom: var(--xsItemPaddingBottom);
+  padding-left: var(--itemPaddingLeft);
+  padding-top: var(--itemPaddingTop);
+  padding-right: var(--itemPaddingRight);
+  padding-bottom: var(--itemPaddingBottom);
   font-family: var(--itemFontFamily, var(--defaultFontFamily));
-  font-size: var(--xsItemFontSize);
+  font-size: var(--itemFontSize);
   color: var(--itemColor, #BC8927);
 }
 .menuNormal__link:hover, .menuNormal__link.active {
@@ -50,8 +58,8 @@ h2.menuNormal__menu-title {
 }
 .menuNormal__item {
   background-color: var(--itemBackgroundColor, transparent);
-  align-self: var(--xsAlignSelf);
-  justify-self: var(--xsJustifySelf);
+  align-self: var(--alignSelf);
+  justify-self: var(--justifySelf);
 }
 .menuNormal__item:hover {
   background-color: var(--itemBackgroundColorHover, transparent);

@@ -122,15 +122,11 @@
   ])|remove_empty
 %}
 
-<section {{ attributes.setAttribute('style', styles_vars|join('; ')).setAttribute('id', 'block' ~ bundle ~ '--' ~ id ).addClass(classes) }}>
+<section {{ attributes.setAttribute('style', style_vars|join('; ')).setAttribute('id', 'blockSocialProfiles--' ~ id ).addClass(classes) }}>
   {{title_prefix }}
   <h3{{ title_attributes.addClass(title_classes) }}>{{ label }}</h3>
   {{ title_suffix }}
-  {% if content.field_bt_instagram_icon %}
-    <div class='blockSocialProfiles__profile blockSocialProfiles--full__profile'>
-      <a href={{ content.field_bt_link_instagram[0]['#url_title']}}>
-        {{ content.field_bt_instagram_icon }}
-      </a>
-    </div>
-  {% endif %}
+  {% block content %}
+    {{ content }}
+  {% endblock %}
 </section>

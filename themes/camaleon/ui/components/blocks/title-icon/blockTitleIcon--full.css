@@ -1,20 +1,29 @@
 .blockTitleIcon--full {
-  display: grid;
+  --xsIconSize: 48px;
+  --iconSize: var(--xsIconSize);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .blockTitleIcon--full .boxed {
-  max-width: var(--xsMaxWidth);
+  max-width: var(--maxWidth);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.blockTitleIcon--full__content-title {
+  margin-bottom: 0;
+}
+.blockTitleIcon--full__caption {
+  padding-bottom: var(--captionFontSize);
 }
 .blockTitleIcon--full__icon {
-  margin: 1rem;
-  width: -moz-fit-content;
-  width: fit-content;
-  justify-self: center;
-}
-.blockTitleIcon--full__icon .svg-icon {
-  width: 100px;
-  height: 100px;
+  margin-top: var(--captionFontSize);
+  margin-bottom: calc(var(--iconSize) * 0.15);
+  width: var(--iconSize);
+  height: var(--iconSize);
 }
 .blockTitleIcon--full__icon svg {
-  width: 100px;
-  height: 100px;
+  width: var(--iconSize);
+  height: var(--iconSize);
 }

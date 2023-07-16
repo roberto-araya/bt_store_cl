@@ -1,5 +1,5 @@
 .blockHighlightedText--default {
-  max-width: var(--xsMaxWidth);
+  max-width: var(--maxWidth);
 }
 .blockHighlightedText--default__highlighted-text {
   letter-spacing: 0.125rem;

@@ -1,16 +1,15 @@
 ((Camaleon) => {
-  blockTestimonial = function(blocks, breakpoint) {
+  blockSocialProfiles = function(blocks, breakpoint) {
     let customProperties = {
-      TitleFontSize: 'titleFontSize',
       TextFontSize: 'textFontSize',
     }
 
     let i = 0;
-    for (i; i < blocks.length; i++) {
+    for (i; i < blocks.lenght; i++) {
       Camaleon.applyProperties(blocks[i], breakpoint, customProperties)
     }
   }
   
-  Camaleon.blocksRegister('blockTestimonial', blockTestimonial)
+  Camaleon.blocksRegister('blockSocialProfiles', blockSocialProfiles)
 
 })(Camaleon)

@@ -1,5 +1,5 @@
 .blockHighlightedTextImage--default {
-  max-width: var(--xsMaxWidth);
+  max-width: var(--maxWidth);
   background: 100%;
   background-size: cover;
 }
@@ -38,15 +38,11 @@
   grid-row: 3;
   height: -moz-fit-content;
   height: fit-content;
-  max-width: 300px;
   align-self: center;
   justify-self: center;
   z-index: 1;
-  font-size: 2rem;
-  letter-spacing: 0.3rem;
   font-style: italic;
   font-weight: bold;
-  text-transform: uppercase;
 }
 
 .mediaImage--content__image {

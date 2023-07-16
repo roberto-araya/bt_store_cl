@@ -1,15 +1,20 @@
 .blockSectionTitle--default {
-  max-width: var(--xsMaxWidth);
+  max-width: var(--maxWidth);
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .blockSectionTitle--default__content-title {
-  height: -moz-fit-content;
-  height: fit-content;
-  margin-top: 1rem;
+  margin-top: var(--captionFontSize);
+  margin-bottom: 0;
   font-weight: bold;
 }
 .blockSectionTitle--default__caption {
-  margin-bottom: 1rem;
+  margin-bottom: var(--captionFontSize);
+}
+.blockSectionTitle--default__text {
+  margin-bottom: var(--captionFontSize);
+}
+.blockSectionTitle--default__buttons {
+  margin-bottom: var(--captionFontSize);
 }

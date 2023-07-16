@@ -2,6 +2,19 @@
   display: grid;
 }
 .blockTitleImage--full .boxed {
-  max-width: var(--xsMaxWidth);
+  max-width: var(--maxWidth);
   align-self: center;
+}
+.blockTitleImage--full__content-title {
+  margin-top: var(--captionFontSize);
+  margin-bottom: 0;
+}
+.blockTitleImage--full__caption {
+  margin-bottom: var(--captionFontSize);
+}
+.blockTitleImage--full__text {
+  margin-bottom: var(--captionFontSize);
+}
+.blockTitleImage--full__buttons {
+  margin-bottom: var(--captionFontSize);
 }

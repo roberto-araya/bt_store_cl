@@ -1,12 +1,21 @@
 .blockTitleImage--default {
-  max-width: var(--xsMaxWidth);
+  max-width: var(--maxWidth);
   display: grid;
   grid-auto-rows: 270px 40px auto;
   justify-items: center;
 }
 .blockTitleImage--default__content-title {
-  font-size: 2rem;
-  letter-spacing: 0.25rem;
+  margin-top: var(--captionFontSize);
+  margin-bottom: 0;
+}
+.blockTitleImage--default__caption {
+  margin-bottom: var(--captionFontSize);
+}
+.blockTitleImage--default__text {
+  margin-bottom: var(--captionFontSize);
+}
+.blockTitleImage--default__buttons {
+  margin-bottom: var(--captionFontSize);
 }
 .blockTitleImage--default__image {
   width: -moz-max-content;

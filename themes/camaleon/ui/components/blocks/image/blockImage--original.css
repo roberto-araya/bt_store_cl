@@ -1,5 +1,5 @@
 .blockImage--original {
-  max-width: var(--xsMaxWidth);
+  max-width: var(--maxWidth);
 }
 .blockImage--original__add-image img {
   width: 100%;

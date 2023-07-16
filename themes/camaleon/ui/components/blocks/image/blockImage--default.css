@@ -8,5 +8,5 @@
   justify-self: center;
 }
 .blockImage--default img {
-  width: var(--xsMaxWidth);
+  width: var(--maxWidth);
 }

@@ -1,24 +1,28 @@
 .blockTestimonial {
   --xsTitleFontSize: 1.8rem;
   --xsTextFontSize: 1.2rem;
+  --titleFontSize: var(--xsTitleFontSize);
+  --textFontSize: var(--xsTextFontSize);
+  --maxWidth: var(--xsMaxWidth);
+  width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));
 }
 .blockTestimonial__content-title {
   font-family: var(--titleFontFamily, var(--defaultFontFamily));
-  font-size: var(--xsTitleFontSize);
+  font-size: var(--titleFontSize);
   color: var(--titleColor, var(--defaultPageTitleColor));
 }
 .blockTestimonial__name {
   font-family: var(--textFontFamily, var(--defaultFontFamily));
-  font-size: calc(var(--xsTextFontSize) * 1.125);
+  font-size: calc(var(--textFontSize) * 1.125);
   color: var(--titleColor, var(--defaultPageTitleColor));
 }
 .blockTestimonial__organization {
   font-family: var(--textFontFamily, var(--defaultFontFamily));
-  font-size: calc(var(--xsTextFontSize) * 0.825);
+  font-size: calc(var(--textFontSize) * 0.825);
   color: var(--titleColor, var(--defaultPageTitleColor));
 }
 .blockTestimonial__text {
   font-family: var(--textFontFamily, var(--defaultFontFamily));
-  font-size: var(--xsTextFontSize);
+  font-size: var(--textFontSize);
   color: var(--textColor, var(--bs-block-text-color));
 }

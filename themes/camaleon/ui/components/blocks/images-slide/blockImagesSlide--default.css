@@ -1,5 +1,5 @@
 .blockImagesSlide--default {
-  max-width: var(--xsMaxWidth);
+  max-width: var(--maxWidth);
 }
 .blockImagesSlide--default img {
   max-width: 100%;

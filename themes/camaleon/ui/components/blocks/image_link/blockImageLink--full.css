@@ -1,3 +1,13 @@
 .blockImageLink--full {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.blockImageLink--full .boxed {
+  max-width: var(--maxWidth);
+  align-self: center;
+}
+.blockImageLink--full img {
+  width: calc(var(--maxWidth) - (var(--paddingLeft) + var(--paddingRight)));
+  height: 100%;
 }

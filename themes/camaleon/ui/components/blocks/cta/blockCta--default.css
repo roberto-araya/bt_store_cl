@@ -1,12 +1,19 @@
 .blockCta--default {
-  max-width: var(--xsMaxWidth);
+  max-width: var(--maxWidth);
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .blockCta--default__content-title {
-  margin-top: 1rem;
+  margin-top: var(--captionFontSize);
+  margin-bottom: 0;
+}
+.blockCta--default__caption {
+  padding-bottom: var(--captionFontSize);
+}
+.blockCta--default__text {
+  margin-bottom: var(--captionFontSize);
 }
 .blockCta--default__buttons {
-  margin-bottom: 1rem;
+  margin-bottom: var(--captionFontSize);
 }

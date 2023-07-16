@@ -1,22 +1,21 @@
 .blockTitleIcon--default {
-  max-width: var(--xsMaxWidth);
-  display: grid;
+  --xsIconSize: 48px;
+  --iconSize: var(--xsIconSize);
+  max-width: var(--maxWidth);
 }
 .blockTitleIcon--default__content-title {
-  font-size: 2rem;
-  letter-spacing: 0.25rem;
+  margin-bottom: 0;
+}
+.blockTitleIcon--default__caption {
+  padding-bottom: var(--captionFontSize);
 }
 .blockTitleIcon--default__icon {
-  margin: 1rem;
-  width: -moz-fit-content;
-  width: fit-content;
-  justify-self: center;
-}
-.blockTitleIcon--default__icon .svg-icon {
-  width: 50px;
-  height: 50px;
+  margin-top: var(--captionFontSize);
+  margin-bottom: calc(var(--iconSize) * 0.15);
+  width: var(--iconSize);
+  height: var(--iconSize);
 }
 .blockTitleIcon--default__icon svg {
-  width: 50px;
-  height: 50px;
+  width: var(--iconSize);
+  height: var(--iconSize);
 }

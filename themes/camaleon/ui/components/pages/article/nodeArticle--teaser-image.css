@@ -17,7 +17,6 @@
   font-size: 0.8rem;
 }
 .nodeArticle--teaser-image__image {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;

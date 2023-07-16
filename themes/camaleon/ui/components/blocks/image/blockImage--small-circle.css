@@ -7,7 +7,7 @@
   max-width: max-content;
 }
 .blockImage--small_circle img {
-  width: var(--xsMaxWidth);
-  height: var(--xsMaxWidth);
+  width: var(--maxWidth);
+  height: var(--maxWidth);
   border-radius: 100%;
 }

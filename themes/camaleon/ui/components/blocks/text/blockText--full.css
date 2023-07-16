@@ -1,5 +1,23 @@
+.blockText--full {
+  display: flex;
+  flex-direction: column;
+}
 .blockText--full .boxed {
-  max-width: var(--xsMaxWidth);
+  max-width: var(--maxWidth);
+  align-self: center;
+}
+.blockText--full__content-title {
+  margin-top: var(--captionFontSize);
+  margin-bottom: 0;
+}
+.blockText--full__caption {
+  padding-bottom: var(--captionFontSize);
+}
+.blockText--full__text {
+  margin-bottom: var(--captionFontSize);
+}
+.blockText--full__buttons {
+  margin-bottom: var(--captionFontSize);
 }
 .blockText--full__link {
   display: flex;

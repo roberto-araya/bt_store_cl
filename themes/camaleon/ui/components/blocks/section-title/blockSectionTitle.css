@@ -1,15 +1,19 @@
 .blockSectionTitle {
   --xsTitleFontSize: 1.8rem;
   --xsCaptionFontSize: 1.2rem;
+  --titleFontSize: var(--xsTitleFontSize);
+  --captionFontSize: var(--xsCaptionFontSize);
+  --maxWidth: var(--xsMaxWidth);
+  width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));
   box-sizing: border-box;
 }
 .blockSectionTitle__content-title {
   color: var(--titleColor, var(--defaultPageTitleColor));
   font-family: var(--titleFontFamily, var(--defaultFontFamily));
-  font-size: var(--xsTitleFontSize, 1.8rem);
+  font-size: var(--titleFontSize, 1.8rem);
 }
 .blockSectionTitle__caption {
   color: var(--captionColor, var(--defaultCaptionTextColor));
   font-family: var(--captionFontFamily, var(--defaultFontFamily));
-  font-size: var(--xsCaptionFontSize, 1.2rem);
+  font-size: var(--captionFontSize, 1.2rem);
 }

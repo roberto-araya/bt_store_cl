@@ -4,7 +4,7 @@
   justify-content: center;
 }
 .blockImage--full .boxed {
-  max-width: var(--xsMaxWidth);
+  max-width: var(--maxWidth);
 }
 .blockImage--full img {
   width: 100%;

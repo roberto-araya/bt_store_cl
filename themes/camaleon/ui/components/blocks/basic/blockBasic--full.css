@@ -1,7 +1,3 @@
-.blockBasic--full {
-  display: grid;
-}
-
 .blockBasic--full__block-title {
   font-weight: bold;
   align-self: end;

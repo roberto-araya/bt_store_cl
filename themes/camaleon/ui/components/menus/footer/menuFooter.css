@@ -1,4 +1,6 @@
 .block.menuFooter {
+  --xsAlignSelf: center;
+  --xsMaxWidth: 90vw;
   padding-left: 0px;
   padding-top: 0px;
   padding-right: 0px;
@@ -8,29 +10,35 @@
 .menuFooter {
   --xsTitleFontSize: 1.2rem;
   --xsItemFontSize: 0.75rem;
-  --xsAlignSelf: center;
-  --xsMaxWidth: 90vw;
   --xsItemPaddingLeft: 1rem;
   --xsItemPaddingTop: .25rem;
   --xsItemPaddingRight: 1rem;
   --xsItemPaddingBottom: .25rem;
+  --titleFontSize: var(--xsTitleFontSize);
+  --itemFontSize: var(--xsItemFontSize);
+  --itemPaddingLeft: var(--xsItemPaddingLeft);
+  --itemPaddingTop: var(--xsItemPaddingTop);
+  --itemPaddingRight: var(--xsItemPaddingRight);
+  --itemPaddingBottom: var(--xsItemPaddingBottom);
+  --maxWidth: var(--xsMaxWidth);
+  width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));
 }
 .menuFooter__menu-title {
   font-family: var(--titleFontFamily, var(--defaultFontFamily));
-  font-size: var(--xsTitleFontSize);
+  font-size: var(--titleFontSize);
   color: var(--titleColor, var(--defaultPageTitleColor));
 }
 .menuFooter__nav {
   --xsPaddingTop: .5rem;
   gap: var(--gap, 0px);
-  margin-left: var(--xsMarginLeft);
-  margin-top: var(--xsMarginTop);
-  margin-right: var(--xsMarginRight);
-  margin-bottom: var(--xsMarginBottom);
-  padding-left: var(--xsPaddingLeft);
-  padding-top: var(--xsPaddingTop);
-  padding-right: var(--xsPaddingRight);
-  padding-bottom: var(--xsPaddingBottom);
+  margin-left: var(--marginLeft);
+  margin-top: var(--marginTop);
+  margin-right: var(--marginRight);
+  margin-bottom: var(--marginBottom);
+  padding-left: var(--paddingLeft);
+  padding-top: var(--paddingTop);
+  padding-right: var(--paddingRight);
+  padding-bottom: var(--paddingBottom);
 }
 .menuFooter .nav.flex {
   flex-direction: column;
@@ -38,12 +46,12 @@
 }
 .menuFooter__link {
   display: block;
-  padding-left: var(--xsItemPaddingLeft);
-  padding-top: var(--xsItemPaddingTop);
-  padding-right: var(--xsItemPaddingRight);
-  padding-bottom: var(--xsItemPaddingBottom);
+  padding-left: var(--itemPaddingLeft);
+  padding-top: var(--itemPaddingTop);
+  padding-right: var(--itemPaddingRight);
+  padding-bottom: var(--itemPaddingBottom);
   font-family: var(--itemFontFamily, var(--defaultFontFamily));
-  font-size: var(--xsItemFontSize);
+  font-size: var(--itemFontSize);
   color: var(--itemColor, #BC8927);
 }
 .menuFooter__link:hover, .menuFooter__link.active {
@@ -51,8 +59,8 @@
 }
 .menuFooter__item {
   background-color: var(--itemBackgroundColor, transparent);
-  align-self: var(--xsAlignSelf);
-  justify-self: var(--xsJustifySelf);
+  align-self: var(--alignSelf);
+  justify-self: var(--justifySelf);
 }
 .menuFooter__item:hover {
   background-color: var(--itemBackgroundColorHover, transparent);

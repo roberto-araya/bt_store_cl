@@ -1,3 +1,17 @@
+.block.blockSocialProfiles--default {
+  --xsAlignSelf: center;
+}
+
 .blockSocialProfiles--default {
-  max-width: var(--xsMaxWidth);
+  max-width: var(--maxWidth);
+  display: flex;
+  gap: calc(var(--textFontSize) * 0.65);
+  justify-content: center;
+}
+.blockSocialProfiles--default__social-network {
+  width: 30px;
+  height: 30px;
+}
+.blockSocialProfiles--default__social-network .svg-icon svg {
+  height: unset;
 }

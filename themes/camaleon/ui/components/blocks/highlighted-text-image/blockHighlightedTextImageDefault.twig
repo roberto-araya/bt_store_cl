@@ -4,8 +4,8 @@
 {%
   set classes = [
     'block',
-    'block' ~ bundle|capitalize,
-    'block' ~ bundle|capitalize ~ '--' ~ view_mode,
+    'blockHighlightedTextImage',
+    'blockHighlightedTextImage--default',
     styles.animation_option == TRUE and styles.animation_trigger == 'on_scroll' ? 'wow' : '',
     styles.animation_option == TRUE ? styles.animation_type : '',
   ]|remove_empty
@@ -14,7 +14,7 @@
 {%
   set title_classes = [
     configuration.label_display == FALSE ? 'visually-hidden',
-    'block' ~ bundle|capitalize ~ '--' ~ view_mode ~ '__block-title',
+    'blockHighlightedTextImage--default__block-title',
   ]
 %}
 

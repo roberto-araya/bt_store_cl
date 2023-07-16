@@ -65,11 +65,11 @@
 
     styles.icon_color_select != 'default' and styles.icon_color_select != 'customColor' ? '--iconColor: var(--' ~ styles.icon_color_select ~ ')',
     styles.icon_color_select == 'customColor' ? '--iconColor: ' ~ styles.icon_color_custom,
-    styles.sm_icon_size != '' ? '--smIconSize: ' ~ styles.sm_icon_size : '',
-    styles.md_icon_size != '' ? '--mdIconSize: ' ~ styles.md_icon_size : '',
-    styles.lg_icon_size != '' ? '--lgIconSize: ' ~ styles.lg_icon_size : '',
-    styles.xl_icon_size != '' ? '--xlIconSize: ' ~ styles.xl_icon_size : '',
-    styles.xxl_icon_size != '' ? '--xxlIconSize: ' ~ styles.xxl_icon_size : '',
+    styles.icon_sm_size != '' ? '--smIconSize: ' ~ styles.icon_sm_size : '',
+    styles.icon_md_size != '' ? '--mdIconSize: ' ~ styles.icon_md_size : '',
+    styles.icon_lg_size != '' ? '--lgIconSize: ' ~ styles.icon_lg_size : '',
+    styles.icon_xl_size != '' ? '--xlIconSize: ' ~ styles.icon_xl_size : '',
+    styles.icon_xxl_size != '' ? '--xxlIconSize: ' ~ styles.icon_xxl_size : '',
 
     content.field_bt_button_icon|render ? '--buttonIcon: calc(1.5rem + var(--buttonIconSize, 24px))',
     styles.button_color_select != 'default' and styles.button_color_select != 'customColor' ? '--buttonColor: var(--' ~ styles.button_color_select ~ ')',

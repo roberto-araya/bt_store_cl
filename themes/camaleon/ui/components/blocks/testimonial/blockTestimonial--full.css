@@ -3,7 +3,7 @@
   flex-direction: column;
 }
 .blockTestimonial--full .boxed {
-  max-width: var(--xsMaxWidth);
+  max-width: var(--maxWidth);
   align-self: center;
 }
 .blockTestimonial--full .blockTestimonial--full__name {

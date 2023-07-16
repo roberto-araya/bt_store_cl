@@ -32,6 +32,14 @@
   {{ attach_library('camaleon/' ~ configuration.block_style.animation_type) }}
 {% endif %}
 
+{% if configuration.block_style.title_font_family != 'default' %}
+  {{ attach_library('camaleon/' ~ configuration.block_style.title_font_family) }}
+{% endif %}
+
+{% if configuration.block_style.caption_font_family != 'default' %}
+  {{ attach_library('camaleon/' ~ configuration.block_style.caption_font_family) }}
+{% endif %}
+
 {% include "@Components/blocks/image_link/blockImageLink.twig" with {
   'id': id,
   'bundle': bundle,

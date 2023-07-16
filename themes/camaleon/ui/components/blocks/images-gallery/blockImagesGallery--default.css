@@ -1,7 +1,5 @@
 .blockImagesGallery--default {
-  --xsMaxWidth: 95vw;
-  --xsAlignSelf: center;
-  max-width: var(--xsMaxWidth);
+  max-width: var(--maxWidth);
 }
 .blockImagesGallery--default .photoswipe-gallery > div:nth-child(1) {
   display: flex;

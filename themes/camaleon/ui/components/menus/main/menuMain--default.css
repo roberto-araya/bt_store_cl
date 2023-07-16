@@ -1,7 +1,7 @@
 .menuMain--default {
   min-width: 300px;
   width: 90vw;
-  max-width: var(--xsMaxWidth);
+  max-width: var(--maxWidth);
 }
 .menuMain--default .navbar-collapse {
   width: 100%;

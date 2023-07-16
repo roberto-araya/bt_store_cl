@@ -27,12 +27,20 @@
  * @see template_preprocess_block()
  */
 #}
-{{ attach_library('camaleon/block_social_profiles_full') }}
+{{ attach_library('camaleon/block_image_link_full') }}
 {% if configuration.block_style.animation_option == TRUE %}
   {{ attach_library('camaleon/' ~ configuration.block_style.animation_type) }}
 {% endif %}
 
-{% include "@Components/blocks/social-profiles/blockSocialProfilesFull.twig" with {
+{% if configuration.block_style.title_font_family != 'default' %}
+  {{ attach_library('camaleon/' ~ configuration.block_style.title_font_family) }}
+{% endif %}
+
+{% if configuration.block_style.caption_font_family != 'default' %}
+  {{ attach_library('camaleon/' ~ configuration.block_style.caption_font_family) }}
+{% endif %}
+
+{% include "@Components/blocks/image_link/blockImageLinkFull.twig" with {
   'id': id,
   'bundle': bundle,
   'view_mode': view_mode,
@@ -43,5 +51,5 @@
   'attributes': attributes,
   'title_prefix': title_prefix,
   'title_suffix': title_suffix,
-  }
+  } 
 %}

@@ -1,5 +1,18 @@
 .blockText--default {
-  max-width: var(--xsMaxWidth);
+  max-width: var(--maxWidth);
+}
+.blockText--default__content-title {
+  margin-top: var(--captionFontSize);
+  margin-bottom: 0;
+}
+.blockText--default__caption {
+  padding-bottom: var(--captionFontSize);
+}
+.blockText--default__text {
+  margin-bottom: var(--captionFontSize);
+}
+.blockText--default__buttons {
+  margin-bottom: var(--captionFontSize);
 }
 .blockText--default__link {
   display: flex;
@@ -8,11 +21,4 @@
 }
 .blockText--default__button {
   margin-bottom: 1rem;
-}
-
-@media screen and (min-width: 640px) {
-  .blockText--default {
-    max-width: 50vw;
-    justify-self: center;
-  }
 }

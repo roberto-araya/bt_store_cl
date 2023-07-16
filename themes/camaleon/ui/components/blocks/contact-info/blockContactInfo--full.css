@@ -1,10 +1,23 @@
+.block.blockContactInfo--full {
+  --xsTextAlign: left;
+}
+
 .blockContactInfo--full .boxed {
-  max-width: var(--xsMaxWidth);
+  max-width: var(--maxWidth);
   margin: 0 auto;
+}
+.blockContactInfo--full__phones {
+  margin-top: calc(var(--textFontSize) * 0.75);
 }
 .blockContactInfo--full .field--name-contact-info-phone-type {
   font-weight: bold;
 }
-.blockContactInfo--full .blockContactInfo--full__address {
-  margin-top: 1rem;
+.blockContactInfo--full__address-wrapper {
+  margin-top: calc(var(--textFontSize) * 0.75);
+}
+.blockContactInfo--full__address-label {
+  font-weight: bold;
+}
+.blockContactInfo--full__address {
+  margin-top: 0px;
 }

@@ -2,36 +2,41 @@
   --xsTitleFontSize: 1.8rem;
   --xsCaptionFontSize: 1.2rem;
   --xsTextFontSize: 1.2rem;
+  --titleFontSize: var(--xsTitleFontSize);
+  --captionFontSize: var(--xsCaptionFontSize);
+  --textFontSize: var(--xsTextFontSize);
+  --maxWidth: var(--xsMaxWidth);
+  width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));
 }
 .blockCta__content-title {
   font-family: var(--titleFontFamily, var(--defaultFontFamily));
-  font-size: var(--xsTitleFontSize);
+  font-size: var(--titleFontSize);
   color: var(--titleColor, var(--defaultPageTitleColor));
 }
 .blockCta__caption {
   font-family: var(--captionFontFamily, var(--defaultFontFamily));
-  font-size: var(--xsCaptionFontSize);
+  font-size: var(--captionFontSize);
   color: var(--captionColor, var(--defaultCaptionTextColor));
 }
 .blockCta__text {
   font-family: var(--textFontFamily, var(--defaultFontFamily));
-  font-size: var(--xsTextFontSize);
+  font-size: var(--textFontSize);
   color: var(--textColor, var(--bs-block-text-color));
 }
 .blockCta__buttons {
-  justify-content: var(--xsTextAlign);
+  justify-content: var(--textAlign);
 }
 .blockCta__button {
-  --bs-btn-bg: var(--buttonColor, var(--bs-accent));
-  --bs-btn-font-size: var(--xsTextFontSize);
+  --bs-btn-bg: var(--buttonColor, var(--bs-primary));
+  --bs-btn-font-size: var(--textFontSize);
   --bs-btn-color: var(--buttonLinkColor, var(--bs-button-link-color));
   --bs-btn-border-color: var(--buttonLinkColor, var(--bs-button-link-color));
-  --bs-btn-hover-bg: var(--buttonColor, var(--bs-accent));
+  --bs-btn-hover-bg: var(--buttonColor, var(--bs-primary));
   --bs-btn-hover-color: var(--buttonLinkColor, var(--bs-button-link-color));
   --bs-btn-hover-border-color: var(--buttonLinkColor, var(--bs-button-link-color));
 }
 .blockCta__button a {
-  color: var(--buttonLinkColor, var(--bs-accent));
+  color: var(--buttonLinkColor, var(--bs-button-link-color));
   padding-left: var(--buttonIcon, 0rem);
 }
 .blockCta__button-icon svg {
@@ -39,7 +44,7 @@
 }
 .blockCta__button-secondary {
   --bs-btn-bg: var(--buttonSecondaryColor, var(--bs-secondary));
-  --bs-btn-font-size: var(--xsTextFontSize);
+  --bs-btn-font-size: var(--textFontSize);
   --bs-btn-color: var(--buttonSecondaryLinkColor, var(--bs-button-link-color));
   --bs-btn-border-color: var(--buttonSecondaryLinkColor, var(--bs-button-link-color));
   --bs-btn-hover-bg: var(--buttonSecondaryColor, var(--bs-secondary));
@@ -47,7 +52,7 @@
   --bs-btn-hover-border-color: var(--buttonSecondaryLinkColor, var(--bs-button-link-color));
 }
 .blockCta__button-secondary a {
-  color: var(--buttonSecondaryLinkColor, var(--bs-secondary));
+  color: var(--buttonSecondaryLinkColor, var(--bs-button-link-color));
   padding-left: var(--buttonSecondaryIcon, 0rem);
 }
 .blockCta__button-secondary-icon svg {

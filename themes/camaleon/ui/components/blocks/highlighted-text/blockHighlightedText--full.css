@@ -1,5 +1,5 @@
 .blockHighlightedText--full .boxed {
-  max-width: var(--xsMaxWidth);
+  max-width: var(--maxWidth);
   align-self: center;
 }
 .blockHighlightedText--full .blockHighlightedText--full__highlighted-text {

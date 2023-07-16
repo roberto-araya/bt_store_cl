@@ -1,6 +1,6 @@
 var Camaleon = (function() {
   // Breakpoints
-  const bp = {
+  const breakpoints = {
     xs: '(max-width: 575px)',
     sm: '(min-width: 576px)',
     md: '(min-width: 768px)',
@@ -20,57 +20,23 @@ var Camaleon = (function() {
     PaddingBottom: 'paddingBottom',
     TextAlign: 'textAlign',
     AlignSelf: 'alignSelf',
-    JustifySelf: 'justifySelf'
+    JustifySelf: 'justifySelf',
+    MaxWidth: 'maxWidth',
   };
 
-  const bpKeys = Object.keys(bp);
+  const breakpointsKeys = Object.keys(breakpoints);
   var blocksRegisterCallbacks = [];  
   var camaleon = {};
  
-  camaleon.defaultProperties = function() {
-    return defaultProperties;
-  }
+  camaleon.applyProperties = function(element, breakpoint, custom_properties = {}){
+    let all_properties = {...defaultProperties, ...custom_properties}
+    let properties = Object.keys(all_properties);
 
-  camaleon.applyPropertyToRule = function(element, breakpoint, property, rule){
-    if (getComputedStyle(element).getPropertyValue('--' + breakpoint + property)) {
-      element.style[rule] = 'var(--' + breakpoint + property + ')'
-    }
-  }
-
-  camaleon.applyChildsPropertyToRule = function(element, childPrefix, breakpoint, child, PropertyRule){
-    let properties = Object.keys(PropertyRule);
     properties.forEach((property) => {
-      if (getComputedStyle(element).getPropertyValue('--' + breakpoint + property) && (childElements = element.getElementsByClassName(childPrefix + child))) {
-        Array.from(childElements).forEach((childElement) => {
-          childElement.style[PropertyRule[property]] = 'var(--' + breakpoint + property + ')'
-        })
+      if (getComputedStyle(element).getPropertyValue('--' + breakpoint + property)) {
+        element.style.setProperty('--' + all_properties[property], 'var(--' + breakpoint + property + ')');
       }
     })
-  }
-
-  camaleon.applyWidth = function(element, breakpoint){
-    if (getComputedStyle(element).getPropertyValue('--' + breakpoint + 'MarginRight')) {
-      element.style.setProperty('--marginRight', 'var(--' + breakpoint + 'MarginRight)');
-    }
-
-    if (getComputedStyle(element).getPropertyValue('--' + breakpoint + 'MarginLeft')) {
-      element.style.setProperty('--marginLeft', 'var(--' + breakpoint + 'MarginLeft)');
-    }
-    element.style.width = 'calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)))';
-  }
-
-  camaleon.applyMaxWidth = function(element, breakpoint) {
-    if (getComputedStyle(element).getPropertyValue('--' + breakpoint + 'MaxWidth') && (boxed = element.querySelector('.boxed'))) {
-      boxed.style.maxWidth = 'var(--' + breakpoint + 'MaxWidth)'
-    } else if ((getComputedStyle(element).getPropertyValue('--' + breakpoint + 'MaxWidth'))) {
-      element.style.maxWidth = 'var(--' + breakpoint + 'MaxWidth)'
-    }
-  }
-
-  camaleon.justifyButtons = function(element, breakpoint, childPrefix) {
-    if (getComputedStyle(element).getPropertyValue('--' + breakpoint + 'TextAlign') && (buttons = element.querySelector('.' + childPrefix + '__buttons'))) {
-      buttons.style.justifyContent = 'var(--' + breakpoint + 'TextAlign, center)'
-    }
   }
 
   camaleon.blocksRegister = function(blockType, callback) {
@@ -90,8 +56,8 @@ var Camaleon = (function() {
   }
 
   camaleon.blocksCallback = function() {
-    bpKeys.forEach((breakpoint) => {
-      let mediaQuery = window.matchMedia(bp[breakpoint])
+    breakpointsKeys.forEach((breakpoint) => {
+      let mediaQuery = window.matchMedia(breakpoints[breakpoint])
       if (mediaQuery.matches) {
         blocksRegisterCallbacks.forEach((blockType)=>{
           blockType.callback(blockType.blocks, breakpoint)

@@ -1,11 +1,23 @@
 .blockTextIcon--full .boxed {
-  max-width: var(--xsMaxWidth);
+  --xsIconSize: 100px;
+  --iconSize: var(--xsIconSize);
+  max-width: var(--maxWidth);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+.blockTextIcon--full__content-title {
+  margin-bottom: 0;
+}
+.blockTextIcon--full__caption {
+  padding-bottom: var(--captionFontSize);
+}
+.blockTextIcon--full__text {
+  margin-bottom: var(--captionFontSize);
+}
 .blockTextIcon--full__buttons {
+  margin-bottom: var(--captionFontSize);
   border: 0px;
 }
 .blockTextIcon--full__icon {
@@ -16,10 +28,10 @@
   justify-self: center;
 }
 .blockTextIcon--full__icon .svg-icon {
-  width: 100px;
-  height: 100px;
+  width: var(--iconSize);
+  height: var(--iconSize);
 }
 .blockTextIcon--full__icon svg {
-  width: 100px;
-  height: 100px;
+  width: var(--iconSize);
+  height: var(--iconSize);
 }

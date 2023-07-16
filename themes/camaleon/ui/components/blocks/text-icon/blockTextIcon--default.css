@@ -1,8 +1,23 @@
 .blockTextIcon--default {
-  max-width: var(--xsMaxWidth);
+  --xsIconSize: 100px;
+  --iconSize: var(--xsIconSize);
+  max-width: var(--maxWidth);
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.blockTextIcon--default__content-title {
+  margin-bottom: 0;
+}
+.blockTextIcon--default__caption {
+  padding-bottom: var(--captionFontSize);
+}
+.blockTextIcon--default__text {
+  margin-bottom: var(--captionFontSize);
+}
+.blockTextIcon--default__buttons {
+  margin-bottom: var(--captionFontSize);
+  border: 0px;
 }
 .blockTextIcon--default__icon {
   margin: 1rem;
@@ -12,10 +27,10 @@
   justify-self: center;
 }
 .blockTextIcon--default__icon .svg-icon {
-  width: 100px;
-  height: 100px;
+  width: var(--iconSize);
+  height: var(--iconSize);
 }
 .blockTextIcon--default__icon svg {
-  width: 100px;
-  height: 100px;
+  width: var(--iconSize);
+  height: var(--iconSize);
 }

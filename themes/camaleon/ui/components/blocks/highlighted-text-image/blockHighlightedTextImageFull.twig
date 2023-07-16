@@ -4,8 +4,8 @@
 {%
   set classes = [
     'block',
-    'block' ~ bundle|capitalize,
-    'block' ~ bundle|capitalize ~ '--' ~ view_mode,
+    'blockHighlightedTextImage',
+    'blockHighlightedTextImage--full',
     styles.animation_option == TRUE and styles.animation_trigger == 'on_scroll' ? 'wow' : '',
     styles.animation_option == TRUE ? styles.animation_type : '',
   ]|remove_empty
@@ -14,7 +14,7 @@
 {%
   set title_classes = [
     configuration.label_display == FALSE ? 'visually-hidden',
-    'block' ~ bundle|capitalize ~ '--' ~ view_mode ~ '__block-title',
+    'blockHighlightedTextImage--full__block-title',
   ]
 %}
 
@@ -140,13 +140,13 @@
   ])|remove_empty
 %}
 
-<section {{ attributes.setAttribute('style', styles_vars|join('; ')).setAttribute('id', 'blockHighlightedtTextImage--' ~ id ).addClass(classes) }}>
+<section {{ attributes.setAttribute('style', styles_vars|join('; ')).setAttribute('id', 'blockHighlightedTextImage--' ~ id ).addClass(classes) }}>
   {{title_prefix }}
   <h3{{ title_attributes.addClass(title_classes) }}>{{ label }}</h3>
   {{ title_suffix }}
   <div class="boxed">
   {% block content %}
-    {{ content }}
+    {{ content|without('field_bt_add_image') }}
   {% endblock %}
   </div>
 </section>

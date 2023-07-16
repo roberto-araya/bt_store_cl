@@ -1,14 +1,18 @@
 .blockTitleImage {
   --xsTitleFontSize: 1.8rem;
   --xsCaptionFontSize: 1.2rem;
+  --titleFontSize: var(--xsTitleFontSize);
+  --captionFontSize: var(--xsCaptionFontSize);
+  --maxWidth: var(--xsMaxWidth);
+  width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));
 }
 .blockTitleImage__content-title {
   color: var(--titleColor, var(--defaultPageTitleColor));
   font-family: var(--titleFontFamily, var(--defaultFontFamily));
-  font-size: var(--xsTitleFontSize);
+  font-size: var(--titleFontSize);
 }
 .blockTitleImage__caption {
   color: var(--captionColor, var(--defaultCaptionTextColor));
   font-family: var(--captionFontFamily, var(--defaultFontFamily));
-  font-size: var(--xsCaptionFontSize);
+  font-size: var(--captionFontSize);
 }

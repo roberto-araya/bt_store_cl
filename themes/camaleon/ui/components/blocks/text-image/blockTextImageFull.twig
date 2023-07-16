@@ -1,20 +1,11 @@
 {% set styles = configuration.block_style %}
 {% set style_vars = [] %}
 
-{% if '_' in bundle %}
-  {% set bundle_parts = bundle|split('_') %}
-  {% set bundle_part0 = bundle_parts[0]|capitalize %}
-  {% set bundle_part1 = bundle_parts[1]|capitalize %}
-  {% set bundle = bundle_part0 ~ bundle_part1 %}
-{% else %}
-  {% set bundle = bundle|capitalize %}  
-{% endif %}
-
 {%
   set classes = [
     'block',
-    'block' ~ bundle|capitalize,
-    'block' ~ bundle|capitalize ~ '--' ~ view_mode,
+    'blockTextImage',
+    'blockTextImage--full',
     styles.animation_option == TRUE and styles.animation_trigger == 'on_scroll' ? 'wow' : '',
     styles.animation_option == TRUE ? styles.animation_type : '',
   ]|remove_empty
@@ -23,7 +14,7 @@
 {%
   set title_classes = [
     configuration.label_display == FALSE ? 'visually-hidden',
-    'block' ~ bundle|capitalize ~ '--' ~ view_mode ~ '__block-title',
+    'blockTextImage--full__block-title',
   ]
 %}
 
@@ -73,7 +64,6 @@
     styles.text_xxl_font_size != '' ? '--xxlTextFontSize: ' ~ styles.text_xxl_font_size : '',
 
     content.field_bt_button_icon|render ? '--buttonIcon: calc(1.5rem + var(--buttonIconSize, 24px))',
-    content.field_bt_button_secondary_icon|render ? '--buttonSecondaryIcon: calc(1.5rem + var(--buttonIconSize, 24px))',
     styles.button_color_select != 'default' and styles.button_color_select != 'customColor' ? '--buttonColor: var(--' ~ styles.button_color_select ~ ')',
     styles.button_color_select == 'customColor' ? '--buttonColor: ' ~ styles.button_color_custom,
     styles.button_link_color_select != 'default' and styles.button_link_color_select != 'customColor' ? '--buttonLinkColor: var(--' ~ styles.button_link_color_select ~ ')',
@@ -153,22 +143,26 @@
   ])|remove_empty
 %}
 
-<section {{ attributes.setAttribute('style', style_vars|join('; ')).setAttribute('id', 'blockTextImage--' ~ id ).addClass(classes) }}>
+<section {{ attributes.setAttribute('style', styles_vars|join('; ')).setAttribute('id', 'blockTextImage--' ~ id ).addClass(classes) }}>
   {{title_prefix }}
   <h3{{ title_attributes.addClass(title_classes) }}>{{ label }}</h3>
   {{ title_suffix }}
-  {% block content %}
-    {{ content.field_bt_img}}
-    {{ content.field_bt_content_title }}
-    {{ content.field_bt_epigrafe}}
-    {{ content.field_bt_paragraph}}
-    {% if content.field_bt_link_single.0 is not empty %}
-      <div class="btn btn-lg blockTextImage__button blockTextImage--full__button">
-        {{ content.field_bt_button_icon }}  
-        <div class="btn-link blockTextImage__link blockTextImage--full__link">
-          {{ content.field_bt_link_single.0 }}    
-        </div>  
-      </div>
-  {% endif %}
-  {% endblock %}
+  <div class="boxed">
+    {% block content %}
+      {{ content.field_bt_img}}
+      {{ content.field_bt_content_title }}
+      {{ content.field_bt_epigrafe}}
+      {{ content.field_bt_paragraph}}
+      {% if content.field_bt_link_single.0 is not empty %}
+        <div class="blockTextImage__buttons blockTextImage--full__buttons">
+          <div class="btn btn-lg blockTextImage__button blockTextImage--full__button">
+            {{ content.field_bt_button_icon }}  
+            <div class="btn-link blockTextImage__link blockTextImage--full__link">
+              {{ content.field_bt_link_single.0 }}    
+            </div>  
+          </div>
+        </div>
+      {% endif %}
+    {% endblock %}
+  </div>
 </section>

@@ -3,10 +3,8 @@
   background-size: cover;
 }
 .blockHighlightedTextImage--full .boxed {
-  max-width: var(--xsMaxWidth);
+  max-width: var(--maxWidth);
   align-self: center;
-}
-.blockHighlightedTextImage--full .block__container {
   display: grid;
   grid-template-columns: 100%;
   grid-auto-rows: 1fr auto 80vh;

@@ -1,9 +1,22 @@
 .blockContactInfo {
-  --xsTextFontSize: 1.2rem;
-  font-size: var(--xsTextFontSize);
+  --xsTextFontSize: 1rem;
+  --textFontSize: var(--xsTextFontSize);
+  --maxWidth: var(--xsMaxWidth);
   font-family: var(--textFontFamily, var(--defaultFontFamily));
   color: var(--textColor, var(--bs-block-text-color));
 }
+.blockContactInfo__phones {
+  font-size: var(--textFontSize);
+}
+.blockContactInfo .field--name-contact-info-phone-type {
+  font-size: calc(var(--textFontSize) * 1.1);
+}
 .blockContactInfo__phones a {
   color: var(--linkColor, #BC8927);
+}
+.blockContactInfo__address-label {
+  font-size: calc(var(--textFontSize) * 1.1);
+}
+.blockContactInfo__address {
+  font-size: var(--textFontSize);
 }
