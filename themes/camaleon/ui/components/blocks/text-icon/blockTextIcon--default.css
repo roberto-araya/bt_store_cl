@@ -1,6 +1,5 @@
 .blockTextIcon--default {
-  --xsIconSize: 100px;
-  --iconSize: var(--xsIconSize);
+  --iconSize: var(--xsIconSize, 100px);
   max-width: var(--maxWidth);
   display: flex;
   flex-direction: column;

@@ -1,5 +1,5 @@
 .block.blockSocialProfiles--full {
-  --xsAlignSelf: center;
+  --alignSelf: var(--xsAlignSelf, center);
 }
 
 .blockSocialProfiles--full {

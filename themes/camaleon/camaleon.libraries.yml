@@ -712,6 +712,34 @@ form_commerce_cart:
     component:
       ui/components/forms/formCommerceCart.css: {}
 
+# Moderation State
+form_moderation_state:
+  version: VERSION
+  css:
+    component:
+      ui/components/forms/formModerationState.css: {}
+
+# Layout Builder Add Form
+layout_builder_add_form:
+  version: VERSION
+  css:
+    component:
+      ui/components/forms/formLayoutBuilder--add-block.css: {}
+
+# Layout Builder Actions Form      
+form_layout_builder_actions:
+  version: VERSION
+  css:
+    component:
+      ui/components/forms/formLayoutBuilderActions.css: {}
+
+# Contact Form      
+form_contact:
+  version: VERSION
+  css:
+    component:
+      ui/components/forms/formContact.css: {}
+
 # Fielset.
 fieldset:
   version: VERSION
@@ -831,6 +859,23 @@ menu_main_default:
   dependencies:
     - camaleon/menu_main
 
+menu_main_horizontal:
+  version: VERSION
+  css:
+    component:
+      ui/components/menus/main/menuMain--horizontal.css: {}
+  dependencies:
+    - camaleon/menu_main
+
+menu_main_vertical:
+  version: VERSION
+  css:
+    component:
+      ui/components/menus/main/menuMain--vertical.css: {}
+  dependencies:
+    - camaleon/menu_main
+
+
 menu_main_one:
   version: VERSION
   css:
@@ -866,6 +911,22 @@ menu_footer_default:
   dependencies:
     - camaleon/menu_footer
 
+menu_footer_horizontal:
+  version: VERSION
+  css:
+    component:
+      ui/components/menus/footer/menuFooter--horizontal.css: {}
+  dependencies:
+    - camaleon/menu_footer
+
+menu_footer_vertical:
+  version: VERSION
+  css:
+    component:
+      ui/components/menus/footer/menuFooter--vertical.css: {}
+  dependencies:
+    - camaleon/menu_footer
+
 menu_footer_one:
   version: VERSION
   css:
@@ -898,6 +959,22 @@ menu_normal_default:
   css:
     component:
       ui/components/menus/normal/menuNormal--default.css: {}
+  dependencies:
+    - camaleon/menu_normal
+
+menu_normal_horizontal:
+  version: VERSION
+  css:
+    component:
+      ui/components/menus/normal/menuNormal--horizontal.css: {}
+  dependencies:
+    - camaleon/menu_normal
+
+menu_normal_vertical:
+  version: VERSION
+  css:
+    component:
+      ui/components/menus/normal/menuNormal--vertical.css: {}
   dependencies:
     - camaleon/menu_normal
 
@@ -956,27 +1033,6 @@ status_messages:
   dependencies:
     - camaleon/bs-alert
     - camaleon/bs-close-button
-
-# Moderation State
-form_moderation_state:
-  version: VERSION
-  css:
-    component:
-      ui/components/forms/formModerationState.css: {}
-
-# Layout Builder Actions Form      
-form_layout_builder_actions:
-  version: VERSION
-  css:
-    component:
-      ui/components/forms/formLayoutBuilderActions.css: {}
-
-# Contact Form      
-form_contact:
-  version: VERSION
-  css:
-    component:
-      ui/components/forms/formContact.css: {}
 
 ### PARAGRAPHS
 # quote

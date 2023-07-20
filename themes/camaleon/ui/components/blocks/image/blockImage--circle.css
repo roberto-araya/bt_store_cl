@@ -1,5 +1,5 @@
 .block.blockImage--circle {
-  --xsMaxWidth: 200px;
+  --maxWidth: var(--xsMaxWidth, 200px);
 }
 
 .blockImage--circle {

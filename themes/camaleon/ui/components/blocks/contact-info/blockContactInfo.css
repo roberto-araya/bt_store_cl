@@ -1,7 +1,6 @@
 .blockContactInfo {
-  --xsTextFontSize: 1rem;
-  --textFontSize: var(--xsTextFontSize);
-  --maxWidth: var(--xsMaxWidth);
+  --textFontSize: var(--xsTextFontSize, 1rem);
+  --maxWidth: var(--xsMaxWidth, 85vw);
   font-family: var(--textFontFamily, var(--defaultFontFamily));
   color: var(--textColor, var(--bs-block-text-color));
 }

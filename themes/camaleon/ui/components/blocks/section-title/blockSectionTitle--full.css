@@ -1,5 +1,10 @@
+.blockSectionTitle--full {
+  display: flex;
+  flex-direction: column;
+}
 .blockSectionTitle--full .boxed {
   max-width: var(--maxWidth);
+  align-self: center;
 }
 .blockSectionTitle--full__content-title {
   margin-top: var(--captionFontSize);

@@ -1,8 +1,8 @@
 .block.blockImage {
-  --xsAlignSelf: center;
+  --alignSelf: var(--xsAlignSelf, center) ;
 }
 
 .blockImage {
-  --maxWidth: var(--xsMaxWidth);
+  --maxWidth: var(--xsMaxWidth, 85vw);
   width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));
 }

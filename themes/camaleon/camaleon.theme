@@ -59,6 +59,10 @@ function camaleon_form_alter(&$form, &$form_state, $form_id) {
     }
   }
 
+  if ($form_id == "layout_builder_add_block") {
+    $form['#attached']['library'][] = 'camaleon/layout_builder_add_form';
+  }
+
   if ($form_id == "node_bt_basic_page_layout_builder_form") {
     $form['moderation_state']['#attached']['library'][] = 'camaleon/form_moderation_state';
     $form['moderation_state']['#attributes']['class'][] = 'formModerationState';

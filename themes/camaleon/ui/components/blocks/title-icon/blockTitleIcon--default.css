@@ -1,6 +1,5 @@
 .blockTitleIcon--default {
-  --xsIconSize: 48px;
-  --iconSize: var(--xsIconSize);
+  --iconSize: var(--xsIconSize, 48px);
   max-width: var(--maxWidth);
 }
 .blockTitleIcon--default__content-title {

@@ -8,41 +8,43 @@
 {% endif %}
 
 {% set styles = configuration.block_style %}
+{% set style_vars = [] %}
+
+{% if styles.background_color_select != 'default' and styles.background_color_select != 'customColor' %}
+  {% if styles.background_color_opacity == '1.0' %}
+    {% set style_vars = style_vars|merge(['--backgroundColor: var(--' ~ styles.background_color_select ~ ')']) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--backgroundColor: rgb(var(--' ~ styles.background_color_select ~ '-rgb), ' ~ styles.background_color_opacity ~ ')']) %}
+  {% endif %}  
+{% endif %}
+
+{% if styles.background_color_select == 'customColor' %}
+  {% if styles.background_color_custom_opacity == 'FF' %}
+    {% set style_vars = style_vars|merge(['--backgroundColor: ' ~ styles.background_color_custom]) %}
+  {% else %}
+    {% set style_vars = style_vars|merge(['--backgroundColor: ' ~ styles.background_color_custom ~ styles.background_color_custom_opacity ]) %}
+  {% endif %}  
+{% endif %}
 
 {%
-  set classes = [
-    'block',
-    'block' ~ bundle,
-    'block' ~ bundle ~ '--' ~ view_mode,
-    styles.animation_option == TRUE and styles.animation_trigger == 'on_scroll' ? 'wow' : '',
-    styles.animation_option == TRUE ? styles.animation_type : '',
-  ]
-%}
-
-{%
-  set title_classes = [
-    configuration.label_display == FALSE ? 'visually-hidden',
-    'block' ~ bundle ~ '--' ~ view_mode ~ '__block-title',
-  ]
-%}
-
-{%
-  set style_vars = [
+  set style_vars = style_vars|merge([
     styles.animation_option == TRUE  and styles.animation_duration ? '--animationDuration: ' ~ styles.animation_duration : '',
     styles.animation_option == TRUE  and styles.animation_delay ? '--animationDelay: ' ~ styles.animation_delay : '',
     styles.animation_option == TRUE  and styles.animation_count ? '--animationCount: ' ~ styles.animation_count : '',
     styles.animation_option == TRUE  and styles.animation_function and styles.animation_function != 'default' ? '--animationFunction: ' ~ styles.animation_function : '',
     styles.animation_option == TRUE  and styles.animation_fill and styles.animation_fill != 'default' ? '--animationFill: ' ~ styles.animation_fill : '',
 
-    styles.background_color_select != 'default' and styles.background_color_select != 'customColor' ? '--backgroundColor: var(--' ~ styles.background_color_select ~ ')',
-    styles.background_color_select == 'customColor' ? '--backgroundColor: ' ~ styles.background_color_custom ~ '80',
-
+    styles.xs_max_width != '' ? '--xsMaxWidth: ' ~ styles.xs_max_width : '',
     styles.sm_max_width != '' ? '--smMaxWidth: ' ~ styles.sm_max_width : '',
     styles.md_max_width != '' ? '--mdMaxWidth: ' ~ styles.md_max_width : '',
     styles.lg_max_width != '' ? '--lgMaxWidth: ' ~ styles.lg_max_width : '',
     styles.xl_max_width != '' ? '--xlMaxWidth: ' ~ styles.xl_max_width : '',
     styles.xxl_max_width != '' ? '--xxlMaxWidth: ' ~ styles.xxl_max_width : '',
 
+    styles.xs_margin_left != '' ? '--xsMarginLeft: ' ~ styles.xs_margin_left : '',
+    styles.xs_margin_top != '' ? '--xsMarginTop: ' ~ styles.xs_margin_top : '',
+    styles.xs_margin_right != '' ? '--xsMarginRight: ' ~ styles.xs_margin_right : '',
+    styles.xs_margin_bottom != '' ? '--xsMarginBottom: ' ~ styles.xs_margin_bottom : '',
     styles.sm_margin_left != '' ? '--smMarginLeft: ' ~ styles.sm_margin_left : '',
     styles.sm_margin_top != '' ? '--smMarginTop: ' ~ styles.sm_margin_top : '',
     styles.sm_margin_right != '' ? '--smMarginRight: ' ~ styles.sm_margin_right : '',
@@ -64,6 +66,10 @@
     styles.xxl_margin_right != '' ? '--xxlMarginRight: ' ~ styles.xxl_margin_right : '',
     styles.xxl_margin_bottom != '' ? '--xxlMarginBottom: ' ~ styles.xxl_margin_bottom : '',
 
+    styles.xs_padding_left != '' ? '--xsPaddingLeft: ' ~ styles.xs_padding_left : '',
+    styles.xs_padding_top != '' ? '--xsPaddingTop: ' ~ styles.xs_padding_top : '',
+    styles.xs_padding_right != '' ? '--xsPaddingRight: ' ~ styles.xs_padding_right : '',
+    styles.xs_padding_bottom != '' ? '--xsPaddingBottom: ' ~ styles.xs_padding_bottom : '',
     styles.sm_padding_left != '' ? '--smPaddingLeft: ' ~ styles.sm_padding_left : '',
     styles.sm_padding_top != '' ? '--smPaddingTop: ' ~ styles.sm_padding_top : '',
     styles.sm_padding_right != '' ? '--smPaddingRight: ' ~ styles.sm_padding_right : '',
@@ -85,24 +91,44 @@
     styles.xxl_padding_right != '' ? '--xxlPaddingRight: ' ~ styles.xxl_padding_right : '',
     styles.xxl_padding_bottom != '' ? '--xxlPaddingBottom: ' ~ styles.xxl_padding_bottom : '',
 
+    styles.xs_align != 'default' ? '--xsAlignSelf: ' ~ styles.xs_align : '',
     styles.sm_align != 'default' ? '--smAlignSelf: ' ~ styles.sm_align : '',
     styles.md_align != 'default' ? '--mdAlignSelf: ' ~ styles.md_align : '',
     styles.lg_align != 'default' ? '--lgAlignSelf: ' ~ styles.lg_align : '',
     styles.xl_align != 'default' ? '--xlAlignSelf: ' ~ styles.xl_align : '',
     styles.xxl_align != 'default' ? '--xxlAlignSelf: ' ~ styles.xxl_align : '',
 
+    styles.xs_justify != 'default' ? '--xsJustifySelf: ' ~ styles.xs_justify : '',
     styles.sm_justify != 'default' ? '--smJustifySelf: ' ~ styles.sm_justify : '',
     styles.md_justify != 'default' ? '--mdJustifySelf: ' ~ styles.md_justify : '',
     styles.lg_justify != 'default' ? '--lgJustifySelf: ' ~ styles.lg_justify : '',
     styles.xl_justify != 'default' ? '--xlJustifySelf: ' ~ styles.xl_justify : '',
     styles.xxl_justify != 'default' ? '--xxlJustifySelf: ' ~ styles.xxl_justify : '',
 
+    styles.xs_text_align != 'default' ? '--xsTextAlign: ' ~ styles.xs_text_align : '',
     styles.sm_text_align != 'default' ? '--smTextAlign: ' ~ styles.sm_text_align : '',
     styles.md_text_align != 'default' ? '--mdTextAlign: ' ~ styles.md_text_align : '',
     styles.lg_text_align != 'default' ? '--lgTextAlign: ' ~ styles.lg_text_align : '',
     styles.xl_text_align != 'default' ? '--xlTextAlign: ' ~ styles.xl_text_align : '',
     styles.xxl_text_align != 'default' ? '--xxlTextAlign: ' ~ styles.xxl_text_align : '',
-  ]|remove_empty
+  ])|remove_empty
+%}
+
+{%
+  set classes = [
+    'block',
+    'block' ~ bundle,
+    'block' ~ bundle ~ '--' ~ view_mode,
+    styles.animation_option == TRUE and styles.animation_trigger == 'on_scroll' ? 'wow' : '',
+    styles.animation_option == TRUE ? styles.animation_type : '',
+  ]
+%}
+
+{%
+  set title_classes = [
+    configuration.label_display == FALSE ? 'visually-hidden',
+    'block' ~ bundle ~ '--' ~ view_mode ~ '__block-title',
+  ]
 %}
 
 <section {{ attributes.setAttribute('style', style_vars|join('; ')).setAttribute('id', 'block' ~ bundle ~ '--' ~ id ).addClass(classes) }}>

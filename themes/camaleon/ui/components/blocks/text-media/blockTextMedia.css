@@ -1,4 +1,4 @@
 .blockTextMedia {
-  --maxWidth: var(--xsMaxWidth);
+  --maxWidth: var(--xsMaxWidth, 85vw);
   width: 100%;
 }

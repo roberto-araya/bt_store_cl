@@ -5,17 +5,12 @@
 }
 
 .blockHero {
-  --xsTitleFontSize: 1.8rem;
-  --xsCaptionFontSize: 1.2rem;
-  --xsTextFontSize: 1.2rem;
-  --xsAlignItems: center;
-  --xsJustifyContent: center;
-  --titleFontSize: var(--xsTitleFontSize);
-  --captionFontSize: var(--xsCaptionFontSize);
-  --textFontSize: var(--xsTextFontSize);
-  --alignItems: var(--xsAlignItems);
-  --justifyContent: var(--xsJustifyContent);
-  --maxWidth: var(--xsMaxWidth);
+  --titleFontSize: var(--xsTitleFontSize, 1.8rem);
+  --captionFontSize: var(--xsCaptionFontSize, 1.2rem);
+  --textFontSize: var(--xsTextFontSize, 1.2rem);
+  --alignItems: var(--xsAlignItems, center);
+  --justifyContent: var(--xsJustifyContent, center);
+  --maxWidth: var(--xsMaxWidth, 85vw);
   align-items: var(--alignItems);
   justify-content: var(--justifyContent);
   width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));

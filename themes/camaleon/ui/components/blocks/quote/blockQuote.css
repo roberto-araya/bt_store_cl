@@ -1,11 +1,10 @@
 .block.blockQuote {
-  --xsMaxWidth: max-content;
-  --xsTextAlign: left;
+  --maxWidth: var(--xsMaxWidth, max-content);
+  --textAlign: var(--xsTextAlign, left);
 }
 
 .blockQuote {
-  --xsTextFontSize: 2rem;
-  --textFontSize: var(--xsTextFontSize);
+  --textFontSize: var(--xsTextFontSize, 2rem);
   --maxWidth: var(--xsMaxWidth);
   width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));
 }

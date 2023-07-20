@@ -2,7 +2,7 @@
   menuFooter = function(blocks, breakpoint) {
     let customProperties = {
       TitleFontSize: 'titleFontSize',
-      ItemFontSize: 'ItemFontSize',
+      ItemFontSize: 'itemFontSize',
       ItemPaddingLeft: 'itemPaddingLeft',
       ItemPaddingTop: 'itemPaddingTop',
       ItemPaddingRight: 'itemPaddingRight',
@@ -10,7 +10,7 @@
     }
 
     let i = 0;
-    for (i; i < blocks.lenght; i++) {
+    for (i; i < blocks.length; i++) {
       Camaleon.applyProperties(blocks[i], breakpoint, customProperties)
     }
   }

@@ -1,5 +1,5 @@
 .block.blockImage--small_circle {
-  --xsMaxWidth: 100px;
+  --maxWidth: var(--xsMaxWidth, 100px);
 }
 
 .blockImage--small_circle {

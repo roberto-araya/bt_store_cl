@@ -1,5 +1,5 @@
 .block.blockImage--default {
-  --xsMaxWidth: 100%;
+  --maxWidth: var(--xsMaxWidth, 100%);
 }
 
 .blockImage--default {

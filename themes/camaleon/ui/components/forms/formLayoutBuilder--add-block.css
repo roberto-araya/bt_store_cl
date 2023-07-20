@@ -1,0 +1,92 @@
+#drupal-off-canvas .layout-builder-add-block fieldset {
+  margin: 0;
+  padding: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: var(--bs-gray-800);
+}
+#drupal-off-canvas .layout-builder-add-block fieldset fieldset {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+#drupal-off-canvas .layout-builder-add-block summary {
+  margin: 0.5rem 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#drupal-off-canvas .layout-builder-add-block details details {
+  width: 100%;
+}
+#drupal-off-canvas .layout-builder-add-block details, #drupal-off-canvas .layout-builder-add-block .details-wrapper {
+  margin: 0 0px;
+  padding: 0 20px;
+}
+#drupal-off-canvas .layout-builder-add-block details, #drupal-off-canvas .layout-builder-add-block summary, #drupal-off-canvas .layout-builder-add-block .ui-dialog-content {
+  background-color: var(--bs-gray-900);
+}
+#drupal-off-canvas .layout-builder-add-block details summary {
+  margin: 0.5rem -20px;
+}
+#drupal-off-canvas .layout-builder-add-block .details-wrapper .details-wrapper {
+  background-color: var(--bs-gray-700);
+}
+#drupal-off-canvas .layout-builder-add-block .details-wrapper .details-wrapper .details-wrapper {
+  background-color: var(--bs-gray-600);
+}
+#drupal-off-canvas .layout-builder-add-block details .details-wrapper {
+  padding: 0.5rem 1rem;
+}
+#drupal-off-canvas .layout-builder-add-block summary.card-header {
+  margin-bottom: 0px;
+}
+#drupal-off-canvas .layout-builder-add-block .description {
+  font-size: 0.75rem;
+}
+#drupal-off-canvas .layout-builder-add-block .form-item.js-form-item {
+  margin-bottom: 0.5rem;
+}
+#drupal-off-canvas .layout-builder-add-block .text-full.js-text-full {
+  font-size: 0.75rem;
+}
+#drupal-off-canvas .layout-builder-add-block .form-wrapper.js-form-wrapper {
+  margin-bottom: 0.5rem;
+}
+#drupal-off-canvas .layout-builder-add-block .ui-dialog.ui-dialog-off-canvas .ui-widget-content.ui-dialog-content {
+  background: var(--bs-gray-900);
+}
+#drupal-off-canvas .layout-builder-add-block div.layout-builder__add-block {
+  height: 4rem;
+  align-self: end;
+}
+#drupal-off-canvas .layout-builder-add-block .field--type-svg-icon {
+  border: var(--bs-card-border-width) solid var(--bs-card-border-color);
+  padding: 1rem;
+}
+#drupal-off-canvas .layout-builder-add-block .details-wrapper.card-body {
+  margin: 0 -20px;
+}
+#drupal-off-canvas .layout-builder-add-block .field-multiple-table.table {
+  color: white;
+}
+
+.btn-close, .ui-dialog .ui-dialog-titlebar-close {
+  background: white url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+}
+
+/* Elemento | http://localhost:8000/node/3/layout */
+#field_bt_img-media-library-wrapper-settings-block_form > div:nth-child(2) {
+  padding-top: 0;
+}
+
+/* Elemento | http://localhost:8000/node/3/layout */
+#field_bt_img-media-library-wrapper-settings-block_form > legend:nth-child(1) {
+  margin-bottom: 0.25rem;
+  padding-bottom: 0px;
+  margin-top: 1.5rem;
+  padding-left: 0px;
+}
+
+/* Elemento | http://localhost:8000/node/3/layout */
+tr.draggable:nth-child(1) > td:nth-child(2) {
+  color: white;
+}

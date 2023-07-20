@@ -1,17 +1,14 @@
-.menuFooter--default {
+.menuFooter--vertical {
   min-width: -moz-max-content;
   min-width: max-content;
   list-style: none;
   max-width: var(--maxWidth);
 }
-.menuFooter--default .menuFooter__nav {
-  flex-direction: column;
-}
-.menuFooter--default .menuFooter__item {
+.menuFooter--vertical .menuFooter__item {
   min-width: 105px;
   max-width: 300px;
   width: auto;
 }
-.menuFooter--default .menuFooter__link {
+.menuFooter--vertical .menuFooter__link {
   transition: color 600ms;
 }

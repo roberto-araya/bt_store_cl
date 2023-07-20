@@ -1,10 +1,6 @@
 .block.menuFooter {
   --xsAlignSelf: center;
-  --xsMaxWidth: 90vw;
-  padding-left: 0px;
-  padding-top: 0px;
-  padding-right: 0px;
-  padding-bottom: 0px;
+  --xsMaxWidth: max-content;
 }
 
 .menuFooter {
@@ -29,20 +25,9 @@
   color: var(--titleColor, var(--defaultPageTitleColor));
 }
 .menuFooter__nav {
-  --xsPaddingTop: .5rem;
   gap: var(--gap, 0px);
-  margin-left: var(--marginLeft);
-  margin-top: var(--marginTop);
-  margin-right: var(--marginRight);
-  margin-bottom: var(--marginBottom);
-  padding-left: var(--paddingLeft);
-  padding-top: var(--paddingTop);
-  padding-right: var(--paddingRight);
-  padding-bottom: var(--paddingBottom);
-}
-.menuFooter .nav.flex {
-  flex-direction: column;
-  gap: var(--gap, 0px);
+  max-width: var(--maxWidth);
+  justify-content: var(--justifySelf);
 }
 .menuFooter__link {
   display: block;

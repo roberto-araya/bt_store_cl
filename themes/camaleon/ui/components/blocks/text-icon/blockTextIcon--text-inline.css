@@ -1,6 +1,5 @@
 .blockTextIcon--text_inline {
-  --xsIconSize: 20px;
-  --iconSize: var(--xsIconSize);
+  --iconSize: var(--xsIconSize, 20px);
   max-width: var(--maxWidth);
   display: flex;
   align-items: center;

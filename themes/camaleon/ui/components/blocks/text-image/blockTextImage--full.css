@@ -1,5 +1,5 @@
 .block.blockTextImage--full {
-  --xsMaxWidth: 400px;
+  --maxWidth: var(--xsMaxWidth, 400px);
 }
 
 .blockTextImage--full {

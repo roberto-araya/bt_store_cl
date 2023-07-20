@@ -1,0 +1,24 @@
+.menuMain--horizontal {
+  min-width: 300px;
+  width: 90vw;
+  max-width: var(--maxWidth);
+}
+.menuMain--horizontal .navbar-collapse {
+  width: 100%;
+}
+.menuMain--horizontal .menuMain__item {
+  min-width: 105px;
+  max-width: 300px;
+  width: auto;
+}
+
+@media (min-width: 992px) {
+  .menuMain--default {
+    width: -moz-max-content;
+    width: max-content;
+  }
+  .menuMain--default .navbar-collapse {
+    width: -moz-max-content;
+    width: max-content;
+  }
+}

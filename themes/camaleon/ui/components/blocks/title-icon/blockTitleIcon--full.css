@@ -1,6 +1,5 @@
 .blockTitleIcon--full {
-  --xsIconSize: 48px;
-  --iconSize: var(--xsIconSize);
+  --iconSize: var(--xsIconSize, 48px);
   display: flex;
   flex-direction: column;
   align-items: center;

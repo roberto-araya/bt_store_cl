@@ -1,5 +1,5 @@
 .block.blockHero--default {
-  justify-self: var(--xsAlignSelf);
+  justify-self: var(--xsAlignSelf, stretch);
 }
 
 .blockHero--default {

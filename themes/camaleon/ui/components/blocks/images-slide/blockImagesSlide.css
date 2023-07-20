@@ -1,9 +1,9 @@
 .block.blockImagesSlide {
-  --xsMaxWidth: 100%;
-  --xsAlignSelf: center;
+  --maxWidth: var(--xsMaxWidth, 100%);
+  --alignSelf: var(--xsAlignSelf, center) ;
 }
 
 .blockImagesSlide {
-  --maxWidth: var(--xsMaxWidth);
+  --maxWidth: var(--maxWidth);
   width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));
 }

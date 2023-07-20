@@ -1,7 +1,6 @@
 .blockHighlightedText {
-  --xsTextFontSize: 1.2rem;
-  --textFontSize: var(--xsTextFontSize);
-  --maxWidth: var(--xsMaxWidth);
+  --textFontSize: var(--xsTextFontSize, 1.2rem);
+  --maxWidth: var(--xsMaxWidth, 85vw);
   width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));
 }
 .blockHighlightedText__highlighted-text {

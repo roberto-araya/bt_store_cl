@@ -1,10 +1,4 @@
 .block.menuNormal {
-  --xsAlignSelf: center;
-  --xsMaxWidth: 310px;
-  padding-left: 0px;
-  padding-top: 0px;
-  padding-right: 0px;
-  padding-bottom: 0px;
   align-self: auto;
 }
 
@@ -13,20 +7,15 @@ h2.menuNormal__menu-title {
 }
 
 .menuNormal {
-  --xsTitleFontSize: 1.25rem;
-  --xsItemFontSize: 1rem;
-  --xsItemPaddingLeft: 1rem;
-  --xsItemPaddingTop: 1rem;
-  --xsItemPaddingRight: 1rem;
-  --xsItemPaddingBottom: 1rem;
-  --titleFontSize: var(--xsTitleFontSize);
-  --itemFontSize: var(--xsItemFontSize);
-  --itemPaddingLeft: var(--xsItemPaddingLeft);
-  --itemPaddingTop: var(--xsItemPaddingTop);
-  --itemPaddingRight: var(--xsItemPaddingRight);
-  --itemPaddingBottom: var(--xsItemPaddingBottom);
-  --maxWidth: var(--xsMaxWidth);
+  --titleFontSize: var(--xsTitleFontSize, 1.25rem);
+  --itemFontSize: var(--xsItemFontSize, 1rem);
+  --itemPaddingLeft: var(--xsItemPaddingLeft, 1rem);
+  --itemPaddingTop: var(--xsItemPaddingTop, .25rem);
+  --itemPaddingRight: var(--xsItemPaddingRight, 1rem);
+  --itemPaddingBottom: var(--xsItemPaddingBottom, .25rem);
+  --maxWidth: var(--xsMaxWidth, 90vw);
   width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));
+  max-width: var(--maxWidth);
 }
 .menuNormal__menu-title {
   font-family: var(--titleFontFamily, var(--defaultFontFamily));
@@ -34,12 +23,7 @@ h2.menuNormal__menu-title {
   color: var(--titleColor, var(--defaultPageTitleColor));
 }
 .menuNormal__nav {
-  --xsPaddingTop: 0px;
   gap: var(--gap, 0px);
-  padding-left: var(--paddingLeft);
-  padding-top: var(--paddingTop);
-  padding-right: var(--paddingRight);
-  padding-bottom: var(--paddingBottom);
   max-width: var(--maxWidth);
   justify-content: var(--justifySelf);
 }

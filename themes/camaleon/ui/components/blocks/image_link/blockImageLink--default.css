@@ -1,5 +1,5 @@
 .block.blockImageLink--default {
-  --xsMaxWidth: 320px;
+  --maxWidth: var(--xsMaxWidth, 310px) ;
 }
 
 .blockImageLink--default {

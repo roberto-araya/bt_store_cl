@@ -3,6 +3,9 @@
   min-width: max-content;
   list-style: none;
 }
+.menuNormal--default .menuNormal__nav {
+  flex-direction: column;
+}
 .menuNormal--default .menuNormal__item {
   width: -moz-max-content;
   width: max-content;

@@ -2,7 +2,7 @@
   menuMain = function(blocks, breakpoint) {
     let customProperties = {
       TitleFontSize: 'titleFontSize',
-      ItemFontSize: 'ItemFontSize',
+      ItemFontSize: 'itemFontSize',
       ItemPaddingLeft: 'itemPaddingLeft',
       ItemPaddingTop: 'itemPaddingTop',
       ItemPaddingRight: 'itemPaddingRight',

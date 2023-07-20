@@ -1,5 +1,8 @@
+.block.blockImage--full {
+  --maxWidth: var(--xsMaxWidth, 100%);
+}
+
 .blockImage--full {
-  --xsMaxWidth: 100%;
   display: flex;
   justify-content: center;
 }

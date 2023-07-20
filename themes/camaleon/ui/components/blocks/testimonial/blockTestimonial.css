@@ -1,9 +1,7 @@
 .blockTestimonial {
-  --xsTitleFontSize: 1.8rem;
-  --xsTextFontSize: 1.2rem;
-  --titleFontSize: var(--xsTitleFontSize);
-  --textFontSize: var(--xsTextFontSize);
-  --maxWidth: var(--xsMaxWidth);
+  --titleFontSize: var(--xsTitleFontSize, 1.8rem);
+  --textFontSize: var(--xsTextFontSize, 1.2rem);
+  --maxWidth: var(--xsMaxWidth, 85vw);
   width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));
 }
 .blockTestimonial__content-title {
