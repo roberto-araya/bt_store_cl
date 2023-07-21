@@ -59,8 +59,12 @@ function camaleon_form_alter(&$form, &$form_state, $form_id) {
     }
   }
 
-  if ($form_id == "layout_builder_add_block") {
+  if ($form_id == "layout_builder_add_block" || $form_id == 'layout_builder_update_block') {
     $form['#attached']['library'][] = 'camaleon/layout_builder_add_form';
+  }
+
+  if (in_array('layout-builder-form', $form['#attributes']['class'])) {
+    $form['#attached']['library'][] = 'camaleon/layout_builder_form';
   }
 
   if ($form_id == "node_bt_basic_page_layout_builder_form") {

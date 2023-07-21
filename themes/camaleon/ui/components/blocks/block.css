@@ -1,4 +1,4 @@
-.block {
+.block, .view {
   --alignSelf: var(--xsAlignSelf, stretch);
   --justifySelf:var(--xsJustifySelf, center);
   --textAlign:var(--xsTextAlign, center);

@@ -1,71 +1,67 @@
-#drupal-off-canvas .layout-builder-add-block fieldset {
+#drupal-off-canvas .layout-builder-configure-block fieldset {
   margin: 0;
   padding: 0;
   padding-left: 20px;
   padding-right: 20px;
   background-color: var(--bs-gray-800);
 }
-#drupal-off-canvas .layout-builder-add-block fieldset fieldset {
+#drupal-off-canvas .layout-builder-configure-block fieldset fieldset {
   padding-left: 0px;
   padding-right: 0px;
 }
-#drupal-off-canvas .layout-builder-add-block summary {
+#drupal-off-canvas .layout-builder-configure-block summary {
   margin: 0.5rem 0px;
   padding-top: 10px;
   padding-bottom: 10px;
 }
-#drupal-off-canvas .layout-builder-add-block details details {
+#drupal-off-canvas .layout-builder-configure-block details details {
   width: 100%;
 }
-#drupal-off-canvas .layout-builder-add-block details, #drupal-off-canvas .layout-builder-add-block .details-wrapper {
+#drupal-off-canvas .layout-builder-configure-block details, #drupal-off-canvas .layout-builder-configure-block .details-wrapper {
   margin: 0 0px;
   padding: 0 20px;
 }
-#drupal-off-canvas .layout-builder-add-block details, #drupal-off-canvas .layout-builder-add-block summary, #drupal-off-canvas .layout-builder-add-block .ui-dialog-content {
+#drupal-off-canvas .layout-builder-configure-block details, #drupal-off-canvas .layout-builder-configure-block summary, #drupal-off-canvas .layout-builder-configure-block .ui-dialog-content {
   background-color: var(--bs-gray-900);
 }
-#drupal-off-canvas .layout-builder-add-block details summary {
+#drupal-off-canvas .layout-builder-configure-block details summary {
   margin: 0.5rem -20px;
 }
-#drupal-off-canvas .layout-builder-add-block .details-wrapper .details-wrapper {
+#drupal-off-canvas .layout-builder-configure-block .details-wrapper .details-wrapper {
   background-color: var(--bs-gray-700);
 }
-#drupal-off-canvas .layout-builder-add-block .details-wrapper .details-wrapper .details-wrapper {
+#drupal-off-canvas .layout-builder-configure-block .details-wrapper .details-wrapper .details-wrapper {
   background-color: var(--bs-gray-600);
 }
-#drupal-off-canvas .layout-builder-add-block details .details-wrapper {
+#drupal-off-canvas .layout-builder-configure-block details .details-wrapper {
   padding: 0.5rem 1rem;
 }
-#drupal-off-canvas .layout-builder-add-block summary.card-header {
+#drupal-off-canvas .layout-builder-configure-block summary.card-header {
   margin-bottom: 0px;
 }
-#drupal-off-canvas .layout-builder-add-block .description {
+#drupal-off-canvas .layout-builder-configure-block .description {
   font-size: 0.75rem;
 }
-#drupal-off-canvas .layout-builder-add-block .form-item.js-form-item {
+#drupal-off-canvas .layout-builder-configure-block .form-item.js-form-item {
   margin-bottom: 0.5rem;
 }
-#drupal-off-canvas .layout-builder-add-block .text-full.js-text-full {
+#drupal-off-canvas .layout-builder-configure-block .text-full.js-text-full {
   font-size: 0.75rem;
 }
-#drupal-off-canvas .layout-builder-add-block .form-wrapper.js-form-wrapper {
+#drupal-off-canvas .layout-builder-configure-block .form-wrapper.js-form-wrapper {
   margin-bottom: 0.5rem;
 }
-#drupal-off-canvas .layout-builder-add-block .ui-dialog.ui-dialog-off-canvas .ui-widget-content.ui-dialog-content {
+#drupal-off-canvas .layout-builder-configure-block .ui-dialog.ui-dialog-off-canvas .ui-widget-content.ui-dialog-content {
   background: var(--bs-gray-900);
 }
-#drupal-off-canvas .layout-builder-add-block div.layout-builder__add-block {
-  height: 4rem;
-  align-self: end;
-}
-#drupal-off-canvas .layout-builder-add-block .field--type-svg-icon {
+#drupal-off-canvas .layout-builder-configure-block .field--type-svg-icon {
   border: var(--bs-card-border-width) solid var(--bs-card-border-color);
   padding: 1rem;
 }
-#drupal-off-canvas .layout-builder-add-block .details-wrapper.card-body {
+#drupal-off-canvas .layout-builder-configure-block .details-wrapper.card-body {
   margin: 0 -20px;
 }
-#drupal-off-canvas .layout-builder-add-block .field-multiple-table.table {
+#drupal-off-canvas .layout-builder-configure-block .field-multiple-table.table {
   color: white;
 }
 

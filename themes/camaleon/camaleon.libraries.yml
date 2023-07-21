@@ -719,6 +719,13 @@ form_moderation_state:
     component:
       ui/components/forms/formModerationState.css: {}
 
+# Layout Builder
+layout_builder_form:
+  version: VERSION
+  css:
+    component:
+      ui/components/forms/formLayoutBuilder.css: {}
+
 # Layout Builder Add Form
 layout_builder_add_form:
   version: VERSION

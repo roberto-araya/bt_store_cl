@@ -5,3 +5,8 @@
 .layout-builder-block {
   background-color: transparent;
 }
+
+.layout-builder__region .layout-builder__add-block {
+  max-height: 90px;
+  align-self: end;
+}
