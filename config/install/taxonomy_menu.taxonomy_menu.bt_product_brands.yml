@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.bt-product-brands
+    - taxonomy.vocabulary.bt_product_brand
+id: bt_product_brands
+label: 'Product Brands'
+vocabulary: bt_product_brand
+menu: bt-product-brands
+expanded: false
+depth: 0
+menu_parent: 'admin:'
+description_field_name: ''
+use_term_weight_order: true

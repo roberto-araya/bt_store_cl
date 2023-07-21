@@ -2,14 +2,13 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.bt_product_categories.layout_builder__layout
-    - system.menu.bt-product-categories
-    - taxonomy.vocabulary.bt_product_categories
+    - field.field.taxonomy_term.bt_product_brand.layout_builder__layout
+    - system.menu.bt-product-brands
+    - taxonomy.vocabulary.bt_product_brand
     - views.view.bt_products
   module:
     - bt_layouts
     - layout_builder
-    - layout_builder_restrictions
     - layout_discovery
     - layout_library
     - system
@@ -25,11 +24,11 @@ third_party_settings:
         layout_settings:
           label: ''
         components:
-          603a0ea7-f33c-454e-8b54-0ea3a3e25a32:
-            uuid: 603a0ea7-f33c-454e-8b54-0ea3a3e25a32
+          75edc2d2-a0a4-45c4-be8a-d45ace92d382:
+            uuid: 75edc2d2-a0a4-45c4-be8a-d45ace92d382
             region: content
             configuration:
-              id: 'field_block:taxonomy_term:bt_product_categories:description'
+              id: 'field_block:taxonomy_term:bt_product_brand:description'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
@@ -79,54 +78,35 @@ third_party_settings:
           xxl_box_select: 100%
           xxl_padding_top: pt-xxl-3
           xxl_padding_bottom: pb-xxl-3
-          gap: gap-1
+          gap: none
           sm_gap: gap-sm-1
           md_gap: gap-md-1
           lg_gap: gap-lg-1
           xl_gap: gap-xl-3
           xxl_gap: gap-xxl-3
-          sm_sm_box_select: 100%
-          sm_sm_padding_top: none
-          sm_sm_padding_bottom: none
-          md_sm_box_select: 100%
-          md_sm_padding_top: none
-          md_sm_padding_bottom: none
-          lg_sm_box_select: 100%
-          lg_sm_padding_top: none
-          lg_sm_padding_bottom: none
-          xl_sm_box_select: 100%
-          xl_sm_padding_top: none
-          xl_sm_padding_bottom: none
-          xxl_sm_box_select: 100%
-          xxl_sm_padding_top: none
-          xxl_sm_padding_bottom: none
-          container_type: box
           hide_label: 1
           label_color: default
           label_custom_color: '#000000'
           background_custom_color: '#000000'
+          height: ''
+          sm_height: null
+          md_height: null
+          lg_height: null
+          xl_height: null
+          xxl_height: null
+          order: default
+          sm_order: default
+          md_order: default
+          lg_order: default
+          xl_order: default
+          xxl_order: default
           columns_size: 75-25
         components:
-          44ddc6b0-df67-4825-9b3d-b6f5d6575415:
-            uuid: 44ddc6b0-df67-4825-9b3d-b6f5d6575415
-            region: twoColumns__right
-            configuration:
-              id: 'system_menu_block:bt-product-categories'
-              label: Categorías
-              label_display: visible
-              provider: system
-              context_mapping: {  }
-              level: 1
-              depth: 0
-              expand_all_items: false
-            weight: 1
-            additional: {  }
-            third_party_settings: {  }
-          a10651e2-8718-46ce-b9b4-8546063ab883:
-            uuid: a10651e2-8718-46ce-b9b4-8546063ab883
+          95038cef-aa5b-4838-8096-506e8da32db4:
+            uuid: 95038cef-aa5b-4838-8096-506e8da32db4
             region: twoColumns__left
             configuration:
-              id: 'views_block:bt_products-category_filter'
+              id: 'views_block:bt_products-brand_filter'
               label: ''
               label_display: '0'
               provider: views
@@ -163,19 +143,66 @@ third_party_settings:
                 xxl_align: default
                 xxl_justify: default
                 xxl_text_align: default
+          0a996bdd-2264-45f1-a0a1-314ba8310945:
+            uuid: 0a996bdd-2264-45f1-a0a1-314ba8310945
+            region: twoColumns__right
+            configuration:
+              id: 'system_menu_block:bt-product-brands'
+              label: Marcas
+              label_display: visible
+              provider: system
+              context_mapping: {  }
+              level: 1
+              depth: 0
+              expand_all_items: false
+            weight: 0
+            additional: {  }
+            third_party_settings:
+              bt_cbc:
+                title_color_select: default
+                title_color_custom: '#000000'
+                title_font_family: default
+                type: default
+                item_color_select: default
+                item_color_custom: '#000000'
+                item_hover_color_select: default
+                item_hover_color_custom: '#000000'
+                item_background_color_select: default
+                item_background_color_custom: '#000000'
+                item_background_hover_color_select: default
+                item_background_hover_color_custom: '#000000'
+                background_color_select: default
+                background_color_custom: '#000000'
+                background_color_opacity: '1.00'
+                background_color_custom_opacity: FF
+                animation_trigger: on_page_load
+                animation_type: bounce
+                animation_function: default
+                animation_fill: default
+                xs_align: default
+                xs_justify: default
+                xs_text_align: default
+                sm_align: default
+                sm_justify: default
+                sm_text_align: default
+                md_align: default
+                md_justify: default
+                md_text_align: default
+                lg_align: default
+                lg_justify: default
+                lg_text_align: default
+                xl_align: default
+                xl_justify: default
+                xl_text_align: default
+                xxl_align: default
+                xxl_justify: default
+                xxl_text_align: default
         third_party_settings: {  }
   layout_library:
     enable: false
-  layout_builder_restrictions:
-    allowed_block_categories: {  }
-    entity_view_mode_restriction:
-      allowed_layouts: {  }
-      denylisted_blocks: {  }
-      allowlisted_blocks: {  }
-      restricted_categories: {  }
-id: taxonomy_term.bt_product_categories.default
+id: taxonomy_term.bt_product_brand.default
 targetEntityType: taxonomy_term
-bundle: bt_product_categories
+bundle: bt_product_brand
 mode: default
 content:
   description:
@@ -188,4 +215,3 @@ content:
 hidden:
   langcode: true
   layout_builder__layout: true
-  search_api_excerpt: true

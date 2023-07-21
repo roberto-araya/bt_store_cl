@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: bt-product-brands
+label: 'Product Brands'
+description: 'Product Brands'
+locked: false
