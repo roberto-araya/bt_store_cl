@@ -7,6 +7,7 @@ dependencies:
     - field.field.commerce_product.default.field_bt_brand
     - field.field.commerce_product.default.field_bt_category
     - field.field.commerce_product.default.field_bt_image
+    - field.field.commerce_product.default.field_bt_product_gallery
     - field.field.commerce_product.default.layout_builder__layout
     - system.menu.bt-product-categories
   module:
@@ -37,56 +38,56 @@ third_party_settings:
           padding_bottom: pb-1
           sm_container_select: full
           sm_full_select: '0'
-          sm_sm_box_select: 100%
-          sm_sm_padding_top: none
-          sm_sm_padding_bottom: none
+          sm_box_select: 100%
+          sm_padding_top: pt-sm-1
+          sm_padding_bottom: pb-sm-1
           md_container_select: full
           md_full_select: '0'
-          md_sm_box_select: 100%
-          md_sm_padding_top: none
-          md_sm_padding_bottom: none
+          md_box_select: 100%
+          md_padding_top: pt-md-1
+          md_padding_bottom: pb-md-1
           lg_container_select: full
           lg_full_select: 5%
-          lg_sm_box_select: 100%
-          lg_sm_padding_top: none
-          lg_sm_padding_bottom: none
+          lg_box_select: 100%
+          lg_padding_top: pt-lg-2
+          lg_padding_bottom: pb-lg-2
           xl_container_select: full
           xl_full_select: 10%
-          xl_sm_box_select: 100%
-          xl_sm_padding_top: none
-          xl_sm_padding_bottom: none
+          xl_box_select: 100%
+          xl_padding_top: pt-xl-3
+          xl_padding_bottom: pb-xl-3
           xxl_container_select: full
           xxl_full_select: 10%
-          xxl_sm_box_select: 100%
-          xxl_sm_padding_top: none
-          xxl_sm_padding_bottom: none
+          xxl_box_select: 100%
+          xxl_padding_top: pt-xxl-3
+          xxl_padding_bottom: pb-xxl-3
           gap: gap-3
           sm_gap: gap-sm-1
           md_gap: gap-md-1
           lg_gap: gap-lg-2
           xl_gap: gap-xl-3
           xxl_gap: gap-xxl-3
+          sm_sm_box_select: 100%
+          sm_sm_padding_top: none
+          sm_sm_padding_bottom: none
+          md_sm_box_select: 100%
+          md_sm_padding_top: none
+          md_sm_padding_bottom: none
+          lg_sm_box_select: 100%
+          lg_sm_padding_top: none
+          lg_sm_padding_bottom: none
+          xl_sm_box_select: 100%
+          xl_sm_padding_top: none
+          xl_sm_padding_bottom: none
+          xxl_sm_box_select: 100%
+          xxl_sm_padding_top: none
+          xxl_sm_padding_bottom: none
           container_type: box
           hide_label: 1
           label_color: default
           label_custom_color: '#000000'
           background_custom_color: '#000000'
           columns_size: 70-30
-          sm_box_select: 100%
-          sm_padding_top: pt-sm-1
-          sm_padding_bottom: pb-sm-1
-          md_box_select: 100%
-          md_padding_top: pt-md-1
-          md_padding_bottom: pb-md-1
-          lg_box_select: 100%
-          lg_padding_top: pt-lg-2
-          lg_padding_bottom: pb-lg-2
-          xl_box_select: 100%
-          xl_padding_top: pt-xl-3
-          xl_padding_bottom: pb-xl-3
-          xxl_box_select: 100%
-          xxl_padding_top: pt-xxl-3
-          xxl_padding_bottom: pb-xxl-3
         components:
           ebe48730-7a27-416f-9ceb-c96188423207:
             uuid: ebe48730-7a27-416f-9ceb-c96188423207
@@ -117,6 +118,59 @@ third_party_settings:
             weight: 0
             additional: {  }
             third_party_settings: {  }
+          198bf761-5e99-443c-b62c-2fbf3c5e6ab1:
+            uuid: 198bf761-5e99-443c-b62c-2fbf3c5e6ab1
+            region: twoColumns__left
+            configuration:
+              id: 'field_block:commerce_product:default:field_bt_product_gallery'
+              label: Gallery
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: photoswipe_field_formatter
+                label: hidden
+                settings:
+                  photoswipe_node_style_first: bt_square_200x200
+                  photoswipe_node_style: bt_square_100x100
+                  photoswipe_image_style: ''
+                  photoswipe_reference_image_field: field_bt_image
+                  photoswipe_caption: alt
+                  photoswipe_caption_custom: ''
+                  photoswipe_view_mode: _custom
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+            third_party_settings:
+              bt_cbc:
+                background_color_select: default
+                background_color_custom: '#000000'
+                background_color_opacity: '1.00'
+                background_color_custom_opacity: FF
+                animation_trigger: on_page_load
+                animation_type: bounce
+                animation_function: default
+                animation_fill: default
+                xs_align: default
+                xs_justify: default
+                xs_text_align: default
+                sm_align: default
+                sm_justify: default
+                sm_text_align: default
+                md_align: default
+                md_justify: default
+                md_text_align: default
+                lg_align: default
+                lg_justify: default
+                lg_text_align: default
+                xl_align: default
+                xl_justify: default
+                xl_text_align: default
+                xxl_align: default
+                xxl_justify: default
+                xxl_text_align: default
         third_party_settings: {  }
   layout_library:
     enable: false
@@ -175,6 +229,7 @@ content:
 hidden:
   created: true
   field_bt_brand: true
+  field_bt_product_gallery: true
   langcode: true
   layout_builder__layout: true
   search_api_excerpt: true
