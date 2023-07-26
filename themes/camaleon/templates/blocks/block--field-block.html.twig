@@ -25,6 +25,8 @@
  * @see template_preprocess_block()
  */
 #}
+{{ attach_library('camaleon/block_field_block') }}
+
 {% include "@Components/blocks/block--field-block.twig" with {
   'bundle': bundle,
   'view_mode': view_mode,

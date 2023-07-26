@@ -839,6 +839,11 @@ comments:
       ui/components/comments/comments.css: {}
 
 ### SYSTEM BLOCKS
+block_field_block:
+  version: VERSION
+  js:
+    ui/components/blocks/blockFieldBlock.js: {}
+
 ## Menus
 # Default
 menu:

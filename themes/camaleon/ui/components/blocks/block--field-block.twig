@@ -148,7 +148,7 @@
   ]
 %}
 
-<div{{ attributes.addClass(classes) }}>
+<div{{ attributes.setAttribute('style', style_vars|join('; ')).setAttribute('id', 'blockFieldBlock--' ~ id ).addClass(classes) }}>
   {{ title_prefix }}
   {% if label %}
     <h3{{ title_attributes.addClass(title_classes) }}>{{ label }}</h3>
