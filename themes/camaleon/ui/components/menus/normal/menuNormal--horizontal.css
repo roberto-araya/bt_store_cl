@@ -1,7 +1,14 @@
+.block.menuNormal--horizontal {
+  --xsMaxWidth: 65vw;
+}
+
 .menuNormal--horizontal {
   min-width: -moz-max-content;
   min-width: max-content;
   list-style: none;
+}
+.menuNormal--horizontal .menuNormal--nav {
+  flex-wrap: wrap;
 }
 .menuNormal--horizontal .menuNormal__item {
   width: -moz-max-content;

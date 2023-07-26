@@ -1,8 +1,15 @@
+.block.menuFooter--horizontal {
+  --xsMaxWidth: 65vw;
+}
+
 .menuFooter--horizontal {
   min-width: -moz-max-content;
   min-width: max-content;
   list-style: none;
   max-width: var(--maxWidth);
+}
+.menuFooter--horizontal .menuFooter--nav {
+  flex-wrap: wrap;
 }
 .menuFooter--horizontal .menuFooter__item {
   min-width: 105px;
