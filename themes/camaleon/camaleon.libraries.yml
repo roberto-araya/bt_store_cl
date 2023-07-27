@@ -747,6 +747,21 @@ form_contact:
     component:
       ui/components/forms/formContact.css: {}
 
+# FIELDS
+fields:
+  version: VERSION
+  css:
+    component:
+      ui/components/fields/fields.css: {}
+
+commerce_product_gallery:
+  version: VERSION
+  css:
+    component:
+      ui/components/fields/commerceProductGallery.css: {}
+  dependencies:
+    - camaleon/fields
+
 # Fielset.
 fieldset:
   version: VERSION

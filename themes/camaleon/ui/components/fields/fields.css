@@ -1,0 +1,12 @@
+.field__label {
+  font-weight: bold;
+}
+
+.field--label-inline .field__label,
+.field--label-inline .field__item {
+  display: inline;
+}
+
+.field--label-inline > .field__label:after {
+  content: ": ";
+}

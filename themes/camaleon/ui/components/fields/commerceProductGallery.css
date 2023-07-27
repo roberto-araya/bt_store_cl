@@ -1,0 +1,6 @@
+.field--name-product-gallery {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  max-width: 80vw;
+}
