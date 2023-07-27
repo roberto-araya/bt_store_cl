@@ -1,0 +1,14 @@
+.blockfieldBlock {
+  --alignSelf: var(--xsAlignSelf, flex-start);
+  --justifySelf:var(--xsJustifySelf, flex-start);
+  --textAlign:var(--xsTextAlign, left);
+  --maxWidth: var(--xsMaxWidth, 80vw);
+  --marginLeft:var(--xsMarginLeft, 0);
+  --marginTop: var(--xsMarginTop, 0);
+  --marginRight: var(--xsMarginRight, 0);
+  --marginBottom: var(--xsMarginBottom, 0);
+  --paddingLeft: var(--xsPaddingLeft, 0);
+  --paddingTop: var(--xsPaddingTop, 0);
+  --paddingRight: var(--xsPaddingRight, 0);
+  --paddingBottom: var(--xsPaddingBottom, 0);
+}

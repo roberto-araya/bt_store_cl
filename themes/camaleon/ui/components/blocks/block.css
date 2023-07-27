@@ -10,7 +10,7 @@
   --paddingLeft: var(--xsPaddingLeft, 1rem);
   --paddingTop: var(--xsPaddingTop, 1rem);
   --paddingRight: var(--xsPaddingRight, 1rem);
-  --paddingBottom: var(--xsPaddingBottom), 1rem;
+  --paddingBottom: var(--xsPaddingBottom, 1rem);
   margin-left: var(--marginLeft);
   margin-top: var(--marginTop);
   margin-right: var(--marginRight);

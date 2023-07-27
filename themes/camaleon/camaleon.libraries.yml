@@ -856,6 +856,9 @@ comments:
 ### SYSTEM BLOCKS
 block_field_block:
   version: VERSION
+  css:
+    component:
+      ui/components/blocks/blockFieldBlock.css: {}
   js:
     ui/components/blocks/blockFieldBlock.js: {}
 
