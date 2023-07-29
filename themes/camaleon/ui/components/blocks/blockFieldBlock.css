@@ -1,4 +1,4 @@
-.blockfieldBlock {
+.block.blockFieldBlock {
   --alignSelf: var(--xsAlignSelf, flex-start);
   --justifySelf:var(--xsJustifySelf, flex-start);
   --textAlign:var(--xsTextAlign, left);

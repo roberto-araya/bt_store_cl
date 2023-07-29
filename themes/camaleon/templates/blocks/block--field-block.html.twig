@@ -27,6 +27,10 @@
 #}
 {{ attach_library('camaleon/block_field_block') }}
 
+{% if configuration.block_style.animation_option == TRUE %}
+  {{ attach_library('camaleon/' ~ configuration.block_style.animation_type) }}
+{% endif %}
+
 {% include "@Components/blocks/block--field-block.twig" with {
   'bundle': bundle,
   'view_mode': view_mode,
