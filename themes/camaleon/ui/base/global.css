@@ -13378,12 +13378,6 @@ body {
   margin-top: 1rem;
 }
 
-#block-camaleon-page-title {
-  text-align: center;
-  margin-top: 4rem;
-  margin-bottom: 2rem;
-}
-
 #block-camaleon-help {
   font-size: 0.6rem;
   margin: 1rem;
@@ -13429,25 +13423,6 @@ body {
     align-items: end;
   }
 }
-.page-title {
-  font-size: calc(1.725rem + 5.7vw);
-  text-align: center;
-  font-family: var(--defaultFontFamily);
-  color: var(--defaultPageTitleColor);
-  text-shadow: 2px 2px var(--defaultPageShadowTitleColor);
-}
-@media (min-width: 1200px) {
-  .page-title {
-    font-size: 6rem;
-  }
-}
-
-@media screen and (min-width: 1536px) {
-  .page-title {
-    font-size: 8rem;
-    text-shadow: 5px 5px var(--defaultPageShadowTitleColor);
-  }
-}
 [class$=__section-title] {
   font-size: calc(1.525rem + 3.3vw);
   text-align: center;
@@ -13469,4 +13444,8 @@ footer {
   padding: 0 0;
   height: -moz-max-content;
   height: max-content;
+}
+
+.commerce-order-item-add-to-cart-form .form-actions {
+  margin-top: 0.5rem;
 }

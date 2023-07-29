@@ -1,0 +1,12 @@
+.blockPageTitle {
+  --titleFontSize: var(--xsTitleFontSize, 1.8rem);
+  --captionFontSize: var(--xsCaptionFontSize, 1.2rem);
+  --textFontSize: var(--xsTextFontSize, 1.2rem);
+  --maxWidth: var(--xsMaxWidth, 85vw);
+  width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));
+}
+.blockPageTitle__content-title {
+  font-family: var(--titleFontFamily, var(--defaultFontFamily));
+  font-size: var(--titleFontSize);
+  color: var(--titleColor, var(--defaultPageTitleColor));
+}

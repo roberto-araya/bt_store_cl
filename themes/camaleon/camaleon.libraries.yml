@@ -854,6 +854,14 @@ comments:
       ui/components/comments/comments.css: {}
 
 ### SYSTEM BLOCKS
+block_page_title:
+  version: VERSION
+  css:
+    component:
+      ui/components/page-title/blockPageTitle.css: {}
+  js:
+    ui/components/page-title/blockPageTitle.js: {}
+
 block_field_block:
   version: VERSION
   css:
@@ -904,7 +912,6 @@ menu_main_vertical:
       ui/components/menus/main/menuMain--vertical.css: {}
   dependencies:
     - camaleon/menu_main
-
 
 menu_main_one:
   version: VERSION
