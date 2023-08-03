@@ -10,6 +10,33 @@ function _block_suggestions(&$suggestions, $variables) {
   // Add theme suggestion 'block__[block_type]_[view_mode]'
   // to every block_content.
   $plugin_id = $variables['elements']['#base_plugin_id'];
+  
+  if ($plugin_id == 'field_block') {
+    $field_name = $variables['elements']['content']['#field_name'];
+    if ( $field_name == 'title') {
+      $s1 = array_shift($suggestions);
+      $s2 = array_shift($suggestions);
+      array_unshift($suggestions, "block__field_block__title");
+      array_unshift($suggestions, $s2);
+      array_unshift($suggestions, $s1);
+    }
+    if ($field_name == 'field_bt_title_foot') {
+      $s1 = array_shift($suggestions);
+      $s2 = array_shift($suggestions);
+      array_unshift($suggestions, "block__field_block__caption");
+      array_unshift($suggestions, $s2);
+      array_unshift($suggestions, $s1);
+    }
+
+    if ($field_name == 'field_bt_intro') {
+      $s1 = array_shift($suggestions);
+      $s2 = array_shift($suggestions);
+      array_unshift($suggestions, "block__field_block__intro");
+      array_unshift($suggestions, $s2);
+      array_unshift($suggestions, $s1);
+    }
+  }
+
   if ($plugin_id == 'block_content' || $plugin_id == 'inline_block') {
     if (strpos($variables['elements']['content']['#block_content']->bundle(), 'bt_cb_') === 0) {
       $bundle = substr($variables['elements']['content']['#block_content']->bundle(), 6);

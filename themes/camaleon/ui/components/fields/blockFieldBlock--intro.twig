@@ -45,16 +45,16 @@
 {% endif %}
 
 {%
-  set styles_vars = style_vars|merge([
-    styles.text_color_select != 'default' and styles.text_color_select != 'customColor' ? '--textColor: var(--' ~ styles.text_color_select ~ ')',
-    styles.text_color_select == 'customColor' ? '--textColor: ' ~ styles.text_color_custom,
-    styles.text_font_family != 'default' ? '--textFontFamily: ' ~ styles.text_font_family|replace({'-': " "}) : '',
-    styles.text_xs_font_size != '' ? '--xsTextFontSize: ' ~ styles.text_xs_font_size : '',
-    styles.text_sm_font_size != '' ? '--smTextFontSize: ' ~ styles.text_sm_font_size : '',
-    styles.text_md_font_size != '' ? '--mdTextFontSize: ' ~ styles.text_md_font_size : '',
-    styles.text_lg_font_size != '' ? '--lgTextFontSize: ' ~ styles.text_lg_font_size : '',
-    styles.text_xl_font_size != '' ? '--xlTextFontSize: ' ~ styles.text_xl_font_size : '',
-    styles.text_xxl_font_size != '' ? '--xxlTextFontSize: ' ~ styles.text_xxl_font_size : '',
+  set style_vars = style_vars|merge([
+    styles.text_color_select != 'default' and styles.text_color_select != 'customColor' ? '--introColor: var(--' ~ styles.text_color_select ~ ')',
+    styles.text_color_select == 'customColor' ? '--introColor: ' ~ styles.text_color_custom,
+    styles.text_font_family != 'default' ? '--introFontFamily: ' ~ styles.text_font_family|replace({'-': " "}) : '',
+    styles.text_xs_font_size != '' ? '--xsIntroFontSize: ' ~ styles.text_xs_font_size : '',
+    styles.text_sm_font_size != '' ? '--smIntroFontSize: ' ~ styles.text_sm_font_size : '',
+    styles.text_md_font_size != '' ? '--mdIntroFontSize: ' ~ styles.text_md_font_size : '',
+    styles.text_lg_font_size != '' ? '--lgIntroFontSize: ' ~ styles.text_lg_font_size : '',
+    styles.text_xl_font_size != '' ? '--xlIntroFontSize: ' ~ styles.text_xl_font_size : '',
+    styles.text_xxl_font_size != '' ? '--xxlIntroFontSize: ' ~ styles.text_xxl_font_size : '',
 
     styles.animation_option == TRUE  and styles.animation_duration ? '--animationDuration: ' ~ styles.animation_duration : '',
     styles.animation_option == TRUE  and styles.animation_delay ? '--animationDelay: ' ~ styles.animation_delay : '',
@@ -145,16 +145,24 @@
 {%
   set classes = [
     'block',
-    'commerceCart',
+    'blockFieldBlock',
+    'blockFieldBlock--intro',
     styles.animation_option == TRUE and styles.animation_trigger == 'on_scroll' ? 'wow' : '',
     styles.animation_option == TRUE ? styles.animation_type : '',
   ]
 %}
 
-<div{{ attributes.setAttribute('style', styles_vars|join('; ')).addClass(classes) }}>
+{%
+  set title_classes = [
+    configuration.label_display == FALSE ? 'visually-hidden',
+    'blockFieldBlock--intro__block-title',
+  ]
+%}
+
+<div{{ attributes.setAttribute('style', style_vars|join('; ')).setAttribute('id', configuration.id|replace({':': "_"}) ).addClass(classes) }}>
   {{ title_prefix }}
   {% if label %}
-    <h3{{ title_attributes }}>{{ label }}</h3>
+    <h3{{ title_attributes.addClass(title_classes) }}>{{ label }}</h3>
   {% endif %}
   {{ title_suffix }}
   {% block content %}

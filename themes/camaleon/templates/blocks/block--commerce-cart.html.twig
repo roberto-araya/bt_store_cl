@@ -26,6 +26,15 @@
  */
 #}
 {{ attach_library('camaleon/commerce_cart') }}
+
+{% if configuration.block_style.title_font_family != 'default' %}
+  {{ attach_library('camaleon/' ~ configuration.block_style.title_font_family) }}
+{% endif %}
+
+{% if configuration.block_style.animation_option == TRUE %}
+  {{ attach_library('camaleon/' ~ configuration.block_style.animation_type) }}
+{% endif %}
+
 {% include "@Components/commerce_cart/blockCommerceCart.twig" with {
   'bundle': bundle,
   'view_mode': view_mode,

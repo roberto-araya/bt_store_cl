@@ -25,7 +25,7 @@
  * @see template_preprocess_block()
  */
 #}
-{{ attach_library('camaleon/block_page_title') }}
+{{ attach_library('camaleon/block_field_block_intro') }}
 
 {% if configuration.block_style.title_font_family != 'default' %}
   {{ attach_library('camaleon/' ~ configuration.block_style.title_font_family) }}
@@ -35,7 +35,7 @@
   {{ attach_library('camaleon/' ~ configuration.block_style.animation_type) }}
 {% endif %}
 
-{% include "@Components/page-title/blockPageTitle.twig" with {
+{% include "@Components/fields/blockFieldBlock--intro.twig" with {
   'bundle': bundle,
   'view_mode': view_mode,
   'plugin_id': plugin_id,

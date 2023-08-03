@@ -223,12 +223,8 @@ function camaleon_preprocess_region(&$variables) {
     if (isset($variables['region']) && $variables['region'] == $region) {       
       $variables['theme_settings']['background_color'] = theme_get_setting('regions.region_' . $region . '.background_color');
       $variables['theme_settings']['background_color_custom'] = theme_get_setting('regions.region_' . $region . '.background_color_custom');
-      $variables['theme_settings']['background_color_opacity'] = theme_get_setting('regions.region_' . $region . '.background_color_opacity');
-      $variables['theme_settings']['background_color_custom_opacity'] = theme_get_setting('regions.region_' . $region . '.background_color_custom_opacity');
       $variables['theme_settings']['background_color_hover'] = theme_get_setting('regions.region_' . $region . '.background_color_hover');
       $variables['theme_settings']['background_color_custom_hover'] = theme_get_setting('regions.region_' . $region . 'background_color_custom_hover');
-      $variables['theme_settings']['background_color_opacity_hover'] = theme_get_setting('regions.region_' . $region . '.background_color_opacity_hover');
-      $variables['theme_settings']['background_color_custom_opacity_hover'] = theme_get_setting('regions.region_' . $region . '.background_color_custom_opacity_hover');
     
       if (!in_array($region, ['sidebar_first', 'content', 'sidebar_second'])) {
         $variables['theme_settings']['justify_content'] = theme_get_setting('regions.region_' . $region . '.justify_content');
@@ -245,12 +241,8 @@ function camaleon_preprocess_region(&$variables) {
     $variables['theme_settings']['position'] = theme_get_setting('regions.region_navbar.position_select');
     $variables['theme_settings']['toggler_color'] = theme_get_setting('regions.region_navbar.toggler_color');
     $variables['theme_settings']['toggler_color_custom'] = theme_get_setting('regions.region_navbar.toggler_color_custom');
-    $variables['theme_settings']['toggler_color_opacity'] = theme_get_setting('regions.region_navbar.toggler_color_opacity');
-    $variables['theme_settings']['toggler_color_custom_opacity'] = theme_get_setting('regions.region_navbar.toggler_color_custom_opacity');
     $variables['theme_settings']['toggler_color_hover'] = theme_get_setting('regions.region_navbar.toggler_color_hover');
     $variables['theme_settings']['toggler_color_custom_hover'] = theme_get_setting('regions.region_navbar.toggler_color_custom_hover');
-    $variables['theme_settings']['toggler_color_opacity_hover'] = theme_get_setting('regions.region_navbar.toggler_color_opacity_hover');
-    $variables['theme_settings']['toggler_color_custom_opacity_hover'] = theme_get_setting('regions.region_navbar.toggler_color_custom_opacity_hover');
   }
 }
 
@@ -352,6 +344,11 @@ function camaleon_preprocess_form_element_label(&$variables) {
  * Implements hook_preprocess_HOOK().
  */
 function camaleon_preprocess_input(&$variables) {
+  if (isset($variables['element']['#button_type'])) {
+    $button_type = $variables['element']['#button_type'];
+    $variables['theme_settings']['button'] = theme_get_setting('buttons.button_' . $button_type);
+  }
+  
   if (
     !empty($variables['element']['#title_display']) &&
     $variables['element']['#title_display'] === 'attribute' &&
@@ -489,4 +486,18 @@ function camaleon_theme_suggestions_field_collection_item_alter(array &$suggesti
  */
 function camaleon_theme_suggestions_user_alter(array &$suggestions, array $variables) {
   $suggestions[] = 'user__' . $variables['elements']['#view_mode'];
+}
+
+/**
+ * @param array $suggestions
+ * @param array $variables
+ * @param $hook
+ */
+function camaleon_theme_suggestions_input_alter(array &$suggestions, array &$variables, $hook) {
+  if (isset($variables['element']['#button_type']) &&
+  isset($variables['theme_hook_original'])) {
+    $hook_original = $variables['theme_hook_original'];
+    $button_type = str_replace("-", "_", $variables['element']['#button_type']);
+    $suggestions[] = $hook_original . '_' . $button_type;
+  }
 }

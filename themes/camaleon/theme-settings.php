@@ -68,6 +68,14 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
     'customColor' => t('Custom Color'),
   ];
 
+  $color_items = [
+    '_color',
+    '_color_custom',
+    '_color_hover',
+    '_color_custom_hover',
+  ];
+
+
   #### FONT ####  
   $form['font'] = [
     '#type' => 'select',
@@ -76,6 +84,49 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
     '#description' => t("Select a default font. See https://fonts.google.com/."),
     '#default_value' => theme_get_setting('font'),
   ];
+
+    #### BUTTONS ####
+  $buttons = [
+    'primary',
+    'secondary',
+    'accent',
+  ];
+
+  $form['buttons'] = [
+    '#type' => 'details',
+    '#title' => t('Buttons'),
+    '#tree' => TRUE,
+  ];
+
+  foreach ($buttons as $type) {
+    $form['buttons']['button_' . $type] = [
+      '#type' => 'details',
+      '#title' => t(ucfirst($type)),
+      '#tree' => TRUE,
+    ];
+
+    // Link.
+    $default_value_prefix = 'buttons.button_' . $type . '.link';
+    $state_input_prefix = 'buttons[button_' . $type . '][link';
+    $style = 'link';
+    $form['buttons']['button_' . $type] = array_merge($form['buttons']['button_' . $type],
+    _get_button_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options));
+
+    // Background.
+    $default_value_prefix = 'buttons.button_' . $type . '.background';
+    $state_input_prefix = 'buttons[button_' . $type . '][background';
+    $style = 'background';
+    $form['buttons']['button_' . $type] = array_merge($form['buttons']['button_' . $type],
+    _get_button_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options));
+
+    // Border.
+    $default_value_prefix = 'buttons.button_' . $type . '.border';
+    $state_input_prefix = 'buttons[button_' . $type . '][border';
+    $style = 'border';
+    $form['buttons']['button_' . $type] = array_merge($form['buttons']['button_' . $type],
+    _get_button_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options));
+  }
+
   #### REGIONS ####
   $form['regions'] = [
     '#type' => 'details',
@@ -234,222 +285,53 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
       ],
     ];
 
-    // Navbar positions
-    $form['regions']['region_navbar']['position_select'] = [
-      '#type' => 'select',
-      '#options' => [
-        'inherit' => t('Inherit'),
-        'initial' => t('Initial'),
-        'revert' => t('Revert'),
-        'revert-layer' => t('Revert Layer'),
-        'static' => t('Static'),
-        'relative' => t('Relative'),
-        'absolute' => t('Absolute'),
-        'fixed' => t('Fixed'),
-        'sticky' => t('Sticky'),
-      ],
-      '#title' => t('Position'),
-      '#description' => t("Select css position."),
-      '#default_value' => theme_get_setting('regions.navbar.position'),
-    ];
+    $default_value_prefix = 'regions.region_' . $region_id . '.background';
+    $state_input_prefix = 'regions[region_' . $region_id . '][background';
+    $style = 'background';
+    $form['regions']['region_' . $region_id] = array_merge($form['regions']['region_' . $region_id],
+    _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options));
   }
 
-  #### COLORS ELEMENTS ####
-  $color_items = [
-    '_color',
-    '_color_custom',
-    '_color_opacity',
-    '_color_custom_opacity',
-    '_color_hover',
-    '_color_custom_hover',
-    '_color_opacity_hover',
-    '_color_custom_opacity_hover',
+  // Navbar positions
+  $form['regions']['region_navbar']['position_select'] = [
+    '#type' => 'select',
+    '#options' => [
+      'inherit' => t('Inherit'),
+      'initial' => t('Initial'),
+      'revert' => t('Revert'),
+      'revert-layer' => t('Revert Layer'),
+      'static' => t('Static'),
+      'relative' => t('Relative'),
+      'absolute' => t('Absolute'),
+      'fixed' => t('Fixed'),
+      'sticky' => t('Sticky'),
+    ],
+    '#title' => t('Position'),
+    '#description' => t("Select css position."),
+    '#default_value' => theme_get_setting('regions.navbar.position'),
   ];
-
-  # Regions
-  // Top
-  $default_value_prefix = 'regions.region_top.background';
-  $state_input_prefix = 'regions[region_top][background';
-  $style = 'background';
-
-  $top_region_colors = _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options);
-
-  // Pre-header
-  $default_value_prefix = 'regions.region_pre_header.background';
-  $state_input_prefix = 'regions[region_pre_header][background';
-  $style = 'background';
-
-  $pre_header_region_colors = _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options);
-
-  // Navbar Background
-  $default_value_prefix = 'regions.region_navbar.background';
-  $state_input_prefix = 'regions[region_navbar][background';
-  $style = 'background';
-
-  $navbar_region_colors = _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options);
-
-  // Navbar Toggler
-  $default_value_prefix = 'regions.region_navbar.toggler';
-  $state_input_prefix = 'regions[region_navbar][toggler';
-  $style = 'toggler';
-
-  $navbar_toggler_colors = _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options);
-
-  // Header
-  $default_value_prefix = 'regions.region_header.background';
-  $state_input_prefix = 'regions[region_header][background';
-  $style = 'background';
-
-  $header_region_colors = _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options);
-
-  // Primary menu
-  $default_value_prefix = 'regions.region_primary_menu.background';
-  $state_input_prefix = 'regions[region_primary_menu][background';
-  $style = 'background';
-
-  $primary_menu_region_colors = _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options);
-
-  // Secondary menu
-  $default_value_prefix = 'regions.region_secondary_menu.background';
-  $state_input_prefix = 'regions[region_secondary_menu][background';
-  $style = 'background';
-
-  $secondary_menu_region_colors = _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options);
-
-  // Breadcrumb
-  $default_value_prefix = 'regions.region_breadcrumb.background';
-  $state_input_prefix = 'regions[region_breadcrumb][background';
-  $style = 'background';
-
-  $breadcrumb_region_colors = _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options);
-
-  // Highlighted
-  $default_value_prefix = 'regions.region_highlighted.background';
-  $state_input_prefix = 'regions[region_highlighted][background';
-  $style = 'background';
-
-  $highlighted_region_colors = _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options);
 
   // Sidebar first
   $default_value_prefix = 'regions.region_sidebar_first.background';
   $state_input_prefix = 'regions[region_sidebar_first][background';
   $style = 'background';
-
-  $sidebar_first_region_colors = _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options);
+  $form['regions']['region_sidebar_first'] = array_merge($form['regions']['region_sidebar_first'],
+  _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options));
 
   // Content
   $default_value_prefix = 'regions.region_content.background';
   $state_input_prefix = 'regions[region_content][background';
   $style = 'background';
-
-  $content_region_colors = _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options);
+  $form['regions']['region_content'] = array_merge($form['regions']['region_content'],
+  _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options));
 
   // Sidebar second
   $default_value_prefix = 'regions.region_sidebar_second.background';
   $state_input_prefix = 'regions[region_sidebar_second][background';
   $style = 'background';
-
-  $sidebar_second_region_colors = _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options);
-
-  // Footer
-  $default_value_prefix = 'regions.region_footer.background';
-  $state_input_prefix = 'regions[region_footer][background';
-  $style = 'background';
-
-  $footer_region_colors = _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options);
-
-  // Bottom
-  $default_value_prefix = 'regions.region_bottom.background';
-  $state_input_prefix = 'regions[region_bottom][background';
-  $style = 'background';
-
-  $bottom_region_colors = _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options);
-
-  $weight = 0;
-  foreach ($color_items as $item) {
-    #### REGIONS #####
-    // Top
-    $form['regions']['region_top']['background' . $item] = $top_region_colors['background' . $item];
-    // Pre-header
-    $form['regions']['region_pre_header']['background' . $item] = $pre_header_region_colors['background' . $item];
-    // Navbar
-    $form['regions']['region_navbar']['background' . $item] = $navbar_region_colors['background' . $item];
-    $form['regions']['region_navbar']['toggler' . $item] = $navbar_toggler_colors['toggler' . $item];
-    // Header
-    $form['regions']['region_header']['background' . $item] = $header_region_colors['background' . $item];
-    // Primary Menu
-    $form['regions']['region_primary_menu']['background' . $item] = $primary_menu_region_colors['background' . $item];
-    // Secondary Menu
-    $form['regions']['region_secondary_menu']['background' . $item] = $secondary_menu_region_colors['background' . $item];
-    // Breadcrumb
-    $form['regions']['region_breadcrumb']['background' . $item] = $breadcrumb_region_colors['background' . $item];
-    // Highlighted
-    $form['regions']['region_highlighted']['background' . $item] = $highlighted_region_colors['background' . $item];
-    // Sidebar First
-    $form['regions']['region_sidebar_first']['background' . $item] = $sidebar_first_region_colors['background' . $item];
-    // Content
-    $form['regions']['region_content']['background' . $item] = $content_region_colors['background' . $item];
-    // Sidebar Second
-    $form['regions']['region_sidebar_second']['background' . $item] = $sidebar_second_region_colors['background' . $item];
-    // Footer
-    $form['regions']['region_footer']['background' . $item] = $footer_region_colors['background' . $item];
-    // Bottom
-    $form['regions']['region_bottom']['background' . $item] = $bottom_region_colors['background' . $item];
-    $weight++;
-  }
+  $form['regions']['region_sidebar_second'] = array_merge($form['regions']['region_sidebar_second'],
+  _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options));
 }
-
-/*function _get_opacity_options($type) {
-  if ($type == 'hexadecimal') {
-    return [
-      'FF' => "100%",
-      'F2' => "95%",
-      'E6' => "90%",
-      'D9' => "85%",
-      'CC' => "80%",
-      'BF' => "75%",
-      'B3' => "70%",
-      'A6' => "65%",
-      '99' => "60%",
-      '8C' => "55%",
-      '80' => "50%",
-      '73' => "45%",
-      '66' => "40%",
-      '59' => "35%",
-      '4D' => "30%",
-      '40' => "25%",
-      '33' => "20%",
-      '26' => "15%",
-      '1A' => "10%",
-      '0D' => "5%",
-      '00' => "0%",
-    ];
-  } elseif ($type == 'decimal') {
-    return [
-      '1.00' => "100%",
-      '0.95' => "95%",
-      '0.90' => "90%",
-      '0.85' => "85%",
-      '0.80' => "80%",
-      '0.75' => "75%",
-      '0.70' => "70%",
-      '0.65' => "65%",
-      '0.60' => "60%",
-      '0.55' => "55%",
-      '0.50' => "50%",
-      '0.45' => "45%",
-      '0.40' => "40%",
-      '0.35' => "35%",
-      '0.30' => "30%",
-      '0.25' => "25%",
-      '0.20' => "20%",
-      '0.15' => "15%",
-      '0.10' => "10%",
-      '0.05' => "5%",
-      '0.00' => "0%",
-    ];
-  }
-}*/
 
 function _get_color_form_select($default_value_prefix, $state_input_prefix, $style, &$color_options) {
   return [
@@ -472,33 +354,6 @@ function _get_color_form_select($default_value_prefix, $state_input_prefix, $sty
         ],
       ],
     ],
-
-    $style . '_color_opacity' => [
-      '#type' => 'select',
-      '#options' => _get_opacity_options('decimal'),
-      '#title' => ucfirst($style) . ' Color Opacity',
-      '#description' => t("Select an opacity for " . $style . " color."),
-      '#default_value' => theme_get_setting($default_value_prefix . '_color_opacity'),
-      '#states' => [
-        'invisible' => [
-          ':input[name="' . $state_input_prefix . '_color]"]' => ['value' => 'customColor'],
-        ],
-      ],
-    ],
-
-    $style . '_color_custom_opacity' => [
-      '#type' => 'select',
-      '#options' => _get_opacity_options('hexadecimal'),
-      '#title' => ucfirst($style) . ' Color Opacity',
-      '#description' => t("Select an opacity for " . $style . " color."),
-      '#default_value' => theme_get_setting($default_value_prefix . '_color_custom_opacity'),
-      '#states' => [
-        'visible' => [
-          ':input[name="' . $state_input_prefix . '_color]"]' => ['value' => 'customColor'],
-        ],
-      ],
-    ],
-
     $style . '_color_hover' => [
       '#type' => 'select',
       '#options' => $color_options,
@@ -518,33 +373,56 @@ function _get_color_form_select($default_value_prefix, $state_input_prefix, $sty
         ],
       ],
     ],
+  ];
+}
 
-    $style . '_color_opacity_hover' => [
+function _get_button_color_form_select($default_value_prefix, $state_input_prefix, $style, &$color_options) {
+  $button_color = [
+    $style . '_color_active' => [
       '#type' => 'select',
-      '#options' => _get_opacity_options('decimal'),
-      '#title' => ucfirst($style) . ' Color Opacity Hover',
-      '#description' => t("Select an opacity for " . $style . " hover color."),
-      '#default_value' => theme_get_setting($default_value_prefix . '_color_opacity_hover'),
+      '#options' => $color_options,
+      '#title' => ucfirst($style) . ' Color Active',
+      '#description' => t("Select a theme color as active button color"),
+      '#default_value' => theme_get_setting($default_value_prefix . '_color_active'),
+    ],
+
+    $style . '_color_custom_active' => [
+      '#type' => 'color',
+      '#title' => ucfirst($style) . ' Custom Color Active',
+      '#description' => t("Select a custom color as active button color"),
+      '#default_value' => theme_get_setting($default_value_prefix . '_color_custom_active'),
       '#states' => [
-        'invisible' => [
-          ':input[name="' . $state_input_prefix . '_color_hover]"]' => ['value' => 'customColor'],
+        'visible' => [
+          ':input[name="' . $state_input_prefix . '_color_active]"]' => ['value' => 'customColor'],
         ],
       ],
     ],
 
-    $style . '_color_custom_opacity_hover' => [
+    $style . '_color_disabled' => [
       '#type' => 'select',
-      '#options' => _get_opacity_options('hexadecimal'),
-      '#title' => ucfirst($style) . ' Color Opacity Hover',
-      '#description' => t("Select an opacity for " . $style . " hover color."),
-      '#default_value' => theme_get_setting($default_value_prefix . '_color_custom_opacity_hover'),
+      '#options' => $color_options,
+      '#title' => ucfirst($style) . ' Color Disabled',
+      '#description' => t("Select a theme color as disabled button color"),
+      '#default_value' => theme_get_setting($default_value_prefix . '_color_disabled'),
+    ],
+
+    $style . '_color_custom_disabled' => [
+      '#type' => 'color',
+      '#title' => ucfirst($style) . ' Custom Color Disabled',
+      '#description' => t("Select a custom color as disabled button color"),
+      '#default_value' => theme_get_setting($default_value_prefix . '_color_custom_disabled'),
       '#states' => [
         'visible' => [
-          ':input[name="' . $state_input_prefix . '_color_hover]"]' => ['value' => 'customColor'],
+          ':input[name="' . $state_input_prefix . '_color_disabled]"]' => ['value' => 'customColor'],
         ],
       ],
     ],
   ];
+
+  return array_merge(
+    _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options),
+    $button_color
+  );
 }
 
 function _get_border_form_items($type, $name, $default_value_prefix, $state_input_prefix, $color_options) {

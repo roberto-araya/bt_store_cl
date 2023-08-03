@@ -1,0 +1,42 @@
+.block.blockFieldBlock--caption {
+  --maxWidth: var(--xsMaxWidth, max-content);
+  --marginLeft:var(--xsMarginLeft, 0px);
+  --marginTop: var(--xsMarginTop, 0px);
+  --marginRight: var(--xsMarginRight, 0px);
+  --marginBottom: var(--xsMarginBottom, 0px);
+  --paddingLeft: var(--xsPaddingLeft, 1rem);
+  --paddingTop: var(--xsPaddingTop, 0px);
+  --paddingRight: var(--xsPaddingRight, 1rem);
+  --paddingBottom: var(--xsPaddingBottom, 0px);
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  padding-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  background-color: transparent;
+}
+
+.blockFieldBlock--caption {
+  --captionFontSize: var(--xsCaptionFontSize, 2rem);
+  --maxWidth: var(--xsMaxWidth, max-content);
+  width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));
+  max-width: var(--maxWidth);
+}
+.blockFieldBlock--caption .nodeArticle__caption,
+.blockFieldBlock--caption .nodeBlog__caption {
+  margin-left: var(--marginLeft);
+  margin-top: var(--marginTop);
+  margin-right: var(--marginRight);
+  margin-bottom: var(--marginBottom);
+  padding-left: var(--paddingLeft);
+  padding-top: var(--paddingTop);
+  padding-right: var(--paddingRight);
+  padding-bottom: var(--paddingBottom);
+  font-family: var(--captionFontFamily, var(--defaultFontFamily));
+  font-size: var(--captionFontSize);
+  color: var(--captionColor, var(--bs-accent));
+  background-color: var(--backgroundColor, transparent);
+}

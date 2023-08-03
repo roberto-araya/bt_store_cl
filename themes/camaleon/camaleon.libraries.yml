@@ -870,6 +870,30 @@ block_field_block:
   js:
     ui/components/blocks/blockFieldBlock.js: {}
 
+block_field_block_title:
+  version: VERSION
+  css:
+    component:
+      ui/components/page-title/blockFieldBlock--title.css: {}
+  js:
+    ui/components/page-title/blockFieldBlock--title.js: {}
+
+block_field_block_caption:
+  version: VERSION
+  css:
+    component:
+      ui/components/fields/blockFieldBlock--caption.css: {}
+  js:
+    ui/components/fields/blockFieldBlock--caption.js: {}
+
+block_field_block_intro:
+  version: VERSION
+  css:
+    component:
+      ui/components/fields/blockFieldBlock--intro.css: {}
+  js:
+    ui/components/fields/blockFieldBlock--intro.js: {}
+
 ## Menus
 # Default
 menu:
@@ -1889,3 +1913,5 @@ commerce_cart:
   css:
     component:
       ui/components/commerce_cart/commerce_cart.css: {}
+  js:
+    ui/componentes/commerce_cart/blockCommerceCart.js: {}

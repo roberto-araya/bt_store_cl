@@ -52,12 +52,6 @@ cssvars.bt:
       type: cssvars_color
       label: Intro Text Color
     # Title
-    page_title_color:
-      type: cssvars_color
-      label: Page Title Color
-    page_shadow_title_color:
-      type: cssvars_color
-      label: Page Shadow Title Color
     section_title_color:
       type: cssvars_color
       label: Section Title Color
@@ -89,10 +83,6 @@ cssvars.bt:
     link_hover_color:
       type: cssvars_color
       label: Link Hover Color
-    # Button
-    button_link_color:
-      type: cssvars_color
-      label: Button Link Color
     # Breadcrumbs
     breadcrumbs_bg:
       type: cssvars_color
