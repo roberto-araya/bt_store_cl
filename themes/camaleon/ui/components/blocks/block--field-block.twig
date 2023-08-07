@@ -153,8 +153,10 @@
   {% if label %}
     <h3{{ title_attributes.addClass(title_classes) }}>{{ label }}</h3>
   {% endif %}
+  <div{{ content_attributes }}>
   {{ title_suffix }}
-  {% block content %}
-    {{ content }}
+    {% block content %}
+      {{ content }}
   {% endblock %}
+  </div>
 </div>

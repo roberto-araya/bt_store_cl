@@ -1914,4 +1914,4 @@ commerce_cart:
     component:
       ui/components/commerce_cart/commerce_cart.css: {}
   js:
-    ui/componentes/commerce_cart/blockCommerceCart.js: {}
+    ui/components/commerce_cart/blockCommerceCart.js: {}
