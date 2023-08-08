@@ -352,7 +352,28 @@ function camaleon_preprocess_input(&$variables) {
   if (isset($variables['element']['#button_type'])) {
     $button_type = $variables['element']['#button_type'];
     $variables['theme_settings']['button'] = theme_get_setting('buttons.button_' . $button_type);
-  }
+  } 
+  if (is_array($variables['element']['#attributes']['class'])) {
+    $class = $variables['element']['#attributes']['class'];
+    if (in_array('button', $class)) {
+      if (in_array('button--primary', $class)) {
+        $button_type = 'primary';
+      }
+  
+      if (in_array('button--secondary', $class)) {
+        $button_type = 'secondary';
+      }
+  
+      if (in_array('button--accent', $class)) {
+        $button_type = 'accent';
+      }
+      
+      if (isset($button_type)) {
+        $variables['button_type'] = $button_type;
+        $variables['theme_settings']['button'] = theme_get_setting('buttons.button_' . $button_type);
+      }
+    }
+  } 
   
   if (
     !empty($variables['element']['#title_display']) &&
@@ -499,10 +520,32 @@ function camaleon_theme_suggestions_user_alter(array &$suggestions, array $varia
  * @param $hook
  */
 function camaleon_theme_suggestions_input_alter(array &$suggestions, array &$variables, $hook) {
-  if (isset($variables['element']['#button_type']) &&
-  isset($variables['theme_hook_original'])) {
+  if (is_array($variables['element']['#attributes']['class'])) {
+    $class = $variables['element']['#attributes']['class'];
+    if (in_array('button', $class)) {
+      if (in_array('button--primary', $class)) {
+        $button_type = 'primary';
+      }
+  
+      if (in_array('button--secondary', $class)) {
+        $button_type = 'secondary';
+      }
+  
+      if (in_array('button--accent', $class)) {
+        $button_type = 'accent';
+      }
+    }
+  } 
+
+  if (isset($variables['theme_hook_original'])) {
     $hook_original = $variables['theme_hook_original'];
-    $button_type = str_replace("-", "_", $variables['element']['#button_type']);
-    $suggestions[] = $hook_original . '_' . $button_type;
+  } else {
+    $hook_original = 'input__submit';
   }
+
+  if (isset($variables['element']['#button_type'])) {
+    $button_type = str_replace("-", "_", $variables['element']['#button_type']);
+  }
+
+  $suggestions[] = $hook_original . '_' . $button_type;
 }

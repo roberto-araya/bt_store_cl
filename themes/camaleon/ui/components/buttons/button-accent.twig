@@ -15,28 +15,40 @@
 
 {%
   set style_vars = style_vars|merge([
+    styles.link_color == 'default' ? '--bs-btn-color: var(--bs-button-link-color)' : '',
     styles.link_color == 'customColor' ? '--bs-btn-color: ' ~ styles.link_color_custom : '',
     styles.link_color != 'default' and styles.link_color != 'customColor' ? '--bs-btn-color: var(--' ~ styles.link_color ~ ')' : '',
+
+    styles.link_color_hover == 'default' ? '--bs-btn-hover-color: var(--bs-btn-color)' : '',
     styles.link_color_hover == 'customColor' ? '--bs-btn-hover-color: ' ~ styles.link_color_custom_hover : '',
     styles.link_color_hover != 'default' and styles.link_color_hover != 'customColor' ? '--bs-btn-hover-color: var(--' ~ styles.link_color_hover ~ ')' : '',
+
     styles.link_color_active == 'customColor' ? '--bs-btn-active-color: ' ~ styles.link_color_custom_active : '',
     styles.link_color_active != 'default' and styles.link_color_active != 'customColor' ? '--bs-btn-active-color: var(--' ~ styles.link_color_active ~ ')' : '',
     styles.link_color_disabled == 'customColor' ? '--bs-btn-disabled-color: ' ~ styles.link_color_custom_disabled : '',
     styles.link_color_disabled != 'default' and styles.link_color_disabled != 'customColor' ? '--bs-btn-disabled-color: var(--' ~ styles.link_color_disabled ~ ')' : '',
 
+    styles.background_color == 'default' ? '--bs-btn-bg: var(--bs-accent)' : '',
     styles.background_color == 'customColor' ? '--bs-btn-bg: ' ~ styles.background_color_custom : '',
     styles.background_color != 'default' and styles.background_color != 'customColor' ? '--bs-btn-bg: var(--' ~ styles.background_color ~ ')' : '',
+    
+    styles.background_color_hover == 'default' ? '--bs-btn-hover-bg: var(--bs-btn-bg)' : '',
     styles.background_color_hover == 'customColor' ? '--bs-btn-hover-bg: ' ~ styles.background_color_custom_hover : '',
     styles.background_color_hover != 'default' and styles.background_color_hover != 'customColor' ? '--bs-btn-hover-bg: var(--' ~ styles.background_color_hover ~ ')' : '',
+    styles.background_color_hover == 'default' and styles.background_color == 'default' ? '--bs-btn-hover-bg: var(--bs-accent-400)' : '',
     styles.background_color_active == 'customColor' ? '--bs-btn-active-bg: ' ~ styles.background_color_custom_active : '',
     styles.background_color_active != 'default' and styles.background_color_active != 'customColor' ? '--bs-btn-active-bg: var(--' ~ styles.background_color_active ~ ')' : '',
     styles.background_color_disabled == 'customColor' ? '--bs-btn-disabled-bg: ' ~ styles.background_color_custom_disabled : '',
     styles.background_color_disabled != 'default' and styles.background_color_disabled != 'customColor' ? '--bs-btn-disabled-bg: var(--' ~ styles.background_color_disabled ~ ')' : '',
 
+    styles.border_color == 'default' ? '--bs-btn-border-color: var(--bs-btn-bg)' : '',
     styles.border_color == 'customColor' ? '--bs-btn-border-color: ' ~ styles.border_color_custom : '',
     styles.border_color != 'default' and styles.border_color != 'customColor' ? '--bs-btn-border-color: var(--' ~ styles.border_color ~ ')' : '',
+
+    styles.border_color_hover == 'default' ? '--bs-btn-hover-border-color: var(--bs-btn-border-color)' : '',
     styles.border_color_hover == 'customColor' ? '--bs-btn-hover-border-color: ' ~ styles.border_color_custom_hover : '',
     styles.border_color_hover != 'default' and styles.border_color_hover != 'customColor' ? '--bs-btn-hover-border-color: var(--' ~ styles.border_color_hover ~ ')' : '',
+    styles.border_color_hover == 'default' and styles.border_color == 'default' ? '--bs-btn-hover-border-color: var(--bs-btn-hover-bg)' : '',
     styles.border_color_active == 'customColor' ? '--bs-btn-active-border-color: ' ~ styles.border_color_custom_active : '',
     styles.border_color_active != 'default' and styles.border_color_active != 'customColor' ? '--bs-btn-active-border-color: var(--' ~ styles.border_color_active ~ ')' : '',
     styles.border_color_disabled == 'customColor' ? '--bs-btn-disabled-border-color: ' ~ styles.border_color_custom_disabled : '',
