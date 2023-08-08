@@ -57,7 +57,8 @@
           "Support third party settings for components within a section": "https://www.drupal.org/files/issues/2022-04-27/3015152-147.patch"
         },
         "drupal/commerce_pos": {
-          "Call to deprecated function file_prepare_directory()": "https://www.drupal.org/files/issues/2022-01-24/commerce_pos-replace_deprecated_function_call-3260249-2.patch"
+          "Call to deprecated function file_prepare_directory()": "https://www.drupal.org/files/issues/2022-01-24/commerce_pos-replace_deprecated_function_call-3260249-2.patch",
+          "On PHP 8.1 warnings about ctype_digit": "https://www.drupal.org/files/issues/2023-08-08/php81-deprecated-ctype_digit.patch"
         }
       } 
     }
