@@ -101,10 +101,13 @@ function camaleon_theme_suggestions_page_alter(array &$suggestions, array $varia
  * Implements hook_preprocess_HOOK() for blocks.
  */
 function camaleon_preprocess_block(&$variables) {
-  $plugin = 'field_block:commerce_product_variation:macetero:field_imagen';
-  if (str_contains($plugin, ':commerce_product_variation:')) {
-    $variables['content_attributes'] = $variables['attributes'];
-    unset($variables['attributes']['class']);
+  if (array_key_exists('#plugin_id', $variables['elements'])) {
+    $plugin = $variables['elements']['#plugin_id'];
+    if (str_contains($plugin, ':commerce_product_variation:') &&
+    is_array($variables['attributes']['class'])) {
+      $variables['content_attributes']['class'] = array_pop($variables['attributes']['class']);
+      array_shift($variables['attributes']['class']);
+    }
   }
   _block_core_preprocess($variables);
   _block_content_preprocess($variables);
