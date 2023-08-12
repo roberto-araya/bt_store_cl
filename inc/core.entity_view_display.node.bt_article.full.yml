@@ -1,0 +1,616 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.base_field_override.node.bt_article.title
+    - core.entity_view_mode.node.full
+    - field.field.node.bt_article.field_bt_category
+    - field.field.node.bt_article.field_bt_content_image
+    - field.field.node.bt_article.field_bt_intro
+    - field.field.node.bt_article.field_bt_metatags
+    - field.field.node.bt_article.field_bt_paragraphs
+    - field.field.node.bt_article.field_bt_tags
+    - field.field.node.bt_article.field_bt_title_foot
+    - field.field.node.bt_article.layout_builder__layout
+    - node.type.bt_article
+  module:
+    - bt_layouts
+    - entity_reference_revisions
+    - layout_builder
+    - layout_builder_restrictions
+    - layout_discovery
+    - layout_library
+    - system
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          e2e9a906-5736-49ac-a0cb-7f2b53571678:
+            uuid: e2e9a906-5736-49ac-a0cb-7f2b53571678
+            region: content
+            configuration:
+              id: 'extra_field_block:node:bt_article:content_moderation_control'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 2
+            additional: {  }
+            third_party_settings: {  }
+          c868544d-e0cc-430c-84fc-46b71fe51ad4:
+            uuid: c868544d-e0cc-430c-84fc-46b71fe51ad4
+            region: content
+            configuration:
+              id: 'extra_field_block:node:bt_article:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 8
+            additional: {  }
+            third_party_settings: {  }
+        third_party_settings: {  }
+      -
+        layout_id: bt_one_column
+        layout_settings:
+          label: 'Imagen Intro'
+          context_mapping: {  }
+          background_color: default
+          class: ''
+          container_select: full
+          full_select: '0'
+          box_select: 100%
+          padding_top: none
+          padding_bottom: none
+          sm_container_select: full
+          sm_full_select: '0'
+          sm_box_select: 100%
+          sm_padding_top: none
+          sm_padding_bottom: none
+          md_container_select: full
+          md_full_select: '0'
+          md_box_select: 100%
+          md_padding_top: none
+          md_padding_bottom: none
+          lg_container_select: full
+          lg_full_select: '0'
+          lg_box_select: 100%
+          lg_padding_top: none
+          lg_padding_bottom: none
+          xl_container_select: full
+          xl_full_select: '0'
+          xl_box_select: 100%
+          xl_padding_top: none
+          xl_padding_bottom: none
+          xxl_container_select: full
+          xxl_full_select: '0'
+          xxl_box_select: 100%
+          xxl_padding_top: none
+          xxl_padding_bottom: none
+          sm_sm_box_select: 100%
+          sm_sm_padding_top: none
+          sm_sm_padding_bottom: none
+          md_sm_box_select: 100%
+          md_sm_padding_top: none
+          md_sm_padding_bottom: none
+          lg_sm_box_select: 100%
+          lg_sm_padding_top: none
+          lg_sm_padding_bottom: none
+          xl_sm_box_select: 100%
+          xl_sm_padding_top: none
+          xl_sm_padding_bottom: none
+          xxl_sm_box_select: 100%
+          xxl_sm_padding_top: none
+          xxl_sm_padding_bottom: none
+          hide_label: 1
+          label_color: default
+          label_custom_color: '#000000'
+          background_custom_color: '#000000'
+        components:
+          6893bbf7-eccb-4128-ba3e-a19fe6448b61:
+            uuid: 6893bbf7-eccb-4128-ba3e-a19fe6448b61
+            region: oneColumn__main
+            configuration:
+              id: 'field_block:node:bt_article:field_bt_content_image'
+              label: 'Añadir imagen de portada'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: bt_full_viewport
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+            third_party_settings: {  }
+        third_party_settings: {  }
+      -
+        layout_id: bt_one_column
+        layout_settings:
+          label: Contenido
+          context_mapping: {  }
+          background_color: default
+          class: ''
+          container_select: full
+          full_select: '0'
+          box_select: 100%
+          padding_top: none
+          padding_bottom: none
+          sm_container_select: full
+          sm_full_select: '0'
+          sm_box_select: 100%
+          sm_padding_top: none
+          sm_padding_bottom: none
+          md_container_select: full
+          md_full_select: '0'
+          md_box_select: 100%
+          md_padding_top: none
+          md_padding_bottom: none
+          lg_container_select: full
+          lg_full_select: '0'
+          lg_box_select: 100%
+          lg_padding_top: none
+          lg_padding_bottom: none
+          xl_container_select: full
+          xl_full_select: '0'
+          xl_box_select: 100%
+          xl_padding_top: none
+          xl_padding_bottom: none
+          xxl_container_select: full
+          xxl_full_select: '0'
+          xxl_box_select: 100%
+          xxl_padding_top: none
+          xxl_padding_bottom: none
+          sm_sm_box_select: 100%
+          sm_sm_padding_top: none
+          sm_sm_padding_bottom: none
+          md_sm_box_select: 100%
+          md_sm_padding_top: none
+          md_sm_padding_bottom: none
+          lg_sm_box_select: 100%
+          lg_sm_padding_top: none
+          lg_sm_padding_bottom: none
+          xl_sm_box_select: 100%
+          xl_sm_padding_top: none
+          xl_sm_padding_bottom: none
+          xxl_sm_box_select: 100%
+          xxl_sm_padding_top: none
+          xxl_sm_padding_bottom: none
+          hide_label: 1
+          label_color: default
+          label_custom_color: '#000000'
+          background_custom_color: '#000000'
+        components:
+          1c315b6c-28ae-4b10-9107-30da6b4011c9:
+            uuid: 1c315b6c-28ae-4b10-9107-30da6b4011c9
+            region: oneColumn__main
+            configuration:
+              id: 'field_block:node:bt_article:field_bt_intro'
+              label: Introducción
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
+            third_party_settings:
+              bt_cbc:
+                text_color_select: default
+                text_color_custom: '#000000'
+                text_font_family: default
+                background_color_select: default
+                background_color_custom: '#000000'
+                background_color_opacity: '1.00'
+                background_color_custom_opacity: FF
+                animation_trigger: on_page_load
+                animation_type: bounce
+                animation_function: default
+                animation_fill: default
+                xs_align: default
+                xs_justify: default
+                xs_text_align: default
+                sm_align: default
+                sm_justify: default
+                sm_text_align: default
+                md_align: default
+                md_justify: default
+                md_text_align: default
+                lg_align: default
+                lg_justify: default
+                lg_text_align: default
+                xl_align: default
+                xl_justify: default
+                xl_text_align: default
+                xxl_align: default
+                xxl_justify: default
+                xxl_text_align: default
+          f42d8c63-2aec-4987-b0ff-ba1d7f67b025:
+            uuid: f42d8c63-2aec-4987-b0ff-ba1d7f67b025
+            region: oneColumn__main
+            configuration:
+              id: 'field_block:node:bt_article:field_bt_title_foot'
+              label: 'Bajada de título'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+            third_party_settings:
+              bt_cbc:
+                text_color_select: default
+                text_color_custom: '#000000'
+                text_font_family: default
+                background_color_select: default
+                background_color_custom: '#000000'
+                background_color_opacity: '1.00'
+                background_color_custom_opacity: FF
+                animation_trigger: on_page_load
+                animation_type: bounce
+                animation_function: default
+                animation_fill: default
+                xs_align: default
+                xs_justify: center
+                xs_text_align: center
+                sm_align: default
+                sm_justify: default
+                sm_text_align: default
+                md_align: default
+                md_justify: default
+                md_text_align: default
+                lg_align: default
+                lg_justify: default
+                lg_text_align: default
+                xl_align: default
+                xl_justify: default
+                xl_text_align: default
+                xxl_align: default
+                xxl_justify: default
+                xxl_text_align: default
+          5f964832-1116-4bd3-82da-f47848ded059:
+            uuid: 5f964832-1116-4bd3-82da-f47848ded059
+            region: oneColumn__main
+            configuration:
+              id: 'field_block:node:bt_article:title'
+              label: Título
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+            third_party_settings:
+              bt_cbc:
+                title_color_select: default
+                title_color_custom: '#000000'
+                title_font_family: default
+                background_color_select: default
+                background_color_custom: '#000000'
+                background_color_opacity: '1.00'
+                background_color_custom_opacity: FF
+                animation_trigger: on_page_load
+                animation_type: bounce
+                animation_function: default
+                animation_fill: default
+                xs_align: default
+                xs_justify: center
+                xs_text_align: center
+                sm_align: default
+                sm_justify: default
+                sm_text_align: default
+                md_align: default
+                md_justify: default
+                md_text_align: default
+                lg_align: default
+                lg_justify: default
+                lg_text_align: default
+                xl_align: default
+                xl_justify: default
+                xl_text_align: default
+                xxl_align: default
+                xxl_justify: default
+                xxl_text_align: default
+          1c79c6e8-24c8-4040-ab9e-72e7903d82c5:
+            uuid: 1c79c6e8-24c8-4040-ab9e-72e7903d82c5
+            region: oneColumn__main
+            configuration:
+              id: system_breadcrumb_block
+              label: 'Enlaces de ayuda a la navegación'
+              label_display: '0'
+              provider: system
+              context_mapping: {  }
+            weight: 1
+            additional: {  }
+            third_party_settings: {  }
+        third_party_settings: {  }
+      -
+        layout_id: bt_two_columns
+        layout_settings:
+          label: Contenido
+          context_mapping: {  }
+          background_color: default
+          class: ''
+          container_select: full
+          full_select: '0'
+          box_select: 100%
+          padding_top: pt-3
+          padding_bottom: pb-3
+          sm_container_select: full
+          sm_full_select: '0'
+          sm_box_select: 100%
+          sm_padding_top: none
+          sm_padding_bottom: none
+          md_container_select: full
+          md_full_select: '0'
+          md_box_select: 100%
+          md_padding_top: none
+          md_padding_bottom: none
+          lg_container_select: full
+          lg_full_select: '0'
+          lg_box_select: 100%
+          lg_padding_top: none
+          lg_padding_bottom: none
+          xl_container_select: full
+          xl_full_select: 10%
+          xl_box_select: 100%
+          xl_padding_top: pt-xl-3
+          xl_padding_bottom: pb-xl-3
+          xxl_container_select: full
+          xxl_full_select: 10%
+          xxl_box_select: 100%
+          xxl_padding_top: pt-xxl-3
+          xxl_padding_bottom: pb-xxl-3
+          gap: gap-3
+          sm_gap: none
+          md_gap: none
+          lg_gap: none
+          xl_gap: none
+          xxl_gap: none
+          sm_sm_box_select: 100%
+          sm_sm_padding_top: none
+          sm_sm_padding_bottom: none
+          md_sm_box_select: 100%
+          md_sm_padding_top: none
+          md_sm_padding_bottom: none
+          lg_sm_box_select: 100%
+          lg_sm_padding_top: none
+          lg_sm_padding_bottom: none
+          xl_sm_box_select: 100%
+          xl_sm_padding_top: none
+          xl_sm_padding_bottom: none
+          xxl_sm_box_select: 100%
+          xxl_sm_padding_top: none
+          xxl_sm_padding_bottom: none
+          hide_label: 1
+          label_color: default
+          label_custom_color: '#000000'
+          background_custom_color: '#000000'
+          columns_size: 75-25
+        components:
+          b6905a99-4648-4efb-bf7f-3e88136edc09:
+            uuid: b6905a99-4648-4efb-bf7f-3e88136edc09
+            region: twoColumns__left
+            configuration:
+              id: 'field_block:node:bt_article:field_bt_paragraphs'
+              label: Párrafos
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: hidden
+                settings:
+                  view_mode: default
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
+            third_party_settings:
+              bt_cbc:
+                background_color_select: default
+                background_color_custom: '#000000'
+                background_color_opacity: '1.00'
+                background_color_custom_opacity: FF
+                animation_trigger: on_page_load
+                animation_type: bounce
+                animation_function: default
+                animation_fill: default
+                xs_align: default
+                xs_justify: default
+                xs_text_align: default
+                sm_align: default
+                sm_justify: default
+                sm_text_align: default
+                md_align: default
+                md_justify: default
+                md_text_align: default
+                lg_align: default
+                lg_justify: default
+                lg_text_align: default
+                xl_align: default
+                xl_justify: default
+                xl_text_align: default
+                xxl_align: default
+                xxl_justify: default
+                xxl_text_align: default
+          125114ff-d6df-499b-9da8-3217beb4e539:
+            uuid: 125114ff-d6df-499b-9da8-3217beb4e539
+            region: twoColumns__left
+            configuration:
+              id: 'field_block:node:bt_article:field_bt_category'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: hidden
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
+            third_party_settings: {  }
+          205ee0c3-374e-43c3-a7c0-30691eb64348:
+            uuid: 205ee0c3-374e-43c3-a7c0-30691eb64348
+            region: twoColumns__left
+            configuration:
+              id: 'field_block:node:bt_article:field_bt_tags'
+              label: Etiquetas
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: hidden
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 7
+            additional: {  }
+            third_party_settings:
+              bt_cbc:
+                background_color_select: default
+                background_color_custom: '#000000'
+                background_color_opacity: '1.00'
+                background_color_custom_opacity: FF
+                animation_trigger: on_page_load
+                animation_type: bounce
+                animation_function: default
+                animation_fill: default
+                xs_align: default
+                xs_justify: default
+                xs_text_align: default
+                sm_align: default
+                sm_justify: default
+                sm_text_align: default
+                md_align: default
+                md_justify: default
+                md_text_align: default
+                lg_align: default
+                lg_justify: default
+                lg_text_align: default
+                xl_align: default
+                xl_justify: default
+                xl_text_align: default
+                xxl_align: default
+                xxl_justify: default
+                xxl_text_align: default
+        third_party_settings: {  }
+  layout_library:
+    enable: false
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      allowed_layouts: {  }
+      denylisted_blocks: {  }
+      allowlisted_blocks: {  }
+      restricted_categories: {  }
+id: node.bt_article.full
+targetEntityType: node
+bundle: bt_article
+mode: full
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_bt_category:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_bt_content_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_bt_intro:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_bt_paragraphs:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_bt_tags:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_bt_title_foot:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_bt_metatags: true
+  langcode: true
+  layout_builder__layout: true
