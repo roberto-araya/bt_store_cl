@@ -11,6 +11,7 @@ use Drupal\path_alias\Entity\PathAlias;
 use Drupal\user\UserInterface;
 use Drupal\node\Entity\Node;
 use Drupal\Core\Config\FileStorage;
+use Drupal\menu_link_content\Entity\MenuLinkContent;
 
 /**
  * Implements hook_install().
@@ -143,10 +144,6 @@ function bt_store_cl_install() {
   $user->set('personas', $personas);
   $user->save();
   
-  // We install some menu links, so we have to rebuild the router, to ensure the
-  // menu links are valid.
-  Drupal::service('router.builder')->rebuildIfNeeded();
-
   // Enable the admin theme in edit content.
   Drupal::configFactory()->getEditable('node.settings')->set('use_admin_theme', TRUE)->save(TRUE);
 
@@ -192,6 +189,27 @@ function bt_store_cl_install() {
     ]);
     $node->save();
   }
+
+  // Add menu links.
+  $menu_link = MenuLinkContent::create([
+    'title' => 'Home',
+    'link' => ['uri' => 'internal:/node/3'],
+    'menu_name' => 'main',
+    'expanded' => TRUE,
+  ]);
+  $menu_link->save();
+
+  $menu_link = MenuLinkContent::create([
+    'title' => 'Contacto',
+    'link' => ['uri' => 'internal:/node/6'],
+    'menu_name' => 'footer',
+    'expanded' => TRUE,
+  ]);
+  $menu_link->save();
+
+  // We install some menu links, so we have to rebuild the router, to ensure the
+  // menu links are valid.
+  Drupal::service('router.builder')->rebuildIfNeeded();
 
   // Replace default user's form display.
   $config_factory = \Drupal::configFactory();
