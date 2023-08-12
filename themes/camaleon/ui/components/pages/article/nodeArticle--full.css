@@ -1,28 +1,15 @@
 .nodeArticle--full__title {
-  font-size: calc(1.725rem + 5.7vw);
-  text-align: center;
-  font-weight: bold;
-  color: var(--defaultArticleTitleColor);
-  text-shadow: 2px 2px var(--defaultArticleShadowTitleColor);
-  text-transform: uppercase;
-}
-@media (min-width: 1200px) {
-  .nodeArticle--full__title {
-    font-size: 6rem;
-  }
+  color: var(--bs-article-title-color);
 }
 .nodeArticle--full__intro {
-  font-size: 1.2rem;
-  color: var(--defaultCaptionTextColor);
+  color: var(--bs-caption-text-color);
   margin-top: 1.2rem;
 }
 .nodeArticle--full__intro p {
   margin: 0 1rem;
 }
 .nodeArticle--full__caption {
-  text-align: center;
-  color: var(--defaultIntroTextColor);
-  font-size: 0.8rem;
+  color: var(--bs-intro-text-color);
 }
 .nodeArticle--full__image {
   width: -moz-fit-content;
@@ -31,11 +18,4 @@
 }
 .nodeArticle--full__image img {
   max-height: 600px;
-}
-
-@media (min-width: 1400px) {
-  .nodeArticle--full__title {
-    font-size: 8rem;
-    text-shadow: 5px 5px var(--defaultArticleShadowTitleColor);
-  }
 }

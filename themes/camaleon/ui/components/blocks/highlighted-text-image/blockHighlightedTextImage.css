@@ -6,17 +6,17 @@
   width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));
 }
 .blockHighlightedTextImage__content-title {
-  color: var(--titleColor, var(--defaultPageTitleColor));
-  font-family: var(--titleFontFamily, var(--defaultFontFamily));
+  color: var(--titleColor, var(--bs-page-title-color));
+  font-family: var(--titleFontFamily, var(--bs-body-font-family));
   font-size: var(--titleFontSize, 1.8rem);
 }
 .blockHighlightedTextImage__caption {
-  color: var(--captionColor, var(--defaultCaptionTextColor));
-  font-family: var(--captionFontFamily, var(--defaultFontFamily));
+  color: var(--captionColor, var(--bs-caption-text-color));
+  font-family: var(--captionFontFamily, var(--bs-body-font-family));
   font-size: var(--captionFontFamily, 1.2rem);
 }
 .blockHighlightedTextImage__highlighted-text {
-  font-family: var(--textFontFamily, var(--defaultFontFamily));
+  font-family: var(--textFontFamily, var(--bs-body-font-family));
   font-size: var(--textFontSize, 1.2rem);
 }
 .blockHighlightedTextImage__highlighted-text > mark {

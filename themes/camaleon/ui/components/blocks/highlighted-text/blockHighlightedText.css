@@ -4,7 +4,7 @@
   width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));
 }
 .blockHighlightedText__highlighted-text {
-  font-family: var(--textFontFamily, var(--defaultFontFamily));
+  font-family: var(--textFontFamily, var(--bs-body-font-family));
   font-size: var(--textFontSize);
 }
 .blockHighlightedText__highlighted-text > mark {

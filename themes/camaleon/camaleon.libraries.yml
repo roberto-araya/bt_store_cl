@@ -1915,3 +1915,5 @@ commerce_cart:
       ui/components/commerce_cart/commerce_cart.css: {}
   js:
     ui/components/commerce_cart/blockCommerceCart.js: {}
+  dependencies:
+    - camaleon/block

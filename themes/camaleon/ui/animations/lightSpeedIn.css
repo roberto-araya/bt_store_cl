@@ -1,21 +1,3 @@
-@-webkit-keyframes lightSpeedIn {
-  0% {
-    opacity: 0;
-    transform: translateX(100%) skewX(-30deg);
-  }
-  60% {
-    opacity: 1;
-    transform: translateX(-20%) skewX(30deg);
-  }
-  80% {
-    opacity: 1;
-    transform: translateX(0%) skewX(-15deg);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0%) skewX(0deg);
-  }
-}
 @keyframes lightSpeedIn {
   0% {
     opacity: 0;
@@ -35,20 +17,12 @@
   }
 }
 .lightSpeedIn {
-  -webkit-animation-name: lightSpeedIn;
   animation-name: lightSpeedIn;
-  -webkit-animation-iteration-count: var(--animationCount, 1s);
   animation-iteration-count: var(--animationCount, 1s);
-  -webkit-animation-timing-function: ease-out;
   animation-timing-function: ease-out;
-  -webkit-animation-duration: var(--animationDuration, 1s);
   animation-duration: var(--animationDuration, 1s);
-  -webkit-animation-delay: var(--animationDelay, 0s);
   animation-delay: var(--animationDelay, 0s);
-  -webkit-animation-timing-function: var(--animationFunction, ease);
   animation-timing-function: var(--animationFunction, ease);
-  -webkit-animation-fill-mode: var(--animationFill, both);
   animation-fill-mode: var(--animationFill, both);
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }

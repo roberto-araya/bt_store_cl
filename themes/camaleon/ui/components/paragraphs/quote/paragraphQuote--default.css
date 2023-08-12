@@ -14,6 +14,7 @@
 }
 
 .paragraphQuote--default__text {
+  font-family: var(--bs-body-font-family);
   padding-left: 2.25rem;
   font-size: 1.875rem;
   line-height: 2.25rem;

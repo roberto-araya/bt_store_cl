@@ -1,7 +1,7 @@
 .blockContactInfo {
   --textFontSize: var(--xsTextFontSize, 1rem);
   --maxWidth: var(--xsMaxWidth, 85vw);
-  font-family: var(--textFontFamily, var(--defaultFontFamily));
+  font-family: var(--textFontFamily, var(--bs-body-font-family));
   color: var(--textColor, var(--bs-block-text-color));
 }
 .blockContactInfo__phones {

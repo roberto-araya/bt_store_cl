@@ -1,19 +1,3 @@
-@-webkit-keyframes bounceInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-2000px);
-  }
-  60% {
-    opacity: 1;
-    transform: translateX(30px);
-  }
-  80% {
-    transform: translateX(-10px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
 @keyframes bounceInLeft {
   0% {
     opacity: 0;
@@ -31,18 +15,11 @@
   }
 }
 .bounceInLeft {
-  -webkit-animation-name: bounceInLeft;
   animation-name: bounceInLeft;
-  -webkit-animation-iteration-count: var(--animationCount, 1s);
   animation-iteration-count: var(--animationCount, 1s);
-  -webkit-animation-duration: var(--animationDuration, 1s);
   animation-duration: var(--animationDuration, 1s);
-  -webkit-animation-delay: var(--animationDelay, 0s);
   animation-delay: var(--animationDelay, 0s);
-  -webkit-animation-timing-function: var(--animationFunction, ease);
   animation-timing-function: var(--animationFunction, ease);
-  -webkit-animation-fill-mode: var(--animationFill, both);
   animation-fill-mode: var(--animationFill, both);
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }

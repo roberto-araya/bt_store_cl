@@ -356,7 +356,8 @@ function camaleon_preprocess_input(&$variables) {
     $button_type = $variables['element']['#button_type'];
     $variables['theme_settings']['button'] = theme_get_setting('buttons.button_' . $button_type);
   } 
-  if (is_array($variables['element']['#attributes']['class'])) {
+  if (isset($variables['element']['#attributes']['class']) && 
+  is_array($variables['element']['#attributes']['class'])) {
     $class = $variables['element']['#attributes']['class'];
     if (in_array('button', $class)) {
       if (in_array('button--primary', $class)) {
@@ -523,7 +524,14 @@ function camaleon_theme_suggestions_user_alter(array &$suggestions, array $varia
  * @param $hook
  */
 function camaleon_theme_suggestions_input_alter(array &$suggestions, array &$variables, $hook) {
-  if (is_array($variables['element']['#attributes']['class'])) {
+  if (isset($variables['theme_hook_original'])) {
+    $hook_original = $variables['theme_hook_original'];
+  } else {
+    $hook_original = 'input__submit';
+  }
+
+  if (isset($variables['element']['#attributes']['class']) &&
+  is_array($variables['element']['#attributes']['class'])) {
     $class = $variables['element']['#attributes']['class'];
     if (in_array('button', $class)) {
       if (in_array('button--primary', $class)) {
@@ -540,15 +548,11 @@ function camaleon_theme_suggestions_input_alter(array &$suggestions, array &$var
     }
   } 
 
-  if (isset($variables['theme_hook_original'])) {
-    $hook_original = $variables['theme_hook_original'];
-  } else {
-    $hook_original = 'input__submit';
-  }
-
   if (isset($variables['element']['#button_type'])) {
     $button_type = str_replace("-", "_", $variables['element']['#button_type']);
   }
 
-  $suggestions[] = $hook_original . '_' . $button_type;
+  if (isset($button_type)) {
+    $suggestions[] = $hook_original . '_' . $button_type;
+  }
 }

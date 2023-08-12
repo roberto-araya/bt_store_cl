@@ -58,7 +58,7 @@
     </div>
   {% else %}
     {% for item in items %}
-      <div><h1{{ attributes.addClass(classes) }}>{{ item.content|render|striptags|trim|lower }}</h1></div>
+      <div><h1{{ attributes.addClass(classes) }}>{{ item.content|render|striptags|trim }}</h1></div>
     {% endfor %}
   {% endif %}
 {% else %}

@@ -2,9 +2,158 @@ langcode: en
 status: true
 dependencies:
   module:
+    - bt_cbc
     - commerce_cart
   theme:
     - camaleon
+third_party_settings:
+  bt_cbc:
+    background:
+      color_select: default
+      color_custom: '#000000'
+      color_opacity: '1.00'
+      color_custom_opacity: FF
+    animation:
+      option: 0
+      trigger: on_page_load
+      type: bounce
+      duration: ''
+      count: ''
+      delay: ''
+      function: default
+      fill: default
+    custom_classes: ''
+    max_width:
+      xs:
+        max_width: ''
+      sm:
+        max_width: ''
+      md:
+        max_width: ''
+      lg:
+        max_width: ''
+      xl:
+        max_width: ''
+      xxl:
+        max_width: ''
+    margin:
+      xs:
+        margin_left: ''
+        margin_top: ''
+        margin_right: ''
+        margin_bottom: ''
+      sm:
+        margin_left: ''
+        margin_top: ''
+        margin_right: ''
+        margin_bottom: ''
+      md:
+        margin_left: ''
+        margin_top: ''
+        margin_right: ''
+        margin_bottom: ''
+      lg:
+        margin_left: ''
+        margin_top: ''
+        margin_right: ''
+        margin_bottom: ''
+      xl:
+        margin_left: ''
+        margin_top: ''
+        margin_right: ''
+        margin_bottom: ''
+      xxl:
+        margin_left: ''
+        margin_top: ''
+        margin_right: ''
+        margin_bottom: ''
+    padding:
+      xs:
+        padding_left: ''
+        padding_top: ''
+        padding_right: ''
+        padding_bottom: ''
+      sm:
+        padding_left: ''
+        padding_top: ''
+        padding_right: ''
+        padding_bottom: ''
+      md:
+        padding_left: ''
+        padding_top: ''
+        padding_right: ''
+        padding_bottom: ''
+      lg:
+        padding_left: ''
+        padding_top: ''
+        padding_right: ''
+        padding_bottom: ''
+      xl:
+        padding_left: ''
+        padding_top: ''
+        padding_right: ''
+        padding_bottom: ''
+      xxl:
+        padding_left: ''
+        padding_top: ''
+        padding_right: ''
+        padding_bottom: ''
+    align:
+      xs:
+        align: default
+      sm:
+        align: default
+      md:
+        align: default
+      lg:
+        align: default
+      xl:
+        align: default
+      xxl:
+        align: default
+    justify:
+      xs:
+        justify: default
+      sm:
+        justify: default
+      md:
+        justify: default
+      lg:
+        justify: default
+      xl:
+        justify: default
+      xxl:
+        justify: default
+    text_align:
+      xs:
+        text_align: default
+      sm:
+        text_align: default
+      md:
+        text_align: default
+      lg:
+        text_align: default
+      xl:
+        text_align: default
+      xxl:
+        text_align: default
+    text:
+      color_select: default
+      color_custom: '#000000'
+      font_family: default
+      font_size:
+        xs:
+          font_size: ''
+        sm:
+          font_size: ''
+        md:
+          font_size: ''
+        lg:
+          font_size: ''
+        xl:
+          font_size: ''
+        xxl:
+          font_size: ''
 id: camaleon_carro
 theme: camaleon
 region: top

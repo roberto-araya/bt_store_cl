@@ -1,12 +1,6 @@
-.block.siteBranding {
-  --xsMaxWidth: max-content;
-}
-
 .siteBranding {
-  --xsNameFontSize: 1.5rem;
-  --xsSloganFontSize: 0.8rem;
-  --nameFontSize: var(--xsNameFontSize);
-  --sloganFontSize: var(--xsSloganFontSize);
+  --nameFontSize: var(--xsNameFontSize, 1.5rem);
+  --sloganFontSize: var(--xsSloganFontSize, 0.8rem);
   --maxWidth: var(--xsMaxWidth);
   width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));
   min-width: var(--logoSize, 72px);
@@ -20,13 +14,13 @@
 }
 .siteBranding__name {
   font-size: var(--nameFontSize);
-  font-family: var(--nameFontFamily, var(--defaultFontFamily));
+  font-family: var(--nameFontFamily, var(--bs-body-font-family));
 }
 .siteBranding__name a {
-  color: var(--nameColor, var(--defaultPageTitleColor));
+  color: var(--nameColor, var(--bs-page-title-color));
 }
 .siteBranding__slogan {
   color: var(--sloganColor, var(--bs-accent));
   font-size: var(--sloganFontSize);
-  font-family: var(--sloganFontFamily, var(--defaultFontFamily));
+  font-family: var(--sloganFontFamily, var(--bs-body-font-family));
 }

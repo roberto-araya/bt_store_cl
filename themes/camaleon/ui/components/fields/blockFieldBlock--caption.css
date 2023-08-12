@@ -35,7 +35,7 @@
   padding-top: var(--paddingTop);
   padding-right: var(--paddingRight);
   padding-bottom: var(--paddingBottom);
-  font-family: var(--captionFontFamily, var(--defaultFontFamily));
+  font-family: var(--captionFontFamily, var(--bs-body-font-family));
   font-size: var(--captionFontSize);
   color: var(--captionColor, var(--bs-accent));
   background-color: var(--backgroundColor, transparent);

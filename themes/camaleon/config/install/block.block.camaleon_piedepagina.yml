@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - system.menu.main
+    - system.menu.footer
   module:
     - bt_cbc
     - system
@@ -29,7 +29,7 @@ third_party_settings:
       xs:
         max_width: ''
       sm:
-        max_width: ''
+        max_width: max-content
       md:
         max_width: ''
       lg:
@@ -115,7 +115,7 @@ third_party_settings:
         align: default
     justify:
       xs:
-        justify: default
+        justify: center
       sm:
         justify: default
       md:
@@ -156,7 +156,7 @@ third_party_settings:
           font_size: ''
         xxl:
           font_size: ''
-    type: default
+    type: horizontal
     gap: ''
     item:
       font_family: default
@@ -216,15 +216,15 @@ third_party_settings:
           padding_top: ''
           padding_right: ''
           padding_bottom: ''
-id: camaleon_main_menu
+id: camaleon_piedepagina
 theme: camaleon
-region: navbar
+region: footer
 weight: 0
 provider: null
-plugin: 'system_menu_block:main'
+plugin: 'system_menu_block:footer'
 settings:
-  id: 'system_menu_block:main'
-  label: 'Menú principal'
+  id: 'system_menu_block:footer'
+  label: 'Pie de página'
   label_display: '0'
   provider: system
   level: 1

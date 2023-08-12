@@ -1,12 +1,3 @@
-@-webkit-keyframes slideOutUp {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-2000px);
-  }
-}
 @keyframes slideOutUp {
   0% {
     transform: translateY(0);
@@ -17,18 +8,11 @@
   }
 }
 .slideOutUp {
-  -webkit-animation-name: slideOutUp;
   animation-name: slideOutUp;
-  -webkit-animation-iteration-count: var(--animationCount, 1s);
   animation-iteration-count: var(--animationCount, 1s);
-  -webkit-animation-duration: var(--animationDuration, 1s);
   animation-duration: var(--animationDuration, 1s);
-  -webkit-animation-delay: var(--animationDelay, 0s);
   animation-delay: var(--animationDelay, 0s);
-  -webkit-animation-timing-function: var(--animationFunction, ease);
   animation-timing-function: var(--animationFunction, ease);
-  -webkit-animation-fill-mode: var(--animationFill, both);
   animation-fill-mode: var(--animationFill, both);
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }

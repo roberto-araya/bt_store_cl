@@ -1,3 +1,16 @@
+.nodeBlogPost--full__title {
+  color: var(--bs-blog-title-color);
+}
+.nodeBlogPost--full__intro {
+  color: var(--bs-caption-text-color);
+  margin-top: 1.2rem;
+}
+.nodeBlogPost--full__intro p {
+  margin: 0 1rem;
+}
+.nodeBlogPost--full__caption {
+  color: var(--bs-intro-text-color);
+}
 .nodeBlogPost--full__image img {
   width: 100%;
 }

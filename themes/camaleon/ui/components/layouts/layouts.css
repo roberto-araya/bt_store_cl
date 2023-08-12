@@ -54,6 +54,7 @@
 }
 
 .regionContent {
+  display: grid;
   margin: 0 1rem;
 }
 

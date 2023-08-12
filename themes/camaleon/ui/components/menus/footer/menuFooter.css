@@ -20,27 +20,28 @@
   width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));
 }
 .menuFooter__menu-title {
-  font-family: var(--titleFontFamily, var(--defaultFontFamily));
+  font-family: var(--titleFontFamily, var(--bs-body-font-family));
   font-size: var(--titleFontSize);
-  color: var(--titleColor, var(--defaultPageTitleColor));
+  color: var(--titleColor, var(--bs-page-title-color));
 }
 .menuFooter__nav {
   gap: var(--gap, 0px);
   max-width: var(--maxWidth);
   justify-content: var(--justifySelf);
 }
-.menuFooter__link {
+.menuFooter .menuFooter__link {
   display: block;
   padding-left: var(--itemPaddingLeft);
   padding-top: var(--itemPaddingTop);
   padding-right: var(--itemPaddingRight);
   padding-bottom: var(--itemPaddingBottom);
-  font-family: var(--itemFontFamily, var(--defaultFontFamily));
+  font-family: var(--itemFontFamily, var(--bs-body-font-family));
   font-size: var(--itemFontSize);
-  color: var(--itemColor, #BC8927);
+  color: var(--itemColor, var(--bs-accent, #FB9F00));
 }
-.menuFooter__link:hover, .menuFooter__link.active {
-  color: var(--itemColorHover, #b38225);
+.menuFooter .menuFooter__link:hover,
+.menuFooter .menuFooter__link.active {
+  color: var(--itemColorHover, var(--bs-accent-400, #FFAF25));
 }
 .menuFooter__item {
   background-color: var(--itemBackgroundColor, transparent);

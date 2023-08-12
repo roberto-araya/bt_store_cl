@@ -3,6 +3,7 @@
   margin: 1rem;
 }
 .paragraphTextImage--default__text p {
+  font-family: var(--bs-body-font-family);
   margin-left: 2rem;
   margin-right: 10px;
 }

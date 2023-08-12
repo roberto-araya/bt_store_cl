@@ -18,27 +18,28 @@ h2.menuNormal__menu-title {
   max-width: var(--maxWidth);
 }
 .menuNormal__menu-title {
-  font-family: var(--titleFontFamily, var(--defaultFontFamily));
+  font-family: var(--titleFontFamily, var(--bs-body-font-family));
   font-size: var(--titleFontSize);
-  color: var(--titleColor, var(--defaultPageTitleColor));
+  color: var(--titleColor, var(--bs-page-title-color));
 }
 .menuNormal__nav {
   gap: var(--gap, 0px);
   max-width: var(--maxWidth);
   justify-content: var(--justifySelf);
 }
-.menuNormal__link {
+.menuNormal .menuNormal__link {
   display: block;
   padding-left: var(--itemPaddingLeft);
   padding-top: var(--itemPaddingTop);
   padding-right: var(--itemPaddingRight);
   padding-bottom: var(--itemPaddingBottom);
-  font-family: var(--itemFontFamily, var(--defaultFontFamily));
+  font-family: var(--itemFontFamily, var(--bs-body-font-family));
   font-size: var(--itemFontSize);
-  color: var(--itemColor, #BC8927);
+  color: var(--itemColor, var(--bs-accent, #FB9F00));
 }
-.menuNormal__link:hover, .menuNormal__link.active {
-  color: var(--itemColorHover, #b38225);
+.menuNormal .menuNormal__link:hover,
+.menuNormal .menuNormal__link.active {
+  color: var(--itemColorHover, var(--bs-accent-400, #FFAF25));
 }
 .menuNormal__item {
   background-color: var(--itemBackgroundColor, transparent);

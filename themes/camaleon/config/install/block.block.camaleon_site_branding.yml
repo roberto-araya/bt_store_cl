@@ -24,8 +24,10 @@ third_party_settings:
       fill: default
     custom_classes: ''
     max_width:
-      sm:
+      xs:
         max_width: ''
+      sm:
+        max_width: max-content
       md:
         max_width: ''
       lg:
@@ -35,6 +37,11 @@ third_party_settings:
       xxl:
         max_width: ''
     margin:
+      xs:
+        margin_left: ''
+        margin_top: ''
+        margin_right: ''
+        margin_bottom: ''
       sm:
         margin_left: ''
         margin_top: ''
@@ -61,6 +68,11 @@ third_party_settings:
         margin_right: ''
         margin_bottom: ''
     padding:
+      xs:
+        padding_left: ''
+        padding_top: ''
+        padding_right: ''
+        padding_bottom: ''
       sm:
         padding_left: ''
         padding_top: ''
@@ -87,6 +99,8 @@ third_party_settings:
         padding_right: ''
         padding_bottom: ''
     align:
+      xs:
+        align: default
       sm:
         align: default
       md:
@@ -98,6 +112,8 @@ third_party_settings:
       xxl:
         align: default
     justify:
+      xs:
+        justify: default
       sm:
         justify: default
       md:
@@ -109,6 +125,8 @@ third_party_settings:
       xxl:
         justify: default
     text_align:
+      xs:
+        text_align: left
       sm:
         text_align: default
       md:
@@ -126,6 +144,8 @@ third_party_settings:
       color_custom: '#000000'
       font_family: default
       font_size:
+        xs:
+          font_size: ''
         sm:
           font_size: ''
         md:
@@ -141,6 +161,8 @@ third_party_settings:
       color_custom: '#000000'
       font_family: default
       font_size:
+        xs:
+          font_size: ''
         sm:
           font_size: ''
         md:

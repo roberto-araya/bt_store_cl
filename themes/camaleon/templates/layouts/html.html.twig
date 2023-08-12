@@ -23,8 +23,18 @@
  * @see template_preprocess_html()
  */
 #}
-{{ attach_library('camaleon/' ~ theme_settings.font) }}
+{% set div_attributes = create_attribute() %}
+{% set style_vars = [] %}
 
+{%
+  set styles_vars = style_vars|merge([
+    theme_settings.font == 'default' ? '--bs-body-font-family: var(--bs-font-sans-serif)' : '',
+    theme_settings.font != 'default' ? '--bt--font: ' ~ theme_settings.font|replace({'-': " "})  : '',
+    theme_settings.font != 'default' ? '--bs-body-font-family: var(--bt--font, var(--bs-font-sans-serif))' : '',  
+  ])|remove_empty
+%}
+
+{{ attach_library('camaleon/' ~ theme_settings.font) }}
 <!DOCTYPE html>
 <html{{ html_attributes }}>
   <head>
@@ -41,9 +51,11 @@
     <a href="#main-content" class="visually-hidden focusable">
       {{ 'Skip to main content'|t }}
     </a>
+    <div {{ div_attributes.setAttribute('class', ['body']).setAttribute('style', styles_vars|join('; ')) }}>
     {{ page_top }}
     {{ page }}
     {{ page_bottom }}
+    </div>
     <js-bottom-placeholder token="{{ placeholder_token|raw }}">
   </body>
 </html>

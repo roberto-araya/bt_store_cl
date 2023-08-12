@@ -1,11 +1,3 @@
-@-webkit-keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
 @keyframes fadeOut {
   0% {
     opacity: 1;
@@ -15,18 +7,11 @@
   }
 }
 .fadeOut {
-  -webkit-animation-name: fadeOut;
   animation-name: fadeOut;
-  -webkit-animation-iteration-count: var(--animationCount, 1s);
   animation-iteration-count: var(--animationCount, 1s);
-  -webkit-animation-duration: var(--animationDuration, 1s);
   animation-duration: var(--animationDuration, 1s);
-  -webkit-animation-delay: var(--animationDelay, 0s);
   animation-delay: var(--animationDelay, 0s);
-  -webkit-animation-timing-function: var(--animationFunction, ease);
   animation-timing-function: var(--animationFunction, ease);
-  -webkit-animation-fill-mode: var(--animationFill, both);
   animation-fill-mode: var(--animationFill, both);
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }

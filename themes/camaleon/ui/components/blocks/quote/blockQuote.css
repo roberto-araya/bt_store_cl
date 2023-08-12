@@ -11,7 +11,7 @@
 }
 .blockQuote__text {
   color: var(--textColor, var(--bs-block-text-color));
-  font-family: var(--textFontFamily, var(--defaultFontFamily));
+  font-family: var(--textFontFamily, var(--bs-body-font-family));
   font-size: var(--textFontSize);
 }
 .blockQuote__text::before {
@@ -19,9 +19,9 @@
 }
 .blockQuote__source {
   color: var(--sourceColor, var(--bs-body-color));
-  font-family: var(--textFontFamily, var(--defaultFontFamily));
+  font-family: var(--textFontFamily, var(--bs-body-font-family));
 }
 .blockQuote__link-single a {
   color: var(--linkColor, var(--bs-primary));
-  font-family: var(--textFontFamily, var(--defaultFontFamily));
+  font-family: var(--textFontFamily, var(--bs-body-font-family));
 }

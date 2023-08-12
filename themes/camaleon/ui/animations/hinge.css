@@ -1,57 +1,22 @@
-@-webkit-keyframes hinge {
-  0% {
-    -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
-    transform: rotate(0);
-    transform-origin: top left;
-  }
-  20%, 60% {
-    -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
-    transform: rotate(80deg);
-    transform-origin: top left;
-  }
-  40% {
-    -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
-    transform: rotate(60deg);
-    transform-origin: top left;
-  }
-  80% {
-    opacity: 1;
-    -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
-    transform: rotate(60deg) translateY(0);
-    transform-origin: top left;
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(700px);
-  }
-}
 @keyframes hinge {
   0% {
-    -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
     transform: rotate(0);
     transform-origin: top left;
   }
   20%, 60% {
-    -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
     transform: rotate(80deg);
     transform-origin: top left;
   }
   40% {
-    -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
     transform: rotate(60deg);
     transform-origin: top left;
   }
   80% {
     opacity: 1;
-    -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
     transform: rotate(60deg) translateY(0);
     transform-origin: top left;
   }
@@ -61,18 +26,11 @@
   }
 }
 .hinge {
-  -webkit-animation-name: hinge;
   animation-name: hinge;
-  -webkit-animation-iteration-count: var(--animationCount, 1s);
   animation-iteration-count: var(--animationCount, 1s);
-  -webkit-animation-duration: var(--animationDuration, 1s);
   animation-duration: var(--animationDuration, 1s);
-  -webkit-animation-delay: var(--animationDelay, 0s);
   animation-delay: var(--animationDelay, 0s);
-  -webkit-animation-timing-function: var(--animationFunction, ease);
   animation-timing-function: var(--animationFunction, ease);
-  -webkit-animation-fill-mode: var(--animationFill, both);
   animation-fill-mode: var(--animationFill, both);
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }

@@ -2,10 +2,6 @@ cssvars.bt:
   label: Theme CSS Variables
   type: mapping
   mapping:
-    # Font Family
-    font_family:
-      type: cssvars_size
-      label: Font Family
     # Body
     body_bg:
       type: cssvars_color
@@ -19,10 +15,6 @@ cssvars.bt:
     body_color:
       type: cssvars_color
       label: Body Text Color
-    # Page Top
-    page_top_text_color:
-      type: cssvars_color
-      label: Page Top Text Color
     # Block
     block_bg_color:
       type: cssvars_color
@@ -30,20 +22,6 @@ cssvars.bt:
     block_text_color:
       type: cssvars_color
       label: Block Text Color
-    # Border
-    border_color:
-      type: cssvars_color
-      label: Border Color    
-    # Footer
-    footer_bg:
-      type: cssvars_color
-      label: Footer Background
-    footer_link_color:
-      type: cssvars_color
-      label: Footer Link Color
-    footer_link_hover_color:
-      type: cssvars_color
-      label: Footer Link Hover Color
     # Content
     caption_text_color:
       type: cssvars_color
@@ -55,27 +33,15 @@ cssvars.bt:
     section_title_color:
       type: cssvars_color
       label: Section Title Color
-    section_shadow_title_color:
-      type: cssvars_color
-      label: Section Shadow Title Color
     block_title_color:
       type: cssvars_color
       label: Block Title Color
-    block_shadow_title_color:
-      type: cssvars_color
-      label: Block Shadow Title Color
     article_title_color:
       type: cssvars_color
       label: Article Title Color
-    article_shadow_title_color:
-      type: cssvars_color
-      label: Article Shadow Title Color
     blog_title_color:
       type: cssvars_color
       label: Blog Title Color
-    blog_shadow_title_color:
-      type: cssvars_color
-      label: Blog Shadow Title Color
     # Link
     link_color:
       type: cssvars_color
@@ -83,136 +49,160 @@ cssvars.bt:
     link_hover_color:
       type: cssvars_color
       label: Link Hover Color
-    # Breadcrumbs
-    breadcrumbs_bg:
-      type: cssvars_color
-      label: Breadcrumbs Background Color
-    breadcrumbs_color:
-      type: cssvars_color
-      label: Breadcrumbs Color
-    breadcrumbs_link_color:
-      type: cssvars_color
-      label: Breadcrumbs Link Color
-    breadcrumbs_link_hover_color:
-      type: cssvars_color
-      label: Breadcrumbs Link Hover Color
-    # Navbar
-    navbar_bg:
-      type: cssvars_color
-      label: Navbar Background Color
-    navbar_link_color:
-      type: cssvars_color
-      label: Navbar Link Color
-    navbar_link_hover_color:
-      type: cssvars_color
-      label: Navbar Link Hover Color
-    navbar_height:
-      type: cssvars_color
-      label: Navbar Height
-    # Status
-    status_messages_bg:
-      type: cssvars_color
-      label: Status Messages Background
-    status_messages_color:
-      type: cssvars_color
-      label: Status Messages Color
     # Theme Colors
-    color_primary:
+    blue:
+      type: cssvars_color
+      label: Blue
+    indigo:
+      type: cssvars_color
+      label: Indigo
+    purple:
+      type: cssvars_color
+      label: Purple
+    pink:
+      type: cssvars_color
+      label: Pink
+    red:
+      type: cssvars_color
+      label: Red
+    orange:
+      type: cssvars_color
+      label: Orange
+    yellow:
+      type: cssvars_color
+      label: Yellow
+    green:
+      type: cssvars_color
+      label: Green
+    teal:
+      type: cssvars_color
+      label: Teal
+    cyan:
+      type: cssvars_color
+      label: Cyan
+    primary:
       type: cssvars_color
       label: Color Primary
-    color_primary_050:
+    primary_050:
       type: cssvars_color
       label: Color Primary 50
-    color_primary_100:
+    primary_100:
       type: cssvars_color
       label: Color Primary 100
-    color_primary_200:
+    primary_200:
       type: cssvars_color
       label: Color Primary 200
-    color_primary_300:
+    primary_300:
       type: cssvars_color
       label: Color Primary 300
-    color_primary_400:
+    primary_400:
       type: cssvars_color
       label: Color Primary 400
-    color_primary_500:
+    primary_500:
       type: cssvars_color
       label: Color Primary 500
-    color_primary_600:
+    primary_600:
       type: cssvars_color
       label: Color Primary 600
-    color_primary_700:
+    primary_700:
       type: cssvars_color
       label: Color Primary 700
-    color_primary_800:
+    primary_800:
       type: cssvars_color
       label: Color Primary 800
-    color_primary_900:
+    primary_900:
       type: cssvars_color
       label: Color Primary 900
-    color_secondary:
+    secondary:
       type: cssvars_color
       label: Color Secondary
-    color_secondary_050:
+    secondary_050:
       type: cssvars_color
       label: Color Secondary 50
-    color_secondary_100:
+    secondary_100:
       type: cssvars_color
       label: Color Secondary 100
-    color_secondary_200:
+    secondary_200:
       type: cssvars_color
       label: Color Secondary 200
-    color_secondary_300:
+    secondary_300:
       type: cssvars_color
       label: Color Secondary 300
-    color_secondary_400:
+    secondary_400:
       type: cssvars_color
       label: Color Secondary 400
-    color_secondary_500:
+    secondary_500:
       type: cssvars_color
       label: Color Secondary 500
-    color_secondary_600:
+    secondary_600:
       type: cssvars_color
       label: Color Secondary 600
-    color_secondary_700:
+    secondary_700:
       type: cssvars_color
       label: Color Secondary 700
-    color_secondary_800:
+    secondary_800:
       type: cssvars_color
       label: Color Secondary 800
-    color_secondary_900:
+    secondary_900:
       type: cssvars_color
       label: Color Primary 900
-    color_accent:
+    accent:
       type: cssvars_color
       label: Color Accent
-    color_accent_050:
+    accent_050:
       type: cssvars_color
       label: Color Accent 50
-    color_accent_100:
+    accent_100:
       type: cssvars_color
       label: Color Accent 100
-    color_accent_200:
+    accent_200:
       type: cssvars_color
       label: Color Accent 200
-    color_accent_300:
+    accent_300:
       type: cssvars_color
       label: Color Accent 300
-    color_accent_400:
+    accent_400:
       type: cssvars_color
       label: Color Accent 400
-    color_accent_500:
+    accent_500:
       type: cssvars_color
       label: Color Accent 500
-    color_accent_600:
+    accent_600:
       type: cssvars_color
       label: Color Accent 600
-    color_accent_700:
+    accent_700:
       type: cssvars_color
       label: Color Accent 700
-    color_accent_800:
+    accent_800:
       type: cssvars_color
       label: Color Accent 800
-    color_accent_900:
+    accent_900:
       type: cssvars_color
       label: Color Accent 900
+    gray_100:
+      type: cssvars_color
+      label: Color Gray 100
+    gray_200:
+      type: cssvars_color
+      label: Color Gray 200
+    gray_300:
+      type: cssvars_color
+      label: Color Gray 300
+    gray_400:
+      type: cssvars_color
+      label: Color Gray 400
+    gray_500:
+      type: cssvars_color
+      label: Color Gray 500
+    gray_600:
+      type: cssvars_color
+      label: Color Gray 600
+    gray_700:
+      type: cssvars_color
+      label: Color Gray 700
+    gray_800:
+      type: cssvars_color
+      label: Color Gray 800
+    gray_900:
+      type: cssvars_color
+      label: Color Gray 900

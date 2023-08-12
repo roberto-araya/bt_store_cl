@@ -3,5 +3,6 @@
   margin: 1rem;
 }
 .paragraphText--default__text p {
+  font-family: var(--bs-body-font-family);
   margin-left: 2rem;
 }

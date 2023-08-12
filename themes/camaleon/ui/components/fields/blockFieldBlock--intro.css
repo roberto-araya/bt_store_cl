@@ -35,7 +35,7 @@
   padding-top: var(--paddingTop);
   padding-right: var(--paddingRight);
   padding-bottom: var(--paddingBottom);
-  font-family: var(--introFontFamily, var(--defaultFontFamily));
+  font-family: var(--introFontFamily, var(--bs-body-font-family));
   font-size: var(--introFontSize);
   color: var(--introColor, var(--bs-primary));
   background-color: var(--backgroundColor, transparent);

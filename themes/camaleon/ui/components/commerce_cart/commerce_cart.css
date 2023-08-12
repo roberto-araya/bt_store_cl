@@ -13,7 +13,7 @@
 }
 .commerceCart .cart-block--summary__count {
   margin-right: 0.5rem;
-  font-family: var(--textFontFamily, var(--defaultFontFamily));
+  font-family: var(--textFontFamily, var(--bs-body-font-family));
   font-size: var(--textFontSize);
   color: var(--textColor, var(--bs-white));
   text-transform: capitalize;
