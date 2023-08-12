@@ -80,30 +80,18 @@ regions:
   region_sidebar_first:
     background_color: default
     background_color_custom: '#000000'
-    background_color_opacity: '1.00'
-    background_color_custom_opacity: FF
     background_color_hover: default
     background_color_custom_hover: '#000000'
-    background_color_opacity_hover: '1.00'
-    background_color_custom_opacity_hover: FF
   region_content:
     background_color: default
     background_color_custom: '#000000'
-    background_color_opacity: '1.00'
-    background_color_custom_opacity: FF
     background_color_hover: default
     background_color_custom_hover: '#000000'
-    background_color_opacity_hover: '1.00'
-    background_color_custom_opacity_hover: FF
   region_sidebar_second:
     background_color: default
     background_color_custom: '#000000'
-    background_color_opacity: '1.00'
-    background_color_custom_opacity: FF
     background_color_hover: default
     background_color_custom_hover: '#000000'
-    background_color_opacity_hover: '1.00'
-    background_color_custom_opacity_hover: FF
   region_top:
     justify_content: flex-end
     align_items: baseline
@@ -114,37 +102,8 @@ regions:
       box_select: 100%
     background_color: bs-primary-800
     background_color_custom: '#000000'
-    background_color_opacity: '1.00'
-    background_color_custom_opacity: FF
     background_color_hover: default
     background_color_custom_hover: '#000000'
-    background_color_opacity_hover: '1.00'
-    background_color_custom_opacity_hover: FF
-  region_navbar:
-    justify_content: space-around
-    align_items: baseline
-    height: ''
-    width:
-      container_select: full
-      full_select: 10%
-      box_select: 100%
-    position_select: inherit
-    background_color: bs-primary-800
-    toggler_color: default
-    background_color_custom: '#000000'
-    toggler_color_custom: '#000000'
-    background_color_opacity: '1.00'
-    toggler_color_opacity: '1.00'
-    background_color_custom_opacity: FF
-    toggler_color_custom_opacity: FF
-    background_color_hover: default
-    toggler_color_hover: default
-    background_color_custom_hover: '#000000'
-    toggler_color_custom_hover: '#000000'
-    background_color_opacity_hover: '1.00'
-    toggler_color_opacity_hover: '1.00'
-    background_color_custom_opacity_hover: FF
-    toggler_color_custom_opacity_hover: FF
   region_pre_header:
     justify_content: center
     align_items: baseline
@@ -155,12 +114,21 @@ regions:
       box_select: 100%
     background_color: default
     background_color_custom: '#000000'
-    background_color_opacity: '1.00'
-    background_color_custom_opacity: FF
     background_color_hover: default
     background_color_custom_hover: '#000000'
-    background_color_opacity_hover: '1.00'
-    background_color_custom_opacity_hover: FF
+  region_navbar:
+    justify_content: space-around
+    align_items: baseline
+    height: ''
+    width:
+      container_select: full
+      full_select: 10%
+      box_select: 100%
+    background_color: bs-primary-050
+    background_color_custom: '#000000'
+    background_color_hover: default
+    background_color_custom_hover: '#000000'
+    position_select: inherit
   region_header:
     justify_content: center
     align_items: baseline
@@ -171,12 +139,8 @@ regions:
       box_select: 100%
     background_color: default
     background_color_custom: '#000000'
-    background_color_opacity: '1.00'
-    background_color_custom_opacity: FF
     background_color_hover: default
     background_color_custom_hover: '#000000'
-    background_color_opacity_hover: '1.00'
-    background_color_custom_opacity_hover: FF
   region_primary_menu:
     justify_content: center
     align_items: baseline
@@ -187,12 +151,8 @@ regions:
       box_select: 100%
     background_color: default
     background_color_custom: '#000000'
-    background_color_opacity: '1.00'
-    background_color_custom_opacity: FF
     background_color_hover: default
     background_color_custom_hover: '#000000'
-    background_color_opacity_hover: '1.00'
-    background_color_custom_opacity_hover: FF
   region_secondary_menu:
     justify_content: center
     align_items: baseline
@@ -203,12 +163,8 @@ regions:
       box_select: 100%
     background_color: default
     background_color_custom: '#000000'
-    background_color_opacity: '1.00'
-    background_color_custom_opacity: FF
     background_color_hover: default
     background_color_custom_hover: '#000000'
-    background_color_opacity_hover: '1.00'
-    background_color_custom_opacity_hover: FF
   region_breadcrumb:
     justify_content: flex-start
     align_items: baseline
@@ -219,12 +175,8 @@ regions:
       box_select: 100%
     background_color: default
     background_color_custom: '#000000'
-    background_color_opacity: '1.00'
-    background_color_custom_opacity: FF
     background_color_hover: default
     background_color_custom_hover: '#000000'
-    background_color_opacity_hover: '1.00'
-    background_color_custom_opacity_hover: FF
   region_highlighted:
     justify_content: center
     align_items: baseline
@@ -235,12 +187,8 @@ regions:
       box_select: 100%
     background_color: default
     background_color_custom: '#000000'
-    background_color_opacity: '1.00'
-    background_color_custom_opacity: FF
     background_color_hover: default
     background_color_custom_hover: '#000000'
-    background_color_opacity_hover: '1.00'
-    background_color_custom_opacity_hover: FF
   region_help:
     justify_content: center
     align_items: baseline
@@ -249,8 +197,12 @@ regions:
       container_select: full
       full_select: '0'
       box_select: 100%
+    background_color: default
+    background_color_custom: '#000000'
+    background_color_hover: default
+    background_color_custom_hover: '#000000'
   region_footer:
-    justify_content: flex-start
+    justify_content: center
     align_items: baseline
     height: ''
     width:
@@ -259,12 +211,8 @@ regions:
       box_select: 100%
     background_color: bs-primary-800
     background_color_custom: '#000000'
-    background_color_opacity: '1.00'
-    background_color_custom_opacity: FF
     background_color_hover: default
     background_color_custom_hover: '#000000'
-    background_color_opacity_hover: '1.00'
-    background_color_custom_opacity_hover: FF
   region_bottom:
     justify_content: center
     align_items: baseline
@@ -275,11 +223,83 @@ regions:
       box_select: 100%
     background_color: default
     background_color_custom: '#000000'
-    background_color_opacity: '1.00'
-    background_color_custom_opacity: FF
     background_color_hover: default
     background_color_custom_hover: '#000000'
-    background_color_opacity_hover: '1.00'
-    background_color_custom_opacity_hover: FF
-langcode: en
+langcode: es
 font: default
+buttons:
+  button_primary:
+    link_color: default
+    link_color_custom: '#000000'
+    link_color_hover: default
+    link_color_custom_hover: '#000000'
+    link_color_active: default
+    link_color_custom_active: '#000000'
+    link_color_disabled: default
+    link_color_custom_disabled: '#000000'
+    background_color: default
+    background_color_custom: '#000000'
+    background_color_hover: default
+    background_color_custom_hover: '#000000'
+    background_color_active: default
+    background_color_custom_active: '#000000'
+    background_color_disabled: default
+    background_color_custom_disabled: '#000000'
+    border_color: default
+    border_color_custom: '#000000'
+    border_color_hover: default
+    border_color_custom_hover: '#000000'
+    border_color_active: default
+    border_color_custom_active: '#000000'
+    border_color_disabled: default
+    border_color_custom_disabled: '#000000'
+  button_secondary:
+    link_color: default
+    link_color_custom: '#000000'
+    link_color_hover: default
+    link_color_custom_hover: '#000000'
+    link_color_active: default
+    link_color_custom_active: '#000000'
+    link_color_disabled: default
+    link_color_custom_disabled: '#000000'
+    background_color: default
+    background_color_custom: '#000000'
+    background_color_hover: default
+    background_color_custom_hover: '#000000'
+    background_color_active: default
+    background_color_custom_active: '#000000'
+    background_color_disabled: default
+    background_color_custom_disabled: '#000000'
+    border_color: default
+    border_color_custom: '#000000'
+    border_color_hover: default
+    border_color_custom_hover: '#000000'
+    border_color_active: default
+    border_color_custom_active: '#000000'
+    border_color_disabled: default
+    border_color_custom_disabled: '#000000'
+  button_accent:
+    link_color: default
+    link_color_custom: '#000000'
+    link_color_hover: default
+    link_color_custom_hover: '#000000'
+    link_color_active: default
+    link_color_custom_active: '#000000'
+    link_color_disabled: default
+    link_color_custom_disabled: '#000000'
+    background_color: default
+    background_color_custom: '#000000'
+    background_color_hover: default
+    background_color_custom_hover: '#000000'
+    background_color_active: default
+    background_color_custom_active: '#000000'
+    background_color_disabled: default
+    background_color_custom_disabled: '#000000'
+    border_color: default
+    border_color_custom: '#000000'
+    border_color_hover: default
+    border_color_custom_hover: '#000000'
+    border_color_active: default
+    border_color_custom_active: '#000000'
+    border_color_disabled: default
+    border_color_custom_disabled: '#000000'
