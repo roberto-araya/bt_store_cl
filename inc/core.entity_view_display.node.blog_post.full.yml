@@ -33,8 +33,8 @@ third_party_settings:
         layout_settings:
           label: ''
         components:
-          b13205c2-bc75-4d2a-9f0d-dc66aa4ec487:
-            uuid: b13205c2-bc75-4d2a-9f0d-dc66aa4ec487
+          1c3bda1f-2fb2-4621-b828-f688ef329e16:
+            uuid: 1c3bda1f-2fb2-4621-b828-f688ef329e16
             region: content
             configuration:
               id: 'extra_field_block:node:blog_post:content_moderation_control'
@@ -246,7 +246,7 @@ third_party_settings:
                 animation_fill: default
                 xs_align: default
                 xs_justify: center
-                xs_text_align: default
+                xs_text_align: center
                 sm_align: default
                 sm_justify: default
                 sm_text_align: default
@@ -294,7 +294,7 @@ third_party_settings:
                 animation_function: default
                 animation_fill: default
                 xs_align: default
-                xs_justify: default
+                xs_justify: center
                 xs_text_align: default
                 sm_align: default
                 sm_justify: default

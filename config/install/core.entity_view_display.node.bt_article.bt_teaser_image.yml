@@ -1,0 +1,79 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.bt_teaser_image
+    - field.field.node.bt_article.field_bt_category
+    - field.field.node.bt_article.field_bt_content_image
+    - field.field.node.bt_article.field_bt_intro
+    - field.field.node.bt_article.field_bt_metatags
+    - field.field.node.bt_article.field_bt_paragraphs
+    - field.field.node.bt_article.field_bt_tags
+    - field.field.node.bt_article.field_bt_title_foot
+    - field.field.node.bt_article.layout_builder__layout
+    - node.type.bt_article
+  module:
+    - layout_builder
+    - layout_builder_restrictions
+    - layout_library
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+  layout_library:
+    enable: false
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      allowed_layouts: {  }
+      denylisted_blocks: {  }
+      allowlisted_blocks: {  }
+      restricted_categories: {  }
+id: node.bt_article.bt_teaser_image
+targetEntityType: node
+bundle: bt_article
+mode: bt_teaser_image
+content:
+  field_bt_content_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: bt_block
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_bt_intro:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_bt_title_foot:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  content_moderation_control: true
+  field_bt_category: true
+  field_bt_metatags: true
+  field_bt_paragraphs: true
+  field_bt_tags: true
+  langcode: true
+  layout_builder__layout: true
+  links: true
