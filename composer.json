@@ -47,6 +47,7 @@
         "drupal/product_taxonomy_filter": "^3.x-dev@dev",
         "drupal/views_bootstrap": "^5.5@alpha",
         "drupal/metatag": "^1.22",
+        "drupal/page_manager": "^4.0@RC",
         "drupal/schema_metatag": "^2.3",
         "drupal/symfony_mailer": "^1.1@beta",
         "drupal/transbank": "^2.0@beta"
