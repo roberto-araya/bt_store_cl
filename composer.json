@@ -14,7 +14,7 @@
         }
     ],
     "require": {
-        "drupal/ctools": "~3.9.0",
+        "drupal/ctools": "^3.9.0",
         "drupal/bt_personas": "^2.x-dev",
         "drupal/bt_core": "^2.x-dev",
         "drupal/bt_cms": "^2.x-dev",
