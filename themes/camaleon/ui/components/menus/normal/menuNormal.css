@@ -35,11 +35,11 @@ h2.menuNormal__menu-title {
   padding-bottom: var(--itemPaddingBottom);
   font-family: var(--itemFontFamily, var(--bs-body-font-family));
   font-size: var(--itemFontSize);
-  color: var(--itemColor, var(--bs-accent, #FB9F00));
+  color: var(--itemColor, var(--bs-primary));
 }
 .menuNormal .menuNormal__link:hover,
 .menuNormal .menuNormal__link.active {
-  color: var(--itemColorHover, var(--bs-accent-400, #FFAF25));
+  color: var(--itemColorHover, var(--bs-secondary));
 }
 .menuNormal__item {
   background-color: var(--itemBackgroundColor, transparent);

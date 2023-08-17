@@ -1,7 +1,9 @@
 .blockBasic {
   --maxWidth: var(--xsMaxWidth);
+  --textColor: var(--bs-block-text-color);
   max-width: var(--maxWidth);
   display: flex;
-  align-items: center;
+  flex-direction: column;
   width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));
+  color: var(--textColor);
 }

@@ -556,3 +556,18 @@ function camaleon_theme_suggestions_input_alter(array &$suggestions, array &$var
     $suggestions[] = $hook_original . '_' . $button_type;
   }
 }
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * Add views template suggestions.
+ * 
+ * @inheritdoc
+ */
+
+function camaleon_theme_suggestions_views_view_alter(array &$suggestions, array $variables) {
+  $views_id = $variables['view']->id();
+  $display_id = $variables['view']->getDisplay()->display['id'];
+  $suggestions[] = 'views_view__' . $views_id;
+  $suggestions[] = 'views_view__' . $views_id . '_' . $display_id;
+}

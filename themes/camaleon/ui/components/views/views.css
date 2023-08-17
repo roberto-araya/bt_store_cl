@@ -1,37 +1,6 @@
-/**
- * @file
- * Styling for Views.
- */
-/* Tab styles */
-.views-displays .tabs .open > a {
-  border-radius: 0.5rem 0.5rem 0 0;
+.viewsBlog--blog-all .nodeBlogPost--teaser-image {
+  border: solid 1px var(--bs-body-color);
 }
-
-.views-displays .tabs .open > a:hover,
-.views-displays .tabs .open > a:focus {
-  color: #BC8927;
-}
-
-.views-displays .secondary .form-submit {
-  font-size: 1.05rem;
-}
-
-/* Tabs action list styles */
-.views-displays .tabs .action-list {
-  padding: 0;
-}
-
-/* Contextual filter options styles */
-.views-filterable-options .filterable-option:nth-of-type(even) .form-type-checkbox {
-  background-color: #F9F9F9;
-}
-
-/* Views action dropbutton styles */
-.views-ui-display-tab-actions .dropbutton .form-submit {
-  color: #b38225;
-}
-
-.views-ui-display-tab-actions .dropbutton .form-submit:hover,
-.views-ui-display-tab-actions .dropbutton .form-submit:focus {
-  color: #BC8927;
+.viewsBlog--blog-all .feed-icons {
+  margin-top: 4rem;
 }

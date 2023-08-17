@@ -1,3 +1,35 @@
+{#
+/**
+ * @file
+ * Theme override for a main view template.
+ *
+ * Available variables:
+ * - attributes: Remaining HTML attributes for the element.
+ * - css_name: A CSS-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   Javascript.
+ *
+ * @see template_preprocess_views_view()
+ */
+#}
 {% set styles = configuration.block_style %}
 {% set style_vars = [] %}
 
@@ -18,50 +50,7 @@
 {% endif %}
 
 {%
-  set styles_vars = style_vars|merge([
-    styles.title_color_select != 'default' and styles.title_color_select != 'customColor' ? '--titleColor: var(--' ~ styles.title_color_select ~ ')',
-    styles.title_color_select == 'customColor' ? '--titleColor: ' ~ styles.title_color_custom,
-    styles.title_font_family != 'default' ? '--titleFontFamily: ' ~ styles.title_font_family|replace({'-': " "}) : '',
-    styles.title_xs_font_size != '' ? '--xsTitleFontSize: ' ~ styles.title_xs_font_size : '',
-    styles.title_sm_font_size != '' ? '--smTitleFontSize: ' ~ styles.title_sm_font_size : '',
-    styles.title_md_font_size != '' ? '--mdTitleFontSize: ' ~ styles.title_md_font_size : '',
-    styles.title_lg_font_size != '' ? '--lgTitleFontSize: ' ~ styles.title_lg_font_size : '',
-    styles.title_xl_font_size != '' ? '--xlTitleFontSize: ' ~ styles.title_xl_font_size : '',
-    styles.title_xxl_font_size != '' ? '--xxlTitleFontSize: ' ~ styles.title_xxl_font_size : '',
-
-    styles.caption_color_select != 'default' and styles.caption_color_select != 'customColor' ? '--captionColor: var(--' ~ styles.caption_color_select ~ ')',
-    styles.caption_color_select == 'customColor' ? '--captionColor: ' ~ styles.caption_color_custom,
-    styles.caption_font_family != 'default' ? '--captionFontFamily: ' ~ styles.caption_font_family|replace({'-': " "}) : '',
-    styles.caption_xs_font_size != '' ? '--xsCaptionFontSize: ' ~ styles.caption_xs_font_size : '',
-    styles.caption_sm_font_size != '' ? '--smCaptionFontSize: ' ~ styles.caption_sm_font_size : '',
-    styles.caption_md_font_size != '' ? '--mdCaptionFontSize: ' ~ styles.caption_md_font_size : '',
-    styles.caption_lg_font_size != '' ? '--lgCaptionFontSize: ' ~ styles.caption_lg_font_size : '',
-    styles.caption_xl_font_size != '' ? '--xlCaptionFontSize: ' ~ styles.caption_xl_font_size : '',
-    styles.caption_xxl_font_size != '' ? '--xxlCaptionFontSize: ' ~ styles.caption_xxl_font_size : '',
-
-    styles.text_color_select != 'default' and styles.text_color_select != 'customColor' ? '--textColor: var(--' ~ styles.text_color_select ~ ')',
-    styles.text_color_select == 'customColor' ? '--textColor: ' ~ styles.text_color_custom,
-    styles.text_font_family != 'default' ? '--textFontFamily: ' ~ styles.text_font_family|replace({'-': " "}) : '',
-    styles.text_xs_font_size != '' ? '--xsTextFontSize: ' ~ styles.text_xs_font_size : '',
-    styles.text_sm_font_size != '' ? '--smTextFontSize: ' ~ styles.text_sm_font_size : '',
-    styles.text_md_font_size != '' ? '--mdTextFontSize: ' ~ styles.text_md_font_size : '',
-    styles.text_lg_font_size != '' ? '--lgTextFontSize: ' ~ styles.text_lg_font_size : '',
-    styles.text_xl_font_size != '' ? '--xlTextFontSize: ' ~ styles.text_xl_font_size : '',
-    styles.text_xxl_font_size != '' ? '--xxlTextFontSize: ' ~ styles.text_xxl_font_size : '',
-
-    styles.background_color_select == 'default' ? '--backgroundColor: rgb(var(--bs-white-rgb), 0.5)' : '',
-
-    content.field_bt_button_icon|render ? '--buttonIcon: calc(1.5rem + var(--buttonIconSize, 24px))',
-    content.field_bt_button_secondary_icon|render ? '--buttonSecondaryIcon: calc(1.5rem + var(--buttonIconSize, 24px))',
-    styles.button_color_select != 'default' and styles.button_color_select != 'customColor' ? '--buttonColor: var(--' ~ styles.button_color_select ~ ')',
-    styles.button_color_select == 'customColor' ? '--buttonColor: ' ~ styles.button_color_custom,
-    styles.button_link_color_select != 'default' and styles.button_link_color_select != 'customColor' ? '--buttonLinkColor: var(--' ~ styles.button_link_color_select ~ ')',
-    styles.button_link_color_select == 'customColor' ? '--buttonLinkColor: ' ~ styles.button_link_color_custom,
-    styles.button_secondary_color_select != 'default' and styles.button_secondary_color_select != 'customColor' ? '--buttonSecondaryColor: var(--' ~ styles.button_secondary_color_select ~ ')',
-    styles.button_secondary_color_select == 'customColor' ? '--buttonSecondaryColor: ' ~ styles.button_secondary_color_custom,
-    styles.button_secondary_link_color_select != 'default' and styles.button_secondary_link_color_select != 'customColor' ? '--buttonSecondaryLinkColor: var(--' ~ styles.button_secondary_link_color_select ~ ')',
-    styles.button_secondary_link_color_select == 'customColor' ? '--buttonSecondaryLinkColor: ' ~ styles.button_secondary_link_color_custom,
-
+  set style_vars = style_vars|merge([
     styles.animation_option == TRUE  and styles.animation_duration ? '--animationDuration: ' ~ styles.animation_duration : '',
     styles.animation_option == TRUE  and styles.animation_delay ? '--animationDelay: ' ~ styles.animation_delay : '',
     styles.animation_option == TRUE  and styles.animation_count ? '--animationCount: ' ~ styles.animation_count : '',
@@ -150,59 +139,67 @@
 
 {%
   set classes = [
-    'block',
-    'block' ~ bundle|capitalize,
-    'block' ~ bundle|capitalize ~ '--' ~ view_mode,
-  ]|remove_empty
-%}
-
-{% set boxed_attributes = create_attribute() %}
-{%
-  set boxed_classes = [
-    'boxed',
-    styles.animation_option == TRUE and styles.animation_trigger == 'on_scroll' ? 'wow' : '',
-    styles.animation_option == TRUE ? styles.animation_type : '',
-  ]|remove_empty
-%}
-
-
-{%
-  set title_classes = [
-    configuration.label_display == FALSE ? 'visually-hidden',
-    'block' ~ bundle|capitalize ~ '--' ~ view_mode ~ '__block-title',
+    'view',
+    'view-' ~ id|clean_class,
+    'view-id-' ~ id,
+    'view-display-id-' ~ display_id,
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
   ]
 %}
 
-<section {{ attributes.setAttribute('style', styles_vars|join('; ')).setAttribute('id', 'blockHero--' ~ id ).addClass(classes) }}>
-  {{title_prefix }}
-  <h3{{ title_attributes.addClass(title_classes) }}>{{ label }}</h3>
+{{ attach_library('camaleon/pager') }}
+
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if title %}
+    {{ title }}
+  {% endif %}
   {{ title_suffix }}
-  <div{{ boxed_attributes.setAttribute('class', boxed_classes) }}>
-  {% block content %}
-    {#{{ content.field_bt_img }}#}
-    {{ content.field_bt_content_title }}
-    {{ content.field_bt_epigrafe }}
-    {{ content.field_bt_paragraph }}
-    {% if content.field_bt_link_double is not empty %}
-      <div class="blockHero__buttons blockHero--full__buttons">
-        {% if content.field_bt_link_double.0 is not empty %}
-            <div class="btn btn-lg blockHero__button blockHero--full__button">
-              {{ content.field_bt_button_icon }}  
-              <div class="btn-link blockHero__link blockHero--full__link">
-                {{ content.field_bt_link_double.0 }}
-              </div>  
-            </div>
-        {% endif %}
-        {% if content.field_bt_link_double.1 is not empty %}
-            <div class="btn btn-lg blockHero__button-secondary blockHero--full__button-secondary">
-              {{ content.field_bt_button_secondary_icon }}  
-              <div class="btn-link blockHero__link blockHero--full__link">
-                {{ content.field_bt_link_double.1 }}
-              </div>
-            </div>
-        {% endif %}
-      </div>
-      {% endif %}
-  {% endblock %}
-  </div>
-</section>
+  {% if header %}
+    <div class="view-header">
+      {{ header }}
+    </div>
+  {% endif %}
+  {% if exposed %}
+    <div class="view-filters">
+      {{ exposed }}
+    </div>
+  {% endif %}
+  {% if attachment_before %}
+    <div class="attachment attachment-before">
+      {{ attachment_before }}
+    </div>
+  {% endif %}
+
+  {% if rows %}
+    <div class="view-content">
+      {{ rows }}
+    </div>
+  {% elseif empty %}
+    <div class="view-empty">
+      {{ empty }}
+    </div>
+  {% endif %}
+
+  {% if pager %}
+    {{ pager }}
+  {% endif %}
+  {% if attachment_after %}
+    <div class="attachment attachment-after">
+      {{ attachment_after }}
+    </div>
+  {% endif %}
+  {% if more %}
+    {{ more }}
+  {% endif %}
+  {% if footer %}
+    <div class="view-footer">
+      {{ footer }}
+    </div>
+  {% endif %}
+  {% if feed_icons %}
+    <div class="feed-icons">
+      {{ feed_icons }}
+    </div>
+  {% endif %}
+</div>

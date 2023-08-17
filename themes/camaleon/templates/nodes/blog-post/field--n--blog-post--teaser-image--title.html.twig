@@ -36,28 +36,18 @@
  * @see template_preprocess_field()
  */
 #}
-{%
-  set title_classes = [
-    label_display == 'visually_hidden' ? 'visually-hidden',
-  ]
+{% include "@Components/pages/blog/field--n--blog-post--teaser-image--title.twig" with {
+  'attributes': attributes,
+  'label_hidden': label_hidden,
+  'title_attributes': title_attributes,
+  'label': label,
+  'multiple': multiple,
+  'items': items,
+  'entity_type': entity_type,
+  'field_name': field_name,
+  'field_type': field_type,
+  'label_display': label_display,
+  'bundle': bundle,
+  'view_mode': view_mode,
+  }
 %}
-
-{%
-  set classes = [
-    'nodeArticle__title',
-    'nodeArticle--teaser-image__title',
-  ]
-%}
-
-{% if label_hidden %}
-  {% for item in items %}
-    {{ item.content|render|striptags|trim }}
-  {% endfor %}
-{% else %}
-  <div{{ attributes }}>
-    <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
-    {% for item in items %}
-      {{ item.content|render|striptags|trim }}
-    {% endfor %}
-  </div>
-{% endif %}

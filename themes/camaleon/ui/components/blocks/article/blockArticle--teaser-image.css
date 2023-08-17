@@ -1,3 +1,8 @@
-.blockArticle--teaser-image {
-  background-color: var(--bs-primary-100);
+.block.blockArticle--teaser-image {
+  --paddingLeft: var(--xsPaddingLeft, 0px);
+  --paddingTop: var(--xsPaddingTop, 0px);
+  --paddingRight: var(--xsPaddingRight, 0px);
+  --paddingBottom: var(--xsPaddingBottom, 0px);
+  border: solid 1px var(--bs-body-color);
+  background-color: var(--backgrounColor, var(--bs-gray-200));
 }

@@ -5,7 +5,7 @@
 }
 
 .blockHero {
-  --titleFontSize: var(--xsTitleFontSize, 1.8rem);
+  --titleFontSize: var(--xsTitleFontSize, 3rem);
   --captionFontSize: var(--xsCaptionFontSize, 1.2rem);
   --textFontSize: var(--xsTextFontSize, 1.2rem);
   --alignItems: var(--xsAlignItems, center);
@@ -23,7 +23,7 @@
 .blockHero__caption {
   font-family: var(--captionFontFamily, var(--bs-body-font-family));
   font-size: var(--captionFontSize);
-  color: var(--captionColor, var(--bs-caption-text-color));
+  color: var(--captionColor, var(--bs-primary-400));
 }
 .blockHero__text {
   font-family: var(--textFontFamily, var(--bs-body-font-family));
@@ -36,7 +36,7 @@
 .blockHero__button {
   --bs-btn-bg: var(--buttonColor, var(--defaultButtonColor));
   --bs-btn-color: var(--buttonLinkColor, var(--bs-button-link-color));
-  --bs-btn-border-color: var(--buttonLinkColor, var(--bs-button-link-color));
+  --bs-btn-border-color: var(--buttonColor);
   --bs-btn-hover-bg: var(--buttonColor, var(--defaultButtonColor));
   --bs-btn-hover-color: var(--buttonLinkColor, var(--bs-button-link-color));
   --bs-btn-hover-border-color: var(--buttonLinkColor, var(--bs-button-link-color));
@@ -52,7 +52,7 @@
 .blockHero__button-secondary {
   --bs-btn-bg: var(--buttonSecondaryColor, var(--defaultButtonSecondaryColor));
   --bs-btn-color: var(--buttonSecondaryLinkColor, var(--bs-button-link-color));
-  --bs-btn-border-color: var(--buttonSecondaryLinkColor, var(--bs-button-link-color));
+  --bs-btn-border-color: var(--buttonSecondaryColor);
   --bs-btn-hover-bg: var(--buttonSecondaryColor, var(--defaultButtonSecondaryColor));
   --bs-btn-hover-color: var(--buttonSecondaryLinkColor, var(--bs-button-link-color));
   --bs-btn-hover-border-color: var(--buttonSecondaryLinkColor, var(--bs-button-link-color));

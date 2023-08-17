@@ -83,7 +83,7 @@
 
 {{ attach_library('camaleon/node_article_teaser_image') }}
 <article{{ attributes.addClass(node_classes) }}>
-
+  {{ content.field_bt_content_image }}
   {{ title_prefix }}
   {% if not page %}
     <h4{{ title_attributes.addClass(title_classes) }}>
@@ -102,8 +102,11 @@
     </footer>
   {% endif %}
 
-  <div{{ content_attributes }}>
-    {{ content }}
+  {{ content.field_bt_title_foot }}
+  {{ content.field_bt_intro }}
+
+  <div class="nodeArticle--teaser-image__read-more">
+  <a href="{{ url }}">Leer más</a>
   </div>
 
 </article>

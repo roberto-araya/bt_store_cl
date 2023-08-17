@@ -70,25 +70,25 @@
 {% 
   set node_classes = [
     'nodeBlogPost',
-    'nodeBlogPost--teaser'
+    'nodeBlogPost--teaser-image'
   ]
 %}
 
 <article{{ attributes.addClass(node_classes) }}>
-  <div class="nodeBlogPost--teaser__image">
+  <div class="nodeBlogPost--teaser-image__image">
     {{ content.field_bt_content_image }}
   </div>
-  <div{{ content_attributes.addClass('nodeBlogPost--teaser__content') }}>
-    {{ title_prefix }}
-    {% if not page %}
-      <h2{{ title_attributes }}>
-        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-      </h2>
-    {% endif %}
-    {{ title_suffix }}
+  <div{{ content_attributes.addClass('nodeBlogPost--teaser-image__content') }}>
+  {{ title_prefix }}
+  {% if not page %}
+    <h4{{ title_attributes.addClass(['nodeBlogPost--teaser-image__title']) }}>
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h4>
+  {% endif %}
+  {{ title_suffix }}
     {{ content.field_bt_intro }}
-  </div>
-  <div class="nodeArticle--teaser__read-more">
-  <a href="{{ url }}">Leer más</a>
+    <div class="nodeBlogPost--teaser-image__read-more">
+      <a href="{{ url }}">Leer más</a>
+    </div>
   </div>
 </article>

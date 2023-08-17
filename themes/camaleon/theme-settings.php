@@ -1,8 +1,19 @@
 <?php
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Config\FileStorage;
 
 function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
+  // Add custom submit.
+  $theme_file = drupal_get_path('theme', 'camaleon') . '/camaleon.theme';
+  $build_info = $form_state->getBuildInfo();
+  if (!in_array($theme_file, $build_info['files'])) {
+    $build_info['files'][] = $theme_file;
+  }
+  $form_state->setBuildInfo($build_info);
+
+  $form['#submit'][] = 'camaleon_form_system_theme_settings_submit';
+
   $color_options = [
     'default' => t('Default'),
     'bs-primary' => t('Primary'),
@@ -85,7 +96,16 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
     '#default_value' => theme_get_setting('font'),
   ];
 
-    #### BUTTONS ####
+  #### Theme Color ####  
+  $form['theme_color'] = [
+    '#type' => 'select',
+    '#options' => _get_theme_color_select(),
+    '#title' => t('Theme Color'),
+    '#description' => t("Select a default theme color palette."),
+    '#default_value' => theme_get_setting('theme_color'),
+  ];
+
+  #### BUTTONS ####
   $buttons = [
     'primary',
     'secondary',
@@ -333,6 +353,21 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
   _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options));
 }
 
+function camaleon_form_system_theme_settings_submit(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  $config_factory = \Drupal::configFactory();
+  $config_name = 'cssvars.bt';
+  $config_factory->getEditable($config_name)->delete();
+  $values = $form_state->getValues();
+  if ($values['theme_color'] != 'default') {
+    $file_conf_name = $values['theme_color'];
+    $config_path = drupal_get_path('theme', 'camaleon') . '/includes/palettes';
+    $source = new FileStorage($config_path);
+    $config_storage = \Drupal::service('config.storage');
+  
+    $config_storage->write($config_name, $source->read($file_conf_name));
+  }
+}
+
 function _get_color_form_select($default_value_prefix, $state_input_prefix, $style, &$color_options) {
   return [
     $style . '_color' => [
@@ -544,5 +579,30 @@ function _get_font_select() {
     'caveat' => 'Caveat',
   ];
   
+  return $options;
+}
+
+function _get_theme_color_select() {
+  $options = [
+    'default' => 'Default',
+    'barney' => 'Barney',
+    'gpt' => 'GPT',
+    'vangogh' => 'Van Gogh',
+    'picasso' => 'Picasso',
+    'cyberpunk' => 'Cyber Punk',
+    'tiburon' => 'Tiburón',
+    'alicia' => 'Alicia',
+    'vet' => 'Vet',
+    'mario' => 'Mario',
+    'drupal' => 'Drupal',
+    'pizza' => 'Pizza',
+    'plantas' => 'Plantas',
+    'invierno-norte' => 'Invierno Norte',
+    'invierno-austral' => 'Invierno Austral',
+    'amazonas' => 'Amazonas',
+    'timon' => 'Timon',
+    'dia-verano' => 'Un día de verano',
+    'nebulosa' => 'Nebulosa',
+  ];
   return $options;
 }

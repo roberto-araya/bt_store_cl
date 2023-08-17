@@ -56,11 +56,11 @@
   padding-bottom: var(--itemPaddingBottom);
   font-family: var(--itemFontFamily, var(--bs-body-font-family));
   font-size: var(--itemFontSize);
-  color: var(--itemColor, var(--bs-accent, #FB9F00));
+  color: var(--itemColor, var(--bs-primary));
 }
 .menuMain a.menuMain__link:hover,
 .menuMain a.menuMain__link.is-active {
-  color: var(--itemColorHover, var(--bs-accent-400, #FFAF25));
+  color: var(--itemColorHover, var(--bs-secondary));
 }
 .menuMain__item {
   background-color: var(--itemBackgroundColor, transparent);

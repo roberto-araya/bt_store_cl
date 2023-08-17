@@ -22,6 +22,6 @@
   font-family: var(--textFontFamily, var(--bs-body-font-family));
 }
 .blockQuote__link-single a {
-  color: var(--linkColor, var(--bs-primary));
+  color: var(--linkColor, var(--bs-link-color, var(--bs-accent)));
   font-family: var(--textFontFamily, var(--bs-body-font-family));
 }

@@ -798,6 +798,12 @@ views:
     component:
       ui/components/views/views.css: {}
 
+views_blog_blog_all:
+  version: VERSION
+  css:
+    component:
+      ui/components/views/viewsBlog--blog-all.css: {}
+
 ### PAGES
 page:
   version: VERSION
@@ -837,6 +843,16 @@ node_blog_post_teaser:
     component:
       ui/components/pages/blog/nodeBlog--teaser.css: {}
   dependencies:
+    - camaleon/block
+    - camaleon/node_blog_post
+
+node_blog_post_teaser_image:
+  version: VERSION
+  css:
+    component:
+      ui/components/pages/blog/nodeBlog--teaser-image.css: {}
+  dependencies:
+    - camaleon/block
     - camaleon/node_blog_post
 
 ### USERS

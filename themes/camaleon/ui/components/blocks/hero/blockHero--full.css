@@ -11,7 +11,7 @@
 .blockHero--full .boxed {
   max-width: var(--maxWidth);
   padding: 1rem;
-  background-color: var(--backgroundColor, transparent);
+  background-color: var(--backgroundColor, var(--bs-white));
 }
 .blockHero--full__content-title {
   margin-bottom: 0;
