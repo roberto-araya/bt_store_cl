@@ -43,6 +43,7 @@ dependencies:
   - easy_breadcrumb:easy_breadcrumb
   - views_bootstrap:views_bootstrap
   - metatag:metatag
+  - metatag:metatag_page_manager
   - schema_metatag:schema_metatag
   - symfony_mailer:symfony_mailer
   - transbank:transbank
@@ -53,6 +54,7 @@ dependencies:
   - simple_sitemap:simple_sitemap_engines
   - simple_sitemap:simple_sitemap_views
   - lb_claro:lb_claro
+  - page_manager:page_manager_ui
 themes:
   - bt_install_theme
   - claro
