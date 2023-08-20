@@ -4,7 +4,6 @@
   height: -moz-max-content;
   height: max-content;
   display: flex;
-  flex-direction: column;
   background: 100%;
   background-size: cover;
 }
@@ -12,6 +11,7 @@
   max-width: var(--maxWidth);
   padding: 1rem;
   background-color: var(--backgroundColor, var(--bs-white));
+  align-self: var(--alignSelf);
 }
 .blockHero--full__content-title {
   margin-bottom: 0;
@@ -48,6 +48,5 @@
   .blockHero--full__buttons {
     width: 100%;
     margin: 0;
-    flex-direction: row;
   }
 }

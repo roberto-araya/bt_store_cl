@@ -1,3 +1,7 @@
+.block.blockCta {
+  background-color: var(--backgroundColor, var(--bs-block-bg-color));
+}
+
 .blockCta {
   --titleFontSize: var(--xsTitleFontSize, 1.8rem);
   --captionFontSize: var(--xsCaptionFontSize, 1.2rem);
@@ -35,6 +39,8 @@
 .blockCta__button a {
   color: var(--buttonLinkColor, var(--bs-button-link-color));
   padding-left: var(--buttonIcon, 0rem);
+  font-family: var(--textFontFamily, var(--bs-body-font-family));
+  font-size: var(--textFontSize);
 }
 .blockCta__button-icon svg {
   color: var(--buttonLinkColor, var(--bs-button-link-color));
@@ -51,6 +57,8 @@
 .blockCta__button-secondary a {
   color: var(--buttonSecondaryLinkColor, var(--bs-button-link-color));
   padding-left: var(--buttonSecondaryIcon, 0rem);
+  font-family: var(--textFontFamily, var(--bs-body-font-family));
+  font-size: var(--textFontSize);
 }
 .blockCta__button-secondary-icon svg {
   fill: var(--buttonSecondaryLinkColor, var(--bs-button-link-color));

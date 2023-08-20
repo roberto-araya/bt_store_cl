@@ -585,24 +585,14 @@ function _get_font_select() {
 function _get_theme_color_select() {
   $options = [
     'default' => 'Default',
-    'barney' => 'Barney',
-    'gpt' => 'GPT',
-    'vangogh' => 'Van Gogh',
-    'picasso' => 'Picasso',
-    'cyberpunk' => 'Cyber Punk',
-    'tiburon' => 'Tiburón',
     'alicia' => 'Alicia',
-    'vet' => 'Vet',
-    'mario' => 'Mario',
-    'drupal' => 'Drupal',
-    'pizza' => 'Pizza',
-    'plantas' => 'Plantas',
-    'invierno-norte' => 'Invierno Norte',
-    'invierno-austral' => 'Invierno Austral',
-    'amazonas' => 'Amazonas',
-    'timon' => 'Timon',
-    'dia-verano' => 'Un día de verano',
-    'nebulosa' => 'Nebulosa',
+    'eco-wave' => 'Eco Wave',
+    'harmonious-blooms' => 'Harmonious Blooms',
+    'mystic-aura' => 'Mystic Aura',
+    'royal-radiance' => 'Royal Radiance',
+    'serene-harmony' => 'Serene Harmony',
+    'sunset-meadows' => 'Sunset Meadows',
+    'vibrant-sky' => 'Vibrant Sky',
   ];
   return $options;
 }

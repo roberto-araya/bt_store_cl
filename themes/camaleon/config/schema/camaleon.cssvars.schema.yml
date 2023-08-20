@@ -50,6 +50,24 @@ cssvars.bt:
       type: cssvars_color
       label: Link Hover Color
     # Theme Colors
+    success:
+      type: cssvars_color
+      label: Success
+    info:
+      type: cssvars_color
+      label: Info
+    warning:
+      type: cssvars_color
+      label: Warning
+    danger:
+      type: cssvars_color
+      label: Danger
+    light:
+      type: cssvars_color
+      label: Light
+    dark:
+      type: cssvars_color
+      label: Dark
     blue:
       type: cssvars_color
       label: Blue
@@ -206,3 +224,178 @@ cssvars.bt:
     gray_900:
       type: cssvars_color
       label: Color Gray 900
+    # Theme Colors RGB
+    success_rgb:
+      type: cssvars_color
+      label: Success RGB
+    info_rgb:
+      type: cssvars_color
+      label: Info RGB
+    warning_rgb:
+      type: cssvars_color
+      label: Warning RGB
+    danger_rgb:
+      type: cssvars_color
+      label: Danger RGB
+    light_rgb:
+      type: cssvars_color
+      label: Light RGB
+    dark_rgb:
+      type: cssvars_color
+      label: Dark RGB
+    blue_rgb:
+      type: cssvars_color
+      label: Blue RGB
+    indigo_rgb:
+      type: cssvars_color
+      label: Indigo RGB
+    purple_rgb:
+      type: cssvars_color
+      label: Purple RGB
+    pink_rgb:
+      type: cssvars_color
+      label: Pink RGB
+    red_rgb:
+      type: cssvars_color
+      label: Red RGB
+    orange_rgb:
+      type: cssvars_color
+      label: Orange RGB
+    yellow_rgb:
+      type: cssvars_color
+      label: Yellow RGB
+    green_rgb:
+      type: cssvars_color
+      label: Green RGB
+    teal_rgb:
+      type: cssvars_color
+      label: Teal RGB
+    cyan_rgb:
+      type: cssvars_color
+      label: Cyan RGB
+    primary_rgb:
+      type: cssvars_color
+      label: Color Primario RGB
+    primary_050_rgb:
+      type: cssvars_color
+      label: Color Primario 50 RGB
+    primary_100_rgb:
+      type: cssvars_color
+      label: Color Primario 100 RGB
+    primary_200_rgb:
+      type: cssvars_color
+      label: Color Primario 200 RGB
+    primary_300_rgb:
+      type: cssvars_color
+      label: Color Primario 300 RGB
+    primary_400_rgb:
+      type: cssvars_color
+      label: Color Primario 400 RGB
+    primary_500_rgb:
+      type: cssvars_color
+      label: Color Primario 500 RGB
+    primary_600_rgb:
+      type: cssvars_color
+      label: Color Primario 600 RGB
+    primary_700_rgb:
+      type: cssvars_color
+      label: Color Primario 700 RGB
+    primary_800_rgb:
+      type: cssvars_color
+      label: Color Primario 800 RGB
+    primary_900_rgb:
+      type: cssvars_color
+      label: Color Primario 900 RGB
+    secondary_rgb:
+      type: cssvars_color
+      label: Color Secundario RGB
+    secondary_050_rgb:
+      type: cssvars_color
+      label: Color Secundario 50 RGB
+    secondary_100_rgb:
+      type: cssvars_color
+      label: Color Secundario 100 RGB
+    secondary_200_rgb:
+      type: cssvars_color
+      label: Color Secundario 200 RGB
+    secondary_300_rgb:
+      type: cssvars_color
+      label: Color Secundario 300 RGB
+    secondary_400_rgb:
+      type: cssvars_color
+      label: Color Secundario 400 RGB
+    secondary_500_rgb:
+      type: cssvars_color
+      label: Color Secundario 500 RGB
+    secondary_600_rgb:
+      type: cssvars_color
+      label: Color Secundario 600 RGB
+    secondary_700_rgb:
+      type: cssvars_color
+      label: Color Secundario 700 RGB
+    secondary_800_rgb:
+      type: cssvars_color
+      label: Color Secundario 800 RGB
+    secondary_900_rgb:
+      type: cssvars_color
+      label: Color Secundario 900 RGB
+    accent_rgb:
+      type: cssvars_color
+      label: Color Acento RGB
+    accent_050_rgb:
+      type: cssvars_color
+      label: Color Acento 50 RGB
+    accent_100_rgb:
+      type: cssvars_color
+      label: Color Acento 100 RGB
+    accent_200_rgb:
+      type: cssvars_color
+      label: Color Acento 200 RGB
+    accent_300_rgb:
+      type: cssvars_color
+      label: Color Acento 300 RGB
+    accent_400_rgb:
+      type: cssvars_color
+      label: Color Acento 400 RGB
+    accent_500_rgb:
+      type: cssvars_color
+      label: Color Acento 500 RGB
+    accent_600_rgb:
+      type: cssvars_color
+      label: Color Acento 600 RGB
+    accent_700_rgb:
+      type: cssvars_color
+      label: Color Acento 700 RGB
+    accent_800_rgb:
+      type: cssvars_color
+      label: Color Acento 800 RGB
+    accent_900_rgb:
+      type: cssvars_color
+      label: Color Acento 900 RGB
+    gray_100_rgb:
+      type: cssvars_color
+      label: Color Gris 100 RGB
+    gray_200_rgb:
+      type: cssvars_color
+      label: Color Gris 200 RGB
+    gray_300_rgb:
+      type: cssvars_color
+      label: Color Gris 300 RGB
+    gray_400_rgb:
+      type: cssvars_color
+      label: Color Gris 400 RGB
+    gray_500_rgb:
+      type: cssvars_color
+      label: Color Gris 500 RGB
+    gray_600_rgb:
+      type: cssvars_color
+      label: Color Gris 600 RGB
+    gray_700_rgb:
+      type: cssvars_color
+      label: Color Gris 700 RGB
+    gray_800_rgb:
+      type: cssvars_color
+      label: Color Gris 800 RGB
+    gray_900_rgb:
+      type: cssvars_color
+      label: Color Gris 900 RGB

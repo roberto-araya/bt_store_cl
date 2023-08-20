@@ -62,15 +62,64 @@
   --bs-danger: var(--bt--danger, #dc3545);
   --bs-light: var(--bt--light, #f8f9fa);
   --bs-dark: var(--bt--dark, #212529);
-  --bs-primary-rgb: 39, 39, 38;
-  --bs-secondary-rgb: 239, 53, 39;
-  --bs-accent-rgb: 251, 159, 0;
-  --bs-success-rgb: 25, 135, 84;
-  --bs-info-rgb: 13, 110, 253;
-  --bs-warning-rgb: 253, 126, 20;
-  --bs-danger-rgb: 220, 53, 69;
-  --bs-light-rgb: 248, 249, 250;
-  --bs-dark-rgb: 33, 37, 41;
+  --bs-blue-rgb: var(--bt--blue-rgb, 13, 110, 253);
+  --bs-indigo-rgb: var(--bt--indigo-rgb, 102, 16, 242);
+  --bs-purple-rgb: var(--bt--purple-rgb, 111, 66, 193);
+  --bs-pink-rgb: var(--bt--pink-rgb, 214, 51, 132);
+  --bs-red-rgb: var(--bt--red-rgb, 220, 53, 69);
+  --bs-orange-rgb: var(--bt--orange-rgb, 253, 126, 20);
+  --bs-yellow-rgb: var(--bt--yellow-rgb, 255, 193, 7);
+  --bs-green-rgb: var(--bt--green-rgb, 25, 135, 84);
+  --bs-teal-rgb: var(--bt--teal-rgb, 32, 201, 151);
+  --bs-cyan-rgb: var(--bt--cyan-rgb, 13, 202, 240);
+  --bs-primary-rgb: var(--bt--primary-rgb, 39, 39, 38);
+  --bs-secondary-rgb: var(--bt--secondary-rgb, 239, 53, 39);
+  --bs-accent-rgb: var(--bt--accent-rgb, 251, 159, 0);
+  --bs-success-rgb: var(--bt--success-rgb, 25, 135, 84);
+  --bs-info-rgb: var(--bt--info-rgb, 13, 110, 253);
+  --bs-warning-rgb: var(--bt--warning-rgb, 253, 126, 20);
+  --bs-danger-rgb: var(--bt--danger-rgb, 220, 53, 69);
+  --bs-light-rgb: var(--bt--light-rgb, 248, 249, 250);
+  --bs-dark-rgb: var(--bt--dark-rgb, 33, 37, 41);
+  --bs-primary-050-rgb: var(--bt--primary-050-rgb, 132, 132, 129);
+  --bs-primary-100-rgb: var(--bt--primary-100-rgb, 122, 122, 119);
+  --bs-primary-200-rgb: var(--bt--primary-200-rgb, 101, 101, 98);
+  --bs-primary-300-rgb: var(--bt--primary-300-rgb, 80, 80, 78);
+  --bs-primary-400-rgb: var(--bt--primary-400-rgb, 60, 60, 58);
+  --bs-primary-500-rgb: var(--bt--primary-500-rgb, 39, 39, 38);
+  --bs-primary-600-rgb: var(--bt--primary-600-rgb, 11, 11, 10);
+  --bs-primary-700-rgb: var(--bt--primary-700-rgb, 0, 0, 0);
+  --bs-primary-800-rgb: var(--bt--primary-800-rgb, 0, 0, 0);
+  --bs-primary-900-rgb: var(--bt--primary-900-rgb, 0, 0, 0);
+  --bs-secondary-050-rgb: var(--bt--secondary-050-rgb, 252, 213, 210);
+  --bs-secondary-100-rgb: var(--bt--secondary-100-rgb, 250, 195, 191);
+  --bs-secondary-200-rgb: var(--bt--secondary-200-rgb, 247, 160, 153);
+  --bs-secondary-300-rgb: var(--bt--secondary-300-rgb, 245, 124, 115);
+  --bs-secondary-400-rgb: var(--bt--secondary-400-rgb, 242, 89, 77);
+  --bs-secondary-500-rgb: var(--bt--secondary-500-rgb, 239, 53, 39);
+  --bs-secondary-600-rgb: var(--bt--secondary-600-rgb, 207, 29, 15);
+  --bs-secondary-700-rgb: var(--bt--secondary-700-rgb, 154, 21, 11);
+  --bs-secondary-800-rgb: var(--bt--secondary-800-rgb, 102, 14, 8);
+  --bs-secondary-900-rgb: var(--bt--secondary-900-rgb, 50, 7, 4);
+  --bs-accent-050-rgb: var(--bt--accent-050-rgb, 255, 227, 180);
+  --bs-accent-100-rgb: var(--bt--accent-100-rgb, 255, 220, 159);
+  --bs-accent-200-rgb: var(--bt--accent-200-rgb, 255, 205, 118);
+  --bs-accent-300-rgb: var(--bt--accent-300-rgb, 255, 190, 78);
+  --bs-accent-400-rgb: var(--bt--accent-400-rgb, 255, 175, 37);
+  --bs-accent-500-rgb: var(--bt--accent-500-rgb, 251, 159, 0);
+  --bs-accent-600-rgb: var(--bt--accent-600-rgb, 195, 123, 0);
+  --bs-accent-700-rgb: var(--bt--accent-700-rgb, 139, 88, 0);
+  --bs-accent-800-rgb: var(--bt--accent-800-rgb, 83, 52, 0);
+  --bs-accent-900-rgb: var(--bt--accent-900-rgb, 27, 17, 0);
+  --bs-gray-100-rgb: var(--bt--gray-100-rgb, 248, 249, 250);
+  --bs-gray-200-rgb: var(--bt--gray-200-rgb, 233, 236, 239);
+  --bs-gray-300-rgb: var(--bt--gray-300-rgb, 222, 226, 230);
+  --bs-gray-400-rgb: var(--bt--gray-400-rgb, 206, 212, 218);
+  --bs-gray-500-rgb: var(--bt--gray-500-rgb, 173, 181, 189);
+  --bs-gray-600-rgb: var(--bt--gray-600-rgb, 108, 117, 125);
+  --bs-gray-700-rgb: var(--bt--gray-700-rgb, 73, 80, 87);
+  --bs-gray-800-rgb: var(--bt--gray-800-rgb, 52, 58, 64);
+  --bs-gray-900-rgb: var(--bt--gray-900-rgb, 33, 37, 41);
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 39, 39, 38;
@@ -113,26 +162,26 @@
   --bs-blog-title-color: var(--bt--blog-title-color, var(--bs-page-title-color));
   --bs-caption-text-color: var(--bt--caption-text-color, var(--bs-secondary));
   --bs-intro-text-color: var(--bt--intro-text-color, var(--bs-secondary));
-  --layoutPaddingLeftHalf: calc(0.5 * 1rem);
-  --layoutPaddingLeftNormal: calc(1 * 1rem);
-  --layoutPaddingLeftDouble: calc(2 * 1rem);
-  --layoutPaddingLeftTriple: calc(3 * 1rem);
-  --layoutPaddingTopHalf: calc(0.5 * 1rem);
-  --layoutPaddingTopNormal: calc(1 * 1rem);
-  --layoutPaddingTopDouble: calc(2 * 1rem);
-  --layoutPaddingTopTriple: calc(3 * 1rem);
-  --layoutPaddingBottomHalf: calc(0.5 * 1rem);
-  --layoutPaddingBottomNormal: calc(1 * 1rem);
-  --layoutPaddingBottomDouble: calc(2 * 1rem);
-  --layoutPaddingBottomTriple: calc(3 * 1rem);
-  --layoutPaddingRightHalf: calc(0.5 * 1rem);
-  --layoutPaddingRightNormal: calc(1 * 1rem);
-  --layoutPaddingRightDouble: calc(2 * 1rem);
-  --layoutPaddingRightTriple: calc(3 * 1rem);
-  --layoutGapHalf: calc(0.5 * 1rem);
-  --layoutGapNormal: calc(1 * 1rem);
-  --layoutGapDouble: calc(2 * 1rem);
-  --layoutGapTriple: calc(3 * 1rem);
+  --layoutPaddingLeftHalf: .5rem;
+  --layoutPaddingLeftNormal: 1rem;
+  --layoutPaddingLeftDouble: 2rem;
+  --layoutPaddingLeftTriple: 3rem;
+  --layoutPaddingTopHalf: .5rem;
+  --layoutPaddingTopNormal: 1rem;
+  --layoutPaddingTopDouble: 2rem;
+  --layoutPaddingTopTriple: 3rem;
+  --layoutPaddingBottomHalf: .5rem;
+  --layoutPaddingBottomNormal: 1rem;
+  --layoutPaddingBottomDouble: 2rem;
+  --layoutPaddingBottomTriple: 3rem;
+  --layoutPaddingRightHalf: .5rem;
+  --layoutPaddingRightNormal: 1rem;
+  --layoutPaddingRightDouble: 2rem;
+  --layoutPaddingRightTriple: 3rem;
+  --layoutGapHalf: .5rem;
+  --layoutGapNormal: 1rem;
+  --layoutGapDouble: 2rem;
+  --layoutGapTriple: 3rem;
   --colorBackground: var(--bs-body-bg);
   --buttonIconSize: 24px;
 }
@@ -8763,12 +8812,12 @@ textarea.form-control-lg {
 
 .btn-link, button.link {
   --bs-btn-font-weight: 400;
-  --bs-btn-color: var(--bs-accent, #FB9F00);
+  --bs-btn-color: var(--bs-accent);
   --bs-btn-bg: transparent;
   --bs-btn-border-color: transparent;
-  --bs-btn-hover-color: var(--bs-accent-400, #FFAF25);
+  --bs-btn-hover-color: var(--bs-accent-400);
   --bs-btn-hover-border-color: transparent;
-  --bs-btn-active-color: var(--bs-accent-400, #FFAF25);
+  --bs-btn-active-color: var(--bs-accent-400);
   --bs-btn-active-border-color: transparent;
   --bs-btn-disabled-color: #6c757d;
   --bs-btn-disabled-border-color: transparent;
@@ -12538,11 +12587,11 @@ fieldset.form-item > .list-group + .card-footer {
   }
 }
 .ui-widget-content a {
-  color: var(--bs-accent, #FB9F00);
+  color: var(--bs-accent);
   text-decoration: none;
 }
 .ui-widget-content a:hover {
-  color: var(--bs-accent-400, #FFAF25);
+  color: var(--bs-accent-400);
 }
 
 .ckeditor-buttons li .cke-icon-only {
@@ -13154,11 +13203,11 @@ tr.region-title td {
 }
 
 .views-admin a {
-  color: var(--bs-accent, #FB9F00);
+  color: var(--bs-accent);
   text-decoration: none;
 }
 .views-admin a:hover {
-  color: var(--bs-accent-400, #FFAF25);
+  color: var(--bs-accent-400);
 }
 .views-admin .views-displays .tabs {
   list-style: none;
@@ -13171,11 +13220,11 @@ tr.region-title td {
   padding: 0.1em 0.5em;
 }
 .views-admin .dropbutton .dropbutton-action .btn-primary {
-  color: var(--bs-accent, #FB9F00);
+  color: var(--bs-accent);
   text-decoration: none;
 }
 .views-admin .dropbutton .dropbutton-action .btn-primary:hover {
-  color: var(--bs-accent-400, #FFAF25);
+  color: var(--bs-accent-400);
   text-decoration: none;
 }
 .views-admin .view-preview-form .form-item-view-args,

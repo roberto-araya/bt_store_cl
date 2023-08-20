@@ -1,7 +1,7 @@
 ((Camaleon) => {
   blockHero = function(blocks, breakpoint) {
     let customProperties = {
-      AlignItems: 'alignItems',
+      AlignSelf: 'alignSelf',
       JustifyContent: 'justifyContent',
       TitleFontSize: 'titleFontSize',
       CaptionFontSize: 'captionFontSize',

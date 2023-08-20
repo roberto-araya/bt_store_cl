@@ -60,6 +60,8 @@
     styles.button_secondary_link_color_select != 'default' and styles.button_secondary_link_color_select != 'customColor' ? '--buttonSecondaryLinkColor: var(--' ~ styles.button_secondary_link_color_select ~ ')',
     styles.button_secondary_link_color_select == 'customColor' ? '--buttonSecondaryLinkColor: ' ~ styles.button_secondary_link_color_custom,
 
+    styles.background_color_select == 'default' ? '--backgroundColor: var(--bs-block-bg-color)' : '',
+
     styles.animation_option == TRUE  and styles.animation_duration ? '--animationDuration: ' ~ styles.animation_duration : '',
     styles.animation_option == TRUE  and styles.animation_delay ? '--animationDelay: ' ~ styles.animation_delay : '',
     styles.animation_option == TRUE  and styles.animation_count ? '--animationCount: ' ~ styles.animation_count : '',
