@@ -36,6 +36,6 @@
   padding-bottom: var(--paddingBottom);
   font-family: var(--titleFontFamily, var(--bs-body-font-family));
   font-size: var(--titleFontSize);
-  color: var(--titleColor, var(--bs-primary));
+  color: var(--titleColor, var(--bt--page-title-color, var(--bs-primary-600)));
   background-color: var(--backgroundColor, transparent);
 }

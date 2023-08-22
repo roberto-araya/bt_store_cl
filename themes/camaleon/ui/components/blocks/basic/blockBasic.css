@@ -1,6 +1,6 @@
 .blockBasic {
   --maxWidth: var(--xsMaxWidth);
-  --textColor: var(--bs-block-text-color);
+  --textColor: var(--bs-body-color);
   max-width: var(--maxWidth);
   display: flex;
   flex-direction: column;

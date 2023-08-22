@@ -1,11 +1,8 @@
-.blockImagesSlide--full {
-  --xsMaxWidth: 100%;
-}
 .blockImagesSlide--full .boxed {
   max-width: var(--maxWidth);
   height: -moz-max-content;
   height: max-content;
-  align-self: center;
+  margin: 0 auto;
 }
 .blockImagesSlide--full img {
   max-width: 100%;

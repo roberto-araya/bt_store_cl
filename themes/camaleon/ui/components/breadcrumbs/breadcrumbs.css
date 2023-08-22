@@ -1,8 +1,8 @@
 .breadcrumbs {
-  --breadcrumbsBackground: var(--bt--breadcrumbs-bg, var(--bs-block-bg, #CED9E9));
-  --breadcrumbsColor: var(--bt--breadcrumbs-color, var(--bs-block-color, #6A87AB));
-  --breadcrumbsLinkColor: var(--bt--breadcrumbs-link-color, var(--bs-breadcrumbs-link-color, #BC8927));
-  --breadcrumbsLinkHoverColor: var(--bt--breadcrumbs-link-hover-color, var(--bs-breadcrumbs-link-hover-color, #b38225));
+  --breadcrumbsBackground: var(--bt--breadcrumbs-bg, var(--bs-block-bg, #EF3527));
+  --breadcrumbsColor: var(--bt--breadcrumbs-color, var(--bs-block-color, #272726));
+  --breadcrumbsLinkColor: var(--bt--breadcrumbs-link-color, var(--bs-breadcrumbs-link-color, var(--bt--link-color, var(--bs-accent))));
+  --breadcrumbsLinkHoverColor: var(--bt--breadcrumbs-link-hover-color, var(--bs-breadcrumbs-link-hover-color, var(--bt--link-hover-color, var(--bs-accent-400))));
   margin: 0 1rem;
   font-size: 1rem;
 }

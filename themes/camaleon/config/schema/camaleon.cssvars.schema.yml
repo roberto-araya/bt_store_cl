@@ -29,7 +29,10 @@ cssvars.bt:
     intro_text_color:
       type: cssvars_color
       label: Intro Text Color
-    # Title
+    # Titles
+    page_title_color:
+      type: cssvars_color
+      label: Page Title Color
     section_title_color:
       type: cssvars_color
       label: Section Title Color
@@ -49,6 +52,9 @@ cssvars.bt:
     link_hover_color:
       type: cssvars_color
       label: Link Hover Color
+    button_link_color:
+      type: cssvars_color
+      label: Button Link Color
     # Theme Colors
     success:
       type: cssvars_color

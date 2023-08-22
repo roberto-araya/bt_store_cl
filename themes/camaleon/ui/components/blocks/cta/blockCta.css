@@ -12,17 +12,17 @@
 .blockCta__content-title {
   font-family: var(--titleFontFamily, var(--bs-body-font-family));
   font-size: var(--titleFontSize);
-  color: var(--titleColor, var(--bs-page-title-color));
+  color: var(--titleColor, var(--bt--block-title-color, var(--bt--page-title-color, var(--bs-primary-600))));
 }
 .blockCta__caption {
   font-family: var(--captionFontFamily, var(--bs-body-font-family));
   font-size: var(--captionFontSize);
-  color: var(--captionColor, var(--bs-caption-text-color));
+  color: var(--captionColor, var(--bt--caption-text-color, var(--bs-secondary)));
 }
 .blockCta__text {
   font-family: var(--textFontFamily, var(--bs-body-font-family));
   font-size: var(--textFontSize);
-  color: var(--textColor, var(--bs-block-text-color));
+  color: var(--textColor, var(--bs-body-color));
 }
 .blockCta__buttons {
   justify-content: var(--textAlign);
@@ -30,36 +30,36 @@
 .blockCta__button {
   --bs-btn-bg: var(--buttonColor, var(--bs-primary));
   --bs-btn-font-size: var(--textFontSize);
-  --bs-btn-color: var(--buttonLinkColor, var(--bs-button-link-color));
-  --bs-btn-border-color: var(--buttonLinkColor, var(--bs-button-link-color));
+  --bs-btn-color: var(--buttonLinkColor, var(--bt--button-link-color, white));
+  --bs-btn-border-color: var(--buttonColor, var(--bs-primary));
   --bs-btn-hover-bg: var(--buttonColor, var(--bs-primary));
-  --bs-btn-hover-color: var(--buttonLinkColor, var(--bs-button-link-color));
-  --bs-btn-hover-border-color: var(--buttonLinkColor, var(--bs-button-link-color));
+  --bs-btn-hover-color: var(--buttonLinkColor, var(--bt--button-link-color, white));
+  --bs-btn-hover-border-color: var(--buttonLinkColor, var(--bt--button-link-color, white));
 }
 .blockCta__button a {
-  color: var(--buttonLinkColor, var(--bs-button-link-color));
+  color: var(--buttonLinkColor, var(--bt--button-link-color, white));
   padding-left: var(--buttonIcon, 0rem);
   font-family: var(--textFontFamily, var(--bs-body-font-family));
   font-size: var(--textFontSize);
 }
 .blockCta__button-icon svg {
-  color: var(--buttonLinkColor, var(--bs-button-link-color));
+  color: var(--buttonLinkColor, var(--bt--button-link-color, white));
 }
 .blockCta__button-secondary {
   --bs-btn-bg: var(--buttonSecondaryColor, var(--bs-secondary));
   --bs-btn-font-size: var(--textFontSize);
-  --bs-btn-color: var(--buttonSecondaryLinkColor, var(--bs-button-link-color));
-  --bs-btn-border-color: var(--buttonSecondaryLinkColor, var(--bs-button-link-color));
+  --bs-btn-color: var(--buttonSecondaryLinkColor, var(--bt--button-link-color, white));
+  --bs-btn-border-color: var(--buttonSecondaryColor, var(--bs-secondary));
   --bs-btn-hover-bg: var(--buttonSecondaryColor, var(--bs-secondary));
-  --bs-btn-hover-color: var(--buttonSecondaryLinkColor, var(--bs-button-link-color));
-  --bs-btn-hover-border-color: var(--buttonSecondaryLinkColor, var(--bs-button-link-color));
+  --bs-btn-hover-color: var(--buttonSecondaryLinkColor, var(--bt--button-link-color, white));
+  --bs-btn-hover-border-color: var(--buttonSecondaryLinkColor, var(--bt--button-link-color, white));
 }
 .blockCta__button-secondary a {
-  color: var(--buttonSecondaryLinkColor, var(--bs-button-link-color));
+  color: var(--buttonSecondaryLinkColor, var(--bt--button-link-color, white));
   padding-left: var(--buttonSecondaryIcon, 0rem);
   font-family: var(--textFontFamily, var(--bs-body-font-family));
   font-size: var(--textFontSize);
 }
 .blockCta__button-secondary-icon svg {
-  fill: var(--buttonSecondaryLinkColor, var(--bs-button-link-color));
+  fill: var(--buttonSecondaryLinkColor, var(--bt--button-link-color, white));
 }

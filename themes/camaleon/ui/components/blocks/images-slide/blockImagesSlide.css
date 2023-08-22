@@ -1,6 +1,8 @@
 .block.blockImagesSlide {
   --maxWidth: var(--xsMaxWidth, 100%);
-  --alignSelf: var(--xsAlignSelf, center) ;
+  --alignSelf: var(--xsAlignSelf, center);
+  align-self: unset;
+  justify-self: unset;
 }
 
 .blockImagesSlide {

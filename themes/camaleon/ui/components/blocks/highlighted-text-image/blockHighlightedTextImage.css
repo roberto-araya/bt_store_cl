@@ -6,12 +6,12 @@
   width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));
 }
 .blockHighlightedTextImage__content-title {
-  color: var(--titleColor, var(--bs-page-title-color));
+  color: var(--titleColor, var(--bt--block-title-color, var(--bt--page-title-color, var(--bs-primary-600))));
   font-family: var(--titleFontFamily, var(--bs-body-font-family));
   font-size: var(--titleFontSize, 1.8rem);
 }
 .blockHighlightedTextImage__caption {
-  color: var(--captionColor, var(--bs-caption-text-color));
+  color: var(--captionColor, var(--bt--caption-text-color, var(--bs-secondary)));
   font-family: var(--captionFontFamily, var(--bs-body-font-family));
   font-size: var(--captionFontFamily, 1.2rem);
 }
@@ -21,5 +21,5 @@
 }
 .blockHighlightedTextImage__highlighted-text > mark {
   background-color: var(--highlightedColor, var(--bs-accent));
-  color: var(--textColor, var(--bs-block-text-color));
+  color: var(--textColor, var(--bs-body-color));
 }

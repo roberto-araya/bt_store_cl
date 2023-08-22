@@ -1,5 +1,7 @@
 .blockImagesSlide--default {
   max-width: var(--maxWidth);
+  align-self: var(--alignSelf);
+  justify-self: var(--justifySelf);
 }
 .blockImagesSlide--default img {
   max-width: 100%;

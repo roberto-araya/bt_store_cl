@@ -4,5 +4,5 @@
   width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));
   font-size: var(--textFontSize);
   font-family: var(--textFontFamily), var(--bs-body-font-family);
-  color: var(--textColor, var(--bs-block-text-color));
+  color: var(--textColor, var(--bs-body-color));
 }

@@ -17,10 +17,10 @@
   font-family: var(--nameFontFamily, var(--bs-body-font-family));
 }
 .siteBranding__name a {
-  color: var(--nameColor, var(--bs-page-title-color));
+  color: var(--nameColor, var(--bt--page-title-color, var(--bs-primary-600)));
 }
 .siteBranding__slogan {
-  color: var(--sloganColor, var(--bs-accent));
+  color: var(--sloganColor, var(--bs-accent, #FB9F00));
   font-size: var(--sloganFontSize);
   font-family: var(--sloganFontFamily, var(--bs-body-font-family));
 }

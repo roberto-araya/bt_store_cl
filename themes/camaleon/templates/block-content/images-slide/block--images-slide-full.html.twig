@@ -28,6 +28,7 @@
  */
 #}
 {{ attach_library('camaleon/block_images_slide_full') }}
+
 {% if configuration.block_style.animation_option == TRUE %}
   {{ attach_library('camaleon/' ~ configuration.block_style.animation_type) }}
 {% endif %}

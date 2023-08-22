@@ -6,33 +6,33 @@
   width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));
 }
 .blockText__content-title {
-  color: var(--titleColor, var(--bs-page-title-color));
+  color: var(--titleColor, var(--bt--block-title-color, var(--bt--page-title-color, var(--bs-primary-600))));
   font-family: var(--titleFontFamily, var(--bs-body-font-family));
   font-size: var(--titleFontSize);
 }
 .blockText__caption {
-  color: var(--captionColor, var(--bs-caption-text-color));
+  color: var(--captionColor, var(--bt--caption-text-color, var(--bs-secondary)));
   font-family: var(--captionFontFamily, var(--bs-body-font-family));
   font-size: var(--captionFontSize);
 }
 .blockText__text {
-  color: var(--textColor, var(--bs-block-text-color));
+  color: var(--textColor, var(--bs-body-color));
   font-family: var(--textFontFamily, var(--bs-body-font-family));
   font-size: var(--textFontSize);
 }
 .blockText__button {
   --bs-btn-bg: var(--buttonColor, var(--bs-primary));
-  --bs-btn-color: var(--buttonLinkColor, var(--bs-button-link-color));
-  --bs-btn-border-color: var(--buttonLinkColor, var(--bs-button-link-color));
+  --bs-btn-color: var(--buttonLinkColor, var(--bt--button-link-color, white));
+  --bs-btn-border-color: var(--buttonColor, var(--bs-primary));
   --bs-btn-hover-bg: var(--buttonColor, var(--bs-primary));
-  --bs-btn-hover-color: var(--buttonLinkColor, var(--bs-button-link-color));
-  --bs-btn-hover-border-color: var(--buttonLinkColor, var(--bs-button-link-color));
+  --bs-btn-hover-color: var(--buttonLinkColor, var(--bt--button-link-color, white));
+  --bs-btn-hover-border-color: var(--buttonLinkColor, var(--bt--button-link-color, white));
 }
 .blockText__button a {
-  color: var(--buttonLinkColor, var(--bs-button-link-color));
+  color: var(--buttonLinkColor, var(--bt--button-link-color, white));
   padding-left: var(--buttonIcon, 0);
   font-size: var(--textFontSize);
 }
 .blockText__button-icon svg {
-  color: var(--buttonLinkColor, var(--bs-button-link-color));
+  color: var(--buttonLinkColor, var(--bt--button-link-color, white));
 }

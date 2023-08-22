@@ -7,10 +7,10 @@
 .blockImageLink__content-title {
   font-family: var(--titleFontFamily, var(--bs-body-font-family));
   font-size: var(--titleFontSize);
-  color: var(--titleColor, var(--bs-page-title-color));
+  color: var(--titleColor, var(--bt--block-title-color, var(--bt--page-title-color, var(--bs-primary-600))));
 }
 .blockImageLink__caption {
   font-family: var(--captionFontFamily, var(--bs-body-font-family));
   font-size: var(--captionFontSize);
-  color: var(--captionColor, var(--bs-caption-text-color));
+  color: var(--captionColor, var(--bt--caption-text-color, var(--bs-secondary)));
 }

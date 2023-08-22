@@ -76,13 +76,13 @@
 
 .table-primary {
   --bs-table-color: #000;
-  --bs-table-bg: #e1e7ee;
-  --bs-table-border-color: #cbd0d6;
-  --bs-table-striped-bg: #d6dbe2;
+  --bs-table-bg: #d4d4d4;
+  --bs-table-border-color: #bfbfbf;
+  --bs-table-striped-bg: #c9c9c9;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #cbd0d6;
+  --bs-table-active-bg: #bfbfbf;
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: #d0d6dc;
+  --bs-table-hover-bg: #c4c4c4;
   --bs-table-hover-color: #000;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
@@ -90,13 +90,13 @@
 
 .table-secondary {
   --bs-table-color: #000;
-  --bs-table-bg: #f5f7fb;
-  --bs-table-border-color: #dddee2;
-  --bs-table-striped-bg: #e9ebee;
+  --bs-table-bg: #fcd7d4;
+  --bs-table-border-color: #e3c2bf;
+  --bs-table-striped-bg: #efccc9;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #dddee2;
+  --bs-table-active-bg: #e3c2bf;
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: #e3e4e8;
+  --bs-table-hover-bg: #e9c7c4;
   --bs-table-hover-color: #000;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
@@ -230,6 +230,6 @@ a.tabledrag-handle .handle {
   border-radius: 5px;
   background-color: #0d6efd;
   padding: 0.5rem;
-  color: #DFE6ED;
+  color: #f8f9fa;
   border: none;
 }

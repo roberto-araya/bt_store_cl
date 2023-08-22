@@ -5,12 +5,12 @@
   width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));
 }
 .blockTitleImage__content-title {
-  color: var(--titleColor, var(--bs-page-title-color));
+  color: var(--titleColor, var(--bt--block-title-color, var(--bt--page-title-color, var(--bs-primary-600))));
   font-family: var(--titleFontFamily, var(--bs-body-font-family));
   font-size: var(--titleFontSize);
 }
 .blockTitleImage__caption {
-  color: var(--captionColor, var(--bs-caption-text-color));
+  color: var(--captionColor, var(--bt--caption-text-color, var(--bs-secondary)));
   font-family: var(--captionFontFamily, var(--bs-body-font-family));
   font-size: var(--captionFontSize);
 }

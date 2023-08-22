@@ -32,7 +32,7 @@
 .menuMain__menu-title {
   font-family: var(--titleFontFamily, var(--bs-body-font-family));
   font-size: var(--titleFontSize);
-  color: var(--titleColor, var(--bs-page-title-color));
+  color: var(--titleColor, var(--bt--page-title-color, var(--bs-primary-600)));
 }
 .menuMain__nav {
   gap: var(--gap, 0px);
@@ -56,11 +56,11 @@
   padding-bottom: var(--itemPaddingBottom);
   font-family: var(--itemFontFamily, var(--bs-body-font-family));
   font-size: var(--itemFontSize);
-  color: var(--itemColor, var(--bs-primary));
+  color: var(--itemColor, var(--bs-primary-800));
 }
 .menuMain a.menuMain__link:hover,
 .menuMain a.menuMain__link.is-active {
-  color: var(--itemColorHover, var(--bs-secondary));
+  color: var(--itemColorHover, var(--bs-primary-600));
 }
 .menuMain__item {
   background-color: var(--itemBackgroundColor, transparent);
