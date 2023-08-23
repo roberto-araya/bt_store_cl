@@ -196,12 +196,9 @@ third_party_settings:
             region: oneColumn__main
             configuration:
               id: 'field_block:node:bt_article:field_bt_intro'
-              label: Introducción
               label_display: '0'
-              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
-                view_mode: view_mode
               formatter:
                 type: text_default
                 label: hidden
@@ -209,37 +206,7 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 5
             additional: {  }
-            third_party_settings:
-              bt_cbc:
-                text_color_select: default
-                text_color_custom: '#000000'
-                text_font_family: default
-                background_color_select: default
-                background_color_custom: '#000000'
-                background_color_opacity: '1.00'
-                background_color_custom_opacity: FF
-                animation_trigger: on_page_load
-                animation_type: bounce
-                animation_function: default
-                animation_fill: default
-                xs_align: default
-                xs_justify: default
-                xs_text_align: default
-                sm_align: default
-                sm_justify: default
-                sm_text_align: default
-                md_align: default
-                md_justify: default
-                md_text_align: default
-                lg_align: default
-                lg_justify: default
-                lg_text_align: default
-                xl_align: default
-                xl_justify: default
-                xl_text_align: default
-                xxl_align: default
-                xxl_justify: default
-                xxl_text_align: default
+            third_party_settings: {  }
           f42d8c63-2aec-4987-b0ff-ba1d7f67b025:
             uuid: f42d8c63-2aec-4987-b0ff-ba1d7f67b025
             region: oneColumn__main
@@ -422,48 +389,19 @@ third_party_settings:
             region: twoColumns__left
             configuration:
               id: 'field_block:node:bt_article:field_bt_paragraphs'
-              label: Párrafos
               label_display: '0'
-              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
-                view_mode: view_mode
               formatter:
                 type: entity_reference_revisions_entity_view
                 label: hidden
                 settings:
                   view_mode: default
+                  link: ''
                 third_party_settings: {  }
             weight: 5
             additional: {  }
-            third_party_settings:
-              bt_cbc:
-                background_color_select: default
-                background_color_custom: '#000000'
-                background_color_opacity: '1.00'
-                background_color_custom_opacity: FF
-                animation_trigger: on_page_load
-                animation_type: bounce
-                animation_function: default
-                animation_fill: default
-                xs_align: default
-                xs_justify: default
-                xs_text_align: default
-                sm_align: default
-                sm_justify: default
-                sm_text_align: default
-                md_align: default
-                md_justify: default
-                md_text_align: default
-                lg_align: default
-                lg_justify: default
-                lg_text_align: default
-                xl_align: default
-                xl_justify: default
-                xl_text_align: default
-                xxl_align: default
-                xxl_justify: default
-                xxl_text_align: default
+            third_party_settings: {  }
           125114ff-d6df-499b-9da8-3217beb4e539:
             uuid: 125114ff-d6df-499b-9da8-3217beb4e539
             region: twoColumns__left
@@ -486,12 +424,9 @@ third_party_settings:
             region: twoColumns__left
             configuration:
               id: 'field_block:node:bt_article:field_bt_tags'
-              label: Etiquetas
               label_display: '0'
-              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
-                view_mode: view_mode
               formatter:
                 type: entity_reference_label
                 label: hidden
@@ -500,34 +435,7 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 7
             additional: {  }
-            third_party_settings:
-              bt_cbc:
-                background_color_select: default
-                background_color_custom: '#000000'
-                background_color_opacity: '1.00'
-                background_color_custom_opacity: FF
-                animation_trigger: on_page_load
-                animation_type: bounce
-                animation_function: default
-                animation_fill: default
-                xs_align: default
-                xs_justify: default
-                xs_text_align: default
-                sm_align: default
-                sm_justify: default
-                sm_text_align: default
-                md_align: default
-                md_justify: default
-                md_text_align: default
-                lg_align: default
-                lg_justify: default
-                lg_text_align: default
-                xl_align: default
-                xl_justify: default
-                xl_text_align: default
-                xxl_align: default
-                xxl_justify: default
-                xxl_text_align: default
+            third_party_settings: {  }
         third_party_settings: {  }
   layout_library:
     enable: false

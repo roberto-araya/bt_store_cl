@@ -33,8 +33,8 @@ third_party_settings:
         layout_settings:
           label: ''
         components:
-          1c3bda1f-2fb2-4621-b828-f688ef329e16:
-            uuid: 1c3bda1f-2fb2-4621-b828-f688ef329e16
+          76e1ee88-b2f1-48a5-9bf0-27557111b985:
+            uuid: 76e1ee88-b2f1-48a5-9bf0-27557111b985
             region: content
             configuration:
               id: 'extra_field_block:node:blog_post:content_moderation_control'
@@ -267,12 +267,9 @@ third_party_settings:
             region: oneColumn__main
             configuration:
               id: 'field_block:node:blog_post:field_bt_intro'
-              label: Introducción
               label_display: '0'
-              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
-                view_mode: view_mode
               formatter:
                 type: text_default
                 label: hidden
@@ -280,37 +277,7 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 8
             additional: {  }
-            third_party_settings:
-              bt_cbc:
-                text_color_select: default
-                text_color_custom: '#000000'
-                text_font_family: default
-                background_color_select: default
-                background_color_custom: '#000000'
-                background_color_opacity: '1.00'
-                background_color_custom_opacity: FF
-                animation_trigger: on_page_load
-                animation_type: bounce
-                animation_function: default
-                animation_fill: default
-                xs_align: default
-                xs_justify: center
-                xs_text_align: default
-                sm_align: default
-                sm_justify: default
-                sm_text_align: default
-                md_align: default
-                md_justify: default
-                md_text_align: default
-                lg_align: default
-                lg_justify: default
-                lg_text_align: default
-                xl_align: default
-                xl_justify: default
-                xl_text_align: default
-                xxl_align: default
-                xxl_justify: default
-                xxl_text_align: default
+            third_party_settings: {  }
           8c846faa-3155-4ec7-b55a-131f1d289938:
             uuid: 8c846faa-3155-4ec7-b55a-131f1d289938
             region: oneColumn__main

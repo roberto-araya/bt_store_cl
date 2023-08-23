@@ -8,19 +8,24 @@ dependencies:
     - field.field.node.blog_post.field_blog_tags
     - field.field.node.blog_post.field_bt_content_image
     - field.field.node.blog_post.field_bt_intro
+    - field.field.node.blog_post.field_bt_metatags
     - field.field.node.blog_post.field_bt_paragraphs
     - field.field.node.blog_post.layout_builder__layout
-    - image.style.bt_square_300x300
+    - image.style.bt_square_160x160
     - node.type.blog_post
   module:
     - blazy
-    - text
     - user
 id: node.blog_post.teaser
 targetEntityType: node
 bundle: blog_post
 mode: teaser
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
   field_bt_content_image:
     type: blazy_media
     label: hidden
@@ -47,8 +52,9 @@ content:
       loading: ''
       preload: false
       responsive_image_style: ''
+      use_theme_field: false
       box_style: ''
-      image_style: bt_square_300x300
+      image_style: bt_square_160x160
       media_switch: ''
       ratio: ''
       thumbnail_style: ''
@@ -56,19 +62,7 @@ content:
       grid_medium: ''
       grid_small: ''
     third_party_settings: {  }
-    weight: 0
-    region: content
-  field_bt_intro:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 3
+    weight: 1
     region: content
   title:
     type: string
@@ -76,12 +70,15 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
 hidden:
   body: true
   field_blog_comments: true
   field_blog_tags: true
+  field_bt_intro: true
+  field_bt_metatags: true
   field_bt_paragraphs: true
   langcode: true
   layout_builder__layout: true
+  links: true
