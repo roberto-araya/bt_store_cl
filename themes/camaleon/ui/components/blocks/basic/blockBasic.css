@@ -1,3 +1,7 @@
+.block.blockBasic {
+  background-color: var(--backgroundColor, var(--bs-block-bg-color));
+}
+
 .blockBasic {
   --maxWidth: var(--xsMaxWidth);
   --textColor: var(--bs-body-color);

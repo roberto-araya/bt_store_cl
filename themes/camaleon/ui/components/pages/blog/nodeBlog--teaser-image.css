@@ -10,7 +10,7 @@
   font-size: 2rem;
 }
 .nodeBlogPost--teaser-image__title a {
-  color: var(--bs-primary);
+  color: var(--bt--blog-title-color, var(--bt--page-title-color, var(--bs-primary-600)));
 }
 .nodeBlogPost--teaser-image__intro {
   font-size: 1.2rem;
@@ -36,7 +36,7 @@
   font-size: 1rem;
 }
 .nodeBlogPost--teaser-image__read-more a {
-  color: var(--bs-link-color);
+  color: var(--bt--link-color, var(--bs-accent));
 }
 .nodeBlogPost--teaser-image__read-more a:hover {
   color: var(--bs-link-hover-color);

@@ -1,6 +1,7 @@
 .block.blockQuote {
   --maxWidth: var(--xsMaxWidth, max-content);
   --textAlign: var(--xsTextAlign, left);
+  background-color: var(--backgroundColor, var(--bs-block-bg-color));
 }
 
 .blockQuote {

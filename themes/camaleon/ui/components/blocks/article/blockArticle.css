@@ -1,0 +1,7 @@
+.block.blockArticle {
+  background-color: var(--backgroundColor, var(--bs-block-bg-color));
+}
+
+.blockArticle {
+  width: 100%;
+}

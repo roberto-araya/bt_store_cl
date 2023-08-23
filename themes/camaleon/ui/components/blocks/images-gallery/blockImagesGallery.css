@@ -1,6 +1,7 @@
 .block.blockImagesGallery {
   --maxWidth: var(--xsMaxWidth, 95vw);
   --alignSelf: var(--xsAlignSelf, center);
+  background-color: var(--backgroundColor, var(--bs-block-bg-color));
 }
 
 .blockImagesGallery {

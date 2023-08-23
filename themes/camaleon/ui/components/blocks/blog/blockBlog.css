@@ -1,3 +1,7 @@
+.block.blockBlog {
+  background-color: var(--backgroundColor, var(--bs-block-bg-color));
+}
+
 .blockBlog {
   width: 100%;
 }

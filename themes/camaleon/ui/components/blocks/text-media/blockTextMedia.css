@@ -1,3 +1,7 @@
+.block.blockTextMedia {
+  background-color: var(--backgroundColor, var(--bs-block-bg-color));
+}
+
 .blockTextMedia {
   --maxWidth: var(--xsMaxWidth, 85vw);
   width: 100%;

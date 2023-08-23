@@ -3,6 +3,7 @@
   --alignSelf: var(--xsAlignSelf, center);
   align-self: unset;
   justify-self: unset;
+  background-color: var(--backgroundColor, var(--bs-block-bg-color));
 }
 
 .blockImagesSlide {

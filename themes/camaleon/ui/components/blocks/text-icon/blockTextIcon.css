@@ -1,3 +1,7 @@
+.block.blockTextIcon {
+  background-color: var(--backgroundColor, var(--bs-block-bg-color));
+}
+
 .blockTextIcon {
   --titleFontSize: var(--xsTitleFontSize, 1.8rem);
   --captionFontSize: var(--xsCaptionFontSize, 1.2rem);

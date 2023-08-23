@@ -1,5 +1,6 @@
 .block.blockImage {
-  --alignSelf: var(--xsAlignSelf, center) ;
+  --alignSelf: var(--xsAlignSelf, center);
+  background-color: var(--backgroundColor, var(--bs-block-bg-color));
 }
 
 .blockImage {

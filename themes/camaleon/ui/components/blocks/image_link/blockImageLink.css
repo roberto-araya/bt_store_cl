@@ -1,3 +1,7 @@
+.block.blockImageLink {
+  background-color: var(--backgroundColor, var(--bs-block-bg-color));
+}
+
 .blockImageLink {
   --titleFontSize: var(--xsTitleFontSize, 1.8rem);
   --captionFontSize: var(--xsCaptionFontSize, 1.2rem);

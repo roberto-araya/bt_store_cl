@@ -1,8 +1,8 @@
 .blockTitleImage--default {
   max-width: var(--maxWidth);
-  display: grid;
-  grid-auto-rows: 270px 40px auto;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .blockTitleImage--default__content-title {
   margin-top: var(--captionFontSize);

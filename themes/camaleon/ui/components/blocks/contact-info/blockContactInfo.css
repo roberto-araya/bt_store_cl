@@ -3,6 +3,7 @@
   --maxWidth: var(--xsMaxWidth, 85vw);
   font-family: var(--textFontFamily, var(--bs-body-font-family));
   color: var(--textColor, var(--bs-body-color));
+  background-color: var(--backgroundColor, var(--bs-block-bg-color));
 }
 .blockContactInfo__phones {
   font-size: var(--textFontSize);
