@@ -1,0 +1,9 @@
+bt_store_cl.about:
+    path: '/admin/tiendaparamipyme'
+    defaults: 
+      _controller: '\Drupal\bt_store_cl\Controller\AboutController::content'
+      _title: 'TiendaParaMiPyme'
+    requirements: 
+      _permission: 'access content'
+    options:
+      _admin_route: TRUE
