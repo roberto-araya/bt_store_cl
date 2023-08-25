@@ -48,34 +48,7 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 0
             additional: {  }
-            third_party_settings:
-              bt_cbc:
-                background_color_select: default
-                background_color_custom: '#000000'
-                background_color_opacity: '1.00'
-                background_color_custom_opacity: FF
-                animation_trigger: on_page_load
-                animation_type: bounce
-                animation_function: default
-                animation_fill: default
-                xs_align: default
-                xs_justify: default
-                xs_text_align: default
-                sm_align: default
-                sm_justify: default
-                sm_text_align: default
-                md_align: default
-                md_justify: default
-                md_text_align: default
-                lg_align: default
-                lg_justify: default
-                lg_text_align: default
-                xl_align: default
-                xl_justify: default
-                xl_text_align: default
-                xxl_align: default
-                xxl_justify: default
-                xxl_text_align: default
+            third_party_settings: {  }
         third_party_settings: {  }
       -
         layout_id: bt_one_column
@@ -149,9 +122,9 @@ third_party_settings:
                 type: entity_reference_entity_view
                 label: hidden
                 settings:
-                  view_mode: bt_mid_landscape
+                  view_mode: bt_full_viewport
                 third_party_settings: {  }
-            weight: 3
+            weight: 0
             additional: {  }
             third_party_settings: {  }
         third_party_settings: {  }
@@ -244,6 +217,8 @@ third_party_settings:
                 animation_type: bounce
                 animation_function: default
                 animation_fill: default
+                xs_margin_top: 1.5rem
+                xs_margin_bottom: 2rem
                 xs_align: default
                 xs_justify: center
                 xs_text_align: center
@@ -267,17 +242,53 @@ third_party_settings:
             region: oneColumn__main
             configuration:
               id: 'field_block:node:blog_post:field_bt_intro'
+              label: Introducción
               label_display: '0'
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
                 type: text_default
                 label: hidden
                 settings: {  }
                 third_party_settings: {  }
-            weight: 8
+            weight: 9
             additional: {  }
-            third_party_settings: {  }
+            third_party_settings:
+              bt_cbc:
+                text_color_select: default
+                text_color_custom: '#000000'
+                text_font_family: default
+                background_color_select: default
+                background_color_custom: '#000000'
+                background_color_opacity: '1.00'
+                background_color_custom_opacity: FF
+                animation_trigger: on_page_load
+                animation_type: bounce
+                animation_function: default
+                animation_fill: default
+                xs_margin_bottom: 1rem
+                xs_align: default
+                xs_justify: center
+                xs_text_align: center
+                sm_align: default
+                sm_justify: default
+                sm_text_align: default
+                md_align: default
+                md_justify: default
+                md_text_align: default
+                lg_align: default
+                lg_justify: default
+                lg_text_align: default
+                xl_align: default
+                xl_justify: default
+                xl_text_align: default
+                xxl_align: default
+                xxl_justify: default
+                xxl_text_align: default
+                xs_margin_left: 1rem
+                xs_margin_right: 1rem
           8c846faa-3155-4ec7-b55a-131f1d289938:
             uuid: 8c846faa-3155-4ec7-b55a-131f1d289938
             region: oneColumn__main
@@ -370,7 +381,7 @@ third_party_settings:
                   view_mode: default
                   link: ''
                 third_party_settings: {  }
-            weight: 4
+            weight: 5
             additional: {  }
             third_party_settings: {  }
           a7ea066d-f468-4a72-b2b9-c3fccaa5f7d9:
@@ -390,74 +401,45 @@ third_party_settings:
                 settings:
                   link: true
                 third_party_settings: {  }
-            weight: 7
+            weight: 6
             additional: {  }
-            third_party_settings: {  }
-        third_party_settings: {  }
-      -
-        layout_id: bt_one_column
-        layout_settings:
-          label: Autor
-          context_mapping: {  }
-          background_color: default
-          class: ''
-          container_select: full
-          full_select: '0'
-          box_select: 100%
-          padding_top: pt-1
-          padding_bottom: none
-          sm_container_select: full
-          sm_full_select: '0'
-          sm_box_select: 100%
-          sm_padding_top: none
-          sm_padding_bottom: none
-          md_container_select: full
-          md_full_select: '0'
-          md_box_select: 100%
-          md_padding_top: none
-          md_padding_bottom: none
-          lg_container_select: full
-          lg_full_select: '0'
-          lg_box_select: 100%
-          lg_padding_top: none
-          lg_padding_bottom: none
-          xl_container_select: full
-          xl_full_select: 10%
-          xl_box_select: 100%
-          xl_padding_top: pt-xl-4
-          xl_padding_bottom: pb-xl-4
-          xxl_container_select: full
-          xxl_full_select: 10%
-          xxl_box_select: 100%
-          xxl_padding_top: pt-xxl-5
-          xxl_padding_bottom: pb-xxl-5
-          sm_sm_box_select: 100%
-          sm_sm_padding_top: none
-          sm_sm_padding_bottom: none
-          md_sm_box_select: 100%
-          md_sm_padding_top: none
-          md_sm_padding_bottom: none
-          lg_sm_box_select: 100%
-          lg_sm_padding_top: none
-          lg_sm_padding_bottom: none
-          xl_sm_box_select: 100%
-          xl_sm_padding_top: none
-          xl_sm_padding_bottom: none
-          xxl_sm_box_select: 100%
-          xxl_sm_padding_top: none
-          xxl_sm_padding_bottom: none
-          hide_label: 1
-          label_color: default
-          label_custom_color: '#000000'
-          background_custom_color: '#000000'
-        components:
+            third_party_settings:
+              bt_cbc:
+                background_color_select: default
+                background_color_custom: '#000000'
+                background_color_opacity: '1.00'
+                background_color_custom_opacity: FF
+                animation_trigger: on_page_load
+                animation_type: bounce
+                animation_function: default
+                animation_fill: default
+                custom_classes: small
+                xs_align: default
+                xs_justify: flex-start
+                xs_text_align: left
+                sm_align: default
+                sm_justify: default
+                sm_text_align: default
+                md_align: default
+                md_justify: default
+                md_text_align: default
+                lg_align: default
+                lg_justify: default
+                lg_text_align: default
+                xl_align: default
+                xl_justify: default
+                xl_text_align: default
+                xxl_align: default
+                xxl_justify: default
+                xxl_text_align: default
+                xs_margin_left: 1rem
           83538728-2c48-4cb0-b1d6-fb22d1d8f570:
             uuid: 83538728-2c48-4cb0-b1d6-fb22d1d8f570
-            region: oneColumn__main
+            region: twoColumns__left
             configuration:
               id: 'field_block:node:blog_post:uid'
               label: 'Escrito por'
-              label_display: visible
+              label_display: '0'
               provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
@@ -468,12 +450,40 @@ third_party_settings:
                 settings:
                   view_mode: bt_blog_author
                 third_party_settings: {  }
-            weight: 6
+            weight: 7
             additional: {  }
-            third_party_settings: {  }
+            third_party_settings:
+              bt_cbc:
+                background_color_select: default
+                background_color_custom: '#000000'
+                background_color_opacity: '1.00'
+                background_color_custom_opacity: FF
+                animation_trigger: on_page_load
+                animation_type: bounce
+                animation_function: default
+                animation_fill: default
+                xs_align: default
+                xs_justify: flex-end
+                xs_text_align: right
+                sm_align: default
+                sm_justify: default
+                sm_text_align: default
+                md_align: default
+                md_justify: default
+                md_text_align: default
+                lg_align: default
+                lg_justify: default
+                lg_text_align: default
+                xl_align: default
+                xl_justify: default
+                xl_text_align: default
+                xxl_align: default
+                xxl_justify: default
+                xxl_text_align: default
+                xs_margin_top: 1rem
           7cdaf84b-4d33-4f45-9b4f-a4e677980510:
             uuid: 7cdaf84b-4d33-4f45-9b4f-a4e677980510
-            region: oneColumn__main
+            region: twoColumns__left
             configuration:
               id: 'field_block:node:blog_post:created'
               label: Fecha
@@ -490,9 +500,41 @@ third_party_settings:
                   custom_date_format: ''
                   timezone: ''
                 third_party_settings: {  }
-            weight: 7
+            weight: 8
             additional: {  }
-            third_party_settings: {  }
+            third_party_settings:
+              bt_cbc:
+                background_color_select: default
+                background_color_custom: '#000000'
+                background_color_opacity: '1.00'
+                background_color_custom_opacity: FF
+                animation_trigger: on_page_load
+                animation_type: bounce
+                animation_function: default
+                animation_fill: default
+                xs_margin_top: '-20px'
+                xs_margin_right: 120px
+                xs_align: default
+                xs_justify: flex-end
+                xs_text_align: right
+                sm_margin_top: '-32px'
+                sm_align: default
+                sm_justify: default
+                sm_text_align: default
+                md_align: default
+                md_justify: default
+                md_text_align: default
+                lg_align: default
+                lg_justify: default
+                lg_text_align: default
+                xl_align: default
+                xl_justify: default
+                xl_text_align: default
+                xxl_align: default
+                xxl_justify: default
+                xxl_text_align: default
+                custom_classes: small
+                xs_margin_bottom: 2rem
         third_party_settings: {  }
       -
         layout_id: bt_one_column
@@ -566,7 +608,7 @@ third_party_settings:
                 type: comment_default
                 label: hidden
                 settings:
-                  view_mode: full
+                  view_mode: default
                   pager_id: 0
                 third_party_settings: {  }
             weight: 0

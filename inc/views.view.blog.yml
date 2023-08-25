@@ -328,8 +328,30 @@ display:
             roles: {  }
           break_phrase: false
           not: false
+      style:
+        type: css_grid
+        options:
+          mode: auto-fill
+          gap: 24px
+          grid_auto_flow: ''
+          minmax:
+            min: 300px
+            max: 1fr
+          align_justify:
+            justify_items: ''
+            align_items: ''
+            justify_content: ''
+            align_content: ''
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: bt_teaser_image
       defaults:
         empty: false
+        css_class: false
+        style: false
+        row: false
         relationships: false
         arguments: false
       relationships:
@@ -344,8 +366,10 @@ display:
           entity_field: uid
           plugin_id: standard
           required: false
+      css_class: 'viewsBlog viewsBlog--blog-user-all'
       display_description: ''
-      display_extenders: {  }
+      display_extenders:
+        simple_sitemap_display_extender: {  }
       path: blog/%
     cache_metadata:
       max-age: -1

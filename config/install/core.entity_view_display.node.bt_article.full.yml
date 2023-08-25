@@ -132,31 +132,7 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 0
             additional: {  }
-            third_party_settings:
-              bt_cbc:
-                background_color_select: default
-                background_color_custom: '#000000'
-                background_color_opacity: '1.00'
-                background_color_custom_opacity: FF
-                animation_trigger: on_page_load
-                animation_type: bounce
-                animation_function: default
-                animation_fill: default
-                sm_align: default
-                sm_justify: default
-                sm_text_align: default
-                md_align: default
-                md_justify: default
-                md_text_align: default
-                lg_align: default
-                lg_justify: default
-                lg_text_align: default
-                xl_align: default
-                xl_justify: default
-                xl_text_align: default
-                xxl_align: default
-                xxl_justify: default
-                xxl_text_align: default
+            third_party_settings: {  }
         third_party_settings: {  }
       -
         layout_id: bt_one_column
@@ -220,9 +196,12 @@ third_party_settings:
             region: oneColumn__main
             configuration:
               id: 'field_block:node:bt_article:field_bt_intro'
+              label: Introducción
               label_display: '0'
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
                 type: text_default
                 label: hidden
@@ -230,15 +209,52 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 5
             additional: {  }
-            third_party_settings: {  }
+            third_party_settings:
+              bt_cbc:
+                text_color_select: default
+                text_color_custom: '#000000'
+                text_font_family: default
+                text_xs_font_size: 1.3rem
+                background_color_select: default
+                background_color_custom: '#000000'
+                background_color_opacity: '1.00'
+                background_color_custom_opacity: FF
+                animation_trigger: on_page_load
+                animation_type: bounce
+                animation_function: default
+                animation_fill: default
+                xs_margin_left: 0px
+                xs_margin_right: 0px
+                xs_margin_bottom: 1rem
+                xs_align: default
+                xs_justify: default
+                xs_text_align: center
+                sm_align: default
+                sm_justify: default
+                sm_text_align: default
+                md_align: default
+                md_justify: default
+                md_text_align: default
+                lg_align: default
+                lg_justify: default
+                lg_text_align: default
+                xl_align: default
+                xl_justify: default
+                xl_text_align: default
+                xxl_align: default
+                xxl_justify: default
+                xxl_text_align: default
           f42d8c63-2aec-4987-b0ff-ba1d7f67b025:
             uuid: f42d8c63-2aec-4987-b0ff-ba1d7f67b025
             region: oneColumn__main
             configuration:
               id: 'field_block:node:bt_article:field_bt_title_foot'
+              label: 'Bajada de título'
               label_display: '0'
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
                 type: string
                 label: hidden
@@ -247,15 +263,52 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 3
             additional: {  }
-            third_party_settings: {  }
+            third_party_settings:
+              bt_cbc:
+                text_color_select: default
+                text_color_custom: '#000000'
+                text_font_family: default
+                background_color_select: default
+                background_color_custom: '#000000'
+                background_color_opacity: '1.00'
+                background_color_custom_opacity: FF
+                animation_trigger: on_page_load
+                animation_type: bounce
+                animation_function: default
+                animation_fill: default
+                xs_align: default
+                xs_justify: center
+                xs_text_align: center
+                sm_align: default
+                sm_justify: default
+                sm_text_align: default
+                md_align: default
+                md_justify: default
+                md_text_align: default
+                lg_align: default
+                lg_justify: default
+                lg_text_align: default
+                xl_align: default
+                xl_justify: default
+                xl_text_align: default
+                xxl_align: default
+                xxl_justify: default
+                xxl_text_align: default
+                xs_margin_bottom: .5rem
+                text_xs_font_size: 1.5rem
+                sm_margin_bottom: 1rem
+                xl_margin_bottom: 2rem
           5f964832-1116-4bd3-82da-f47848ded059:
             uuid: 5f964832-1116-4bd3-82da-f47848ded059
             region: oneColumn__main
             configuration:
               id: 'field_block:node:bt_article:title'
+              label: Título
               label_display: '0'
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
                 type: string
                 label: hidden
@@ -264,7 +317,39 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 2
             additional: {  }
-            third_party_settings: {  }
+            third_party_settings:
+              bt_cbc:
+                title_color_select: default
+                title_color_custom: '#000000'
+                title_font_family: default
+                background_color_select: default
+                background_color_custom: '#000000'
+                background_color_opacity: '1.00'
+                background_color_custom_opacity: FF
+                animation_trigger: on_page_load
+                animation_type: bounce
+                animation_function: default
+                animation_fill: default
+                xs_align: default
+                xs_justify: center
+                xs_text_align: center
+                sm_align: default
+                sm_justify: default
+                sm_text_align: default
+                md_align: default
+                md_justify: default
+                md_text_align: default
+                lg_align: default
+                lg_justify: default
+                lg_text_align: default
+                xl_align: default
+                xl_justify: default
+                xl_text_align: default
+                xxl_align: default
+                xxl_justify: default
+                xxl_text_align: default
+                xs_margin_top: 1.5rem
+                xs_margin_bottom: .5rem
           1c79c6e8-24c8-4040-ab9e-72e7903d82c5:
             uuid: 1c79c6e8-24c8-4040-ab9e-72e7903d82c5
             region: oneColumn__main
@@ -365,9 +450,12 @@ third_party_settings:
             region: twoColumns__left
             configuration:
               id: 'field_block:node:bt_article:field_bt_category'
+              label: Categoría
               label_display: '0'
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
                 type: entity_reference_label
                 label: hidden
@@ -376,15 +464,47 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 6
             additional: {  }
-            third_party_settings: {  }
+            third_party_settings:
+              bt_cbc:
+                background_color_select: default
+                background_color_custom: '#000000'
+                background_color_opacity: '1.00'
+                background_color_custom_opacity: FF
+                animation_trigger: on_page_load
+                animation_type: bounce
+                animation_function: default
+                animation_fill: default
+                custom_classes: small
+                xs_margin_top: 1.5rem
+                xs_align: default
+                xs_justify: default
+                xs_text_align: default
+                sm_align: default
+                sm_justify: default
+                sm_text_align: default
+                md_align: default
+                md_justify: default
+                md_text_align: default
+                lg_align: default
+                lg_justify: default
+                lg_text_align: default
+                xl_align: default
+                xl_justify: default
+                xl_text_align: default
+                xxl_align: default
+                xxl_justify: default
+                xxl_text_align: default
           205ee0c3-374e-43c3-a7c0-30691eb64348:
             uuid: 205ee0c3-374e-43c3-a7c0-30691eb64348
             region: twoColumns__left
             configuration:
               id: 'field_block:node:bt_article:field_bt_tags'
+              label: Etiquetas
               label_display: '0'
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
                 type: entity_reference_label
                 label: hidden
@@ -393,7 +513,36 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 7
             additional: {  }
-            third_party_settings: {  }
+            third_party_settings:
+              bt_cbc:
+                background_color_select: default
+                background_color_custom: '#000000'
+                background_color_opacity: '1.00'
+                background_color_custom_opacity: FF
+                animation_trigger: on_page_load
+                animation_type: bounce
+                animation_function: default
+                animation_fill: default
+                custom_classes: small
+                xs_align: default
+                xs_justify: default
+                xs_text_align: default
+                sm_align: default
+                sm_justify: default
+                sm_text_align: default
+                md_align: default
+                md_justify: default
+                md_text_align: default
+                lg_align: default
+                lg_justify: default
+                lg_text_align: default
+                xl_align: default
+                xl_justify: default
+                xl_text_align: default
+                xxl_align: default
+                xxl_justify: default
+                xxl_text_align: default
+                xs_margin_top: .5rem
         third_party_settings: {  }
   layout_library:
     enable: false

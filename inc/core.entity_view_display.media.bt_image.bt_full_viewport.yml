@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.bt_full_viewport
+    - field.field.media.bt_image.field_bt_image
+    - media.type.bt_image
+    - responsive_image.styles.bt_full_viewport
+  module:
+    - layout_builder
+    - responsive_image
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: media.bt_image.bt_full_viewport
+targetEntityType: media
+bundle: bt_image
+mode: bt_full_viewport
+content:
+  field_bt_image:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: bt_full_viewport
+      image_link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

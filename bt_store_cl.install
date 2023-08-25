@@ -223,10 +223,10 @@ function bt_store_cl_install() {
     'core.entity_view_display.commerce_product.default.default',
     'core.entity_view_display.media.bt_image.bt_block',
     'core.entity_view_display.node.blog_post.default',
-    'core.entity_view_display.node.blog_post.full',
     'core.entity_view_display.node.blog_post.teaser',
-    'core.entity_view_display.node.bt_article.full',
     'core.entity_form_display.user.user.default',
+    'core.entity_view_display.media.bt_image.bt_full_viewport',
+    'core.entity_view_display.media.bt_image.bt_mid_landscape',
     'views.view.blog',
   ];
 
