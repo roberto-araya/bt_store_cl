@@ -17,10 +17,12 @@
  */
 #}
 {{ attach_library('camaleon/user_blog_author') }}
-<article{{ attributes.addClass('user--blog_author') }}>
+<article{{ attributes.addClass('nodeBlogPost__author') }}>
   {% if content %}
-    {{ content.field_bt_user_image }}
-    <div class="user--blog_author__content">
+    <div class="nodeBlogPost__author-image">
+      {{ content.field_bt_user_image }}
+    </div>
+    <div class="nodeBlogPost__author-data">
       {{ content.field_bt_user_name }}
       {{ content.blog__personal_blog_link }}
     </div>

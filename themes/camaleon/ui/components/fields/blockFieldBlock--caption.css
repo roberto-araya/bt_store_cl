@@ -8,14 +8,6 @@
   --paddingTop: var(--xsPaddingTop, 0px);
   --paddingRight: var(--xsPaddingRight, 1rem);
   --paddingBottom: var(--xsPaddingBottom, 0px);
-  margin-left: 0px;
-  margin-top: 0px;
-  margin-right: 0px;
-  margin-bottom: 0px;
-  padding-left: 0px;
-  padding-top: 0px;
-  padding-right: 0px;
-  padding-bottom: 0px;
   background-color: transparent;
 }
 
@@ -25,8 +17,7 @@
   width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));
   max-width: var(--maxWidth);
 }
-.blockFieldBlock--caption .nodeArticle__caption,
-.blockFieldBlock--caption .nodeBlog__caption {
+.blockFieldBlock--caption .nodeArticle__caption {
   margin-left: var(--marginLeft);
   margin-top: var(--marginTop);
   margin-right: var(--marginRight);

@@ -1,0 +1,6 @@
+.viewsBlog--blog-all .nodeBlogPost--teaser-image,
+.viewsBlog--blog-user-all .nodeBlogPost--teaser-image,
+.viewsBlog--blog-user-all-block .nodeBlogPost--teaser-image {
+  border: solid 1px var(--bs-body-color);
+  border-radius: var(--bs-border-radius);
+}

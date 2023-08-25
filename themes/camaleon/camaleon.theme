@@ -371,13 +371,21 @@ function camaleon_preprocess_input(&$variables) {
       if (in_array('button--accent', $class)) {
         $button_type = 'accent';
       }
-      
-      if (isset($button_type)) {
-        $variables['button_type'] = $button_type;
-        $variables['theme_settings']['button'] = theme_get_setting('buttons.button_' . $button_type);
-      }
     }
-  } 
+  }
+
+  if (isset($variables['element']['#attributes']['id'])) {
+    $id = $variables['element']['#attributes']['id'];
+    if ($id == 'edit-preview') {
+      $button_type = 'secondary';
+      $variables['element']['#attributes']['class'][] = 'button--secondary';
+    }
+  }
+  
+  if (isset($button_type)) {
+    $variables['button_type'] = $button_type;
+    $variables['theme_settings']['button'] = theme_get_setting('buttons.button_' . $button_type);
+  }
   
   if (
     !empty($variables['element']['#title_display']) &&
@@ -547,6 +555,13 @@ function camaleon_theme_suggestions_input_alter(array &$suggestions, array &$var
       }
     }
   } 
+
+  if (isset($variables['element']['#attributes']['id'])) {
+    $id = $variables['element']['#attributes']['id'];
+    if ($id == 'edit-preview') {
+      $button_type = 'secondary';
+    }
+  }
 
   if (isset($variables['element']['#button_type'])) {
     $button_type = str_replace("-", "_", $variables['element']['#button_type']);
