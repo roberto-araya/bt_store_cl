@@ -1,0 +1,16 @@
+.blockFaq--default {
+  max-width: var(--maxWidth);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.blockFaq--default__content-title {
+  margin-top: var(--captionFontSize);
+  margin-bottom: 0;
+}
+.blockFaq--default__caption {
+  padding-bottom: var(--captionFontSize);
+}
+.blockFaq--default__text {
+  margin-bottom: var(--captionFontSize);
+}

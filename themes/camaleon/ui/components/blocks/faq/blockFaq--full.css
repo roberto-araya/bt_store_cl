@@ -1,0 +1,20 @@
+.blockFaq--full {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.blockFaq--full .boxed {
+  width: 100%;
+  max-width: var(--maxWidth);
+  align-self: center;
+}
+.blockFaq--full__content-title {
+  margin-top: var(--captionFontSize);
+  margin-bottom: 0;
+}
+.blockFaq--full__caption {
+  padding-bottom: var(--captionFontSize);
+}
+.blockFaq--full__text {
+  margin-bottom: var(--captionFontSize);
+}

@@ -32,54 +32,63 @@
  * - field_name: The name of the field.
  * - field_type: The type of the field.
  * - label_display: The display settings for the label.
+ * - bundle: The entity bundle.
+ * - view_mode: The entity view_mode.
+ * - field_name: The field name. 
  *
  *
  * @see template_preprocess_field()
  */
 #}
-
-{%
-  set item_classes = [
-    'field',
-    entity_type ~ bundle ~ '__' ~ field_name ~ '_item',
-    entity_type ~ bundle ~ '--' ~ view_mode ~ '__' ~ field_name ~ '_item',
-  ]
-%}
-
-{%
-  set classes = [
-    'field',
-    entity_type ~ bundle ~ '__' ~ field_name,
-    entity_type ~ bundle ~ '--' ~ view_mode ~ '__' ~ field_name,
-    label_display == 'inline' ? 'clearfix',
-  ]
-%}
+{% if '_' in bundle %}
+  {% set bundle_parts = bundle|split('_') %}
+  {% set bundle_part0 = bundle_parts[0]|capitalize %}
+  {% set bundle_part1 = bundle_parts[1]|capitalize %}
+  {% set bundle = bundle_part0 ~ bundle_part1 %}
+{% else %}
+  {% set bundle = bundle|capitalize %}    
+{% endif %}
 
 {%
   set title_classes = [
-    entity_type ~ bundle ~ '__' ~ field_name ~ '__label',
-    entity_type ~ bundle ~ '--' ~ view_mode ~ '__' ~ field_name ~ '__label',
     label_display == 'visually_hidden' ? 'visually-hidden',
   ]
 %}
 
+{%
+  set item_classes = [
+    'accordion-item',
+    'blockFaq__faq_item',
+    'blockFaq--full__faq_item',
+  ]
+%}
+
+{%
+  set field_classes = [
+    'accordion',
+    'blockFaq__questions',
+    'blockFaq--full__questions',
+  ]
+%}
+
+
 {% if label_hidden %}
   {% if multiple %}
-    <div{{ attributes.addClass(classes) }}>
+    <div{{ attributes.addClass(field_classes) }}>
       {% for item in items %}
         <div{{ item.attributes.addClass(item_classes) }}>{{ item.content }}</div>
       {% endfor %}
     </div>
   {% else %}
     {% for item in items %}
-      <div{{ attributes.addClass(classes) }}>{{ item.content }}</div>
+      <div{{ attributes.addClass(item_classes) }}>{{ item.content }}</div>
     {% endfor %}
   {% endif %}
 {% else %}
-  <div{{ attributes.addClass(classes) }}>
+  <div{{ attributes }}>
     <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
     {% if multiple %}
-      <div class="field__items">
+      <div>
     {% endif %}
     {% for item in items %}
       <div{{ item.attributes.addClass(item_classes) }}>{{ item.content }}</div>

@@ -1,0 +1,16 @@
+.blockAccordion--default {
+  max-width: var(--maxWidth);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.blockAccordion--default__content-title {
+  margin-top: var(--captionFontSize);
+  margin-bottom: 0;
+}
+.blockAccordion--default__caption {
+  padding-bottom: var(--captionFontSize);
+}
+.blockAccordion--default__text {
+  margin-bottom: var(--captionFontSize);
+}

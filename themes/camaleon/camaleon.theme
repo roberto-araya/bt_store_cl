@@ -435,6 +435,27 @@ function camaleon_preprocess_input(&$variables) {
 /**
  * Implements hook_preprocess_HOOK().
  */
+function camaleon_preprocess_multifield(&$variables) {
+  $variables['id'] = $variables['elements']['#multifield']->id();
+
+  $bundle = $variables['elements']['#multifield']->bundle();
+  $bundle = strpos($bundle, 'bt_cb_') === 0 ? $bundle = substr($bundle, 6) : $bundle;
+  $bundle = strpos($bundle, 'bt_') === 0 ? $bundle = substr($bundle, 3) : $bundle;
+
+  $bundle_parts = str_contains($bundle, '_') ? explode('_', $bundle) : [$bundle];
+  $bundle_parts = str_contains($bundle, '-') ? explode('-', $bundle) : $bundle_parts;
+  $bundle = '';
+  foreach($bundle_parts as $part) {
+    $bundle = $bundle . ucfirst($part); 
+  }
+
+  $variables['bundle'] = $bundle;
+  $variables['view_mode'] = $variables['elements']['#view_mode'];
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
 function camaleon_preprocess_textarea(&$variables) {
   $variables['attributes']['class'][] = 'form-control';
 }
@@ -455,6 +476,17 @@ function camaleon_preprocess_radios(&$variables) {
 
 
 #### Suggestions Functions ####
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for multifield.
+ */
+function camaleon_theme_suggestions_multifield_alter(array &$suggestions, array $variables) {
+  $bundle = $variables['elements']['#multifield']->bundle();
+  $view_mode = $variables['elements']['#view_mode'];
+  $suggestions[] = "multifield__" . $bundle;
+  $suggestions[] = "multifield__" . $bundle . '_' . $view_mode;
+}
+
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter() for selects.

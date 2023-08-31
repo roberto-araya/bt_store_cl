@@ -37,55 +37,21 @@
  * @see template_preprocess_field()
  */
 #}
+{{ attach_library('camaleon/fields') }}
 
-{%
-  set item_classes = [
-    'field',
-    entity_type ~ bundle ~ '__' ~ field_name ~ '_item',
-    entity_type ~ bundle ~ '--' ~ view_mode ~ '__' ~ field_name ~ '_item',
-  ]
+{% include "@Components/blocks/faq/Faq__answer.twig" with {
+  'attributes': attributes,
+  'label_hidden': label_hidden,
+  'title_attributes': title_attributes,
+  'label': label,
+  'multiple': multiple,
+  'items': items,
+  'entity_type': entity_type,
+  'field_name': field_name,
+  'field_type': field_type,
+  'label_display': label_display,
+  'bundle': bundle,
+  'view_mode': view_mode,
+  'parent_id': parent_id,
+  } 
 %}
-
-{%
-  set classes = [
-    'field',
-    entity_type ~ bundle ~ '__' ~ field_name,
-    entity_type ~ bundle ~ '--' ~ view_mode ~ '__' ~ field_name,
-    label_display == 'inline' ? 'clearfix',
-  ]
-%}
-
-{%
-  set title_classes = [
-    entity_type ~ bundle ~ '__' ~ field_name ~ '__label',
-    entity_type ~ bundle ~ '--' ~ view_mode ~ '__' ~ field_name ~ '__label',
-    label_display == 'visually_hidden' ? 'visually-hidden',
-  ]
-%}
-
-{% if label_hidden %}
-  {% if multiple %}
-    <div{{ attributes.addClass(classes) }}>
-      {% for item in items %}
-        <div{{ item.attributes.addClass(item_classes) }}>{{ item.content }}</div>
-      {% endfor %}
-    </div>
-  {% else %}
-    {% for item in items %}
-      <div{{ attributes.addClass(classes) }}>{{ item.content }}</div>
-    {% endfor %}
-  {% endif %}
-{% else %}
-  <div{{ attributes.addClass(classes) }}>
-    <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
-    {% if multiple %}
-      <div class="field__items">
-    {% endif %}
-    {% for item in items %}
-      <div{{ item.attributes.addClass(item_classes) }}>{{ item.content }}</div>
-    {% endfor %}
-    {% if multiple %}
-      </div>
-    {% endif %}
-  </div>
-{% endif %}

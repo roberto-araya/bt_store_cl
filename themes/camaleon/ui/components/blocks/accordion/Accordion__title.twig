@@ -37,6 +37,8 @@
  * @see template_preprocess_field()
  */
 #}
+{% set target = "#collapse" ~ bundle ~ "-" ~ parent_id %}
+{% set control = "collapse" ~ bundle ~ "-" ~ parent_id %}
 
 {%
   set item_classes = [
@@ -72,7 +74,11 @@
     </div>
   {% else %}
     {% for item in items %}
-      <div{{ attributes.addClass(classes) }}>{{ item.content }}</div>
+    <h4{{attributes.addClass(classes)}}>
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={{ target }} aria-expanded="true" aria-controls={{ control }}>
+        {{ item.content }}
+      </button>
+    </h4>
     {% endfor %}
   {% endif %}
 {% else %}

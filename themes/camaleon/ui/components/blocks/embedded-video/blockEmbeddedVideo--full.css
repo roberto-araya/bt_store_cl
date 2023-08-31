@@ -1,0 +1,22 @@
+.blockEmbeddedVideo--full {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.blockEmbeddedVideo--full .boxed {
+  max-width: var(--maxWidth);
+  align-self: center;
+}
+.blockEmbeddedVideo--full__content-title {
+  margin-top: var(--captionFontSize);
+  margin-bottom: 0;
+}
+.blockEmbeddedVideo--full__caption {
+  padding-bottom: var(--captionFontSize);
+}
+.blockEmbeddedVideo--full__text {
+  margin-bottom: var(--captionFontSize);
+}
+.blockEmbeddedVideo--full__buttons {
+  margin-bottom: var(--captionFontSize);
+}

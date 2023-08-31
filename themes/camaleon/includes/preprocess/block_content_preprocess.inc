@@ -8,19 +8,9 @@ use Drupal\responsive_background_image\ResponsiveBackgroundImage;
 function _block_content_preprocess(&$variables) {
   $plugin_id = $variables['elements']['#base_plugin_id'];
   if ($plugin_id == "block_content" || $plugin_id == "inline_block") {
-    /* Create a bundle and view_mode variables to be used on custom block_content's template.*/
     $variables['bundle'] = $variables['elements']['content']['#block_content']->bundle();
-    $variables['view_mode'] = $variables['elements']['#configuration']['view_mode'];
-
     $variables['bundle'] = strpos($variables['bundle'], 'bt_cb_') === 0 ? $variables['bundle'] = substr($variables['bundle'], 6) : $variables['bundle'];
     $variables['bundle'] = strpos($variables['bundle'], 'bt_') === 0 ? $variables['bundle'] = substr($variables['bundle'], 3) : $variables['bundle'];
-    $variables['view_mode'] = strpos($variables['view_mode'], 'bt_') === 0 ? substr($variables['view_mode'], 3) : $variables['view_mode'];
-    $variables['id'] = $variables['elements']['content']['#block_content']->id();
-
-    // Contact info.
-    if ($variables['bundle'] == 'contact_info') {
-      _contact_info_block_preprocess($variables);
-    }
 
     // Add responsive image background to specific content blocks
     // example (https://git.drupalcode.org/project/responsive_background_image/-/tree/2.x)
@@ -44,6 +34,23 @@ function _block_content_preprocess(&$variables) {
       if ($style_tag) {
         $variables['#attached']['html_head'][] = $style_tag;
       }
+    }
+
+    $bundle_parts = str_contains($block_type, '_') ? explode('_', $block_type) : [$block_type];
+    $bundle_parts = str_contains($block_type, '-') ? explode('-', $block_type) : $bundle_parts;
+    $bundle = '';
+    foreach($bundle_parts as $part) {
+      $bundle = $bundle . ucfirst($part); 
+    }
+    
+    $variables['bundle'] = $bundle;
+    $variables['view_mode'] = $variables['elements']['#configuration']['view_mode'];    
+    $variables['view_mode'] = strpos($variables['view_mode'], 'bt_') === 0 ? substr($variables['view_mode'], 3) : $variables['view_mode'];
+    $variables['id'] = $variables['elements']['content']['#block_content']->id();
+
+    // Contact info.
+    if ($variables['bundle'] == 'contact_info') {
+      _contact_info_block_preprocess($variables);
     }
   }
 }

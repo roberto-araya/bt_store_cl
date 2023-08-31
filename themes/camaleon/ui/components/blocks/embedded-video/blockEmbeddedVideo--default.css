@@ -1,0 +1,19 @@
+.blockEmbeddedVideo--default {
+  max-width: var(--maxWidth);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.blockEmbeddedVideo--default__content-title {
+  margin-top: var(--captionFontSize);
+  margin-bottom: 0;
+}
+.blockEmbeddedVideo--default__caption {
+  padding-bottom: var(--captionFontSize);
+}
+.blockEmbeddedVideo--default__text {
+  margin-bottom: var(--captionFontSize);
+}
+.blockEmbeddedVideo--default__buttons {
+  margin-bottom: var(--captionFontSize);
+}

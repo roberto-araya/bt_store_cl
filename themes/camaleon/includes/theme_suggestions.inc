@@ -123,6 +123,7 @@ function _field_suggestions(&$suggestions, $variables) {
     'taxonomy_term' => 'tax',
     'user' => 'user',
     'comment' => 'comment',
+    'multifield' => 'mf',
   ];
 
   if ($entity_type == 'paragraph') {

@@ -37,6 +37,8 @@
  * @see template_preprocess_field()
  */
 #}
+{% set target = "#collapse" ~ bundle ~ "-" ~ parent_id %}
+{% set control = "collapse" ~ bundle ~ "-" ~ parent_id %}
 
 {%
   set item_classes = [
@@ -72,7 +74,7 @@
     </div>
   {% else %}
     {% for item in items %}
-      <div{{ attributes.addClass(classes) }}>{{ item.content }}</div>
+      <div{{ attributes.setAttribute('id', control).addClass(classes) }}>{{ item.content }}</div>
     {% endfor %}
   {% endif %}
 {% else %}

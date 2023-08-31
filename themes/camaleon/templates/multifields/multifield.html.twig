@@ -1,0 +1,30 @@
+{#
+/**
+ * @file
+ * Default theme implementation to present a multifield entity.
+ *
+ * This template is used when viewing a registered multifield's page,
+ * e.g., /admin/content/multifield)/123. 123 being the multifield's ID.
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ *   print a subset such as 'content.title'.
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_multifield()
+ */
+#}
+
+{%
+  set article_classes = [
+    'multifield',
+    'multifield' ~ bundle,
+    'multifield' ~ bundle ~ '--' ~ view_mode,
+  ]
+%}
+
+<article{{ attributes.addClass(classes, article_classes) }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</article>

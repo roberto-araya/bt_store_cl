@@ -1303,6 +1303,87 @@ block_cta_right_offset:
   dependencies:
     - camaleon/block_cta
 
+# embedded video
+block_embedded_video:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/embedded-video/blockEmbeddedVideo.css: {}
+  js:
+    ui/components/blocks/embedded-video/blockEmbeddedVideo.js: {}
+  dependencies:
+    - camaleon/block
+
+block_embedded_video_default:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/embedded-video/blockEmbededVideo--default.css: {}
+  dependencies:
+    - camaleon/block_embedded_video
+
+block_embedded_video_full:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/embedded-video/blockEmbeddedVideo--full.css: {}
+  dependencies:
+    - camaleon/block_embedded_video
+
+# faq
+block_faq:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/faq/blockFaq.css: {}
+  js:
+    ui/components/blocks/faq/blockFaq.js: {}
+  dependencies:
+    - camaleon/block
+
+block_faq_default:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/faq/blockFaq--default.css: {}
+  dependencies:
+    - camaleon/block_faq
+
+block_faq_full:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/faq/blockFaq--full.css: {}
+  dependencies:
+    - camaleon/block_faq
+
+# accordion
+block_accordion:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/accordion/blockAccordion.css: {}
+  js:
+    ui/components/blocks/accordion/blockAccordion.js: {}
+  dependencies:
+    - camaleon/block
+
+block_accordion_default:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/accordion/blockAccordion--default.css: {}
+  dependencies:
+    - camaleon/block_accordion
+
+block_accordion_full:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/accordion/blockAccordion--full.css: {}
+  dependencies:
+    - camaleon/block_accordion
+
 # hero
 block_hero:
   version: VERSION
