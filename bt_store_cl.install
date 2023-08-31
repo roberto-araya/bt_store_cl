@@ -55,20 +55,22 @@ function bt_store_cl_install() {
   $user_settings->set('register', UserInterface::REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL)->save(TRUE);
 
   $anonymous = [
-    'access content',
     'access comments',
+    'access content',
+    'access polls',
     'access site-wide contact form',
-    'search content',
+    'cancel own vote',
+    'edit own comments',
+    'hide format selection for comment',
     'hide format tips',
     'hide more format tips link',
-    'hide format selection for comment',
-    'edit own comments',
-    'post comments',
-    'use text format bt_minimal_redaction',
-    'view media',
     'never autoplay videos',
-    'cancel own vote',
-    'access polls',
+    'post comments',
+    'search content',
+    'use text format bt_minimal_redaction',
+    'use text format restricted_html',
+    'view media',
+    'view multifield', 
   ];
 
   $authenticate = [

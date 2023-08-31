@@ -55,6 +55,8 @@ dependencies:
   - simple_sitemap:simple_sitemap_views
   - lb_claro:lb_claro
   - page_manager:page_manager_ui
+  - fences:fences
+  - entity_type_permissions:entity_type_permissions
 themes:
   - bt_install_theme
   - claro
