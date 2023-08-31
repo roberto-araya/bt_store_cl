@@ -1,6 +1,17 @@
+.blockHero.blockHero--full {
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  padding-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+}
+
 .blockHero--full {
   width: 100%;
-  min-height: 90vh;
+  min-height: 75vh;
   height: -moz-max-content;
   height: max-content;
   display: flex;
@@ -12,6 +23,14 @@
   padding: 1rem;
   background-color: var(--backgroundColor, var(--bs-white));
   align-self: var(--alignSelf);
+  margin-left: var(--marginLeft);
+  margin-top: var(--marginTop);
+  margin-right: var(--marginRight);
+  margin-bottom: var(--marginBottom);
+  padding-left: var(--paddingLeft);
+  padding-top: var(--paddingTop);
+  padding-right: var(--paddingRight);
+  padding-bottom: var(--paddingBottom);
 }
 .blockHero--full__content-title {
   margin-bottom: 0;
