@@ -1,0 +1,75 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - bt_core.multifield_type.bt_accordion_item_video
+    - field.field.multifield.bt_accordion_item_video.field_bt_text
+    - field.field.multifield.bt_accordion_item_video.field_bt_title
+    - field.field.multifield.bt_accordion_item_video.field_bt_video_embed
+  module:
+    - fences
+    - text
+    - video_embed_field
+id: multifield.bt_accordion_item_video.default
+targetEntityType: multifield
+bundle: bt_accordion_item_video
+mode: default
+content:
+  field_bt_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: 'accordion-collapse collapse'
+        fences_field_items_wrapper_tag: none
+        fences_field_items_wrapper_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+    weight: 1
+    region: content
+  field_bt_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: accordion-header
+        fences_field_items_wrapper_tag: none
+        fences_field_items_wrapper_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+    weight: 0
+    region: content
+  field_bt_video_embed:
+    type: video_embed_field_video
+    label: hidden
+    settings:
+      autoplay: false
+      responsive: true
+      width: 854
+      height: 480
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: 'accordion-collapse collapse'
+        fences_field_items_wrapper_tag: none
+        fences_field_items_wrapper_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+    weight: 2
+    region: content
+hidden:
+  created: true
+  description: true
+  status: true
+  uid: true

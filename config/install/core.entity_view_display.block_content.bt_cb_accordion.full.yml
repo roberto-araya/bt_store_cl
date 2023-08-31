@@ -1,0 +1,66 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.bt_cb_accordion
+    - core.entity_view_mode.block_content.full
+    - field.field.block_content.bt_cb_accordion.field_bt_accordion_items
+    - field.field.block_content.bt_cb_accordion.field_bt_content_title
+    - field.field.block_content.bt_cb_accordion.field_bt_epigrafe
+    - field.field.block_content.bt_cb_accordion.field_bt_paragraph
+  module:
+    - fences
+    - layout_builder
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: block_content.bt_cb_accordion.full
+targetEntityType: block_content
+bundle: bt_cb_accordion
+mode: full
+content:
+  field_bt_accordion_items:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: accordion
+        fences_field_items_wrapper_tag: none
+        fences_field_items_wrapper_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: accordion-item
+        fences_label_tag: div
+        fences_label_classes: ''
+    weight: 3
+    region: content
+  field_bt_content_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_bt_epigrafe:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_bt_paragraph:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  langcode: true
