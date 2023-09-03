@@ -1,12 +1,12 @@
-langcode: en
+langcode: es
 status: true
 dependencies:
   module:
     - taxonomy
 id: bt_categoria_productos
-label: 'Product Category'
+label: 'Categoria Productos'
 type: 'canonical_entities:taxonomy_term'
-pattern: '/store/[term:parent]/[term:name]'
+pattern: '/tienda/[term:parent]/[term:name]'
 selection_criteria:
   0983f3a4-bac1-4dbd-a45e-569aece78f79:
     id: 'entity_bundle:taxonomy_term'

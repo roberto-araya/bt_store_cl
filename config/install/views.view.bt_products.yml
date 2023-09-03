@@ -10,7 +10,7 @@ dependencies:
     - product_taxonomy_filter
     - views_css_grid
 id: bt_products
-label: Productos
+label: Products
 module: views
 description: 'List of all default products.'
 tag: ''
@@ -19,11 +19,11 @@ base_field: product_id
 display:
   default:
     id: default
-    display_title: Predeterminado
+    display_title: Default
     display_plugin: default
     position: 0
     display_options:
-      title: Productos
+      title: Products
       fields:
         title:
           id: title
@@ -97,25 +97,25 @@ display:
           total_pages: null
           id: 0
           tags:
-            next: 'Siguiente >'
-            previous: '‹ Anterior'
-            first: '« Primero'
-            last: 'Último »'
+            next: 'Next >'
+            previous: '‹ Previous'
+            first: '« First'
+            last: 'Last »'
           expose:
             items_per_page: false
-            items_per_page_label: 'Elementos por página'
+            items_per_page_label: 'Items per page'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
             items_per_page_options_all_label: '- Todo -'
             offset: false
-            offset_label: Desplazamiento
+            offset_label: Offset
           quantity: 9
       exposed_form:
         type: basic
         options:
-          submit_button: Aplicar
+          submit_button: Apply
           reset_button: false
-          reset_button_label: Resetear
+          reset_button_label: Reset
           exposed_sorts_label: 'Order by'
           expose_sort_order: true
           sort_asc_label: Asc
@@ -142,7 +142,7 @@ display:
           exception:
             value: all
             title_enable: false
-            title: Todo(s)
+            title: All
           title_enable: false
           title: ''
           default_argument_type: taxonomy_tid
@@ -285,7 +285,7 @@ display:
       display_extenders:
         simple_sitemap_display_extender: {  }
       block_description: 'All Default Products'
-      block_category: Comercio
+      block_category: Commerce
     cache_metadata:
       max-age: -1
       contexts:
@@ -348,7 +348,7 @@ display:
       display_extenders:
         simple_sitemap_display_extender: {  }
       block_description: 'Default Products by Brand'
-      block_category: Comercio
+      block_category: Commerce
     cache_metadata:
       max-age: -1
       contexts:
@@ -377,7 +377,7 @@ display:
           exception:
             value: all
             title_enable: false
-            title: Todo(s)
+            title: All
           title_enable: false
           title: ''
           default_argument_type: taxonomy_tid
@@ -412,7 +412,7 @@ display:
       display_extenders:
         simple_sitemap_display_extender: {  }
       block_description: 'Default Products by Category'
-      block_category: Comercio
+      block_category: Commerce
     cache_metadata:
       max-age: -1
       contexts:

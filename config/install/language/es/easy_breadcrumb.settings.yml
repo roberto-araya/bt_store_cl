@@ -1,0 +1,11 @@
+langcode: es
+home_segment_title: Inicio
+capitalizator_ignored_words:
+  - de
+  - 'y'
+  - o
+  - de
+  - del
+  - 'y'
+  - o
+  - a

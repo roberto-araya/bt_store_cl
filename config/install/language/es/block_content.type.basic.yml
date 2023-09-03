@@ -1,0 +1,3 @@
+langcode: es
+label: 'Bloque Básico'
+description: 'Un bloque básico con un título y un cuerpo de texto.'

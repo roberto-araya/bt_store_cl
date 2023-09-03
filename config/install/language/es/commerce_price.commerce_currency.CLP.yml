@@ -1,8 +1,8 @@
-langcode: en
+langcode: es
 status: true
 dependencies: {  }
 currencyCode: CLP
-name: 'chilean peso'
+name: 'peso chileno'
 numericCode: '152'
 symbol: $
 fractionDigits: 0

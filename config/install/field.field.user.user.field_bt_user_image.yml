@@ -10,7 +10,7 @@ id: user.user.field_bt_user_image
 field_name: field_bt_user_image
 entity_type: user
 bundle: user
-label: 'Imagen de Usuario'
+label: 'User Image'
 description: ''
 required: false
 translatable: false

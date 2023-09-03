@@ -10,7 +10,7 @@ id: taxonomy_term.bt_product_brand.layout_builder__layout
 field_name: layout_builder__layout
 entity_type: taxonomy_term
 bundle: bt_product_brand
-label: Diseño
+label: Layout
 description: ''
 required: false
 translatable: false

@@ -6,7 +6,7 @@ replaced_titles: ''
 custom_paths: ''
 include_home_segment: true
 alternative_title_field: field_breadcrumb_title
-home_segment_title: Inicio
+home_segment_title: Home
 home_segment_keep: false
 include_title_segment: false
 title_from_page_when_available: true
@@ -23,9 +23,9 @@ use_site_title: true
 add_structured_data_json_ld: false
 capitalizator_mode: ucwords
 capitalizator_ignored_words:
-  - de
-  - 'y'
-  - o
+  - of
+  - 'and'
+  - or
   - de
   - del
   - 'y'

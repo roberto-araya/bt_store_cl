@@ -1,0 +1,16 @@
+langcode: es
+label: 'Carrusel de Productos'
+description: 'Un carrusel de productos en Bootstrap.'
+display:
+  default:
+    display_options:
+      title: 'Carrusel Producto'
+      exposed_form:
+        options:
+          submit_button: Aplicar
+          reset_button_label: Resetear
+          exposed_sorts_label: 'Ordenar por'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+  block_1:
+    display_title: Bloque
