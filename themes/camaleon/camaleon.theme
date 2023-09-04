@@ -14,6 +14,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element;
 use Drupal\Component\Utility\Html;
 use Drupal\Component\Render\MarkupInterface;
+use Drupal\views\ViewExecutable;
 
 #### Alter Functions ####
 
@@ -617,4 +618,21 @@ function camaleon_theme_suggestions_views_view_alter(array &$suggestions, array 
   $display_id = $variables['view']->getDisplay()->display['id'];
   $suggestions[] = 'views_view__' . $views_id;
   $suggestions[] = 'views_view__' . $views_id . '_' . $display_id;
+}
+
+/**
+ * Implements hook_views_post_render().
+ */
+function camaleon_views_post_render(ViewExecutable $view) {
+  if ($view->id() == 'blog' && $view->getDisplay()->display['id'] == 'blog_user_all') {
+    $author_id = $view->args[0];
+    $author = \Drupal::entityTypeManager()->getStorage('user')->load($author_id);
+    $author_name = $author->field_bt_user_name->value;
+    $title = t("@author_name's post", ['@author_name' => $author_name]);
+    // Set the view title.
+    $view->setTitle($title);
+    // Set the route title.
+    $route = \Drupal::routeMatch()->getCurrentRouteMatch()->getRouteObject();
+    $route->setDefault('_title', $title);
+  }
 }
