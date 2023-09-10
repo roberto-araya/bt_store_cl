@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies: {  }
+id: bt_iva_cl
+label: IVA
+plugin: custom
+configuration:
+  display_inclusive: true
+  display_label: tax
+  round: true
+  rates:
+    -
+      id: 7ef44bf8-85bb-4413-a35e-6b98dfb38af1
+      label: IVA
+      percentage: '0.19'
+  territories:
+    -
+      country_code: CL
+      administrative_area: ''
+      locality: null
+      dependent_locality: null
+conditions: {  }
+conditionOperator: AND
