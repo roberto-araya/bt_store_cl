@@ -35,12 +35,20 @@
   --bs-btn-hover-bg: var(--buttonColor, var(--bs-primary));
   --bs-btn-hover-color: var(--buttonLinkColor, var(--bt--button-link-color, white));
   --bs-btn-hover-border-color: var(--buttonLinkColor, var(--bt--button-link-color, white));
+  padding-right: 0px;
+  padding-left: var(--btnPaddingLeft, 0px);
 }
 .blockCta__button a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 1rem;
+  padding-left: var(--buttonIcon, 1rem);
   color: var(--buttonLinkColor, var(--bt--button-link-color, white));
-  padding-left: var(--buttonIcon, 0rem);
   font-family: var(--textFontFamily, var(--bs-body-font-family));
   font-size: var(--textFontSize);
+}
+.blockCta__button-icon {
+  z-index: 1;
 }
 .blockCta__button-icon svg {
   color: var(--buttonLinkColor, var(--bt--button-link-color, white));
@@ -53,13 +61,24 @@
   --bs-btn-hover-bg: var(--buttonSecondaryColor, var(--bs-secondary));
   --bs-btn-hover-color: var(--buttonSecondaryLinkColor, var(--bt--button-link-color, white));
   --bs-btn-hover-border-color: var(--buttonSecondaryLinkColor, var(--bt--button-link-color, white));
+  padding-right: 0;
+  padding-left: var(--btnSPaddingLeft, 0px);
 }
 .blockCta__button-secondary a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 1rem;
+  padding-left: var(--buttonSecondaryIcon, 1rem);
   color: var(--buttonSecondaryLinkColor, var(--bt--button-link-color, white));
-  padding-left: var(--buttonSecondaryIcon, 0rem);
   font-family: var(--textFontFamily, var(--bs-body-font-family));
   font-size: var(--textFontSize);
 }
+.blockCta__button-secondary-icon {
+  z-index: 1;
+}
 .blockCta__button-secondary-icon svg {
   fill: var(--buttonSecondaryLinkColor, var(--bt--button-link-color, white));
+}
+.blockCta__link {
+  z-index: 2;
 }

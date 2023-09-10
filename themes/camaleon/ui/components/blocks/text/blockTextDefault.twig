@@ -49,8 +49,7 @@
     styles.text_xl_font_size != '' ? '--xlTextFontSize: ' ~ styles.text_xl_font_size : '',
     styles.text_xxl_font_size != '' ? '--xxlTextFontSize: ' ~ styles.text_xxl_font_size : '',
 
-    content.field_bt_button_icon|render ? '--buttonIcon: calc(1.5rem + var(--buttonIconSize, 24px))',
-    content.field_bt_button_secondary_icon|render ? '--buttonSecondaryIcon: calc(1.5rem + var(--buttonIconSize, 24px))',
+    content.field_bt_button_icon|render ? '--buttonIcon: calc(1.5rem + var(--buttonIconSize, 24px)); --btnPaddingLeft: 1rem',
     styles.button_color_select != 'default' and styles.button_color_select != 'customColor' ? '--buttonColor: var(--' ~ styles.button_color_select ~ ')',
     styles.button_color_select == 'customColor' ? '--buttonColor: ' ~ styles.button_color_custom,
     styles.button_link_color_select != 'default' and styles.button_link_color_select != 'customColor' ? '--buttonLinkColor: var(--' ~ styles.button_link_color_select ~ ')',

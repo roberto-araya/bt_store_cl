@@ -169,4 +169,4 @@ visibility:
   request_path:
     id: request_path
     negate: true
-    pages: "/inicio\r\n/blog/*/*\r\n/articulos/*"
+    pages: "/inicio\r\n/blog/*/*\r\n/articulos/*\r\n/user/*"

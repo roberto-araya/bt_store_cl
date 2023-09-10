@@ -31,12 +31,23 @@
   --bs-btn-hover-bg: var(--buttonColor, var(--bs-primary));
   --bs-btn-hover-color: var(--buttonLinkColor, var(--bt--button-link-color, white));
   --bs-btn-hover-border-color: var(--buttonLinkColor, var(--bt--button-link-color, white));
+  padding-right: 0px;
+  padding-left: var(--btnPaddingLeft, 0px);
 }
 .blockText__button a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 1rem;
+  padding-left: var(--buttonIcon, 1rem);
   color: var(--buttonLinkColor, var(--bt--button-link-color, white));
-  padding-left: var(--buttonIcon, 0);
   font-size: var(--textFontSize);
+}
+.blockText__button-icon {
+  z-index: 1;
 }
 .blockText__button-icon svg {
   color: var(--buttonLinkColor, var(--bt--button-link-color, white));
+}
+.blockText__link {
+  z-index: 2;
 }

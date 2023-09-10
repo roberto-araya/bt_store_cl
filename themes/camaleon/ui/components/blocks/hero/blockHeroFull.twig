@@ -51,8 +51,8 @@
 
     styles.background_color_select == 'default' ? '--backgroundColor: rgb(var(--bs-white-rgb), 0.5)' : '',
 
-    content.field_bt_button_icon|render ? '--buttonIcon: calc(1.5rem + var(--buttonIconSize, 24px))',
-    content.field_bt_button_secondary_icon|render ? '--buttonSecondaryIcon: calc(1.5rem + var(--buttonIconSize, 24px))',
+    content.field_bt_button_icon|render ? '--buttonIcon: calc(1.5rem + var(--buttonIconSize, 24px)); --btnPaddingLeft: 1rem',
+    content.field_bt_button_secondary_icon|render ? '--buttonSecondaryIcon: calc(1.5rem + var(--buttonIconSize, 24px)); --btnSPaddingLeft: 1rem',
     styles.button_color_select != 'default' and styles.button_color_select != 'customColor' ? '--buttonColor: var(--' ~ styles.button_color_select ~ ')',
     styles.button_color_select == 'customColor' ? '--buttonColor: ' ~ styles.button_color_custom,
     styles.button_link_color_select != 'default' and styles.button_link_color_select != 'customColor' ? '--buttonLinkColor: var(--' ~ styles.button_link_color_select ~ ')',

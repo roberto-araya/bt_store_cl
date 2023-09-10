@@ -12,13 +12,7 @@
   height: 50px;
 }
 .navbar .navbarToggler {
-  order: 2;
-}
-.navbar #block-camaleon-site-branding {
-  order: 1;
-}
-.navbar .menuMain {
-  order: 3;
+  order: 6;
 }
 
 .navbarToggler.navbar-toggler:focus {
