@@ -4,6 +4,7 @@
   justify-content: center;
 }
 .blockEmbeddedVideo--full .boxed {
+  width: 100%;
   max-width: var(--maxWidth);
   align-self: center;
 }
