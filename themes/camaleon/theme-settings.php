@@ -331,6 +331,13 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
     '#default_value' => theme_get_setting('regions.navbar.position'),
   ];
 
+  // Navbar toggler
+  $default_value_prefix = 'regions.region_navbar.toggler';
+  $state_input_prefix = 'regions[region_navbar][toggler';
+  $style = 'toggler';
+  $form['regions']['region_navbar'] = array_merge($form['regions']['region_navbar'],
+  _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options));
+
   // Sidebar first
   $default_value_prefix = 'regions.region_sidebar_first.background';
   $state_input_prefix = 'regions[region_sidebar_first][background';
