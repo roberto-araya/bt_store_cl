@@ -25,7 +25,7 @@
   width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));
   max-width: var(--maxWidth);
 }
-.blockFieldBlock--title h1 {
+.blockFieldBlock--title div {
   margin-left: var(--marginLeft);
   margin-top: var(--marginTop);
   margin-right: var(--marginRight);
