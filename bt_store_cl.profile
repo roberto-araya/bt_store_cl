@@ -206,7 +206,7 @@ function _bt_store_cl_post_install_tasks(array &$install_state) {
 function bt_store_cl_page_bottom(array &$page_bottom) {
   $current_theme = \Drupal::service('theme.manager')->getActiveTheme()->getName();
   if ($current_theme == 'claro' || $current_theme == 'seven') {
-    $m = "PHAgY2xhc3M9InRleHQtYWxpZ24tY2VudGVyIj48c3Ryb25nPjxhIGhyZWY9Imh0dHBzOi8vd3d3LnRpZW5kYXBhcmFtaXB5bWUuY2wiIHRhcmdldD0iX2JsYW5rIj5UaWVuZGFQYXJhTWlQeW1lPC9hPjwvc3Ryb25nPiBlcyBkZXNhcnJvbGxhZG8gcG9yIDxzdHJvbmc+PGEgaHJlZj0iaHR0cHM6Ly93d3cuYnRlc3Rlci5jbCIgdGFyZ2V0PSJfYmxhbmsiPkJ0ZXN0ZXIgTHRkYS48L2E+PC9zdHJvbmc+IC0gQ2hpbGUgMjAyMzwvcD4=";
+    $m = "PHAgY2xhc3M9InRleHQtYWxpZ24tY2VudGVyIj48c3Ryb25nPjxhIGhyZWY9Imh0dHBzOi8vd3d3LnRpZW5kYXBhcmFtaXB5bWUuY2wiIHRhcmdldD0iX2JsYW5rIj5UaWVuZGFQYXJhTWlQeU1lPC9hPjwvc3Ryb25nPiBlcyBkZXNhcnJvbGxhZG8gcG9yIDxzdHJvbmc+PGEgaHJlZj0iaHR0cHM6Ly93d3cuYnRlc3Rlci5jbCIgdGFyZ2V0PSJfYmxhbmsiPkJ0ZXN0ZXIgTHRkYS48L2E+PC9zdHJvbmc+IC0gQ2hpbGUgMjAyMzwvcD4=";
     $page_bottom['btester'] = [
       '#markup' => base64_decode($m)
     ];

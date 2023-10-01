@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: bt-blog-tags
+label: 'Blog Tags'
+description: 'Menu from blog tags.'
+locked: false

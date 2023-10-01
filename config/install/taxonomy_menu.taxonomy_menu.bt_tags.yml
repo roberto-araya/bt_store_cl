@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.bt-article-tags
+    - taxonomy.vocabulary.bt_article_tags
+id: bt_tags
+label: Tags
+vocabulary: bt_article_tags
+menu: bt-article-tags
+expanded: false
+depth: 0
+menu_parent: 'admin:'
+description_field_name: ''
+use_term_weight_order: true

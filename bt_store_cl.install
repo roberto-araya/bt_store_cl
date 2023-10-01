@@ -233,6 +233,7 @@ function bt_store_cl_install() {
     'core.entity_form_display.user.user.default',
     'core.entity_view_display.media.bt_image.bt_full_viewport',
     'core.entity_view_display.media.bt_image.bt_mid_landscape',
+    'field.field.node.blog_post.field_blog_tags',
     'views.view.blog',
   ];
 

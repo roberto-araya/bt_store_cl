@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.bt-blog-tags
+    - taxonomy.vocabulary.bt_blog_tags
+id: bt_blog_tags
+label: 'Blog Tags'
+vocabulary: bt_blog_tags
+menu: bt-blog-tags
+expanded: false
+depth: 0
+menu_parent: 'admin:'
+description_field_name: ''
+use_term_weight_order: true

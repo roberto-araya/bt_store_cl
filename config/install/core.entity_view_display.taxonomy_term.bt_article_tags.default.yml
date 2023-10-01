@@ -1,0 +1,244 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.bt_article_tags.layout_builder__layout
+    - system.menu.bt-article-tags
+    - taxonomy.vocabulary.bt_article_tags
+    - views.view.bt_articles
+  module:
+    - bt_layouts
+    - layout_builder
+    - layout_builder_restrictions
+    - layout_library
+    - system
+    - text
+    - views
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: bt_two_columns
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          background_color: default
+          class: ''
+          container_select: full
+          full_select: '0'
+          box_select: 100%
+          padding_top: none
+          padding_bottom: none
+          sm_container_select: full
+          sm_full_select: '0'
+          sm_box_select: 100%
+          sm_padding_top: none
+          sm_padding_bottom: none
+          md_container_select: full
+          md_full_select: '0'
+          md_box_select: 100%
+          md_padding_top: none
+          md_padding_bottom: none
+          lg_container_select: full
+          lg_full_select: '0'
+          lg_box_select: 100%
+          lg_padding_top: none
+          lg_padding_bottom: none
+          xl_container_select: full
+          xl_full_select: '0'
+          xl_box_select: 100%
+          xl_padding_top: none
+          xl_padding_bottom: none
+          xxl_container_select: full
+          xxl_full_select: '0'
+          xxl_box_select: 100%
+          xxl_padding_top: none
+          xxl_padding_bottom: none
+          gap: gap-3
+          sm_gap: none
+          md_gap: none
+          lg_gap: none
+          xl_gap: none
+          xxl_gap: none
+          hide_label: 1
+          label_color: default
+          label_custom_color: '#000000'
+          background_custom_color: '#000000'
+          height: ''
+          sm_height: ''
+          md_height: ''
+          lg_height: ''
+          xl_height: ''
+          xxl_height: ''
+          order: default
+          sm_order: default
+          md_order: default
+          lg_order: default
+          xl_order: default
+          xxl_order: default
+          columns_size: 80-20
+        components:
+          c00c2e87-33aa-4339-b44f-19be9fd2e0fa:
+            uuid: c00c2e87-33aa-4339-b44f-19be9fd2e0fa
+            region: twoColumns__left
+            configuration:
+              id: 'views_block:bt_articles-articles_by_tags'
+              label: ''
+              label_display: '0'
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 0
+            additional: {  }
+            third_party_settings:
+              bt_cbc:
+                background_color_select: default
+                background_color_custom: '#000000'
+                background_color_opacity: '1.00'
+                background_color_custom_opacity: FF
+                animation_trigger: on_page_load
+                animation_type: bounce
+                animation_function: default
+                animation_fill: default
+                xs_align: default
+                xs_justify: default
+                xs_text_align: default
+                sm_align: default
+                sm_justify: default
+                sm_text_align: default
+                md_align: default
+                md_justify: default
+                md_text_align: default
+                lg_align: default
+                lg_justify: default
+                lg_text_align: default
+                xl_align: default
+                xl_justify: default
+                xl_text_align: default
+                xxl_align: default
+                xxl_justify: default
+                xxl_text_align: default
+          afced221-845a-4a2f-aa2b-52750620f41b:
+            uuid: afced221-845a-4a2f-aa2b-52750620f41b
+            region: twoColumns__right
+            configuration:
+              id: 'system_menu_block:bt-article-tags'
+              label: 'Article Tags'
+              label_display: '0'
+              provider: system
+              context_mapping: {  }
+              level: 1
+              depth: 0
+              expand_all_items: false
+            weight: 0
+            additional: {  }
+            third_party_settings:
+              bt_cbc:
+                title_color_select: default
+                title_color_custom: '#000000'
+                title_font_family: default
+                type: default
+                item_color_select: default
+                item_color_custom: '#000000'
+                item_hover_color_select: default
+                item_hover_color_custom: '#000000'
+                item_background_color_select: default
+                item_background_color_custom: '#000000'
+                item_background_hover_color_select: default
+                item_background_hover_color_custom: '#000000'
+                background_color_select: bs-white
+                background_color_custom: '#000000'
+                background_color_opacity: '1.00'
+                background_color_custom_opacity: FF
+                animation_trigger: on_page_load
+                animation_type: bounce
+                animation_function: default
+                animation_fill: default
+                xs_align: flex-start
+                xs_justify: default
+                xs_text_align: default
+                sm_align: default
+                sm_justify: default
+                sm_text_align: default
+                md_align: default
+                md_justify: default
+                md_text_align: default
+                lg_align: default
+                lg_justify: default
+                lg_text_align: default
+                xl_align: default
+                xl_justify: default
+                xl_text_align: default
+                xxl_align: default
+                xxl_justify: default
+                xxl_text_align: default
+        third_party_settings: {  }
+  layout_library:
+    enable: false
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      allowed_layouts:
+        - bt_one_column
+        - bt_two_columns
+        - bt_two_columns_header
+        - bt_three_columns
+        - bt_three_columns_header
+        - bt_four_columns
+        - bt_four_columns_header
+        - bt_five_columns
+      denylisted_blocks:
+        Block:
+          - broken
+        'Chaos Tools':
+          - 'entity_view:commerce_product_variation'
+        'Custom Blocks': {  }
+        'Custom block types':
+          - bt_cb_highlighted_text_image
+          - bt_cb_map
+        'Inline blocks':
+          - 'inline_block:bt_cb_map'
+          - 'inline_block:bt_cb_highlighted_text_image'
+        'Listas (Views)':
+          - 'views_block:comments_recent-block_1'
+        'Listas Contenido': {  }
+        'Lists (Views)':
+          - 'views_block:who_s_online-who_s_online_block'
+        Menus:
+          - 'system_menu_block:admin'
+          - 'system_menu_block:bt-menu-app'
+        'RedHen Contact':
+          - redhen_contact_form
+        System:
+          - system_main_block
+          - system_powered_by_block
+          - system_branding_block
+          - system_messages_block
+        User:
+          - 'views_block:who_s_new-block_1'
+        Webform:
+          - webform_submission_limit_block
+        core: {  }
+      allowlisted_blocks: {  }
+      restricted_categories:
+        - 'Admin UI'
+        - 'Content fields'
+        - Help
+id: taxonomy_term.bt_article_tags.default
+targetEntityType: taxonomy_term
+bundle: bt_article_tags
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  layout_builder__layout: true

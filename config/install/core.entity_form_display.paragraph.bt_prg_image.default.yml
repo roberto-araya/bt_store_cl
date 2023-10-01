@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.bt_prg_image.field_bt_image
+    - paragraphs.paragraphs_type.bt_prg_image
+  module:
+    - media_library
+id: paragraph.bt_prg_image.default
+targetEntityType: paragraph
+bundle: bt_prg_image
+mode: default
+content:
+  field_bt_image:
+    type: media_library_widget
+    weight: 0
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

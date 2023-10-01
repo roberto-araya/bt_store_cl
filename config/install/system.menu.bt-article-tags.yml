@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: bt-article-tags
+label: 'Article Tags'
+description: ''
+locked: false
