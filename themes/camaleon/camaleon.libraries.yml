@@ -1134,6 +1134,13 @@ status_messages:
     - camaleon/bs-close-button
 
 ### PARAGRAPHS
+# image
+paragraph_image:
+  version: VERSION
+  css:
+    component:
+      ui/components/paragraphs/image/paragraphImage--default.css: {}
+
 # quote
 paragraph_quote:
   version: VERSION

@@ -1,0 +1,8 @@
+.paragraphImage--default__image {
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0 auto;
+}
+.paragraphImage--default img {
+  max-width: 95vw;
+}
