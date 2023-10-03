@@ -1,3 +1,6 @@
+.paragraphImage--default {
+  margin: 0.5rem 0;
+}
 .paragraphImage--default__image {
   width: -moz-max-content;
   width: max-content;

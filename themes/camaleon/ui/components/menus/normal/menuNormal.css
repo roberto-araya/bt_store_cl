@@ -1,5 +1,5 @@
 .block.menuNormal {
-  align-self: auto;
+  align-self: var(--alignSelf, auto);
 }
 
 h2.menuNormal__menu-title {
