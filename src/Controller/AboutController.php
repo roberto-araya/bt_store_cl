@@ -14,7 +14,7 @@ class AboutController extends ControllerBase {
    */
   public function content() {
     return [
-      '#markup' => '<p class="text-align-center"><strong>TiendaParaMiPyme</strong> es una distribución <a href="https://www.drupal.org">Drupal</a> de comercio electrónico específica para Chile, para más información, ayuda y soporte visite nuestro sitio web <a href="https://www.tiendaparamipyme.cl"><strong>www.tiendaparamipyme.cl</strong></a>.</p>'
+      '#markup' => '<p class="text-align-center"><strong>TiendaParaMiPyMe</strong> es una distribución <a href="https://www.drupal.org">Drupal</a> de comercio electrónico específica para Chile, para más información, ayuda y soporte visite nuestro sitio web <a href="https://www.tiendaparamipyme.cl"><strong>www.tiendaparamipyme.cl</strong></a>.</p>'
     ];
   }
 
