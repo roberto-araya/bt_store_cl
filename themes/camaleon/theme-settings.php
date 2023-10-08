@@ -361,11 +361,11 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
 }
 
 function camaleon_form_system_theme_settings_submit(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
-  $config_factory = \Drupal::configFactory();
-  $config_name = 'cssvars.bt';
-  $config_factory->getEditable($config_name)->delete();
   $values = $form_state->getValues();
   if ($values['theme_color'] != 'default') {
+    $config_factory = \Drupal::configFactory();
+    $config_name = 'cssvars.bt';
+    $config_factory->getEditable($config_name)->delete();
     $file_conf_name = $values['theme_color'];
     $config_path = drupal_get_path('theme', 'camaleon') . '/includes/palettes';
     $source = new FileStorage($config_path);
