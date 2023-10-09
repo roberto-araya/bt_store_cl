@@ -630,9 +630,41 @@ third_party_settings:
         - bt_four_columns_header
         - bt_five_columns
         - bt_five_columns_header
-      denylisted_blocks: {  }
+      denylisted_blocks:
+        Block:
+          - broken
+        'Chaos Tools': {  }
+        'Custom Blocks': {  }
+        'Custom block types':
+          - bt_cb_highlighted_text_image
+          - bt_cb_map
+        'Inline blocks':
+          - 'inline_block:bt_cb_map'
+          - 'inline_block:bt_cb_highlighted_text_image'
+        'Listas (Views)':
+          - 'views_block:comments_recent-block_1'
+        'Listas Contenido': {  }
+        'Lists (Views)':
+          - 'views_block:who_s_online-who_s_online_block'
+        Menus:
+          - 'system_menu_block:admin'
+          - 'system_menu_block:bt-menu-app'
+        'RedHen Contact':
+          - redhen_contact_form
+        System:
+          - system_main_block
+          - system_powered_by_block
+          - system_branding_block
+          - system_messages_block
+        User:
+          - 'views_block:who_s_new-block_1'
+        Webform:
+          - webform_submission_limit_block
+        core: {  }
       allowlisted_blocks: {  }
-      restricted_categories: {  }
+      restricted_categories:
+        - 'Admin UI'
+        - Help
 id: node.blog_post.full
 targetEntityType: node
 bundle: blog_post
