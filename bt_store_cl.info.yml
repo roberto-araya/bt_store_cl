@@ -57,6 +57,7 @@ dependencies:
   - page_manager:page_manager_ui
   - fences:fences
   - entity_type_permissions:entity_type_permissions
+  - bt_theme_colors
 themes:
   - bt_install_theme
   - claro
