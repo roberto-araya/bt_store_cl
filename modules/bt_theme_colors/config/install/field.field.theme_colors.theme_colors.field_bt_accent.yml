@@ -14,10 +14,7 @@ label: Accent
 description: ''
 required: false
 translatable: false
-default_value:
-  -
-    color: '#198754'
-    opacity: null
+default_value: { }
 default_value_callback: ''
 settings:
   opacity: 0

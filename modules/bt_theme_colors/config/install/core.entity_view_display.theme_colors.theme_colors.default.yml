@@ -41,8 +41,145 @@ dependencies:
   module:
     - bt_theme_colors
     - color_field
+    - field_group
     - text
     - user
+third_party_settings:
+  field_group:
+    group_backgrounds:
+      children:
+        - field_bt_body_bg
+        - field_bt_body_bg_light
+        - field_bt_body_bg_dark
+        - field_bt_block_bg_color
+      label: Backgrounds
+      parent_name: ''
+      region: content
+      weight: 5
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: false
+    group_texts:
+      children:
+        - field_bt_body_color
+        - field_bt_block_text_color
+        - field_bt_caption_text_color
+        - field_bt_intro_text_color
+      label: Texts
+      parent_name: ''
+      region: content
+      weight: 6
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: false
+    group_titles:
+      children:
+        - field_bt_page_title_color
+        - field_bt_section_title_color
+        - field_bt_block_title_color
+        - field_bt_article_title_color
+        - field_bt_blog_title_color
+      label: Titles
+      parent_name: ''
+      region: content
+      weight: 7
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: false
+    group_links:
+      children:
+        - field_bt_link_color
+        - field_bt_link_hover_color
+        - field_bt_button_link_color
+      label: Links
+      parent_name: ''
+      region: content
+      weight: 8
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: false
+    group_system:
+      children:
+        - field_bt_success
+        - field_bt_info
+        - field_bt_warning
+        - field_bt_danger
+        - field_bt_light
+        - field_bt_dark
+      label: System
+      parent_name: ''
+      region: content
+      weight: 9
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: false
+    group_colors:
+      children:
+        - field_bt_blue
+        - field_bt_indigo
+        - field_bt_purple
+        - field_bt_pink
+        - field_bt_red
+        - field_bt_orange
+        - field_bt_yellow
+        - field_bt_green
+        - field_bt_cyan
+        - field_bt_teal
+      label: Colors
+      parent_name: ''
+      region: content
+      weight: 10
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: false
+    group_th:
+      children:
+        - field_bt_primary
+        - field_bt_secondary
+        - field_bt_accent
+        - field_bt_gray
+      label: 'Theme Colors'
+      parent_name: ''
+      region: content
+      weight: 12
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: false
 id: theme_colors.theme_colors.default
 targetEntityType: theme_colors
 bundle: theme_colors
@@ -75,7 +212,7 @@ content:
       opacity: true
       data_attribute: false
     third_party_settings: {  }
-    weight: 21
+    weight: 16
     region: content
   field_bt_article_title_color:
     type: color_field_formatter_swatch
@@ -87,7 +224,7 @@ content:
       opacity: true
       data_attribute: false
     third_party_settings: {  }
-    weight: 16
+    weight: 11
     region: content
   field_bt_block_bg_color:
     type: color_field_formatter_swatch
@@ -111,7 +248,7 @@ content:
       opacity: true
       data_attribute: false
     third_party_settings: {  }
-    weight: 10
+    weight: 8
     region: content
   field_bt_block_title_color:
     type: color_field_formatter_swatch
@@ -123,7 +260,7 @@ content:
       opacity: true
       data_attribute: false
     third_party_settings: {  }
-    weight: 15
+    weight: 10
     region: content
   field_bt_blog_title_color:
     type: color_field_formatter_swatch
@@ -135,81 +272,9 @@ content:
       opacity: true
       data_attribute: false
     third_party_settings: {  }
-    weight: 17
+    weight: 12
     region: content
-  field_bt_body_bg:
-    type: color_field_formatter_swatch
-    label: above
-    settings:
-      shape: square
-      width: '50'
-      height: '50'
-      opacity: true
-      data_attribute: false
-    third_party_settings: {  }
-    weight: 5
-    region: content
-  field_bt_body_bg_dark:
-    type: color_field_formatter_swatch
-    label: above
-    settings:
-      shape: square
-      width: '50'
-      height: '50'
-      opacity: true
-      data_attribute: false
-    third_party_settings: {  }
-    weight: 7
-    region: content
-  field_bt_body_bg_light:
-    type: color_field_formatter_swatch
-    label: above
-    settings:
-      shape: square
-      width: '50'
-      height: '50'
-      opacity: true
-      data_attribute: false
-    third_party_settings: {  }
-    weight: 6
-    region: content
-  field_bt_body_color:
-    type: color_field_formatter_swatch
-    label: above
-    settings:
-      shape: square
-      width: '50'
-      height: '50'
-      opacity: true
-      data_attribute: false
-    third_party_settings: {  }
-    weight: 8
-    region: content
-  field_bt_button_link_color:
-    type: color_field_formatter_swatch
-    label: above
-    settings:
-      shape: square
-      width: '50'
-      height: '50'
-      opacity: true
-      data_attribute: false
-    third_party_settings: {  }
-    weight: 20
-    region: content
-  field_bt_caption_text_color:
-    type: color_field_formatter_swatch
-    label: above
-    settings:
-      shape: square
-      width: '50'
-      height: '50'
-      opacity: true
-      data_attribute: false
-    third_party_settings: {  }
-    weight: 11
-    region: content
-  field_bt_intro_text_color:
+  field_bt_blue:
     type: color_field_formatter_swatch
     label: above
     settings:
@@ -221,7 +286,7 @@ content:
     third_party_settings: {  }
     weight: 12
     region: content
-  field_bt_link_color:
+  field_bt_body_bg:
     type: color_field_formatter_swatch
     label: above
     settings:
@@ -231,9 +296,93 @@ content:
       opacity: true
       data_attribute: false
     third_party_settings: {  }
-    weight: 18
+    weight: 6
     region: content
-  field_bt_link_hover_color:
+  field_bt_body_bg_dark:
+    type: color_field_formatter_swatch
+    label: above
+    settings:
+      shape: square
+      width: '50'
+      height: '50'
+      opacity: true
+      data_attribute: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_bt_body_bg_light:
+    type: color_field_formatter_swatch
+    label: above
+    settings:
+      shape: square
+      width: '50'
+      height: '50'
+      opacity: true
+      data_attribute: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_bt_body_color:
+    type: color_field_formatter_swatch
+    label: above
+    settings:
+      shape: square
+      width: '50'
+      height: '50'
+      opacity: true
+      data_attribute: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_bt_button_link_color:
+    type: color_field_formatter_swatch
+    label: above
+    settings:
+      shape: square
+      width: '50'
+      height: '50'
+      opacity: true
+      data_attribute: false
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_bt_caption_text_color:
+    type: color_field_formatter_swatch
+    label: above
+    settings:
+      shape: square
+      width: '50'
+      height: '50'
+      opacity: true
+      data_attribute: false
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_bt_cyan:
+    type: color_field_formatter_swatch
+    label: above
+    settings:
+      shape: square
+      width: '50'
+      height: '50'
+      opacity: true
+      data_attribute: false
+    third_party_settings: {  }
+    weight: 20
+    region: content
+  field_bt_danger:
+    type: color_field_formatter_swatch
+    label: above
+    settings:
+      shape: square
+      width: '50'
+      height: '50'
+      opacity: true
+      data_attribute: false
+    third_party_settings: {  }
+    weight: 17
+    region: content
+  field_bt_dark:
     type: color_field_formatter_swatch
     label: above
     settings:
@@ -245,7 +394,31 @@ content:
     third_party_settings: {  }
     weight: 19
     region: content
-  field_bt_page_title_color:
+  field_bt_gray:
+    type: color_field_formatter_swatch
+    label: above
+    settings:
+      shape: square
+      width: '50'
+      height: '50'
+      opacity: true
+      data_attribute: false
+    third_party_settings: {  }
+    weight: 17
+    region: content
+  field_bt_green:
+    type: color_field_formatter_swatch
+    label: above
+    settings:
+      shape: square
+      width: '50'
+      height: '50'
+      opacity: true
+      data_attribute: false
+    third_party_settings: {  }
+    weight: 19
+    region: content
+  field_bt_indigo:
     type: color_field_formatter_swatch
     label: above
     settings:
@@ -257,7 +430,103 @@ content:
     third_party_settings: {  }
     weight: 13
     region: content
-  field_bt_section_title_color:
+  field_bt_info:
+    type: color_field_formatter_swatch
+    label: above
+    settings:
+      shape: square
+      width: '50'
+      height: '50'
+      opacity: true
+      data_attribute: false
+    third_party_settings: {  }
+    weight: 15
+    region: content
+  field_bt_intro_text_color:
+    type: color_field_formatter_swatch
+    label: above
+    settings:
+      shape: square
+      width: '50'
+      height: '50'
+      opacity: true
+      data_attribute: false
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_bt_light:
+    type: color_field_formatter_swatch
+    label: above
+    settings:
+      shape: square
+      width: '50'
+      height: '50'
+      opacity: true
+      data_attribute: false
+    third_party_settings: {  }
+    weight: 18
+    region: content
+  field_bt_link_color:
+    type: color_field_formatter_swatch
+    label: above
+    settings:
+      shape: square
+      width: '50'
+      height: '50'
+      opacity: true
+      data_attribute: false
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_bt_link_hover_color:
+    type: color_field_formatter_swatch
+    label: above
+    settings:
+      shape: square
+      width: '50'
+      height: '50'
+      opacity: true
+      data_attribute: false
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_bt_orange:
+    type: color_field_formatter_swatch
+    label: above
+    settings:
+      shape: square
+      width: '50'
+      height: '50'
+      opacity: true
+      data_attribute: false
+    third_party_settings: {  }
+    weight: 17
+    region: content
+  field_bt_page_title_color:
+    type: color_field_formatter_swatch
+    label: above
+    settings:
+      shape: square
+      width: '50'
+      height: '50'
+      opacity: true
+      data_attribute: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_bt_pink:
+    type: color_field_formatter_swatch
+    label: above
+    settings:
+      shape: square
+      width: '50'
+      height: '50'
+      opacity: true
+      data_attribute: false
+    third_party_settings: {  }
+    weight: 15
+    region: content
+  field_bt_primary:
     type: color_field_formatter_swatch
     label: above
     settings:
@@ -268,6 +537,102 @@ content:
       data_attribute: false
     third_party_settings: {  }
     weight: 14
+    region: content
+  field_bt_purple:
+    type: color_field_formatter_swatch
+    label: above
+    settings:
+      shape: square
+      width: '50'
+      height: '50'
+      opacity: true
+      data_attribute: false
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_bt_red:
+    type: color_field_formatter_swatch
+    label: above
+    settings:
+      shape: square
+      width: '50'
+      height: '50'
+      opacity: true
+      data_attribute: false
+    third_party_settings: {  }
+    weight: 16
+    region: content
+  field_bt_secondary:
+    type: color_field_formatter_swatch
+    label: above
+    settings:
+      shape: square
+      width: '50'
+      height: '50'
+      opacity: true
+      data_attribute: false
+    third_party_settings: {  }
+    weight: 15
+    region: content
+  field_bt_section_title_color:
+    type: color_field_formatter_swatch
+    label: above
+    settings:
+      shape: square
+      width: '50'
+      height: '50'
+      opacity: true
+      data_attribute: false
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_bt_success:
+    type: color_field_formatter_swatch
+    label: above
+    settings:
+      shape: square
+      width: '50'
+      height: '50'
+      opacity: true
+      data_attribute: false
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_bt_teal:
+    type: color_field_formatter_swatch
+    label: above
+    settings:
+      shape: square
+      width: '50'
+      height: '50'
+      opacity: true
+      data_attribute: false
+    third_party_settings: {  }
+    weight: 21
+    region: content
+  field_bt_warning:
+    type: color_field_formatter_swatch
+    label: above
+    settings:
+      shape: square
+      width: '50'
+      height: '50'
+      opacity: true
+      data_attribute: false
+    third_party_settings: {  }
+    weight: 16
+    region: content
+  field_bt_yellow:
+    type: color_field_formatter_swatch
+    label: above
+    settings:
+      shape: square
+      width: '50'
+      height: '50'
+      opacity: true
+      data_attribute: false
+    third_party_settings: {  }
+    weight: 18
     region: content
   label:
     type: string
@@ -294,23 +659,4 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
-hidden:
-  field_bt_blue: true
-  field_bt_cyan: true
-  field_bt_danger: true
-  field_bt_dark: true
-  field_bt_gray: true
-  field_bt_green: true
-  field_bt_indigo: true
-  field_bt_info: true
-  field_bt_light: true
-  field_bt_orange: true
-  field_bt_pink: true
-  field_bt_primary: true
-  field_bt_purple: true
-  field_bt_red: true
-  field_bt_secondary: true
-  field_bt_success: true
-  field_bt_teal: true
-  field_bt_warning: true
-  field_bt_yellow: true
+hidden: {  }
