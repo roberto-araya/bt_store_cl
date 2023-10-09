@@ -1,0 +1,11 @@
+administer theme colors:
+  title: 'Administer theme colors settings'
+  restrict access: true
+delete theme colors:
+  title: Delete theme colors
+create theme colors:
+  title: Create theme colors
+view theme colors:
+  title: View theme colors
+edit theme colors:
+  title: Edit theme colors

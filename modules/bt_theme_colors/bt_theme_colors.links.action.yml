@@ -1,0 +1,5 @@
+theme_colors.add_form:
+  title: 'Add theme colors'
+  route_name: entity.theme_colors.add_form
+  appears_on:
+    - entity.theme_colors.collection

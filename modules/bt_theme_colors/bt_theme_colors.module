@@ -1,0 +1,92 @@
+<?php
+
+/**
+ * @file
+ * Provides a theme colors entity type.
+ */
+
+use Drupal\Core\Render\Element;
+use Drupal\bt_theme_colors\Entity\ThemeColors;
+use Drupal\user\UserInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function bt_theme_colors_theme() {
+  return [
+    'theme_colors' => [
+      'render element' => 'elements',
+    ],
+  ];
+}
+
+/**
+ * Prepares variables for theme colors templates.
+ *
+ * Default template: theme-colors.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An associative array containing the theme colors information and any
+ *     fields attached to the entity.
+ *   - attributes: HTML attributes for the containing element.
+ */
+function template_preprocess_theme_colors(array &$variables) {
+  $variables['view_mode'] = $variables['elements']['#view_mode'];
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['content'][$key] = $variables['elements'][$key];
+  }
+}
+
+/**
+ * Implements hook_user_cancel().
+ */
+function bt_theme_colors_user_cancel($edit, UserInterface $account, $method) {
+  switch ($method) {
+    case 'user_cancel_block_unpublish':
+      // Unpublish theme colorss.
+      $storage = \Drupal::entityTypeManager()->getStorage('theme_colors');
+      $theme_colors_ids = $storage->getQuery()
+        ->condition('uid', $account->id())
+        ->condition('status', 1)
+        ->execute();
+      foreach ($storage->loadMultiple($theme_colors_ids) as $theme_colors) {
+        $theme_colors->set('status', FALSE);
+        $theme_colors->save();
+      }
+      break;
+
+    case 'user_cancel_reassign':
+      // Anonymize theme colorss.
+      $storage = \Drupal::entityTypeManager()->getStorage('theme_colors');
+      $theme_colors_ids = $storage->getQuery()
+        ->condition('uid', $account->id())
+        ->execute();
+      foreach ($storage->loadMultiple($theme_colors_ids) as $theme_colors) {
+        $theme_colors->setOwnerId(0);
+        $theme_colors->save();
+      }
+      break;
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_predelete() for user entities.
+ */
+function bt_theme_colors_user_predelete(UserInterface $account) {
+  // Delete theme colorss.
+  $storage = \Drupal::entityTypeManager()->getStorage('theme_colors');
+  $theme_colors_ids = $storage->getQuery()
+    ->condition('uid', $account->id())
+    ->execute();
+  $theme_colorss = $storage->loadMultiple($theme_colors_ids);
+  $storage->delete($theme_colorss);
+  // Delete old revisions.
+  $theme_colors_ids = $storage->getQuery()
+    ->allRevisions()
+    ->condition('uid', $account->id())
+    ->execute();
+  foreach (array_keys($theme_colors_ids) as $revision_id) {
+    $storage->deleteRevision($revision_id);
+  }
+}

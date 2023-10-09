@@ -1,0 +1,8 @@
+name: Theme Colors
+type: module
+description: Provides themes colors to Camaleon theme.
+package: Btester
+core_version_requirement: ^9 || ^10
+dependencies:
+  - color_field
+  - cssvars

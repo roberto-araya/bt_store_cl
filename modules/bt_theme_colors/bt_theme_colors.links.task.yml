@@ -1,0 +1,22 @@
+entity.theme_colors.settings:
+  title: 'Settings'
+  route_name: entity.theme_colors.settings
+  base_route: entity.theme_colors.settings
+entity.theme_colors.view:
+  title: 'View'
+  route_name: entity.theme_colors.canonical
+  base_route: entity.theme_colors.canonical
+entity.theme_colors.edit_form:
+  title: 'Edit'
+  route_name: entity.theme_colors.edit_form
+  base_route: entity.theme_colors.canonical
+entity.theme_colors.delete_form:
+  title: 'Delete'
+  route_name: entity.theme_colors.delete_form
+  base_route: entity.theme_colors.canonical
+  weight: 10
+entity.theme_colors.collection:
+  title: 'Theme Colorss'
+  route_name: entity.theme_colors.collection
+  base_route: system.admin_content
+  weight: 10

@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.theme_colors.field_bt_caption_text_color
+  module:
+    - bt_theme_colors
+    - color_field
+id: theme_colors.theme_colors.field_bt_caption_text_color
+field_name: field_bt_caption_text_color
+entity_type: theme_colors
+bundle: theme_colors
+label: 'Caption Text Color'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

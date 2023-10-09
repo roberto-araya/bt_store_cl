@@ -1,0 +1,305 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.theme_colors.theme_colors.field_bt_accent
+    - field.field.theme_colors.theme_colors.field_bt_article_title_color
+    - field.field.theme_colors.theme_colors.field_bt_block_bg_color
+    - field.field.theme_colors.theme_colors.field_bt_block_text_color
+    - field.field.theme_colors.theme_colors.field_bt_block_title_color
+    - field.field.theme_colors.theme_colors.field_bt_blog_title_color
+    - field.field.theme_colors.theme_colors.field_bt_blue
+    - field.field.theme_colors.theme_colors.field_bt_body_bg
+    - field.field.theme_colors.theme_colors.field_bt_body_bg_dark
+    - field.field.theme_colors.theme_colors.field_bt_body_bg_light
+    - field.field.theme_colors.theme_colors.field_bt_body_color
+    - field.field.theme_colors.theme_colors.field_bt_button_link_color
+    - field.field.theme_colors.theme_colors.field_bt_caption_text_color
+    - field.field.theme_colors.theme_colors.field_bt_cyan
+    - field.field.theme_colors.theme_colors.field_bt_danger
+    - field.field.theme_colors.theme_colors.field_bt_dark
+    - field.field.theme_colors.theme_colors.field_bt_gray
+    - field.field.theme_colors.theme_colors.field_bt_green
+    - field.field.theme_colors.theme_colors.field_bt_indigo
+    - field.field.theme_colors.theme_colors.field_bt_info
+    - field.field.theme_colors.theme_colors.field_bt_intro_text_color
+    - field.field.theme_colors.theme_colors.field_bt_light
+    - field.field.theme_colors.theme_colors.field_bt_link_color
+    - field.field.theme_colors.theme_colors.field_bt_link_hover_color
+    - field.field.theme_colors.theme_colors.field_bt_orange
+    - field.field.theme_colors.theme_colors.field_bt_page_title_color
+    - field.field.theme_colors.theme_colors.field_bt_pink
+    - field.field.theme_colors.theme_colors.field_bt_primary
+    - field.field.theme_colors.theme_colors.field_bt_purple
+    - field.field.theme_colors.theme_colors.field_bt_red
+    - field.field.theme_colors.theme_colors.field_bt_secondary
+    - field.field.theme_colors.theme_colors.field_bt_section_title_color
+    - field.field.theme_colors.theme_colors.field_bt_success
+    - field.field.theme_colors.theme_colors.field_bt_teal
+    - field.field.theme_colors.theme_colors.field_bt_warning
+    - field.field.theme_colors.theme_colors.field_bt_yellow
+  module:
+    - bt_theme_colors
+    - color_field
+    - text
+id: theme_colors.theme_colors.default
+targetEntityType: theme_colors
+bundle: theme_colors
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  description:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_bt_accent:
+    type: color_field_widget_html5
+    weight: 39
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_article_title_color:
+    type: color_field_widget_html5
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_block_bg_color:
+    type: color_field_widget_html5
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_block_text_color:
+    type: color_field_widget_html5
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_block_title_color:
+    type: color_field_widget_html5
+    weight: 15
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_blog_title_color:
+    type: color_field_widget_html5
+    weight: 17
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_blue:
+    type: color_field_widget_html5
+    weight: 27
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_body_bg:
+    type: color_field_widget_html5
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_body_bg_dark:
+    type: color_field_widget_html5
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_body_bg_light:
+    type: color_field_widget_html5
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_body_color:
+    type: color_field_widget_html5
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_button_link_color:
+    type: color_field_widget_html5
+    weight: 20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_caption_text_color:
+    type: color_field_widget_html5
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_cyan:
+    type: color_field_widget_html5
+    weight: 36
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_danger:
+    type: color_field_widget_html5
+    weight: 24
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_dark:
+    type: color_field_widget_html5
+    weight: 26
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_gray:
+    type: color_field_widget_html5
+    weight: 40
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_green:
+    type: color_field_widget_html5
+    weight: 34
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_indigo:
+    type: color_field_widget_html5
+    weight: 28
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_info:
+    type: color_field_widget_html5
+    weight: 22
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_intro_text_color:
+    type: color_field_widget_html5
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_light:
+    type: color_field_widget_html5
+    weight: 25
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_link_color:
+    type: color_field_widget_html5
+    weight: 18
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_link_hover_color:
+    type: color_field_widget_html5
+    weight: 19
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_orange:
+    type: color_field_widget_html5
+    weight: 32
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_page_title_color:
+    type: color_field_widget_html5
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_pink:
+    type: color_field_widget_html5
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_primary:
+    type: color_field_widget_html5
+    weight: 37
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_purple:
+    type: color_field_widget_html5
+    weight: 29
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_red:
+    type: color_field_widget_html5
+    weight: 31
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_secondary:
+    type: color_field_widget_html5
+    weight: 38
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_section_title_color:
+    type: color_field_widget_html5
+    weight: 14
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_success:
+    type: color_field_widget_html5
+    weight: 21
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_teal:
+    type: color_field_widget_html5
+    weight: 35
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_warning:
+    type: color_field_widget_html5
+    weight: 23
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_yellow:
+    type: color_field_widget_html5
+    weight: 33
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  label:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: false
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 3
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

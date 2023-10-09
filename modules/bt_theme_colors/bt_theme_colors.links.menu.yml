@@ -1,0 +1,10 @@
+entity.theme_colors.settings:
+  title: 'Theme Colors'
+  description: 'Configure a Theme Colors entity type.'
+  route_name:  entity.theme_colors.settings
+  parent: system.admin_structure
+entity.theme_colors.collection:
+  title: 'Theme Colors List'
+  description: 'List of theme colorss.'
+  route_name: entity.theme_colors.collection
+  parent: system.themes_page

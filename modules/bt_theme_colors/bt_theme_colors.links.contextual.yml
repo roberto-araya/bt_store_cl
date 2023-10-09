@@ -1,0 +1,10 @@
+entity.theme_colors.edit_form:
+  route_name: entity.theme_colors.edit_form
+  group: theme_colors
+  title: Edit
+
+entity.theme_colors.delete_form:
+  route_name: entity.theme_colors.delete_form
+  group: theme_colors
+  title: Delete
+  weight: 10

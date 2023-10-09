@@ -1,0 +1,7 @@
+entity.theme_colors.settings:
+  path: 'admin/structure/theme-colors'
+  defaults:
+    _form: '\Drupal\bt_theme_colors\Form\ThemeColorsSettingsForm'
+    _title: 'Theme Colors'
+  requirements:
+    _permission: 'administer theme colors'
