@@ -356,6 +356,22 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
     '#default_value' => theme_get_setting('regions.navbar.position'),
   ];
 
+  // Navbar inner container classes
+  $form['regions']['region_navbar']['inner_container_classes'] = [
+    '#type' => 'textfield',
+    '#title' => t('Inner Container Classes'),
+    '#description' => t("Separe the classes with an espace."),
+    '#default_value' => theme_get_setting('regions.region_navbar.inner_container_classes'),
+  ]; 
+
+  // Toggler classes
+  $form['regions']['region_navbar']['toggler_classes'] = [
+    '#type' => 'textfield',
+    '#title' => t('Toggler Classes'),
+    '#description' => t("Separe the classes with an espace."),
+    '#default_value' => theme_get_setting('regions.region_navbar.toggler_classes'),
+  ]; 
+
   // Navbar toggler
   $default_value_prefix = 'regions.region_navbar.toggler';
   $state_input_prefix = 'regions[region_navbar][toggler';

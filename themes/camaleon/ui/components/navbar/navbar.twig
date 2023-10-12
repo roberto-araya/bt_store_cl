@@ -20,6 +20,26 @@
   ]|remove_empty
 %}
 
+{% set inner_container_attribute = create_attribute() %}
+
+{% 
+  set inner_container_classes = [
+    'container-fluid',
+    theme_settings.inner_container_classes,
+  ]|remove_empty
+%}
+
+{% set toggler_attribute = create_attribute() %}
+
+{% 
+  set toggler_classes = [
+    'navbarToggler',
+    'navbar-toggler',
+    theme_settings.toggler_classes,
+  ]|remove_empty
+%}
+
+
 {% 
   set region_classes = [
     'region',
@@ -56,8 +76,8 @@
 {% if content %}
   <div{{ attributes.addClass(region_classes).setAttribute('style', style_vars|join('; ')) }}>
     <nav id='navbar' role="navigation" aria-labelledby="block-camaleon-main-menu-label" {{ navbar_attributes.addClass(navbar_classes) }}>
-      <div class="container-fluid">
-        <button class="navbarToggler navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <div{{ inner_container_attribute.addClass(inner_container_classes) }}>
+        <button{{ toggler_attribute.addClass(toggler_classes) }} type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbarTogglerIcon navbar-toggler-icon">
             <svg xmlns="http://www.w3.org/2000/svg" class="navbarTogglerIcon__svg" fill="none" viewBox="0 0 24 24" stroke="var(--togglerColor, white)">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />

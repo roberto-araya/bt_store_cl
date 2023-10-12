@@ -202,6 +202,7 @@
     'menuMain--' ~ styles.type,
     styles.animation_option == TRUE and styles.animation_trigger == 'on_scroll' ? 'wow' : '',
     styles.animation_option == TRUE ? styles.animation_type : '',
+    styles.custom_classes,
   ]|remove_empty
 %}
 
