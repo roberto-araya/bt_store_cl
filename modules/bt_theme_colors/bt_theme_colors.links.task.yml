@@ -15,8 +15,3 @@ entity.theme_colors.delete_form:
   route_name: entity.theme_colors.delete_form
   base_route: entity.theme_colors.canonical
   weight: 10
-entity.theme_colors.collection:
-  title: 'Theme Colorss'
-  route_name: entity.theme_colors.collection
-  base_route: system.admin_content
-  weight: 10

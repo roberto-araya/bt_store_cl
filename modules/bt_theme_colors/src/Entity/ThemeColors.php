@@ -53,7 +53,7 @@ use Drupal\user\EntityOwnerTrait;
  *     "revision_log_message" = "revision_log",
  *   },
  *   links = {
- *     "collection" = "/admin/content/theme-colors",
+ *     "collection" = "/admin/appearance/theme-colors",
  *     "add-form" = "/theme-colors/add",
  *     "canonical" = "/theme-colors/{theme_colors}",
  *     "edit-form" = "/theme-colors/{theme_colors}/edit",
