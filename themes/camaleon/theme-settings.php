@@ -89,13 +89,29 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
   ];
 
 
-  #### FONT ####  
-  $form['font'] = [
+  #### FONTS ####
+  $form['fonts'] = [
+    '#type' => 'details',
+    '#title' => t('Fuentes'),
+    '#tree' => TRUE,
+  ];
+
+  #### DEFAULT FONT ####  
+  $form['fonts']['default_font'] = [
     '#type' => 'select',
     '#options' => _get_font_select(),
     '#title' => t('Default font'),
     '#description' => t("Select a default font. See https://fonts.google.com/."),
-    '#default_value' => theme_get_setting('font'),
+    '#default_value' => theme_get_setting('fonts.default_font'),
+  ];
+
+  #### HEADERS FONTS ####  
+  $form['fonts']['headers_font'] = [
+    '#type' => 'select',
+    '#options' => _get_font_select(),
+    '#title' => t('Headers font'),
+    '#description' => t("Select a default headers font. See https://fonts.google.com/."),
+    '#default_value' => theme_get_setting('fonts.headers_font'),
   ];
 
   #### Theme Color ####
@@ -114,21 +130,6 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
     '#description' => t("Select a default theme color palette. You can add more color palettes on /theme-colors/add."),
     '#default_value' => theme_get_setting('theme_color'),
   ];
-
-  ### Theme Color Refactory
-  /*$entity_type_manager = \Drupal::entityTypeManager();
-  $theme_colors = $entity_type_manager->getStorage('theme_colors')->loadMultiple();
-  $options = ['default' => 'Default'];
-  foreach ($theme_colors as $theme_color) {
-    $options[$theme_color->id()] = $theme_color->label(); 
-  }
-  $form['theme_color_refactory'] = [
-    '#type' => 'select',
-    '#options' => $options,
-    '#title' => t('Theme Color Refactory'),
-    '#description' => t("Select a default theme color palette."),
-    '#default_value' => theme_get_setting('theme_color_refactory'),
-  ];*/
 
   #### BUTTONS ####
   $buttons = [

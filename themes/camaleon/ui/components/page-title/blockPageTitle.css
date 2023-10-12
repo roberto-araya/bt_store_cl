@@ -5,7 +5,7 @@
   max-width: var(--maxWidth);
 }
 .blockPageTitle__content-title {
-  font-family: var(--titleFontFamily, var(--bs-body-font-family));
+  font-family: var(--titleFontFamily);
   font-size: var(--titleFontSize);
   color: var(--titleColor, var(--bt--page-title-color, var(--bs-primary-600)));
 }

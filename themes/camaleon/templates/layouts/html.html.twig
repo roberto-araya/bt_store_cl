@@ -28,13 +28,21 @@
 
 {%
   set styles_vars = style_vars|merge([
-    theme_settings.font == 'default' ? '--bs-body-font-family: var(--bs-font-sans-serif)' : '',
-    theme_settings.font != 'default' ? '--bt--font: ' ~ theme_settings.font|replace({'-': " "})  : '',
-    theme_settings.font != 'default' ? '--bs-body-font-family: var(--bt--font, var(--bs-font-sans-serif))' : '',  
+    theme_settings.default_font == 'default' ? '--bs-body-font-family: var(--bs-font-sans-serif)' : '',
+    theme_settings.default_font != 'default' ? '--bt--body-font: ' ~ theme_settings.default_font|replace({'-': " "})  : '',
+    theme_settings.default_font != 'default' ? '--bs-body-font-family: var(--bt--body-font, var(--bs-font-sans-serif))' : '',
+
+    theme_settings.headers_font == 'default' ? '--bt--headers-font: var(--bt--body-font)' : '',
+    theme_settings.headers_font != 'default' ? '--bt--headers-font: ' ~ theme_settings.headers_font|replace({'-': " "})  : '',
   ])|remove_empty
 %}
 
-{{ attach_library('camaleon/' ~ theme_settings.font) }}
+{{ attach_library('camaleon/' ~ theme_settings.default_font) }}
+
+{% if theme_settings.headers_font != 'default' %}
+  {{ attach_library('camaleon/' ~ theme_settings.headers_font) }}
+{% endif %}
+
 <!DOCTYPE html>
 <html{{ html_attributes }}>
   <head>

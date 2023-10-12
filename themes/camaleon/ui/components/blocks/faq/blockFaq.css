@@ -10,12 +10,12 @@
   width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));
 }
 .blockFaq__content-title {
-  font-family: var(--titleFontFamily, var(--bs-body-font-family));
+  font-family: var(--titleFontFamily);
   font-size: var(--titleFontSize);
   color: var(--titleColor, var(--bt--block-title-color, var(--bt--page-title-color, var(--bs-primary-600))));
 }
 .blockFaq__caption {
-  font-family: var(--captionFontFamily, var(--bs-body-font-family));
+  font-family: var(--captionFontFamily);
   font-size: var(--captionFontSize);
   color: var(--captionColor, var(--bt--caption-text-color, var(--bs-secondary)));
 }

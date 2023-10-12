@@ -269,7 +269,8 @@ function camaleon_preprocess_menu_local_action(array &$variables) {
  * Implements hook_preprocess_html() for form elements.
  */
 function camaleon_preprocess_html(&$variables) {
-  $variables['theme_settings']['font'] = theme_get_setting('font');
+  $variables['theme_settings']['default_font'] = theme_get_setting('fonts.default_font');
+  $variables['theme_settings']['headers_font'] = theme_get_setting('fonts.headers_font');
 }
 
 /**

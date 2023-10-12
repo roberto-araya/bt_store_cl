@@ -21,6 +21,7 @@
   set style_vars = style_vars|merge([
     styles.title_color_select != 'default' and styles.title_color_select != 'customColor' ? '--titleColor: var(--' ~ styles.title_color_select ~ ')',
     styles.title_color_select == 'customColor' ? '--titleColor: ' ~ styles.title_color_custom,
+    styles.title_font_family == 'default' ? '--titleFontFamily: var(--bt--headers-font)',
     styles.title_font_family != 'default' ? '--titleFontFamily: ' ~ styles.title_font_family|replace({'-': " "}) : '',
     styles.title_xs_font_size != '' ? '--xsTitleFontSize: ' ~ styles.title_xs_font_size : '',
     styles.title_sm_font_size != '' ? '--smTitleFontSize: ' ~ styles.title_sm_font_size : '',
@@ -31,6 +32,7 @@
 
     styles.text_color_select != 'default' and styles.text_color_select != 'customColor' ? '--textColor: var(--' ~ styles.text_color_select ~ ')',
     styles.text_color_select == 'customColor' ? '--textColor: ' ~ styles.text_color_custom,
+    styles.caption_font_family == 'default' ? '--captionFontFamily: var(--bt--headers-font)',
     styles.text_font_family != 'default' ? '--textFontFamily: ' ~ styles.text_font_family|replace({'-': " "}) : '',
     styles.text_xs_font_size != '' ? '--xsTextFontSize: ' ~ styles.text_xs_font_size : '',
     styles.text_sm_font_size != '' ? '--smTextFontSize: ' ~ styles.text_sm_font_size : '',

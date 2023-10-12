@@ -10,11 +10,11 @@
 }
 .blockTitleImage__content-title {
   color: var(--titleColor, var(--bt--block-title-color, var(--bt--page-title-color, var(--bs-primary-600))));
-  font-family: var(--titleFontFamily, var(--bs-body-font-family));
+  font-family: var(--titleFontFamily);
   font-size: var(--titleFontSize);
 }
 .blockTitleImage__caption {
   color: var(--captionColor, var(--bt--caption-text-color, var(--bs-secondary)));
-  font-family: var(--captionFontFamily, var(--bs-body-font-family));
+  font-family: var(--captionFontFamily);
   font-size: var(--captionFontSize);
 }

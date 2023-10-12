@@ -21,6 +21,7 @@
   set style_vars = style_vars|merge([
     styles.title_color_select != 'default' and styles.title_color_select != 'customColor' ? '--titleColor: var(--' ~ styles.title_color_select ~ ')',
     styles.title_color_select == 'customColor' ? '--titleColor: ' ~ styles.title_color_custom,
+    styles.title_font_family == 'default' ? '--titleFontFamily: var(--bt--headers-font)',
     styles.title_font_family != 'default' ? '--titleFontFamily: ' ~ styles.title_font_family|replace({'-': " "}) : '',
     styles.title_xs_font_size != '' ? '--xsTitleFontSize: ' ~ styles.title_xs_font_size : '',
     styles.title_sm_font_size != '' ? '--smTitleFontSize: ' ~ styles.title_sm_font_size : '',
