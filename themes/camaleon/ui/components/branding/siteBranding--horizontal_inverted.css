@@ -25,7 +25,6 @@
 .siteBranding--horizontal_inverted .siteBranding__slogan {
   grid-column: 1;
   grid-row: 2;
-  font-size: 0.8rem;
   text-align: right;
   margin-top: calc((var(--sloganFontSize, 0.8rem) - 0.2rem) * -1);
 }

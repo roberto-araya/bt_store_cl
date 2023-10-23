@@ -24,6 +24,5 @@
 .siteBranding--horizontal .siteBranding__slogan {
   grid-column: 2;
   grid-row: 2;
-  font-size: 0.8rem;
   margin-top: calc((var(--sloganFontSize, 0.8rem) - 0.2rem) * -1);
 }

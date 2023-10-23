@@ -21,7 +21,6 @@
   font-weight: bold;
 }
 .siteBranding--vertical_inverted .siteBranding__slogan {
-  font-size: 0.8rem;
   text-align: center;
   order: 2;
   margin-top: calc((var(--sloganFontSize, 0.8rem) - 0.2rem) * -1);

@@ -50,4 +50,5 @@
 }
 .blockText__link {
   z-index: 2;
+  padding: 0;
 }
