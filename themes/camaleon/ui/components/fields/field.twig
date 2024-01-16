@@ -49,6 +49,7 @@
 {%
   set classes = [
     'field',
+    entity_type ~ '__' ~ field_name,
     entity_type ~ bundle ~ '__' ~ field_name,
     entity_type ~ bundle ~ '--' ~ view_mode ~ '__' ~ field_name,
     label_display == 'inline' ? 'clearfix',

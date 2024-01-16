@@ -6,11 +6,13 @@
 function _field_preprocess(&$variables) {
   $entity_type = $variables['element']['#entity_type'];
 
-  /*$entity_type_parts = explode("_", $entity_type);
-  $entity_type = '';
-  foreach($entity_type_parts as $index => $part) {
-    $entity_type = $entity_type . ucfirst($part);
-  }*/
+  if ($entity_type == 'commerce_product') {
+    $entity_type = 'product';
+  }
+
+  if ($entity_type == 'commerce_product_variation') {
+    $entity_type = 'variation';
+  }
 
   $bundle = $variables['element']['#bundle'];
   $bundle = strpos($bundle, 'bt_cb_') === 0 ? $bundle = substr($bundle, 6) : $bundle;

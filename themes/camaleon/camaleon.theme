@@ -294,6 +294,21 @@ function camaleon_preprocess_form_element(&$variables) {
 }
 
 /**
+ * Implements hook_preprocess_HOOK() for commerce_product.
+ */
+function camaleon_preprocess_commerce_product(&$variables) {
+  $view_mode = $variables['elements']['#view_mode'];
+  $view_mode = strpos($view_mode, 'bt_') === 0 ? $view_mode = substr($view_mode, 3) : $view_mode;
+  $bundle = $variables['elements']['#commerce_product']->bundle();
+  $bundle = strpos($bundle, 'bt_') === 0 ? $bundle = substr($bundle, 3) : $bundle;
+  $bundle = ucfirst($bundle);
+
+  $variables['attributes']['class'][] = 'product';
+  $variables['attributes']['class'][] = 'product' . $bundle;
+  $variables['attributes']['class'][] = 'product' . $bundle . '--' . $view_mode;
+}
+
+/**
  * Implements template_preprocess_username().
  */
 function camaleon_preprocess_username(&$variables) {
