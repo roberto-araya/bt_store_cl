@@ -12,6 +12,9 @@ function _field_preprocess(&$variables) {
 
   if ($entity_type == 'commerce_product_variation') {
     $entity_type = 'variation';
+    if ($variables['field_name'] == 'field_imagen_producto') {
+      $variables['entity_url'] = $variables['element']['#object']->toURL()->toString();
+    }
   }
 
   $bundle = $variables['element']['#bundle'];

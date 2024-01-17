@@ -132,7 +132,7 @@ function _field_suggestions(&$suggestions, $variables) {
   elseif (array_key_exists($entity_type, $entities)) {
     $suggestions[] = 'field__' . $entities[$entity_type];
     $suggestions[] = 'field__' . $entities[$entity_type] . '__' . $field_name;
-    $suggestions[] = 'field__' . $entities[$entity_type] . '__' . $bundle;
+    $suggestions[] = 'field__' . $entities[$entity_type] . '__' . $view_mode . '__' . $field_name;
     $suggestions[] = 'field__' . $entities[$entity_type] . '__' . $bundle . '__' . $field_name;
     $suggestions[] = 'field__' . $entities[$entity_type] . '__' . $bundle . '__' . $view_mode . '__' . $field_name;
   }
