@@ -169,6 +169,10 @@ for drupal_suggest in $drupal_suggests; do
   "${BUILD_DIR}/vendor/bin/drush" -r "${BUILD_DIR}/web" pm:enable "${drupal_suggest}" -y
 done
 
+# Apply patch to drupal/core
+echo "  > Applying patches to drupal/core."
+php -d memory_limit=-1 "$(command -v composer)" --working-dir="${BUILD_DIR}" require drupal/core:"${DRUPAL_VERSION}"
+
 # Visit site to pre-warm caches.
 curl -s "http://${WEBSERVER_HOST}:${WEBSERVER_PORT}" > /dev/null
 
