@@ -1,7 +1,7 @@
 name: Chile Tienda
 type: profile
 description: Install profile for Chile Store.
-core_version_requirement: ^9.4
+core_version_requirement: ~9.4.0
 exclusive: TRUE
 distribution:
   name: Chile Store

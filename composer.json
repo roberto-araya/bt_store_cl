@@ -16,7 +16,7 @@
     "require": {
         "cweagans/composer-patches": "^1.7",  
         "composer/installers": "^2.1",
-        "drupal/core": "^9.4.0",
+        "drupal/core": "~9.4.0",
         "drupal/ctools": "^3.9.0",
         "drupal/bt_personas": "^2.x-dev",
         "drupal/bt_core": "^2.x-dev",
