@@ -1,16 +1,17 @@
-(()=> {
+(() => {
   // initiate WOW library.
   new WOW().init();
 
   // Add Event.
-  let addEvent = function(object, type, callback) {
-    if (object == null || typeof(object) == 'undefined') return;
+  let addEvent = function (object, type, callback) {
+    if (object == NULL || typeof(object) == 'undefined') { return;
+    }
     if (object.addEventListener) {
-        object.addEventListener(type, callback, false);
+        object.addEventListener(type, callback, FALSE);
     } else if (object.attachEvent) {
         object.attachEvent("on" + type, callback);
     } else {
-        object["on"+type] = callback;
+        object["on" + type] = callback;
     }
   }
 
@@ -31,9 +32,9 @@
       let mediaQuery = window.matchMedia(breakpoints[breakpoint])
       if (mediaQuery.matches) {
         // Get all blocks.
-        blocks = document.getElementsByClassName('block')   
+        blocks = document.getElementsByClassName('block')
         let i = 0
-        for (i; i < blocks.length; i = i+1) {
+        for (i; i < blocks.length; i = i + 1) {
           let id = blocks[i].id.split('--')[0]
           for (prefix_index = bkp_prefixs.indexOf(breakpoint), j = 0; prefix_index < 5; prefix_index++, j++) {
             if (getComputedStyle(blocks[i]).getPropertyValue('--' + breakpoint + 'PaddingLeft')) {
@@ -77,7 +78,6 @@
             } else if (getComputedStyle(blocks[i]).getPropertyValue('--' + bkp_prefixs[4 - j] + 'TitleFontSize') && (title = blocks[i].querySelector('.' + id + '__content-title'))) {
               title.style.fontSize = 'var(--' + bkp_prefixs[4 - j] + 'TitleFontSize)'
             }
-
 
             if (getComputedStyle(blocks[i]).getPropertyValue('--' + breakpoint + 'CaptionFontSize') && (caption = blocks[i].querySelector('.' + id + '__caption'))) {
               caption.style.fontSize = 'var(--' + breakpoint + 'CaptionFontSize)'

@@ -1,5 +1,5 @@
 ((Camaleon) => {
-  blockSocialProfiles = function(blocks, breakpoint) {
+  blockSocialProfiles = function (blocks, breakpoint) {
     let customProperties = {
       TextFontSize: 'textFontSize',
     }
@@ -9,7 +9,7 @@
       Camaleon.applyProperties(blocks[i], breakpoint, customProperties)
     }
   }
-  
+
   Camaleon.blocksRegister('blockSocialProfiles', blockSocialProfiles)
 
 })(Camaleon)

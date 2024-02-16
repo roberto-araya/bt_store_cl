@@ -1,16 +1,17 @@
-(()=> {
+(() => {
   // initiate WOW library.
   new WOW().init();
 
   // Add Event.
-  let addEvent = function(object, type, callback) {
-    if (object == null || typeof(object) == 'undefined') return;
+  let addEvent = function (object, type, callback) {
+    if (object == NULL || typeof(object) == 'undefined') { return;
+    }
     if (object.addEventListener) {
-        object.addEventListener(type, callback, false);
+        object.addEventListener(type, callback, FALSE);
     } else if (object.attachEvent) {
         object.attachEvent("on" + type, callback);
     } else {
-        object["on"+type] = callback;
+        object["on" + type] = callback;
     }
   }
 
@@ -31,7 +32,7 @@
       let mediaQuery = window.matchMedia(breakpoints[breakpoint])
       if (mediaQuery.matches) {
         // Get all blocks.
-        blocks = document.getElementsByClassName('block')   
+        blocks = document.getElementsByClassName('block')
         let i = 0
         for (i; i < blocks.length; i++) {
           let id = blocks[i].id.split('--')[0]
@@ -180,11 +181,11 @@
       }
     })
   }
-  Drupal.behaviors.blockStyles = {  
-    attach: function (context, settings) {    
+  Drupal.behaviors.blockStyles = {
+    attach: function (context, settings) {
       addStyles()
     }
   };
-  
+
   addEvent(window, "resize", addStyles)
 })(Drupal);

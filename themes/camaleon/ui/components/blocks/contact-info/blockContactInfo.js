@@ -1,5 +1,5 @@
 ((Camaleon) => {
-  blockContactInfo = function(blocks, breakpoint) {
+  blockContactInfo = function (blocks, breakpoint) {
     let customProperties = {
       TextFontSize: 'textFontSize',
     }
@@ -9,7 +9,7 @@
       Camaleon.applyProperties(blocks[i], breakpoint, customProperties)
     }
   }
-  
+
   Camaleon.blocksRegister('blockContactInfo', blockContactInfo)
 
 })(Camaleon)

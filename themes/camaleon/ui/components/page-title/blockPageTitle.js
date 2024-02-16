@@ -1,5 +1,5 @@
 ((Camaleon) => {
-  blockPageTitle = function(blocks, breakpoint) {
+  blockPageTitle = function (blocks, breakpoint) {
     let customProperties = {
       TitleFontSize: 'titleFontSize',
     }
@@ -9,7 +9,7 @@
       Camaleon.applyProperties(blocks[i], breakpoint, customProperties)
     }
   }
-  
+
   Camaleon.blocksRegister('blockPageTitle', blockPageTitle)
 
 })(Camaleon)

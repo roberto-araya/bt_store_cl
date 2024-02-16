@@ -1,5 +1,5 @@
 ((Camaleon) => {
-  blockFieldIntro = function(blocks, breakpoint) {
+  blockFieldIntro = function (blocks, breakpoint) {
     let customProperties = {
       IntroFontSize: 'introFontSize',
     }

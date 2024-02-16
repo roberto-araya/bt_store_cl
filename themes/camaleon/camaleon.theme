@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @file
+ */
+
 include 'includes/preprocess/block_content_preprocess.inc';
 include 'includes/preprocess/block_contrib_preprocess.inc';
 include 'includes/preprocess/block_core_preprocess.inc';
@@ -9,17 +13,18 @@ include 'includes/preprocess/nav_preprocess.inc';
 include 'includes/theme_suggestions.inc';
 
 
-use Drupal\Core\Template\Attribute;
-use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Render\Element;
-use Drupal\Component\Utility\Html;
 use Drupal\Component\Render\MarkupInterface;
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Render\Element;
+use Drupal\Core\Template\Attribute;
+use Drupal\node\NodeInterface;
+use Drupal\taxonomy\TermInterface;
 use Drupal\views\ViewExecutable;
 
-#### Alter Functions ####
+// Alter Functions ####.
 
 /**
- * implements hook_form_alter().
+ * Implements hook_form_alter().
  */
 function camaleon_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'commerce_checkout_flow_multistep_default' &&
@@ -48,12 +53,12 @@ function camaleon_form_alter(&$form, &$form_state, $form_id) {
       $form['actions']['discard_changes']['#attributes'] = ['class' => ['button--action']];
       $form['actions']['discard_changes']['#button_type'] = 'warning';
     }
-  
+
     if (is_array($form['actions']) && array_key_exists('revert', $form['actions'])) {
       $form['actions']['revert']['#attributes'] = ['class' => ['button--secondary']];
       $form['actions']['revert']['#button_type'] = 'secondary';
     }
-    
+
     if (is_array($form['actions']) && array_key_exists('delete', $form['actions'])) {
       $form['actions']['delete']['#attributes'] = ['class' => ['button--danger']];
       $form['actions']['delete']['#button_type'] = 'danger';
@@ -64,7 +69,7 @@ function camaleon_form_alter(&$form, &$form_state, $form_id) {
     $form['#attached']['library'][] = 'camaleon/layout_builder_add_form';
   }
 
-  if (is_array($form['#attributes']['class']) && 
+  if (is_array($form['#attributes']['class']) &&
   in_array('layout-builder-form', $form['#attributes']['class'])) {
     $form['#attached']['library'][] = 'camaleon/layout_builder_form';
   }
@@ -75,8 +80,8 @@ function camaleon_form_alter(&$form, &$form_state, $form_id) {
     $form['moderation_state']['widget'][0]['current']['#wrapper_attributes']['class'][] = 'formModerationState__current';
     $form['moderation_state']['widget'][0]['state']['#wrapper_attributes']['class'][] = 'formModerationState__state';
 
-    //$form['actions']['#attached']['library'][] = 'camaleon/form_layout_builder_actions';
-    //$form['actions']['#attributes']['class'][] = 'formLayoutBuilderActions';
+    // $form['actions']['#attached']['library'][] = 'camaleon/form_layout_builder_actions';
+    // $form['actions']['#attributes']['class'][] = 'formLayoutBuilderActions';
   }
 
   if ($form_id == "layout_builder_discard_changes" || $form_id == "layout_builder_revert_overrides") {
@@ -90,13 +95,13 @@ function camaleon_form_alter(&$form, &$form_state, $form_id) {
 function camaleon_theme_suggestions_page_alter(array &$suggestions, array $variables) {
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
     $content_type = $node->bundle();
-    if($content_type == 'bt_basic_page') {
+    if ($content_type == 'bt_basic_page') {
       $suggestions[] = 'page__node_basic';
     }
   }
 }
 
-#### Preprocess Functions ####
+// Preprocess Functions ####.
 
 /**
  * Implements hook_preprocess_HOOK() for blocks.
@@ -169,15 +174,21 @@ function camaleon_preprocess_menu_local_task(&$variables) {
   }
 }
 
+/**
+ *
+ */
 function camaleon_preprocess_paragraph(&$variables) {
   $variables['id'] = $variables['elements']['#paragraph']->id();
   $variables['bundle'] = $variables['elements']['#paragraph']->bundle();
   $variables['bundle'] = strpos($variables['bundle'], 'bt_prg_') === 0 ? $variables['bundle'] = substr($variables['bundle'], 7) : $variables['bundle'];
   if (array_key_exists('field_bt_paragraph', $variables['elements'])) {
     $variables['view_mode'] = $variables['elements']['field_bt_paragraph']['#view_mode'];
-  } 
+  }
 }
 
+/**
+ *
+ */
 function camaleon_preprocess_region(&$variables) {
   try {
     $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
@@ -187,21 +198,21 @@ function camaleon_preprocess_region(&$variables) {
   }
 
   try {
-    if (isset($variables['region']) && $variables['region'] == 'content') {       
+    if (isset($variables['region']) && $variables['region'] == 'content') {
       $node = \Drupal::routeMatch()->getParameter('node');
       $taxonomy = \Drupal::routeMatch()->getParameter('taxonomy_term');
-      if ($node instanceof \Drupal\node\NodeInterface ) {
+      if ($node instanceof NodeInterface) {
         $node_type = $node->bundle();
-        
+
         if ($node_type == 'bt_basic_page' || $node_type == 'bt_article' || $node_type == 'blog_post') {
-          $variables['is_layout_builder_page'] = TRUE;  
+          $variables['is_layout_builder_page'] = TRUE;
         }
       }
-      if ($taxonomy instanceof \Drupal\taxonomy\TermInterface ) {
+      if ($taxonomy instanceof TermInterface) {
         $term_type = $taxonomy->bundle();
-        
+
         if ($term_type == 'bt_product_categories' || $term_type == 'bt_product_brand') {
-          $variables['is_layout_builder_page'] = TRUE;  
+          $variables['is_layout_builder_page'] = TRUE;
         }
       }
 
@@ -229,12 +240,12 @@ function camaleon_preprocess_region(&$variables) {
   ];
 
   foreach ($regions as $region) {
-    if (isset($variables['region']) && $variables['region'] == $region) {       
+    if (isset($variables['region']) && $variables['region'] == $region) {
       $variables['theme_settings']['background_color'] = theme_get_setting('regions.region_' . $region . '.background_color');
       $variables['theme_settings']['background_color_custom'] = theme_get_setting('regions.region_' . $region . '.background_color_custom');
       $variables['theme_settings']['background_color_hover'] = theme_get_setting('regions.region_' . $region . '.background_color_hover');
       $variables['theme_settings']['background_color_custom_hover'] = theme_get_setting('regions.region_' . $region . 'background_color_custom_hover');
-    
+
       if (!in_array($region, ['sidebar_first', 'content', 'sidebar_second'])) {
         $variables['theme_settings']['justify_content'] = theme_get_setting('regions.region_' . $region . '.justify_content');
         $variables['theme_settings']['align_items'] = theme_get_setting('regions.region_' . $region . '.align_items');
@@ -242,7 +253,7 @@ function camaleon_preprocess_region(&$variables) {
         $variables['theme_settings']['container_select'] = theme_get_setting('regions.region_' . $region . '.width.container_select');
         $variables['theme_settings']['full_select'] = theme_get_setting('regions.region_' . $region . '.width.full_select');
         $variables['theme_settings']['box_select'] = theme_get_setting('regions.region_' . $region . '.width.box_select');
-      } 
+      }
     }
   }
 
@@ -374,19 +385,19 @@ function camaleon_preprocess_input(&$variables) {
   if (isset($variables['element']['#button_type'])) {
     $button_type = $variables['element']['#button_type'];
     $variables['theme_settings']['button'] = theme_get_setting('buttons.button_' . $button_type);
-  } 
-  if (isset($variables['element']['#attributes']['class']) && 
+  }
+  if (isset($variables['element']['#attributes']['class']) &&
   is_array($variables['element']['#attributes']['class'])) {
     $class = $variables['element']['#attributes']['class'];
     if (in_array('button', $class)) {
       if (in_array('button--primary', $class)) {
         $button_type = 'primary';
       }
-  
+
       if (in_array('button--secondary', $class)) {
         $button_type = 'secondary';
       }
-  
+
       if (in_array('button--accent', $class)) {
         $button_type = 'accent';
       }
@@ -400,12 +411,12 @@ function camaleon_preprocess_input(&$variables) {
       $variables['element']['#attributes']['class'][] = 'button--secondary';
     }
   }
-  
+
   if (isset($button_type)) {
     $variables['button_type'] = $button_type;
     $variables['theme_settings']['button'] = theme_get_setting('buttons.button_' . $button_type);
   }
-  
+
   if (
     !empty($variables['element']['#title_display']) &&
     $variables['element']['#title_display'] === 'attribute' &&
@@ -464,8 +475,8 @@ function camaleon_preprocess_multifield(&$variables) {
   $bundle_parts = str_contains($bundle, '_') ? explode('_', $bundle) : [$bundle];
   $bundle_parts = str_contains($bundle, '-') ? explode('-', $bundle) : $bundle_parts;
   $bundle = '';
-  foreach($bundle_parts as $part) {
-    $bundle = $bundle . ucfirst($part); 
+  foreach ($bundle_parts as $part) {
+    $bundle = $bundle . ucfirst($part);
   }
 
   $variables['bundle'] = $bundle;
@@ -493,8 +504,7 @@ function camaleon_preprocess_radios(&$variables) {
   $variables['attributes']['class'][] = 'form-boolean-group';
 }
 
-
-#### Suggestions Functions ####
+// Suggestions Functions ####.
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter() for multifield.
@@ -505,7 +515,6 @@ function camaleon_theme_suggestions_multifield_alter(array &$suggestions, array 
   $suggestions[] = "multifield__" . $bundle;
   $suggestions[] = "multifield__" . $bundle . '_' . $view_mode;
 }
-
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter() for selects.
@@ -585,7 +594,8 @@ function camaleon_theme_suggestions_user_alter(array &$suggestions, array $varia
 function camaleon_theme_suggestions_input_alter(array &$suggestions, array &$variables, $hook) {
   if (isset($variables['theme_hook_original'])) {
     $hook_original = $variables['theme_hook_original'];
-  } else {
+  }
+  else {
     $hook_original = 'input__submit';
   }
 
@@ -596,16 +606,16 @@ function camaleon_theme_suggestions_input_alter(array &$suggestions, array &$var
       if (in_array('button--primary', $class)) {
         $button_type = 'primary';
       }
-  
+
       if (in_array('button--secondary', $class)) {
         $button_type = 'secondary';
       }
-  
+
       if (in_array('button--accent', $class)) {
         $button_type = 'accent';
       }
     }
-  } 
+  }
 
   if (isset($variables['element']['#attributes']['id'])) {
     $id = $variables['element']['#attributes']['id'];
@@ -627,10 +637,9 @@ function camaleon_theme_suggestions_input_alter(array &$suggestions, array &$var
  * Implements hook_theme_suggestions_HOOK_alter().
  *
  * Add views template suggestions.
- * 
+ *
  * @inheritdoc
  */
-
 function camaleon_theme_suggestions_views_view_alter(array &$suggestions, array $variables) {
   $views_id = $variables['view']->id();
   $display_id = $variables['view']->getDisplay()->display['id'];

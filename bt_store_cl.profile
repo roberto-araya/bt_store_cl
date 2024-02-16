@@ -5,11 +5,11 @@
  * Enables modules and site configuration for a standard site installation.
  */
 
+use CommerceGuys\Addressing\Subdivision\SubdivisionRepository;
+use Drupal\commerce_store\Entity\Store;
 /*use Drupal\contact\Entity\ContactForm;*/
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\user\UserInterface;
 use Drupal\user\Entity\User;
-use CommerceGuys\Addressing\Subdivision\SubdivisionRepository;
 
 /**
  * Implements hook_form_FORM_ID_alter() for install_configure_form().
@@ -19,9 +19,9 @@ use CommerceGuys\Addressing\Subdivision\SubdivisionRepository;
 function bt_store_cl_form_install_configure_form_alter(&$form, FormStateInterface $form_state) {
   $form['site_information']['#type'] = 'fieldset';
   $form['admin_account']['#type'] = 'fieldset';
-  
+
   $form['regional_settings']['#type'] = 'hidden';
-  
+
   $form['regional_settings']['site_default_country'] = [
     '#type' => 'hidden',
     '#value' => "CL",
@@ -43,7 +43,7 @@ function bt_store_cl_form_install_configure_form_alter(&$form, FormStateInterfac
     '#type' => 'hidden',
     '#value' => 0,
   ];
-    
+
   $form['store_information'] = [
     '#type' => 'fieldset',
     '#title' => t('Información de la tienda'),
@@ -102,7 +102,6 @@ function bt_store_cl_form_install_configure_form_alter(&$form, FormStateInterfac
  */
 function bt_store_cl_form_install_configure_submit($form, FormStateInterface $form_state) {
   // ContactForm::load('contacto_del_sitio')->setRecipients([$site_mail])->trustData()->save();
-    
   $address = [
     'country_code' => 'CL',
     'address_line1' => $form_state->getValue('address'),
@@ -115,7 +114,7 @@ function bt_store_cl_form_install_configure_submit($form, FormStateInterface $fo
   $currency_importer = \Drupal::service('commerce_price.currency_importer');
   $currency_importer->import('CLP');
 
-  $store = \Drupal\commerce_store\Entity\Store::create([
+  $store = Store::create([
     'type' => 'online',
     'uid' => 1,
     'name' => $form_state->getValue('store_name'),
@@ -131,6 +130,9 @@ function bt_store_cl_form_install_configure_submit($form, FormStateInterface $fo
   $store_storage->markAsDefault($store);
 }
 
+/**
+ *
+ */
 function bt_store_cl_install_tasks_alter(&$tasks, $install_state) {
   // Hide install verify requirements task of the tasks list.
   $tasks['install_verify_requirements']['display_name'] = FALSE;
@@ -208,7 +210,7 @@ function bt_store_cl_page_bottom(array &$page_bottom) {
   if ($current_theme == 'claro' || $current_theme == 'seven') {
     $m = "PHAgY2xhc3M9InRleHQtYWxpZ24tY2VudGVyIj48c3Ryb25nPjxhIGhyZWY9Imh0dHBzOi8vd3d3LnRpZW5kYXBhcmFtaXB5bWUuY2wiIHRhcmdldD0iX2JsYW5rIj5UaWVuZGFQYXJhTWlQeU1lPC9hPjwvc3Ryb25nPiBlcyBkZXNhcnJvbGxhZG8gcG9yIDxzdHJvbmc+PGEgaHJlZj0iaHR0cHM6Ly93d3cuYnRlc3Rlci5jbCIgdGFyZ2V0PSJfYmxhbmsiPkJ0ZXN0ZXIgTHRkYS48L2E+PC9zdHJvbmc+IC0gQ2hpbGUgMjAyMzwvcD4=";
     $page_bottom['btester'] = [
-      '#markup' => base64_decode($m)
+      '#markup' => base64_decode($m),
     ];
   }
 }

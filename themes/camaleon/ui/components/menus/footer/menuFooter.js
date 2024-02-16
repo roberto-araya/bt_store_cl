@@ -1,5 +1,5 @@
 ((Camaleon) => {
-  menuFooter = function(blocks, breakpoint) {
+  menuFooter = function (blocks, breakpoint) {
     let customProperties = {
       TitleFontSize: 'titleFontSize',
       ItemFontSize: 'itemFontSize',
@@ -14,7 +14,7 @@
       Camaleon.applyProperties(blocks[i], breakpoint, customProperties)
     }
   }
-  
+
   Camaleon.blocksRegister('menuFooter', menuFooter)
 
 })(Camaleon)

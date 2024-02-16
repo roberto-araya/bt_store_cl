@@ -1,4 +1,4 @@
-var Camaleon = (function() {
+var Camaleon = (function () {
   // Breakpoints
   const breakpoints = {
     xs: '(max-width: 575px)',
@@ -25,10 +25,10 @@ var Camaleon = (function() {
   };
 
   const breakpointsKeys = Object.keys(breakpoints);
-  var blocksRegisterCallbacks = [];  
+  var blocksRegisterCallbacks = [];
   var camaleon = {};
- 
-  camaleon.applyProperties = function(element, breakpoint, custom_properties = {}){
+
+  camaleon.applyProperties = function (element, breakpoint, custom_properties = {}) {
     let all_properties = {...defaultProperties, ...custom_properties}
     let properties = Object.keys(all_properties);
 
@@ -39,27 +39,28 @@ var Camaleon = (function() {
     })
   }
 
-  camaleon.blocksRegister = function(blockType, callback) {
+  camaleon.blocksRegister = function (blockType, callback) {
     let blocks = document.getElementsByClassName(blockType);
     blocksRegisterCallbacks.push({blocks: blocks, callback: callback});
   };
 
-  camaleon.addEvent = function(object, type, callback) {
-    if (object == null || typeof(object) == 'undefined') return;
+  camaleon.addEvent = function (object, type, callback) {
+    if (object == NULL || typeof(object) == 'undefined') { return;
+    }
     if (object.addEventListener) {
-        object.addEventListener(type, callback, false);
+        object.addEventListener(type, callback, FALSE);
     } else if (object.attachEvent) {
         object.attachEvent("on" + type, callback);
     } else {
-        object["on"+type] = callback;
+        object["on" + type] = callback;
     }
   }
 
-  camaleon.blocksCallback = function() {
+  camaleon.blocksCallback = function () {
     breakpointsKeys.forEach((breakpoint) => {
       let mediaQuery = window.matchMedia(breakpoints[breakpoint])
       if (mediaQuery.matches) {
-        blocksRegisterCallbacks.forEach((blockType)=>{
+        blocksRegisterCallbacks.forEach((blockType) => {
           blockType.callback(blockType.blocks, breakpoint)
         })
       }
@@ -71,8 +72,8 @@ var Camaleon = (function() {
 window.Camaleon = Camaleon
 Camaleon.addEvent(window, "load", Camaleon.blocksCallback)
 Camaleon.addEvent(window, "resize", Camaleon.blocksCallback)
-Drupal.behaviors.camaleonBlocksCallbacks = {  
-  attach: function (context, settings) {    
+Drupal.behaviors.camaleonBlocksCallbacks = {
+  attach: function (context, settings) {
     Camaleon.blocksCallback();
   }
 };

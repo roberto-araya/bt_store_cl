@@ -1,9 +1,9 @@
 .block.blockFieldBlock {
   --alignSelf: var(--xsAlignSelf, flex-start);
-  --justifySelf:var(--xsJustifySelf, flex-start);
-  --textAlign:var(--xsTextAlign, left);
+  --justifySelf: var(--xsJustifySelf, flex-start);
+  --textAlign: var(--xsTextAlign, left);
   --maxWidth: var(--xsMaxWidth, 80vw);
-  --marginLeft:var(--xsMarginLeft, 0);
+  --marginLeft: var(--xsMarginLeft, 0);
   --marginTop: var(--xsMarginTop, 0);
   --marginRight: var(--xsMarginRight, 0);
   --marginBottom: var(--xsMarginBottom, 0);

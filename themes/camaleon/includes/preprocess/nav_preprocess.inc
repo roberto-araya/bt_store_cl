@@ -6,7 +6,7 @@
  */
 
 /**
- *
+ * Breadcrumb preprocess.
  */
 function _breadcrumb_preprocess(&$variables) {
   if (($node = \Drupal::routeMatch()->getParameter('node')) && $variables['breadcrumb']) {

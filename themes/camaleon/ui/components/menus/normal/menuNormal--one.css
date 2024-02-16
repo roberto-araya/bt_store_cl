@@ -4,11 +4,13 @@
 .menuNormal--one .navbar-nav {
   gap: 1rem;
 }
-.menuNormal--one .nav-item, .menuNormal--one .dropdown-item {
+.menuNormal--one .nav-item,
+.menuNormal--one .dropdown-item {
   border: solid 1px;
   border-color: var(--itemColor);
 }
-.menuNormal--one .nav-item:hover, .menuNormal--one .dropdown-item:hover {
+.menuNormal--one .nav-item:hover,
+.menuNormal--one .dropdown-item:hover {
   border-color: var(--itemColorHover);
 }
 .menuNormal--one .nav-link {

@@ -1,5 +1,5 @@
 ((Camaleon) => {
-  siteBranding = function(blocks, breakpoint) {
+  siteBranding = function (blocks, breakpoint) {
     let customProperties = {
       NameFontSize: 'nameFontSize',
       SloganFontSize: 'sloganFontSize',
@@ -10,7 +10,7 @@
       Camaleon.applyProperties(blocks[i], breakpoint, customProperties)
     }
   }
-  
+
   Camaleon.blocksRegister('siteBranding', siteBranding)
 
 })(Camaleon)

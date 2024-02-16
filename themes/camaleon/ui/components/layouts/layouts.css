@@ -71,16 +71,16 @@
 }
 @media screen and (min-width: 992px) {
   .regionTop,
-.regionPreHeader,
-.regionNavbar,
-.regionHeader,
-.regionPrimaryMenu,
-.regionSecondaryMenu,
-.regionBreadcrumbs,
-.regionHighlighted,
-.regionHelp,
-.regionFooter,
-.regionBottom {
+  .regionPreHeader,
+  .regionNavbar,
+  .regionHeader,
+  .regionPrimaryMenu,
+  .regionSecondaryMenu,
+  .regionBreadcrumbs,
+  .regionHighlighted,
+  .regionHelp,
+  .regionFooter,
+  .regionBottom {
     width: var(--width, 100%);
     margin: 0 auto;
     padding: 0 var(--paddingX, 0);

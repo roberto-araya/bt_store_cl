@@ -3,6 +3,7 @@ type: theme
 core_version_requirement: ^9
 base theme: seven
 hidden: true
+description: 'Install Theme'
 
 libraries-override:
   seven/install-page:

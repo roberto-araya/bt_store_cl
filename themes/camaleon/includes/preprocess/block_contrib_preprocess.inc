@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Block contrib preprocess functions.
+ */
+
+/**
  * Return variables for contrib blocks.
  */
 function _block_contrib_preprocess(&$variables) {

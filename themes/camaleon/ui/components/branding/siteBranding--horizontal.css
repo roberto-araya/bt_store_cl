@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: auto 1fr;
   -moz-column-gap: var(--gap);
-       column-gap: var(--gap);
+  column-gap: var(--gap);
 }
 .siteBranding--horizontal .siteBranding__logo {
   grid-column: 1;

@@ -9,11 +9,13 @@
 .menuMain--one .navbar-nav {
   gap: 1rem;
 }
-.menuMain--one .nav-item, .menuMain--one .dropdown-item {
+.menuMain--one .nav-item,
+.menuMain--one .dropdown-item {
   border: solid 1px;
   border-color: var(--itemColor);
 }
-.menuMain--one .nav-item:hover, .menuMain--one .dropdown-item:hover {
+.menuMain--one .nav-item:hover,
+.menuMain--one .dropdown-item:hover {
   border-color: var(--itemColorHover);
 }
 .menuMain--one .nav-link {

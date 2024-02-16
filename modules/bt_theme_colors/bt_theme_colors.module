@@ -6,7 +6,6 @@
  */
 
 use Drupal\Core\Render\Element;
-use Drupal\bt_theme_colors\Entity\ThemeColors;
 use Drupal\user\UserInterface;
 
 /**
@@ -27,8 +26,8 @@ function bt_theme_colors_theme() {
  *
  * @param array $variables
  *   An associative array containing:
- *   - elements: An associative array containing the theme colors information and any
- *     fields attached to the entity.
+ *   - elements: An associative array containing the theme colors
+ *     information and any fields attached to the entity.
  *   - attributes: HTML attributes for the containing element.
  */
 function template_preprocess_theme_colors(array &$variables) {

@@ -1,10 +1,18 @@
 <?php
 
-use Drupal\Core\Form\FormStateInterface;
+/**
+ * @file
+ * Theme settings form.
+ */
+
 use Drupal\Core\Config\FileStorage;
+use Drupal\Core\Form\FormStateInterface;
 use LukaPeharda\TailwindCssColorPaletteGenerator\Color;
 use LukaPeharda\TailwindCssColorPaletteGenerator\PaletteGenerator;
 
+/**
+ * Implements hook_form_system_theme_settings_alter().
+ */
 function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
   // Add custom submit.
   $theme_file = drupal_get_path('theme', 'camaleon') . '/camaleon.theme';
@@ -81,22 +89,14 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
     'customColor' => t('Custom Color'),
   ];
 
-  $color_items = [
-    '_color',
-    '_color_custom',
-    '_color_hover',
-    '_color_custom_hover',
-  ];
-
-
-  #### FONTS ####
+  // FONTS ####.
   $form['fonts'] = [
     '#type' => 'details',
     '#title' => t('Fuentes'),
     '#tree' => TRUE,
   ];
 
-  #### DEFAULT FONT ####  
+  // DEFAULT FONT ####.
   $form['fonts']['default_font'] = [
     '#type' => 'select',
     '#options' => _get_font_select(),
@@ -105,7 +105,7 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
     '#default_value' => theme_get_setting('fonts.default_font'),
   ];
 
-  #### HEADERS FONTS ####  
+  // HEADERS FONTS ####.
   $form['fonts']['headers_font'] = [
     '#type' => 'select',
     '#options' => _get_font_select(),
@@ -114,13 +114,13 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
     '#default_value' => theme_get_setting('fonts.headers_font'),
   ];
 
-  #### Theme Color ####
+  // Theme Color ####.
   $entity_type_manager = \Drupal::entityTypeManager();
   $theme_colors = $entity_type_manager->getStorage('theme_colors')->loadMultiple();
   $options = _get_theme_color_select();
 
   foreach ($theme_colors as $theme_color) {
-    $options[$theme_color->id()] = $theme_color->label(); 
+    $options[$theme_color->id()] = $theme_color->label();
   }
 
   $form['theme_color'] = [
@@ -131,7 +131,7 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
     '#default_value' => theme_get_setting('theme_color'),
   ];
 
-  #### BUTTONS ####
+  // BUTTONS ####.
   $buttons = [
     'primary',
     'secondary',
@@ -147,7 +147,7 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
   foreach ($buttons as $type) {
     $form['buttons']['button_' . $type] = [
       '#type' => 'details',
-      '#title' => t(ucfirst($type)),
+      '#title' => t("@title", ["@title" => ucfirst($type)]),
       '#tree' => TRUE,
     ];
 
@@ -173,7 +173,7 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
     _get_button_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options));
   }
 
-  #### REGIONS ####
+  // REGIONS ####.
   $form['regions'] = [
     '#type' => 'details',
     '#title' => t('Regions'),
@@ -183,13 +183,13 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
   $other_regions = [
     'sidebar_first' => 'Sidebar Firts',
     'content' => 'Content',
-    'sidebar_second' => 'Sidebar Second'
+    'sidebar_second' => 'Sidebar Second',
   ];
 
   foreach ($other_regions as $region_id => $region_name) {
     $form['regions']['region_' . $region_id] = [
       '#type' => 'details',
-      '#title' => t($region_name . ' region'),
+      '#title' => t("@region_name", ["@region_name" => $region_name . ' region']),
       '#tree' => TRUE,
     ];
   }
@@ -211,10 +211,10 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
   foreach ($regions as $region_id => $region_name) {
     $form['regions']['region_' . $region_id] = [
       '#type' => 'details',
-      '#title' => t($region_name . ' region'),
+      '#title' => t("@region_name", ["@region_name" => $region_name . ' region']),
       '#tree' => TRUE,
     ];
-    
+
     $form['regions']['region_' . $region_id]['justify_content'] = [
       '#type' => 'select',
       '#options' => [
@@ -232,7 +232,7 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
         'safe' => t('Safe'),
         'space-around' => t('Space Around'),
         'space-between' => t('Space Between'),
-        'space-evenly' => t('Space Evenly'), 
+        'space-evenly' => t('Space Evenly'),
         'start' => t('Start'),
         'stretch' => t('Stretch'),
         'unsafe' => t('Unsafe'),
@@ -285,8 +285,8 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
     $form['regions']['region_' . $region_id]['width']['container_select'] = [
       '#type' => 'select',
       '#options' => [
-        'full' => 'Full',
-        'box' => 'Box'
+        'full' => t('Full'),
+        'box' => t('Box'),
       ],
       '#title' => t('Container Type'),
       '#description' => t("Select a container type for the width."),
@@ -296,11 +296,11 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
     $form['regions']['region_' . $region_id]['width']['full_select'] = [
       '#type' => 'select',
       '#options' => [
-        '0' => '100%',
-        '5%' => '90%',
-        '10%' => '80%',
-        '15%' => '70%',
-        '20%' => '60%',
+        '0' => t('100%'),
+        '5%' => t('90%'),
+        '10%' => t('80%'),
+        '15%' => t('70%'),
+        '20%' => t('60%'),
       ],
       '#title' => t('Full Container Width'),
       '#description' => t("Select a width."),
@@ -315,11 +315,11 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
     $form['regions']['region_' . $region_id]['width']['box_select'] = [
       '#type' => 'select',
       '#options' => [
-        '100%' => '100%',
-        '90%' => '90%',
-        '80%' => '80%',
-        '70%' => '70%',
-        '60%' => '60%',
+        '100%' => t('100%'),
+        '90%' => t('90%'),
+        '80%' => t('80%'),
+        '70%' => t('70%'),
+        '60%' => t('60%'),
       ],
       '#title' => t('Box Container Width'),
       '#description' => t("Select a width."),
@@ -338,7 +338,7 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
     _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options));
   }
 
-  // Navbar positions
+  // Navbar positions.
   $form['regions']['region_navbar']['position_select'] = [
     '#type' => 'select',
     '#options' => [
@@ -357,44 +357,44 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
     '#default_value' => theme_get_setting('regions.navbar.position'),
   ];
 
-  // Navbar inner container classes
+  // Navbar inner container classes.
   $form['regions']['region_navbar']['inner_container_classes'] = [
     '#type' => 'textfield',
     '#title' => t('Inner Container Classes'),
     '#description' => t("Separe the classes with an espace."),
     '#default_value' => theme_get_setting('regions.region_navbar.inner_container_classes'),
-  ]; 
+  ];
 
-  // Toggler classes
+  // Toggler classes.
   $form['regions']['region_navbar']['toggler_classes'] = [
     '#type' => 'textfield',
     '#title' => t('Toggler Classes'),
     '#description' => t("Separe the classes with an espace."),
     '#default_value' => theme_get_setting('regions.region_navbar.toggler_classes'),
-  ]; 
+  ];
 
-  // Navbar toggler
+  // Navbar toggler.
   $default_value_prefix = 'regions.region_navbar.toggler';
   $state_input_prefix = 'regions[region_navbar][toggler';
   $style = 'toggler';
   $form['regions']['region_navbar'] = array_merge($form['regions']['region_navbar'],
   _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options));
 
-  // Sidebar first
+  // Sidebar first.
   $default_value_prefix = 'regions.region_sidebar_first.background';
   $state_input_prefix = 'regions[region_sidebar_first][background';
   $style = 'background';
   $form['regions']['region_sidebar_first'] = array_merge($form['regions']['region_sidebar_first'],
   _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options));
 
-  // Content
+  // Content.
   $default_value_prefix = 'regions.region_content.background';
   $state_input_prefix = 'regions[region_content][background';
   $style = 'background';
   $form['regions']['region_content'] = array_merge($form['regions']['region_content'],
   _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options));
 
-  // Sidebar second
+  // Sidebar second.
   $default_value_prefix = 'regions.region_sidebar_second.background';
   $state_input_prefix = 'regions[region_sidebar_second][background';
   $style = 'background';
@@ -402,7 +402,10 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
   _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options));
 }
 
-function camaleon_form_system_theme_settings_submit(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+/**
+ * Custom theme settigs submit.
+ */
+function camaleon_form_system_theme_settings_submit(&$form, FormStateInterface $form_state) {
   $theme_defaults = [
     'alicia',
     'eco-wave',
@@ -413,7 +416,7 @@ function camaleon_form_system_theme_settings_submit(&$form, \Drupal\Core\Form\Fo
     'sunset-meadows',
     'vibrant-sky',
   ];
- 
+
   $values = $form_state->getValues();
   if (in_array($values['theme_color'], $theme_defaults)) {
     $config_factory = \Drupal::configFactory();
@@ -424,7 +427,8 @@ function camaleon_form_system_theme_settings_submit(&$form, \Drupal\Core\Form\Fo
     $source = new FileStorage($config_path);
     $config_storage = \Drupal::service('config.storage');
     $config_storage->write($config_name, $source->read($file_conf_name));
-  } elseif ($values['theme_color'] != 'default') {
+  }
+  elseif ($values['theme_color'] != 'default') {
     $config_factory = \Drupal::configFactory();
     $config_name = 'cssvars.bt';
     $config = $config_factory->getEditable($config_name);
@@ -501,9 +505,9 @@ function camaleon_form_system_theme_settings_submit(&$form, \Drupal\Core\Form\Fo
       $rgb = $colorObject->getRgb();
       $config->set($hex_rgb_shades_color . '_rgb', $rgb[0] . ', ' . $rgb[1] . ', ' . $rgb[2]);
 
-      $paletteGenerator = new PaletteGenerator;
+      $paletteGenerator = new PaletteGenerator();
       $paletteGenerator->setBaseColor($colorObject);
-    
+
       if ($hex_rgb_shades_color == 'gray') {
         $paletteGenerator->setColorSteps([100, 200, 300, 400, 500, 600, 700, 800, 900]);
       }
@@ -521,20 +525,23 @@ function camaleon_form_system_theme_settings_submit(&$form, \Drupal\Core\Form\Fo
   }
 }
 
+/**
+ * Color form select builder.
+ */
 function _get_color_form_select($default_value_prefix, $state_input_prefix, $style, &$color_options) {
   return [
     $style . '_color' => [
       '#type' => 'select',
       '#options' => $color_options,
       '#title' => ucfirst($style) . ' Color',
-      '#description' => t("Select a theme color as " . $style . "."),
+      '#description' => t("Select a theme color as @style.", ["@style" => $style]),
       '#default_value' => theme_get_setting($default_value_prefix . '_color'),
     ],
 
     $style . '_color_custom' => [
       '#type' => 'color',
       '#title' => ucfirst($style) . ' Custom Color',
-      '#description' => t("Select a custom color as " . $style . "."),
+      '#description' => t("Select a custom color as @style.", ["@style" => $style]),
       '#default_value' => theme_get_setting($default_value_prefix . '_color_custom'),
       '#states' => [
         'visible' => [
@@ -546,14 +553,14 @@ function _get_color_form_select($default_value_prefix, $state_input_prefix, $sty
       '#type' => 'select',
       '#options' => $color_options,
       '#title' => ucfirst($style) . ' Color Hover',
-      '#description' => t("Select a theme color as hover " . $style . "."),
+      '#description' => t("Select a theme color as hover @style.", ["@style" => $style]),
       '#default_value' => theme_get_setting($default_value_prefix . '_color_hover'),
     ],
 
     $style . '_color_custom_hover' => [
       '#type' => 'color',
       '#title' => ucfirst($style) . ' Custom Color Hover',
-      '#description' => t("Select a custom color as hover " . $style . "."),
+      '#description' => t("Select a custom color as hover @style.", ["@style" => $style]),
       '#default_value' => theme_get_setting($default_value_prefix . '_color_custom_hover'),
       '#states' => [
         'visible' => [
@@ -564,6 +571,9 @@ function _get_color_form_select($default_value_prefix, $state_input_prefix, $sty
   ];
 }
 
+/**
+ * Button color form select builder.
+ */
 function _get_button_color_form_select($default_value_prefix, $state_input_prefix, $style, &$color_options) {
   $button_color = [
     $style . '_color_active' => [
@@ -613,12 +623,15 @@ function _get_button_color_form_select($default_value_prefix, $state_input_prefi
   );
 }
 
+/**
+ * Border items builder.
+ */
 function _get_border_form_items($type, $name, $default_value_prefix, $state_input_prefix, $color_options) {
   $borders = [
-    'border_top' => 'Border Top',
-    'border_right' => 'Border Right',
-    'border_bottom' => 'Border Bottom',
-    'border_left' => 'Border Left',
+    'border_top' => t('Border Top'),
+    'border_right' => t('Border Right'),
+    'border_bottom' => t('Border Bottom'),
+    'border_left' => t('Border Left'),
   ];
 
   $return = [];
@@ -632,8 +645,8 @@ function _get_border_form_items($type, $name, $default_value_prefix, $state_inpu
     $return[$border][$border . '_select'] = [
       '#type' => 'select',
       '#options' => [
-        'none' => 'None',
-        'custom' => 'Custom'
+        'none' => t('None'),
+        'custom' => t('Custom'),
       ],
       '#title' => $title,
       '#description' => t("Select custom to apply the border."),
@@ -643,16 +656,16 @@ function _get_border_form_items($type, $name, $default_value_prefix, $state_inpu
     $return[$border][$border . '_style'] = [
       '#type' => 'select',
       '#options' => [
-        'dotted' => 'Dotted',
-        'dashed' => 'Dashed',
-        'solid' => 'Solid',
-        'double' => 'Double',
-        'groove' => 'Groove',
-        'ridge' => 'Ridge',
-        'inset' => 'Inset',
-        'outset' => 'Outset',
-        'none' => 'None',
-        'hidden' => 'Hidden'
+        'dotted' => t('Dotted'),
+        'dashed' => t('Dashed'),
+        'solid' => t('Solid'),
+        'double' => t('Double'),
+        'groove' => t('Groove'),
+        'ridge' => t('Ridge'),
+        'inset' => t('Inset'),
+        'outset' => t('Outset'),
+        'none' => t('None'),
+        'hidden' => t('Hidden'),
       ],
       '#title' => $title . ' Style',
       '#description' => t("Select the style to apply the border."),
@@ -677,8 +690,8 @@ function _get_border_form_items($type, $name, $default_value_prefix, $state_inpu
     ];
 
     $border_default_value_prefix = $default_value_prefix . '.' . $border;
-    $border_state_input_prefix = $state_input_prefix . '][' . $border . '][' . $border ;
-    
+    $border_state_input_prefix = $state_input_prefix . '][' . $border . '][' . $border;
+
     $border_colors = _get_color_form_select($border_default_value_prefix, $border_state_input_prefix, $border, $color_options);
     foreach ($border_colors as $item => $data) {
       $return[$border][$item] = $data;
@@ -692,8 +705,11 @@ function _get_border_form_items($type, $name, $default_value_prefix, $state_inpu
   return $return;
 }
 
+/**
+ * Font select builder.
+ */
 function _get_font_select() {
-  
+
   $options = [
     'default' => 'Default',
     'roboto' => 'Roboto',
@@ -731,10 +747,13 @@ function _get_font_select() {
     'exo-2' => 'Exo 2',
     'caveat' => 'Caveat',
   ];
-  
+
   return $options;
 }
 
+/**
+ * Theme color select builder.
+ */
 function _get_theme_color_select() {
   $options = [
     'default' => 'Default',

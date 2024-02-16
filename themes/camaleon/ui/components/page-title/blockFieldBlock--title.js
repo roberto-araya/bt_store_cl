@@ -1,5 +1,5 @@
 ((Camaleon) => {
-  blockFieldTitle = function(blocks, breakpoint) {
+  blockFieldTitle = function (blocks, breakpoint) {
     let customProperties = {
       TitleFontSize: 'titleFontSize',
     }
@@ -9,7 +9,7 @@
       Camaleon.applyProperties(blocks[i], breakpoint, customProperties)
     }
   }
-  
+
   Camaleon.blocksRegister('blockFieldBlock--title', blockFieldTitle)
 
 })(Camaleon)

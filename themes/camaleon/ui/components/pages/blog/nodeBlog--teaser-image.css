@@ -13,7 +13,8 @@
 .nodeBlogPost--teaser-image__title a {
   color: var(--bt--blog-title-color, var(--bt--page-title-color, var(--bs-primary-600)));
 }
-.nodeBlogPost--teaser-image__author, .nodeBlogPost--teaser-image__date {
+.nodeBlogPost--teaser-image__author,
+.nodeBlogPost--teaser-image__date {
   margin: 0 1rem;
   text-align: center;
   font-size: 0.8rem;

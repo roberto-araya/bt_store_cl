@@ -1,5 +1,5 @@
 ((Camaleon) => {
-  blockCommerceCart = function(blocks, breakpoint) {
+  blockCommerceCart = function (blocks, breakpoint) {
     let customProperties = {
       TextFontSize: 'textFontSize',
     }
@@ -9,7 +9,7 @@
       Camaleon.applyProperties(blocks[i], breakpoint, customProperties)
     }
   }
-  
+
   Camaleon.blocksRegister('commerceCart', blockCommerceCart)
 
 })(Camaleon)

@@ -1,6 +1,4 @@
-@charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Palanquin:wght@300&display=swap");
-.blockQuote--full {
+@charset "UTF-8"; @import url("https://fonts.googleapis.com/css2?family=Palanquin:wght@300&display=swap"); .blockQuote--full {
   display: flex;
   flex-direction: column;
   height: -moz-max-content;

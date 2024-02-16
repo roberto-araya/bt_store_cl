@@ -59,7 +59,8 @@
   gap: 0.5rem;
   align-items: center;
 }
-.blockHero--full__button, .blockHero--full__button-secondary {
+.blockHero--full__button,
+.blockHero--full__button-secondary {
   margin: 0;
 }
 

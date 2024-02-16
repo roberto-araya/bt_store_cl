@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Fields preprocess functions.
+ */
+
+/**
  * Return custom variables for fields.
  */
 function _field_preprocess(&$variables) {
@@ -24,8 +29,8 @@ function _field_preprocess(&$variables) {
   $bundle_parts = str_contains($bundle, '_') ? explode('_', $bundle) : [$bundle];
   $bundle_parts = str_contains($bundle, '-') ? explode('-', $bundle) : $bundle_parts;
   $bundle = '';
-  foreach($bundle_parts as $part) {
-    $bundle = $bundle . ucfirst($part); 
+  foreach ($bundle_parts as $part) {
+    $bundle = $bundle . ucfirst($part);
   }
 
   $entity_type = $entity_type == 'block_content' ? 'block' : $entity_type;
@@ -34,7 +39,7 @@ function _field_preprocess(&$variables) {
   $view_mode = strpos($view_mode, 'bt_') === 0 ? substr($view_mode, 3) : $view_mode;
   $field_name = $variables['element']['#field_name'];
   $field_name = strpos($field_name, 'field_bt_') === 0 ? substr(($field_name), 9) : $field_name;
-  
+
   $field_name = $field_name == 'epigrafe' ? 'caption' : $field_name;
   $field_name = $field_name == 'paragraph' ? 'text' : $field_name;
 

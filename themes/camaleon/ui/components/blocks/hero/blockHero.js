@@ -1,5 +1,5 @@
 ((Camaleon) => {
-  blockHero = function(blocks, breakpoint) {
+  blockHero = function (blocks, breakpoint) {
     let customProperties = {
       AlignSelf: 'alignSelf',
       JustifyContent: 'justifyContent',
@@ -13,7 +13,7 @@
       Camaleon.applyProperties(blocks[i], breakpoint, customProperties)
     }
   }
-  
+
   Camaleon.blocksRegister('blockHero', blockHero)
 
 })(Camaleon)

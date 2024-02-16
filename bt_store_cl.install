@@ -5,13 +5,13 @@
  * Install, update and uninstall functions for the wca installation profile.
  */
 
-use Drupal\user\Entity\User;
-use Drupal\user\RoleInterface;
-use Drupal\path_alias\Entity\PathAlias;
-use Drupal\user\UserInterface;
-use Drupal\node\Entity\Node;
 use Drupal\Core\Config\FileStorage;
 use Drupal\menu_link_content\Entity\MenuLinkContent;
+use Drupal\node\Entity\Node;
+use Drupal\path_alias\Entity\PathAlias;
+use Drupal\user\Entity\User;
+use Drupal\user\RoleInterface;
+use Drupal\user\UserInterface;
 
 /**
  * Implements hook_install().
@@ -23,14 +23,14 @@ use Drupal\menu_link_content\Entity\MenuLinkContent;
 function bt_store_cl_install() {
   // Install Camaleon theme.
   Drupal::service('theme_installer')->install(['camaleon']);
-  
+
   $theme_config = Drupal::configFactory()->getEditable('system.theme');
   // Set admin theme.
   $theme_config->set('admin', 'claro');
   // Set default theme.
   $theme_config->set('default', 'camaleon');
   $theme_config->save(TRUE);
-  
+
   // Alias URL.
   $paths = [
     '/block/add/bt_images_gallery' => '/app/sitioweb/bloques/agregar/galeria-imagenes',
@@ -45,7 +45,7 @@ function bt_store_cl_install() {
     $path_alias = PathAlias::create([
       'path' => $path,
       'alias' => $alias,
-      'langcode' => 'es'
+      'langcode' => 'es',
     ]);
     $path_alias->save();
   }
@@ -71,7 +71,7 @@ function bt_store_cl_install() {
     'use text format bt_minimal_redaction',
     'use text format restricted_html',
     'view media',
-    'view multifield', 
+    'view multifield',
   ];
 
   $authenticate = [
@@ -129,7 +129,7 @@ function bt_store_cl_install() {
     'bt_use_full_redaction_format',
     'bt_use_simple_redaction_format',
     'bt_edit_publish_content',
-    'bt_moderate_comments'
+    'bt_moderate_comments',
   ];
 
   $user = User::load(1);
@@ -147,7 +147,7 @@ function bt_store_cl_install() {
   ];
   $user->set('personas', $personas);
   $user->save();
-  
+
   // Enable the admin theme in edit content.
   Drupal::configFactory()->getEditable('node.settings')->set('use_admin_theme', TRUE)->save(TRUE);
 
@@ -157,16 +157,16 @@ function bt_store_cl_install() {
   $pages = [
     '403' => [
       'name' => 'page.403',
-      'route' => '/node/1'
+      'route' => '/node/1',
     ],
     '404' => [
       'name' => 'page.404',
-      'route' => '/node/2'
+      'route' => '/node/2',
     ],
     'Inicio' => [
       'name' => 'page.front',
-      'route' => '/node/3'
-    ]
+      'route' => '/node/3',
+    ],
   ];
 
   foreach ($pages as $title => $conf) {
@@ -179,9 +179,9 @@ function bt_store_cl_install() {
 
     // Add page to site config.
     \Drupal::configFactory()
-    ->getEditable('system.site')
-    ->set($conf['name'], $conf['route'])
-    ->save();
+      ->getEditable('system.site')
+      ->set($conf['name'], $conf['route'])
+      ->save();
   }
 
   $pages = ['Tienda', 'Artículos', 'Contacto'];

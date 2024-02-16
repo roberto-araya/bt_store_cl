@@ -20,7 +20,7 @@
   color: var(--nameColor, var(--bt--page-title-color, var(--bs-primary-600)));
 }
 .siteBranding__slogan {
-  color: var(--sloganColor, var(--bs-accent, #FB9F00));
+  color: var(--sloganColor, var(--bs-accent, #fb9f00));
   font-size: var(--sloganFontSize);
   font-family: var(--sloganFontFamily, var(--bs-body-font-family));
 }

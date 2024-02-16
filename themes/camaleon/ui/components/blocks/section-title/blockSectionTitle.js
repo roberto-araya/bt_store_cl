@@ -1,5 +1,5 @@
 ((Camaleon) => {
-  blockSectionTitle = function(blocks, breakpoint) {
+  blockSectionTitle = function (blocks, breakpoint) {
     let customProperties = {
       TitleFontSize: 'titleFontSize',
       CaptionFontSize: 'captionFontSize',

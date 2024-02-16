@@ -12,7 +12,10 @@
 .productDefault--full__content {
   padding: 1rem;
 }
-.productDefault--full__price, .productDefault--full__description, .productDefault--full__add-to-cart, .productDefault--full__category {
+.productDefault--full__price,
+.productDefault--full__description,
+.productDefault--full__add-to-cart,
+.productDefault--full__category {
   margin-bottom: 1rem;
 }
 .productDefault--full__price {
@@ -31,6 +34,7 @@
 .productDefault--full__add-to-cart form {
   padding-left: 0;
 }
-.productDefault--full__category, .productDefault--full__brand {
+.productDefault--full__category,
+.productDefault--full__brand {
   font-size: 1rem;
 }

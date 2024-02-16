@@ -3,7 +3,6 @@ type: theme
 description: Camaleon Theme
 base theme: stable
 core_version_requirement: ^9
-version: 1.0.0
 libraries:
   - camaleon/base
   - camaleon/bs-close-button

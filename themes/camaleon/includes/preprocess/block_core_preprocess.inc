@@ -1,6 +1,9 @@
 <?php
 
-use Drupal\Core\Template\Attribute;
+/**
+ * @file
+ * Block core preprocess functions.
+ */
 
 /**
  * Return variables for core blocks.
@@ -22,10 +25,6 @@ function _block_core_preprocess(&$variables) {
   if ($variables['elements']['#base_plugin_id'] == "views_block" && array_key_exists('#type', $variables['content'])) {
     $variables['bundle'] = $variables['content']['#type'];
   }
-
-  // Menu.
-  $base = $variables['elements']['#base_plugin_id'];
-  $derivative = $variables['elements']['#derivative_plugin_id'];
 
   return $variables;
 }

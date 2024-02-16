@@ -42,7 +42,8 @@
   gap: 0.5rem;
   align-items: center;
 }
-.blockHero--default__button, .blockHero--default__button-secondary {
+.blockHero--default__button,
+.blockHero--default__button-secondary {
   margin: 0;
 }
 

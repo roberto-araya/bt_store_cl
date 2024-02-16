@@ -1,6 +1,6 @@
 .block.blockFieldBlock--blog-comments {
   --maxWidth: var(--xsMaxWidth, max-content);
-  --marginLeft:var(--xsMarginLeft, 0px);
+  --marginLeft: var(--xsMarginLeft, 0px);
   --marginTop: var(--xsMarginTop, 0px);
   --marginRight: var(--xsMarginRight, 0px);
   --marginBottom: var(--xsMarginBottom, 0px);

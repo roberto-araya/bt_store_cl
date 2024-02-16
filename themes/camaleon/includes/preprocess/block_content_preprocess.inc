@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Block Content preprocess functions.
+ */
+
 use Drupal\responsive_background_image\ResponsiveBackgroundImage;
 
 /**
@@ -16,21 +21,21 @@ function _block_content_preprocess(&$variables) {
     // example (https://git.drupalcode.org/project/responsive_background_image/-/tree/2.x)
     $block = $variables['elements']['content']['#block_content'];
     $block_type = $variables['bundle'];
-    $block_id = $variables['elements']['content']['#block_content']->id();;
+    $block_id = $variables['elements']['content']['#block_content']->id();
 
-    if ($block_type == 'hero' && 
-    !empty($block->get('field_bt_img')->getValue()[0]['target_id'])){
+    if ($block_type == 'hero' &&
+    !empty($block->get('field_bt_img')->getValue()[0]['target_id'])) {
       $css_selector = '#blockHero--' . $block_id;
-    $style_tag = ResponsiveBackgroundImage::generateMediaQueries($css_selector, $block, 'field_bt_img', 'bt_full_viewport', 'field_bt_image');
+      $style_tag = ResponsiveBackgroundImage::generateMediaQueries($css_selector, $block, 'field_bt_img', 'bt_full_viewport', 'field_bt_image');
       if ($style_tag) {
         $variables['#attached']['html_head'][] = $style_tag;
       }
-    }  
-      
+    }
+
     if ($block_type == 'highlighted_text_image' &&
     !empty($block->get('field_bt_add_image')->getValue()[0]['target_id'])) {
       $css_selector = '#blockHighlightedTextImage--' . $block_id;
-      $style_tag = ResponsiveBackgroundImage::generateMediaQueries($css_selector, $block, 'field_bt_add_image', 'bt_full_viewport', 'field_bt_image');  
+      $style_tag = ResponsiveBackgroundImage::generateMediaQueries($css_selector, $block, 'field_bt_add_image', 'bt_full_viewport', 'field_bt_image');
       if ($style_tag) {
         $variables['#attached']['html_head'][] = $style_tag;
       }
@@ -39,12 +44,12 @@ function _block_content_preprocess(&$variables) {
     $bundle_parts = str_contains($block_type, '_') ? explode('_', $block_type) : [$block_type];
     $bundle_parts = str_contains($block_type, '-') ? explode('-', $block_type) : $bundle_parts;
     $bundle = '';
-    foreach($bundle_parts as $part) {
-      $bundle = $bundle . ucfirst($part); 
+    foreach ($bundle_parts as $part) {
+      $bundle = $bundle . ucfirst($part);
     }
-    
+
     $variables['bundle'] = $bundle;
-    $variables['view_mode'] = $variables['elements']['#configuration']['view_mode'];    
+    $variables['view_mode'] = $variables['elements']['#configuration']['view_mode'];
     $variables['view_mode'] = strpos($variables['view_mode'], 'bt_') === 0 ? substr($variables['view_mode'], 3) : $variables['view_mode'];
     $variables['id'] = $block_id;
 
@@ -57,13 +62,13 @@ function _block_content_preprocess(&$variables) {
 
 /**
  * Contact info block preprocess.
- * @param $variables
+ *
+ * @param array $variables
+ *
+ *   The preprocess variables.
  */
 function _contact_info_block_preprocess(&$variables) {
-  $bundle = $variables['bundle'];
-  $view_mode = $variables['view_mode'];
-
-  $items = array();
+  $items = [];
   // Field field_bt_address_collection.
   if (isset($variables['elements']['content']['field_bt_address_collection']['0']['#field_collection_item'])
     && $variables['elements']['content']['field_bt_address_collection']['0']['#field_collection_item']->hasField('field_bt_address')) {

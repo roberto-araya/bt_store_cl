@@ -4,7 +4,8 @@
     transform: rotate(0);
     transform-origin: top left;
   }
-  20%, 60% {
+  20%,
+  60% {
     animation-timing-function: ease-in-out;
     transform: rotate(80deg);
     transform-origin: top left;

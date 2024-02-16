@@ -25,7 +25,10 @@
     font-size: 1.5rem;
   }
 }
-.productDefault--teaser__price, .productDefault--teaser__description, .productDefault--teaser__add-to-cart, .productDefault--teaser__category {
+.productDefault--teaser__price,
+.productDefault--teaser__description,
+.productDefault--teaser__add-to-cart,
+.productDefault--teaser__category {
   margin-bottom: 1rem;
 }
 .productDefault--teaser__price {

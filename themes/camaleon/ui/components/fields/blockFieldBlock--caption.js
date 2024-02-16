@@ -1,5 +1,5 @@
 ((Camaleon) => {
-  blockFieldCaption = function(blocks, breakpoint) {
+  blockFieldCaption = function (blocks, breakpoint) {
     let customProperties = {
       CaptionFontSize: 'captionFontSize',
     }
@@ -9,7 +9,7 @@
       Camaleon.applyProperties(blocks[i], breakpoint, customProperties)
     }
   }
-  
+
   Camaleon.blocksRegister('blockFieldBlock--caption', blockFieldCaption)
 
 })(Camaleon)

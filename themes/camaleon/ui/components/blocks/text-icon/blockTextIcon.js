@@ -1,5 +1,5 @@
 ((Camaleon) => {
-  blockTextIcon = function(blocks, breakpoint) {
+  blockTextIcon = function (blocks, breakpoint) {
     let customProperties = {
       TitleFontSize: 'titleFontSize',
       CaptionFontSize: 'captionFontSize',
@@ -12,7 +12,7 @@
       Camaleon.applyProperties(blocks[i], breakpoint, customProperties)
     }
   }
-  
+
   Camaleon.blocksRegister('blockTextIcon', blockTextIcon)
 
 })(Camaleon)
