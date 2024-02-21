@@ -45,7 +45,7 @@ var Camaleon = (function () {
   };
 
   camaleon.addEvent = function (object, type, callback) {
-    if (object == NULL || typeof(object) == 'undefined') { return;
+    if (object == null || typeof(object) == 'undefined') { return;
     }
     if (object.addEventListener) {
         object.addEventListener(type, callback, FALSE);
