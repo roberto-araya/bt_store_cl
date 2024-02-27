@@ -79,9 +79,6 @@ function camaleon_form_alter(&$form, &$form_state, $form_id) {
     $form['moderation_state']['#attributes']['class'][] = 'formModerationState';
     $form['moderation_state']['widget'][0]['current']['#wrapper_attributes']['class'][] = 'formModerationState__current';
     $form['moderation_state']['widget'][0]['state']['#wrapper_attributes']['class'][] = 'formModerationState__state';
-
-    // $form['actions']['#attached']['library'][] = 'camaleon/form_layout_builder_actions';
-    // $form['actions']['#attributes']['class'][] = 'formLayoutBuilderActions';
   }
 
   if ($form_id == "layout_builder_discard_changes" || $form_id == "layout_builder_revert_overrides") {
