@@ -382,11 +382,10 @@ var regionElement = document.getElementById("edit-region");
 var regionElementCallback = function () {
     var comunaElement = document.getElementById("edit-comuna");
     var value = regionElement.options[regionElement.selectedIndex].value;
-    //var comunaskeys = Object.keys(comunas[value]);
 
     var length = comunaElement.options.length;
     for (i = length - 1; i >= 0; i--) {
-        comunaElement.options[i] = NULL;
+        comunaElement.options[i] = null;
     }
 
     createOptions(comunas[value], comunaElement)
