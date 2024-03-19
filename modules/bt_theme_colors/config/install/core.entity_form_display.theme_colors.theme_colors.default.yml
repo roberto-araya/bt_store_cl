@@ -3,18 +3,17 @@ status: true
 dependencies:
   config:
     - field.field.theme_colors.theme_colors.field_bt_accent
-    - field.field.theme_colors.theme_colors.field_bt_article_title_color
-    - field.field.theme_colors.theme_colors.field_bt_block_bg_color
-    - field.field.theme_colors.theme_colors.field_bt_block_text_color
-    - field.field.theme_colors.theme_colors.field_bt_block_title_color
-    - field.field.theme_colors.theme_colors.field_bt_blog_title_color
+    - field.field.theme_colors.theme_colors.field_bt_accent_050
+    - field.field.theme_colors.theme_colors.field_bt_accent_100
+    - field.field.theme_colors.theme_colors.field_bt_accent_200
+    - field.field.theme_colors.theme_colors.field_bt_accent_300
+    - field.field.theme_colors.theme_colors.field_bt_accent_400
+    - field.field.theme_colors.theme_colors.field_bt_accent_500
+    - field.field.theme_colors.theme_colors.field_bt_accent_600
+    - field.field.theme_colors.theme_colors.field_bt_accent_700
+    - field.field.theme_colors.theme_colors.field_bt_accent_800
+    - field.field.theme_colors.theme_colors.field_bt_accent_900
     - field.field.theme_colors.theme_colors.field_bt_blue
-    - field.field.theme_colors.theme_colors.field_bt_body_bg
-    - field.field.theme_colors.theme_colors.field_bt_body_bg_dark
-    - field.field.theme_colors.theme_colors.field_bt_body_bg_light
-    - field.field.theme_colors.theme_colors.field_bt_body_color
-    - field.field.theme_colors.theme_colors.field_bt_button_link_color
-    - field.field.theme_colors.theme_colors.field_bt_caption_text_color
     - field.field.theme_colors.theme_colors.field_bt_cyan
     - field.field.theme_colors.theme_colors.field_bt_danger
     - field.field.theme_colors.theme_colors.field_bt_dark
@@ -22,18 +21,33 @@ dependencies:
     - field.field.theme_colors.theme_colors.field_bt_green
     - field.field.theme_colors.theme_colors.field_bt_indigo
     - field.field.theme_colors.theme_colors.field_bt_info
-    - field.field.theme_colors.theme_colors.field_bt_intro_text_color
     - field.field.theme_colors.theme_colors.field_bt_light
-    - field.field.theme_colors.theme_colors.field_bt_link_color
-    - field.field.theme_colors.theme_colors.field_bt_link_hover_color
     - field.field.theme_colors.theme_colors.field_bt_orange
-    - field.field.theme_colors.theme_colors.field_bt_page_title_color
     - field.field.theme_colors.theme_colors.field_bt_pink
     - field.field.theme_colors.theme_colors.field_bt_primary
+    - field.field.theme_colors.theme_colors.field_bt_primary_050
+    - field.field.theme_colors.theme_colors.field_bt_primary_100
+    - field.field.theme_colors.theme_colors.field_bt_primary_200
+    - field.field.theme_colors.theme_colors.field_bt_primary_300
+    - field.field.theme_colors.theme_colors.field_bt_primary_400
+    - field.field.theme_colors.theme_colors.field_bt_primary_500
+    - field.field.theme_colors.theme_colors.field_bt_primary_600
+    - field.field.theme_colors.theme_colors.field_bt_primary_700
+    - field.field.theme_colors.theme_colors.field_bt_primary_800
+    - field.field.theme_colors.theme_colors.field_bt_primary_900
     - field.field.theme_colors.theme_colors.field_bt_purple
     - field.field.theme_colors.theme_colors.field_bt_red
     - field.field.theme_colors.theme_colors.field_bt_secondary
-    - field.field.theme_colors.theme_colors.field_bt_section_title_color
+    - field.field.theme_colors.theme_colors.field_bt_secondary_050
+    - field.field.theme_colors.theme_colors.field_bt_secondary_100
+    - field.field.theme_colors.theme_colors.field_bt_secondary_200
+    - field.field.theme_colors.theme_colors.field_bt_secondary_300
+    - field.field.theme_colors.theme_colors.field_bt_secondary_400
+    - field.field.theme_colors.theme_colors.field_bt_secondary_500
+    - field.field.theme_colors.theme_colors.field_bt_secondary_600
+    - field.field.theme_colors.theme_colors.field_bt_secondary_700
+    - field.field.theme_colors.theme_colors.field_bt_secondary_800
+    - field.field.theme_colors.theme_colors.field_bt_secondary_900
     - field.field.theme_colors.theme_colors.field_bt_success
     - field.field.theme_colors.theme_colors.field_bt_teal
     - field.field.theme_colors.theme_colors.field_bt_warning
@@ -45,78 +59,6 @@ dependencies:
     - text
 third_party_settings:
   field_group:
-    group_backgrounds:
-      children:
-        - field_bt_body_bg
-        - field_bt_body_bg_light
-        - field_bt_body_bg_dark
-        - field_bt_block_bg_color
-      label: Backgrounds
-      region: content
-      parent_name: ''
-      weight: 5
-      format_type: details
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        open: false
-        description: ''
-        required_fields: true
-    group_text:
-      children:
-        - field_bt_body_color
-        - field_bt_block_text_color
-        - field_bt_caption_text_color
-        - field_bt_intro_text_color
-      label: Text
-      region: content
-      parent_name: ''
-      weight: 6
-      format_type: details
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        open: false
-        description: ''
-        required_fields: true
-    group_titles:
-      children:
-        - field_bt_page_title_color
-        - field_bt_section_title_color
-        - field_bt_block_title_color
-        - field_bt_article_title_color
-        - field_bt_blog_title_color
-      label: Titles
-      region: content
-      parent_name: ''
-      weight: 7
-      format_type: details
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        open: false
-        description: ''
-        required_fields: true
-    group_links:
-      children:
-        - field_bt_link_color
-        - field_bt_link_hover_color
-        - field_bt_button_link_color
-      label: Links
-      region: content
-      parent_name: ''
-      weight: 8
-      format_type: details
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        open: false
-        description: ''
-        required_fields: true
     group_system:
       children:
         - field_bt_success
@@ -125,7 +67,7 @@ third_party_settings:
         - field_bt_danger
         - field_bt_light
         - field_bt_dark
-      label: System
+      label: Sistema
       region: content
       parent_name: ''
       weight: 9
@@ -149,6 +91,7 @@ third_party_settings:
         - field_bt_green
         - field_bt_teal
         - field_bt_cyan
+        - field_bt_gray
       label: Colors
       region: content
       parent_name: ''
@@ -164,9 +107,38 @@ third_party_settings:
     group_theme_colors:
       children:
         - field_bt_primary
+        - field_bt_primary_050
+        - field_bt_primary_100
+        - field_bt_primary_200
+        - field_bt_primary_300
+        - field_bt_primary_400
+        - field_bt_primary_500
+        - field_bt_primary_600
+        - field_bt_primary_700
+        - field_bt_primary_800
+        - field_bt_primary_900
         - field_bt_secondary
+        - field_bt_secondary_050
+        - field_bt_secondary_100
+        - field_bt_secondary_200
+        - field_bt_secondary_300
+        - field_bt_secondary_400
+        - field_bt_secondary_500
+        - field_bt_secondary_600
+        - field_bt_secondary_700
+        - field_bt_secondary_800
+        - field_bt_secondary_900
         - field_bt_accent
-        - field_bt_gray
+        - field_bt_accent_050
+        - field_bt_accent_100
+        - field_bt_accent_200
+        - field_bt_accent_300
+        - field_bt_accent_400
+        - field_bt_accent_500
+        - field_bt_accent_600
+        - field_bt_accent_700
+        - field_bt_accent_800
+        - field_bt_accent_900
       label: 'Theme Colors'
       region: content
       parent_name: ''
@@ -179,6 +151,8 @@ third_party_settings:
         open: false
         description: ''
         required_fields: true
+_core:
+  default_config_hash: 4y24Ze3KUrz1RvgYDqP-6Xj1ABix2uLmXt7LWDoroTU
 id: theme_colors.theme_colors.default
 targetEntityType: theme_colors
 bundle: theme_colors
@@ -200,79 +174,73 @@ content:
     third_party_settings: {  }
   field_bt_accent:
     type: color_field_widget_html5
-    weight: 14
+    weight: 34
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_bt_article_title_color:
+  field_bt_accent_050:
     type: color_field_widget_html5
-    weight: 11
+    weight: 35
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_bt_block_bg_color:
+  field_bt_accent_100:
     type: color_field_widget_html5
-    weight: 9
+    weight: 36
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_bt_block_text_color:
+  field_bt_accent_200:
     type: color_field_widget_html5
-    weight: 8
+    weight: 37
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_bt_block_title_color:
+  field_bt_accent_300:
     type: color_field_widget_html5
-    weight: 10
+    weight: 38
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_bt_blog_title_color:
+  field_bt_accent_400:
     type: color_field_widget_html5
-    weight: 12
+    weight: 39
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_accent_500:
+    type: color_field_widget_html5
+    weight: 40
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_accent_600:
+    type: color_field_widget_html5
+    weight: 41
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_accent_700:
+    type: color_field_widget_html5
+    weight: 42
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_accent_800:
+    type: color_field_widget_html5
+    weight: 43
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_accent_900:
+    type: color_field_widget_html5
+    weight: 44
     region: content
     settings: {  }
     third_party_settings: {  }
   field_bt_blue:
     type: color_field_widget_html5
     weight: 11
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_bt_body_bg:
-    type: color_field_widget_html5
-    weight: 6
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_bt_body_bg_dark:
-    type: color_field_widget_html5
-    weight: 8
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_bt_body_bg_light:
-    type: color_field_widget_html5
-    weight: 7
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_bt_body_color:
-    type: color_field_widget_html5
-    weight: 7
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_bt_button_link_color:
-    type: color_field_widget_html5
-    weight: 11
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_bt_caption_text_color:
-    type: color_field_widget_html5
-    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -296,7 +264,7 @@ content:
     third_party_settings: {  }
   field_bt_gray:
     type: color_field_widget_html5
-    weight: 15
+    weight: 21
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -318,39 +286,15 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_bt_intro_text_color:
-    type: color_field_widget_html5
-    weight: 10
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_bt_light:
     type: color_field_widget_html5
     weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_bt_link_color:
-    type: color_field_widget_html5
-    weight: 9
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_bt_link_hover_color:
-    type: color_field_widget_html5
-    weight: 10
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_bt_orange:
     type: color_field_widget_html5
     weight: 16
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_bt_page_title_color:
-    type: color_field_widget_html5
-    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -363,6 +307,66 @@ content:
   field_bt_primary:
     type: color_field_widget_html5
     weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_primary_050:
+    type: color_field_widget_html5
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_primary_100:
+    type: color_field_widget_html5
+    weight: 14
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_primary_200:
+    type: color_field_widget_html5
+    weight: 15
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_primary_300:
+    type: color_field_widget_html5
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_primary_400:
+    type: color_field_widget_html5
+    weight: 17
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_primary_500:
+    type: color_field_widget_html5
+    weight: 18
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_primary_600:
+    type: color_field_widget_html5
+    weight: 19
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_primary_700:
+    type: color_field_widget_html5
+    weight: 20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_primary_800:
+    type: color_field_widget_html5
+    weight: 21
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_primary_900:
+    type: color_field_widget_html5
+    weight: 22
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -380,13 +384,67 @@ content:
     third_party_settings: {  }
   field_bt_secondary:
     type: color_field_widget_html5
-    weight: 13
+    weight: 23
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_bt_section_title_color:
+  field_bt_secondary_050:
     type: color_field_widget_html5
-    weight: 9
+    weight: 24
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_secondary_100:
+    type: color_field_widget_html5
+    weight: 25
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_secondary_200:
+    type: color_field_widget_html5
+    weight: 26
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_secondary_300:
+    type: color_field_widget_html5
+    weight: 27
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_secondary_400:
+    type: color_field_widget_html5
+    weight: 28
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_secondary_500:
+    type: color_field_widget_html5
+    weight: 29
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_secondary_600:
+    type: color_field_widget_html5
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_secondary_700:
+    type: color_field_widget_html5
+    weight: 31
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_secondary_800:
+    type: color_field_widget_html5
+    weight: 32
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bt_secondary_900:
+    type: color_field_widget_html5
+    weight: 33
     region: content
     settings: {  }
     third_party_settings: {  }

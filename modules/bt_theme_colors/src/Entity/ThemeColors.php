@@ -16,12 +16,12 @@ use Drupal\user\EntityOwnerTrait;
  * @ContentEntityType(
  *   id = "theme_colors",
  *   label = @Translation("Theme Colors"),
- *   label_collection = @Translation("Theme Colorss"),
+ *   label_collection = @Translation("Theme Colors"),
  *   label_singular = @Translation("theme colors"),
- *   label_plural = @Translation("theme colorss"),
+ *   label_plural = @Translation("theme colors"),
  *   label_count = @PluralTranslation(
- *     singular = "@count theme colorss",
- *     plural = "@count theme colorss",
+ *     singular = "@count theme colors",
+ *     plural = "@count theme colors",
  *   ),
  *   handlers = {
  *     "list_builder" = "Drupal\bt_theme_colors\ThemeColorsListBuilder",

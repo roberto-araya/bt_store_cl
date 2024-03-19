@@ -115,17 +115,9 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
   ];
 
   // Theme Color ####.
-  $entity_type_manager = \Drupal::entityTypeManager();
-  $theme_colors = $entity_type_manager->getStorage('theme_colors')->loadMultiple();
-  $options = _get_theme_color_select();
-
-  foreach ($theme_colors as $theme_color) {
-    $options[$theme_color->id()] = $theme_color->label();
-  }
-
   $form['theme_color'] = [
     '#type' => 'select',
-    '#options' => $options,
+    '#options' => _get_theme_color_select(),
     '#title' => t('Theme Color'),
     '#description' => t("Select a default theme color palette. You can add more color palettes on /theme-colors/add."),
     '#default_value' => theme_get_setting('theme_color'),
@@ -406,123 +398,88 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
  * Custom theme settigs submit.
  */
 function camaleon_form_system_theme_settings_submit(&$form, FormStateInterface $form_state) {
-  $theme_defaults = [
-    'alicia',
-    'eco-wave',
-    'harmonious-blooms',
-    'mystic-aura',
-    'royal-radiance',
-    'serene-harmony',
-    'sunset-meadows',
-    'vibrant-sky',
+  $values = $form_state->getValues();
+
+  $config_factory = \Drupal::configFactory();
+  $config_name = 'cssvars.bt';
+  $config = $config_factory->getEditable($config_name);
+
+  $entity_type_manager = \Drupal::entityTypeManager();
+  $theme_color = $entity_type_manager->getStorage('theme_colors')->load($values['theme_color']);
+
+  $hex_rgb_colors = [
+    'success',
+    'info',
+    'warning',
+    'danger',
+    'light',
+    'dark',
+    'blue',
+    'indigo',
+    'purple',
+    'pink',
+    'red',
+    'orange',
+    'yellow',
+    'green',
+    'teal',
+    'cyan',
   ];
 
-  $values = $form_state->getValues();
-  if (in_array($values['theme_color'], $theme_defaults)) {
-    $config_factory = \Drupal::configFactory();
-    $config_name = 'cssvars.bt';
-    $config_factory->getEditable($config_name)->delete();
-    $file_conf_name = $values['theme_color'];
-    $config_path = drupal_get_path('theme', 'camaleon') . '/includes/palettes';
-    $source = new FileStorage($config_path);
-    $config_storage = \Drupal::service('config.storage');
-    $config_storage->write($config_name, $source->read($file_conf_name));
+  foreach ($hex_rgb_colors as $hex_rgb_color) {
+    $color = $theme_color->get('field_bt_' . $hex_rgb_color)->getValue()[0]['color'];
+    $config->set($hex_rgb_color, $color);
+
+    $colorObject = Color::fromHex($color);
+    $rgb = $colorObject->getRgb();
+    $config->set($hex_rgb_color . '_rgb', $rgb[0] . ', ' . $rgb[1] . ', ' . $rgb[2]);
   }
-  elseif ($values['theme_color'] != 'default') {
-    $config_factory = \Drupal::configFactory();
-    $config_name = 'cssvars.bt';
-    $config = $config_factory->getEditable($config_name);
+  $config->save();
 
-    $entity_type_manager = \Drupal::entityTypeManager();
-    $theme_color = $entity_type_manager->getStorage('theme_colors')->load($values['theme_color']);
+  $hex_rgb_shades_colors = [
+    'primary',
+    'secondary',
+    'accent',
+    'gray',
+  ];
 
-    $hex_colors = [
-      'body_bg',
-      'body_bg_light',
-      'body_bg_dark',
-      'body_color',
-      'block_bg_color',
-      'block_text_color',
-      'caption_text_color',
-      'intro_text_color',
-      'page_title_color',
-      'section_title_color',
-      'block_title_color',
-      'article_title_color',
-      'blog_title_color',
-      'link_color',
-      'link_hover_color',
-      'button_link_color',
-    ];
+  foreach ($hex_rgb_shades_colors as $hex_rgb_shades_color) {
+    $color = $theme_color->get('field_bt_' . $hex_rgb_shades_color)->getValue()[0]['color'];
+    $config->set($hex_rgb_shades_color, $color);
 
-    foreach ($hex_colors as $hex_color) {
-      $color = $theme_color->get('field_bt_' . $hex_color)->getValue()[0]['color'];
-      $config->set($hex_color, $color);
-    }
-    $config->save();
+    $colorObject = Color::fromHex($color);
+    $rgb = $colorObject->getRgb();
+    $config->set($hex_rgb_shades_color . '_rgb', $rgb[0] . ', ' . $rgb[1] . ', ' . $rgb[2]);
 
-    $hex_rgb_colors = [
-      'success',
-      'info',
-      'warning',
-      'danger',
-      'light',
-      'dark',
-      'blue',
-      'indigo',
-      'purple',
-      'pink',
-      'red',
-      'orange',
-      'yellow',
-      'green',
-      'teal',
-      'cyan',
-    ];
+    $paletteGenerator = new PaletteGenerator();
+    $paletteGenerator->setBaseColor($colorObject);
 
-    foreach ($hex_rgb_colors as $hex_rgb_color) {
-      $color = $theme_color->get('field_bt_' . $hex_rgb_color)->getValue()[0]['color'];
-      $config->set($hex_rgb_color, $color);
-
-      $colorObject = Color::fromHex($color);
-      $rgb = $colorObject->getRgb();
-      $config->set($hex_rgb_color . '_rgb', $rgb[0] . ', ' . $rgb[1] . ', ' . $rgb[2]);
-    }
-    $config->save();
-
-    $hex_rgb_shades_colors = [
-      'primary',
-      'secondary',
-      'accent',
-      'gray',
-    ];
-
-    foreach ($hex_rgb_shades_colors as $hex_rgb_shades_color) {
-      $color = $theme_color->get('field_bt_' . $hex_rgb_shades_color)->getValue()[0]['color'];
-      $config->set($hex_rgb_shades_color, $color);
-
-      $colorObject = Color::fromHex($color);
-      $rgb = $colorObject->getRgb();
-      $config->set($hex_rgb_shades_color . '_rgb', $rgb[0] . ', ' . $rgb[1] . ', ' . $rgb[2]);
-
-      $paletteGenerator = new PaletteGenerator();
-      $paletteGenerator->setBaseColor($colorObject);
-
-      if ($hex_rgb_shades_color == 'gray') {
-        $paletteGenerator->setColorSteps([100, 200, 300, 400, 500, 600, 700, 800, 900]);
-      }
+    if ($hex_rgb_shades_color == 'gray') {
+      $paletteGenerator->setColorSteps([100, 200, 300, 400, 500, 600, 700, 800, 900]);
       $palette = $paletteGenerator->getPalette();
       foreach ($palette as $shade => $palette_color) {
-        $config->set($hex_rgb_shades_color . '_' . $shade, '#' . $palette_color->getHex());
         if ($shade == '50') {
           $config->set($hex_rgb_shades_color . '_0' . $shade, '#' . $palette_color->getHex());
+          $rgb = $palette_color->getRgb();
+          $config->set($hex_rgb_shades_color . '_0' . $shade . '_rgb', $rgb[0] . ', ' . $rgb[1] . ', ' . $rgb[2]);
+        } else {
+          $config->set($hex_rgb_shades_color . '_' . $shade, '#' . $palette_color->getHex());
+          $rgb = $palette_color->getRgb();
+          $config->set($hex_rgb_shades_color . '_' . $shade . '_rgb', $rgb[0] . ', ' . $rgb[1] . ', ' . $rgb[2]);
         }
-        $rgb = $palette_color->getRgb();
+      }
+    } else {
+      foreach (['050', '100', '200', '300','400', '500', '600', '700', '800', '900'] as $shade) {
+        $color = $theme_color->get('field_bt_' . $hex_rgb_shades_color . '_' . $shade)->getValue()[0]['color'];
+        $config->set($hex_rgb_shades_color . '_' . $shade, $color);
+  
+        $colorObject = Color::fromHex($color);
+        $rgb = $colorObject->getRgb();
         $config->set($hex_rgb_shades_color . '_' . $shade . '_rgb', $rgb[0] . ', ' . $rgb[1] . ', ' . $rgb[2]);
       }
     }
-    $config->save();
   }
+  $config->save();
 }
 
 /**
@@ -755,16 +712,12 @@ function _get_font_select() {
  * Theme color select builder.
  */
 function _get_theme_color_select() {
-  $options = [
-    'default' => 'Default',
-    'alicia' => 'Alicia',
-    'eco-wave' => 'Eco Wave',
-    'harmonious-blooms' => 'Harmonious Blooms',
-    'mystic-aura' => 'Mystic Aura',
-    'royal-radiance' => 'Royal Radiance',
-    'serene-harmony' => 'Serene Harmony',
-    'sunset-meadows' => 'Sunset Meadows',
-    'vibrant-sky' => 'Vibrant Sky',
-  ];
+  $options = [];
+  $entity_type_manager = \Drupal::entityTypeManager();
+  $theme_colors = $entity_type_manager->getStorage('theme_colors')->loadMultiple();
+
+  foreach ($theme_colors as $theme_color) {
+    $options[$theme_color->id()] = $theme_color->label();
+  }
   return $options;
 }
