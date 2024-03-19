@@ -2,59 +2,6 @@ cssvars.bt:
   label: Theme CSS Variables
   type: mapping
   mapping:
-    # Body
-    body_bg:
-      type: cssvars_color
-      label: Body Background Color
-    body_bg_light:
-      type: cssvars_color
-      label: Body Background Light Color
-    body_bg_dark:
-      type: cssvars_color
-      label: Body Background Dark Color
-    body_color:
-      type: cssvars_color
-      label: Body Text Color
-    # Block
-    block_bg_color:
-      type: cssvars_color
-      label: Block Background Color
-    block_text_color:
-      type: cssvars_color
-      label: Block Text Color
-    # Content
-    caption_text_color:
-      type: cssvars_color
-      label: Caption Text Color
-    intro_text_color:
-      type: cssvars_color
-      label: Intro Text Color
-    # Titles
-    page_title_color:
-      type: cssvars_color
-      label: Page Title Color
-    section_title_color:
-      type: cssvars_color
-      label: Section Title Color
-    block_title_color:
-      type: cssvars_color
-      label: Block Title Color
-    article_title_color:
-      type: cssvars_color
-      label: Article Title Color
-    blog_title_color:
-      type: cssvars_color
-      label: Blog Title Color
-    # Link
-    link_color:
-      type: cssvars_color
-      label: Link Color
-    link_hover_color:
-      type: cssvars_color
-      label: Link Hover Color
-    button_link_color:
-      type: cssvars_color
-      label: Button Link Color
     # Theme Colors
     success:
       type: cssvars_color
