@@ -2,21 +2,21 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.theme_colors.field_bt_gray
+    - field.storage.theme_colors.field_bt_gray_100
   module:
     - bt_theme_colors
     - color_field
-id: theme_colors.theme_colors.field_bt_gray
-field_name: field_bt_gray
+id: theme_colors.theme_colors.field_bt_gray_100
+field_name: field_bt_gray_100
 entity_type: theme_colors
 bundle: theme_colors
-label: Gray
+label: 'Gray 100'
 description: ''
 required: false
 translatable: false
 default_value:
   -
-    color: '#E9ECEF'
+    color: '#f8f9fa'
     opacity: null
 default_value_callback: ''
 settings:

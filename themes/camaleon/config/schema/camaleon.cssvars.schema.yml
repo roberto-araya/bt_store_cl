@@ -150,6 +150,12 @@ cssvars.bt:
     accent_900:
       type: cssvars_color
       label: Color Accent 900
+    gray:
+      type: cssvars_color
+      label: Color Gray
+    gray_050:
+      type: cssvars_color
+      label: Color Gray 050
     gray_100:
       type: cssvars_color
       label: Color Gray 100
@@ -325,6 +331,12 @@ cssvars.bt:
     accent_900_rgb:
       type: cssvars_color
       label: Color Acento 900 RGB
+    gray_rgb:
+      type: cssvars_color
+      label: Color Gris RGB    
+    gray_050_rgb:
+      type: cssvars_color
+      label: Color Gris 050 RGB
     gray_100_rgb:
       type: cssvars_color
       label: Color Gris 100 RGB
