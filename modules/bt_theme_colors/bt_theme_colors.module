@@ -5,6 +5,8 @@
  * Provides a theme colors entity type.
  */
 
+include 'inc/create_palettes.inc';
+
 use Drupal\Core\Config\FileStorage;
 use Drupal\Core\Render\Element;
 use Drupal\field\Entity\FieldConfig;
@@ -165,4 +167,7 @@ function bt_theme_colors_update_9101() {
   $cssvars_config = 'cssvars.bt';
   $config_factory->getEditable($cssvars_config)->delete();
   $config_storage->write($cssvars_config, $source->read($cssvars_config));
+
+  // Create theme_colors palettes.
+  _create_palettes();
 }

@@ -451,34 +451,18 @@ function camaleon_form_system_theme_settings_submit(&$form, FormStateInterface $
     $rgb = $colorObject->getRgb();
     $config->set($hex_rgb_shades_color . '_rgb', $rgb[0] . ', ' . $rgb[1] . ', ' . $rgb[2]);
 
-    $paletteGenerator = new PaletteGenerator();
-    $paletteGenerator->setBaseColor($colorObject);
+    foreach (['050', '100', '200', '300','400', '500', '600', '700', '800', '900'] as $shade) {
+      $color = $theme_color->get('field_bt_' . $hex_rgb_shades_color . '_' . $shade)->getValue()[0]['color'];
+      $config->set($hex_rgb_shades_color . '_' . $shade, $color);
 
-    if ($hex_rgb_shades_color == 'gray') {
-      $paletteGenerator->setColorSteps([100, 200, 300, 400, 500, 600, 700, 800, 900]);
-      $palette = $paletteGenerator->getPalette();
-      foreach ($palette as $shade => $palette_color) {
-        if ($shade == '50') {
-          $config->set($hex_rgb_shades_color . '_0' . $shade, '#' . $palette_color->getHex());
-          $rgb = $palette_color->getRgb();
-          $config->set($hex_rgb_shades_color . '_0' . $shade . '_rgb', $rgb[0] . ', ' . $rgb[1] . ', ' . $rgb[2]);
-        } else {
-          $config->set($hex_rgb_shades_color . '_' . $shade, '#' . $palette_color->getHex());
-          $rgb = $palette_color->getRgb();
-          $config->set($hex_rgb_shades_color . '_' . $shade . '_rgb', $rgb[0] . ', ' . $rgb[1] . ', ' . $rgb[2]);
-        }
-      }
-    } else {
-      foreach (['050', '100', '200', '300','400', '500', '600', '700', '800', '900'] as $shade) {
-        $color = $theme_color->get('field_bt_' . $hex_rgb_shades_color . '_' . $shade)->getValue()[0]['color'];
-        $config->set($hex_rgb_shades_color . '_' . $shade, $color);
-  
-        $colorObject = Color::fromHex($color);
-        $rgb = $colorObject->getRgb();
-        $config->set($hex_rgb_shades_color . '_' . $shade . '_rgb', $rgb[0] . ', ' . $rgb[1] . ', ' . $rgb[2]);
-      }
+      $colorObject = Color::fromHex($color);
+      $rgb = $colorObject->getRgb();
+      $config->set($hex_rgb_shades_color . '_' . $shade . '_rgb', $rgb[0] . ', ' . $rgb[1] . ', ' . $rgb[2]);
     }
   }
+  $config->clear('_core');
+  $config->clear('langcode');
+
   $config->save();
 }
 
