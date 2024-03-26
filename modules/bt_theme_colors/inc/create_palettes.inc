@@ -36,7 +36,8 @@ function _get_color_palettes() {
     'purple' => '#6F42C1',
     'red' => '#DC3545',
     'pink' => '#D63384',
-    'green' => '#198754'
+    'green' => '#198754',
+    'white' => '#FFFFFF'
   ];
 
   $grays = [

@@ -61,6 +61,7 @@ dependencies:
     - field.field.theme_colors.theme_colors.field_bt_success
     - field.field.theme_colors.theme_colors.field_bt_teal
     - field.field.theme_colors.theme_colors.field_bt_warning
+    - field.field.theme_colors.theme_colors.field_bt_white
     - field.field.theme_colors.theme_colors.field_bt_yellow
   module:
     - bt_theme_colors
@@ -100,6 +101,7 @@ third_party_settings:
         - field_bt_green
         - field_bt_cyan
         - field_bt_teal
+        - field_bt_white
       label: Colors
       parent_name: ''
       region: content
@@ -124,7 +126,7 @@ third_party_settings:
         - field_bt_gray_700
         - field_bt_gray_800
         - field_bt_gray_900
-      label: Gray
+      label: Gris
       parent_name: ''
       region: content
       weight: 6
@@ -150,7 +152,7 @@ third_party_settings:
         - field_bt_primary_700
         - field_bt_primary_800
         - field_bt_primary_900
-      label: Primary
+      label: Primario
       parent_name: ''
       region: content
       weight: 0
@@ -175,7 +177,7 @@ third_party_settings:
         - field_bt_secondary_700
         - field_bt_secondary_800
         - field_bt_secondary_900
-      label: Secondary
+      label: Secundario
       parent_name: ''
       region: content
       weight: 1
@@ -213,7 +215,7 @@ third_party_settings:
         description: ''
         required_fields: false
 _core:
-  default_config_hash: AU34KWgyUjaIkLkQufEDurdfXCBNFtJ2_tW1ctLk7Yc
+  default_config_hash: OULAilNB27XSxJMudwuitYYx4siEusCzcaBjLX8s48c
 id: theme_colors.theme_colors.default
 targetEntityType: theme_colors
 bundle: theme_colors
@@ -380,7 +382,7 @@ content:
       opacity: true
       data_attribute: false
     third_party_settings: {  }
-    weight: 24
+    weight: 23
     region: content
   field_bt_danger:
     type: color_field_formatter_swatch
@@ -548,7 +550,7 @@ content:
       opacity: true
       data_attribute: false
     third_party_settings: {  }
-    weight: 23
+    weight: 22
     region: content
   field_bt_indigo:
     type: color_field_formatter_swatch
@@ -596,7 +598,7 @@ content:
       opacity: true
       data_attribute: false
     third_party_settings: {  }
-    weight: 21
+    weight: 20
     region: content
   field_bt_pink:
     type: color_field_formatter_swatch
@@ -608,7 +610,7 @@ content:
       opacity: true
       data_attribute: false
     third_party_settings: {  }
-    weight: 19
+    weight: 18
     region: content
   field_bt_primary:
     type: color_field_formatter_swatch
@@ -773,7 +775,7 @@ content:
       opacity: true
       data_attribute: false
     third_party_settings: {  }
-    weight: 20
+    weight: 19
     region: content
   field_bt_secondary:
     type: color_field_formatter_swatch
@@ -929,7 +931,7 @@ content:
       opacity: true
       data_attribute: false
     third_party_settings: {  }
-    weight: 25
+    weight: 24
     region: content
   field_bt_warning:
     type: color_field_formatter_swatch
@@ -943,6 +945,18 @@ content:
     third_party_settings: {  }
     weight: 16
     region: content
+  field_bt_white:
+    type: color_field_formatter_swatch
+    label: above
+    settings:
+      shape: square
+      width: '50'
+      height: '50'
+      opacity: true
+      data_attribute: false
+    third_party_settings: {  }
+    weight: 25
+    region: content
   field_bt_yellow:
     type: color_field_formatter_swatch
     label: above
@@ -953,7 +967,7 @@ content:
       opacity: true
       data_attribute: false
     third_party_settings: {  }
-    weight: 22
+    weight: 21
     region: content
 hidden:
   created: true
