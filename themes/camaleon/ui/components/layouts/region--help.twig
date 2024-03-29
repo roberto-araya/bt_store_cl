@@ -25,11 +25,7 @@
   set style_vars = style_vars|merge([
     theme_settings.background_color == 'default' ? '--backgroundColor: transparent' : '',
     theme_settings.background_color == 'customColor' ? '--backgroundColor: ' ~ theme_settings.background_color_custom : '',
-    theme_settings.background_color != 'default' and theme_settings.background_color != 'customColor' ? '--backgroundColor: var(--' ~ theme_settings.background_color ~ ')' : '',
-
-    theme_settings.background_color_hover == 'default' ? '--backgroundColorHover: var(--backgroundColor)' : '',
-    theme_settings.background_color_hover == 'customColor' ? '--backgroundColorHover: ' ~ theme_settings.background_color_custom_hover : '',
-    theme_settings.background_color_hover != 'default' and theme_settings.background_color_hover != 'customColor' ? '--backgroundColorHover: var(--' ~ theme_settings.background_color_hover ~ ')' : '',
+    theme_settings.background_color != 'default' and theme_settings.background_color != 'customColor' ? '--backgroundColor: var(--bt--' ~ theme_settings.background_color ~ ')' : '',
 
     theme_settings.justify_content != 'center' ? '--justifyContent: ' ~ theme_settings.justify_content : '',
     theme_settings.align_items != 'center' ? '--alignItems: ' ~ theme_settings.align_items : '',

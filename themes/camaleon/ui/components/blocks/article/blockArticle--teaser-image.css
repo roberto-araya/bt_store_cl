@@ -3,6 +3,6 @@
   --paddingTop: var(--xsPaddingTop, 0px);
   --paddingRight: var(--xsPaddingRight, 0px);
   --paddingBottom: var(--xsPaddingBottom, 0px);
-  border: solid 1px var(--bs-body-color);
-  background-color: var(--backgrounColor, var(--bs-gray-200));
+  border: solid 1px var(--bt--body-color);
+  background-color: var(--backgrounColor, var(--bt--gray-200));
 }

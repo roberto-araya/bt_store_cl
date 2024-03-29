@@ -3,9 +3,9 @@
 
 {% if styles.background_color_select != 'default' and styles.background_color_select != 'customColor' %}
   {% if styles.background_color_opacity == '1.0' %}
-    {% set style_vars = style_vars|merge(['--backgroundColor: var(--' ~ styles.background_color_select ~ ')']) %}
+    {% set style_vars = style_vars|merge(['--backgroundColor: var(--bt--' ~ styles.background_color_select ~ ')']) %}
   {% else %}
-    {% set style_vars = style_vars|merge(['--backgroundColor: rgb(var(--' ~ styles.background_color_select ~ '-rgb), ' ~ styles.background_color_opacity ~ ')']) %}
+    {% set style_vars = style_vars|merge(['--backgroundColor: rgb(var(--bt--' ~ styles.background_color_select ~ '-rgb), ' ~ styles.background_color_opacity ~ ')']) %}
   {% endif %}  
 {% endif %}
 

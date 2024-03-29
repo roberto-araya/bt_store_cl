@@ -1,5 +1,5 @@
 .block.blockSectionTitle {
-  background-color: var(--backgroundColor, var(--bs-block-bg-color));
+  background-color: var(--backgroundColor, transparent);
 }
 
 .blockSectionTitle {
@@ -10,12 +10,12 @@
   box-sizing: border-box;
 }
 .blockSectionTitle__content-title {
-  color: var(--titleColor, var(--bt--block-title-color, var(--bt--page-title-color, var(--bs-primary-600))));
+  color: var(--titleColor, var(--bt--titles-color, var(--bt--titles-color, var(--bt--primary))));
   font-family: var(--titleFontFamily);
   font-size: var(--titleFontSize, 1.8rem);
 }
 .blockSectionTitle__caption {
-  color: var(--captionColor, var(--bt--caption-text-color, var(--bs-secondary)));
+  color: var(--captionColor, var(--bt--body-color, var(--bt--secondary)));
   font-family: var(--captionFontFamily);
   font-size: var(--captionFontSize, 1.2rem);
 }

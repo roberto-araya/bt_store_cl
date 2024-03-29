@@ -28,9 +28,9 @@
 
 {%
   set styles_vars = style_vars|merge([
-    theme_settings.default_font == 'default' ? '--bs-body-font-family: var(--bs-font-sans-serif)' : '',
+    theme_settings.default_font == 'default' ? '--bt--body-font-family: var(--bt--font-sans-serif)' : '',
     theme_settings.default_font != 'default' ? '--bt--body-font: ' ~ theme_settings.default_font|replace({'-': " "})  : '',
-    theme_settings.default_font != 'default' ? '--bs-body-font-family: var(--bt--body-font, var(--bs-font-sans-serif))' : '',
+    theme_settings.default_font != 'default' ? '--bt--body-font-family: var(--bt--body-font, var(--bt--font-sans-serif))' : '',
 
     theme_settings.headers_font == 'default' ? '--bt--headers-font: var(--bt--body-font)' : '',
     theme_settings.headers_font != 'default' ? '--bt--headers-font: ' ~ theme_settings.headers_font|replace({'-': " "})  : '',

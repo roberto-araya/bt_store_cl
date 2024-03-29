@@ -11,11 +11,11 @@
   font-size: 2rem;
 }
 .nodeBlogPost--teaser__title a {
-  color: var(--bt--blog-title-color, var(--bt--page-title-color, var(--bs-primary-600)));
+  color: var(--bt--titles-color, var(--bt--titles-color, var(--bt--primary)));
 }
 .nodeBlogPost--teaser__intro {
   font-size: 1.2rem;
-  color: var(--bs-body-color);
+  color: var(--bt--body-color);
   margin: 0 1rem;
   margin-top: 1.2rem;
 }
@@ -37,10 +37,10 @@
   font-size: 1rem;
 }
 .nodeBlogPost--teaser__read-more a {
-  color: var(--bt--link-color, var(--bs-accent));
+  color: var(--bt--link-color, var(--bt--link-color));
 }
 .nodeBlogPost--teaser__read-more a:hover {
-  color: var(--bs-link-hover-color);
+  color: var(--bt--link-hover-color);
 }
 
 @media (min-width: 576px) {

@@ -1,18 +1,3 @@
 .page > main {
   min-height: calc(100vh - 152px);
 }
-
-/*.page footer {
-  --footerBackground: var(--bt--footer-bg, var(--bs-footer-bg, #272726));
-  --footerLinkColor: var(--bt--footer-link-color, var(--bs-footer-link-color, #EF3527));
-  --footerLinkHoverColor: var(--bt--footer-link-hover-color, var(--bs-footer-link-hover-color, #e33225));
-  width: 100%;
-  height: max-content;
-  background-color: var(--footerBackground);
-  font-size: 1rem;
-
-  & .region--footer {
-    padding-top: 0.5rem;
-  }
-
-}*/

@@ -1,0 +1,34 @@
+[class$=__buttons] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  margin: 1rem 0px;
+}
+
+[class$=__button],
+[class$=__button-secondary],
+[class$=__button-accent] {
+  display: flex;
+  text-align: center;
+}
+[class$=__button]:hover,
+[class$=__button-secondary]:hover,
+[class$=__button-accent]:hover {
+  filter: brightness(110%) saturate(100%);
+}
+
+[class$=__button-icon],
+[class$=__button-secondary-icon],
+[class$=__button-accent-icon] {
+  width: var(--buttonIconSize, 24px);
+  height: var(--buttonIconSize, 24px);
+  align-self: center;
+  margin-right: calc(-1 * (1rem + var(--buttonIconSize, 24px)));
+}
+[class$=__button-icon] .svg-icon,
+[class$=__button-secondary-icon] .svg-icon,
+[class$=__button-accent-icon] .svg-icon {
+  width: var(--buttonIconSize, 24px);
+  height: var(--buttonIconSize, 24px);
+}

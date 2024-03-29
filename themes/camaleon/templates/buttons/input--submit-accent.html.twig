@@ -10,7 +10,8 @@
  * @see template_preprocess_input()
  */
 #}
-{% include "@Components/buttons/button-secondary.twig" with {
+{{ attach_library('camaleon/bootstrap_buttons') }}
+{% include "@Components/buttons/button-accent.twig" with {
   'attributes': attributes,
   'children': children,
   'theme_settings': theme_settings,

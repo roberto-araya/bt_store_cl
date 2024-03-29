@@ -1,0 +1,26 @@
+.badge {
+  --bt--badge-padding-x: 0.65em;
+  --bt--badge-padding-y: 0.35em;
+  --bt--badge-font-size: 0.75em;
+  --bt--badge-font-weight: 700;
+  --bt--badge-color: #fff;
+  --bt--badge-border-radius: 0.375rem;
+  display: inline-block;
+  padding: var(--bt--badge-padding-y) var(--bt--badge-padding-x);
+  font-size: var(--bt--badge-font-size);
+  font-weight: var(--bt--badge-font-weight);
+  line-height: 1;
+  color: var(--bt--badge-color);
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: var(--bt--badge-border-radius);
+}
+.badge:empty {
+  display: none;
+}
+
+.btn .badge {
+  position: relative;
+  top: -1px;
+}

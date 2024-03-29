@@ -14,13 +14,13 @@
 }
 .siteBranding__name {
   font-size: var(--nameFontSize);
-  font-family: var(--nameFontFamily, var(--bs-body-font-family));
+  font-family: var(--nameFontFamily, var(--bt--body-font-family));
 }
 .siteBranding__name a {
-  color: var(--nameColor, var(--bt--page-title-color, var(--bs-primary-600)));
+  color: var(--nameColor, var(--bt--titles-color, var(--bt--primary)));
 }
 .siteBranding__slogan {
-  color: var(--sloganColor, var(--bs-accent, #fb9f00));
+  color: var(--sloganColor, var(--bt--accent, #FB9F00));
   font-size: var(--sloganFontSize);
-  font-family: var(--sloganFontFamily, var(--bs-body-font-family));
+  font-family: var(--sloganFontFamily, var(--bt--body-font-family));
 }

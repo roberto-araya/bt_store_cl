@@ -1,0 +1,31 @@
+.breadcrumb {
+  --bt--breadcrumb-padding-x: 0;
+  --bt--breadcrumb-padding-y: 0;
+  --bt--breadcrumb-margin-bottom: 1rem;
+  --bt--breadcrumb-bg: ;
+  --bt--breadcrumb-border-radius: ;
+  --bt--breadcrumb-divider-color: #6c757d;
+  --bt--breadcrumb-item-padding-x: 0.5rem;
+  --bt--breadcrumb-item-active-color: #6c757d;
+  display: flex;
+  flex-wrap: wrap;
+  padding: var(--bt--breadcrumb-padding-y) var(--bt--breadcrumb-padding-x);
+  margin-bottom: var(--bt--breadcrumb-margin-bottom);
+  font-size: var(--bt--breadcrumb-font-size);
+  list-style: none;
+  background-color: var(--bt--breadcrumb-bg);
+  border-radius: var(--bt--breadcrumb-border-radius);
+}
+
+.breadcrumb-item + .breadcrumb-item {
+  padding-left: var(--bt--breadcrumb-item-padding-x);
+}
+.breadcrumb-item + .breadcrumb-item::before {
+  float: left;
+  padding-right: var(--bt--breadcrumb-item-padding-x);
+  color: var(--bt--breadcrumb-divider-color);
+  content: var(--bt--breadcrumb-divider, "/") /* rtl: var(--bt--breadcrumb-divider, "/") */;
+}
+.breadcrumb-item.active {
+  color: var(--bt--breadcrumb-item-active-color);
+}

@@ -1,15 +1,15 @@
 .nodeArticle--full__title {
-  color: var(--bs-article-title-color);
+  color: var(--bt--article-title-color);
 }
 .nodeArticle--full__intro {
-  color: var(--bs-caption-text-color);
+  color: var(--bt--caption-text-color);
   margin-top: 1.2rem;
 }
 .nodeArticle--full__intro p {
   margin: 0 1rem;
 }
 .nodeArticle--full__caption {
-  color: var(--bs-intro-text-color);
+  color: var(--bt--intro-text-color);
 }
 .nodeArticle--full__image {
   width: -moz-fit-content;

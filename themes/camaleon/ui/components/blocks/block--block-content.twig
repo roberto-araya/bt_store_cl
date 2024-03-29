@@ -1,20 +1,11 @@
-{% if '_' in bundle %}
-  {% set bundle_parts = bundle|split('_') %}
-  {% set bundle_part0 = bundle_parts[0]|capitalize %}
-  {% set bundle_part1 = bundle_parts[1]|capitalize %}
-  {% set bundle = bundle_part0 ~ bundle_part1 %}
-{% else %}
-  {% set bundle = bundle|capitalize %}  
-{% endif %}
-
 {% set styles = configuration.block_style %}
 {% set style_vars = [] %}
 
 {% if styles.background_color_select != 'default' and styles.background_color_select != 'customColor' %}
   {% if styles.background_color_opacity == '1.0' %}
-    {% set style_vars = style_vars|merge(['--backgroundColor: var(--' ~ styles.background_color_select ~ ')']) %}
+    {% set style_vars = style_vars|merge(['--backgroundColor: var(--bt--' ~ styles.background_color_select ~ ')']) %}
   {% else %}
-    {% set style_vars = style_vars|merge(['--backgroundColor: rgb(var(--' ~ styles.background_color_select ~ '-rgb), ' ~ styles.background_color_opacity ~ ')']) %}
+    {% set style_vars = style_vars|merge(['--backgroundColor: rgb(var(--bt--' ~ styles.background_color_select ~ '-rgb), ' ~ styles.background_color_opacity ~ ')']) %}
   {% endif %}  
 {% endif %}
 
@@ -127,6 +118,7 @@
 {%
   set title_classes = [
     configuration.label_display == FALSE ? 'visually-hidden',
+    'block' ~ bundle ~ '__block-title',
     'block' ~ bundle ~ '--' ~ view_mode ~ '__block-title',
   ]
 %}

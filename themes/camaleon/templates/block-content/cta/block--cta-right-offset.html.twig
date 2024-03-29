@@ -28,6 +28,7 @@
  */
 #}
 {{ attach_library('camaleon/block_cta_right_offset') }}
+
 {% if configuration.block_style.animation_option == TRUE %}
   {{ attach_library('camaleon/' ~ configuration.block_style.animation_type) }}
 {% endif %}

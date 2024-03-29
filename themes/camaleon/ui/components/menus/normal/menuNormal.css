@@ -18,9 +18,9 @@ h2.menuNormal__menu-title {
   max-width: var(--maxWidth);
 }
 .menuNormal__menu-title {
-  font-family: var(--titleFontFamily, var(--bs-body-font-family));
+  font-family: var(--titleFontFamily, var(--bt--body-font-family));
   font-size: var(--titleFontSize);
-  color: var(--titleColor, var(--bs-page-title-color));
+  color: var(--titleColor, var(--bt--titles-color));
 }
 .menuNormal__nav {
   gap: var(--gap, 0px);
@@ -33,13 +33,13 @@ h2.menuNormal__menu-title {
   padding-top: var(--itemPaddingTop);
   padding-right: var(--itemPaddingRight);
   padding-bottom: var(--itemPaddingBottom);
-  font-family: var(--itemFontFamily, var(--bs-body-font-family));
+  font-family: var(--itemFontFamily, var(--bt--body-font-family));
   font-size: var(--itemFontSize);
-  color: var(--itemColor, var(--bs-primary));
+  color: var(--itemColor, var(--bt--primary));
 }
 .menuNormal .menuNormal__link:hover,
 .menuNormal .menuNormal__link.active {
-  color: var(--itemColorHover, var(--bs-secondary));
+  color: var(--itemColorHover, var(--bt--secondary));
 }
 .menuNormal__item {
   background-color: var(--itemBackgroundColor, transparent);

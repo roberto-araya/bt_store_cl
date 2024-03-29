@@ -14,89 +14,163 @@ use LukaPeharda\TailwindCssColorPaletteGenerator\PaletteGenerator;
  * Implements hook_form_system_theme_settings_alter().
  */
 function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
-  // Add custom submit.
   $theme_file = drupal_get_path('theme', 'camaleon') . '/camaleon.theme';
   $build_info = $form_state->getBuildInfo();
   if (!in_array($theme_file, $build_info['files'])) {
     $build_info['files'][] = $theme_file;
   }
   $form_state->setBuildInfo($build_info);
-
+  // Add custom submit.
   $form['#submit'][] = 'camaleon_form_system_theme_settings_submit';
 
   $color_options = [
     'default' => t('Default'),
-    'bs-primary' => t('Primary'),
-    'bs-primary-050' => t('Primary 50'),
-    'bs-primary-100' => t('Primary 100'),
-    'bs-primary-200' => t('Primary 200'),
-    'bs-primary-300' => t('Primary 300'),
-    'bs-primary-400' => t('Primary 400'),
-    'bs-primary-500' => t('Primary 500'),
-    'bs-primary-600' => t('Primary 600'),
-    'bs-primary-700' => t('Primary 700'),
-    'bs-primary-800' => t('Primary 800'),
-    'bs-primary-900' => t('Primary 900'),
-    'bs-secondary' => t('Secondary'),
-    'bs-secondary-050' => t('Secondary 50'),
-    'bs-secondary-100' => t('Secondary 100'),
-    'bs-secondary-200' => t('Secondary 200'),
-    'bs-secondary-300' => t('Secondary 300'),
-    'bs-secondary-400' => t('Secondary 400'),
-    'bs-secondary-500' => t('Secondary 500'),
-    'bs-secondary-600' => t('Secondary 600'),
-    'bs-secondary-700' => t('Secondary 700'),
-    'bs-secondary-800' => t('Secondary 800'),
-    'bs-secondary-900' => t('Secondary 900'),
-    'bs-accent' => t('Accent'),
-    'bs-accent-050' => t('Accent 50'),
-    'bs-accent-100' => t('Accent 100'),
-    'bs-accent-200' => t('Accent 200'),
-    'bs-accent-300' => t('Accent 300'),
-    'bs-accent-400' => t('Accent 400'),
-    'bs-accent-500' => t('Accent 500'),
-    'bs-accent-600' => t('Accent 600'),
-    'bs-accent-700' => t('Accent 700'),
-    'bs-accent-800' => t('Accent 800'),
-    'bs-accent-900' => t('Accent 900'),
-    'bs-success' => t('Success'),
-    'bs-info' => t('Info'),
-    'bs-warning' => t('Warning'),
-    'bs-danger' => t('Danger'),
-    'bs-light' => t('Light'),
-    'bs-dark' => t('Dark'),
-    'bs-blue' => t('Blue'),
-    'bs-indigo' => t('Indigo'),
-    'bs-purple' => t('Purple'),
-    'bs-pink' => t('Pink'),
-    'bs-red' => t('Red'),
-    'bs-orange' => t('Orange'),
-    'bs-yellow' => t('Yellow'),
-    'bs-green' => t('Green'),
-    'bs-teal' => t('Teal'),
-    'bs-cyan' => t('Cyan'),
-    'bs-white' => t('White'),
-    'bs-gray-dark' => t('Gray Dark'),
-    'bs-gray-100' => t('Gray 100'),
-    'bs-gray-200' => t('Gray 200'),
-    'bs-gray-300' => t('Gray 300'),
-    'bs-gray-400' => t('Gray 400'),
-    'bs-gray-500' => t('Gray 500'),
-    'bs-gray-600' => t('Gray 600'),
-    'bs-gray-700' => t('Gray 700'),
-    'bs-gray-800' => t('Gray 800'),
-    'bs-gray-900' => t('Gray 900'),
+    'primary' => t('Primary'),
+    'primary-050' => t('Primary 50'),
+    'primary-100' => t('Primary 100'),
+    'primary-200' => t('Primary 200'),
+    'primary-300' => t('Primary 300'),
+    'primary-400' => t('Primary 400'),
+    'primary-500' => t('Primary 500'),
+    'primary-600' => t('Primary 600'),
+    'primary-700' => t('Primary 700'),
+    'primary-800' => t('Primary 800'),
+    'primary-900' => t('Primary 900'),
+    'secondary' => t('Secondary'),
+    'secondary-050' => t('Secondary 50'),
+    'secondary-100' => t('Secondary 100'),
+    'secondary-200' => t('Secondary 200'),
+    'secondary-300' => t('Secondary 300'),
+    'secondary-400' => t('Secondary 400'),
+    'secondary-500' => t('Secondary 500'),
+    'secondary-600' => t('Secondary 600'),
+    'secondary-700' => t('Secondary 700'),
+    'secondary-800' => t('Secondary 800'),
+    'secondary-900' => t('Secondary 900'),
+    'accent' => t('Accent'),
+    'accent-050' => t('Accent 50'),
+    'accent-100' => t('Accent 100'),
+    'accent-200' => t('Accent 200'),
+    'accent-300' => t('Accent 300'),
+    'accent-400' => t('Accent 400'),
+    'accent-500' => t('Accent 500'),
+    'accent-600' => t('Accent 600'),
+    'accent-700' => t('Accent 700'),
+    'accent-800' => t('Accent 800'),
+    'accent-900' => t('Accent 900'),
+    'success' => t('Success'),
+    'info' => t('Info'),
+    'warning' => t('Warning'),
+    'danger' => t('Danger'),
+    'light' => t('Light'),
+    'dark' => t('Dark'),
+    'blue' => t('Blue'),
+    'indigo' => t('Indigo'),
+    'purple' => t('Purple'),
+    'pink' => t('Pink'),
+    'red' => t('Red'),
+    'orange' => t('Orange'),
+    'yellow' => t('Yellow'),
+    'green' => t('Green'),
+    'teal' => t('Teal'),
+    'cyan' => t('Cyan'),
+    'white' => t('White'),
+    'gray-050' => t('Gray 050'),
+    'gray-100' => t('Gray 100'),
+    'gray-200' => t('Gray 200'),
+    'gray-300' => t('Gray 300'),
+    'gray-400' => t('Gray 400'),
+    'gray-500' => t('Gray 500'),
+    'gray-600' => t('Gray 600'),
+    'gray-700' => t('Gray 700'),
+    'gray-800' => t('Gray 800'),
+    'gray-900' => t('Gray 900'),
     'customColor' => t('Custom Color'),
   ];
 
-  // FONTS ####.
+  // DEFAULT COLORS.
+  $form['default_colors'] = [
+    '#type' => 'details',
+    '#title' => t('Default Colors'),
+    '#tree' => TRUE,
+  ];
+
+  // Theme Color.
+  $form['default_colors']['theme_color'] = [
+    '#type' => 'select',
+    '#options' => _get_theme_color_select(),
+    '#title' => t('Theme Color Palette'),
+    '#description' => t("Select a default theme color palette. You can add more color palettes on /theme-colors/add."),
+    '#default_value' => theme_get_setting('default_colors.theme_color'),
+  ];
+
+  // Titles color.
+  $default_value_prefix = 'default_colors.titles';
+  $state_input_prefix = 'default_colors[titles';
+  $style = 'titles';
+  $form['default_colors'] = array_merge($form['default_colors'],
+  _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options, FALSE));
+
+  // Body color.
+  $default_value_prefix = 'default_colors.body';
+  $state_input_prefix = 'default_colors[body';
+  $style = 'body';
+  $form['default_colors'] = array_merge($form['default_colors'],
+  _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options, FALSE));
+
+  // Body background color.
+  $form['default_colors']['body_bg'] = [
+    '#type' => 'select',
+    '#options' => $color_options,
+    '#title' => t('Body Background Color'),
+    '#description' => t("Select a default body background color."),
+    '#default_value' => theme_get_setting('default_colors.body_bg'),
+  ];
+
+  $form['default_colors']['body_bg_custom'] = [
+    '#type' => 'color',
+    '#title' => 'Body Background Custom Color',
+    '#description' => t("Select a custom color as body background color."),
+    '#default_value' => theme_get_setting('default_colors.body_bg_custom'),
+    '#states' => [
+      'visible' => [
+        ':input[name="default_colors[body_bg]"]' => ['value' => 'customColor'],
+      ],
+    ],
+  ];
+
+  // Link color.
+  $default_value_prefix = 'default_colors.link';
+  $state_input_prefix = 'default_colors[link';
+  $style = 'link';
+  $form['default_colors'] = array_merge($form['default_colors'],
+  _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options, FALSE));
+
+  // Link hover color.
+  $default_value_prefix = 'default_colors.link_hover';
+  $state_input_prefix = 'default_colors[link_hover';
+  $style = 'link_hover';
+  $form['default_colors'] = array_merge($form['default_colors'],
+  _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options, FALSE));
+  // Rename Link hover titles.
+  $form['default_colors']['link_hover_color']['#title'] = 'Link Hover Color';
+  $form['default_colors']['link_hover_color_custom']['#title'] = 'Link Hover Custom Color';
+
+  // Border color.
+  $default_value_prefix = 'default_colors.border';
+  $state_input_prefix = 'default_colors[border';
+  $style = 'border';
+  $form['default_colors'] = array_merge($form['default_colors'],
+  _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options, FALSE));
+
+  // FONTS.
   $form['fonts'] = [
     '#type' => 'details',
     '#title' => t('Fuentes'),
     '#tree' => TRUE,
   ];
 
-  // DEFAULT FONT ####.
+  // Default font.
   $form['fonts']['default_font'] = [
     '#type' => 'select',
     '#options' => _get_font_select(),
@@ -105,7 +179,7 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
     '#default_value' => theme_get_setting('fonts.default_font'),
   ];
 
-  // HEADERS FONTS ####.
+  // Headers font.
   $form['fonts']['headers_font'] = [
     '#type' => 'select',
     '#options' => _get_font_select(),
@@ -114,16 +188,7 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
     '#default_value' => theme_get_setting('fonts.headers_font'),
   ];
 
-  // Theme Color ####.
-  $form['theme_color'] = [
-    '#type' => 'select',
-    '#options' => _get_theme_color_select(),
-    '#title' => t('Theme Color'),
-    '#description' => t("Select a default theme color palette. You can add more color palettes on /theme-colors/add."),
-    '#default_value' => theme_get_setting('theme_color'),
-  ];
-
-  // BUTTONS ####.
+  // BUTTONS.
   $buttons = [
     'primary',
     'secondary',
@@ -165,7 +230,7 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
     _get_button_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options));
   }
 
-  // REGIONS ####.
+  // REGIONS.
   $form['regions'] = [
     '#type' => 'details',
     '#title' => t('Regions'),
@@ -327,7 +392,7 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
     $state_input_prefix = 'regions[region_' . $region_id . '][background';
     $style = 'background';
     $form['regions']['region_' . $region_id] = array_merge($form['regions']['region_' . $region_id],
-    _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options));
+    _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options, FALSE));
   }
 
   // Navbar positions.
@@ -370,28 +435,29 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
   $state_input_prefix = 'regions[region_navbar][toggler';
   $style = 'toggler';
   $form['regions']['region_navbar'] = array_merge($form['regions']['region_navbar'],
-  _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options));
+  _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options, FALSE));
 
   // Sidebar first.
   $default_value_prefix = 'regions.region_sidebar_first.background';
   $state_input_prefix = 'regions[region_sidebar_first][background';
   $style = 'background';
   $form['regions']['region_sidebar_first'] = array_merge($form['regions']['region_sidebar_first'],
-  _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options));
+  _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options, FALSE));
 
   // Content.
   $default_value_prefix = 'regions.region_content.background';
   $state_input_prefix = 'regions[region_content][background';
   $style = 'background';
   $form['regions']['region_content'] = array_merge($form['regions']['region_content'],
-  _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options));
+  _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options, FALSE));
 
   // Sidebar second.
   $default_value_prefix = 'regions.region_sidebar_second.background';
   $state_input_prefix = 'regions[region_sidebar_second][background';
   $style = 'background';
   $form['regions']['region_sidebar_second'] = array_merge($form['regions']['region_sidebar_second'],
-  _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options));
+  _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options, FALSE));
+
 }
 
 /**
@@ -405,7 +471,7 @@ function camaleon_form_system_theme_settings_submit(&$form, FormStateInterface $
   $config = $config_factory->getEditable($config_name);
 
   $entity_type_manager = \Drupal::entityTypeManager();
-  $theme_color = $entity_type_manager->getStorage('theme_colors')->load($values['theme_color']);
+  $theme_color = $entity_type_manager->getStorage('theme_colors')->load($values['default_colors']['theme_color']);
 
   $hex_rgb_colors = [
     'success',
@@ -424,6 +490,7 @@ function camaleon_form_system_theme_settings_submit(&$form, FormStateInterface $
     'green',
     'teal',
     'cyan',
+    'white'
   ];
 
   foreach ($hex_rgb_colors as $hex_rgb_color) {
@@ -460,6 +527,103 @@ function camaleon_form_system_theme_settings_submit(&$form, FormStateInterface $
       $config->set($hex_rgb_shades_color . '_' . $shade . '_rgb', $rgb[0] . ', ' . $rgb[1] . ', ' . $rgb[2]);
     }
   }
+
+  // Add titles color.
+  $value = $values['default_colors']['titles_color'];
+  switch ($value) {
+    case 'default':
+      $color = $theme_color->get('field_bt_primary')->getValue()[0]['color'];
+      break;
+    case 'customColor':
+      $color = $values['default_values']['titles_color_custom'];;
+      break;
+    default:
+      $color = $theme_color->get('field_bt_' . str_replace('-', '_', $value))->getValue()[0]['color'];
+      break; 
+  }
+  $config->set('titles_color', $color);
+
+  // Add body color.
+  $value = $values['default_colors']['body_color'];
+  switch ($value) {
+    case 'default':
+      $color = $theme_color->get('field_bt_primary')->getValue()[0]['color'];
+      break;
+    case 'customColor':
+      $color = $values['default_colors']['body_color_custom'];;
+      break;
+    default:
+      $color = $theme_color->get('field_bt_' . str_replace('-', '_', $value))->getValue()[0]['color'];
+      break; 
+  }
+  $config->set('body_color', $color);
+
+  // Add bg color.
+  $value = $values['default_colors']['body_bg'];
+  switch ($value) {
+    case 'default':
+      $color = $theme_color->get('field_bt_white')->getValue()[0]['color'];
+      break;
+    case 'customColor':
+      $color = $values['default_colors']['body_bg_custom'];;
+      break;
+    default:
+      $color = $theme_color->get('field_bt_' . str_replace('-', '_', $value))->getValue()[0]['color'];
+      break; 
+  }
+  $config->set('body_bg', $color);
+
+  // Add link color.
+  $value = $values['default_colors']['link_color'];
+  switch ($value) {
+    case 'default':
+      $color = $theme_color->get('field_bt_accent')->getValue()[0]['color'];
+      break;
+    case 'customColor':
+      $color = $values['default_colors']['link_color_custom'];;
+      break;
+    default:
+      $color = $theme_color->get('field_bt_' . str_replace('-', '_', $value))->getValue()[0]['color'];
+      break; 
+  }
+  $config->set('link_color', $color);
+
+  // Add link hover color.
+  $value = $values['default_colors']['link_hover_color'];
+  switch ($value) {
+    case 'default':
+      $color = $theme_color->get('field_bt_accent_600')->getValue()[0]['color'];
+      break;
+    case 'customColor':
+      $color = $values['default_colors']['link_hover_color_custom'];;
+      break;
+    default:
+      $color = $theme_color->get('field_bt_' . str_replace('-', '_', $value))->getValue()[0]['color'];
+      break; 
+  }
+  $config->set('link_hover_color', $color);
+
+  // Border color.
+  $value = $values['default_colors']['border_color'];
+  switch ($value) {
+    case 'default':
+      $color = $theme_color->get('field_bt_primary')->getValue()[0]['color'];
+      break;
+    case 'customColor':
+      $color = $values['default_colors']['border_color_custom'];;
+      break;
+    default:
+      $color = $theme_color->get('field_bt_' . str_replace('-', '_', $value))->getValue()[0]['color'];
+      break; 
+  }
+  $config->set('border_color', $color);
+
+  // Border color RGB.
+  $colorObject = Color::fromHex($color);
+  $rgb = $colorObject->getRgb();
+  $config->set('border_color_rgb', $rgb[0] . ', ' . $rgb[1] . ', ' . $rgb[2]);
+
+  // Clean config.
   $config->clear('_core');
   $config->clear('langcode');
 
@@ -469,8 +633,8 @@ function camaleon_form_system_theme_settings_submit(&$form, FormStateInterface $
 /**
  * Color form select builder.
  */
-function _get_color_form_select($default_value_prefix, $state_input_prefix, $style, &$color_options) {
-  return [
+function _get_color_form_select($default_value_prefix, $state_input_prefix, $style, &$color_options, $hover = TRUE) {
+  $select = [
     $style . '_color' => [
       '#type' => 'select',
       '#options' => $color_options,
@@ -490,15 +654,18 @@ function _get_color_form_select($default_value_prefix, $state_input_prefix, $sty
         ],
       ],
     ],
-    $style . '_color_hover' => [
+  ];
+
+  if ($hover) {
+    $select[$style . '_color_hover'] = [
       '#type' => 'select',
       '#options' => $color_options,
       '#title' => ucfirst($style) . ' Color Hover',
       '#description' => t("Select a theme color as hover @style.", ["@style" => $style]),
       '#default_value' => theme_get_setting($default_value_prefix . '_color_hover'),
-    ],
+    ];
 
-    $style . '_color_custom_hover' => [
+    $select[$style . '_color_custom_hover'] = [
       '#type' => 'color',
       '#title' => ucfirst($style) . ' Custom Color Hover',
       '#description' => t("Select a custom color as hover @style.", ["@style" => $style]),
@@ -508,8 +675,10 @@ function _get_color_form_select($default_value_prefix, $state_input_prefix, $sty
           ':input[name="' . $state_input_prefix . '_color_hover]"]' => ['value' => 'customColor'],
         ],
       ],
-    ],
-  ];
+    ];
+  }
+
+  return $select;
 }
 
 /**

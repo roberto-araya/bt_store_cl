@@ -1,5 +1,5 @@
 .block.blockFaq {
-  background-color: var(--backgroundColor, var(--bs-block-bg-color));
+  background-color: var(--backgroundColor, transparent);
 }
 
 .blockFaq {
@@ -12,28 +12,28 @@
 .blockFaq__content-title {
   font-family: var(--titleFontFamily);
   font-size: var(--titleFontSize);
-  color: var(--titleColor, var(--bt--block-title-color, var(--bt--page-title-color, var(--bs-primary-600))));
+  color: var(--titleColor, var(--bt--titles-color, var(--bt--titles-color, var(--bt--primary))));
 }
 .blockFaq__caption {
   font-family: var(--captionFontFamily);
   font-size: var(--captionFontSize);
-  color: var(--captionColor, var(--bt--caption-text-color, var(--bs-secondary)));
+  color: var(--captionColor, var(--bt--body-color, var(--bt--secondary)));
 }
 .blockFaq__text {
-  font-family: var(--textFontFamily, var(--bs-body-font-family));
+  font-family: var(--textFontFamily, var(--bt--body-font-family));
   font-size: var(--textFontSize);
-  color: var(--textColor, var(--bs-body-color));
+  color: var(--textColor, var(--bt--body-color));
 }
 .blockFaq__questions {
-  --bs-accordion-color: var(--bs-body-color);
-  --bs-accordion-bg: transparent;
-  --bs-accordion-border-color: var(--bs-border-color);
-  --bs-accordion-btn-color: var(--bs-body-color);
-  --bs-accordion-btn-bg: var(--bs-accordion-bg);
-  --bs-accordion-btn-focus-border-color: var(--bs-primary-050);
-  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-050-rgb));
-  --bs-accordion-active-color: var(--bs-body-color);
-  --bs-accordion-active-bg: var(--bs-primary-050);
+  --bt--accordion-color: var(--bt--body-color);
+  --bt--accordion-bg: transparent;
+  --bt--accordion-border-color: var(--bt--border-color);
+  --bt--accordion-btn-color: var(--bt--body-color);
+  --bt--accordion-btn-bg: var(--bt--accordion-bg);
+  --bt--accordion-btn-focus-border-color: var(--bt--primary-050);
+  --bt--accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(--bt--primary-050-rgb));
+  --bt--accordion-active-color: var(--bt--body-color);
+  --bt--accordion-active-bg: var(--bt--primary-050);
 }
 .blockFaq__questions img {
   width: 100%;

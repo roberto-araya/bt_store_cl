@@ -12,6 +12,152 @@ base:
     - core/drupal
     - core/drupal.ajax
 
+### Bootstrap Components
+bootstrap_accordion:
+  version: VERSION
+  css:
+    component:
+      ui/components/bootstrap/accordion/accordion.css: {}
+
+bootstrap_alert:
+  version: VERSION
+  css:
+    component:
+      ui/components/bootstrap/alert/alert.css: {}
+
+bootstrap_badge:
+  version: VERSION
+  css:
+    component:
+      ui/components/bootstrap/badge/badge.css: {}
+
+bootstrap_breadcrumb:
+  version: VERSION
+  css:
+    component:
+      ui/components/bootstrap/breadcrumb/breadcrumb.css: {}
+
+bootstrap_button-group:
+  version: VERSION
+  css:
+    component:
+      ui/components/bootstrap/button-group/button-group.css: {}
+
+bootstrap_buttons:
+  version: VERSION
+  css:
+    component:
+      ui/components/bootstrap/buttons/buttons.css: {}
+
+bootstrap_card:
+  version: VERSION
+  css:
+    component:
+      ui/components/bootstrap/card/card.css: {}
+
+bootstrap_carousel:
+  version: VERSION
+  css:
+    component:
+      ui/components/bootstrap/carousel/carousel.css: {}
+
+bootstrap_close:
+  version: VERSION
+  css:
+    component:
+      ui/components/bootstrap/close/close.css: {}
+
+bootstrap_containers:
+  version: VERSION
+  css:
+    component:
+      ui/components/bootstrap/containers/containers.css: {}
+
+bootstrap_dropdown:
+  version: VERSION
+  css:
+    component:
+      ui/components/bootstrap/dropdown/dropdown.css: {}
+
+bootstrap_forms:
+  version: VERSION
+  css:
+    component:
+      ui/components/bootstrap/forms/forms.css: {}
+
+bootstrap_list-group:
+  version: VERSION
+  css:
+    component:
+      ui/components/bootstrap/list-group/list-group.css: {}
+
+bootstrap_nav:
+  version: VERSION
+  css:
+    component:
+      ui/components/bootstrap/nav/nav.css: {}
+
+bootstrap_offcanvas:
+  version: VERSION
+  css:
+    component:
+      ui/components/bootstrap/offcanvas/offcanvas.css: {}
+
+bootstrap_pagination:
+  version: VERSION
+  css:
+    component:
+      ui/components/bootstrap/pagination/pagination.css: {}
+
+bootstrap_placeholders:
+  version: VERSION
+  css:
+    component:
+      ui/components/bootstrap/placeholders/placeholders.css: {}
+
+bootstrap_popover:
+  version: VERSION
+  css:
+    component:
+      ui/components/bootstrap/popover/popover.css: {}
+
+bootstrap_progress:
+  version: VERSION
+  css:
+    component:
+      ui/components/bootstrap/progress/progress.css: {}
+
+bootstrap_spinners:
+  version: VERSION
+  css:
+    component:
+      ui/components/bootstrap/spinners/spinners.css: {}
+
+bootstrap_tables:
+  version: VERSION
+  css:
+    component:
+      ui/components/bootstrap/tables/tables.css: {}
+
+bootstrap_toasts:
+  version: VERSION
+  css:
+    component:
+      ui/components/bootstrap/toasts/toasts.css: {}
+
+bootstrap_tooltip:
+  version: VERSION
+  css:
+    component:
+      ui/components/bootstrap/tooltip/tooltip.css: {}
+
+bootstrap_transitions:
+  version: VERSION
+  css:
+    component:
+      ui/components/bootstrap/transitions/transitions.css: {}
+
+
 ### Fonts
 jolly-lodger: 
   version: VERSION
@@ -686,6 +832,8 @@ table:
   css:
     component:
       ui/components/tables/table.css: {}
+  dependencies:
+    - camaleon/bootstrap_tables
 
 pager:
   version: VERSION
@@ -699,6 +847,8 @@ form:
   css:
     component:
       ui/components/forms/forms.css: {}
+  dependencies:
+    - camaleon/bootstrap_forms
 
 form_commerce_checkout:
   version: VERSION
@@ -1099,6 +1249,8 @@ breadcrumbs:
   css:
     component:
       ui/components/breadcrumbs/breadcrumbs.css: {}
+  dependencies:
+    - camaleon/bootstrap_breadcrumb
 
 # Local Actions
 local_actions:
@@ -1122,6 +1274,8 @@ localTasks:
     - core/once
     - core/drupal.debounce
     - core/collapse
+    - camaleon/bootstrap_transitions
+    - camaleon/bootstrap_nav
 
 # Status Messages
 status_messages:
@@ -1130,8 +1284,8 @@ status_messages:
     component:
       ui/components/messages/statusMessages.css: {}
   dependencies:
-    - camaleon/bs-alert
-    - camaleon/bs-close-button
+    - camaleon/bootstrap_close
+    - camaleon/bootstrap_alert
 
 ### PARAGRAPHS
 # image
@@ -1190,6 +1344,13 @@ block:
   css:
     component:
       ui/components/blocks/block.css: {}
+
+# block content icon
+block_content_icon:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/blockContentIcon.css: {}
 
 # article
 block_article_default:
@@ -1284,7 +1445,9 @@ block_cta_default:
     component:
       ui/components/blocks/cta/blockCta--default.css: {}
   dependencies:
+    - camaleon/bootstrap_buttons
     - camaleon/block_cta
+    - camaleon/block_content_icon
 
 block_cta_full:
   version: VERSION
@@ -1292,7 +1455,9 @@ block_cta_full:
     component:
       ui/components/blocks/cta/blockCta--full.css: {}
   dependencies:
+    - camaleon/bootstrap_buttons
     - camaleon/block_cta
+    - camaleon/block_content_icon
 
 block_cta_left_offset:
   version: VERSION
@@ -1300,7 +1465,9 @@ block_cta_left_offset:
     component:
       ui/components/blocks/cta/blockCta--left_offset.css: {}
   dependencies:
+    - camaleon/bootstrap_buttons
     - camaleon/block_cta
+    - camaleon/block_content_icon
 
 block_cta_right_offset:
   version: VERSION
@@ -1308,7 +1475,9 @@ block_cta_right_offset:
     component:
       ui/components/blocks/cta/blockCta--right_offset.css: {}
   dependencies:
+    - camaleon/bootstrap_buttons
     - camaleon/block_cta
+    - camaleon/block_content_icon
 
 # embedded video
 block_embedded_video:
@@ -1347,6 +1516,7 @@ block_faq:
     ui/components/blocks/faq/blockFaq.js: {}
   dependencies:
     - camaleon/block
+    - camaleon/bootstrap_transitions
 
 block_faq_default:
   version: VERSION
@@ -1354,6 +1524,7 @@ block_faq_default:
     component:
       ui/components/blocks/faq/blockFaq--default.css: {}
   dependencies:
+    - camaleon/bootstrap_accordion
     - camaleon/block_faq
 
 block_faq_full:
@@ -1362,6 +1533,7 @@ block_faq_full:
     component:
       ui/components/blocks/faq/blockFaq--full.css: {}
   dependencies:
+    - camaleon/bootstrap_accordion
     - camaleon/block_faq
 
 # accordion
@@ -1374,6 +1546,7 @@ block_accordion:
     ui/components/blocks/accordion/blockAccordion.js: {}
   dependencies:
     - camaleon/block
+    - camaleon/bootstrap_transitions
 
 block_accordion_default:
   version: VERSION
@@ -1381,6 +1554,7 @@ block_accordion_default:
     component:
       ui/components/blocks/accordion/blockAccordion--default.css: {}
   dependencies:
+    - camaleon/bootstrap_accordion
     - camaleon/block_accordion
 
 block_accordion_full:
@@ -1389,6 +1563,7 @@ block_accordion_full:
     component:
       ui/components/blocks/accordion/blockAccordion--full.css: {}
   dependencies:
+    - camaleon/bootstrap_accordion
     - camaleon/block_accordion
 
 # hero
@@ -1410,7 +1585,9 @@ block_hero_default:
   #js:
   #  ui/components/blocks/hero/blockHero--default.js: {}
   dependencies:
+    - camaleon/bootstrap_buttons
     - camaleon/block_hero
+    - camaleon/block_content_icon
 
 block_hero_full:
   version: VERSION
@@ -1420,7 +1597,9 @@ block_hero_full:
   #js:
   #  ui/components/blocks/hero/blockHero--full.js: {}
   dependencies:
+    - camaleon/bootstrap_buttons
     - camaleon/block_hero
+    - camaleon/block_content_icon
 
 # highlighted_text
 block_highlighted_text:
@@ -1615,7 +1794,7 @@ block_images_slide:
     ui/components/blocks/images-slide/blockImagesSlide.js: {}
   dependencies:
     - camaleon/block
-    - camaleon/bs-carousel
+    - camaleon/bootstrap_carousel
 
 block_images_slide_default:
   version: VERSION
@@ -1799,7 +1978,9 @@ block_text_default:
     component:
       ui/components/blocks/text/blockText--default.css: {}
   dependencies:
+    - camaleon/bootstrap_buttons
     - camaleon/block_text
+    - camaleon/block_content_icon
 
 block_text_full:
   version: VERSION
@@ -1807,7 +1988,9 @@ block_text_full:
     component:
       ui/components/blocks/text/blockText--full.css: {}
   dependencies:
+    - camaleon/bootstrap_buttons
     - camaleon/block_text
+    - camaleon/block_content_icon
 
 # text_icon
 block_text_icon:
@@ -1826,7 +2009,9 @@ block_text_icon_default:
     component:
       ui/components/blocks/text-icon/blockTextIcon--default.css: {}
   dependencies:
+    - camaleon/bootstrap_buttons
     - camaleon/block_text_icon
+    - camaleon/block_content_icon
 
 block_text_icon_full:
   version: VERSION
@@ -1834,7 +2019,9 @@ block_text_icon_full:
     component:
       ui/components/blocks/text-icon/blockTextIcon--full.css: {}
   dependencies:
+    - camaleon/bootstrap_buttons
     - camaleon/block_text_icon
+    - camaleon/block_content_icon
 
 block_text_icon_text_inline:
   version: VERSION
@@ -1842,7 +2029,9 @@ block_text_icon_text_inline:
     component:
       ui/components/blocks/text-icon/blockTextIcon--text-inline.css: {}
   dependencies:
+    - camaleon/bootstrap_buttons
     - camaleon/block_text_icon
+    - camaleon/block_content_icon
 
 # text_image
 block_text_image:
@@ -1861,7 +2050,9 @@ block_text_image_default:
     component:
       ui/components/blocks/text-image/blockTextImage--default.css: {}
   dependencies:
+    - camaleon/bootstrap_buttons
     - camaleon/block_text_image
+    - camaleon/block_content_icon
 
 block_text_image_full:
   version: VERSION
@@ -1869,7 +2060,9 @@ block_text_image_full:
     component:
       ui/components/blocks/text-image/blockTextImage--full.css: {}
   dependencies:
+    - camaleon/bootstrap_buttons
     - camaleon/block_text_image
+    - camaleon/block_content_icon
 
 # text_media
 block_text_media:
@@ -1958,6 +2151,8 @@ navbar:
   css:
     component:
       ui/components/navbar/navbar.css: {}
+  dependencies:
+    - camaleon/bootstrap_transitions
 
 navbar_home:
   version: VERSION

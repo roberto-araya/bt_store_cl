@@ -22,9 +22,9 @@
 
 {% if styles.background_color_select != 'default' and styles.background_color_select != 'customColor' %}
   {% if styles.background_color_opacity == '1.0' %}
-    {% set style_vars = style_vars|merge(['--backgroundColor: var(--' ~ styles.background_color_select ~ ')']) %}
+    {% set style_vars = style_vars|merge(['--backgroundColor: var(--bt--' ~ styles.background_color_select ~ ')']) %}
   {% else %}
-    {% set style_vars = style_vars|merge(['--backgroundColor: rgb(var(--' ~ styles.background_color_select ~ '-rgb), ' ~ styles.background_color_opacity ~ ')']) %}
+    {% set style_vars = style_vars|merge(['--backgroundColor: rgb(var(--bt--' ~ styles.background_color_select ~ '-rgb), ' ~ styles.background_color_opacity ~ ')']) %}
   {% endif %}  
 {% endif %}
 
@@ -41,7 +41,7 @@
     styles.logo_size is empty ? '' : '--logoSize: ' ~ styles.logo_size,
     site_logo is empty ? '--gap: 0px' : '--gap: .5rem',
 
-    styles.name_color_select != 'default' and styles.name_color_select != 'customColor' ? '--nameColor: var(--' ~ styles.name_color_select ~ ')',
+    styles.name_color_select != 'default' and styles.name_color_select != 'customColor' ? '--nameColor: var(--bt--' ~ styles.name_color_select ~ ')',
     styles.name_color_select == 'customColor' ? '--nameColor: ' ~ styles.name_color_custom,
     styles.name_font_family != 'default' ? '--nameFontFamily: ' ~ styles.name_font_family|replace({'-': " "}) : '',
     styles.name_xs_font_size != '' ? '--xsNameFontSize: ' ~ styles.name_xs_font_size : '',
@@ -51,7 +51,7 @@
     styles.name_xl_font_size != '' ? '--xlNameFontSize: ' ~ styles.name_xl_font_size : '',
     styles.name_xxl_font_size != '' ? '--xxlNameFontSize: ' ~ styles.name_xxl_font_size : '',
 
-    styles.slogan_color_select != 'default' and styles.slogan_color_select != 'customColor' ? '--sloganColor: var(--' ~ styles.slogan_color_select ~ ')',
+    styles.slogan_color_select != 'default' and styles.slogan_color_select != 'customColor' ? '--sloganColor: var(--bt--' ~ styles.slogan_color_select ~ ')',
     styles.slogan_color_select == 'customColor' ? '--sloganColor: ' ~ styles.slogan_color_custom,
     styles.slogan_font_family != 'default' ? '--sloganFontFamily: ' ~ styles.slogan_font_family|replace({'-': " "}) : '',
     styles.slogan_xs_font_size != '' ? '--xsSloganFontSize: ' ~ styles.slogan_xs_font_size : '',

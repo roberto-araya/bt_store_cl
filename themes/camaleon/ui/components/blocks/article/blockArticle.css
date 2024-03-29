@@ -1,5 +1,5 @@
 .block.blockArticle {
-  background-color: var(--backgroundColor, var(--bs-block-bg-color));
+  background-color: var(--backgroundColor, transparent);
 }
 
 .blockArticle {

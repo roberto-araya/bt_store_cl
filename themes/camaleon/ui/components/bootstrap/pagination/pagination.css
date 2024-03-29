@@ -1,0 +1,97 @@
+.pagination {
+  --bt--pagination-padding-x: 0.75rem;
+  --bt--pagination-padding-y: 0.375rem;
+  --bt--pagination-font-size: 1.2rem;
+  --bt--pagination-color: var(--bt--link-color);
+  --bt--pagination-bg: #fff;
+  --bt--pagination-border-width: 1px;
+  --bt--pagination-border-color: #dee2e6;
+  --bt--pagination-border-radius: 0.375rem;
+  --bt--pagination-hover-color: var(--bt--link-hover-color);
+  --bt--pagination-hover-bg: #e9ecef;
+  --bt--pagination-hover-border-color: #dee2e6;
+  --bt--pagination-focus-color: var(--bt--link-hover-color);
+  --bt--pagination-focus-bg: #e9ecef;
+  --bt--pagination-focus-box-shadow: 0 0 0 0.25rem rgba(251, 159, 0, 0.25);
+  --bt--pagination-active-color: var(--bt--active-color, #fff);
+  --bt--pagination-active-bg: var(--bt--accent);
+  --bt--pagination-active-border-color: var(--bt--accent);
+  --bt--pagination-disabled-color: #6c757d;
+  --bt--pagination-disabled-bg: #fff;
+  --bt--pagination-disabled-border-color: #dee2e6;
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  padding: var(--bt--pagination-padding-y) var(--bt--pagination-padding-x);
+  font-size: var(--bt--pagination-font-size);
+  color: var(--bt--pagination-color);
+  background-color: var(--bt--pagination-bg);
+  border: var(--bt--pagination-border-width) solid var(--bt--pagination-border-color);
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-link {
+    transition: none;
+  }
+}
+.page-link:hover {
+  z-index: 2;
+  color: var(--bt--pagination-hover-color);
+  background-color: var(--bt--pagination-hover-bg);
+  border-color: var(--bt--pagination-hover-border-color);
+}
+.page-link:focus {
+  z-index: 3;
+  color: var(--bt--pagination-focus-color);
+  background-color: var(--bt--pagination-focus-bg);
+  outline: 0;
+  box-shadow: var(--bt--pagination-focus-box-shadow);
+}
+.page-link.active, .active > .page-link {
+  z-index: 3;
+  color: var(--bt--pagination-active-color);
+  background-color: var(--bt--pagination-active-bg);
+  border-color: var(--bt--pagination-active-border-color);
+}
+.page-link.disabled, .disabled > .page-link {
+  color: var(--bt--pagination-disabled-color);
+  pointer-events: none;
+  background-color: var(--bt--pagination-disabled-bg);
+  border-color: var(--bt--pagination-disabled-border-color);
+}
+
+.page-item:not(:first-child) .page-link {
+  margin-left: -1px;
+}
+.page-item:first-child .page-link {
+  border-top-left-radius: var(--bt--pagination-border-radius);
+  border-bottom-left-radius: var(--bt--pagination-border-radius);
+}
+.page-item:last-child .page-link {
+  border-top-right-radius: var(--bt--pagination-border-radius);
+  border-bottom-right-radius: var(--bt--pagination-border-radius);
+}
+
+.pagination-lg {
+  --bt--pagination-padding-x: 1.5rem;
+  --bt--pagination-padding-y: 0.75rem;
+  --bt--pagination-font-size: calc(1.275rem + 0.3vw);
+  --bt--pagination-border-radius: 0.5rem;
+}
+@media (min-width: 1200px) {
+  .pagination-lg {
+    --bt--pagination-font-size: 1.5rem;
+  }
+}
+
+.pagination-sm {
+  --bt--pagination-padding-x: 0.5rem;
+  --bt--pagination-padding-y: 0.25rem;
+  --bt--pagination-font-size: 1.05rem;
+  --bt--pagination-border-radius: 0.25rem;
+}

@@ -5,7 +5,6 @@ base theme: stable
 core_version_requirement: ^9
 libraries:
   - camaleon/base
-  - camaleon/bs-close-button
   - camaleon/page
 regions:
   top: 'Page top'

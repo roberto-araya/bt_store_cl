@@ -12,7 +12,7 @@
 }
 
 .comment {
-  border-top: solid 1px var(--bs-primary);
+  border-top: solid 1px var(--bt--primary);
 }
 .comment .comment__meta a {
   font-size: 0.8rem;

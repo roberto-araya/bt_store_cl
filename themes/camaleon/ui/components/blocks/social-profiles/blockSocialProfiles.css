@@ -1,5 +1,5 @@
 .block.blockSocialProfiles {
-  background-color: var(--backgroundColor, var(--bs-block-bg-color));
+  background-color: var(--backgroundColor, transparent);
 }
 
 .blockSocialProfiles {
@@ -7,6 +7,6 @@
   --maxWidth: var(--xsMaxWidth, 85vw);
   width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));
   font-size: var(--textFontSize);
-  font-family: var(--textFontFamily), var(--bs-body-font-family);
-  color: var(--textColor, var(--bs-body-color));
+  font-family: var(--textFontFamily), var(--bt--body-font-family);
+  color: var(--textColor, var(--bt--body-color));
 }

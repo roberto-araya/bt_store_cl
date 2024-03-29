@@ -19,7 +19,7 @@
 {% set styles = configuration.block_style %}
 {% 
   set style_vars = [
-    styles.background_color_select != 'default' and styles.background_color_select != 'customColor' ? '--backgroundColor: var(--' ~ styles.background_color_select ~ ')',
+    styles.background_color_select != 'default' and styles.background_color_select != 'customColor' ? '--backgroundColor: var(--bt--' ~ styles.background_color_select ~ ')',
     styles.background_color_select == 'customColor' ? '--backgroundColor: ' ~ styles.background_color_custom,
     styles.animation_option == TRUE  and styles.animation_duration ? '--animationDuration: ' ~ styles.animation_duration : '',
     styles.animation_option == TRUE  and styles.animation_delay ? '--animationDelay: ' ~ styles.animation_delay : '',

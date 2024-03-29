@@ -15,6 +15,8 @@
  * @see template_preprocess_details()
  */
 #}
+{{ attach_library('camaleon/bootstrap_card') }}
+
 {% include "@Components/forms/details.twig" with {
   'attributes': attributes,
   'errors': errors,

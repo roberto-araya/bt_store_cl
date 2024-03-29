@@ -1,3 +1,4 @@
+langcode: en
 features:
   node_user_picture: true
   comment_user_picture: true
@@ -7,233 +8,30 @@ logo:
   use_default: 1
 favicon:
   use_default: 1
-menus:
-  menu_main:
-    background_color: default
-    background_color_custom: '#000000'
-    background_color_opacity: '1.00'
-    background_color_custom_opacity: FF
-    background_color_hover: default
-    background_color_custom_hover: '#000000'
-    background_color_opacity_hover: '1.00'
-    background_color_custom_opacity_hover: FF
-    item:
-      item_color: bs-secondary
-      item_color_custom: '#000000'
-      item_color_opacity: '1.00'
-      item_color_custom_opacity: FF
-      item_color_hover: bs-secondary-400
-      item_color_custom_hover: '#000000'
-      item_color_opacity_hover: '1.00'
-      item_color_custom_opacity_hover: FF
-      item_background_color: default
-      item_background_color_custom: '#000000'
-      item_background_color_opacity: '1.00'
-      item_background_color_custom_opacity: FF
-      item_background_color_hover: default
-      item_background_color_custom_hover: '#000000'
-      item_background_color_opacity_hover: '1.00'
-      item_background_color_custom_opacity_hover: FF
-      padding: ''
-      border:
-        border_color: default
-        border_color_custom: '#000000'
-        border_color_opacity: '1.00'
-        border_color_custom_opacity: FF
-        border_color_hover: default
-        border_color_custom_hover: '#000000'
-        border_color_opacity_hover: '1.00'
-        border_color_custom_opacity_hover: FF
-        border_width: ''
-        border_radius: ''
-blocks:
-  branding:
-    branding_type: horizontal
-    logo_size: ''
-    name_font_size: ''
-    slogan_font_size: ''
-    background_color: default
-    background_color_custom: '#000000'
-    background_color_opacity: '1.00'
-    background_color_custom_opacity: FF
-    background_color_hover: default
-    background_color_custom_hover: '#000000'
-    background_color_opacity_hover: '1.00'
-    background_color_custom_opacity_hover: FF
-    name_color: default
-    name_color_custom: '#000000'
-    name_color_opacity: '1.00'
-    name_color_custom_opacity: FF
-    name_color_hover: default
-    name_color_custom_hover: '#000000'
-    name_color_opacity_hover: '1.00'
-    name_color_custom_opacity_hover: FF
-    slogan_color: default
-    slogan_color_custom: '#000000'
-    slogan_color_opacity: '1.00'
-    slogan_color_custom_opacity: FF
-    slogan_color_hover: default
-    slogan_color_custom_hover: '#000000'
-    slogan_color_opacity_hover: '1.00'
-    slogan_color_custom_opacity_hover: FF
-regions:
-  region_sidebar_first:
-    background_color: default
-    background_color_custom: '#000000'
-    background_color_hover: default
-    background_color_custom_hover: '#000000'
-  region_content:
-    background_color: default
-    background_color_custom: '#000000'
-    background_color_hover: default
-    background_color_custom_hover: '#000000'
-  region_sidebar_second:
-    background_color: default
-    background_color_custom: '#000000'
-    background_color_hover: default
-    background_color_custom_hover: '#000000'
-  region_top:
-    justify_content: flex-end
-    align_items: baseline
-    height: ''
-    width:
-      container_select: full
-      full_select: 10%
-      box_select: 100%
-    background_color: bs-primary-800
-    background_color_custom: '#000000'
-    background_color_hover: default
-    background_color_custom_hover: '#000000'
-  region_pre_header:
-    justify_content: center
-    align_items: baseline
-    height: ''
-    width:
-      container_select: full
-      full_select: '0'
-      box_select: 100%
-    background_color: default
-    background_color_custom: '#000000'
-    background_color_hover: default
-    background_color_custom_hover: '#000000'
-  region_navbar:
-    justify_content: space-around
-    align_items: baseline
-    height: ''
-    width:
-      container_select: full
-      full_select: 10%
-      box_select: 100%
-    background_color: bs-primary-050
-    background_color_custom: '#000000'
-    background_color_hover: default
-    background_color_custom_hover: '#000000'
-    position_select: inherit
-  region_header:
-    justify_content: center
-    align_items: baseline
-    height: ''
-    width:
-      container_select: full
-      full_select: '0'
-      box_select: 100%
-    background_color: default
-    background_color_custom: '#000000'
-    background_color_hover: default
-    background_color_custom_hover: '#000000'
-  region_primary_menu:
-    justify_content: center
-    align_items: baseline
-    height: ''
-    width:
-      container_select: full
-      full_select: '0'
-      box_select: 100%
-    background_color: default
-    background_color_custom: '#000000'
-    background_color_hover: default
-    background_color_custom_hover: '#000000'
-  region_secondary_menu:
-    justify_content: center
-    align_items: baseline
-    height: ''
-    width:
-      container_select: full
-      full_select: '0'
-      box_select: 100%
-    background_color: default
-    background_color_custom: '#000000'
-    background_color_hover: default
-    background_color_custom_hover: '#000000'
-  region_breadcrumb:
-    justify_content: flex-start
-    align_items: baseline
-    height: ''
-    width:
-      container_select: full
-      full_select: 10%
-      box_select: 100%
-    background_color: default
-    background_color_custom: '#000000'
-    background_color_hover: default
-    background_color_custom_hover: '#000000'
-  region_highlighted:
-    justify_content: center
-    align_items: baseline
-    height: ''
-    width:
-      container_select: full
-      full_select: '0'
-      box_select: 100%
-    background_color: default
-    background_color_custom: '#000000'
-    background_color_hover: default
-    background_color_custom_hover: '#000000'
-  region_help:
-    justify_content: center
-    align_items: baseline
-    height: ''
-    width:
-      container_select: full
-      full_select: '0'
-      box_select: 100%
-    background_color: default
-    background_color_custom: '#000000'
-    background_color_hover: default
-    background_color_custom_hover: '#000000'
-  region_footer:
-    justify_content: center
-    align_items: baseline
-    height: ''
-    width:
-      container_select: full
-      full_select: 5%
-      box_select: 100%
-    background_color: bs-primary-800
-    background_color_custom: '#000000'
-    background_color_hover: default
-    background_color_custom_hover: '#000000'
-  region_bottom:
-    justify_content: center
-    align_items: baseline
-    height: ''
-    width:
-      container_select: full
-      full_select: '0'
-      box_select: 100%
-    background_color: default
-    background_color_custom: '#000000'
-    background_color_hover: default
-    background_color_custom_hover: '#000000'
-langcode: es
-font: default
+default_colors:
+  theme_color: '1'
+  titles_color: default
+  titles_color_custom: '#c17d11'
+  body_color: default
+  body_color_custom: '#ad7fa8'
+  body_bg: default
+  body_bg_custom: '#ad7fa8'
+  link_color: default
+  link_color_custom: '#000000'
+  link_hover_color: default
+  link_hover_color_custom: '#000000'
+  border_color: default
+  border_color_custom: '#000000'
+fonts:
+  default_font: default
+  headers_font: default
 buttons:
   button_primary:
     link_color: default
     link_color_custom: '#000000'
     link_color_hover: default
     link_color_custom_hover: '#000000'
-    link_color_active: default
+    link_color_active: gray-200
     link_color_custom_active: '#000000'
     link_color_disabled: default
     link_color_custom_disabled: '#000000'
@@ -303,3 +101,128 @@ buttons:
     border_color_custom_active: '#000000'
     border_color_disabled: default
     border_color_custom_disabled: '#000000'
+regions:
+  region_sidebar_first:
+    background_color: default
+    background_color_custom: '#000000'
+  region_content:
+    background_color: default
+    background_color_custom: '#000000'
+  region_sidebar_second:
+    background_color: default
+    background_color_custom: '#000000'
+  region_top:
+    justify_content: flex-end
+    align_items: baseline
+    height: ''
+    width:
+      container_select: full
+      full_select: 15%
+      box_select: 100%
+    background_color: primary-800
+    background_color_custom: '#000000'
+  region_pre_header:
+    justify_content: flex-end
+    align_items: baseline
+    height: ''
+    width:
+      container_select: full
+      full_select: '0'
+      box_select: 100%
+    background_color: default
+    background_color_custom: '#000000'
+  region_navbar:
+    justify_content: space-around
+    align_items: baseline
+    height: ''
+    width:
+      container_select: full
+      full_select: '0'
+      box_select: 100%
+    background_color: primary-050
+    background_color_custom: '#000000'
+    position_select: inherit
+    inner_container_classes: ''
+    toggler_classes: ''
+    toggler_color: primary
+    toggler_color_custom: '#000000'
+  region_header:
+    justify_content: center
+    align_items: baseline
+    height: ''
+    width:
+      container_select: full
+      full_select: '0'
+      box_select: 100%
+    background_color: default
+    background_color_custom: '#000000'
+  region_primary_menu:
+    justify_content: center
+    align_items: baseline
+    height: ''
+    width:
+      container_select: full
+      full_select: '0'
+      box_select: 100%
+    background_color: default
+    background_color_custom: '#000000'
+  region_secondary_menu:
+    justify_content: center
+    align_items: baseline
+    height: ''
+    width:
+      container_select: full
+      full_select: '0'
+      box_select: 100%
+    background_color: default
+    background_color_custom: '#000000'
+  region_breadcrumb:
+    justify_content: center
+    align_items: baseline
+    height: ''
+    width:
+      container_select: full
+      full_select: '0'
+      box_select: 100%
+    background_color: default
+    background_color_custom: '#000000'
+  region_highlighted:
+    justify_content: center
+    align_items: baseline
+    height: ''
+    width:
+      container_select: full
+      full_select: '0'
+      box_select: 100%
+    background_color: default
+    background_color_custom: '#000000'
+  region_help:
+    justify_content: center
+    align_items: baseline
+    height: ''
+    width:
+      container_select: full
+      full_select: '0'
+      box_select: 100%
+    background_color: default
+    background_color_custom: '#000000'
+  region_footer:
+    justify_content: center
+    align_items: baseline
+    height: ''
+    width:
+      container_select: full
+      full_select: '0'
+      box_select: 100%
+    background_color: primary-800
+    background_color_custom: '#000000'
+  region_bottom:
+    justify_content: center
+    align_items: baseline
+    height: ''
+    width:
+      container_select: full
+      full_select: '0'
+      box_select: 100%
+    background_color: default
+    background_color_custom: '#000000'

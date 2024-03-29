@@ -2,12 +2,12 @@
   margin: 1rem;
 }
 .paragraphLede--default__text {
-  font-family: var(--bs-body-font-family);
+  font-family: var(--bt--body-font-family);
   font-size: 1.5rem;
   width: -moz-fit-content;
   width: fit-content;
 }
 .paragraphLede--default__text mark {
-  background-color: var(--bs-accent);
-  color: var(--bs-body-color);
+  background-color: var(--bt--accent);
+  color: var(--bt--body-color);
 }

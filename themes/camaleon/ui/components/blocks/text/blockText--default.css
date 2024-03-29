@@ -14,11 +14,3 @@
 .blockText--default__buttons {
   margin-bottom: var(--captionFontSize);
 }
-.blockText--default__link {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-}
-.blockText--default__button {
-  margin-bottom: 1rem;
-}

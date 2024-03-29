@@ -1,4 +1,6 @@
-@charset "UTF-8"; @import url("https://fonts.googleapis.com/css2?family=Palanquin:wght@300&display=swap"); .paragraphQuote--default {
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Palanquin:wght@300&display=swap");
+.paragraphQuote--default {
   margin: 1rem;
 }
 
@@ -6,18 +8,18 @@
   margin-bottom: -11rem;
   font-style: italic;
   --tw-text-opacity: 1;
-  color: var(--bs-accent);
+  color: var(--bt--accent);
   font-size: 12rem;
   font-family: "Palanquin", sans-serif;
 }
 
 .paragraphQuote--default__text {
-  font-family: var(--bs-body-font-family);
+  font-family: var(--bt--body-font-family);
   padding-left: 2.25rem;
   font-size: 1.875rem;
   line-height: 2.25rem;
   font-style: italic;
-  color: var(--bs-body-color);
+  color: var(--bt--body-color);
 }
 
 .paragraphQuote--default__source {
@@ -26,7 +28,7 @@
   text-align: right;
   font-size: 0.75rem;
   line-height: 1rem;
-  color: var(--bs-body-color);
+  color: var(--bt--body-color);
 }
 .paragraphQuote--default__source::before {
   content: "— ";

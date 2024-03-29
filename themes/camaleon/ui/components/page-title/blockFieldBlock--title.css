@@ -1,6 +1,6 @@
 .block.blockFieldBlock--title {
   --maxWidth: var(--xsMaxWidth, max-content);
-  --marginLeft: var(--xsMarginLeft, 0px);
+  --marginLeft:var(--xsMarginLeft, 0px);
   --marginTop: var(--xsMarginTop, 0px);
   --marginRight: var(--xsMarginRight, 0px);
   --marginBottom: var(--xsMarginBottom, 0px);
@@ -34,8 +34,8 @@
   padding-top: var(--paddingTop);
   padding-right: var(--paddingRight);
   padding-bottom: var(--paddingBottom);
-  font-family: var(--titleFontFamily, var(--bs-body-font-family));
+  font-family: var(--titleFontFamily, var(--bt--body-font-family));
   font-size: var(--titleFontSize);
-  color: var(--titleColor, var(--bt--page-title-color, var(--bs-primary-600)));
+  color: var(--titleColor, var(--bt--titles-color, var(--bt--primary)));
   background-color: var(--backgroundColor, transparent);
 }

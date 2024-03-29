@@ -1,11 +1,11 @@
 .formCommerceCheckout {
   margin: 0 1rem 2rem;
-  color: var(--bs-body-color);
+  color: var(--bt--body-color);
 }
 .formCommerceCheckout .checkout-complete {
   font-size: 2.5rem;
   text-align: center;
-  color: var(--bs-body-color);
+  color: var(--bt--body-color);
 }
 .formCommerceCheckout .checkout-pane {
   min-width: 280px;
@@ -13,12 +13,12 @@
 }
 .formCommerceCheckout .checkout-pane-review fieldset.form-item,
 .formCommerceCheckout .checkout-pane-login fieldset.form-item {
-  --bs-card-border-color: var(--bs-link-color);
-  background-color: var(--bs-body-bg);
+  --bt--card-border-color: var(--bt--link-color);
+  background-color: var(--bt--body-bg);
 }
 .formCommerceCheckout .checkout-pane-payment-information {
-  --bs-card-border-color: var(--bs-link-color);
-  background-color: var(--bs-body-bg);
+  --bt--card-border-color: var(--bt--link-color);
+  background-color: var(--bt--body-bg);
   margin-bottom: 1rem;
 }
 

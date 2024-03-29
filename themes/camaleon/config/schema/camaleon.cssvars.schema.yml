@@ -2,6 +2,25 @@ cssvars.bt:
   label: Theme CSS Variables
   type: mapping
   mapping:
+    # Colors
+    body_color:
+      type: cssvars_color
+      label: Body Color
+    body_bg:
+      type: cssvars_color
+      label: Body Background Color
+    link_color:
+      type: cssvars_color
+      label: Link Color
+    link_hover_color:
+      type: cssvars_color
+      label: Link Hover Color
+    border_color:
+      type: cssvars_color
+      label: Border Color
+    titles_color:
+      type: cssvars_color
+      label: Titles Color
     # Theme Colors
     success:
       type: cssvars_color
@@ -51,6 +70,9 @@ cssvars.bt:
     cyan:
       type: cssvars_color
       label: Cyan
+    white:
+      type: cssvars_color
+      label: White
     primary:
       type: cssvars_color
       label: Color Primary
@@ -232,6 +254,9 @@ cssvars.bt:
     cyan_rgb:
       type: cssvars_color
       label: Cyan RGB
+    white_rgb:
+      type: cssvars_color
+      label: White RGB
     primary_rgb:
       type: cssvars_color
       label: Color Primario RGB
@@ -364,3 +389,7 @@ cssvars.bt:
     gray_900_rgb:
       type: cssvars_color
       label: Color Gris 900 RGB
+    # Colors RGB
+    border_color_rgb:
+      type: cssvars_color
+      label: Border Color RGB

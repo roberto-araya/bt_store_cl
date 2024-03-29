@@ -10,11 +10,11 @@
   font-size: 2rem;
 }
 .nodeArticle--teaser-image__title a {
-  color: var(--bs-primary);
+  color: var(--bt--primary);
 }
 .nodeArticle--teaser-image__intro {
   font-size: 1.2rem;
-  color: var(--bs-body-color);
+  color: var(--bt--body-color);
   margin-top: 1.2rem;
 }
 .nodeArticle--teaser-image__intro p {
@@ -26,7 +26,7 @@
 }
 .nodeArticle--teaser-image__caption {
   text-align: center;
-  color: var(--bs-secondary);
+  color: var(--bt--secondary);
   font-size: 1.2rem;
 }
 .nodeArticle--teaser-image__image {
@@ -41,10 +41,10 @@
   font-size: 1rem;
 }
 .nodeArticle--teaser-image__read-more a {
-  color: var(--bs-link-color);
+  color: var(--bt--link-color);
 }
 .nodeArticle--teaser-image__read-more a:hover {
-  color: var(--bs-link-hover-color);
+  color: var(--bt--link-hover-color);
 }
 
 @media (min-width: 576px) {

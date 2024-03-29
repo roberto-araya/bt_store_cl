@@ -1,18 +1,22 @@
+.block.blockContactInfo {
+  background-color: var(--backgroundColor, transparent);
+}
+
 .blockContactInfo {
   --textFontSize: var(--xsTextFontSize, 1rem);
   --maxWidth: var(--xsMaxWidth, 85vw);
-  font-family: var(--textFontFamily, var(--bs-body-font-family));
-  color: var(--textColor, var(--bs-body-color));
-  background-color: var(--backgroundColor, var(--bs-block-bg-color));
+  font-family: var(--textFontFamily, var(--bt--body-font-family));
+  color: var(--textColor, var(--bt--body-color));
 }
 .blockContactInfo__phones {
   font-size: var(--textFontSize);
 }
-.blockContactInfo .field--name-contact-info-phone-type {
+.blockContactInfo .multifieldContactInfoPhone__contact-info-phone-type {
   font-size: calc(var(--textFontSize) * 1.1);
+  font-weight: bold;
 }
 .blockContactInfo__phones a {
-  color: var(--linkColor, var(--bt--link-color, var(--bs-accent)));
+  color: var(--linkColor, var(--bt--link-color, var(--bt--link-color)));
 }
 .blockContactInfo__address-label {
   font-size: calc(var(--textFontSize) * 1.1);

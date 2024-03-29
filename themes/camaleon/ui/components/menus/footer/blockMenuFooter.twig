@@ -36,9 +36,9 @@
 
 {% if styles.background_color_select != 'default' and styles.background_color_select != 'customColor' %}
   {% if styles.background_color_opacity == '1.0' %}
-    {% set style_vars = style_vars|merge(['--backgroundColor: var(--' ~ styles.background_color_select ~ ')']) %}
+    {% set style_vars = style_vars|merge(['--backgroundColor: var(--bt--' ~ styles.background_color_select ~ ')']) %}
   {% else %}
-    {% set style_vars = style_vars|merge(['--backgroundColor: rgb(var(--' ~ styles.background_color_select ~ '-rgb), ' ~ styles.background_color_opacity ~ ')']) %}
+    {% set style_vars = style_vars|merge(['--backgroundColor: rgb(var(--bt--' ~ styles.background_color_select ~ '-rgb), ' ~ styles.background_color_opacity ~ ')']) %}
   {% endif %}  
 {% endif %}
 
@@ -54,7 +54,7 @@
   set styles_vars = style_vars|merge([
     styles.gap ? '--gap: ' ~ styles.gap : '',
 
-    styles.titlecolor_select != 'default' and styles.title_color_select != 'customColor' ? '--titleColor: var(--' ~ styles.title_color_select ~ ')',
+    styles.titlecolor_select != 'default' and styles.title_color_select != 'customColor' ? '--titleColor: var(--bt--' ~ styles.title_color_select ~ ')',
     styles.title_color_select == 'customColor' ? '--titleColor: ' ~ styles.title_color_custom,
     styles.title_font_family != 'default' ? '--titleFontFamily: ' ~ styles.title_font_family|replace({'-': " "}) : '',
     styles.title_xs_font_size != '' ? '--xsTitleFontSize: ' ~ styles.title_xs_font_size : '',
@@ -71,11 +71,11 @@
     styles.item_lg_font_size != '' ? '--lgItemFontSize: ' ~ styles.item_lg_font_size : '',
     styles.item_xl_font_size != '' ? '--xlItemFontSize: ' ~ styles.item_xl_font_size : '',
     styles.item_xxl_font_size != '' ? '--xxlItemFontSize: ' ~ styles.item_xxl_font_size : '',
-    styles.item_color_select != 'default' and styles.item_color_select != 'customColor' ? '--itemColor: var(--' ~ styles.item_color_select ~ ')',
+    styles.item_color_select != 'default' and styles.item_color_select != 'customColor' ? '--itemColor: var(--bt--' ~ styles.item_color_select ~ ')',
     styles.item_color_select == 'customColor' ? '--itemColor: ' ~ styles.item_color_custom,
     styles.item_hover_color_select == 'default' and styles.item_color_select == 'customColor' ? '--itemColorHover: ' ~ styles.item_color_custom,
-    styles.item_hover_color_select == 'default' and styles.item_color_select != 'default' and styles.item_color_select != 'customColor' ? '--itemColorHover: var(--' ~ styles.item_color_select ~ ')',
-    styles.item_hover_color_select != 'default' and styles.item_hover_color_select != 'customColor' ? '--itemColorHover: var(--' ~ styles.item_hover_color_select ~ ')',
+    styles.item_hover_color_select == 'default' and styles.item_color_select != 'default' and styles.item_color_select != 'customColor' ? '--itemColorHover: var(--bt--' ~ styles.item_color_select ~ ')',
+    styles.item_hover_color_select != 'default' and styles.item_hover_color_select != 'customColor' ? '--itemColorHover: var(--bt--' ~ styles.item_hover_color_select ~ ')',
     styles.item_hover_color_select == 'customColor' ? '--itemColorHover: ' ~ styles.item_hover_color_custom,
     styles.item_xs_padding_left != '' ? '--xsItemPaddingLeft: ' ~ styles.item_xs_padding_left : '',
     styles.item_xs_padding_top != '' ? '--xsItemPaddingTop: ' ~ styles.item_xs_padding_top : '',
@@ -101,12 +101,12 @@
     styles.item_xxl_padding_top != '' ? '--xxlItemPaddingTop: ' ~ styles.item_xxl_padding_top : '',
     styles.item_xxl_padding_right != '' ? '--xxlItemPaddingRight: ' ~ styles.item_xxl_padding_right : '',
     styles.item_xxl_padding_bottom != '' ? '--xxlItemPaddingBottom: ' ~ styles.item_xxl_padding_bottom : '',
-    styles.item_background_color_select != 'default' and styles.item_background_color_select != 'customColor' ? '--itemBackgroundColor: var(--' ~ styles.item_background_color_select ~ ')',
+    styles.item_background_color_select != 'default' and styles.item_background_color_select != 'customColor' ? '--itemBackgroundColor: var(--bt--' ~ styles.item_background_color_select ~ ')',
     styles.item_background_color_select == 'customColor' ? '--itemBackgroundColor: ' ~ styles.item_background_color_custom,
     styles.item_background_hover_color_select == 'default' and styles.item_background_color_select == 'default' ? '--itemBackgroundColorHover: transparent',
     styles.item_background_hover_color_select == 'default' and styles.item_background_color_select == 'customColor' ? '--itemBackgroundColorHover: ' ~ styles.item_background_color_custom,
-    styles.item_background_hover_color_select == 'default' and styles.item_background_color_select != 'default' and styles.item_color_select != 'customColor' ? '--itemColorHover: var(--' ~ styles.item_background_color_select ~ ')',
-    styles.item_background_hover_color_select != 'default' and styles.item_background_hover_color_select != 'customColor' ? '--itemBackgroundColorHover: var(--' ~ styles.item_background_hover_color_select ~ ')',
+    styles.item_background_hover_color_select == 'default' and styles.item_background_color_select != 'default' and styles.item_color_select != 'customColor' ? '--itemColorHover: var(--bt--' ~ styles.item_background_color_select ~ ')',
+    styles.item_background_hover_color_select != 'default' and styles.item_background_hover_color_select != 'customColor' ? '--itemBackgroundColorHover: var(--bt--' ~ styles.item_background_hover_color_select ~ ')',
     styles.item_background_hover_color_select == 'customColor' ? '--itemBackgroundColorHover: ' ~ styles.item_background_hover_color_custom,
 
     styles.animation_option == TRUE  and styles.animation_duration ? '--animationDuration: ' ~ styles.animation_duration : '',

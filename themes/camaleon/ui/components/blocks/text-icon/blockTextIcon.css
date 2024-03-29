@@ -1,5 +1,5 @@
 .block.blockTextIcon {
-  background-color: var(--backgroundColor, var(--bs-block-bg-color));
+  background-color: var(--backgroundColor, transparent);
 }
 
 .blockTextIcon {
@@ -13,27 +13,27 @@
   color: var(--iconColor, var(--defaultPageTopTextColor));
 }
 .blockTextIcon__content-title {
-  color: var(--titleColor, var(--bt--block-title-color, var(--bt--page-title-color, var(--bs-primary-600))));
+  color: var(--titleColor, var(--bt--titles-color, var(--bt--titles-color, var(--bt--primary))));
   font-family: var(--titleFontFamily);
   font-size: var(--titleFontSize);
 }
 .blockTextIcon__caption {
-  color: var(--captionColor, var(--bt--caption-text-color, var(--bs-secondary)));
+  color: var(--captionColor, var(--bt--body-color, var(--bt--secondary)));
   font-family: var(--captionFontFamily);
   font-size: var(--captionFontSize);
 }
 .blockTextIcon__text {
-  color: var(--textColor, var(--bs-body-color));
-  font-family: var(--textFontFamily, var(--bs-body-font-family));
+  color: var(--textColor, var(--bt--body-color));
+  font-family: var(--textFontFamily, var(--bt--body-font-family));
   font-size: var(--textFontSize);
 }
 .blockTextIcon__button {
-  --bs-btn-bg: var(--buttonColor, var(--bs-primary));
-  --bs-btn-color: var(--buttonLinkColor, var(--bt--button-link-color, white));
-  --bs-btn-border-color: var(--buttonColor, var(--bs-primary));
-  --bs-btn-hover-bg: var(--buttonColor, var(--bs-primary));
-  --bs-btn-hover-color: var(--buttonLinkColor, var(--bt--button-link-color, white));
-  --bs-btn-hover-border-color: var(--buttonLinkColor, var(--bt--button-link-color, white));
+  --bt--btn-bg: var(--buttonColor, var(--bt--primary-500));
+  --bt--btn-color: var(--buttonLinkColor, white);
+  --bt--btn-border-color: var(--buttonColor, var(--bt--primary-500));
+  --bt--btn-hover-bg: var(--buttonColor, var(--bt--primary-500));
+  --bt--btn-hover-color: var(--buttonLinkColor, white);
+  --bt--btn-hover-border-color: var(--buttonLinkColor, white);
   padding-right: 0px;
   padding-left: var(--btnPaddingLeft, 0px);
 }
@@ -42,14 +42,14 @@
   padding-bottom: 10px;
   padding-right: 1rem;
   padding-left: var(--buttonIcon, 1rem);
-  color: var(--buttonLinkColor, var(--bt--button-link-color, white));
+  color: var(--buttonLinkColor, white);
   font-size: var(--textFontSize);
 }
 .blockTextIcon__button-icon {
   z-index: 1;
 }
 .blockTextIcon__button-icon svg {
-  color: var(--buttonLinkColor, var(--bt--button-link-color, white));
+  color: var(--buttonLinkColor, white);
 }
 .blockTextIcon__link {
   z-index: 2;

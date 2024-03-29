@@ -1,5 +1,5 @@
 .block.blockHighlightedText {
-  background-color: var(--backgroundColor, var(--bs-block-bg-color));
+  background-color: var(--backgroundColor, transparent);
 }
 
 .blockHighlightedText {
@@ -8,10 +8,10 @@
   width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));
 }
 .blockHighlightedText__highlighted-text {
-  font-family: var(--textFontFamily, var(--bs-body-font-family));
+  font-family: var(--textFontFamily, var(--bt--body-font-family));
   font-size: var(--textFontSize);
 }
 .blockHighlightedText__highlighted-text > mark {
-  background-color: var(--highlightedColor, var(--bs-accent));
-  color: var(--textColor, var(--bs-body-color));
+  background-color: var(--highlightedColor, var(--bt--accent-500));
+  color: var(--textColor, var(--bt--body-color));
 }

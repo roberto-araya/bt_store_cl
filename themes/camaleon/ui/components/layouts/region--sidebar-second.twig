@@ -21,7 +21,7 @@
 
 {%
   set style_vars = [
-    theme_settings.background_color_select != 'default' and theme_settings.background_color_select != 'customColor' ? '--backgroundColor: var(--' ~ theme_settings.background_color_select ~ ')',
+    theme_settings.background_color_select != 'default' and theme_settings.background_color_select != 'customColor' ? '--backgroundColor: var(--bt--' ~ theme_settings.background_color_select ~ ')',
     theme_settings.background_color_select == 'customColor' ? '--backgroundColor: ' ~ theme_settings.background_color_custom,
   ]|remove_empty
 %}

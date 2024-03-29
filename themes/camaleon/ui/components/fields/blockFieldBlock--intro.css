@@ -1,6 +1,6 @@
 .block.blockFieldBlock--intro {
   --maxWidth: var(--xsMaxWidth, max-content);
-  --marginLeft: var(--xsMarginLeft, 0px);
+  --marginLeft:var(--xsMarginLeft, 0px);
   --marginTop: var(--xsMarginTop, 0px);
   --marginRight: var(--xsMarginRight, 0px);
   --marginBottom: var(--xsMarginBottom, 0px);
@@ -27,8 +27,8 @@
   padding-top: var(--paddingTop);
   padding-right: var(--paddingRight);
   padding-bottom: var(--paddingBottom);
-  font-family: var(--introFontFamily, var(--bs-body-font-family));
+  font-family: var(--introFontFamily, var(--bt--body-font-family));
   font-size: var(--introFontSize);
-  color: var(--introColor, var(--bs-primary));
+  color: var(--introColor, var(--bt--primary));
   background-color: var(--backgroundColor, transparent);
 }

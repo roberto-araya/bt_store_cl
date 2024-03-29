@@ -1,5 +1,5 @@
 .block.blockTitleIcon {
-  background-color: var(--backgroundColor, var(--bs-block-bg-color));
+  background-color: var(--backgroundColor, transparent);
 }
 
 .blockTitleIcon {
@@ -9,15 +9,15 @@
   width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));
 }
 .blockTitleIcon__icon svg {
-  color: var(--iconColor, var(--bs-accent));
+  color: var(--iconColor, var(--bt--accent));
 }
 .blockTitleIcon__content-title {
-  color: var(--titleColor, var(--bt--block-title-color, var(--bt--page-title-color, var(--bs-primary-600))));
+  color: var(--titleColor, var(--bt--titles-color, var(--bt--titles-color, var(--bt--primary))));
   font-family: var(--titleFontFamily);
   font-size: var(--titleFontSize);
 }
 .blockTitleIcon__caption {
-  color: var(--captionColor, var(--bt--caption-text-color, var(--bs-secondary)));
+  color: var(--captionColor, var(--bt--body-color, var(--bt--secondary)));
   font-family: var(--captionFontFamily);
   font-size: var(--captionFontSize);
 }

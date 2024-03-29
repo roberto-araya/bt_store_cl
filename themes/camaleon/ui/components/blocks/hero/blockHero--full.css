@@ -21,7 +21,7 @@
 .blockHero--full .boxed {
   max-width: var(--maxWidth);
   padding: 1rem;
-  background-color: var(--backgroundColor, var(--bs-white));
+  background-color: var(--backgroundColor, var(--bt--white));
   align-self: var(--alignSelf);
   margin-left: var(--marginLeft);
   margin-top: var(--marginTop);
@@ -59,8 +59,7 @@
   gap: 0.5rem;
   align-items: center;
 }
-.blockHero--full__button,
-.blockHero--full__button-secondary {
+.blockHero--full__button, .blockHero--full__button-secondary {
   margin: 0;
 }
 

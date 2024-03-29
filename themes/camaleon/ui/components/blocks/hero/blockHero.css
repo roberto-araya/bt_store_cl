@@ -17,28 +17,28 @@
 .blockHero__content-title {
   font-family: var(--titleFontFamily);
   font-size: var(--titleFontSize);
-  color: var(--titleColor, var(--bt--block-title-color, var(--bt--page-title-color, var(--bs-primary-600))));
+  color: var(--titleColor, var(--bt--titles-color, var(--bt--titles-color, var(--bt--primary))));
 }
 .blockHero__caption {
   font-family: var(--captionFontFamily);
   font-size: var(--captionFontSize);
-  color: var(--captionColor, var(--bt--caption-text-color, var(--bs-secondary)));
+  color: var(--captionColor, var(--bt--body-color, var(--bt--secondary)));
 }
 .blockHero__text {
-  font-family: var(--textFontFamily, var(--bs-body-font-family));
+  font-family: var(--textFontFamily, var(--bt--body-font-family));
   font-size: var(--textFontSize);
-  color: var(--textColor, var(--bs-body-color));
+  color: var(--textColor, var(--bt--body-color));
 }
 .blockHero__buttons {
   justify-content: var(--textAlign);
 }
 .blockHero__button {
-  --bs-btn-bg: var(--buttonColor, var(--bs-primary));
-  --bs-btn-color: var(--buttonLinkColor, var(--bt--button-link-color, white));
-  --bs-btn-border-color: var(--buttonColor, var(--bs-primary));
-  --bs-btn-hover-bg: var(--buttonColor, var(--bs-primary));
-  --bs-btn-hover-color: var(--buttonLinkColor, var(--bt--button-link-color, white));
-  --bs-btn-hover-border-color: var(--buttonLinkColor, var(--bt--button-link-color, white));
+  --bt--btn-bg: var(--buttonColor, var(--bt--primary-500));
+  --bt--btn-color: var(--buttonLinkColor, white);
+  --bt--btn-border-color: var(--buttonColor, var(--bt--primary-500));
+  --bt--btn-hover-bg: var(--buttonColor, var(--bt--primary-500));
+  --bt--btn-hover-color: var(--buttonLinkColor, white);
+  --bt--btn-hover-border-color: var(--buttonLinkColor, white);
   padding-right: 0px;
   padding-left: var(--btnPaddingLeft, 0px);
 }
@@ -47,23 +47,23 @@
   padding-bottom: 10px;
   padding-right: 1rem;
   padding-left: var(--buttonIcon, 1rem);
-  color: var(--buttonLinkColor, var(--bt--button-link-color, white));
-  font-family: var(--textFontFamily, var(--bs-body-font-family));
+  color: var(--buttonLinkColor, white);
+  font-family: var(--textFontFamily, var(--bt--body-font-family));
   font-size: var(--textFontSize);
 }
 .blockHero__button-icon {
   z-index: 1;
 }
 .blockHero__button-icon svg {
-  color: var(--buttonLinkColor, var(--bt--button-link-color, white));
+  color: var(--buttonLinkColor, white);
 }
 .blockHero__button-secondary {
-  --bs-btn-bg: var(--buttonSecondaryColor, var(--bs-secondary));
-  --bs-btn-color: var(--buttonSecondaryLinkColor, var(--bt--button-link-color, white));
-  --bs-btn-border-color: var(--buttonSecondaryColor, var(--bs-secondary));
-  --bs-btn-hover-bg: var(--buttonSecondaryColor, var(--bs-secondary));
-  --bs-btn-hover-color: var(--buttonSecondaryLinkColor, var(--bt--button-link-color, white));
-  --bs-btn-hover-border-color: var(--buttonSecondaryLinkColor, var(--bt--button-link-color, white));
+  --bt--btn-bg: var(--buttonSecondaryColor, var(--bt--secondary-500));
+  --bt--btn-color: var(--buttonSecondaryLinkColor, white);
+  --bt--btn-border-color: var(--buttonSecondaryColor, var(--bt--secondary-500));
+  --bt--btn-hover-bg: var(--buttonSecondaryColor, var(--bt--secondary-500));
+  --bt--btn-hover-color: var(--buttonSecondaryLinkColor, white);
+  --bt--btn-hover-border-color: var(--buttonSecondaryLinkColor, white);
   padding-right: 0px;
   padding-left: var(--btnSPaddingLeft, 0px);
 }
@@ -72,15 +72,15 @@
   padding-bottom: 10px;
   padding-right: 1rem;
   padding-left: var(--buttonSecondaryIcon, 1rem);
-  color: var(--buttonSecondaryLinkColor, var(--bt--button-link-color, white));
-  font-family: var(--textFontFamily, var(--bs-body-font-family));
+  color: var(--buttonSecondaryLinkColor, white);
+  font-family: var(--textFontFamily, var(--bt--body-font-family));
   font-size: var(--textFontSize);
 }
 .blockHero__button-secondary-icon {
   z-index: 1;
 }
 .blockHero__button-secondary-icon svg {
-  color: var(--buttonSecondaryLinkColor, var(--bt--button-link-color, white));
+  color: var(--buttonSecondaryLinkColor, white);
 }
 .blockHero__link {
   z-index: 2;

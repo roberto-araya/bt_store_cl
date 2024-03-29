@@ -1,4 +1,4 @@
-(function () {
+(function() {
   blocks = document.getElementsByClassName('blockHero--full');
   observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -13,25 +13,25 @@
 
   Array.from(blocks).forEach((blockHero) => {
     title = document.querySelector('#' + blockHero.id + ' .blockHero--full__content-title')
-    if (typeof(title) != 'undefined' && title != NULL)
+    if (typeof(title) != 'undefined' && title != null)
     {
       observer.observe(title)
     }
 
     caption = document.querySelector('#' + blockHero.id + ' .blockHero--full__caption')
-    if (typeof(caption) != 'undefined' && caption != NULL)
+    if (typeof(caption) != 'undefined' && caption != null)
     {
       observer.observe(caption)
     }
 
     text = document.querySelector('#' + blockHero.id + ' .blockHero--full__text')
-    if (typeof(text) != 'undefined' && text != NULL)
+    if (typeof(text) != 'undefined' && text != null)
     {
       observer.observe(text)
     }
 
     buttons = document.querySelector('#' + blockHero.id + ' .blockHero--full__buttons')
-    if (typeof(buttons) != 'undefined' && buttons != NULL)
+    if (typeof(buttons) != 'undefined' && buttons != null)
     {
       observer.observe(buttons)
     }

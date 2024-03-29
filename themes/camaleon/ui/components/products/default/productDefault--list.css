@@ -11,10 +11,10 @@
 }
 .productDefault--list .views-exposed-form .form-submit {
   margin-top: 5px;
-  color: var(--bs-white);
-  background-color: var(--bs-primary);
+  color: var(--bt--white);
+  background-color: var(--bt--primary);
 }
 .productDefault--list .views-exposed-form .form-submit:hover {
   filter: brightness(110%) saturate(100%);
-  color: var(--bs-white);
+  color: var(--bt--white);
 }

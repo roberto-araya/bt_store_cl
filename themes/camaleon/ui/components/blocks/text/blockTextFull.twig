@@ -3,9 +3,9 @@
 
 {% if styles.background_color_select != 'default' and styles.background_color_select != 'customColor' %}
   {% if styles.background_color_opacity == '1.0' %}
-    {% set style_vars = style_vars|merge(['--backgroundColor: var(--' ~ styles.background_color_select ~ ')']) %}
+    {% set style_vars = style_vars|merge(['--backgroundColor: var(--bt--' ~ styles.background_color_select ~ ')']) %}
   {% else %}
-    {% set style_vars = style_vars|merge(['--backgroundColor: rgb(var(--' ~ styles.background_color_select ~ '-rgb), ' ~ styles.background_color_opacity ~ ')']) %}
+    {% set style_vars = style_vars|merge(['--backgroundColor: rgb(var(--bt--' ~ styles.background_color_select ~ '-rgb), ' ~ styles.background_color_opacity ~ ')']) %}
   {% endif %}  
 {% endif %}
 
@@ -19,7 +19,7 @@
 
 {%
   set styles_vars = style_vars|merge([
-    styles.title_color_select != 'default' and styles.title_color_select != 'customColor' ? '--titleColor: var(--' ~ styles.title_color_select ~ ')',
+    styles.title_color_select != 'default' and styles.title_color_select != 'customColor' ? '--titleColor: var(--bt--' ~ styles.title_color_select ~ ')',
     styles.title_color_select == 'customColor' ? '--titleColor: ' ~ styles.title_color_custom,
     styles.title_font_family == 'default' ? '--titleFontFamily: var(--bt--headers-font)',
     styles.title_font_family != 'default' ? '--titleFontFamily: ' ~ styles.title_font_family|replace({'-': " "}) : '',
@@ -30,7 +30,7 @@
     styles.title_xl_font_size != '' ? '--xlTitleFontSize: ' ~ styles.title_xl_font_size : '',
     styles.title_xxl_font_size != '' ? '--xxlTitleFontSize: ' ~ styles.title_xxl_font_size : '',
 
-    styles.caption_color_select != 'default' and styles.caption_color_select != 'customColor' ? '--captionColor: var(--' ~ styles.caption_color_select ~ ')',
+    styles.caption_color_select != 'default' and styles.caption_color_select != 'customColor' ? '--captionColor: var(--bt--' ~ styles.caption_color_select ~ ')',
     styles.caption_color_select == 'customColor' ? '--captionColor: ' ~ styles.caption_color_custom,
     styles.caption_font_family == 'default' ? '--captionFontFamily: var(--bt--headers-font)',
     styles.caption_font_family != 'default' ? '--captionFontFamily: ' ~ styles.caption_font_family|replace({'-': " "}) : '',
@@ -41,7 +41,7 @@
     styles.caption_xl_font_size != '' ? '--xlCaptionFontSize: ' ~ styles.caption_xl_font_size : '',
     styles.caption_xxl_font_size != '' ? '--xxlCaptionFontSize: ' ~ styles.caption_xxl_font_size : '',
 
-    styles.text_color_select != 'default' and styles.text_color_select != 'customColor' ? '--textColor: var(--' ~ styles.text_color_select ~ ')',
+    styles.text_color_select != 'default' and styles.text_color_select != 'customColor' ? '--textColor: var(--bt--' ~ styles.text_color_select ~ ')',
     styles.text_color_select == 'customColor' ? '--textColor: ' ~ styles.text_color_custom,
     styles.text_font_family != 'default' ? '--textFontFamily: ' ~ styles.text_font_family|replace({'-': " "}) : '',
     styles.text_xs_font_size != '' ? '--xsTextFontSize: ' ~ styles.text_xs_font_size : '',
@@ -51,11 +51,10 @@
     styles.text_xl_font_size != '' ? '--xlTextFontSize: ' ~ styles.text_xl_font_size : '',
     styles.text_xxl_font_size != '' ? '--xxlTextFontSize: ' ~ styles.text_xxl_font_size : '',
 
-    content.field_bt_button_icon|render ? '--buttonIcon: calc(1.5rem + var(--buttonIconSize, 24px))',
-    content.field_bt_button_secondary_icon|render ? '--buttonSecondaryIcon: calc(1.5rem + var(--buttonIconSize, 24px))',
-    styles.button_color_select != 'default' and styles.button_color_select != 'customColor' ? '--buttonColor: var(--' ~ styles.button_color_select ~ ')',
+    content.field_bt_button_icon|render ? '--buttonIcon: calc(1.5rem + var(--buttonIconSize, 24px)); --btnPaddingLeft: 1rem',
+    styles.button_color_select != 'default' and styles.button_color_select != 'customColor' ? '--buttonColor: var(--bt--' ~ styles.button_color_select ~ ')',
     styles.button_color_select == 'customColor' ? '--buttonColor: ' ~ styles.button_color_custom,
-    styles.button_link_color_select != 'default' and styles.button_link_color_select != 'customColor' ? '--buttonLinkColor: var(--' ~ styles.button_link_color_select ~ ')',
+    styles.button_link_color_select != 'default' and styles.button_link_color_select != 'customColor' ? '--buttonLinkColor: var(--bt--' ~ styles.button_link_color_select ~ ')',
     styles.button_link_color_select == 'customColor' ? '--buttonLinkColor: ' ~ styles.button_link_color_custom,
 
     styles.animation_option == TRUE  and styles.animation_duration ? '--animationDuration: ' ~ styles.animation_duration : '',
