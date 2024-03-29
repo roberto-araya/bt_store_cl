@@ -660,16 +660,3 @@ function camaleon_views_post_render(ViewExecutable $view) {
     $route->setDefault('_title', $title);
   }
 }
-
-/**
- * Implements hook_update_N.
- */
-function camaleon_update_9101() {
-  $config_path = \Drupal::service('extension.list.theme')->getPath('camaleon') . '/config/install';
-  $source = new FileStorage($config_path);
-
-  // Update theme settings.
-  $config = 'camaleon.settings';
-  $config_factory->getEditable($config)->delete();
-  $config_storage->write($config, $source->read($config));
-}

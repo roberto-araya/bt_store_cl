@@ -164,9 +164,17 @@ function bt_theme_colors_update_9101() {
   $config_storage->write($view_display_config, $source->read($view_display_config));
 
   // Update cssvars config.
+  $config_path = \Drupal::service('extension.list.theme')->getPath('camaleon') . '/config/install';
+  $source = new FileStorage($config_path);
+
   $cssvars_config = 'cssvars.bt';
   $config_factory->getEditable($cssvars_config)->delete();
   $config_storage->write($cssvars_config, $source->read($cssvars_config));
+
+  // Update theme settings.
+  $config = 'camaleon.settings';
+  $config_factory->getEditable($config)->delete();
+  $config_storage->write($config, $source->read($config));
 
   // Create theme_colors palettes.
   _create_palettes();
