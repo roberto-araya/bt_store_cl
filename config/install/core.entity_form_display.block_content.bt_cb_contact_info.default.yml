@@ -11,39 +11,23 @@ dependencies:
   module:
     - address
     - field_group
-    - field_states_ui
     - inline_entity_form
 third_party_settings:
   field_group:
-    group_block:
-      children:
-        - info
-        - field_bt_blq_desc
-        - field_bt_blq_title
-      label: Bloque
-      region: content
-      parent_name: ''
-      weight: 1
-      format_type: fieldset
-      format_settings:
-        classes: ''
-        id: ''
-        description: ''
-        required_fields: true
-    group_bt_content:
+    group_content:
       children:
         - field_bt_phones
         - field_bt_address
-        - field_bt_enable_icons
-      label: Contenido
+      label: Content
       region: content
       parent_name: ''
-      weight: 2
-      format_type: fieldset
+      weight: 1
+      format_type: details
       format_settings:
         classes: ''
         show_empty_fields: false
         id: ''
+        open: false
         description: ''
         required_fields: true
 id: block_content.bt_cb_contact_info.default
@@ -53,74 +37,34 @@ mode: default
 content:
   field_bt_address:
     type: address_default
-    weight: 6
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_bt_blq_desc:
-    type: string_textfield
-    weight: 2
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_bt_blq_title:
-    type: string_textfield
-    weight: 3
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_bt_enable_icons:
-    type: boolean_checkbox
-    weight: 7
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
   field_bt_phones:
-    type: inline_entity_form_complex
-    weight: 5
+    type: inline_entity_form_simple
+    weight: 2
     region: content
     settings:
       form_mode: default
       override_labels: false
       label_singular: ''
       label_plural: ''
-      allow_new: true
-      allow_existing: false
-      match_operator: CONTAINS
-      allow_duplicate: false
       collapsible: false
       collapsed: false
       revision: false
-      removed_reference: optional
-    third_party_settings:
-      field_states_ui:
-        form:
-          type: ''
-          list: ''
-          add: Agregar
+    third_party_settings: {  }
   info:
     type: string_textfield
-    weight: 1
+    weight: 0
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  langcode:
-    type: language_select
-    weight: 0
-    region: content
-    settings:
-      include_locked: true
-    third_party_settings: {  }
-  translation:
-    weight: 3
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_bt_blq_desc: true
+  field_bt_blq_title: true
+  field_bt_enable_icons: true
+  langcode: true
+  translation: true
