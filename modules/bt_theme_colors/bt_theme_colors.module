@@ -142,14 +142,41 @@ function bt_theme_colors_update_9101() {
 
   foreach (['primary', 'secondary', 'accent', 'gray'] as $color) {
     foreach (['050', '100', '200', '300', '400', '500', '600', '700', '800', '900'] as $shade) {
-      $storage_config_file = 'field.storage.theme_colors.field_bt_' . $color . '_' . $shade;  
-      $field_config_file = 'field.field.theme_colors.theme_colors.field_bt_' . $color . '_' . $shade;
-      
-      // Add storage.
-      $config_storage->write($storage_config_file, $source->read($storage_config_file));
+      $storage_config = 'field.storage.theme_colors.field_bt_' . $color . '_' . $shade;  
+      $field_config = 'field.field.theme_colors.theme_colors.field_bt_' . $color . '_' . $shade;
+            
+      // Remove previous fields configs.
+      if (!$config_factory->get($storage_config)->isNew()) {
+        $config_factory->getEditable($storage_config)->delete();
+      }
 
-      // Add field.
-      $config_storage->write($field_config_file, $source->read($field_config_file));
+      if (!$config_factory->get($field_config)->isNew()) {
+        $config_factory->getEditable($field_config)->delete();
+      }
+      // Create field storage.
+      $field_storage = FieldStorageConfig::create([
+        'field_name' => 'field_bt_' . $color . '_' . $shade,
+        'entity_type' => 'theme_colors',
+        'type' => 'color_field_type',
+      ]);
+      
+      $field_storage->setThirdPartySetting('field_permissions', 'permission_type', 'public');
+      $field_storage->setSetting('format', '#HEXHEX');
+      $field_storage->setCardinality(1);
+      $field_storage->save();
+
+      // Create field.
+      $field_settings = [
+        'field_name' => 'field_bt_' . $color . '_' . $shade,
+        'entity_type' => 'theme_colors',
+        'bundle' => 'theme_colors',
+        'label' => ucfirst($color) . ' ' . $shade,
+        'required' => FALSE,
+        'field_type' => 'color_field_type'
+      ];
+      $field = FieldConfig::create($field_settings)->save();
+      $field->setSetting('opacity', 0);
+      $field->save();
     }
   }
 
