@@ -45,7 +45,7 @@ function _get_color_palettes() {
     'gray_050' => '#FFFFFF',
     'gray_100' => '#F8F9FA',
     'gray_200' => '#E9ECEF',
-    'gray_300' => '##DEE2E6',
+    'gray_300' => '#DEE2E6',
     'gray_400' => '#CED4DA',
     'gray_500' => '#FEFEFE',
     'gray_600' => '#6C757D',
