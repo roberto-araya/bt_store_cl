@@ -138,7 +138,21 @@ function bt_theme_colors_update_9101() {
   $config_factory = \Drupal::service('config.factory');
   $config_storage = \Drupal::service('config.storage');
   $config_path = \Drupal::service('extension.list.module')->getPath('bt_theme_colors') . '/config/install';
-  $source = new FileStorage($config_path); 
+  $source = new FileStorage($config_path);
+
+  $grays = [
+    'gray' => '#E9ECEF',
+    'gray_050' => '#FFFFFF',
+    'gray_100' => '#F8F9FA',
+    'gray_200' => '#E9ECEF',
+    'gray_300' => '##DEE2E6',
+    'gray_400' => '#CED4DA',
+    'gray_500' => '#FEFEFE',
+    'gray_600' => '#6C757D',
+    'gray_700' => '#495057',
+    'gray_800' => '#343A40',
+    'gray_900' => '#212529',
+  ];
 
   foreach (['primary', 'secondary', 'accent', 'gray'] as $color) {
     foreach (['050', '100', '200', '300', '400', '500', '600', '700', '800', '900'] as $shade) {
@@ -176,9 +190,45 @@ function bt_theme_colors_update_9101() {
       ];
       $field = FieldConfig::create($field_settings);
       $field->setSetting('opacity', 0);
+
+      if ($color == 'gray') {
+        $field->setDefaultValue([
+          'color' => $grays['gray_' . $shade],
+          'opacity' => null
+        ]);
+      }
       $field->save();
     }
   }
+
+  // Create field storage.
+  $field_storage = FieldStorageConfig::create([
+    'field_name' => 'field_bt_white',
+    'entity_type' => 'theme_colors',
+    'type' => 'color_field_type',
+  ]);
+  
+  $field_storage->setThirdPartySetting('field_permissions', 'permission_type', 'public');
+  $field_storage->setSetting('format', '#HEXHEX');
+  $field_storage->setCardinality(1);
+  $field_storage->save();
+
+  // Create field.
+  $field_settings = [
+    'field_name' => 'field_bt_white',
+    'entity_type' => 'theme_colors',
+    'bundle' => 'theme_colors',
+    'label' => t('White'),
+    'required' => FALSE,
+    'field_type' => 'color_field_type'
+  ];
+  $field = FieldConfig::create($field_settings);
+  $field->setSetting('opacity', 0);
+  $field->setDefaultValue([
+    'color' => '#FFFFFF',
+    'opacity' => null
+  ]);
+  $field->save();
 
   // Update form display.
   $form_display_config = 'core.entity_form_display.theme_colors.theme_colors.default';
