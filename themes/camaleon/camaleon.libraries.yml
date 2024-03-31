@@ -1089,6 +1089,8 @@ menu:
   css:
     component:
       ui/components/menus/menu.css: {}
+  dependencies:
+    - camaleon/bootstrap_nav
 
 # Main
 menu_main:
@@ -1101,12 +1103,14 @@ menu_main:
   dependencies:
     - camaleon/block
 
+
 menu_main_default:
   version: VERSION
   css:
     component:
       ui/components/menus/main/menuMain--default.css: {}
   dependencies:
+    - camaleon/bootstrap_nav
     - camaleon/menu_main
 
 menu_main_horizontal:
@@ -1115,6 +1119,7 @@ menu_main_horizontal:
     component:
       ui/components/menus/main/menuMain--horizontal.css: {}
   dependencies:
+    - camaleon/bootstrap_nav
     - camaleon/menu_main
 
 menu_main_vertical:
@@ -1123,6 +1128,7 @@ menu_main_vertical:
     component:
       ui/components/menus/main/menuMain--vertical.css: {}
   dependencies:
+    - camaleon/bootstrap_nav
     - camaleon/menu_main
 
 menu_main_one:
@@ -1131,6 +1137,7 @@ menu_main_one:
     component:
       ui/components/menus/main/menuMain--one.css: {}
   dependencies:
+    - camaleon/bootstrap_nav
     - camaleon/menu_main
 
 menu_main_two:
@@ -1139,6 +1146,7 @@ menu_main_two:
     component:
       ui/components/menus/main/menuMain--two.css: {}
   dependencies:
+    - camaleon/bootstrap_nav
     - camaleon/menu_main
 
 # footer
@@ -1158,6 +1166,7 @@ menu_footer_default:
     component:
       ui/components/menus/footer/menuFooter--default.css: {}
   dependencies:
+    - camaleon/bootstrap_nav
     - camaleon/menu_footer
 
 menu_footer_horizontal:
@@ -1166,6 +1175,7 @@ menu_footer_horizontal:
     component:
       ui/components/menus/footer/menuFooter--horizontal.css: {}
   dependencies:
+    - camaleon/bootstrap_nav
     - camaleon/menu_footer
 
 menu_footer_vertical:
@@ -1174,6 +1184,7 @@ menu_footer_vertical:
     component:
       ui/components/menus/footer/menuFooter--vertical.css: {}
   dependencies:
+    - camaleon/bootstrap_nav
     - camaleon/menu_footer
 
 menu_footer_one:
@@ -1182,6 +1193,7 @@ menu_footer_one:
     component:
       ui/components/menus/footer/menuFooter--one.css: {}
   dependencies:
+    - camaleon/bootstrap_nav
     - camaleon/menu_footer
 
 menu_footer_two:
@@ -1190,6 +1202,7 @@ menu_footer_two:
     component:
       ui/components/menus/footer/menuFooter--two.css: {}
   dependencies:
+    - camaleon/bootstrap_nav
     - camaleon/menu_footer
 
 # normal
@@ -1209,6 +1222,7 @@ menu_normal_default:
     component:
       ui/components/menus/normal/menuNormal--default.css: {}
   dependencies:
+    - camaleon/bootstrap_nav
     - camaleon/menu_normal
 
 menu_normal_horizontal:
@@ -1217,6 +1231,7 @@ menu_normal_horizontal:
     component:
       ui/components/menus/normal/menuNormal--horizontal.css: {}
   dependencies:
+    - camaleon/bootstrap_nav
     - camaleon/menu_normal
 
 menu_normal_vertical:
@@ -1225,6 +1240,7 @@ menu_normal_vertical:
     component:
       ui/components/menus/normal/menuNormal--vertical.css: {}
   dependencies:
+    - camaleon/bootstrap_nav
     - camaleon/menu_normal
 
 menu_normal_one:
@@ -1233,6 +1249,7 @@ menu_normal_one:
     component:
       ui/components/menus/normal/menuNormal--one.css: {}
   dependencies:
+    - camaleon/bootstrap_nav
     - camaleon/menu_normal
 
 menu_normal_two:
@@ -1241,6 +1258,7 @@ menu_normal_two:
     component:
       ui/components/menus/normal/menuNormal--two.css: {}
   dependencies:
+    - camaleon/bootstrap_nav
     - camaleon/menu_normal
 
 # Breadcrumbs
