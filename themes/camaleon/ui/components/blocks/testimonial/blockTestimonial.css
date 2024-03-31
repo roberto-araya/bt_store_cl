@@ -4,7 +4,7 @@
 
 .blockTestimonial {
   --titleFontSize: var(--xsTitleFontSize, 1.8rem);
-  --textFontSize: var(--xsTextFontSize, 1.2rem);
+  --textFontSize: var(--xsTextFontSize, 1rem);
   --maxWidth: var(--xsMaxWidth, 85vw);
   width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));
 }

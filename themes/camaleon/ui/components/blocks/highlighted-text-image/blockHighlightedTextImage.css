@@ -5,7 +5,7 @@
 .blockHighlightedTextImage {
   --titleFontSize: var(--xsTitleFontSize, 1.8rem);
   --captionFontSize: var(--xsCaptionFontSize, 1.2rem);
-  --textFontSize: var(--xsTextFontSize, 1.2rem);
+  --textFontSize: var(--xsTextFontSize, 1rem);
   --maxWidth: var(--xsMaxWidth, 85vw);
   width: calc(100% - (var(--marginRight, 0px) + var(--marginLeft, 0px)));
 }
@@ -21,7 +21,7 @@
 }
 .blockHighlightedTextImage__highlighted-text {
   font-family: var(--textFontFamily, var(--bt--body-font-family));
-  font-size: var(--textFontSize, 1.2rem);
+  font-size: var(--textFontSize, 1rem);
 }
 .blockHighlightedTextImage__highlighted-text > mark {
   background-color: var(--highlightedColor, var(--bt--accent-500));
