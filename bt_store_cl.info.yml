@@ -4,7 +4,7 @@ description: Install profile for Chile Store.
 core_version_requirement: ~9.4.0
 exclusive: TRUE
 distribution:
-  name: Chile Store
+  name: TiendaParaMiPyMe
   install:
     theme: bt_install_theme
     #finish_url: '?tour=1'
@@ -58,6 +58,7 @@ dependencies:
   - fences:fences
   - entity_type_permissions:entity_type_permissions
   - bt_store_cl:bt_theme_colors
+  - responsive_preview:responsive_preview
 themes:
   - bt_install_theme
   - claro
