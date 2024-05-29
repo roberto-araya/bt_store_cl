@@ -1,4 +1,15 @@
+#responsive-preview-toolbar-tab {
+  display: none;
+}
+
+#layout-builder .layout-builder__link--add {
+  font-size: 1rem;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
 .layout-builder {
+  padding: 15px;
   margin-bottom: 5rem;
 }
 
@@ -9,4 +20,16 @@
 .layout-builder__region .layout-builder__add-block {
   max-height: 90px;
   align-self: end;
+}
+
+#breakpoints-buttons {
+  font-size: 1rem;
+  padding: 10px;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+#breakpoints-buttons .btn.btn-breakpoint {
+  font-size: 1rem;
 }

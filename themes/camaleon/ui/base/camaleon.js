@@ -31,12 +31,16 @@ var Camaleon = (function() {
   camaleon.applyProperties = function(element, breakpoint, custom_properties = {}){
     let all_properties = {...defaultProperties, ...custom_properties}
     let properties = Object.keys(all_properties);
+    let bkpIndex = {'xs': 1, 'sm': 2, 'md': 3, 'lg': 4, 'xl': 5, 'xxl': 6};
+    let indexBkp = {'1': 'xs', '2': 'sm', '3': 'md', '4': 'lg', '5': 'xl', '6': 'xxl'};
 
-    properties.forEach((property) => {
-      if (getComputedStyle(element).getPropertyValue('--' + breakpoint + property)) {
-        element.style.setProperty('--' + all_properties[property], 'var(--' + breakpoint + property + ')');
-      }
-    })
+    for (let i = 1; i <= bkpIndex[breakpoint]; i++) {
+      properties.forEach((property) => {
+        if (getComputedStyle(element).getPropertyValue('--' + indexBkp[i] + property)) {
+          element.style.setProperty('--' + all_properties[property], 'var(--' + indexBkp[i] + property + ')');
+        }
+      })  
+    }
   }
 
   camaleon.blocksRegister = function(blockType, callback) {
@@ -56,14 +60,38 @@ var Camaleon = (function() {
   }
 
   camaleon.blocksCallback = function() {
-    breakpointsKeys.forEach((breakpoint) => {
-      let mediaQuery = window.matchMedia(breakpoints[breakpoint])
-      if (mediaQuery.matches) {
-        blocksRegisterCallbacks.forEach((blockType)=>{
-          blockType.callback(blockType.blocks, breakpoint)
+    let container = document.getElementById('layout-builder');
+    if (container !== null) {
+      let mq = container.getAttribute('media-query');
+      if (mq !== null) { 
+        breakpointsKeys.forEach((breakpoint) => {
+          if (mq === breakpoints[breakpoint]) {
+            blocksRegisterCallbacks.forEach((blockType)=>{
+              blockType.callback(blockType.blocks, breakpoint)
+            })
+          }
+        })  
+      }
+      if (mq === null) { 
+        breakpointsKeys.forEach((breakpoint) => {
+          let mediaQuery = window.matchMedia(breakpoints[breakpoint])
+          if (mediaQuery.matches) {
+            blocksRegisterCallbacks.forEach((blockType)=>{
+              blockType.callback(blockType.blocks, breakpoint)
+            })
+          }
         })
       }
-    })
+    } else if (container === null) {
+      breakpointsKeys.forEach((breakpoint) => {
+        let mediaQuery = window.matchMedia(breakpoints[breakpoint])
+        if (mediaQuery.matches) {
+          blocksRegisterCallbacks.forEach((blockType)=>{
+            blockType.callback(blockType.blocks, breakpoint)
+          })
+        }
+      }) 
+    }
   }
   return camaleon;
 }());

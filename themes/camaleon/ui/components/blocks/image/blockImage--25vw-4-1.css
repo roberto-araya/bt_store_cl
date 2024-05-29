@@ -1,0 +1,14 @@
+.block.blockImage--25vw_4_1 {
+  --maxWidth: var(--xsMaxWidth, 100%);
+}
+
+.blockImage--25vw_4_1 {
+  max-width: -moz-max-content;
+  max-width: max-content;
+  justify-self: center;
+}
+.blockImage--25vw_4_1 img {
+  width: 100%;
+  max-width: var(--maxWidth);
+  height: auto;
+}

@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+<form{{ attributes }}>
+  {{ children }}
+  <div id="breakpoints-buttons">
+    <div>Previsualización de breakpoints</div>
+    <button id="xs-breakpoint" class="btn btn-info btn-breakpoint" type="button">max-width: 575px</button>
+    <button id="sm-breakpoint" class="btn btn-info btn-breakpoint" type="button">min-width: 576px</button>
+    <button id="md-breakpoint" class="btn btn-info btn-breakpoint" type="button">min-width: 768px</button>
+    <button id="lg-breakpoint" class="btn btn-info btn-breakpoint" type="button">min-width: 992px</button>
+    <button id="xl-breakpoint" class="btn btn-info btn-breakpoint" type="button">min-width: 1200px</button>
+    <button id="xxl-breakpoint" class="btn btn-info btn-breakpoint" type="button">min-width: 1400px</button>
+    <button id="remove-breakpoint-preview" class="btn btn-danger btn-breakpoint" type="button">Quitar</button>
+  </div>
+</form>

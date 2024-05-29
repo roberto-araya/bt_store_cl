@@ -1,5 +1,6 @@
 .block.menuNormal {
   align-self: var(--alignSelf, auto);
+  background-color: var(--backgroundColor, transparent);
 }
 
 h2.menuNormal__menu-title {

@@ -65,8 +65,16 @@ function camaleon_form_alter(&$form, &$form_state, $form_id) {
     }
   }
 
+  if ($form_id == "layout_builder_add_block") {
+    $form['settings']['label_display']['#default_value'] = FALSE;
+  }
+
   if ($form_id == "layout_builder_add_block" || $form_id == 'layout_builder_update_block') {
-    $form['#attached']['library'][] = 'camaleon/layout_builder_add_form';
+    $form['#attached']['library'][] = 'camaleon/layout_builder_configure_block_form';
+  }
+
+  if ($form_id == 'layout_builder_configure_section') {
+    $form['#attached']['library'][] = 'camaleon/layout_builder_configure_section_form';
   }
 
   if (is_array($form['#attributes']['class']) &&
@@ -194,29 +202,35 @@ function camaleon_preprocess_region(&$variables) {
     $variables['is_front'] = FALSE;
   }
 
-  try {
-    if (isset($variables['region']) && $variables['region'] == 'content') {
-      $node = \Drupal::routeMatch()->getParameter('node');
-      $taxonomy = \Drupal::routeMatch()->getParameter('taxonomy_term');
-      if ($node instanceof NodeInterface) {
-        $node_type = $node->bundle();
+  if (isset($variables['region']) && $variables['region'] == 'content') {
+    /** @var \Drupal\Core\Entity\EntityDisplayRepository entity_display_repository */
+    $entity_display_repository = \Drupal::service('entity_display.repository');
 
-        if ($node_type == 'bt_basic_page' || $node_type == 'bt_article' || $node_type == 'blog_post') {
-          $variables['is_layout_builder_page'] = TRUE;
+    $entity_types_ids = ['node', 'commerce_product', 'taxonomy_term'];
+    foreach ($entity_types_ids as $entity_type_id) {
+      if ($entity_type_id == \Drupal::routeMatch()->getParameter('entity_type_id')) {
+        $entity_type = \Drupal::routeMatch()->getParameter($entity_type_id);
+        $bundle = \Drupal::routeMatch()->getParameter('bundle') ? \Drupal::routeMatch()->getParameter('bundle') : $entity_type->bundle();
+        $view_mode = \Drupal::routeMatch()->getParameter('view_mode_name') ? \Drupal::routeMatch()->getParameter('view_mode_name') : 'default';
+        if ($entity_type_id == 'node') {
+          $view_mode = 'full';
         }
-      }
-      if ($taxonomy instanceof TermInterface) {
-        $term_type = $taxonomy->bundle();
-
-        if ($term_type == 'bt_product_categories' || $term_type == 'bt_product_brand') {
-          $variables['is_layout_builder_page'] = TRUE;
+       
+        $view_display = $entity_display_repository->getViewDisplay($entity_type_id, $bundle, $view_mode);
+        $variables['is_layout_builder_page'] = $view_display->getThirdPartySetting('layout_builder', 'enabled');
+        break;
+      } elseif ($entity_type = \Drupal::routeMatch()->getParameter($entity_type_id)) {
+        if ($entity_type_id == 'node') {
+          $view_mode = 'full';
+        } else {
+          $view_mode = 'default';
         }
+        $bundle = $entity_type->bundle();
+        $view_display = $entity_display_repository->getViewDisplay($entity_type_id, $bundle, $view_mode);
+        $variables['is_layout_builder_page'] = $view_display->getThirdPartySetting('layout_builder', 'enabled');
       }
-
     }
-  }
-  catch (Exception $e) {
-    $variables['is_basic_page'] = FALSE;
+
   }
 
   $regions = [

@@ -1,4 +1,8 @@
 .block.blockImage {
+  --paddingLeft: var(--xsPaddingLeft, 0px);
+  --paddingTop: var(--xsPaddingTop, 0px);
+  --paddingRight: var(--xsPaddingRight, 0px);
+  --paddingBottom: var(--xsPaddingBottom, 0px);
   --alignSelf: var(--xsAlignSelf, center);
   background-color: var(--backgroundColor, transparent);
 }

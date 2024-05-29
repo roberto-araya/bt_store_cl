@@ -1,0 +1,14 @@
+.block.blockImage--100vw_4_5 {
+  --maxWidth: var(--xsMaxWidth, 100%);
+}
+
+.blockImage--100vw_4_5 {
+  max-width: -moz-max-content;
+  max-width: max-content;
+  justify-self: center;
+}
+.blockImage--100vw_4_5 img {
+  width: 100%;
+  max-width: var(--maxWidth);
+  height: auto;
+}

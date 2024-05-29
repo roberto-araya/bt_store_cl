@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+{{ attach_library('camaleon/layout_builder_configure_section_form') }}
+{{ attach_library('camaleon/layout_builder_configure_block_form') }}
+{{ attach_library('bt_layouts/responsive-layout') }}
+
+{% include "@Components/forms/form-layout-builder.twig" with {
+  'attributes': attributes,
+  'children': children,
+  } 
+%}

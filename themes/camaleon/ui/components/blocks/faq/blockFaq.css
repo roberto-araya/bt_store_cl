@@ -25,14 +25,14 @@
   color: var(--textColor, var(--bt--body-color));
 }
 .blockFaq__questions {
-  --bt--accordion-color: var(--bt--body-color);
-  --bt--accordion-bg: transparent;
+  --bt--accordion-color: var(--bt--primary);
+  --bt--accordion-bg: var(--bt--body-bg);
   --bt--accordion-border-color: var(--bt--border-color);
-  --bt--accordion-btn-color: var(--bt--body-color);
+  --bt--accordion-btn-color: var(--bt--primary);
   --bt--accordion-btn-bg: var(--bt--accordion-bg);
-  --bt--accordion-btn-focus-border-color: var(--bt--primary-050);
-  --bt--accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(--bt--primary-050-rgb));
-  --bt--accordion-active-color: var(--bt--body-color);
+  --bt--accordion-btn-focus-border-color: var(--bt--border-color);
+  --bt--accordion-btn-focus-box-shadow: 0 0 0 0.125rem rgba(var(--bt--border-color-rgb));
+  --bt--accordion-active-color: var(--bt--primary-600);
   --bt--accordion-active-bg: var(--bt--primary-050);
 }
 .blockFaq__questions img {

@@ -11,4 +11,5 @@
   --paddingTop: var(--xsPaddingTop, 0);
   --paddingRight: var(--xsPaddingRight, 0);
   --paddingBottom: var(--xsPaddingBottom, 0);
+  background-color: var(--backgroundColor, transparent);
 }

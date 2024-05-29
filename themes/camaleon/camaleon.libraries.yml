@@ -159,7 +159,7 @@ bootstrap_transitions:
 
 
 ### Fonts
-jolly-lodger: 
+jolly-lodger:
   version: VERSION
   css:
     component:
@@ -364,7 +364,7 @@ caveat:
       ui/fonts/Caveat.css: {}
 
 ### Animations
-bounce: 
+bounce:
   version: VERSION
   css:
     component:
@@ -398,7 +398,7 @@ bounceInUp:
   version: VERSION
   css:
     component:
-      ui/animations/bounceInUP.css: {}
+      ui/animations/bounceInUp.css: {}
 
 bounceOut: 
   version: VERSION
@@ -584,7 +584,7 @@ jello:
   version: VERSION
   css:
     component:
-      ui/animations/jellow.css: {}
+      ui/animations/jello.css: {}
 
 lightSpeedIn:
   version: VERSION
@@ -875,13 +875,250 @@ layout_builder_form:
   css:
     component:
       ui/components/forms/formLayoutBuilder.css: {}
+  js:
+    ui/components/forms/formLayoutBuilder.js: {}
+  dependencies:
+    - bt_layouts/responsive-layout
 
-# Layout Builder Add Form
-layout_builder_add_form:
+# Layout Builder configure block form
+layout_builder_configure_block_form:
   version: VERSION
   css:
     component:
-      ui/components/forms/formLayoutBuilder--add-block.css: {}
+      ui/components/forms/formLayoutBuilder--configure-block.css: {}
+  js:
+    ui/components/forms/formLayoutBuilder--configure-block.js: {}
+  dependencies:
+    - camaleon/jolly-lodger
+    - camaleon/oswald
+    - camaleon/roboto
+    - camaleon/zen-antique
+    - camaleon/amatic-sc
+    - camaleon/kalam
+    - camaleon/russo-one
+    - camaleon/archivo-black
+    - camaleon/el-messiri
+    - camaleon/akaya-telivigala
+    - camaleon/baloo-2
+    - camaleon/noticia-text
+    - camaleon/kaushan-script
+    - camaleon/titan-one
+    - camaleon/montserrat
+    - camaleon/ubuntu
+    - camaleon/merriweather
+    - camaleon/playfair-display
+    - camaleon/kanit
+    - camaleon/lora
+    - camaleon/fira-sans
+    - camaleon/quicksand
+    - camaleon/barlow
+    - camaleon/titillium-web
+    - camaleon/trispace
+    - camaleon/josefin-sans
+    - camaleon/shalimar
+    - camaleon/anton
+    - camaleon/dancing-script
+    - camaleon/secular-one
+    - camaleon/lobster
+    - camaleon/fjalla-one
+    - camaleon/exo-2
+    - camaleon/caveat
+    - camaleon/bounce
+    - camaleon/bounceIn
+    - camaleon/bounceInDown
+    - camaleon/bounceInLeft
+    - camaleon/bounceInRight
+    - camaleon/bounceInUp 
+    - camaleon/bounceOut
+    - camaleon/bounceOutDown
+    - camaleon/bounceOutLeft 
+    - camaleon/bounceOutRight
+    - camaleon/bounceOutUp
+    - camaleon/fadeIn
+    - camaleon/fadeInDown 
+    - camaleon/fadeInDownBig
+    - camaleon/fadeInLeft
+    - camaleon/fadeInLeftBig
+    - camaleon/fadeInRight
+    - camaleon/fadeInRightBig
+    - camaleon/fadeInUp
+    - camaleon/fadeInUpBig
+    - camaleon/fadeOut
+    - camaleon/fadeOutDown
+    - camaleon/fadeOutDown
+    - camaleon/fadeOutDownBig
+    - camaleon/fadeOutLeft
+    - camaleon/fadeOutLeftBig
+    - camaleon/fadeOutRight 
+    - camaleon/fadeOutRightBig
+    - camaleon/fadeOutUp
+    - camaleon/fadeOutUpBig
+    - camaleon/flash
+    - camaleon/flip
+    - camaleon/flipInX
+    - camaleon/flipInY
+    - camaleon/flipOutX
+    - camaleon/flipOutY
+    - camaleon/hinge
+    - camaleon/jello
+    - camaleon/lightSpeedIn
+    - camaleon/lightSpeedOut
+    - camaleon/pulse
+    - camaleon/rollIn
+    - camaleon/rollOut
+    - camaleon/rotateIn
+    - camaleon/rotateInDownLeft
+    - camaleon/rotateInDownRight
+    - camaleon/rotateInUpLeft
+    - camaleon/rotateInUpRight
+    - camaleon/rotateOut
+    - camaleon/rotateOutDownLeft
+    - camaleon/rotateOutDownRight
+    - camaleon/rotateOutUpLeft
+    - camaleon/rotateOutUpRight
+    - camaleon/rubberBand
+    - camaleon/shake
+    - camaleon/slideInDown
+    - camaleon/slideInLeft
+    - camaleon/slideInRight
+    - camaleon/slideInUp
+    - camaleon/slideOutDown
+    - camaleon/slideOutLeft
+    - camaleon/slideOutRight
+    - camaleon/slideOutUp
+    - camaleon/swing
+    - camaleon/tada
+    - camaleon/wobble
+    - camaleon/zoomIn
+    - camaleon/zoomInDown
+    - camaleon/zoomInLeft
+    - camaleon/zoomInRight
+    - camaleon/zoomInUp
+    - camaleon/zoomOut
+    - camaleon/zoomOutDown
+    - camaleon/zoomOutLeft
+    - camaleon/zoomOutRight
+    - camaleon/zoomOutUp
+
+# Layout Builder configure section form
+layout_builder_configure_section_form:
+  version: VERSION
+  css:
+    component:
+      ui/components/forms/formLayoutBuilder--configure-section.css: {}
+  js:
+    ui/components/forms/formLayoutBuilder--configure-section.js: {}
+  dependencies:
+    - camaleon/jolly-lodger
+    - camaleon/oswald
+    - camaleon/roboto
+    - camaleon/zen-antique
+    - camaleon/amatic-sc
+    - camaleon/kalam
+    - camaleon/russo-one
+    - camaleon/archivo-black
+    - camaleon/el-messiri
+    - camaleon/akaya-telivigala
+    - camaleon/baloo-2
+    - camaleon/noticia-text
+    - camaleon/kaushan-script
+    - camaleon/titan-one
+    - camaleon/montserrat
+    - camaleon/ubuntu
+    - camaleon/merriweather
+    - camaleon/playfair-display
+    - camaleon/kanit
+    - camaleon/lora
+    - camaleon/fira-sans
+    - camaleon/quicksand
+    - camaleon/barlow
+    - camaleon/titillium-web
+    - camaleon/trispace
+    - camaleon/josefin-sans
+    - camaleon/shalimar
+    - camaleon/anton
+    - camaleon/dancing-script
+    - camaleon/secular-one
+    - camaleon/lobster
+    - camaleon/fjalla-one
+    - camaleon/exo-2
+    - camaleon/caveat
+    - camaleon/bounce
+    - camaleon/bounceIn
+    - camaleon/bounceInDown
+    - camaleon/bounceInLeft
+    - camaleon/bounceInRight
+    - camaleon/bounceInUp 
+    - camaleon/bounceOut
+    - camaleon/bounceOutDown
+    - camaleon/bounceOutLeft 
+    - camaleon/bounceOutRight
+    - camaleon/bounceOutUp
+    - camaleon/fadeIn
+    - camaleon/fadeInDown 
+    - camaleon/fadeInDownBig
+    - camaleon/fadeInLeft
+    - camaleon/fadeInLeftBig
+    - camaleon/fadeInRight
+    - camaleon/fadeInRightBig
+    - camaleon/fadeInUp
+    - camaleon/fadeInUpBig
+    - camaleon/fadeOut
+    - camaleon/fadeOutDown
+    - camaleon/fadeOutDown
+    - camaleon/fadeOutDownBig
+    - camaleon/fadeOutLeft
+    - camaleon/fadeOutLeftBig
+    - camaleon/fadeOutRight 
+    - camaleon/fadeOutRightBig
+    - camaleon/fadeOutUp
+    - camaleon/fadeOutUpBig
+    - camaleon/flash
+    - camaleon/flip
+    - camaleon/flipInX
+    - camaleon/flipInY
+    - camaleon/flipOutX
+    - camaleon/flipOutY
+    - camaleon/hinge
+    - camaleon/jello
+    - camaleon/lightSpeedIn
+    - camaleon/lightSpeedOut
+    - camaleon/pulse
+    - camaleon/rollIn
+    - camaleon/rollOut
+    - camaleon/rotateIn
+    - camaleon/rotateInDownLeft
+    - camaleon/rotateInDownRight
+    - camaleon/rotateInUpLeft
+    - camaleon/rotateInUpRight
+    - camaleon/rotateOut
+    - camaleon/rotateOutDownLeft
+    - camaleon/rotateOutDownRight
+    - camaleon/rotateOutUpLeft
+    - camaleon/rotateOutUpRight
+    - camaleon/rubberBand
+    - camaleon/shake
+    - camaleon/slideInDown
+    - camaleon/slideInLeft
+    - camaleon/slideInRight
+    - camaleon/slideInUp
+    - camaleon/slideOutDown
+    - camaleon/slideOutLeft
+    - camaleon/slideOutRight
+    - camaleon/slideOutUp
+    - camaleon/swing
+    - camaleon/tada
+    - camaleon/wobble
+    - camaleon/zoomIn
+    - camaleon/zoomInDown
+    - camaleon/zoomInLeft
+    - camaleon/zoomInRight
+    - camaleon/zoomInUp
+    - camaleon/zoomOut
+    - camaleon/zoomOutDown
+    - camaleon/zoomOutLeft
+    - camaleon/zoomOutRight
+    - camaleon/zoomOutUp
 
 # Layout Builder Actions Form      
 form_layout_builder_actions:
@@ -1690,7 +1927,7 @@ block_image_default:
     component:
       ui/components/blocks/image/blockImage--default.css: {}
   dependencies:
-    - camaleon/block_image    
+    - camaleon/block_image
 
 block_image_full:
   version: VERSION
@@ -1698,7 +1935,103 @@ block_image_full:
     component:
       ui/components/blocks/image/blockImage--full.css: {}
   dependencies:
-    - camaleon/block_image         
+    - camaleon/block_image
+
+block_image_25vw_4_1:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/image/blockImage--25vw-4-1.css: {}
+  dependencies:
+    - camaleon/block_image
+
+block_image_25vw_4_3:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/image/blockImage--25vw-4-3.css: {}
+  dependencies:
+    - camaleon/block_image
+
+block_image_25vw_4_5:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/image/blockImage--25vw-4-5.css: {}
+  dependencies:
+    - camaleon/block_image
+
+block_image_25vw_16_9:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/image/blockImage--25vw-16-9.css: {}
+  dependencies:
+    - camaleon/block_image
+
+block_image_50vw_4_1:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/image/blockImage--50vw-4-1.css: {}
+  dependencies:
+    - camaleon/block_image
+
+block_image_50vw_4_3:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/image/blockImage--50vw-4-3.css: {}
+  dependencies:
+    - camaleon/block_image
+
+block_image_50vw_4_5:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/image/blockImage--50vw-4-5.css: {}
+  dependencies:
+    - camaleon/block_image
+
+block_image_50vw_16_9:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/image/blockImage--50vw-16-9.css: {}
+  dependencies:
+    - camaleon/block_image
+
+block_image_100vw_4_1:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/image/blockImage--100vw-4-1.css: {}
+  dependencies:
+    - camaleon/block_image
+
+block_image_100vw_4_3:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/image/blockImage--100vw-4-3.css: {}
+  dependencies:
+    - camaleon/block_image
+
+block_image_100vw_4_5:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/image/blockImage--100vw-4-5.css: {}
+  dependencies:
+    - camaleon/block_image
+
+block_image_100vw_16_9:
+  version: VERSION
+  css:
+    component:
+      ui/components/blocks/image/blockImage--100vw-16-9.css: {}
+  dependencies:
+    - camaleon/block_image
 
 block_image_original:
   version: VERSION
