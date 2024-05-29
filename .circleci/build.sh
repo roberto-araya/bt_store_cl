@@ -132,6 +132,8 @@ php -d memory_limit=-1 "$(command -v composer)" --working-dir="${BUILD_DIR}" req
   symfony/phpunit-bridge
 cp "${BUILD_DIR}/vendor/palantirnet/drupal-rector/rector.php" "${BUILD_DIR}/."
 
+php -d memory_limit=-1 "$(command -v composer)" --working-dir="${BUILD_DIR}" require drush/drush:11.5
+
 echo "-------------------------------"
 echo " Starting builtin PHP server   "
 echo "-------------------------------"
@@ -153,9 +155,9 @@ echo " Installing Drupal and modules "
 echo "-------------------------------"
 
 echo "  > Symlinking profile code."
-rm -rf "${BUILD_DIR}/web/profiles/${MODULE}"/* > /dev/null
-mkdir -p "${BUILD_DIR}/web/profiles/${MODULE}"
-ln -s "$(pwd)"/* "${BUILD_DIR}/web/profiles/${MODULE}" && rm "${BUILD_DIR}/web/profiles/${MODULE}/${BUILD_DIR}"
+rm -rf "${BUILD_DIR}/web/profiles/contrib/${MODULE}"/* > /dev/null
+mkdir -p "${BUILD_DIR}/web/profiles/contrib/${MODULE}"
+ln -s "$(pwd)"/* "${BUILD_DIR}/web/profiles/contrib/${MODULE}" && rm "${BUILD_DIR}/web/profiles/contrib/${MODULE}/${BUILD_DIR}"
 
 echo "==> Install Drupal into SQLite database ${DB_FILE}."
 php -d memory_limit=-1 "$(command -v ${BUILD_DIR}/vendor/bin/drush)" -r "${BUILD_DIR}/web" si "${DRUPAL_PROFILE}" -y --db-url "sqlite://${DB_FILE}" --account-name=admin install_configure_form.enable_update_status_module=NULL install_configure_form.enable_update_status_emails=NULL install_configure_form.store_name="Tienda Prueba" install_configure_form.store_mail="prueba@prueba.cl" install_configure_form.address="Somewhere 000"
