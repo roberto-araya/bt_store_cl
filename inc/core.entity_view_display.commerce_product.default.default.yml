@@ -25,87 +25,138 @@ third_party_settings:
     allow_custom: true
     sections:
       -
-        layout_id: bt_two_columns
+        layout_id: bt_two
         layout_settings:
           label: Producto
           context_mapping: {  }
+          title: ''
+          title_hide: 0
+          title_font_family: default
+          title_color: default
+          title_custom_color: '#000000'
+          title_css_classes: ''
           background_color: default
-          class: ''
-          container_select: full
-          full_select: '0'
-          box_select: 100%
-          padding_top: pt-1
-          padding_bottom: pb-1
+          background_custom_color: '#000000'
+          use_background_image: 0
+          background_image: null
+          css_id: ''
+          css_classes: ''
+          xs_title_font_size: ''
+          xs_title_align: default
+          xs_title_max_width: ''
+          xs_title_margin: ''
+          xs_container_select: full
+          xs_full_select: 2.5%
+          xs_box_select: default
+          xs_height: ''
+          xs_padding_top: ''
+          xs_padding_bottom: ''
+          sm_title_font_size: ''
+          sm_title_align: default
+          sm_title_max_width: ''
+          sm_title_margin: ''
           sm_container_select: full
-          sm_full_select: '0'
-          sm_box_select: 100%
-          sm_padding_top: pt-sm-1
-          sm_padding_bottom: pb-sm-1
+          sm_full_select: default
+          sm_box_select: default
+          sm_height: ''
+          sm_padding_top: ''
+          sm_padding_bottom: ''
+          md_title_font_size: ''
+          md_title_align: default
+          md_title_max_width: ''
+          md_title_margin: ''
           md_container_select: full
-          md_full_select: '0'
-          md_box_select: 100%
-          md_padding_top: pt-md-1
-          md_padding_bottom: pb-md-1
+          md_full_select: default
+          md_box_select: default
+          md_height: ''
+          md_padding_top: ''
+          md_padding_bottom: ''
+          lg_title_font_size: ''
+          lg_title_align: default
+          lg_title_max_width: ''
+          lg_title_margin: ''
           lg_container_select: full
-          lg_full_select: 5%
-          lg_box_select: 100%
-          lg_padding_top: pt-lg-2
-          lg_padding_bottom: pb-lg-2
+          lg_full_select: default
+          lg_box_select: default
+          lg_height: ''
+          lg_padding_top: ''
+          lg_padding_bottom: ''
+          xl_title_font_size: ''
+          xl_title_align: default
+          xl_title_max_width: ''
+          xl_title_margin: ''
           xl_container_select: full
           xl_full_select: 10%
-          xl_box_select: 100%
-          xl_padding_top: pt-xl-3
-          xl_padding_bottom: pb-xl-3
+          xl_box_select: default
+          xl_height: ''
+          xl_padding_top: ''
+          xl_padding_bottom: ''
+          xxl_title_font_size: ''
+          xxl_title_align: default
+          xxl_title_max_width: ''
+          xxl_title_margin: ''
           xxl_container_select: full
-          xxl_full_select: 10%
-          xxl_box_select: 100%
-          xxl_padding_top: pt-xxl-3
-          xxl_padding_bottom: pb-xxl-3
-          gap: gap-3
-          sm_gap: gap-sm-1
-          md_gap: gap-md-1
-          lg_gap: gap-lg-2
-          xl_gap: gap-xl-3
-          xxl_gap: gap-xxl-3
-          sm_sm_box_select: 100%
-          sm_sm_padding_top: none
-          sm_sm_padding_bottom: none
-          md_sm_box_select: 100%
-          md_sm_padding_top: none
-          md_sm_padding_bottom: none
-          lg_sm_box_select: 100%
-          lg_sm_padding_top: none
-          lg_sm_padding_bottom: none
-          xl_sm_box_select: 100%
-          xl_sm_padding_top: none
-          xl_sm_padding_bottom: none
-          xxl_sm_box_select: 100%
-          xxl_sm_padding_top: none
-          xxl_sm_padding_bottom: none
-          container_type: box
-          hide_label: 1
-          label_color: default
-          label_custom_color: '#000000'
-          background_custom_color: '#000000'
-          columns_size: 70-30
+          xxl_full_select: default
+          xxl_box_select: default
+          xxl_height: ''
+          xxl_padding_top: ''
+          xxl_padding_bottom: ''
+          column_1_background_color: default
+          column_1_background_custom_color: '#000000'
+          column_2_background_color: default
+          column_2_background_custom_color: '#000000'
+          xs_columns_size: 1fr
+          xs_columns_gap: ''
+          xs_column_1_order: default
+          xs_column_1_grid_row: ''
+          xs_column_1_align_items: default
+          xs_column_2_order: default
+          xs_column_2_grid_row: ''
+          xs_column_2_align_items: default
+          sm_columns_size: '1fr 1fr'
+          sm_columns_gap: ''
+          sm_column_1_order: default
+          sm_column_1_grid_row: ''
+          sm_column_1_align_items: default
+          sm_column_2_order: default
+          sm_column_2_grid_row: ''
+          sm_column_2_align_items: default
+          md_columns_size: default
+          md_columns_gap: ''
+          md_column_1_order: default
+          md_column_1_grid_row: ''
+          md_column_1_align_items: default
+          md_column_2_order: default
+          md_column_2_grid_row: ''
+          md_column_2_align_items: default
+          lg_columns_size: '7fr 3fr'
+          lg_columns_gap: ''
+          lg_column_1_order: default
+          lg_column_1_grid_row: ''
+          lg_column_1_align_items: default
+          lg_column_2_order: default
+          lg_column_2_grid_row: ''
+          lg_column_2_align_items: default
+          xl_columns_size: '8fr 2fr'
+          xl_columns_gap: ''
+          xl_column_1_order: default
+          xl_column_1_grid_row: ''
+          xl_column_1_align_items: default
+          xl_column_2_order: default
+          xl_column_2_grid_row: ''
+          xl_column_2_align_items: default
+          xxl_columns_size: default
+          xxl_columns_gap: ''
+          xxl_column_1_order: default
+          xxl_column_1_grid_row: ''
+          xxl_column_1_align_items: default
+          xxl_column_2_order: default
+          xxl_column_2_grid_row: ''
+          xxl_column_2_align_items: default
         components:
-          ebe48730-7a27-416f-9ceb-c96188423207:
-            uuid: ebe48730-7a27-416f-9ceb-c96188423207
-            region: twoColumns__left
-            configuration:
-              id: 'entity_view:commerce_product'
-              label: 'Entity view (Product)'
-              label_display: '0'
-              provider: ctools
-              view_mode: bt_full
-              context_mapping:
-                entity: layout_builder.entity
-            weight: 1
-            additional: {  }
-            third_party_settings: {  }
           e070b89c-ad29-4794-bb3e-3258d8d20407:
             uuid: e070b89c-ad29-4794-bb3e-3258d8d20407
-            region: twoColumns__right
+            region: two__right
             configuration:
               id: 'system_menu_block:bt-product-categories'
               label: Categorías
@@ -117,10 +168,49 @@ third_party_settings:
               expand_all_items: true
             weight: 0
             additional: {  }
-            third_party_settings: {  }
+            third_party_settings:
+              bt_cbc:
+                title_color_select: default
+                title_color_custom: '#000000'
+                title_font_family: default
+                type: default
+                item_color_select: default
+                item_color_custom: '#000000'
+                item_hover_color_select: default
+                item_hover_color_custom: '#000000'
+                item_background_color_select: default
+                item_background_color_custom: '#000000'
+                item_background_hover_color_select: default
+                item_background_hover_color_custom: '#000000'
+                background_color_select: default
+                background_color_custom: '#000000'
+                background_color_opacity: '1.00'
+                background_color_custom_opacity: FF
+                animation_trigger: on_page_load
+                animation_type: bounce
+                animation_function: default
+                animation_fill: default
+                xs_align: default
+                xs_justify: flex-start
+                xs_text_align: default
+                sm_align: default
+                sm_justify: default
+                sm_text_align: default
+                md_align: default
+                md_justify: default
+                md_text_align: default
+                lg_align: default
+                lg_justify: default
+                lg_text_align: default
+                xl_align: default
+                xl_justify: default
+                xl_text_align: default
+                xxl_align: default
+                xxl_justify: default
+                xxl_text_align: default
           198bf761-5e99-443c-b62c-2fbf3c5e6ab1:
             uuid: 198bf761-5e99-443c-b62c-2fbf3c5e6ab1
-            region: twoColumns__left
+            region: two__left
             configuration:
               id: 'field_block:commerce_product:default:field_bt_product_gallery'
               label: Gallery
@@ -171,13 +261,35 @@ third_party_settings:
                 xxl_align: default
                 xxl_justify: default
                 xxl_text_align: default
+          ebe48730-7a27-416f-9ceb-c96188423207:
+            uuid: ebe48730-7a27-416f-9ceb-c96188423207
+            region: two__left
+            configuration:
+              id: 'entity_view:commerce_product'
+              label: 'Entity view (Product)'
+              label_display: '0'
+              provider: ctools
+              view_mode: bt_full
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 1
+            additional: {  }
+            third_party_settings: {  }
         third_party_settings: {  }
   layout_library:
     enable: false
   layout_builder_restrictions:
     allowed_block_categories: {  }
     entity_view_mode_restriction:
-      allowed_layouts: {  }
+      allowed_layouts:
+        - bt_one
+        - bt_two
+        - bt_three
+        - bt_four
+        - bt_five
+        - bt_six
+      denylisted_blocks: {  }
+      allowlisted_blocks: {  }
       restricted_categories: {  }
       blacklisted_blocks: {  }
       whitelisted_blocks: {  }

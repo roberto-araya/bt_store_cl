@@ -1,4 +1,4 @@
-langcode: es
+langcode: en
 status: true
 dependencies:
   config:
@@ -8,6 +8,7 @@ dependencies:
     - field.field.commerce_product.default.field_bt_brand
     - field.field.commerce_product.default.field_bt_category
     - field.field.commerce_product.default.field_bt_image
+    - field.field.commerce_product.default.field_bt_product_gallery
     - field.field.commerce_product.default.layout_builder__layout
   module:
     - commerce_product
@@ -42,7 +43,7 @@ content:
     region: content
   field_bt_brand:
     type: entity_reference_label
-    label: hidden
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
@@ -50,7 +51,7 @@ content:
     region: content
   field_bt_category:
     type: entity_reference_label
-    label: hidden
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
@@ -75,6 +76,7 @@ content:
     region: content
 hidden:
   created: true
+  field_bt_product_gallery: true
   langcode: true
   layout_builder__layout: true
   stores: true

@@ -1,0 +1,51 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.bt_hero
+    - field.field.media.bt_image.field_bt_image
+    - media.type.bt_image
+    - responsive_image.styles.bt_hero
+  module:
+    - fences
+    - layout_builder
+    - media_parent_entity_link
+    - responsive_image
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: media.bt_image.bt_hero
+targetEntityType: media
+bundle: bt_image
+mode: bt_hero
+content:
+  field_bt_image:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: bt_hero
+      image_link: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_items_wrapper_tag: none
+        fences_field_items_wrapper_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+      media_parent_entity_link:
+        link_to_parent: '0'
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true
+ 

@@ -13,6 +13,7 @@ dependencies:
     - field.field.block_content.bt_cb_hero.field_bt_link_double
     - field.field.block_content.bt_cb_hero.field_bt_paragraph
   module:
+    - fences
     - link
     - svg_icon
     - text
@@ -57,9 +58,18 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: bt_full_viewport
+      view_mode: bt_hero
       link: false
-    third_party_settings: {  }
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_items_wrapper_tag: none
+        fences_field_items_wrapper_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
     weight: 0
     region: content
   field_bt_link_double:
@@ -85,3 +95,4 @@ hidden:
   field_bt_blq_desc: true
   field_bt_blq_title: true
   langcode: true
+ 

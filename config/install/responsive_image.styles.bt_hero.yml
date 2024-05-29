@@ -1,0 +1,42 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.bt_lg_100vw_16_9
+    - image.style.bt_md_100vw_16_9
+    - image.style.bt_sm_100vw_4_3
+    - image.style.bt_xl_100vw_16_9
+    - image.style.bt_xs_100vw_4_3
+    - image.style.bt_xxl_100vw_16_9
+  module:
+    - bt_image
+id: bt_hero
+label: Hero
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: bt_xxl_100vw_16_9
+    breakpoint_id: bt.2xl
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: bt_xl_100vw_16_9
+    breakpoint_id: bt.xl
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: bt_lg_100vw_16_9
+    breakpoint_id: bt.lg
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: bt_md_100vw_16_9
+    breakpoint_id: bt.md
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: bt_sm_100vw_4_3
+    breakpoint_id: bt.sm
+    multiplier: 1x
+breakpoint_group: bt_image
+fallback_image_style: bt_xs_100vw_4_3

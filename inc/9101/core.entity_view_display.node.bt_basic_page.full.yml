@@ -54,6 +54,15 @@ third_party_settings:
     allowed_block_categories: {  }
     entity_view_mode_restriction:
       allowed_layouts:
+        - bt_one_column
+        - bt_two_columns
+        - bt_two_columns_header
+        - bt_three_columns
+        - bt_three_columns_header
+        - bt_four_columns
+        - bt_four_columns_header
+        - bt_five_columns
+        - bt_five_columns_header
         - bt_one
         - bt_two
         - bt_three
@@ -128,4 +137,4 @@ hidden:
   langcode: true
   layout_builder__layout: true
   layout_selection: true
- 
+
