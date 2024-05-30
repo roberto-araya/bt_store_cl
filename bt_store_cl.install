@@ -55,6 +55,7 @@ function bt_store_cl_install() {
   $user_settings->set('register', UserInterface::REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL)->save(TRUE);
 
   $anonymous = [
+    'access checkout',
     'access comments',
     'access content',
     'access polls',
@@ -72,9 +73,12 @@ function bt_store_cl_install() {
     'use text format restricted_html',
     'view media',
     'view multifield',
+    'view default commerce_product',
+    'view own commerce_order',
   ];
 
   $authenticate = [
+    'access checkout',
     'access content',
     'access comments',
     'access site-wide contact form',
@@ -97,6 +101,8 @@ function bt_store_cl_install() {
     'change own password',
     'view my_account in toolbar',
     'cancel account',
+    'view default commerce_product',
+    'view own commerce_order'
   ];
 
   // Add permissions to the role bt_edit_publish_content.
