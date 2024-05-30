@@ -21,6 +21,20 @@
 .commerceCart .cart-block--summary__icon {
   margin-right: 0.5rem;
 }
+.commerceCart .cart-block--contents__inner {
+  background-color: var(--bt--gray-100);
+}
+.commerceCart .view-commerce-cart-block {
+  background-color: var(--bt--primary-050);
+}
+.commerceCart .cart-block--contents__links a {
+  text-decoration: underline;
+  color: var(--bt--link-color);
+}
+.commerceCart .cart-block--contents__links a:hover {
+  text-decoration: underline;
+  color: var(--bt--link-hover-color);
+}
 
 @media (min-width: 768px) {
   .commerceCart .cart-block--contents {
