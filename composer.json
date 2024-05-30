@@ -44,7 +44,7 @@
       "drupal/easy_breadcrumb": "^2.0",
       "drupal/entity_type_permissions": "^1.0",
       "drupal/environment_indicator": "^4.0",
-      "drupal/fences": "^3.0",
+      "drupal/fences": "^3.x-dev",
       "drupal/field_css": "^2.0@RC",
       "drupal/filter_perms": "^1.0@alpha",
       "drupal/fvm": "^2.0",
