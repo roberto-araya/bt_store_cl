@@ -1,4 +1,4 @@
-[![](https://www.drupal.org/files/project-images/logo_tiendaparamipyme.png)](https://www.drupal.org/project/tiendaparamipyme)
+[![](https://www.drupal.org/files/project-images/logo_tiendaparamipyme_0.png)](https://www.drupal.org/project/tiendaparamipyme)
 
 ## TiendaParaMiPyMe: Drupal CMS Starter Kit for Chilean Commerce
 
