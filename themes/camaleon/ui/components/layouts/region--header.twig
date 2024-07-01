@@ -22,6 +22,7 @@
 {% set style_vars = [] %}
 {%
   set style_vars = style_vars|merge([
+    theme_settings.is_anonymous == FALSE ? '--positionTop: 39px' : '',
     theme_settings.background_color == 'default' ? '--backgroundColor: transparent' : '',
     theme_settings.background_color == 'customColor' ? '--backgroundColor: ' ~ theme_settings.background_color_custom : '',
     theme_settings.background_color != 'default' and theme_settings.background_color != 'customColor' ? '--backgroundColor: var(--bt--' ~ theme_settings.background_color ~ ')' : '',

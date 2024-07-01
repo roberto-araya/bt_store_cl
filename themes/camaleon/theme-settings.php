@@ -395,29 +395,33 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
     _get_color_form_select($default_value_prefix, $state_input_prefix, $style, $color_options, FALSE));
   }
 
-  // Navbar positions.
-  $form['regions']['region_navbar']['position_select'] = [
+  // Navbar style.
+  $form['regions']['region_navbar']['style'] = [
     '#type' => 'select',
     '#options' => [
-      'inherit' => t('Inherit'),
-      'initial' => t('Initial'),
-      'revert' => t('Revert'),
-      'revert-layer' => t('Revert Layer'),
-      'static' => t('Static'),
-      'relative' => t('Relative'),
-      'absolute' => t('Absolute'),
-      'fixed' => t('Fixed'),
+      'default' => t('Default'),
+      //'intro' => t('Intro'),
       'sticky' => t('Sticky'),
+      'sticky-shrink' => t('Sticky Shrink'),
+      //'intro-sticky' => t('Intro Sticky'),
     ],
-    '#title' => t('Position'),
-    '#description' => t("Select css position."),
-    '#default_value' => theme_get_setting('regions.navbar.position'),
+    '#title' => t('Style'),
+    '#description' => t("Select a navbar style."),
+    '#default_value' => theme_get_setting('regions.region_navbar.style'),
+  ];
+
+  // Navbar classes.
+  $form['regions']['region_navbar']['classes'] = [
+    '#type' => 'textfield',
+    '#title' => t('Navbar CSS Classes'),
+    '#description' => t("Separe the classes with an espace."),
+    '#default_value' => theme_get_setting('regions.region_navbar.classes'),
   ];
 
   // Navbar inner container classes.
   $form['regions']['region_navbar']['inner_container_classes'] = [
     '#type' => 'textfield',
-    '#title' => t('Inner Container Classes'),
+    '#title' => t('Inner Container CSS Classes'),
     '#description' => t("Separe the classes with an espace."),
     '#default_value' => theme_get_setting('regions.region_navbar.inner_container_classes'),
   ];
@@ -425,7 +429,7 @@ function camaleon_form_system_theme_settings_alter(&$form, FormStateInterface $f
   // Toggler classes.
   $form['regions']['region_navbar']['toggler_classes'] = [
     '#type' => 'textfield',
-    '#title' => t('Toggler Classes'),
+    '#title' => t('Toggler CSS Classes'),
     '#description' => t("Separe the classes with an espace."),
     '#default_value' => theme_get_setting('regions.region_navbar.toggler_classes'),
   ];

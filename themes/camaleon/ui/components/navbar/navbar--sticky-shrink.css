@@ -1,0 +1,26 @@
+header {
+  position: sticky;
+  top: var(--headerPositionTop, 0);
+  z-index: 10;
+}
+
+.shrink .regionNavbar {
+  height: -moz-max-content;
+  height: max-content;
+  transition: 0.5s;
+}
+.shrink .siteBranding {
+  --logoSize: 42px;
+  --paddingTop: 0px;
+  --paddingBottom: 0px;
+  transition: 0.3s;
+}
+.shrink .siteBranding, .shrink .menuMain {
+  min-height: 52px;
+  transition: 0.3s;
+}
+.shrink .menuMain__nav {
+  --paddingTop: 0px;
+  --paddingBottom: 0px;
+  transition: 0.5s;
+}

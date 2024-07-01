@@ -1,0 +1,5 @@
+header {
+  position: sticky;
+  top: var(--headerPositionTop, 0);
+  z-index: 10;
+}

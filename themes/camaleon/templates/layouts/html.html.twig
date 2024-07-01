@@ -28,6 +28,7 @@
 
 {%
   set styles_vars = style_vars|merge([
+    theme_settings.is_anonymous == FALSE ? '--headerPositionTop: 39px' : '',
     theme_settings.default_font == 'default' ? '--bt--body-font-family: var(--bt--font-sans-serif)' : '',
     theme_settings.default_font != 'default' ? '--bt--body-font: ' ~ theme_settings.default_font|replace({'-': " "})  : '',
     theme_settings.default_font != 'default' ? '--bt--body-font-family: var(--bt--body-font, var(--bt--font-sans-serif))' : '',

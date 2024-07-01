@@ -16,6 +16,8 @@
   set navbar_classes = [
     'navbar',
     'navbar-expand-lg',
+    theme_settings.classes,
+    theme_settings.style,
     home == TRUE ? 'navbar--home' : '',
   ]|remove_empty
 %}
@@ -38,7 +40,6 @@
     theme_settings.toggler_classes,
   ]|remove_empty
 %}
-
 
 {% 
   set region_classes = [

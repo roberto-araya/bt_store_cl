@@ -2505,6 +2505,38 @@ navbar:
   dependencies:
     - camaleon/bootstrap_transitions
 
+navbar_default:
+  version: VERSION
+  css:
+    component:
+      ui/components/navbar/navbar--default.css: {}
+
+navbar_intro:
+  version: VERSION
+  css:
+    component:
+      ui/components/navbar/navbar--intro.css: {}
+
+navbar_sticky:
+  version: VERSION
+  css:
+    component:
+      ui/components/navbar/navbar--sticky.css: {}
+
+navbar_sticky_shrink:
+  version: VERSION
+  css:
+    component:
+      ui/components/navbar/navbar--sticky-shrink.css: {}
+  js:
+    ui/components/navbar/navbar--sticky-shrink.js: {}
+
+navbar_intro_sticky:
+  version: VERSION
+  css:
+    component:
+      ui/components/navbar/navbar--intro-sticky.css: {}
+
 navbar_home:
   version: VERSION
   css:

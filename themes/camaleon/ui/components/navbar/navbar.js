@@ -1,7 +1,7 @@
 (function() {
   let menuBtn = document.getElementsByClassName("mainMenuButton")[0];
   let panel = document.getElementsByClassName("mainMenuPanel")[0];
-  let desktop = window.matchMedia("(min-width: 1280px)");
+  let desktop = window.matchMedia("(min-width: 1200px)");
 
   menuBtn.addEventListener("click", ()=> {
     panel.classList.toggle("open");

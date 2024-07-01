@@ -18,6 +18,8 @@
 {{ attach_library('camaleon/navbar') }}
 {{ attach_library("camaleon/layouts") }}
 
+{{ attach_library("camaleon/"  ~ theme_settings.style|replace({'-': "_"})) }}
+
 {#{% if is_front %}
  {{ attach_library('camaleon/navbar_home') }}
  {% set home = TRUE %}
