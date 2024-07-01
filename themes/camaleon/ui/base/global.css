@@ -5723,7 +5723,7 @@ progress {
 }
 
 .body {
-  font-family: var(--bs-body-font-family);
+  font-family: var(--bt--body-font-family);
 }
 
 .alert-info {
